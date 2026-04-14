@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>글로벌 EV 판매 트래킹</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans KR',sans-serif;background:#0a0f1a;color:#e0e6f0;padding:24px;max-width:1200px;margin:0 auto}
+h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(135deg,#4ecdc4,#556dff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{font-size:13px;color:#6b7a99;margin-bottom:32px}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:36px}
+.metric{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:20px}
+.metric .label{font-size:12px;color:#6b7a99;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px}
+.metric .value{font-size:26px;font-weight:700;color:#f0f4ff}
+.metric .delta{font-size:13px;margin-top:4px}
+.up{color:#4ecdc4}.down{color:#ff6b6b}
+.chart-section{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:24px;margin-bottom:24px}
+.chart-section h2{font-size:16px;font-weight:500;color:#94a3c0;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #1e293b}
+.chart-wrap{position:relative;height:320px}
+.chart-wrap.sm{height:260px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px;font-size:12px;color:#6b7a99}
+.legend span{display:flex;align-items:center;gap:5px}
+.legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.updated{text-align:center;font-size:11px;color:#3a4a6b;margin-top:24px;padding-top:16px;border-top:1px solid #1e293b}
+@media(max-width:768px){.metrics{grid-template-columns:repeat(2,1fr)}.grid-2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<h1>글로벌 EV 판매 트래킹</h1>
+<p class="subtitle">출처: IEA · SNE Research · WardsAuto · CPCA · Cleantechnica</p>
+
+<div class="metrics">
+<div class="metric">
+<div class="label">2024 글로벌</div>
+<div class="value">1,750만</div>
+<div class="delta up">▲ YoY +27.7%</div>
+</div>
+<div class="metric">
+<div class="label">중국 점유율</div>
+<div class="value">64.6%</div>
+<div class="delta down">▲ 19→24 +13.6%p</div>
+</div>
+<div class="metric">
+<div class="label">미국 26.03</div>
+<div class="value">10.5만</div>
+<div class="delta down">▼ YoY -33.7%</div>
+</div>
+<div class="metric">
+<div class="label">중국 26.03</div>
+<div class="value">77.2만</div>
+<div class="delta down">▼ YoY -15.3%</div>
+</div>
+</div>
+
+<div class="chart-section">
+<h2>연간 지역별 EV 판매 추이 (만대)</h2>
+<div class="legend">
+<span><i style="background:#ff6b6b"></i>중국</span>
+<span><i style="background:#556dff"></i>유럽</span>
+<span><i style="background:#4ecdc4"></i>미국</span>
+<span><i style="background:#ffd93d"></i>한국</span>
+<span><i style="background:#6b7a99"></i>기타(ROW)</span>
+</div>
+<div class="chart-wrap"><canvas id="c1"></canvas></div>
+</div>
+
+<div class="grid-2">
+<div class="chart-section">
+<h2>YoY 성장률 추이 (%)</h2>
+<div class="legend">
+<span><i style="background:#a78bfa"></i>글로벌</span>
+<span><i style="background:#ff6b6b"></i>중국</span>
+<span><i style="background:#4ecdc4"></i>미국</span>
+<span><i style="background:#556dff"></i>유럽</span>
+</div>
+<div class="chart-wrap sm"><canvas id="c2"></canvas></div>
+</div>
+<div class="chart-section">
+<h2>지역별 글로벌 점유율 (%)</h2>
+<div class="legend">
+<span><i style="background:#ff6b6b"></i>중국</span>
+<span><i style="background:#556dff"></i>유럽</span>
+<span><i style="background:#4ecdc4"></i>미국</span>
+</div>
+<div class="chart-wrap sm"><canvas id="c3"></canvas></div>
+</div>
+</div>
+
+<div class="grid-2">
+<div class="chart-section">
+<h2>2026.03 미국 OEM별 BEV 판매</h2>
+<div class="chart-wrap sm"><canvas id="c4"></canvas></div>
+</div>
+<div class="chart-section">
+<h2>2026.03 유럽 주요국 EV 침투율 (%)</h2>
+<div class="chart-wrap sm"><canvas id="c5"></canvas></div>
+</div>
+</div>
+
+<div class="chart-section">
+<h2>2026년 월별 주요국 판매 추이</h2>
+<div class="legend">
+<span><i style="background:#ff6b6b"></i>중국</span>
+<span><i style="background:#4ecdc4"></i>미국</span>
+<span><i style="background:#556dff"></i>유럽</span>
+</div>
+<div class="chart-wrap sm"><canvas id="c6"></canvas></div>
+</div>
+
+<p class="updated">마지막 업데이트: 2026.04.14 | 하나증권 이배속 Weekly 20260413 기반</p>
+
+<script>
+const gridColor='rgba(255,255,255,0.06)';
+const tickColor='#6b7a99';
+const defOpt={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{backgroundColor:'#1e293b',titleColor:'#e0e6f0',bodyColor:'#94a3c0',borderColor:'#2d3a52',borderWidth:1,cornerRadius:8,padding:12}},scales:{x:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}},y:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:11}}}}};
+
+const yrs=['2018','2019','2020','2021','2022','2023','2024'];
+
+new Chart(document.getElementById('c1'),{type:'bar',data:{labels:yrs,datasets:[
+{label:'중국',data:[109,106,114,325,590,810,1130],backgroundColor:'#ff6b6b',borderRadius:3},
+{label:'유럽',data:[39,57,138,230,260,320,318],backgroundColor:'#556dff',borderRadius:3},
+{label:'미국',data:[36,32.5,29.4,63,99,139,152],backgroundColor:'#4ecdc4',borderRadius:3},
+{label:'한국',data:[5.9,3.6,4.0,9.1,13.1,13.2,12.8],backgroundColor:'#ffd93d',borderRadius:3},
+{label:'기타',data:[15.1,8.9,11.6,32.9,57.9,87.8,137.2],backgroundColor:'#6b7a99',borderRadius:3}
+]},options:{...defOpt,scales:{...defOpt.scales,x:{...defOpt.scales.x,stacked:true},y:{...defOpt.scales.y,stacked:true,title:{display:true,text:'만대',color:tickColor}}}}});
+
+new Chart(document.getElementById('c2'),{type:'line',data:{labels:yrs,datasets:[
+{label:'글로벌',data:[76.5,1.5,42.8,122.2,54.5,34.3,27.7],borderColor:'#a78bfa',borderWidth:2.5,tension:.3,pointRadius:3},
+{label:'중국',data:[87.9,-2.8,7.5,185.1,81.5,37.3,39.5],borderColor:'#ff6b6b',borderWidth:1.5,tension:.3,pointRadius:2,borderDash:[5,3]},
+{label:'미국',data:[85.6,-9.7,-9.5,114.3,57.1,40.4,9.4],borderColor:'#4ecdc4',borderWidth:1.5,tension:.3,pointRadius:2,borderDash:[5,3]},
+{label:'유럽',data:[21.9,46.2,142.1,66.7,13.0,23.1,-0.6],borderColor:'#556dff',borderWidth:1.5,tension:.3,pointRadius:2,borderDash:[5,3]}
+]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'YoY %',color:tickColor}}}}});
+
+new Chart(document.getElementById('c3'),{type:'line',data:{labels:yrs,datasets:[
+{label:'중국',data:[53.2,51.0,38.4,49.2,57.8,59.1,64.6],borderColor:'#ff6b6b',backgroundColor:'rgba(255,107,107,0.1)',fill:true,borderWidth:2,tension:.3,pointRadius:3},
+{label:'유럽',data:[19.0,27.4,46.5,34.8,25.5,23.4,18.2],borderColor:'#556dff',backgroundColor:'rgba(85,109,255,0.1)',fill:true,borderWidth:2,tension:.3,pointRadius:3},
+{label:'미국',data:[17.6,15.6,9.9,9.5,9.7,10.1,8.7],borderColor:'#4ecdc4',backgroundColor:'rgba(78,205,196,0.1)',fill:true,borderWidth:2,tension:.3,pointRadius:3}
+]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,max:70,title:{display:true,text:'Share %',color:tickColor}}}}});
+
+new Chart(document.getElementById('c4'),{type:'bar',data:{labels:['Tesla','GM','현대기아','Ford'],datasets:[{
+data:[40000,12000,8000,3000],
+backgroundColor:['#ff6b6b','#556dff','#4ecdc4','#ffd93d'],borderRadius:6
+}]},options:{...defOpt,indexAxis:'y',scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,callback:v=>(v/10000).toFixed(1)+'만'}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:12}}}}}});
+
+new Chart(document.getElementById('c5'),{type:'bar',data:{labels:['노르웨이','스웨덴','영국','독일','프랑스'],datasets:[{
+data:[99.1,63.3,35.7,33.4,32.8],
+backgroundColor:['#a78bfa','#556dff','#4ecdc4','#ffd93d','#ff6b6b'],borderRadius:6
+}]},options:{...defOpt,indexAxis:'y',scales:{x:{max:100,grid:{color:gridColor},ticks:{color:tickColor,callback:v=>v+'%'}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:12}}}}}});
+
+new Chart(document.getElementById('c6'),{type:'bar',data:{labels:['2026.02','2026.03'],datasets:[
+{label:'중국',data:[504000,772000],backgroundColor:'#ff6b6b',borderRadius:3},
+{label:'미국',data:[75000,104847],backgroundColor:'#4ecdc4',borderRadius:3},
+{label:'유럽',data:[310000,null],backgroundColor:'#556dff',borderRadius:3}
+]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'대',color:tickColor},ticks:{callback:v=>(v/10000).toFixed(1)+'만'}}}}});
+</script>
+</body>
+</html>
