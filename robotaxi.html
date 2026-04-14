@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tesla Robotaxi & FSD Tracking</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans KR',sans-serif;background:#0a0f1a;color:#e0e6f0;padding:24px;max-width:1200px;margin:0 auto}
+h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(135deg,#a78bfa,#556dff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{font-size:13px;color:#6b7a99;margin-bottom:32px}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:36px}
+.metric{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:20px}
+.metric .label{font-size:12px;color:#6b7a99;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
+.metric .value{font-size:26px;font-weight:700;color:#f0f4ff}
+.metric .delta{font-size:13px;margin-top:4px}
+.up{color:#4ecdc4}.down{color:#ff6b6b}.neutral{color:#a78bfa}
+.chart-section{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:24px;margin-bottom:24px}
+.chart-section h2{font-size:16px;font-weight:500;color:#94a3c0;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #1e293b}
+.chart-wrap{position:relative;height:300px}
+.chart-wrap.sm{height:240px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px;font-size:12px;color:#6b7a99}
+.legend span{display:flex;align-items:center;gap:5px}
+.legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.timeline{margin-top:24px}
+.timeline .event{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #1e293b;font-size:13px}
+.timeline .date{color:#a78bfa;min-width:90px;font-weight:500}
+.timeline .desc{color:#94a3c0}
+.updated{text-align:center;font-size:11px;color:#3a4a6b;margin-top:24px;padding-top:16px;border-top:1px solid #1e293b}
+@media(max-width:768px){.metrics{grid-template-columns:repeat(2,1fr)}.grid-2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<h1>Tesla Robotaxi & FSD 트래킹</h1>
+<p class="subtitle">robotaxitracker.com · fsdmiles.com · tesla.com/fsd/safety</p>
+
+<div class="metrics">
+<div class="metric">
+<div class="label">FSD 누적 마일</div>
+<div class="value">~9.5B</div>
+<div class="delta neutral">10B 목표: 5월 중순</div>
+</div>
+<div class="metric">
+<div class="label">일일 축적</div>
+<div class="value">~20M</div>
+<div class="delta neutral">마일/일 (166.6/초)</div>
+</div>
+<div class="metric">
+<div class="label">Austin 무감독</div>
+<div class="value">10대</div>
+<div class="delta up">▲ 신고치 (총 37-44대)</div>
+</div>
+<div class="metric">
+<div class="label">Cybercab 생산</div>
+<div class="value">60대</div>
+<div class="delta neutral">Giga Texas 양산 시작</div>
+</div>
+</div>
+
+<div class="chart-section">
+<h2>FSD 누적 주행거리 추이 (Billion miles)</h2>
+<div class="legend">
+<span><i style="background:#a78bfa"></i>누적 마일 (B)</span>
+<span><i style="background:#4ecdc4"></i>연간 마일 (B)</span>
+</div>
+<div class="chart-wrap"><canvas id="c1"></canvas></div>
+</div>
+
+<div class="grid-2">
+<div class="chart-section">
+<h2>FSD 연간 축적 속도 (Billion miles)</h2>
+<div class="chart-wrap sm"><canvas id="c2"></canvas></div>
+</div>
+<div class="chart-section">
+<h2>FSD 안전 비교 (마일/주요충돌)</h2>
+<div class="chart-wrap sm"><canvas id="c3"></canvas></div>
+</div>
+</div>
+
+<div class="grid-2">
+<div class="chart-section">
+<h2>Austin 로보택시 플릿 추이</h2>
+<div class="legend">
+<span><i style="background:#556dff"></i>총 차량</span>
+<span><i style="background:#ff6b6b"></i>무감독 차량</span>
+</div>
+<div class="chart-wrap sm"><canvas id="c4"></canvas></div>
+</div>
+<div class="chart-section">
+<h2>Cybercab 누적 생산</h2>
+<div class="chart-wrap sm"><canvas id="c5"></canvas></div>
+</div>
+</div>
+
+<div class="chart-section">
+<h2>도시 확장 타임라인</h2>
+<div class="timeline">
+<div class="event"><div class="date">25.06</div><div class="desc">Austin 런칭 (Safety Monitor, ~12대)</div></div>
+<div class="event"><div class="date">25.12</div><div class="desc">무감독 테스트 시작 · Bay Area 1,655대 등록 (CPUC)</div></div>
+<div class="event"><div class="date">26.01</div><div class="desc">무감독 공개 라이드 시작 · 플릿 ~200대 (Austin+SF)</div></div>
+<div class="event"><div class="date">26.02</div><div class="desc">Cybercab 첫 라인오프 · FSD 8B 마일 돌파</div></div>
+<div class="event"><div class="date">26.03</div><div class="desc">Austin 지오펜스 245 sq mi 확대 · FSD 9B 돌파</div></div>
+<div class="event"><div class="date">26.04</div><div class="desc">무감독 10대 신고치 · Cybercab 60대 · 양산 시작</div></div>
+<div class="event"><div class="date">26.1H</div><div class="desc">계획: Dallas · Houston · Las Vegas · Miami · Orlando · Phoenix · Tampa</div></div>
+</div>
+</div>
+
+<p class="updated">마지막 업데이트: 2026.04.14</p>
+
+<script>
+const gridColor='rgba(255,255,255,0.06)';
+const tickColor='#6b7a99';
+const defOpt={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{backgroundColor:'#1e293b',titleColor:'#e0e6f0',bodyColor:'#94a3c0',borderColor:'#2d3a52',borderWidth:1,cornerRadius:8,padding:12}},scales:{x:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}},y:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:11}}}}};
+
+new Chart(document.getElementById('c1'),{type:'line',data:{labels:['2021','2022','2023','2024','2025','26.02','26.03','26.04'],datasets:[
+{label:'누적',data:[0.006,0.086,0.756,3.0,7.25,8.0,8.5,9.5],borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,0.1)',fill:true,borderWidth:2.5,tension:.3,pointRadius:4}
+]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'Billion miles',color:tickColor}}}}});
+
+new Chart(document.getElementById('c2'),{type:'bar',data:{labels:['2021','2022','2023','2024','2025','2026E'],datasets:[{
+data:[0.006,0.08,0.67,2.25,4.25,7.3],
+backgroundColor:['#2d3a52','#2d3a52','#3b4a6b','#556dff','#a78bfa','#4ecdc4'],borderRadius:4
+}]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'B miles',color:tickColor}}}}});
+
+new Chart(document.getElementById('c3'),{type:'bar',data:{labels:['FSD\n(Supervised)','Tesla 수동\n(Active Safety)','미국 평균','Tesla 수동\n(No Safety)'],datasets:[{
+data:[5300676,2175763,485133,397274],
+backgroundColor:['#4ecdc4','#556dff','#ffd93d','#ff6b6b'],borderRadius:6
+}]},options:{...defOpt,indexAxis:'y',scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,callback:v=>(v/1000000).toFixed(1)+'M'}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:10}}}}}});
+
+new Chart(document.getElementById('c4'),{type:'line',data:{labels:['25.06','25.12','26.01','26.03','26.04'],datasets:[
+{label:'총 차량',data:[12,135,200,37,40],borderColor:'#556dff',borderWidth:2,tension:.3,pointRadius:4},
+{label:'무감독',data:[0,0,8,4,10],borderColor:'#ff6b6b',borderWidth:2,tension:.3,pointRadius:4,borderDash:[5,3]}
+]},options:defOpt});
+
+new Chart(document.getElementById('c5'),{type:'bar',data:{labels:['26.02','26.03','26.04'],datasets:[{
+data:[1,25,60],backgroundColor:['#2d3a52','#556dff','#a78bfa'],borderRadius:4
+}]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'누적 대수',color:tickColor}}}}});
+</script>
+</body>
+</html>
