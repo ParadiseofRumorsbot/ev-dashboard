@@ -71,7 +71,7 @@ const WATCH = {
 
 function getTimeRange() {
   const now = new Date();
-  const latest = new Date(now.getFullYear(), now.getMonth() - 3, 1);
+  const latest = new Date(now.getFullYear(), now.getMonth() - 1, 1);
   const start = new Date(2023, 0, 1);
   const months = [];
   let cur = new Date(start);

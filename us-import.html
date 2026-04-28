@@ -264,13 +264,25 @@ function renderTab(tab){
   updateCharts();
 }
 
+function fmtHS(code){
+  if(!code||code==='ICE_ALL')return'';
+  const c=code.replace(/\D/g,'');
+  if(c.length===6)return`HS ${c.slice(0,4)}.${c.slice(4)}`;
+  if(c.length===8)return`HS ${c.slice(0,4)}.${c.slice(4,6)}.${c.slice(6)}`;
+  if(c.length===10)return`HS ${c.slice(0,4)}.${c.slice(4,6)}.${c.slice(6,8)}.${c.slice(8)}`;
+  return`HS ${c}`;
+}
+
 function mkKpiCard(code,type,label,value,change,sub,color){
   const cls=SEL&&SEL.code===code?'kc sel':'kc';
   const vc=color?`style="color:${color}"`:'';
+  const hsTag=type==='hs'&&code!=='ICE_ALL'?`<span style="color:var(--tm);font-size:.62rem;opacity:.7">${fmtHS(code)}</span>`:'';
+  const subText=sub?`${sub}`:'';
+  const divider=subText&&hsTag?' · ':'';
   return`<div class="${cls}" data-code="${code}" data-type="${type}">
     <div class="kl">${label}</div><div class="kv" ${vc}>${value}</div>
     <div class="kch ${change>=0?'u':'d'}">${typeof change==='number'?pct(change):change}</div>
-    <div class="ks">${sub||''}</div></div>`;
+    <div class="ks">${subText}${divider}${hsTag}</div></div>`;
 }
 
 function bindKpiClicks(){
