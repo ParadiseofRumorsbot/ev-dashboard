@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>미국 2차전지 수입 트래커</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.7/chart.umd.min.js"
+  onerror="document.getElementById('app').innerHTML='<div style=\'padding:40px;text-align:center;color:#ef4444\'><h3>⚠️ Chart.js 로드 실패</h3><p style=\'color:#94a3b8;margin-top:8px\'>CDN 접근이 불가한 환경입니다.<br>GitHub Pages에 배포하면 정상 작동합니다.</p></div>'"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap');
+:root{--bg:#0a0e17;--cd:#111827;--cd2:#1a2332;--bd:#1e293b;--tx:#e2e8f0;--td:#94a3b8;--tm:#64748b;
+--ac:#3b82f6;--ag:rgba(59,130,246,.15);--gn:#10b981;--rd:#ef4444;--am:#f59e0b;--cy:#22d3ee;--pk:#f472b6;--or:#fb923c;--pp:#a78bfa}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--tx);line-height:1.6}
+.ct{max-width:1320px;margin:0 auto;padding:0 20px}
+header{padding:28px 0 14px;border-bottom:1px solid var(--bd);margin-bottom:18px}
+header h1{font-size:1.45rem;font-weight:900;background:linear-gradient(135deg,var(--ac),var(--cy));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{font-size:.76rem;color:var(--td);margin-top:3px}
+.nv{margin-top:8px;display:flex;gap:10px;font-size:.73rem}
+.nv a{color:var(--tm);text-decoration:none;padding:3px 8px;border-radius:4px;transition:.2s}
+.nv a:hover,.nv a.on{color:var(--ac);background:var(--ag)}
+.tabs{display:flex;gap:2px;margin-bottom:16px;border-bottom:1px solid var(--bd);overflow-x:auto}
+.tabs button{background:none;border:none;color:var(--tm);font-family:inherit;font-size:.82rem;font-weight:600;
+padding:9px 15px;cursor:pointer;border-bottom:2px solid transparent;transition:.2s;white-space:nowrap}
+.tabs button:hover{color:var(--tx)}.tabs button.on{color:var(--ac);border-bottom-color:var(--ac)}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-bottom:18px}
+.kc{background:var(--cd);border:1px solid var(--bd);border-radius:8px;padding:13px 12px;transition:.2s}
+.kc:hover{border-color:var(--ac)}
+.kl{font-size:.66rem;color:var(--tm);font-weight:500;text-transform:uppercase;letter-spacing:.5px}
+.kv{font-family:'JetBrains Mono',monospace;font-size:1.3rem;font-weight:600;margin:4px 0 2px}
+.kch{font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:600}
+.kch.u{color:var(--gn)}.kch.d{color:var(--rd)}
+.ks{font-size:.66rem;color:var(--tm)}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+.cb{background:var(--cd);border:1px solid var(--bd);border-radius:8px;padding:14px}
+.cb.f{grid-column:1/-1}
+.cb h3{font-size:.8rem;font-weight:600;margin-bottom:10px;color:var(--td)}
+.cb h3 .bg{font-size:.6rem;background:var(--ag);color:var(--ac);padding:2px 6px;border-radius:3px;font-weight:600;margin-left:5px}
+table.dt{width:100%;border-collapse:collapse;font-size:.72rem}
+.dt th{text-align:left;padding:6px 8px;border-bottom:1px solid var(--bd);color:var(--tm);font-weight:500;font-size:.66rem;text-transform:uppercase;letter-spacing:.4px}
+.dt td{padding:6px 8px;border-bottom:1px solid rgba(30,41,59,.4);font-family:'JetBrains Mono',monospace;font-size:.7rem}
+.dt tr:hover td{background:var(--cd2)}.ar td{background:rgba(239,68,68,.05)}
+footer{border-top:1px solid var(--bd);padding:16px 0;text-align:center;font-size:.68rem;color:var(--tm);margin-top:30px}
+.ld{text-align:center;padding:50px;color:var(--tm)}
+@media(max-width:768px){.cg{grid-template-columns:1fr}.kpi{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="ct">
+<header>
+  <h1>🔋 미국 2차전지 수입 트래커</h1>
+  <div class="sub">U.S. Census Bureau · 셀 · 소재 · 원료 · 차량 · 주간 자동 업데이트</div>
+  <nav class="nv">
+    <a href="index.html">EV 판매</a>
+    <a href="robotaxi.html">FSD·로보택시</a>
+    <a href="us-import.html" class="on">US 수입</a>
+  </nav>
+</header>
+<div class="tabs" id="tabs">
+  <button class="on" data-tab="cell">⚡ 셀·완제품</button>
+  <button data-tab="material">🧪 소재</button>
+  <button data-tab="raw">⛏️ 원료</button>
+  <button data-tab="vehicle">🚗 차량</button>
+  <button data-tab="alert">⚠️ 우회감시</button>
+</div>
+<div id="app"><div class="ld">데이터 로딩 중...</div></div>
+<footer id="ft"></footer>
+</div>
+
+<script>
+const FL={KR:'🇰🇷',CN:'🇨🇳',JP:'🇯🇵',DE:'🇩🇪',CA:'🇨🇦',AU:'🇦🇺',CL:'🇨🇱',AR:'🇦🇷',GB:'🇬🇧',SE:'🇸🇪',MA:'🇲🇦',HU:'🇭🇺',TH:'🇹🇭',ID:'🇮🇩',VN:'🇻🇳',MX:'🇲🇽',PL:'🇵🇱',MY:'🇲🇾',IN:'🇮🇳',OTHER:'🌐'};
+const CC={KR:'#3b82f6',CN:'#ef4444',JP:'#f59e0b',DE:'#a78bfa',CA:'#10b981',AU:'#06b6d4',CL:'#8b5cf6',AR:'#d946ef',GB:'#6366f1',SE:'#14b8a6',
+MA:'#f472b6',HU:'#22d3ee',TH:'#fb923c',ID:'#818cf8',VN:'#34d399',MX:'#fbbf24',PL:'#c084fc',MY:'#2dd4bf',IN:'#f87171',OTHER:'#475569'};
+const HC=['#3b82f6','#ef4444','#f59e0b','#10b981','#a78bfa','#22d3ee','#fb923c','#f472b6','#818cf8','#34d399'];
+const fmt=v=>v>=1e9?`$${(v/1e9).toFixed(1)}B`:v>=1e6?`$${(v/1e6).toFixed(0)}M`:`$${(v/1e3).toFixed(0)}K`;
+const pct=v=>v>0?`+${v.toFixed(1)}%`:`${v.toFixed(1)}%`;
+const ml=t=>{const[y,m]=t.split('-');return`${y.slice(2)}.${m}`};
+
+if(typeof Chart!=='undefined'){
+  Chart.defaults.color='#94a3b8';Chart.defaults.borderColor='rgba(30,41,59,.5)';
+  Chart.defaults.font.family="'Noto Sans KR',sans-serif";Chart.defaults.font.size=11;
+  Chart.defaults.plugins.legend.labels.boxWidth=10;Chart.defaults.plugins.legend.labels.padding=8;
+}
+
+let D;
+async function init(){
+  if(typeof Chart==='undefined')return;
+  try{const r=await fetch('data/census-import.json');D=await r.json()}
+  catch(e){document.getElementById('app').innerHTML=`<div class="ld" style="color:var(--rd)">
+    <b>데이터 로드 실패</b><br><span style="color:var(--td);font-size:.78rem">
+    data/census-import.json 파일이 필요합니다.<br>
+    <code style="background:var(--cd);padding:4px 8px;border-radius:4px;font-size:.72rem">
+    CENSUS_API_KEY=... node scripts/fetch-census.js</code> 를 먼저 실행하세요.<br>
+    또는 GitHub Pages에서 접속하세요.</span></div>`;return}
+  renderTab('cell');
+  document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');renderTab(b.dataset.tab)}));
+  document.getElementById('ft').textContent=`마지막 업데이트: ${D.meta.lastUpdated} · U.S. Census Bureau (api.census.gov) · 자동 갱신: 매주 월요일 KST 09:00`;
+}
+
+function destroyCharts(){Object.values(Chart.instances).forEach(c=>c.destroy())}
+
+function getCtx(primary,months){
+  const md=D.monthly[primary]||{};
+  const lat=months.at(-1),prev=months.at(-2);
+  const yoyM=months.find(m=>{const[y,mo]=lat.split('-');return m===`${+y-1}-${mo}`});
+  const ld=md[lat],pd=prev?md[prev]:null,yd=yoyM?md[yoyM]:null;
+  return{md,lat,prev,yoyM,ld,pd,yd,
+    mom:pd?((ld.total-pd.total)/pd.total*100):0,
+    yoy:yd?((ld.total-yd.total)/yd.total*100):0};
+}
+
+// ═══════════════════════════════════════
+//  Generic tab renderer (cell/material/raw)
+// ═══════════════════════════════════════
+function renderTab(tab){
+  destroyCharts();
+  if(tab==='alert'){renderAlert();return}
+  if(tab==='vehicle'){renderVehicle();return}
+  const app=document.getElementById('app');
+  const codes=D.meta.tabs[tab].codes;
+  const primary=codes[0];
+  const months=Object.keys(D.monthly[primary]||{}).sort();
+  if(!months.length){app.innerHTML='<div class="ld">데이터 없음</div>';return}
+  const{md,lat,ld,pd,yd,mom,yoy}=getCtx(primary,months);
+
+  const cns=ld.countries.CN?(ld.countries.CN.val/ld.total*100):0;
+  const cnp=yd?.countries.CN?(yd.countries.CN.val/yd.total*100):0;
+  const krs=ld.countries.KR?(ld.countries.KR.val/ld.total*100):0;
+
+  let kpi=`<div class="kpi">
+    <div class="kc"><div class="kl">${D.meta.hsCodes[primary].label} (${lat})</div>
+      <div class="kv">${fmt(ld.total)}</div><div class="kch ${mom>=0?'u':'d'}">MoM ${pct(mom)}</div>
+      <div class="ks">YoY ${pct(yoy)}</div></div>
+    <div class="kc"><div class="kl">🇨🇳 중국</div><div class="kv" style="color:var(--rd)">${cns.toFixed(1)}%</div>
+      <div class="kch ${cns<cnp?'d':'u'}">YoY ${pct(cns-cnp)}</div></div>
+    <div class="kc"><div class="kl">🇰🇷 한국</div><div class="kv" style="color:var(--ac)">${krs.toFixed(1)}%</div>
+      <div class="kch u">${fmt(ld.countries.KR?.val||0)}</div></div>`;
+  for(let i=1;i<codes.length;i++){
+    const c=codes[i],dl=D.monthly[c]?.[lat];if(!dl)continue;
+    const dp=D.monthly[c]?.[months.at(-2)];
+    const mm=dp?((dl.total-dp.total)/dp.total*100):0;
+    kpi+=`<div class="kc"><div class="kl">${D.meta.hsCodes[c].label}</div>
+      <div class="kv">${fmt(dl.total)}</div><div class="kch ${mm>=0?'u':'d'}">MoM ${pct(mm)}</div></div>`;
+  }
+  kpi+='</div>';
+
+  app.innerHTML=kpi+`<div class="cg">
+    <div class="cb f"><h3>월별 수입 추이 ($M)</h3><canvas id="c1"></canvas></div>
+    <div class="cb f"><h3>국가별 점유율 (Stacked %)</h3><canvas id="c2"></canvas></div>
+    <div class="cb"><h3>주요국 추이 ($M)</h3><canvas id="c3"></canvas></div>
+    <div class="cb"><h3>최신월 비중</h3><canvas id="c4"></canvas></div>
+    ${codes.length>1?'<div class="cb f"><h3>코드별 비교 ($M)</h3><canvas id="c5"></canvas></div>':''}
+    <div class="cb f" style="padding:0;overflow-x:auto"><table class="dt" id="tbl"></table></div></div>`;
+
+  mkBar('c1',months,m=>(md[m]?.total||0)/1e6);
+  mkStacked('c2',months,ld,md);
+  mkLines('c3',months,md,ld);
+  mkPie('c4',ld);
+  if(codes.length>1)mkCodeCmp('c5',months,codes);
+  mkTable('tbl',ld,pd,yd);
+}
+
+// ═══════════════════════════════════════
+//  Vehicle tab
+// ═══════════════════════════════════════
+function renderVehicle(){
+  const app=document.getElementById('app');
+  const codes=D.meta.tabs.vehicle.codes;
+  const bevCode='870380',phevCodes=['870340','870350'],hevCode='870360',iceCodes=['870321','870322','870323','870324'];
+  const months=Object.keys(D.monthly[bevCode]||{}).sort();
+  if(!months.length){app.innerHTML='<div class="ld">데이터 없음</div>';return}
+  const lat=months.at(-1),prev=months.at(-2);
+  const yoyM=months.find(m=>{const[y,mo]=lat.split('-');return m===`${+y-1}-${mo}`});
+
+  const bevL=D.monthly[bevCode]?.[lat]?.total||0;
+  const bevP=D.monthly[bevCode]?.[prev]?.total||0;
+  const bevY=yoyM?D.monthly[bevCode]?.[yoyM]?.total||0:0;
+  const phevL=phevCodes.reduce((s,c)=>s+(D.monthly[c]?.[lat]?.total||0),0);
+  const iceL=iceCodes.reduce((s,c)=>s+(D.monthly[c]?.[lat]?.total||0),0);
+  const hevL=D.monthly[hevCode]?.[lat]?.total||0;
+  const allL=bevL+phevL+hevL+iceL;
+  const bevShare=allL?(bevL/allL*100):0;
+
+  const bevMom=bevP?((bevL-bevP)/bevP*100):0;
+  const bevYoy=bevY?((bevL-bevY)/bevY*100):0;
+
+  // KR share in BEV
+  const krBev=D.monthly[bevCode]?.[lat]?.countries.KR?.val||0;
+  const krBevSh=bevL?(krBev/bevL*100):0;
+
+  app.innerHTML=`<div class="kpi">
+    <div class="kc"><div class="kl">BEV 수입 (${lat})</div><div class="kv" style="color:var(--ac)">${fmt(bevL)}</div>
+      <div class="kch ${bevMom>=0?'u':'d'}">MoM ${pct(bevMom)}</div><div class="ks">YoY ${pct(bevYoy)}</div></div>
+    <div class="kc"><div class="kl">PHEV 수입</div><div class="kv">${fmt(phevL)}</div></div>
+    <div class="kc"><div class="kl">HEV (하이브리드)</div><div class="kv">${fmt(hevL)}</div></div>
+    <div class="kc"><div class="kl">ICE (내연기관)</div><div class="kv" style="color:var(--tm)">${fmt(iceL)}</div></div>
+    <div class="kc"><div class="kl">BEV 점유율</div><div class="kv" style="color:var(--gn)">${bevShare.toFixed(1)}%</div>
+      <div class="ks">전체 승용차 수입 대비</div></div>
+    <div class="kc"><div class="kl">🇰🇷 한국산 BEV 비중</div><div class="kv" style="color:var(--ac)">${krBevSh.toFixed(1)}%</div>
+      <div class="kch u">${fmt(krBev)}</div></div>
+  </div>
+  <div class="cg">
+    <div class="cb f"><h3>파워트레인별 수입 추이 ($M)</h3><canvas id="v1"></canvas></div>
+    <div class="cb f"><h3>BEV 점유율 추이 (%)</h3><canvas id="v2"></canvas></div>
+    <div class="cb"><h3>BEV 국가별 추이 ($M)</h3><canvas id="v3"></canvas></div>
+    <div class="cb"><h3>BEV 최신월 국가별 비중</h3><canvas id="v4"></canvas></div>
+    <div class="cb f" style="padding:0;overflow-x:auto"><table class="dt" id="vtbl"></table></div>
+  </div>`;
+
+  // V1: powertrain stacked area
+  new Chart(document.getElementById('v1'),{type:'line',data:{labels:months.map(ml),datasets:[
+    {label:'BEV',data:months.map(m=>(D.monthly[bevCode]?.[m]?.total||0)/1e6),borderColor:'#3b82f6',backgroundColor:'rgba(59,130,246,.15)',fill:true,tension:.3,pointRadius:0,borderWidth:2},
+    {label:'PHEV',data:months.map(m=>phevCodes.reduce((s,c)=>s+(D.monthly[c]?.[m]?.total||0),0)/1e6),borderColor:'#10b981',backgroundColor:'rgba(16,185,129,.15)',fill:true,tension:.3,pointRadius:0,borderWidth:2},
+    {label:'HEV',data:months.map(m=>(D.monthly[hevCode]?.[m]?.total||0)/1e6),borderColor:'#f59e0b',backgroundColor:'rgba(245,158,11,.1)',fill:true,tension:.3,pointRadius:0,borderWidth:2},
+    {label:'ICE',data:months.map(m=>iceCodes.reduce((s,c)=>s+(D.monthly[c]?.[m]?.total||0),0)/1e6),borderColor:'#64748b',backgroundColor:'rgba(100,116,139,.1)',fill:true,tension:.3,pointRadius:0,borderWidth:2},
+  ]},options:{responsive:true,plugins:{legend:{position:'bottom',labels:{font:{size:9}}},tooltip:{callbacks:{label:c=>`${c.dataset.label}: $${c.raw.toFixed(0)}M`}}},
+    scales:{y:{ticks:{callback:v=>`$${v}M`},grid:{color:'rgba(30,41,59,.3)'}},x:{ticks:{maxRotation:45,font:{size:9}},grid:{display:false}}}}});
+
+  // V2: BEV share
+  new Chart(document.getElementById('v2'),{type:'line',data:{labels:months.map(ml),datasets:[{
+    label:'BEV 점유율',data:months.map(m=>{
+      const b=D.monthly[bevCode]?.[m]?.total||0;
+      const all=b+phevCodes.reduce((s,c)=>s+(D.monthly[c]?.[m]?.total||0),0)
+        +(D.monthly[hevCode]?.[m]?.total||0)+iceCodes.reduce((s,c)=>s+(D.monthly[c]?.[m]?.total||0),0);
+      return all?(b/all*100):0}),
+    borderColor:'#3b82f6',backgroundColor:'rgba(59,130,246,.1)',fill:true,tension:.3,pointRadius:0,borderWidth:2}]},
+    options:{responsive:true,plugins:{legend:{display:false}},
+    scales:{y:{ticks:{callback:v=>`${v}%`},grid:{color:'rgba(30,41,59,.3)'}},x:{ticks:{maxRotation:45,font:{size:9}},grid:{display:false}}}}});
+
+  // V3: BEV by country
+  const bevMd=D.monthly[bevCode]||{};
+  const bevLd=bevMd[lat];
+  if(bevLd){mkLines('v3',months,bevMd,bevLd);mkPie('v4',bevLd)}
+
+  // Vehicle table
+  if(bevLd){
+    const tbl=document.getElementById('vtbl');
+    let h='<thead><tr><th>국가</th><th style="text-align:right">BEV</th><th style="text-align:right">비중</th><th style="text-align:right">PHEV</th><th style="text-align:right">HEV</th></tr></thead><tbody>';
+    const sorted=Object.entries(bevLd.countries).filter(([k])=>k!=='OTHER').sort((a,b)=>b[1].val-a[1].val);
+    for(const[cc,info]of sorted){
+      const sh=(info.val/bevLd.total*100).toFixed(1);
+      const phev=phevCodes.reduce((s,c)=>s+(D.monthly[c]?.[lat]?.countries[cc]?.val||0),0);
+      const hev=D.monthly[hevCode]?.[lat]?.countries[cc]?.val||0;
+      h+=`<tr><td>${FL[cc]||''} ${D.meta.countries[cc]?.label||cc}</td>
+        <td style="text-align:right">${fmt(info.val)}</td><td style="text-align:right">${sh}%</td>
+        <td style="text-align:right">${fmt(phev)}</td><td style="text-align:right">${fmt(hev)}</td></tr>`}
+    tbl.innerHTML=h+'</tbody>';
+  }
+}
+
+// ═══════════════════════════════════════
+//  Alert tab
+// ═══════════════════════════════════════
+function renderAlert(){
+  const app=document.getElementById('app');
+  const hs='850760',md=D.monthly[hs]||{};
+  const months=Object.keys(md).sort();
+  const lat=months.at(-1);
+  const yoyM=months.find(m=>{const[y,mo]=lat.split('-');return m===`${+y-1}-${mo}`});
+  const ld=md[lat],yd=yoyM?md[yoyM]:null;
+  const circ=Object.entries(D.meta.countries).filter(([,v])=>v.group==='circumvention').map(([k])=>k);
+  const cSum=circ.reduce((s,k)=>s+(ld.countries[k]?.val||0),0);
+  const cPct=cSum/ld.total*100;
+  const cPctP=yd?circ.reduce((s,k)=>s+(yd.countries[k]?.val||0),0)/yd.total*100:0;
+
+  app.innerHTML=`<div class="kpi">
+    <div class="kc"><div class="kl">우회 의심국 합산 (${lat})</div><div class="kv" style="color:var(--am)">${fmt(cSum)}</div>
+      <div class="kch ${cPct>cPctP?'u':'d'}">점유율 ${cPct.toFixed(1)}%</div><div class="ks">전년 ${cPctP.toFixed(1)}%</div></div>
+    ${circ.filter(cc=>{const v=ld.countries[cc]?.val||0,yv=yd?.countries[cc]?.val||0;return yv?(((v-yv)/yv*100)>30):v>1e6}).slice(0,5).map(cc=>{
+      const v=ld.countries[cc]?.val||0,yv=yd?.countries[cc]?.val||0;
+      const yy=yv?((v-yv)/yv*100):999;
+      return`<div class="kc" style="border-color:rgba(239,68,68,.3)"><div class="kl">${FL[cc]} ${D.meta.countries[cc]?.label} ⚠️</div>
+        <div class="kv" style="color:var(--rd)">${pct(yy)}</div><div class="kch u">${fmt(v)}</div></div>`}).join('')}
+  </div>
+  <div class="cg">
+    <div class="cb f"><h3>우회 감시국 수입 추이 ($M)</h3><canvas id="a1"></canvas></div>
+    <div class="cb f"><h3>우회 감시국 점유율 합산 (%)</h3><canvas id="a2"></canvas></div>
+    <div class="cb f" style="padding:0;overflow-x:auto"><table class="dt" id="atbl"></table></div></div>`;
+
+  new Chart(document.getElementById('a1'),{type:'line',data:{labels:months.map(ml),
+    datasets:circ.map(cc=>({label:`${FL[cc]} ${D.meta.countries[cc]?.label||cc}`,
+      data:months.map(m=>(md[m]?.countries[cc]?.val||0)/1e6),borderColor:CC[cc],
+      backgroundColor:'transparent',tension:.3,pointRadius:0,borderWidth:2}))},
+    options:{responsive:true,plugins:{legend:{position:'bottom',labels:{font:{size:9}}}},
+    scales:{y:{ticks:{callback:v=>`$${v}M`},grid:{color:'rgba(30,41,59,.3)'}},x:{ticks:{maxRotation:45,font:{size:9}},grid:{display:false}}}}});
+
+  new Chart(document.getElementById('a2'),{type:'line',data:{labels:months.map(ml),
+    datasets:[{label:'합산',data:months.map(m=>{const d=md[m];if(!d?.total)return 0;
+      return circ.reduce((s,cc)=>s+(d.countries[cc]?.val||0),0)/d.total*100}),
+      borderColor:'var(--am)',backgroundColor:'rgba(245,158,11,.1)',fill:true,tension:.3,pointRadius:0,borderWidth:2}]},
+    options:{responsive:true,plugins:{legend:{display:false}},
+    scales:{y:{ticks:{callback:v=>`${v}%`},grid:{color:'rgba(30,41,59,.3)'}},x:{ticks:{maxRotation:45,font:{size:9}},grid:{display:false}}}}});
+
+  const notes={MA:'CATL 모로코',HU:'CATL·Eve 헝가리',TH:'BYD·GWM 태국',ID:'중국 니켈→배터리',
+    VN:'우회 전례 다수',MX:'USMCA 우회',PL:'LG·SK 폴란드',MY:'중국 소재 중간가공',IN:'신규 감시'};
+  const t=document.getElementById('atbl');
+  let h='<thead><tr><th>국가</th><th style="text-align:right">당월</th><th style="text-align:right">전년동월</th><th style="text-align:right">YoY</th><th style="text-align:right">점유율</th><th>시사점</th></tr></thead><tbody>';
+  for(const cc of circ.sort((a,b)=>(ld.countries[b]?.val||0)-(ld.countries[a]?.val||0))){
+    const v=ld.countries[cc]?.val||0,yv=yd?.countries[cc]?.val||0;
+    const yy=yv?((v-yv)/yv*100):(v>0?999:0);
+    h+=`<tr${yy>50?' class="ar"':''}>
+      <td>${FL[cc]} ${D.meta.countries[cc]?.label}</td><td style="text-align:right">${fmt(v)}</td>
+      <td style="text-align:right">${fmt(yv)}</td>
+      <td style="text-align:right;color:${yy>30?'var(--rd)':'var(--gn)'};font-weight:600">${yv?pct(yy):'NEW'}</td>
+      <td style="text-align:right">${(v/ld.total*100).toFixed(1)}%</td>
+      <td style="color:var(--am);font-size:.68rem">${notes[cc]||''}</td></tr>`}
+  t.innerHTML=h+'</tbody>';
+}
+
+// ═══════════════════════════════════════
+//  Shared chart helpers
+// ═══════════════════════════════════════
+function mkBar(id,months,fn){
+  new Chart(document.getElementById(id),{type:'bar',data:{labels:months.map(ml),
+    datasets:[{data:months.map(fn),backgroundColor:months.map(m=>{
+      const y=m.split('-')[0];return y==='2023'?'rgba(59,130,246,.3)':y==='2024'?'rgba(59,130,246,.5)':y==='2025'?'rgba(59,130,246,.75)':'rgba(59,130,246,.9)'}),borderRadius:2}]},
+    options:{responsive:true,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`$${c.raw.toFixed(0)}M`}}},
+    scales:{y:{ticks:{callback:v=>`$${v}M`},grid:{color:'rgba(30,41,59,.3)'}},x:{ticks:{maxRotation:45,font:{size:9}},grid:{display:false}}}}});
+}
+
+function mkStacked(id,months,ld,md){
+  const ccs=Object.entries(ld.countries).filter(([,v])=>v.val>0).sort((a,b)=>b[1].val-a[1].val).map(([k])=>k).slice(0,10);
+  new Chart(document.getElementById(id),{type:'bar',data:{labels:months.map(ml),
+    datasets:ccs.map(cc=>({label:`${FL[cc]||''} ${D.meta.countries[cc]?.label||cc}`,
+      data:months.map(m=>{const d=md[m];return d?.total?((d.countries[cc]?.val||0)/d.total*100):0}),
+      backgroundColor:CC[cc]||'#475569'}))},
+    options:{responsive:true,plugins:{legend:{position:'bottom',labels:{font:{size:9}}},tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.raw.toFixed(1)}%`}}},
+    scales:{x:{stacked:true,ticks:{maxRotation:45,font:{size:9}},grid:{display:false}},y:{stacked:true,max:100,ticks:{callback:v=>`${v}%`},grid:{color:'rgba(30,41,59,.3)'}}}}});
+}
+
+function mkLines(id,months,md,ld){
+  const top=Object.entries(ld.countries).filter(([k])=>k!=='OTHER').sort((a,b)=>b[1].val-a[1].val).slice(0,6).map(([k])=>k);
+  new Chart(document.getElementById(id),{type:'line',data:{labels:months.map(ml),
+    datasets:top.map(cc=>({label:`${FL[cc]} ${D.meta.countries[cc]?.label||cc}`,
+      data:months.map(m=>(md[m]?.countries[cc]?.val||0)/1e6),borderColor:CC[cc],
+      backgroundColor:'transparent',tension:.3,pointRadius:0,borderWidth:2}))},
+    options:{responsive:true,plugins:{legend:{position:'bottom',labels:{font:{size:9}}},tooltip:{callbacks:{label:c=>`${c.dataset.label}: $${c.raw.toFixed(1)}M`}}},
+    scales:{y:{ticks:{callback:v=>`$${v}M`},grid:{color:'rgba(30,41,59,.3)'}},x:{ticks:{maxRotation:45,font:{size:9}},grid:{display:false}}}}});
+}
+
+function mkPie(id,ld){
+  const pie=Object.entries(ld.countries).filter(([,v])=>v.val>0).sort((a,b)=>b[1].val-a[1].val).slice(0,8);
+  new Chart(document.getElementById(id),{type:'doughnut',data:{
+    labels:pie.map(([k])=>`${FL[k]||''} ${D.meta.countries[k]?.label||k}`),
+    datasets:[{data:pie.map(([,v])=>v.val/1e6),backgroundColor:pie.map(([k])=>CC[k]||'#475569'),borderColor:'var(--cd)',borderWidth:2}]},
+    options:{responsive:true,plugins:{legend:{position:'right',labels:{font:{size:9},padding:5}}}}});
+}
+
+function mkCodeCmp(id,months,codes){
+  new Chart(document.getElementById(id),{type:'line',data:{labels:months.map(ml),
+    datasets:codes.map((c,i)=>({label:D.meta.hsCodes[c].label,
+      data:months.map(m=>(D.monthly[c]?.[m]?.total||0)/1e6),borderColor:HC[i%HC.length],
+      backgroundColor:'transparent',tension:.3,pointRadius:0,borderWidth:2}))},
+    options:{responsive:true,plugins:{legend:{position:'bottom',labels:{font:{size:9}}},tooltip:{callbacks:{label:c=>`${c.dataset.label}: $${c.raw.toFixed(1)}M`}}},
+    scales:{y:{ticks:{callback:v=>`$${v}M`},grid:{color:'rgba(30,41,59,.3)'}},x:{ticks:{maxRotation:45,font:{size:9}},grid:{display:false}}}}});
+}
+
+function mkTable(id,ld,pd,yd){
+  const tbl=document.getElementById(id);
+  const all=Object.entries(ld.countries).filter(([k])=>k!=='OTHER').sort((a,b)=>b[1].val-a[1].val);
+  let h='<thead><tr><th>국가</th><th style="text-align:right">수입액</th><th style="text-align:right">점유율</th><th style="text-align:right">MoM</th><th style="text-align:right">YoY</th><th>그룹</th></tr></thead><tbody>';
+  for(const[cc,info]of all){
+    const sh=(info.val/ld.total*100).toFixed(1);
+    const pv=pd?.countries[cc]?.val||0,yv=yd?.countries[cc]?.val||0;
+    const mm=pv?((info.val-pv)/pv*100):0,yy=yv?((info.val-yv)/yv*100):0;
+    const g=D.meta.countries[cc]?.group||'';const ic=g==='circumvention';
+    h+=`<tr${ic&&yy>50?' class="ar"':''}>
+      <td>${FL[cc]||''} ${D.meta.countries[cc]?.label||cc}</td><td style="text-align:right">${fmt(info.val)}</td>
+      <td style="text-align:right">${sh}%</td>
+      <td style="text-align:right;color:${mm>=0?'var(--gn)':'var(--rd)'}">${pct(mm)}</td>
+      <td style="text-align:right;color:${yy>=0?'var(--gn)':'var(--rd)'}">${pct(yy)}</td>
+      <td style="color:${ic?'var(--am)':'var(--tm)'}">${ic?'⚠️ 감시':'주요국'}</td></tr>`}
+  tbl.innerHTML=h+'</tbody>';
+}
+
+init();
+</script>
+</body>
+</html>

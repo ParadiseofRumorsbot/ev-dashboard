@@ -1,0 +1,42 @@
+name: 📊 Census Import Data Update
+
+on:
+  schedule:
+    # 매주 월요일 00:00 UTC (KST 09:00)
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+    # 수동 실행 가능
+
+jobs:
+  update-census-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch Census import data
+        run: node scripts/fetch-census.js
+        env:
+          CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet data/census-import.json && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "census-bot"
+          git config user.email "census-bot@users.noreply.github.com"
+          git add data/census-import.json
+          git commit -m "📊 Census import data updated $(date +%Y-%m-%d)"
+          git push
