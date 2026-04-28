@@ -98,7 +98,7 @@ async function fetchRetry(url, retries = 3) {
 }
 
 async function fetchMonth(hs, info, time) {
-  const url = `${BASE}?get=I_COMMODITY,CTY_NAME,GEN_VAL_MO,GEN_QY1_MO`
+  const url = `${BASE}?get=I_COMMODITY,CTY_CODE,CTY_NAME,GEN_VAL_MO,GEN_QY1_MO`
     + `&I_COMMODITY=${hs}&time=${time}&COMM_LVL=${info.level}&SUMMARY_LVL=DET&key=${API_KEY}`;
   try {
     const d = await fetchRetry(url);
