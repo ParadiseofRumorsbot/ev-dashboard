@@ -3,201 +3,521 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tesla Robotaxi & FSD Tracking</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<title>미국 2차전지 수입 트래커</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
+:root{--bg:#0a0e17;--cd:#111827;--cd2:#1a2332;--bd:#1e293b;--tx:#e2e8f0;--td:#94a3b8;--tm:#64748b;
+--ac:#3b82f6;--ag:rgba(59,130,246,.15);--gn:#10b981;--rd:#ef4444;--am:#f59e0b;--cy:#22d3ee;--pk:#f472b6;--or:#fb923c;--pp:#a78bfa}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Noto Sans KR',sans-serif;background:#0a0f1a;color:#e0e6f0;padding:24px;max-width:1200px;margin:0 auto}
-h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(135deg,#a78bfa,#556dff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.subtitle{font-size:13px;color:#6b7a99;margin-bottom:32px}
-.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:36px}
-.metric{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:20px}
-.metric .label{font-size:12px;color:#6b7a99;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
-.metric .value{font-size:26px;font-weight:700;color:#f0f4ff}
-.metric .delta{font-size:13px;margin-top:4px}
-.up{color:#4ecdc4}.down{color:#ff6b6b}.neutral{color:#a78bfa}
-.chart-section{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:24px;margin-bottom:24px}
-.chart-section h2{font-size:16px;font-weight:500;color:#94a3c0;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #1e293b}
-.chart-wrap{position:relative;height:300px}
-.chart-wrap.sm{height:240px}
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.legend{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px;font-size:12px;color:#6b7a99}
-.legend span{display:flex;align-items:center;gap:5px}
-.legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
-.timeline{margin-top:24px}
-.timeline .event{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #1e293b;font-size:13px}
-.timeline .date{color:#a78bfa;min-width:90px;font-weight:500}
-.timeline .desc{color:#94a3c0}
-.updated{text-align:center;font-size:11px;color:#3a4a6b;margin-top:24px;padding-top:16px;border-top:1px solid #1e293b}
-@media(max-width:768px){.metrics{grid-template-columns:repeat(2,1fr)}.grid-2{grid-template-columns:1fr}}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--tx);line-height:1.6}
+.ct{max-width:1320px;margin:0 auto;padding:0 20px}
+header{padding:28px 0 14px;border-bottom:1px solid var(--bd);margin-bottom:18px}
+header h1{font-size:1.45rem;font-weight:900;background:linear-gradient(135deg,var(--ac),var(--cy));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{font-size:.76rem;color:var(--td);margin-top:3px}
+.nv{margin-top:8px;display:flex;gap:10px;font-size:.73rem}
+.nv a{color:var(--tm);text-decoration:none;padding:3px 8px;border-radius:4px;transition:.2s}
+.nv a:hover,.nv a.on{color:var(--ac);background:var(--ag)}
+/* THIS WEEK Banner */
+.wk{background:linear-gradient(135deg,rgba(59,130,246,.07),rgba(34,211,238,.04));border:1px solid rgba(59,130,246,.12);border-radius:9px;padding:14px 18px;margin-bottom:16px;font-size:.78rem;line-height:1.8}
+.wk .tg{font-size:.65rem;font-weight:700;color:var(--cy);letter-spacing:1px}.wk .dt{color:var(--tm);font-size:.68rem}
+.wk b{color:var(--tx)}.wk .up{color:var(--gn)}.wk .dn{color:var(--rd)}.wk .warn{color:var(--am)}
+/* Tabs */
+.tabs{display:flex;gap:2px;margin-bottom:16px;border-bottom:1px solid var(--bd);overflow-x:auto}
+.tabs button{background:none;border:none;color:var(--tm);font-family:inherit;font-size:.82rem;font-weight:600;padding:9px 15px;cursor:pointer;border-bottom:2px solid transparent;transition:.2s;white-space:nowrap}
+.tabs button:hover{color:var(--tx)}.tabs button.on{color:var(--ac);border-bottom-color:var(--ac)}
+/* KPI Cards */
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-bottom:18px}
+.kc{background:var(--cd);border:1px solid var(--bd);border-radius:8px;padding:13px 12px;transition:.2s;cursor:pointer;user-select:none}
+.kc:hover{border-color:var(--ac);background:var(--cd2)}
+.kc.sel{border-color:var(--ac);box-shadow:0 0 12px rgba(59,130,246,.2);background:var(--cd2)}
+.kl{font-size:.66rem;color:var(--tm);font-weight:500;text-transform:uppercase;letter-spacing:.5px}
+.kv{font-family:'JetBrains Mono',monospace;font-size:1.3rem;font-weight:600;margin:4px 0 2px}
+.kch{font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:600}
+.kch.u{color:var(--gn)}.kch.d{color:var(--rd)}
+.ks{font-size:.66rem;color:var(--tm)}
+/* Charts */
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+.cb{background:var(--cd);border:1px solid var(--bd);border-radius:8px;padding:14px;position:relative}
+.cb.f{grid-column:1/-1}
+.cb h3{font-size:.8rem;font-weight:600;margin-bottom:10px;color:var(--td);display:flex;align-items:center;justify-content:space-between}
+.cb h3 .dl{cursor:pointer;font-size:.7rem;color:var(--tm);padding:2px 6px;border-radius:3px;transition:.2s}
+.cb h3 .dl:hover{color:var(--ac);background:var(--ag)}
+/* Table */
+table.dt{width:100%;border-collapse:collapse;font-size:.72rem}
+.dt th{text-align:left;padding:6px 8px;border-bottom:1px solid var(--bd);color:var(--tm);font-weight:500;font-size:.66rem;text-transform:uppercase;letter-spacing:.4px}
+.dt td{padding:6px 8px;border-bottom:1px solid rgba(30,41,59,.4);font-family:'JetBrains Mono',monospace;font-size:.7rem}
+.dt tr:hover td{background:var(--cd2)}.ar td{background:rgba(239,68,68,.05)}
+/* Context Menu */
+.ctx{position:fixed;background:var(--cd);border:1px solid var(--bd);border-radius:6px;padding:4px 0;z-index:9999;display:none;box-shadow:0 4px 20px rgba(0,0,0,.5);min-width:180px}
+.ctx div{padding:7px 14px;font-size:.75rem;cursor:pointer;display:flex;align-items:center;gap:6px}
+.ctx div:hover{background:var(--cd2);color:var(--ac)}
+footer{border-top:1px solid var(--bd);padding:16px 0;text-align:center;font-size:.68rem;color:var(--tm);margin-top:30px}
+.ld{text-align:center;padding:50px;color:var(--tm)}
+@media(max-width:768px){.cg{grid-template-columns:1fr}.kpi{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
-<h1>Tesla Robotaxi & FSD 트래킹</h1>
-<p class="subtitle">robotaxitracker.com · fsdmiles.com · tesla.com/fsd/safety · TeslaTracker</p>
-<nav style="display:flex;gap:10px;margin-bottom:20px;font-size:12px"><a href="index.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">EV 판매</a><a href="robotaxi.html" style="color:#a78bfa;text-decoration:none;padding:4px 10px;border-radius:6px;background:#1e293b">FSD·로보택시</a><a href="us-import.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">US 수입</a><a href="Battery_bom_routing.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">ESS BOM</a><a href="2차전지_컨콜정리.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">컨콜 정리</a></nav>
-
-<div style="background:linear-gradient(135deg,#111827,#0a0f1a);border-left:4px solid #a78bfa;border-radius:12px;padding:20px 24px;margin-bottom:24px;font-size:13px;line-height:1.7">
-<div style="font-size:12px;color:#a78bfa;font-weight:600;letter-spacing:1px;margin-bottom:10px">⚡ THIS WEEK · 2026.05.04</div>
-<div style="color:#e0e6f0">
-🚗 <strong style="color:#4ecdc4">리비안 조지아 30만대 확대 + DOE $45억</strong> · 기존 20만대 → 30만대 (+50%) · R2 수요 반영 · 2028H2 생산 목표<br>
-🤝 <strong style="color:#ffd93d">리비안-우버 로보택시 파트너십</strong> · 조지아 공장에서 2028년부터 <span style="color:#4ecdc4">최대 5만대</span> 로보택시 생산<br>
-⚡ <strong style="color:#ff6b6b">Tesla 에너지 저장</strong> · 2025년 46.7GWh 배치 · Q4 14.2GWh 사상 최대 → Q1 2026 <span style="color:#ff6b6b">8.8GWh</span><br>
-🇪🇺 <strong style="color:#556dff">US-EU 관세 25% 재부과 (5/4~)</strong> · 기존 Turnberry 15% → 25%로 인상 · EU 무역 합의 미준수 사유<br>
-🏗️ <strong style="color:#a78bfa">DC 인프라 $59M/MW</strong> · SemiAnalysis GB300 기준 · GPU 51% + 인프라 32% · 노동이 새로운 병목</div>
+<div class="ct">
+<header>
+  <h1>🔋 미국 2차전지 수입 트래커</h1>
+  <div class="sub">U.S. Census Bureau · 셀 · 소재 · 원료 · 차량 · 주간 자동 업데이트</div>
+  <nav class="nv"><a href="index.html">EV 판매</a><a href="robotaxi.html">FSD·로보택시</a><a href="us-import.html" class="on">US 수입</a><a href="Battery_bom_routing.html">ESS BOM</a><a href="2차전지_컨콜정리.html">컨콜 정리</a></nav>
+</header>
+<div class="tabs" id="tabs">
+  <button class="on" data-tab="cell">⚡ 셀·완제품</button>
+  <button data-tab="material">🧪 소재</button>
+  <button data-tab="raw">⛏️ 원료</button>
+  <button data-tab="vehicle">🚗 차량</button>
+  <button data-tab="alert">⚠️ 우회감시</button>
+</div>
+<div id="app"><div class="ld">데이터 로딩 중...</div></div>
+<footer id="ft"></footer>
+</div>
+<!-- Context Menu -->
+<div class="ctx" id="ctxMenu">
+  <div onclick="dlExcel('current')">📥 현재 차트 RAW DATA (.xlsx)</div>
+  <div onclick="dlExcel('all')">📦 전체 데이터 다운로드 (.xlsx)</div>
+  <div onclick="dlImg()">🖼️ 차트 이미지 저장 (.png)</div>
 </div>
 
-<div class="metrics">
-<div class="metric">
-<div class="label">FSD 누적 마일</div>
-<div class="value">~9.5B</div>
-<div class="delta neutral">10B 목표: 5월 중순</div>
-</div>
-<div class="metric">
-<div class="label">일일 축적</div>
-<div class="value">~20M</div>
-<div class="delta neutral">마일/일 (166.6/초)</div>
-</div>
-<div class="metric">
-<div class="label">Austin 무감독</div>
-<div class="value">12대</div>
-<div class="delta up">▲ 4/16 신고치 (총 46대)</div>
-</div>
-<div class="metric">
-<div class="label">Cybercab 생산</div>
-<div class="value">60대</div>
-<div class="delta neutral">Giga Texas 양산 시작</div>
-</div>
-</div>
-
-<div class="chart-section">
-<h2>FSD 누적 주행거리 추이 (Billion miles)</h2>
-<div class="legend">
-<span><i style="background:#a78bfa"></i>누적 마일 (B)</span>
-<span><i style="background:#4ecdc4"></i>연간 마일 (B)</span>
-</div>
-<div class="chart-wrap"><canvas id="c1"></canvas></div>
-</div>
-
-<div class="grid-2">
-<div class="chart-section">
-<h2>FSD 연간 축적 속도 (Billion miles)</h2>
-<div class="chart-wrap sm"><canvas id="c2"></canvas></div>
-</div>
-<div class="chart-section">
-<h2>FSD 안전 비교 (마일/주요충돌)</h2>
-<div class="chart-wrap sm"><canvas id="c3"></canvas></div>
-</div>
-</div>
-
-<div class="grid-2">
-<div class="chart-section">
-<h2>Austin 로보택시 플릿 추이</h2>
-<div class="legend">
-<span><i style="background:#556dff"></i>총 차량</span>
-<span><i style="background:#ff6b6b"></i>무감독 차량</span>
-</div>
-<div class="chart-wrap sm"><canvas id="c4"></canvas></div>
-</div>
-<div class="chart-section">
-<h2>Cybercab 누적 생산</h2>
-<div class="chart-wrap sm"><canvas id="c5"></canvas></div>
-</div>
-</div>
-
-<div class="chart-section">
-<h2>🏙️ 도시별 Day 1 Opening Fleet 비교</h2>
-<p class="subtitle" style="margin:-8px 0 16px;">Austin에서 playbook 검증 후 후속 도시는 Supervised ramp phase 생략 · Day 1부터 Unsupervised 오픈</p>
-<div class="grid-2">
-<div>
-<h3 style="font-size:13px;color:#6b7a99;margin-bottom:12px;font-weight:400">Day 1 Active Fleet (대)</h3>
-<div class="chart-wrap sm"><canvas id="c6"></canvas></div>
-</div>
-<div>
-<h3 style="font-size:13px;color:#6b7a99;margin-bottom:12px;font-weight:400">도시별 현황 요약</h3>
-<div style="display:flex;flex-direction:column;gap:10px;font-size:13px">
-<div style="background:#0a0f1a;padding:12px;border-radius:8px;border-left:3px solid #4ecdc4">
-<div style="display:flex;justify-content:space-between;margin-bottom:4px"><strong style="color:#f0f4ff">Austin, TX</strong><span style="color:#4ecdc4;font-size:11px">MATURE</span></div>
-<div style="color:#94a3c0;font-size:12px">Day 1 (25.6.22): 13대 → 현재 46대 · Unsupervised 12대 · Geofence 245 sq mi</div>
-</div>
-<div style="background:#0a0f1a;padding:12px;border-radius:8px;border-left:3px solid #ffd93d">
-<div style="display:flex;justify-content:space-between;margin-bottom:4px"><strong style="color:#f0f4ff">Dallas, TX</strong><span style="color:#ffd93d;font-size:11px">LAUNCH</span></div>
-<div style="color:#94a3c0;font-size:12px">Day 1 (26.4.18): 1대 Unsupervised · Supervised 단계 생략</div>
-</div>
-<div style="background:#0a0f1a;padding:12px;border-radius:8px;border-left:3px solid #ff6b6b">
-<div style="display:flex;justify-content:space-between;margin-bottom:4px"><strong style="color:#f0f4ff">Houston, TX 🔥</strong><span style="color:#ff6b6b;font-size:11px">NEW</span></div>
-<div style="color:#94a3c0;font-size:12px">4/19 home base 30+대 pre-positioned · Austin Day 1 대비 2.3x</div>
-</div>
-<div style="background:#0a0f1a;padding:12px;border-radius:8px;border-left:3px solid #6b7a99;opacity:.7">
-<div style="display:flex;justify-content:space-between;margin-bottom:4px"><strong style="color:#f0f4ff">Bay Area, CA</strong><span style="color:#6b7a99;font-size:11px">REF</span></div>
-<div style="color:#94a3c0;font-size:12px">~130대 Supervised · Driverless 퍼밋 미취득</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class="chart-section">
-<h2>도시 확장 타임라인</h2>
-<div class="timeline">
-<div class="event"><div class="date">25.06</div><div class="desc">Austin 런칭 · Day 1 Active 13대 (Safety Monitor)</div></div>
-<div class="event"><div class="date">25.12</div><div class="desc">무감독 테스트 시작 · Bay Area 1,655대 CPUC 등록</div></div>
-<div class="event"><div class="date">26.01</div><div class="desc">무감독 공개 라이드 시작 · 플릿 ~200대 (Austin+SF)</div></div>
-<div class="event"><div class="date">26.02</div><div class="desc">Cybercab 첫 라인오프 · FSD 8B 마일 돌파 · FSD 구독 전환 ($99/월)</div></div>
-<div class="event"><div class="date">26.03</div><div class="desc">Austin 지오펜스 245 sq mi 확대 · FSD 9B 돌파 · Austin 요금 기본료 $1→$3.25</div></div>
-<div class="event"><div class="date">26.04.07</div><div class="desc">FSD v14.3 롤아웃 (MLIR 재작성 · 반응 20% 개선)</div></div>
-<div class="event"><div class="date">26.04.10</div><div class="desc">네덜란드 RDW Tesla FSD 첫 유럽 승인</div></div>
-<div class="event"><div class="date">26.04.13</div><div class="desc">Giga Texas Cybercab 50+ 유닛 스팟 (크래시 테스트 포함)</div></div>
-<div class="event"><div class="date">26.04.14</div><div class="desc">FSD v14.3.1 · Safety Score v3.0 출시 (FSD 마일 = 100점 자동)</div></div>
-<div class="event"><div class="date">26.04.16</div><div class="desc">Austin Unsupervised 12대 신고치 (RobotaxiTracker)</div></div>
-<div class="event"><div class="date">26.04.18</div><div class="desc">Dallas · Houston 공식 론칭 · Supervised 단계 생략 Day 1부터 Unsupervised</div></div>
-<div class="event"><div class="date">26.04.19</div><div class="desc">🔥 Houston home base 30+ Robotaxi pre-positioned 확인 (TeslaTracker)</div></div>
-<div class="event"><div class="date">26.04.22</div><div class="desc">⚡ Tesla Q1 2026 실적 발표 · 자본지출 확대 코멘트로 주가 -6.1% 하락</div></div>
-<div class="event"><div class="date">26.04.24</div><div class="desc">Tesla Dallas · Houston 정식 로보택시 서비스 운영 메시지 (하나증권)</div></div>
-<div class="event"><div class="date">26.04.25</div><div class="desc">Tesla 독일 기가팩토리 1,000명 충원 + 배터리 셀 생산 인력 별도 채용 시작</div></div>
-<div class="event"><div class="date">26.05.01</div><div class="desc">리비안 조지아 공장 30만대 확대(+50%) + DOE $45억 대출 · R2 판매용 생산 시작</div></div>
-<div class="event"><div class="date">26.05.01</div><div class="desc">🤝 리비안-우버 로보택시 파트너십 · 2028년부터 조지아에서 최대 5만대 생산</div></div>
-<div class="event"><div class="date">26.05.01</div><div class="desc">US-EU 자동차 관세 25% 재부과 예고 (기존 Turnberry 15% → 25%)</div></div>
-<div class="event"><div class="date">26.1H</div><div class="desc">계획: Las Vegas · Miami · Orlando · Phoenix · Tampa</div></div>
-</div>
-</div>
-
-<p class="updated">마지막 업데이트: 2026.05.04</p>
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 <script>
-const gridColor='rgba(255,255,255,0.06)';
-const tickColor='#6b7a99';
-const defOpt={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{backgroundColor:'#1e293b',titleColor:'#e0e6f0',bodyColor:'#94a3c0',borderColor:'#2d3a52',borderWidth:1,cornerRadius:8,padding:12}},scales:{x:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}},y:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:11}}}}};
+// ── Constants ──
+const FL={KR:'🇰🇷',CN:'🇨🇳',JP:'🇯🇵',DE:'🇩🇪',CA:'🇨🇦',AU:'🇦🇺',CL:'🇨🇱',AR:'🇦🇷',GB:'🇬🇧',SE:'🇸🇪',MA:'🇲🇦',HU:'🇭🇺',TH:'🇹🇭',ID:'🇮🇩',VN:'🇻🇳',MX:'🇲🇽',PL:'🇵🇱',MY:'🇲🇾',IN:'🇮🇳',OTHER:'🌐'};
+const CX={KR:'#3b82f6',CN:'#ef4444',JP:'#f59e0b',DE:'#a78bfa',CA:'#10b981',AU:'#06b6d4',CL:'#8b5cf6',AR:'#d946ef',GB:'#6366f1',SE:'#14b8a6',
+MA:'#f472b6',HU:'#22d3ee',TH:'#fb923c',ID:'#818cf8',VN:'#34d399',MX:'#fbbf24',PL:'#c084fc',MY:'#2dd4bf',IN:'#f87171',OTHER:'#475569'};
+const HC=['#3b82f6','#ef4444','#f59e0b','#10b981','#a78bfa','#22d3ee','#fb923c','#f472b6','#818cf8','#34d399'];
+const fmt=v=>v>=1e9?`$${(v/1e9).toFixed(1)}B`:v>=1e6?`$${(v/1e6).toFixed(0)}M`:`$${(v/1e3).toFixed(0)}K`;
+const pct=v=>v>0?`+${v.toFixed(1)}%`:`${v.toFixed(1)}%`;
+const ml=t=>{const[y,m]=t.split('-');return`${y.slice(2)}.${m}`};
+if(typeof Chart!=='undefined'){Chart.defaults.color='#94a3b8';Chart.defaults.borderColor='rgba(30,41,59,.5)';Chart.defaults.font.family="'Noto Sans KR',sans-serif";Chart.defaults.font.size=11;Chart.defaults.plugins.legend.labels.boxWidth=10;Chart.defaults.plugins.legend.labels.padding=8}
 
-new Chart(document.getElementById('c1'),{type:'line',data:{labels:['2021','2022','2023','2024','2025','26.02','26.03','26.04'],datasets:[
-{label:'누적',data:[0.006,0.086,0.756,3.0,7.25,8.0,8.5,9.5],borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,0.1)',fill:true,borderWidth:2.5,tension:.3,pointRadius:4}
-]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'Billion miles',color:tickColor}}}}});
+let D,SEL=null,CUR_TAB='cell'; // SEL = {type:'hs'|'country',code:'...'} or null
 
-new Chart(document.getElementById('c2'),{type:'bar',data:{labels:['2021','2022','2023','2024','2025','2026E'],datasets:[{
-data:[0.006,0.08,0.67,2.25,4.25,7.3],
-backgroundColor:['#2d3a52','#2d3a52','#3b4a6b','#556dff','#a78bfa','#4ecdc4'],borderRadius:4
-}]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'B miles',color:tickColor}}}}});
+// ── Context Menu ──
+let ctxTarget=null;
+document.addEventListener('contextmenu',e=>{
+  const card=e.target.closest('.cb,.kc');
+  if(!card)return;
+  e.preventDefault();
+  ctxTarget=card;
+  const m=document.getElementById('ctxMenu');
+  m.style.display='block';m.style.left=e.pageX+'px';m.style.top=e.pageY+'px';
+});
+document.addEventListener('click',()=>{document.getElementById('ctxMenu').style.display='none'});
 
-new Chart(document.getElementById('c3'),{type:'bar',data:{labels:['FSD\n(Supervised)','Tesla 수동\n(Active Safety)','미국 평균','Tesla 수동\n(No Safety)'],datasets:[{
-data:[5300676,2175763,485133,397274],
-backgroundColor:['#4ecdc4','#556dff','#ffd93d','#ff6b6b'],borderRadius:6
-}]},options:{...defOpt,indexAxis:'y',scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,callback:v=>(v/1000000).toFixed(1)+'M'}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:10}}}}}});
+function dlExcel(scope){
+  if(typeof XLSX==='undefined'){alert('XLSX 라이브러리 로드 실패');return}
+  const wb=XLSX.utils.book_new();
+  if(scope==='all'){
+    // Full data dump for current tab
+    const codes=D.meta.tabs[CUR_TAB]?.codes||[];
+    codes.forEach(hs=>{
+      const md=D.monthly[hs]||{};
+      const months=Object.keys(md).sort();
+      const rows=months.map(m=>{
+        const d=md[m];if(!d)return{월:m};
+        const row={월:m,총수입:d.total};
+        Object.entries(d.countries).forEach(([cc,v])=>{row[`${FL[cc]||''} ${D.meta.countries[cc]?.label||cc}`]=v.val});
+        return row;
+      });
+      const ws=XLSX.utils.json_to_sheet(rows);
+      const name=(D.meta.hsCodes[hs]?.label||hs).slice(0,31);
+      XLSX.utils.book_append_sheet(wb,ws,name);
+    });
+  } else {
+    // Current selection
+    const codes=D.meta.tabs[CUR_TAB]?.codes||[];
+    const primary=codes[0];
+    const hs=SEL?.type==='hs'?SEL.code:primary;
+    const md=D.monthly[hs]||{};
+    const months=Object.keys(md).sort();
+    const rows=months.map(m=>{
+      const d=md[m];if(!d)return{월:m};
+      const row={월:m,총수입:d.total};
+      Object.entries(d.countries).forEach(([cc,v])=>{row[`${FL[cc]||''} ${D.meta.countries[cc]?.label||cc}`]=v.val});
+      return row;
+    });
+    const ws=XLSX.utils.json_to_sheet(rows);
+    XLSX.utils.book_append_sheet(wb,ws,'Data');
+  }
+  const fn=`census_${CUR_TAB}_${D.meta.dataRange.to}.xlsx`;
+  XLSX.writeFile(wb,fn);
+}
 
-new Chart(document.getElementById('c4'),{type:'line',data:{labels:['25.06','25.12','26.01','26.03','26.04.16','26.04.18'],datasets:[
-{label:'총 차량',data:[13,135,200,37,44,46],borderColor:'#556dff',borderWidth:2,tension:.3,pointRadius:4},
-{label:'무감독',data:[0,0,8,4,12,12],borderColor:'#ff6b6b',borderWidth:2,tension:.3,pointRadius:4,borderDash:[5,3]}
-]},options:defOpt});
+function dlImg(){
+  const canvas=document.querySelector('#app canvas');
+  if(!canvas){alert('차트 없음');return}
+  const a=document.createElement('a');a.href=canvas.toDataURL('image/png');
+  a.download=`chart_${CUR_TAB}_${Date.now()}.png`;a.click();
+}
 
-new Chart(document.getElementById('c5'),{type:'bar',data:{labels:['26.02','26.03','26.04'],datasets:[{
-data:[1,25,60],backgroundColor:['#2d3a52','#556dff','#a78bfa'],borderRadius:4
-}]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'누적 대수',color:tickColor}}}}});
+// ── Init ──
+async function init(){
+  if(typeof Chart==='undefined'){document.getElementById('app').innerHTML='<div class="ld" style="color:var(--rd)"><b>Chart.js 로드 실패</b><br>페이지를 새로고침 해보세요.</div>';return}
+  try{const r=await fetch('data/census-import.json');if(!r.ok)throw new Error(r.status);D=await r.json()}
+  catch(e){document.getElementById('app').innerHTML=`<div class="ld" style="color:var(--rd)"><b>데이터 로드 실패</b><br><span style="color:var(--td)">data/census-import.json 필요</span></div>`;return}
+  renderTab('cell');
+  document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');SEL=null;CUR_TAB=b.dataset.tab;renderTab(b.dataset.tab)}));
+  document.getElementById('ft').textContent=`마지막 업데이트: ${D.meta.lastUpdated} · U.S. Census Bureau · 자동 갱신: 매주 월요일`;
+}
 
-// 도시별 Day 1 Fleet Size 비교
-new Chart(document.getElementById('c6'),{type:'bar',data:{labels:['Austin\n(25.6.22)','Dallas\n(26.4.18)','Houston\n(26.4.19)','Bay Area\n(Supervised)'],datasets:[{
-data:[13,1,30,130],
-backgroundColor:['#4ecdc4','#ffd93d','#ff6b6b','#6b7a99'],borderRadius:6
-}]},options:{...defOpt,indexAxis:'y',scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:11}}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}}},plugins:{...defOpt.plugins,tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>{const labels=['Active Day 1','Active Day 1 (crowdsourced)','Pre-positioned at home base','Supervised fleet (driver present)'];return ctx.parsed.x+'대 · '+labels[ctx.dataIndex]}}}}}});
+function destroyCharts(){Object.values(Chart.instances).forEach(c=>c.destroy())}
+
+// ── THIS WEEK Banner ──
+function genBanner(tab){
+  const codes=D.meta.tabs[tab==='alert'?'cell':tab]?.codes||[];
+  const primary=codes[0];if(!primary)return'';
+  const md=D.monthly[primary]||{};
+  const months=Object.keys(md).sort();if(!months.length)return'';
+  const lat=months.at(-1),prev=months.at(-2);
+  const yoyM=months.find(m=>{const[y,mo]=lat.split('-');return m===`${+y-1}-${mo}`});
+  const ld=md[lat],pd=prev?md[prev]:null,yd=yoyM?md[yoyM]:null;
+  const mom=pd?((ld.total-pd.total)/pd.total*100):0;
+  const yoy=yd?((ld.total-yd.total)/yd.total*100):0;
+  const cns=ld.countries.CN?(ld.countries.CN.val/ld.total*100):0;
+  const cnp=yd?.countries.CN?(yd.countries.CN.val/yd.total*100):0;
+  const krs=ld.countries.KR?(ld.countries.KR.val/ld.total*100):0;
+  const krp=yd?.countries.KR?(yd.countries.KR.val/yd.total*100):0;
+
+  let lines=[`<span class="tg">⚡ THIS WEEK</span> <span class="dt">${D.meta.lastUpdated} (데이터: ${lat})</span><br>`];
+  const circ=Object.entries(D.meta.countries).filter(([,v])=>v.group==='circumvention').map(([k])=>k);
+
+  if(tab==='cell'||tab==='alert'){
+    lines.push(`🔋 <b>${D.meta.hsCodes[primary].label}</b> ${fmt(ld.total)} (MoM <span class="${mom>=0?'up':'dn'}">${pct(mom)}</span>, YoY <span class="${yoy>=0?'up':'dn'}">${pct(yoy)}</span>)`);
+    lines.push(`🇨🇳 <b>중국</b> ${cns.toFixed(1)}% <span class="${cns<cnp?'dn':'up'}">(YoY ${pct(cns-cnp)})</span> · 🇰🇷 <b>한국</b> ${krs.toFixed(1)}% <span class="${krs>krp?'up':'dn'}">(YoY ${pct(krs-krp)})</span>`);
+    // Alert detection
+    const alerts=circ.filter(cc=>{const v=ld.countries[cc]?.val||0,yv=yd?.countries[cc]?.val||0;return yv&&((v-yv)/yv*100)>50});
+    if(alerts.length)lines.push(`⚠️ <span class="warn"><b>우회 급증</b> ${alerts.map(cc=>`${FL[cc]}${D.meta.countries[cc]?.label} YoY ${pct(yd.countries[cc]?.val?((ld.countries[cc].val-yd.countries[cc].val)/yd.countries[cc].val*100):0)}`).join(' · ')}</span>`);
+  }
+  if(tab==='material'){
+    // Find biggest MoM mover among material codes
+    let maxMov={code:'',mom:0,label:''};
+    codes.forEach(c=>{const dl=D.monthly[c]?.[lat]?.total,dp=D.monthly[c]?.[prev]?.total;
+      if(dl&&dp){const m=((dl-dp)/dp*100);if(Math.abs(m)>Math.abs(maxMov.mom))maxMov={code:c,mom:m,label:D.meta.hsCodes[c]?.label||c}}});
+    lines.push(`🧪 <b>소재 최대 변동</b>: ${maxMov.label} MoM <span class="${maxMov.mom>=0?'up':'dn'}">${pct(maxMov.mom)}</span>`);
+  }
+  if(tab==='raw'){
+    const li2co3=D.monthly['283691']?.[lat]?.total;
+    const lioh=D.monthly['282520']?.[lat]?.total;
+    if(li2co3)lines.push(`⛏️ <b>탄산리튬</b> ${fmt(li2co3)} · <b>수산화리튬</b> ${fmt(lioh||0)}`);
+  }
+  if(tab==='vehicle'){
+    const bev=D.monthly['870380']?.[lat]?.total||0;
+    const all=['870380','870340','870350','870360','870321','870322','870323','870324'].reduce((s,c)=>s+(D.monthly[c]?.[lat]?.total||0),0);
+    lines.push(`🚗 <b>BEV</b> ${fmt(bev)} · 전체 승용차 대비 <b>${all?(bev/all*100).toFixed(1):'0'}%</b>`);
+  }
+  return`<div class="wk">${lines.join('<br>')}</div>`;
+}
+
+// ── Render generic tab ──
+function renderTab(tab){
+  destroyCharts();CUR_TAB=tab;
+  if(tab==='alert'){renderAlert();return}
+  if(tab==='vehicle'){renderVehicle();return}
+  const app=document.getElementById('app');
+  const codes=D.meta.tabs[tab].codes;
+  const primary=codes[0];
+  const md=D.monthly[primary]||{};
+  const months=Object.keys(md).sort();
+  if(!months.length){app.innerHTML='<div class="ld">데이터 없음</div>';return}
+  const lat=months.at(-1),prev=months.at(-2);
+  const yoyM=months.find(m=>{const[y,mo]=lat.split('-');return m===`${+y-1}-${mo}`});
+  const ld=md[lat],pd=prev?md[prev]:null,yd=yoyM?md[yoyM]:null;
+
+  // Build KPI HTML
+  let kpi=`${genBanner(tab)}<div class="kpi">`;
+  // Primary total
+  const mom=pd?((ld.total-pd.total)/pd.total*100):0;
+  const yoy=yd?((ld.total-yd.total)/yd.total*100):0;
+  kpi+=mkKpiCard(primary,'hs',D.meta.hsCodes[primary].label,fmt(ld.total),mom,`YoY ${pct(yoy)}`);
+
+  // Country cards
+  const cns=ld.countries.CN?(ld.countries.CN.val/ld.total*100):0;
+  const cnp=yd?.countries.CN?(yd.countries.CN.val/yd.total*100):0;
+  kpi+=mkKpiCard('CN','country','🇨🇳 중국',cns.toFixed(1)+'%',cns-cnp,fmt(ld.countries.CN?.val||0),'var(--rd)');
+  const krs=ld.countries.KR?(ld.countries.KR.val/ld.total*100):0;
+  const krp=yd?.countries.KR?(yd.countries.KR.val/yd.total*100):0;
+  kpi+=mkKpiCard('KR','country','🇰🇷 한국',krs.toFixed(1)+'%',krs-krp,fmt(ld.countries.KR?.val||0),'var(--ac)');
+
+  // Sub code cards
+  for(let i=1;i<codes.length;i++){
+    const c=codes[i],dl=D.monthly[c]?.[lat];if(!dl)continue;
+    const dp=D.monthly[c]?.[prev];
+    const mm=dp?((dl.total-dp.total)/dp.total*100):0;
+    kpi+=mkKpiCard(c,'hs',D.meta.hsCodes[c].label,fmt(dl.total),mm,D.meta.hsCodes[c].labelEn);
+  }
+  kpi+='</div>';
+
+  app.innerHTML=kpi+`<div class="cg">
+    <div class="cb f"><h3><span id="c1title">월별 수입 추이 ($M)</span><span class="dl" onclick="dlExcel('current')">📥</span></h3><canvas id="c1"></canvas></div>
+    <div class="cb f"><h3><span id="c2title">국가별 점유율 (Stacked %)</span><span class="dl" onclick="dlExcel('current')">📥</span></h3><canvas id="c2"></canvas></div>
+    <div class="cb"><h3><span>주요국 추이 ($M)</span><span class="dl" onclick="dlImg()">🖼️</span></h3><canvas id="c3"></canvas></div>
+    <div class="cb"><h3><span>최신월 비중</span></h3><canvas id="c4"></canvas></div>
+    <div class="cb f" style="padding:0;overflow-x:auto"><table class="dt" id="tbl"></table></div></div>`;
+
+  bindKpiClicks();
+  updateCharts();
+}
+
+function fmtHS(code){
+  if(!code||code==='ICE_ALL')return'';
+  const c=code.replace(/\D/g,'');
+  if(c.length===6)return`HS ${c.slice(0,4)}.${c.slice(4)}`;
+  if(c.length===8)return`HS ${c.slice(0,4)}.${c.slice(4,6)}.${c.slice(6)}`;
+  if(c.length===10)return`HS ${c.slice(0,4)}.${c.slice(4,6)}.${c.slice(6,8)}.${c.slice(8)}`;
+  return`HS ${c}`;
+}
+
+function mkKpiCard(code,type,label,value,change,sub,color){
+  const cls=SEL&&SEL.code===code?'kc sel':'kc';
+  const vc=color?`style="color:${color}"`:'';
+  const hsTag=type==='hs'&&code!=='ICE_ALL'?`<span style="color:var(--tm);font-size:.62rem;opacity:.7">${fmtHS(code)}</span>`:'';
+  const subText=sub?`${sub}`:'';
+  const divider=subText&&hsTag?' · ':'';
+  return`<div class="${cls}" data-code="${code}" data-type="${type}">
+    <div class="kl">${label}</div><div class="kv" ${vc}>${value}</div>
+    <div class="kch ${change>=0?'u':'d'}">${typeof change==='number'?pct(change):change}</div>
+    <div class="ks">${subText}${divider}${hsTag}</div></div>`;
+}
+
+function bindKpiClicks(){
+  document.querySelectorAll('.kc').forEach(el=>el.addEventListener('click',()=>{
+    const code=el.dataset.code,type=el.dataset.type;
+    if(SEL&&SEL.code===code){SEL=null}else{SEL={type,code}}
+    document.querySelectorAll('.kc').forEach(x=>x.classList.remove('sel'));
+    if(SEL)el.classList.add('sel');
+    destroyCharts();updateCharts();
+  }));
+}
+
+function updateCharts(){
+  const codes=D.meta.tabs[CUR_TAB].codes;
+  const primary=codes[0];
+  const months=Object.keys(D.monthly[primary]||{}).sort();
+
+  // Determine what to show based on SEL
+  let chartHS=primary, chartTitle=D.meta.hsCodes[primary].label+' 월별 수입 추이 ($M)';
+  let countryFilter=null;
+
+  if(SEL){
+    if(SEL.type==='hs'){
+      chartHS=SEL.code;
+      chartTitle=D.meta.hsCodes[SEL.code]?.label+' 월별 수입 추이 ($M)';
+    }else if(SEL.type==='country'){
+      countryFilter=SEL.code;
+      chartTitle=`${FL[SEL.code]} ${D.meta.countries[SEL.code]?.label} — ${D.meta.hsCodes[primary].label} 수입 추이 ($M)`;
+    }
+  }
+
+  const md=D.monthly[chartHS]||{};
+  const lat=months.at(-1);
+  const ld=md[lat];if(!ld)return;
+  document.getElementById('c1title').textContent=chartTitle;
+
+  // C1: Bar chart
+  if(countryFilter){
+    mkBar('c1',months,m=>(md[m]?.countries[countryFilter]?.val||0)/1e6,CX[countryFilter]);
+  }else{
+    mkBar('c1',months,m=>(md[m]?.total||0)/1e6);
+  }
+
+  // C2: Stacked share (always based on chartHS)
+  document.getElementById('c2title').textContent=countryFilter
+    ?`${FL[countryFilter]} ${D.meta.countries[countryFilter]?.label} 점유율 추이 (%)`
+    :(D.meta.hsCodes[chartHS]?.label||'')+' 국가별 점유율 (Stacked %)';
+
+  if(countryFilter){
+    // Single country share line
+    new Chart(document.getElementById('c2'),{type:'line',data:{labels:months.map(ml),
+      datasets:[{label:`${FL[countryFilter]} 점유율`,
+        data:months.map(m=>{const d=md[m];return d?.total?((d.countries[countryFilter]?.val||0)/d.total*100):0}),
+        borderColor:CX[countryFilter],backgroundColor:CX[countryFilter]+'20',fill:true,tension:.3,pointRadius:0,borderWidth:2}]},
+      options:{responsive:true,plugins:{legend:{display:false}},
+      scales:{y:{ticks:{callback:v=>`${v}%`},grid:{color:'rgba(30,41,59,.3)'}},x:{ticks:{maxRotation:45,font:{size:9}},grid:{display:false}}}}});
+  }else{
+    mkStacked('c2',months,ld,md,chartHS);
+  }
+
+  // C3: Lines
+  mkLines('c3',months,md,ld);
+  // C4: Pie
+  mkPie('c4',ld);
+  // Table
+  const prev=months.at(-2);
+  const yoyM=months.find(m=>{const[y,mo]=lat.split('-');return m===`${+y-1}-${mo}`});
+  mkTable('tbl',ld,prev?md[prev]:null,yoyM?md[yoyM]:null);
+}
+
+// ── Vehicle tab ──
+function renderVehicle(){
+  const app=document.getElementById('app');
+  const bevCode='870380',phevCodes=['870340','870350'],hevCode='870360',iceCodes=['870321','870322','870323','870324'];
+  const months=Object.keys(D.monthly[bevCode]||{}).sort();
+  if(!months.length){app.innerHTML='<div class="ld">데이터 없음</div>';return}
+  const lat=months.at(-1),prev=months.at(-2);
+  const yoyM=months.find(m=>{const[y,mo]=lat.split('-');return m===`${+y-1}-${mo}`});
+  const bevL=D.monthly[bevCode]?.[lat]?.total||0;
+  const bevP=D.monthly[bevCode]?.[prev]?.total||0;
+  const phevL=phevCodes.reduce((s,c)=>s+(D.monthly[c]?.[lat]?.total||0),0);
+  const iceL=iceCodes.reduce((s,c)=>s+(D.monthly[c]?.[lat]?.total||0),0);
+  const hevL=D.monthly[hevCode]?.[lat]?.total||0;
+  const allL=bevL+phevL+hevL+iceL;
+  const bevMom=bevP?((bevL-bevP)/bevP*100):0;
+  const bevYoy=(()=>{const y=yoyM?D.monthly[bevCode]?.[yoyM]?.total||0:0;return y?((bevL-y)/y*100):0})();
+  const krBev=D.monthly[bevCode]?.[lat]?.countries.KR?.val||0;
+
+  app.innerHTML=`${genBanner('vehicle')}<div class="kpi">
+    ${mkKpiCard(bevCode,'hs','BEV',fmt(bevL),bevMom,`YoY ${pct(bevYoy)}`,'var(--ac)')}
+    ${mkKpiCard('870340','hs','PHEV',fmt(phevL),0,'')}
+    ${mkKpiCard('870360','hs','HEV',fmt(hevL),0,'')}
+    ${mkKpiCard('ICE_ALL','hs','ICE 합산',fmt(iceL),0,'')}
+    <div class="kc" data-code="SHARE" data-type="special"><div class="kl">BEV 점유율</div><div class="kv" style="color:var(--gn)">${allL?(bevL/allL*100).toFixed(1):'0'}%</div><div class="ks">전체 승용차 대비</div></div>
+    ${mkKpiCard('KR','country','🇰🇷 한국산 BEV',fmt(krBev),0,`${bevL?(krBev/bevL*100).toFixed(1):'0'}%`,'var(--ac)')}
+  </div>
+  <div class="cg">
+    <div class="cb f"><h3><span>파워트레인별 수입 추이 ($M)</span><span class="dl" onclick="dlExcel('all')">📥</span></h3><canvas id="v1"></canvas></div>
+    <div class="cb f"><h3><span>BEV 점유율 추이 (%)</span></h3><canvas id="v2"></canvas></div>
+    <div class="cb"><h3><span>BEV 국가별 추이 ($M)</span></h3><canvas id="v3"></canvas></div>
+    <div class="cb"><h3><span>BEV 국가별 비중</span></h3><canvas id="v4"></canvas></div>
+    <div class="cb f" style="padding:0;overflow-x:auto"><table class="dt" id="vtbl"></table></div>
+  </div>`;
+
+  // V1
+  new Chart(document.getElementById('v1'),{type:'line',data:{labels:months.map(ml),datasets:[
+    {label:'BEV',data:months.map(m=>(D.monthly[bevCode]?.[m]?.total||0)/1e6),borderColor:'#3b82f6',backgroundColor:'rgba(59,130,246,.12)',fill:true,tension:.3,pointRadius:0,borderWidth:2},
+    {label:'PHEV',data:months.map(m=>phevCodes.reduce((s,c)=>s+(D.monthly[c]?.[m]?.total||0),0)/1e6),borderColor:'#10b981',backgroundColor:'rgba(16,185,129,.12)',fill:true,tension:.3,pointRadius:0,borderWidth:2},
+    {label:'HEV',data:months.map(m=>(D.monthly[hevCode]?.[m]?.total||0)/1e6),borderColor:'#f59e0b',backgroundColor:'rgba(245,158,11,.08)',fill:true,tension:.3,pointRadius:0,borderWidth:2},
+    {label:'ICE',data:months.map(m=>iceCodes.reduce((s,c)=>s+(D.monthly[c]?.[m]?.total||0),0)/1e6),borderColor:'#64748b',backgroundColor:'rgba(100,116,139,.08)',fill:true,tension:.3,pointRadius:0,borderWidth:2}
+  ]},options:chartOpt('$M')});
+
+  // V2
+  new Chart(document.getElementById('v2'),{type:'line',data:{labels:months.map(ml),datasets:[{
+    label:'BEV %',data:months.map(m=>{const b=D.monthly[bevCode]?.[m]?.total||0;
+      const a=b+phevCodes.reduce((s,c)=>s+(D.monthly[c]?.[m]?.total||0),0)+(D.monthly[hevCode]?.[m]?.total||0)+iceCodes.reduce((s,c)=>s+(D.monthly[c]?.[m]?.total||0),0);
+      return a?(b/a*100):0}),borderColor:'#3b82f6',backgroundColor:'rgba(59,130,246,.1)',fill:true,tension:.3,pointRadius:0,borderWidth:2}]},
+    options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{ticks:{callback:v=>`${v}%`},grid:{color:'rgba(30,41,59,.3)'}},x:{ticks:{maxRotation:45,font:{size:9}},grid:{display:false}}}}});
+
+  const bevMd=D.monthly[bevCode]||{};const bevLd=bevMd[lat];
+  if(bevLd){mkLines('v3',months,bevMd,bevLd);mkPie('v4',bevLd);
+    const pd2=prev?bevMd[prev]:null,yd2=yoyM?bevMd[yoyM]:null;mkTable('vtbl',bevLd,pd2,yd2)}
+}
+
+// ── Alert tab ──
+function renderAlert(){
+  const app=document.getElementById('app');
+  const hs='850760',md=D.monthly[hs]||{};
+  const months=Object.keys(md).sort();const lat=months.at(-1);
+  const yoyM=months.find(m=>{const[y,mo]=lat.split('-');return m===`${+y-1}-${mo}`});
+  const ld=md[lat],yd=yoyM?md[yoyM]:null;
+  const circ=Object.entries(D.meta.countries).filter(([,v])=>v.group==='circumvention').map(([k])=>k);
+  const cSum=circ.reduce((s,k)=>s+(ld.countries[k]?.val||0),0);
+  const cPct=cSum/ld.total*100;
+  const cPctP=yd?circ.reduce((s,k)=>s+(yd.countries[k]?.val||0),0)/yd.total*100:0;
+
+  let kpi=`${genBanner('alert')}<div class="kpi">
+    <div class="kc"><div class="kl">우회 의심국 합산 (${lat})</div><div class="kv" style="color:var(--am)">${fmt(cSum)}</div>
+    <div class="kch ${cPct>cPctP?'u':'d'}">점유율 ${cPct.toFixed(1)}%</div><div class="ks">전년 ${cPctP.toFixed(1)}%</div></div>`;
+  circ.filter(cc=>{const v=ld.countries[cc]?.val||0,yv=yd?.countries[cc]?.val||0;return yv?(((v-yv)/yv*100)>30):v>1e6}).slice(0,5).forEach(cc=>{
+    const v=ld.countries[cc]?.val||0,yv=yd?.countries[cc]?.val||0;
+    const yy=yv?((v-yv)/yv*100):999;
+    kpi+=`<div class="kc" style="border-color:rgba(239,68,68,.3)"><div class="kl">${FL[cc]} ${D.meta.countries[cc]?.label} ⚠️</div>
+      <div class="kv" style="color:var(--rd)">${pct(yy)}</div><div class="kch u">${fmt(v)}</div></div>`;
+  });
+  kpi+='</div>';
+
+  app.innerHTML=kpi+`<div class="cg">
+    <div class="cb f"><h3><span>우회 감시국 수입 추이 ($M)</span><span class="dl" onclick="dlExcel('all')">📥</span></h3><canvas id="a1"></canvas></div>
+    <div class="cb f"><h3><span>우회 감시국 점유율 합산 (%)</span></h3><canvas id="a2"></canvas></div>
+    <div class="cb f" style="padding:0;overflow-x:auto"><table class="dt" id="atbl"></table></div></div>`;
+
+  new Chart(document.getElementById('a1'),{type:'line',data:{labels:months.map(ml),
+    datasets:circ.map(cc=>({label:`${FL[cc]} ${D.meta.countries[cc]?.label||cc}`,
+      data:months.map(m=>(md[m]?.countries[cc]?.val||0)/1e6),borderColor:CX[cc],
+      backgroundColor:'transparent',tension:.3,pointRadius:0,borderWidth:2}))},options:chartOpt('$M')});
+
+  new Chart(document.getElementById('a2'),{type:'line',data:{labels:months.map(ml),
+    datasets:[{label:'합산 %',data:months.map(m=>{const d=md[m];if(!d?.total)return 0;
+      return circ.reduce((s,cc)=>s+(d.countries[cc]?.val||0),0)/d.total*100}),
+      borderColor:'var(--am)',backgroundColor:'rgba(245,158,11,.1)',fill:true,tension:.3,pointRadius:0,borderWidth:2}]},
+    options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{ticks:{callback:v=>`${v}%`},grid:{color:'rgba(30,41,59,.3)'}},x:{ticks:{maxRotation:45,font:{size:9}},grid:{display:false}}}}});
+
+  const notes={MA:'CATL 모로코',HU:'CATL·Eve 헝가리',TH:'BYD·GWM 태국',ID:'중국 니켈→배터리',VN:'우회 전례 다수',MX:'USMCA 우회',PL:'LG·SK 폴란드',MY:'중국 소재 중간가공',IN:'신규 감시'};
+  const t=document.getElementById('atbl');
+  let h='<thead><tr><th>국가</th><th style="text-align:right">당월</th><th style="text-align:right">전년동월</th><th style="text-align:right">YoY</th><th style="text-align:right">점유율</th><th>시사점</th></tr></thead><tbody>';
+  circ.sort((a,b)=>(ld.countries[b]?.val||0)-(ld.countries[a]?.val||0)).forEach(cc=>{
+    const v=ld.countries[cc]?.val||0,yv=yd?.countries[cc]?.val||0;
+    const yy=yv?((v-yv)/yv*100):(v>0?999:0);
+    h+=`<tr${yy>50?' class="ar"':''}>
+      <td>${FL[cc]} ${D.meta.countries[cc]?.label}</td><td style="text-align:right">${fmt(v)}</td>
+      <td style="text-align:right">${fmt(yv)}</td>
+      <td style="text-align:right;color:${yy>30?'var(--rd)':'var(--gn)'};font-weight:600">${yv?pct(yy):'NEW'}</td>
+      <td style="text-align:right">${(v/ld.total*100).toFixed(1)}%</td>
+      <td style="color:var(--am);font-size:.68rem">${notes[cc]||''}</td></tr>`});
+  t.innerHTML=h+'</tbody>';
+}
+
+// ── Chart Helpers ──
+function chartOpt(unit){return{responsive:true,plugins:{legend:{position:'bottom',labels:{font:{size:9}}},tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${unit==='%'?c.raw.toFixed(1)+'%':'$'+c.raw.toFixed(0)+'M'}`}}},
+  scales:{y:{ticks:{callback:v=>unit==='%'?`${v}%`:`$${v}M`},grid:{color:'rgba(30,41,59,.3)'}},x:{ticks:{maxRotation:45,font:{size:9}},grid:{display:false}}}}}
+
+function mkBar(id,months,fn,color){
+  new Chart(document.getElementById(id),{type:'bar',data:{labels:months.map(ml),
+    datasets:[{data:months.map(fn),backgroundColor:color?color+'99':months.map(m=>{
+      const y=m.split('-')[0];return y==='2023'?'rgba(59,130,246,.3)':y==='2024'?'rgba(59,130,246,.5)':y==='2025'?'rgba(59,130,246,.75)':'rgba(59,130,246,.9)'}),borderRadius:2}]},
+    options:{responsive:true,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`$${c.raw.toFixed(0)}M`}}},
+    scales:{y:{ticks:{callback:v=>`$${v}M`},grid:{color:'rgba(30,41,59,.3)'}},x:{ticks:{maxRotation:45,font:{size:9}},grid:{display:false}}}}});
+}
+
+function mkStacked(id,months,ld,md){
+  const ccs=Object.entries(ld.countries).filter(([,v])=>v.val>0).sort((a,b)=>b[1].val-a[1].val).map(([k])=>k).slice(0,10);
+  new Chart(document.getElementById(id),{type:'bar',data:{labels:months.map(ml),
+    datasets:ccs.map(cc=>({label:`${FL[cc]||''} ${D.meta.countries[cc]?.label||cc}`,
+      data:months.map(m=>{const d=md[m];return d?.total?((d.countries[cc]?.val||0)/d.total*100):0}),
+      backgroundColor:CX[cc]||'#475569'}))},
+    options:{responsive:true,plugins:{legend:{position:'bottom',labels:{font:{size:9}}},tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.raw.toFixed(1)}%`}}},
+    scales:{x:{stacked:true,ticks:{maxRotation:45,font:{size:9}},grid:{display:false}},y:{stacked:true,max:100,ticks:{callback:v=>`${v}%`},grid:{color:'rgba(30,41,59,.3)'}}}}});
+}
+
+function mkLines(id,months,md,ld){
+  const top=Object.entries(ld.countries).filter(([k])=>k!=='OTHER').sort((a,b)=>b[1].val-a[1].val).slice(0,6).map(([k])=>k);
+  new Chart(document.getElementById(id),{type:'line',data:{labels:months.map(ml),
+    datasets:top.map(cc=>({label:`${FL[cc]} ${D.meta.countries[cc]?.label||cc}`,
+      data:months.map(m=>(md[m]?.countries[cc]?.val||0)/1e6),borderColor:CX[cc],
+      backgroundColor:'transparent',tension:.3,pointRadius:0,borderWidth:2}))},options:chartOpt('$M')});
+}
+
+function mkPie(id,ld){
+  const pie=Object.entries(ld.countries).filter(([,v])=>v.val>0).sort((a,b)=>b[1].val-a[1].val).slice(0,8);
+  new Chart(document.getElementById(id),{type:'doughnut',data:{
+    labels:pie.map(([k])=>`${FL[k]||''} ${D.meta.countries[k]?.label||k}`),
+    datasets:[{data:pie.map(([,v])=>v.val/1e6),backgroundColor:pie.map(([k])=>CX[k]||'#475569'),borderColor:'var(--cd)',borderWidth:2}]},
+    options:{responsive:true,plugins:{legend:{position:'right',labels:{font:{size:9},padding:5}}}}});
+}
+
+function mkTable(id,ld,pd,yd){
+  const tbl=document.getElementById(id);if(!tbl)return;
+  const all=Object.entries(ld.countries).filter(([k])=>k!=='OTHER').sort((a,b)=>b[1].val-a[1].val);
+  let h='<thead><tr><th>국가</th><th style="text-align:right">수입액</th><th style="text-align:right">점유율</th><th style="text-align:right">MoM</th><th style="text-align:right">YoY</th><th>그룹</th></tr></thead><tbody>';
+  for(const[cc,info]of all){
+    const sh=(info.val/ld.total*100).toFixed(1);
+    const pv=pd?.countries[cc]?.val||0,yv=yd?.countries[cc]?.val||0;
+    const mm=pv?((info.val-pv)/pv*100):0,yy=yv?((info.val-yv)/yv*100):0;
+    const g=D.meta.countries[cc]?.group||'';const ic=g==='circumvention';
+    h+=`<tr${ic&&yy>50?' class="ar"':''}>
+      <td>${FL[cc]||''} ${D.meta.countries[cc]?.label||cc}</td><td style="text-align:right">${fmt(info.val)}</td>
+      <td style="text-align:right">${sh}%</td>
+      <td style="text-align:right;color:${mm>=0?'var(--gn)':'var(--rd)'}">${pct(mm)}</td>
+      <td style="text-align:right;color:${yy>=0?'var(--gn)':'var(--rd)'}">${pct(yy)}</td>
+      <td style="color:${ic?'var(--am)':'var(--tm)'}">${ic?'⚠️ 감시':'주요국'}</td></tr>`}
+  tbl.innerHTML=h+'</tbody>';
+}
+
+init();
 </script>
 </body>
 </html>
