@@ -295,12 +295,12 @@ const DATA = {
     },
     {
       id:'sdi_vw', name:'SDI VW LFP 수주',
-      desc:'VW LFP 각형 10GWh 수주 확정 → 인디애나 21→30GWh. 엘앤에프 LFP 6→9만톤. EV: SDI 벤츠+BMW 가동률 상향.',
+      desc:'VW LFP 각형 20GWh 수주 확정 → 헝가리 라인 2개 LFP 전환. 엘앤에프 LFP 6→12만톤. EV: SDI 벤츠+BMW 가동률 상향.',
       cm:{sdi:{essGwh_y26:35, essGwh_y27:35, essUtil_y26:0.6, essUtil_y27:0.8}},
-      catAdj:{cathode:{perGwh_sdi:580}, enclosure:{perGwh_sdi:370}},
+      catAdj:{cathode:{perGwh_sdi:580}, enclosure:{perGwh_sdi:370}, electrolyte:{perGwh_sdi:220}},
       evAdj:{sdi:{evGwh_y26:40, evGwh_y27:55}},  // 벤츠+BMW 물량 증가
       evCatAdj:{},
-      notes:['VW LFP 수주 확률 90%+. 헝가리 라인 2개 전환 진행 중','SDI VW LFP 양극재 → 엘앤에프 독점','서진 SBB 2.0 대형화','SDI EV: 벤츠GLB+BMW iX3 물량 반영'],
+      notes:['VW LFP 수주 확률 90%+. 헝가리 라인 2개 전환 진행 중','SDI VW LFP 양극재 → 엘앤에프 독점','솔브레인홀딩스 헝가리 전해액 CAPA 6만톤(가동률 21.73%). VW 20GWh 시 LFP 전해액 +3.4만톤 → 가동률 78%','SDI EV: 벤츠GLB+BMW iX3 물량 반영'],
     },
     {
       id:'lges_ess', name:'LGES ESS 가속',
