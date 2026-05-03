@@ -3,224 +3,200 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>글로벌 EV 판매 트래킹</title>
+<title>Tesla Robotaxi & FSD Tracking</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans KR',sans-serif;background:#0a0f1a;color:#e0e6f0;padding:24px;max-width:1200px;margin:0 auto}
-h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(135deg,#4ecdc4,#556dff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(135deg,#a78bfa,#556dff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .subtitle{font-size:13px;color:#6b7a99;margin-bottom:32px}
 .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:36px}
 .metric{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:20px}
-.metric .label{font-size:12px;color:#6b7a99;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px}
+.metric .label{font-size:12px;color:#6b7a99;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
 .metric .value{font-size:26px;font-weight:700;color:#f0f4ff}
 .metric .delta{font-size:13px;margin-top:4px}
-.up{color:#4ecdc4}.down{color:#ff6b6b}
+.up{color:#4ecdc4}.down{color:#ff6b6b}.neutral{color:#a78bfa}
 .chart-section{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:24px;margin-bottom:24px}
 .chart-section h2{font-size:16px;font-weight:500;color:#94a3c0;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #1e293b}
-.chart-wrap{position:relative;height:320px}
-.chart-wrap.sm{height:260px}
+.chart-wrap{position:relative;height:300px}
+.chart-wrap.sm{height:240px}
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .legend{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px;font-size:12px;color:#6b7a99}
 .legend span{display:flex;align-items:center;gap:5px}
 .legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.timeline{margin-top:24px}
+.timeline .event{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #1e293b;font-size:13px}
+.timeline .date{color:#a78bfa;min-width:90px;font-weight:500}
+.timeline .desc{color:#94a3c0}
 .updated{text-align:center;font-size:11px;color:#3a4a6b;margin-top:24px;padding-top:16px;border-top:1px solid #1e293b}
 @media(max-width:768px){.metrics{grid-template-columns:repeat(2,1fr)}.grid-2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<h1>글로벌 EV 판매 트래킹</h1>
-<p class="subtitle">출처: IEA · SNE Research · WardsAuto · CPCA · Cleantechnica · Benchmark</p>
+<h1>Tesla Robotaxi & FSD 트래킹</h1>
+<p class="subtitle">robotaxitracker.com · fsdmiles.com · tesla.com/fsd/safety · TeslaTracker</p>
 
-<div style="background:linear-gradient(135deg,#111827,#0a0f1a);border-left:4px solid #4ecdc4;border-radius:12px;padding:20px 24px;margin-bottom:24px;font-size:13px;line-height:1.7">
-<div style="font-size:12px;color:#4ecdc4;font-weight:600;letter-spacing:1px;margin-bottom:10px">⚡ THIS WEEK · 2026.04.27</div>
+<div style="background:linear-gradient(135deg,#111827,#0a0f1a);border-left:4px solid #a78bfa;border-radius:12px;padding:20px 24px;margin-bottom:24px;font-size:13px;line-height:1.7">
+<div style="font-size:12px;color:#a78bfa;font-weight:600;letter-spacing:1px;margin-bottom:10px">⚡ THIS WEEK · 2026.05.04</div>
 <div style="color:#e0e6f0">
-<strong style="color:#ffd93d">🇰🇷 한국</strong> · 3월 테슬라 11,130대로 수입차 월간 1위 신기록 · 국내 EV 누적 등록 101.7만대 돌파 · 기아 EV3 1Q26 8,674대 분기 신기록<br>
-<strong style="color:#556dff">🇪🇺 EU</strong> · 1Q26 BEV 34.4만대 (YoY <span style="color:#4ecdc4">+42%</span>) · PHEV 15.8만대 (YoY <span style="color:#4ecdc4">+32%</span>) · 미·중 부진 대비 강세 두드러짐<br>
-<strong style="color:#4ecdc4">🇺🇸 미국</strong> · 3월 BEV 8.86만대 (YoY <span style="color:#ff6b6b">-26.7%</span>) · Tesla 4.04만대 (-21.9%) · 현대기아 0.83만대 (-9.2%, 상대적 선방)<br>
-<strong style="color:#ff6b6b">🇨🇳 중국</strong> · 3월 BEV 56.8만대 (YoY -11.8%, MoM <span style="color:#4ecdc4">+104%</span>) · 누적 1Q 170.4만대 (M/S 39.9%)<br>
-<strong style="color:#a78bfa">📊 2025 글로벌 결산</strong> · 20.7M units (+21% YoY) · 중국 12.9M / 유럽 4.0M / 미국 1.3M · EV 점유율 <span style="color:#4ecdc4">25%</span> 첫 돌파
-</div>
+🚗 <strong style="color:#4ecdc4">리비안 조지아 30만대 확대 + DOE $45억</strong> · 기존 20만대 → 30만대 (+50%) · R2 수요 반영 · 2028H2 생산 목표<br>
+🤝 <strong style="color:#ffd93d">리비안-우버 로보택시 파트너십</strong> · 조지아 공장에서 2028년부터 <span style="color:#4ecdc4">최대 5만대</span> 로보택시 생산<br>
+⚡ <strong style="color:#ff6b6b">Tesla 에너지 저장</strong> · 2025년 46.7GWh 배치 · Q4 14.2GWh 사상 최대 → Q1 2026 <span style="color:#ff6b6b">8.8GWh</span><br>
+🇪🇺 <strong style="color:#556dff">US-EU 관세 25% 재부과 (5/4~)</strong> · 기존 Turnberry 15% → 25%로 인상 · EU 무역 합의 미준수 사유<br>
+🏗️ <strong style="color:#a78bfa">DC 인프라 $59M/MW</strong> · SemiAnalysis GB300 기준 · GPU 51% + 인프라 32% · 노동이 새로운 병목</div>
 </div>
 
 <div class="metrics">
 <div class="metric">
-<div class="label">2025 글로벌</div>
-<div class="value">2,070만</div>
-<div class="delta up">▲ YoY +21%</div>
+<div class="label">FSD 누적 마일</div>
+<div class="value">~9.5B</div>
+<div class="delta neutral">10B 목표: 5월 중순</div>
 </div>
 <div class="metric">
-<div class="label">중국 점유율 (2025)</div>
-<div class="value">62.3%</div>
-<div class="delta down">▼ 24→25 -2.3%p</div>
+<div class="label">일일 축적</div>
+<div class="value">~20M</div>
+<div class="delta neutral">마일/일 (166.6/초)</div>
 </div>
 <div class="metric">
-<div class="label">미국 26.03</div>
-<div class="value">10.5만</div>
-<div class="delta down">▼ YoY -33.7%</div>
+<div class="label">Austin 무감독</div>
+<div class="value">12대</div>
+<div class="delta up">▲ 4/16 신고치 (총 46대)</div>
 </div>
 <div class="metric">
-<div class="label">중국 26.03</div>
-<div class="value">77.2만</div>
-<div class="delta down">▼ YoY -15.3%</div>
+<div class="label">Cybercab 생산</div>
+<div class="value">60대</div>
+<div class="delta neutral">Giga Texas 양산 시작</div>
 </div>
 </div>
 
 <div class="chart-section">
-<h2>연간 지역별 EV 판매 추이 (만대)</h2>
+<h2>FSD 누적 주행거리 추이 (Billion miles)</h2>
 <div class="legend">
-<span><i style="background:#ff6b6b"></i>중국</span>
-<span><i style="background:#556dff"></i>유럽</span>
-<span><i style="background:#4ecdc4"></i>미국</span>
-<span><i style="background:#ffd93d"></i>한국</span>
-<span><i style="background:#6b7a99"></i>기타(ROW)</span>
+<span><i style="background:#a78bfa"></i>누적 마일 (B)</span>
+<span><i style="background:#4ecdc4"></i>연간 마일 (B)</span>
 </div>
 <div class="chart-wrap"><canvas id="c1"></canvas></div>
 </div>
 
 <div class="grid-2">
 <div class="chart-section">
-<h2>YoY 성장률 추이 (%)</h2>
-<div class="legend">
-<span><i style="background:#a78bfa"></i>글로벌</span>
-<span><i style="background:#ff6b6b"></i>중국</span>
-<span><i style="background:#4ecdc4"></i>미국</span>
-<span><i style="background:#556dff"></i>유럽</span>
-</div>
+<h2>FSD 연간 축적 속도 (Billion miles)</h2>
 <div class="chart-wrap sm"><canvas id="c2"></canvas></div>
 </div>
 <div class="chart-section">
-<h2>지역별 글로벌 점유율 (%)</h2>
-<div class="legend">
-<span><i style="background:#ff6b6b"></i>중국</span>
-<span><i style="background:#556dff"></i>유럽</span>
-<span><i style="background:#4ecdc4"></i>미국</span>
-</div>
+<h2>FSD 안전 비교 (마일/주요충돌)</h2>
 <div class="chart-wrap sm"><canvas id="c3"></canvas></div>
 </div>
 </div>
 
 <div class="grid-2">
 <div class="chart-section">
-<h2>2026.03 미국 OEM별 BEV 판매</h2>
+<h2>Austin 로보택시 플릿 추이</h2>
+<div class="legend">
+<span><i style="background:#556dff"></i>총 차량</span>
+<span><i style="background:#ff6b6b"></i>무감독 차량</span>
+</div>
 <div class="chart-wrap sm"><canvas id="c4"></canvas></div>
 </div>
 <div class="chart-section">
-<h2>2026.03 유럽 주요국 EV 침투율 (%)</h2>
+<h2>Cybercab 누적 생산</h2>
 <div class="chart-wrap sm"><canvas id="c5"></canvas></div>
 </div>
 </div>
 
 <div class="chart-section">
-<h2>2026년 월별 주요국 판매 추이</h2>
-<div class="legend">
-<span><i style="background:#ff6b6b"></i>중국</span>
-<span><i style="background:#4ecdc4"></i>미국</span>
-<span><i style="background:#556dff"></i>유럽</span>
-</div>
-<div class="chart-wrap sm"><canvas id="c6"></canvas></div>
-</div>
-
-<div class="chart-section">
-<h2>🇪🇺 EU 1Q26 EV 판매 (만대 · YoY)</h2>
-<p class="subtitle" style="margin:-8px 0 16px;">BEV 34.4만대 (YoY +42%) · PHEV 15.8만대 (YoY +32%) · 미국·중국 부진 대비 강세</p>
-<div class="chart-wrap sm"><canvas id="c10"></canvas></div>
-</div>
-
-<div class="chart-section">
-<h2>🇰🇷 2026.03 한국 EV 판매 동향</h2>
-<p class="subtitle" style="margin:-8px 0 16px;">테슬라 수입차 월간 최다 기록 · 누적 등록 101.7만대 돌파 · 기아 EV3 월간 신기록</p>
+<h2>🏙️ 도시별 Day 1 Opening Fleet 비교</h2>
+<p class="subtitle" style="margin:-8px 0 16px;">Austin에서 playbook 검증 후 후속 도시는 Supervised ramp phase 생략 · Day 1부터 Unsupervised 오픈</p>
 <div class="grid-2">
 <div>
-<h3 style="font-size:13px;color:#6b7a99;margin-bottom:12px;font-weight:400">수입차 월간 판매 TOP5 (3월, 대)</h3>
-<div class="chart-wrap sm"><canvas id="c7"></canvas></div>
+<h3 style="font-size:13px;color:#6b7a99;margin-bottom:12px;font-weight:400">Day 1 Active Fleet (대)</h3>
+<div class="chart-wrap sm"><canvas id="c6"></canvas></div>
 </div>
 <div>
-<h3 style="font-size:13px;color:#6b7a99;margin-bottom:12px;font-weight:400">국산 EV 분기 누적 (1Q26, 대)</h3>
-<div class="chart-wrap sm"><canvas id="c8"></canvas></div>
+<h3 style="font-size:13px;color:#6b7a99;margin-bottom:12px;font-weight:400">도시별 현황 요약</h3>
+<div style="display:flex;flex-direction:column;gap:10px;font-size:13px">
+<div style="background:#0a0f1a;padding:12px;border-radius:8px;border-left:3px solid #4ecdc4">
+<div style="display:flex;justify-content:space-between;margin-bottom:4px"><strong style="color:#f0f4ff">Austin, TX</strong><span style="color:#4ecdc4;font-size:11px">MATURE</span></div>
+<div style="color:#94a3c0;font-size:12px">Day 1 (25.6.22): 13대 → 현재 46대 · Unsupervised 12대 · Geofence 245 sq mi</div>
+</div>
+<div style="background:#0a0f1a;padding:12px;border-radius:8px;border-left:3px solid #ffd93d">
+<div style="display:flex;justify-content:space-between;margin-bottom:4px"><strong style="color:#f0f4ff">Dallas, TX</strong><span style="color:#ffd93d;font-size:11px">LAUNCH</span></div>
+<div style="color:#94a3c0;font-size:12px">Day 1 (26.4.18): 1대 Unsupervised · Supervised 단계 생략</div>
+</div>
+<div style="background:#0a0f1a;padding:12px;border-radius:8px;border-left:3px solid #ff6b6b">
+<div style="display:flex;justify-content:space-between;margin-bottom:4px"><strong style="color:#f0f4ff">Houston, TX 🔥</strong><span style="color:#ff6b6b;font-size:11px">NEW</span></div>
+<div style="color:#94a3c0;font-size:12px">4/19 home base 30+대 pre-positioned · Austin Day 1 대비 2.3x</div>
+</div>
+<div style="background:#0a0f1a;padding:12px;border-radius:8px;border-left:3px solid #6b7a99;opacity:.7">
+<div style="display:flex;justify-content:space-between;margin-bottom:4px"><strong style="color:#f0f4ff">Bay Area, CA</strong><span style="color:#6b7a99;font-size:11px">REF</span></div>
+<div style="color:#94a3c0;font-size:12px">~130대 Supervised · Driverless 퍼밋 미취득</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 
 <div class="chart-section">
-<h2>🇰🇷 한국 EV 누적 등록 브랜드별 (26.03말, 만대)</h2>
-<p class="subtitle" style="margin:-8px 0 16px;">카이즈유 데이터연구소 · 누적 101.7만대 (YoY 급증)</p>
-<div class="chart-wrap sm"><canvas id="c9"></canvas></div>
+<h2>도시 확장 타임라인</h2>
+<div class="timeline">
+<div class="event"><div class="date">25.06</div><div class="desc">Austin 런칭 · Day 1 Active 13대 (Safety Monitor)</div></div>
+<div class="event"><div class="date">25.12</div><div class="desc">무감독 테스트 시작 · Bay Area 1,655대 CPUC 등록</div></div>
+<div class="event"><div class="date">26.01</div><div class="desc">무감독 공개 라이드 시작 · 플릿 ~200대 (Austin+SF)</div></div>
+<div class="event"><div class="date">26.02</div><div class="desc">Cybercab 첫 라인오프 · FSD 8B 마일 돌파 · FSD 구독 전환 ($99/월)</div></div>
+<div class="event"><div class="date">26.03</div><div class="desc">Austin 지오펜스 245 sq mi 확대 · FSD 9B 돌파 · Austin 요금 기본료 $1→$3.25</div></div>
+<div class="event"><div class="date">26.04.07</div><div class="desc">FSD v14.3 롤아웃 (MLIR 재작성 · 반응 20% 개선)</div></div>
+<div class="event"><div class="date">26.04.10</div><div class="desc">네덜란드 RDW Tesla FSD 첫 유럽 승인</div></div>
+<div class="event"><div class="date">26.04.13</div><div class="desc">Giga Texas Cybercab 50+ 유닛 스팟 (크래시 테스트 포함)</div></div>
+<div class="event"><div class="date">26.04.14</div><div class="desc">FSD v14.3.1 · Safety Score v3.0 출시 (FSD 마일 = 100점 자동)</div></div>
+<div class="event"><div class="date">26.04.16</div><div class="desc">Austin Unsupervised 12대 신고치 (RobotaxiTracker)</div></div>
+<div class="event"><div class="date">26.04.18</div><div class="desc">Dallas · Houston 공식 론칭 · Supervised 단계 생략 Day 1부터 Unsupervised</div></div>
+<div class="event"><div class="date">26.04.19</div><div class="desc">🔥 Houston home base 30+ Robotaxi pre-positioned 확인 (TeslaTracker)</div></div>
+<div class="event"><div class="date">26.04.22</div><div class="desc">⚡ Tesla Q1 2026 실적 발표 · 자본지출 확대 코멘트로 주가 -6.1% 하락</div></div>
+<div class="event"><div class="date">26.04.24</div><div class="desc">Tesla Dallas · Houston 정식 로보택시 서비스 운영 메시지 (하나증권)</div></div>
+<div class="event"><div class="date">26.04.25</div><div class="desc">Tesla 독일 기가팩토리 1,000명 충원 + 배터리 셀 생산 인력 별도 채용 시작</div></div>
+<div class="event"><div class="date">26.05.01</div><div class="desc">리비안 조지아 공장 30만대 확대(+50%) + DOE $45억 대출 · R2 판매용 생산 시작</div></div>
+<div class="event"><div class="date">26.05.01</div><div class="desc">🤝 리비안-우버 로보택시 파트너십 · 2028년부터 조지아에서 최대 5만대 생산</div></div>
+<div class="event"><div class="date">26.05.01</div><div class="desc">US-EU 자동차 관세 25% 재부과 예고 (기존 Turnberry 15% → 25%)</div></div>
+<div class="event"><div class="date">26.1H</div><div class="desc">계획: Las Vegas · Miami · Orlando · Phoenix · Tampa</div></div>
+</div>
 </div>
 
-<p class="updated">마지막 업데이트: 2026.04.27
+<p class="updated">마지막 업데이트: 2026.05.04</p>
 
 <script>
 const gridColor='rgba(255,255,255,0.06)';
 const tickColor='#6b7a99';
 const defOpt={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{backgroundColor:'#1e293b',titleColor:'#e0e6f0',bodyColor:'#94a3c0',borderColor:'#2d3a52',borderWidth:1,cornerRadius:8,padding:12}},scales:{x:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}},y:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:11}}}}};
 
-const yrs=['2018','2019','2020','2021','2022','2023','2024','2025'];
+new Chart(document.getElementById('c1'),{type:'line',data:{labels:['2021','2022','2023','2024','2025','26.02','26.03','26.04'],datasets:[
+{label:'누적',data:[0.006,0.086,0.756,3.0,7.25,8.0,8.5,9.5],borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,0.1)',fill:true,borderWidth:2.5,tension:.3,pointRadius:4}
+]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'Billion miles',color:tickColor}}}}});
 
-new Chart(document.getElementById('c1'),{type:'bar',data:{labels:yrs,datasets:[
-{label:'중국',data:[109,106,114,325,590,810,1130,1290],backgroundColor:'#ff6b6b',borderRadius:3},
-{label:'유럽',data:[39,57,138,230,260,320,318,400],backgroundColor:'#556dff',borderRadius:3},
-{label:'미국',data:[36,32.5,29.4,63,99,139,152,130],backgroundColor:'#4ecdc4',borderRadius:3},
-{label:'한국',data:[5.9,3.6,4.0,9.1,13.1,13.2,12.8,14.0],backgroundColor:'#ffd93d',borderRadius:3},
-{label:'기타',data:[15.1,8.9,11.6,32.9,57.9,87.8,137.2,236.0],backgroundColor:'#6b7a99',borderRadius:3}
-]},options:{...defOpt,scales:{...defOpt.scales,x:{...defOpt.scales.x,stacked:true},y:{...defOpt.scales.y,stacked:true,title:{display:true,text:'만대',color:tickColor}}}}});
+new Chart(document.getElementById('c2'),{type:'bar',data:{labels:['2021','2022','2023','2024','2025','2026E'],datasets:[{
+data:[0.006,0.08,0.67,2.25,4.25,7.3],
+backgroundColor:['#2d3a52','#2d3a52','#3b4a6b','#556dff','#a78bfa','#4ecdc4'],borderRadius:4
+}]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'B miles',color:tickColor}}}}});
 
-new Chart(document.getElementById('c2'),{type:'line',data:{labels:yrs,datasets:[
-{label:'글로벌',data:[76.5,1.5,42.8,122.2,54.5,34.3,27.7,21.0],borderColor:'#a78bfa',borderWidth:2.5,tension:.3,pointRadius:3},
-{label:'중국',data:[87.9,-2.8,7.5,185.1,81.5,37.3,39.5,14.2],borderColor:'#ff6b6b',borderWidth:1.5,tension:.3,pointRadius:2,borderDash:[5,3]},
-{label:'미국',data:[85.6,-9.7,-9.5,114.3,57.1,40.4,9.4,-14.5],borderColor:'#4ecdc4',borderWidth:1.5,tension:.3,pointRadius:2,borderDash:[5,3]},
-{label:'유럽',data:[21.9,46.2,142.1,66.7,13.0,23.1,-0.6,25.8],borderColor:'#556dff',borderWidth:1.5,tension:.3,pointRadius:2,borderDash:[5,3]}
-]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'YoY %',color:tickColor}}}}});
+new Chart(document.getElementById('c3'),{type:'bar',data:{labels:['FSD\n(Supervised)','Tesla 수동\n(Active Safety)','미국 평균','Tesla 수동\n(No Safety)'],datasets:[{
+data:[5300676,2175763,485133,397274],
+backgroundColor:['#4ecdc4','#556dff','#ffd93d','#ff6b6b'],borderRadius:6
+}]},options:{...defOpt,indexAxis:'y',scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,callback:v=>(v/1000000).toFixed(1)+'M'}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:10}}}}}});
 
-new Chart(document.getElementById('c3'),{type:'line',data:{labels:yrs,datasets:[
-{label:'중국',data:[53.2,51.0,38.4,49.2,57.8,59.1,64.6,62.3],borderColor:'#ff6b6b',backgroundColor:'rgba(255,107,107,0.1)',fill:true,borderWidth:2,tension:.3,pointRadius:3},
-{label:'유럽',data:[19.0,27.4,46.5,34.8,25.5,23.4,18.2,19.3],borderColor:'#556dff',backgroundColor:'rgba(85,109,255,0.1)',fill:true,borderWidth:2,tension:.3,pointRadius:3},
-{label:'미국',data:[17.6,15.6,9.9,9.5,9.7,10.1,8.7,6.3],borderColor:'#4ecdc4',backgroundColor:'rgba(78,205,196,0.1)',fill:true,borderWidth:2,tension:.3,pointRadius:3}
-]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,max:70,title:{display:true,text:'Share %',color:tickColor}}}}});
+new Chart(document.getElementById('c4'),{type:'line',data:{labels:['25.06','25.12','26.01','26.03','26.04.16','26.04.18'],datasets:[
+{label:'총 차량',data:[13,135,200,37,44,46],borderColor:'#556dff',borderWidth:2,tension:.3,pointRadius:4},
+{label:'무감독',data:[0,0,8,4,12,12],borderColor:'#ff6b6b',borderWidth:2,tension:.3,pointRadius:4,borderDash:[5,3]}
+]},options:defOpt});
 
-new Chart(document.getElementById('c4'),{type:'bar',data:{labels:['Tesla','GM','현대기아','Ford'],datasets:[{
-data:[40400,11621,8344,2995],
-backgroundColor:['#ff6b6b','#556dff','#4ecdc4','#ffd93d'],borderRadius:6
-}]},options:{...defOpt,indexAxis:'y',scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,callback:v=>(v/10000).toFixed(1)+'만'}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:12}}}}}});
+new Chart(document.getElementById('c5'),{type:'bar',data:{labels:['26.02','26.03','26.04'],datasets:[{
+data:[1,25,60],backgroundColor:['#2d3a52','#556dff','#a78bfa'],borderRadius:4
+}]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'누적 대수',color:tickColor}}}}});
 
-new Chart(document.getElementById('c5'),{type:'bar',data:{labels:['노르웨이','스웨덴','영국','독일','프랑스'],datasets:[{
-data:[99.1,63.3,35.7,33.4,32.8],
-backgroundColor:['#a78bfa','#556dff','#4ecdc4','#ffd93d','#ff6b6b'],borderRadius:6
-}]},options:{...defOpt,indexAxis:'y',scales:{x:{max:100,grid:{color:gridColor},ticks:{color:tickColor,callback:v=>v+'%'}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:12}}}}}});
-
-new Chart(document.getElementById('c6'),{type:'bar',data:{labels:['2026.02','2026.03'],datasets:[
-{label:'중국',data:[504000,772000],backgroundColor:'#ff6b6b',borderRadius:3},
-{label:'미국',data:[75000,104847],backgroundColor:'#4ecdc4',borderRadius:3},
-{label:'유럽',data:[310000,null],backgroundColor:'#556dff',borderRadius:3}
-]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'대',color:tickColor},ticks:{callback:v=>(v/10000).toFixed(1)+'만'}}}}});
-
-// 한국 3월 수입차 TOP5
-new Chart(document.getElementById('c7'),{type:'bar',data:{labels:['테슬라','BMW','벤츠','BYD','볼보'],datasets:[{
-data:[11130,6785,5419,1664,1496],
-backgroundColor:['#ff6b6b','#556dff','#a78bfa','#ffd93d','#4ecdc4'],borderRadius:6
-}]},options:{...defOpt,indexAxis:'y',scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,callback:v=>(v/1000).toFixed(1)+'k'}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:12}}}},plugins:{...defOpt.plugins,tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.parsed.x.toLocaleString()+'대'}}}}});
-
-// 국산 EV 1Q26 누적
-new Chart(document.getElementById('c8'),{type:'bar',data:{labels:['기아 EV3','기아 PV5','기아 EV5'],datasets:[{
-data:[8674,8086,6884],
-backgroundColor:['#4ecdc4','#556dff','#a78bfa'],borderRadius:6
-}]},options:{...defOpt,indexAxis:'y',scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,callback:v=>(v/1000).toFixed(1)+'k'}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:12}}}},plugins:{...defOpt.plugins,tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.parsed.x.toLocaleString()+'대'}}}}});
-
-// 한국 EV 누적 등록 브랜드별
-new Chart(document.getElementById('c9'),{type:'bar',data:{labels:['현대차','기아','테슬라','기타'],datasets:[{
-data:[33.2,29.0,17.5,21.9],
-backgroundColor:['#556dff','#4ecdc4','#ff6b6b','#6b7a99'],borderRadius:6
-}]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'만대',color:tickColor}}},plugins:{...defOpt.plugins,tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.parsed.y+'만대'}}}}});
-
-// EU 1Q26 BEV+PHEV
-new Chart(document.getElementById('c10'),{type:'bar',data:{labels:['BEV (1Q26)','PHEV (1Q26)'],datasets:[{
-label:'1Q26',data:[34.4,15.8],
-backgroundColor:['#556dff','#a78bfa'],borderRadius:6
-},{
-label:'1Q25 (참고)',data:[24.2,12.0],
-backgroundColor:['#3a4a6b','#4a3a5b'],borderRadius:6
-}]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'만대',color:tickColor}}},plugins:{legend:{display:true,labels:{color:tickColor,font:{size:11},boxWidth:12}},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.dataset.label+': '+ctx.parsed.y+'만대'}}}}});
+// 도시별 Day 1 Fleet Size 비교
+new Chart(document.getElementById('c6'),{type:'bar',data:{labels:['Austin\n(25.6.22)','Dallas\n(26.4.18)','Houston\n(26.4.19)','Bay Area\n(Supervised)'],datasets:[{
+data:[13,1,30,130],
+backgroundColor:['#4ecdc4','#ffd93d','#ff6b6b','#6b7a99'],borderRadius:6
+}]},options:{...defOpt,indexAxis:'y',scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:11}}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}}},plugins:{...defOpt.plugins,tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>{const labels=['Active Day 1','Active Day 1 (crowdsourced)','Pre-positioned at home base','Supervised fleet (driver present)'];return ctx.parsed.x+'대 · '+labels[ctx.dataIndex]}}}}}});
 </script>
 </body>
 </html>
