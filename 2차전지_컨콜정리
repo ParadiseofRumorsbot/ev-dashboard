@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2차전지 컨콜 정리 20260502</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e17;--sf:#111827;--sf2:#1a2332;--bd:#1e293b;--tx:#e2e8f0;--mu:#94a3b8;--ac:#3b82f6;--ac2:#8b5cf6;--gn:#10b981;--rd:#ef4444;--am:#f59e0b;--cy:#06b6d4}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--tx);line-height:1.7}
+.w{max-width:960px;margin:0 auto;padding:40px 24px 48px}
+.hdr{text-align:center;padding:36px 0 28px;border-bottom:1px solid var(--bd);margin-bottom:36px;position:relative}
+.hdr::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:140px;height:3px;background:linear-gradient(90deg,var(--ac),var(--ac2));border-radius:2px}
+.hdr h1{font-size:26px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#fff,#94a3b8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
+.hdr .sub{font-size:12px;color:var(--mu)}
+.hdr .badge{display:inline-block;margin-top:8px;padding:3px 12px;background:var(--sf);border:1px solid var(--bd);border-radius:14px;font-size:11px;font-family:'JetBrains Mono',monospace;color:var(--cy)}
+.st{font-size:18px;font-weight:700;margin:32px 0 14px;padding-left:14px;border-left:3px solid var(--ac);display:flex;align-items:center;gap:8px}
+.st .n{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ac);background:rgba(59,130,246,.1);padding:2px 7px;border-radius:4px}
+table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:12.5px}
+thead th{background:var(--sf2);padding:9px 10px;text-align:left;font-weight:600;font-size:11px;color:var(--mu);border-bottom:2px solid var(--bd);letter-spacing:.3px}
+tbody td{padding:8px 10px;border-bottom:1px solid var(--bd);vertical-align:top}
+tbody tr:hover{background:rgba(59,130,246,.03)}
+.m{font-family:'JetBrains Mono',monospace;font-size:12px}
+.g{color:var(--gn)}.r{color:var(--rd)}.a{color:var(--am)}
+.t{display:inline-block;padding:1px 6px;border-radius:4px;font-size:10px;font-weight:600;font-family:'JetBrains Mono',monospace}
+.tg{background:rgba(16,185,129,.12);color:var(--gn)}.tr{background:rgba(239,68,68,.12);color:var(--rd)}.tn{background:rgba(139,92,246,.12);color:var(--ac2)}.tk{background:rgba(6,182,212,.12);color:var(--cy)}.tf{background:rgba(148,163,184,.12);color:var(--mu)}
+.ib{background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:18px 20px;margin-bottom:14px}
+.ib p{font-size:13px;margin-bottom:8px}.ib p:last-child{margin-bottom:0}
+.op{background:linear-gradient(135deg,rgba(6,182,212,.06),rgba(139,92,246,.06));border:1px solid rgba(6,182,212,.18);border-radius:10px;padding:16px 18px;font-size:12.5px;color:var(--mu);line-height:1.7;margin-bottom:20px}
+.op-l{display:inline-block;font-size:10px;font-weight:700;color:var(--cy);background:rgba(6,182,212,.12);padding:2px 7px;border-radius:3px;margin-bottom:6px;letter-spacing:.4px}
+.hl{background:rgba(251,191,36,.12);padding:1px 3px;border-radius:2px;color:var(--am)}
+.ih{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px}
+.in{flex-shrink:0;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#fff}
+.n1{background:linear-gradient(135deg,#3b82f6,#2563eb)}.n2{background:linear-gradient(135deg,#8b5cf6,#7c3aed)}.n3{background:linear-gradient(135deg,#06b6d4,#0891b2)}
+.it{font-size:15px;font-weight:700;line-height:1.4;padding-top:3px}
+hr.dv{border:none;border-top:1px solid var(--bd);margin:32px 0}
+.dg{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;margin-bottom:16px}
+.di{background:var(--sf);border:1px solid var(--bd);border-radius:8px;padding:14px;border-left:3px solid var(--ac)}
+.di.pos{border-left-color:var(--gn)}.di.neg{border-left-color:var(--rd)}.di.new{border-left-color:var(--ac2)}
+.dl{font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:var(--mu);margin-bottom:3px}
+.dv2{font-size:13px;font-weight:600;color:#fff}
+.dd{font-size:11.5px;color:var(--mu);margin-top:3px}
+.fw{font-weight:600;color:#fff}
+@media(max-width:640px){.w{padding:16px 12px 32px}.hdr h1{font-size:20px}table{font-size:11px}thead th,tbody td{padding:6px 5px}.dg{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="w">
+
+<div class="hdr">
+<h1>2차전지 컨콜 정리</h1>
+<div class="sub">1Q26 실적발표 · 4Q25→1Q26 가이던스 Delta 분석 · 11개사 종합</div>
+<div class="badge">2026.05.02 · 황소자산운용</div>
+</div>
+
+<!-- ========== 특이점 1 ========== -->
+<div class="ih"><div class="in n1">01</div><div class="it">삼성SDI가 BBU·DC ESS를 원형 배터리의 "새로운 본업"으로 재정의하기 시작함</div></div>
+<div class="ib">
+<p>1Q26에서 갑자기 DC향 ESS(CAGR 30%+), 마이크로그리드(CAGR 60%+), BBU($8억, YoY+70%)를 별도 세그먼트로 꺼내면서 탭리스 비중을 3~4%→20%+로 올리겠다고 언급.</p>
+<p>SDI가 원형 배터리 사업의 중심축을 EV에서 AI 인프라(BBU·DC 전력)로 옮기고 있다는 <span class="hl">전략적 전환 신호</span>.</p>
+<table><thead><tr><th>세그먼트</th><th>2025년</th><th>2030년</th><th>CAGR</th></tr></thead>
+<tbody>
+<tr><td>미국 전체 ESS</td><td class="m">90GWh</td><td class="m">160GWh</td><td class="m">12%</td></tr>
+<tr><td>DC향 ESS</td><td class="m">9GWh</td><td class="m g">40GWh+</td><td class="m g">30%+</td></tr>
+<tr><td>마이크로그리드</td><td class="m">소규모</td><td class="m">—</td><td class="m g">60%+</td></tr>
+<tr><td>BBU 시장</td><td colspan="2" class="m">2026년 ~$8억</td><td class="m g">YoY +70%</td></tr>
+</tbody></table>
+</div>
+<div class="op"><div class="op-l">개인 의견</div>
+SPE1 라인 1개(8GWh)가 BBU 라인으로 배정된 것으로 파악됨.<br>커버리지 종목 중 한중엔시에스(SBB 냉각)와 서진시스템(SBB 인클로저)의 TAM이 기존 "전력망 ESS" 시나리오보다 훨씬 더 커질 수 있다는 뜻.
+<table><thead><tr><th>종목</th><th>역할</th><th>1GWh당 매출</th></tr></thead>
+<tbody><tr><td class="fw">서진시스템</td><td>SBB 인클로저 + 최종 조립</td><td class="m g">~350억원</td></tr>
+<tr><td class="fw">한중엔시에스</td><td>SBB 수냉식 냉각시스템</td><td class="m g">~180억원</td></tr></tbody></table></div>
+
+<hr class="dv">
+
+<!-- ========== 특이점 2 ========== -->
+<div class="ih"><div class="in n2">02</div><div class="it">엘앤에프와 에코프로비엠의 LFP 전략이 정반대 방향으로 갈라짐</div></div>
+<div class="ib">
+<p>같은 분기에 엘앤에프는 <span class="hl">"6만톤 초과 증설 논의 + 무전구체 공법 개발"</span>로 LFP를 전사 전략의 핵심으로 격상시킨 반면, 에코프로비엠은 <span class="hl">"LFP 투자결정 재검토"</span>를 선언.</p>
+<p>엘앤에프는 삼성SDI LTA(3년 1.6조)라는 확정 물량이 있어 투자 리스크가 낮고, 에코프로비엠은 아직 LFP 확정 수주가 없는 상태에서 CB 풋옵션(7월, 4,400억)까지 겹치니 투자를 멈출 수밖에 없는 구조.</p>
+<table><thead><tr><th>항목</th><th>엘앤에프</th><th>에코프로비엠</th></tr></thead>
+<tbody>
+<tr><td class="fw">LFP CAPA</td><td class="m g">6만톤+ (27년 상반기)</td><td class="m r">4천톤 (투자 재검토)</td></tr>
+<tr><td class="fw">LFP SOP</td><td><span class="t tk">3Q26</span></td><td>미정</td></tr>
+<tr><td class="fw">확정 수주</td><td>SDI LTA 3년 1.6조</td><td>없음</td></tr>
+<tr><td class="fw">Non-FEOC</td><td>LS 합작 + 무전구체 <span class="t tn">NEW</span></td><td>탈중국 구축 중</td></tr>
+<tr><td class="fw">차별화</td><td>ESS LFP 선점</td><td>헝가리 + 전고체 전해질</td></tr>
+<tr><td class="fw">유동성</td><td>BW 전환→부채↓자본↑</td><td class="r">CB 4,400억 풋 7월</td></tr>
+</tbody></table></div>
+
+<hr class="dv">
+
+<!-- ========== 특이점 3 ========== -->
+<div class="ih"><div class="in n3">03</div><div class="it">LGES가 46시리즈 수주잔고를 "440GWh+"로 처음 공개</div></div>
+<div class="ib">
+<p>폴란드 원통형 CAPA 검토까지 언급. +140GWh의 핵심은 <span class="hl">BMW</span> — 약 10년간 10조원 규모 순수 EV용 46시리즈 공급 계약.</p>
+<p>생산 거점: 오창(가동 중) → 애리조나(26년 말) → 폴란드 브로츠와프 46시리즈 전용 라인 (BMW 기점, 연 12GWh·9천만셀)</p>
+<table><thead><tr><th>거점</th><th>CAPA</th><th>가동</th><th>양극재 (×1,400톤)</th></tr></thead>
+<tbody>
+<tr><td class="fw">오창</td><td class="m">~5GWh</td><td>가동 중</td><td class="m">7,000톤</td></tr>
+<tr><td class="fw">애리조나</td><td class="m">30GWh</td><td>26년 말~ (3년 지연)</td><td class="m g">42,000톤</td></tr>
+<tr><td class="fw">폴란드</td><td class="m">12GWh</td><td>27~28년 추정</td><td class="m g">16,800톤</td></tr>
+<tr style="background:rgba(59,130,246,.05)"><td class="fw">합계</td><td class="m fw">47GWh</td><td></td><td class="m fw">65,800톤</td></tr>
+</tbody></table></div>
+<div class="op"><div class="op-l">개인 의견</div>
+<p style="margin-bottom:10px"><b style="color:var(--tx)">성우</b> (탑캡 어셈블리, LGES 46시리즈 솔벤더) — 노션 IR: 오창 5GWh = 300~350억 → <span class="hl">1GWh당 60~70억</span>. 440GWh 연간화 시 잠재 매출 연 ~2,860억 (현 매출 대비 +120%)</p>
+<p style="margin-bottom:10px"><b style="color:var(--tx)">엘앤에프</b> — 추가분(애리조나+폴란드) 약 <span class="hl">5.9만톤</span> = NCM 유효 캐파의 35%. 27년 가동률 ~70% 예상. 풀캐파 28~29년.</p>
+<table><thead><tr><th>연도</th><th>출하량</th><th>NCM 가동률</th><th>비고</th></tr></thead>
+<tbody>
+<tr><td class="m">25년</td><td class="m">~7~8만톤</td><td class="m">~45%</td><td>연매출 2.15조 역산</td></tr>
+<tr><td class="m">26년</td><td class="m">~9~10만톤</td><td class="m">~55~60%</td><td>+20%대 YoY</td></tr>
+<tr><td class="m">27년</td><td class="m">~11~13만톤</td><td class="m g">~65~75%</td><td>46파이 + 2170</td></tr>
+<tr><td class="m">28~29년</td><td class="m">15만톤+</td><td class="m g">~90%+</td><td>애리조나 램프업</td></tr>
+</tbody></table>
+<span style="font-size:11px">LFP 6만톤 별도 — SDI LTA(연 ~4만톤)으로 즉시 고가동.</span></div>
+
+<hr class="dv">
+
+<!-- ========== 셀사 비교 ========== -->
+<div class="st"><span class="n">04</span> 셀사 1Q26 실적 비교</div>
+<table>
+<thead><tr><th>항목</th><th>LG에너지솔루션</th><th>삼성SDI</th><th>SK온 (4Q25)</th></tr></thead>
+<tbody>
+<tr><td class="fw">매출</td><td><span class="m">6.56조</span> <span class="t tg">+1.3%Q</span></td><td><span class="m">3.58조</span> <span class="t tr">-7.3%Q</span></td><td class="m">미수령</td></tr>
+<tr><td class="fw">OP</td><td class="m r">△2,080억</td><td class="m r">△1,556억</td><td>—</td></tr>
+<tr><td class="fw">EBITDA</td><td class="m">887억</td><td><span class="m g">4,280억</span> <span class="t tg">+543%Y</span></td><td>—</td></tr>
+<tr><td class="fw">흑자 전환</td><td><span class="t tk">2Q26</span></td><td><span class="t tk">하반기</span></td><td>불확실</td></tr>
+<tr><td class="fw">ESS 수주잔고</td><td class="m g">140GWh</td><td>2~3년치</td><td>Flatiron 1GW</td></tr>
+<tr><td class="fw">북미 ESS CAPA</td><td class="m">50GWh+</td><td class="m">~29GWh</td><td class="m">0→10(27~)</td></tr>
+<tr><td class="fw">46시리즈</td><td><span class="m g">440GWh+</span> <span class="t tn">NEW</span></td><td>—</td><td>—</td></tr>
+<tr><td class="fw">BBU</td><td>UPS/BBU 진입</td><td>$8억 <span class="t tg">+70%Y</span></td><td>—</td></tr>
+<tr><td class="fw">탭리스</td><td>—</td><td class="m g">20%+</td><td>—</td></tr>
+<tr><td class="fw">헝가리</td><td>—</td><td>하반기 <span class="m g">70%+</span></td><td>견조</td></tr>
+</tbody></table>
+
+<!-- ========== 양극재 비교 ========== -->
+<div class="st"><span class="n">05</span> 양극재 3사 비교</div>
+<table>
+<thead><tr><th>항목</th><th>엘앤에프</th><th>에코프로비엠</th><th>LG화학 첨단소재</th></tr></thead>
+<tbody>
+<tr><td class="fw">매출</td><td><span class="m g">7,396억</span> <span class="t tg">+103%Y</span></td><td class="m">6,054억 <span class="t tg">+22%Q</span></td><td class="m">7,250억 <span class="t tr">-13.6%Q</span></td></tr>
+<tr><td class="fw">OP</td><td><span class="m g">1,173억</span> (15.9%)</td><td class="m">209억 (3.5%)</td><td class="m">70억 (0.9%)</td></tr>
+<tr><td class="fw">하이니켈</td><td>NCMA95 단독 공급</td><td>NCM/NCA 다각화</td><td>하반기 매출 실현</td></tr>
+<tr><td class="fw">LFP</td><td><span class="t tk">3Q26 SOP</span> · 6만톤+</td><td><span class="t tr">투자 재검토</span></td><td>27말~28초</td></tr>
+<tr><td class="fw">Non-FEOC</td><td>LS 합작 + 무전구체 <span class="t tn">NEW</span></td><td>오창 구축 중</td><td>미공개</td></tr>
+<tr><td class="fw">유럽</td><td>—</td><td>헝가리 5.8만톤 5월~</td><td>—</td></tr>
+<tr><td class="fw">전고체</td><td>샘플 (제한적)</td><td><span class="t tk">PP 가동 · 27년 양산</span></td><td>—</td></tr>
+<tr><td class="fw">ESS</td><td>중장기 20%</td><td>979억 (+140%Y)</td><td>—</td></tr>
+<tr><td class="fw">26년 출하</td><td>+20%대 YoY</td><td>+30% (유럽)</td><td>4Q 평균 회복</td></tr>
+<tr><td class="fw">유동성</td><td>BW 전환 가능</td><td class="r">CB 4,400억 7월</td><td>2조+ 상환</td></tr>
+</tbody></table>
+
+<!-- ========== 동박/전지박 비교 ========== -->
+<div class="st"><span class="n">06</span> 동박/전지박 3사 비교</div>
+<table>
+<thead><tr><th>항목</th><th>SKC</th><th>솔루스첨단소재</th><th>롯데에너지머티리얼즈</th></tr></thead>
+<tbody>
+<tr><td class="fw">ESS 비중</td><td><span class="m g">45%+</span></td><td class="m">30%</td><td>2~3배 확대</td></tr>
+<tr><td class="fw">말레이시아</td><td>55% · 3월 흑자</td><td>—</td><td>43%→80~90%</td></tr>
+<tr><td class="fw">유럽 전지박</td><td>—</td><td>VES 풀가동 YoY 2배+</td><td>스페인 착공</td></tr>
+<tr><td class="fw">AI 회로박</td><td>전환 가속</td><td>1,045억 <span class="t tg">+54%Y</span></td><td>HVLP4 6,700→1.6만t</td></tr>
+<tr><td class="fw">동박 매각</td><td>—</td><td><span class="t tk">5월 마무리</span></td><td>인수 검토 가능</td></tr>
+<tr><td class="fw">Turnaround</td><td>연간 BEP</td><td>27년 원년</td><td>2H26</td></tr>
+</tbody></table>
+
+<hr class="dv">
+
+<!-- ========== 4Q25→1Q26 DELTA ========== -->
+<div class="st"><span class="n">07</span> 4Q25→1Q26 핵심 가이던스 변화</div>
+
+<h4 style="color:var(--gn);font-size:13px;margin:16px 0 10px;font-weight:600">⬆ Positive Delta</h4>
+<div class="dg">
+<div class="di pos"><div class="dl">LGES 흑자 전환</div><div class="dv2">하반기 → 2Q26</div><div class="dd">1~2분기 앞당김</div></div>
+<div class="di pos"><div class="dl">LGES Tesla향</div><div class="dv2">JV 우회→전략 고객 직접</div><div class="dd">하반기 물량 재개 준비</div></div>
+<div class="di pos"><div class="dl">SDI 저점 통과</div><div class="dv2">"상저하고"→"3Q 저점"</div><div class="dd">적자 48% 축소 + 순이익 흑자</div></div>
+<div class="di pos"><div class="dl">SDI 탭리스</div><div class="dv2">+10%p → 20%+</div><div class="dd">전동공구→BBU→HEV</div></div>
+<div class="di pos"><div class="dl">엘앤에프 LFP</div><div class="dv2">6만톤 상한→초과 논의</div><div class="dd">수요 > 캐파</div></div>
+<div class="di pos"><div class="dl">SKC ESS 비중</div><div class="dv2">10→20→25→45%+</div><div class="dd">반년 만에 2배+</div></div>
+</div>
+
+<h4 style="color:var(--ac2);font-size:13px;margin:16px 0 10px;font-weight:600">🆕 New Information</h4>
+<div class="dg">
+<div class="di new"><div class="dl">LGES 46시리즈</div><div class="dv2">440GWh+ · 3종 라인업</div><div class="dd">유럽 OEM 대규모 수주</div></div>
+<div class="di new"><div class="dl">SDI DC ESS</div><div class="dv2">DC 30%+ · 마이크로 60%+</div><div class="dd">3개 세그먼트 분리</div></div>
+<div class="di new"><div class="dl">SDI BBU</div><div class="dv2">$8억 YoY+70%</div><div class="dd">CSP 직접 조달 트렌드</div></div>
+<div class="di new"><div class="dl">엘앤에프 무전구체</div><div class="dv2">Fe₂O₃ 직접 LFP · 27년</div><div class="dd">FEOC + 원가 동시 해소</div></div>
+<div class="di new"><div class="dl">SDI Mercedes</div><div class="dv2">공급 계약 체결</div><div class="dd">"상반기 성과" 예고 실현</div></div>
+<div class="di new"><div class="dl">이란 전쟁</div><div class="dv2">3사 공통 긍정 해석</div><div class="dd">고유가→EV/ESS 촉진</div></div>
+</div>
+
+<h4 style="color:var(--rd);font-size:13px;margin:16px 0 10px;font-weight:600">⬇ Negative Delta</h4>
+<div class="dg">
+<div class="di neg"><div class="dl">에코프로비엠 LFP</div><div class="dv2">투자 재검토</div><div class="dd">ESS 경쟁 열위 심화</div></div>
+<div class="di neg"><div class="dl">에코프로비엠 유동성</div><div class="dv2">CB 4,400억 풋 7월</div><div class="dd">만기연장 논의 중</div></div>
+<div class="di neg"><div class="dl">LGES 재무</div><div class="dv2">부채비율 99→140%</div><div class="dd">순차입금 45→70%</div></div>
+<div class="di neg"><div class="dl">북미 EV</div><div class="dv2">3사 공통 약세</div><div class="dd">보조금 폐지 후 회복 지연</div></div>
+</div>
+
+<hr class="dv">
+
+<!-- ========== 커버리지 종목 ========== -->
+<div class="st"><span class="n">08</span> 커버리지 종목 연결</div>
+<table>
+<thead><tr><th>종목</th><th>1Q26 CC 시사점</th><th>Follow-up</th></tr></thead>
+<tbody>
+<tr><td class="fw">엘앤에프</td><td>LFP 3Q26 SOP, 6만톤+ 논의, 무전구체 27년</td><td>SDI LTA vs 3만톤 미스매치 · 자금조달</td></tr>
+<tr><td class="fw">에코프로비엠</td><td>LFP 재검토, 헝가리 5월, 전고체 27년, CB 7월</td><td>CB 대응, 헝가리 램프업, LFP 대안</td></tr>
+<tr><td class="fw">대주전자재료</td><td>46파이 6→10%+, 고유가→EV Pull-in</td><td>프리미엄 EV 회복 속도</td></tr>
+<tr><td class="fw">롯데에너지머티리얼즈</td><td>SKC ESS 45%+ 벤치마크, 솔루스 5월 매각</td><td>솔루스 인수, HVLP4, 말레이 가동률</td></tr>
+<tr><td class="fw">서진시스템</td><td>SDI DC ESS → SBB TAM 확대 · 1GWh 350억</td><td>SDI 미국 ESS CAPA 수치</td></tr>
+<tr><td class="fw">한중엔시에스</td><td>DC ESS CAGR 60%+ → 냉각 수요 · 1GWh 180억</td><td>BBU향 냉각 공급 여부</td></tr>
+<tr><td class="fw">성우</td><td>46시리즈 440GWh+ 솔벤더 · 1GWh 60~70억</td><td>멕시코 6월 법인, 애리조나 시점</td></tr>
+<tr><td class="fw">솔브레인홀딩스</td><td>SDI LFP ESS 전해액 포지션</td><td>ESS 램프업 시 Q 확대</td></tr>
+<tr><td class="fw">WCP</td><td>LGES·SDI 양사 분리막</td><td>LFP용 스펙 차이</td></tr>
+<tr><td class="fw">코스모신소재</td><td>LG화학 4Q 평균 회복 가이던스</td><td>LGES 벤더 배정, LFP 시점</td></tr>
+</tbody></table>
+
+</div>
+</body>
+</html>
