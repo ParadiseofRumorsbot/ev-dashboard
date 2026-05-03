@@ -113,15 +113,15 @@ const DATA = {
     {
       id:'electrolyte', code:'E', name:'전해액',
       company:'솔브레인홀딩스', costPct:0, apcId:'apc1',
-      perGwh: 198,  // 억원/GWh — 1,700t × ASP 1,165만원/t
+      perGwh: 139,  // 억원/GWh — 1,700t × ASP 1,165만원/t × M/S 70%
       color:'#5B4FE9', bg:'#EFEDFE',
-      desc:'Cells 52% 내부. LFP는 NCM 대비 전해액 소요 1.70배(1,000→1,700t). 솔브레인이 SDI ESS 전해액 솔밴더. Michigan 공장 AMPC 수혜.',
+      desc:'Cells 52% 내부. LFP는 NCM 대비 전해액 소요 1.70배(1,000→1,700t). 솔브레인이 SDI ESS 전해액 메인(M/S 70%, 동화 30%). Michigan 공장 AMPC 수혜.',
       bomItems:[
         {name:'LFP 전해액', note:'1,700톤/GWh'},
         {name:'NCM 전해액 (비교)', note:'1,000톤/GWh'},
         {name:'LFP 배율', note:'×1.70'},
       ],
-      investPoint:'SDI sole vendor + Michigan 현지 생산 + MACR 비율 기반(binary 아님)',
+      investPoint:'SDI ESS 메인(M/S 70%, 동화 30%) + Michigan 현지 생산 + MACR 비율 기반(binary 아님)',
       opMcap:'12.2%', valuation:'시총 1.03조 / OP 추정',
       isCellInternal: true,
       tPerGwh: 1700,
@@ -297,10 +297,10 @@ const DATA = {
       id:'sdi_vw', name:'SDI VW LFP 수주',
       desc:'VW LFP 각형 20GWh 수주 확정 → 헝가리 라인 2개 LFP 전환. 엘앤에프 LFP 6→12만톤. EV: SDI 벤츠+BMW 가동률 상향.',
       cm:{sdi:{essGwh_y26:35, essGwh_y27:35, essUtil_y26:0.6, essUtil_y27:0.8}},
-      catAdj:{cathode:{perGwh_sdi:580}, enclosure:{perGwh_sdi:370}, electrolyte:{perGwh_sdi:220}},
+      catAdj:{cathode:{perGwh_sdi:580}, enclosure:{perGwh_sdi:370}, electrolyte:{perGwh_sdi:154}},
       evAdj:{sdi:{evGwh_y26:40, evGwh_y27:55}},  // 벤츠+BMW 물량 증가
       evCatAdj:{},
-      notes:['VW LFP 수주 확률 90%+. 헝가리 라인 2개 전환 진행 중','SDI VW LFP 양극재 → 엘앤에프 독점','솔브레인홀딩스 헝가리 전해액 CAPA 6만톤(가동률 21.73%). VW 20GWh 시 LFP 전해액 +3.4만톤 → 가동률 78%','SDI EV: 벤츠GLB+BMW iX3 물량 반영'],
+      notes:['VW LFP 수주 확률 90%+. 헝가리 라인 2개 전환 진행 중','SDI VW LFP 양극재 → 엘앤에프 독점','솔브레인홀딩스 헝가리 전해액 CAPA 6만톤(가동률 21.73%). SDI M/S 70% 기준 VW 20GWh 시 +2.38만톤 → 가동률 61%','SDI EV: 벤츠GLB+BMW iX3 물량 반영'],
     },
     {
       id:'lges_ess', name:'LGES ESS 가속',
