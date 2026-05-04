@@ -1235,8 +1235,38 @@ function renderScenario(){
   renderCmTam(scen);
 }
 
-// ===== Init =====
-buildSvg();renderCats();selectCat(0);renderScaleTabs();renderScaleTable();renderCapa();renderRegionTabs();renderOem();renderCellMakers();renderScenTabs();renderScenario();
+// ===== Notion Override + Init =====
+function setByPath(obj, path, value) {
+  const parts = path.replace(/\[(\d+)\]/g, '.$1').split('.');
+  let cur = obj;
+  for (let i = 0; i < parts.length - 1; i++) {
+    const key = isNaN(parts[i]) ? parts[i] : parseInt(parts[i]);
+    if (cur[key] === undefined) { console.warn('⚠ path not found:', path); return false; }
+    cur = cur[key];
+  }
+  const last = isNaN(parts[parts.length-1]) ? parts[parts.length-1] : parseInt(parts[parts.length-1]);
+  cur[last] = value;
+  return true;
+}
+async function loadNotionOverrides() {
+  try {
+    const res = await fetch('data/notion_variables.json?' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const json = await res.json();
+    let applied = 0;
+    json.variables.forEach(v => { if (setByPath(DATA, v.path, v.value)) applied++; });
+    console.log('✅ Notion sync:', applied + '건 적용 (' + json.syncedAt + ')');
+    document.getElementById('hmCell').textContent = '$' + DATA.basis.lfpCellPrice + '/kWh';
+    document.getElementById('hmMfg').textContent = '$' + DATA.basis.totalMfg + '/kWh';
+    document.getElementById('hmTurnkey').textContent = '$' + DATA.basis.turnkey + '/kWh';
+  } catch (e) { console.warn('ℹ Notion sync 없음 (기본값 사용):', e.message); }
+}
+function initAll() {
+  buildSvg(); renderCats(); selectCat(0); renderScaleTabs(); renderScaleTable();
+  renderCapa(); renderRegionTabs(); renderOem(); renderCellMakers();
+  renderScenTabs(); renderScenario();
+}
+loadNotionOverrides().then(() => initAll());
 document.addEventListener('keydown',e=>{
   if(e.key==='ArrowRight'||e.key==='ArrowDown')selectCat((activeIdx+1)%DATA.cats.length);
   else if(e.key==='ArrowLeft'||e.key==='ArrowUp')selectCat((activeIdx-1+DATA.cats.length)%DATA.cats.length);
