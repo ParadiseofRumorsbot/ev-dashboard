@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Battery Scenario · ESS+EV TAM 시뮬레이터 by. sangmin woo</title>
+<title>Battery Scenario · ESS+EV TAM 시뮬레이터</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
@@ -15,7 +15,7 @@ const DATA = {
     lfpCellPrice: 85,      // $/kWh — 미국 생산 LFP 셀
     totalMfg: 163.5,       // $/kWh — IRS 제조제품 합계 (= cellPrice / 0.52)
     serviceAddon: 43.5,    // $/kWh — EMS·변압기·SI·물류·보증
-    turnkey: 207.0,        // $/kWh — 턴키 시스템
+    turnkey: 207.0,        // $/kWh — 턴키 시스템 (삼성증권 2025.1.5)
     fx: 1450,              // KRW/USD
   },
 
@@ -216,7 +216,7 @@ const DATA = {
     cathode:    {sdi:100, lges:30,  skon:0},
     electrolyte:{sdi:70,  lges:0,   skon:0},
     alfoil:     {sdi:70,  lges:30,  skon:0},
-    separator:  {sdi:50,  lges:50,  skon:100},
+    separator:  {sdi:50,  lges:50,  skon:0},
   },
 
   // EV M/S — 부품사별 × 셀사별 Market Share (%)
@@ -238,7 +238,7 @@ const DATA = {
   // ═══════════════════════════════════════════════════════
   oemSales: {
     us: {
-      label:'미국', month:'2026.04', source:'Autodata via 미래에셋 김진석',
+      label:'미국', month:'2026.04', source:'Autodata via 미래에셋 김진석', annual25:{bev:1423000,phev:331000,total:1825000,note:'2025Y 연간 · EV-Volumes'},
       msSource:'OEM_Cell_Map · SNE Research급 원데이터 · MWh 기준',
       msAsOf:'2026.02',
       powertrainMix: {bev:78000, hev:223000, phev:15000, total:1380000},
@@ -258,7 +258,7 @@ const DATA = {
       ]
     },
     eu: {
-      label:'유럽', month:'2026.03 (1Q26÷3)', source:'ACEA + SNE Feb-26',
+      label:'유럽', month:'2026.03 (1Q26÷3)', source:'ACEA + SNE Feb-26', annual25:{bev:2605000,phev:1275000,total:3891000,note:'2025Y 연간 · ACEA'},
       msSource:'OEM_Cell_Map · SNE Research급 원데이터 · MWh 기준',
       msAsOf:'2026.02',
       powertrainMix: {bev:114700, hev:null, phev:52700, total:null},
@@ -356,30 +356,11 @@ const DATA = {
       evCatAdj:{},
       notes:['EREV 30만대 전환 → GWh -12 감소','Honda 0 Series 취소 → LGES -10GWh','Ford EV 취소 → SKON -15GWh','CHARGE Act 미통과 → 중국산 ESS 지속'],
     },
-    {
-      id:'charge_act', name:'CHARGE Act 통과',
-      desc:'중국산 ESS 미국 전력망 원천 차단. 60일 내 즉시 집행. K3 셀사 ESS 가동률 동반 급등. 서진·한중 ESS 하드웨어 수혜 극대화.',
-      cm:{sdi:{essUtil_y26:0.75,essUtil_y27:0.9}, lges:{essUtil_y26:0.6,essUtil_y27:0.75}, skon:{essGwh_y26:7,essGwh_y27:15,essUtil_y26:0.65,essUtil_y27:0.75}},
-      catAdj:{enclosure:{perGwh:400}, thermal:{perGwh:220}, cathode:{perGwh:570}, electrolyte:{perGwh:150}},
-      evAdj:{},
-      evCatAdj:{},
-      notes:['CHARGE Act 60일 내 즉시 집행 → 탈중국 벤더 교체 수요 폭증','서진시스템 Fluence 물량 급증 + North Belt 현지 조립','한중엔시에스 인디애나 현지 생산 프리미엄','K3 셀사 북미 ESS 수주잔고 ~200GWh','비중국 LFP 양극재 숏티지 가속 (수요 30만톤 vs 공급 13만톤)'],
-    },
-    {
-      id:'ai_dc_btm', name:'AI DC BTM ESS',
-      desc:'AI 데이터센터 BTM ESS 수요 급증. 2026F 5.7GWh → 2028F 21GWh 추정. Grid ESS 위에 BTM 추가 적재.',
-      cm:{lges:{essGwh_y26:70,essUtil_y26:0.5,essUtil_y27:0.65}, sdi:{essUtil_y26:0.65,essUtil_y27:0.8}},
-      catAdj:{cathode:{perGwh_lges:400}, enclosure:{perGwh_lges:280}, thermal:{perGwh_lges:100}},
-      evAdj:{},
-      evCatAdj:{},
-      notes:['북미 DC BTM ESS 2026F 5.7→2028F 21GWh 추정 (CAGR 60%)','LGES 미시건 ESS CAPA 확장 + 스텔란티스 JV 전환','UPS/BBU는 셀 납품이라 인클로저·냉각 TAM 부분 반영','800V DC 배전 + 무정전 전원 ESS 필수화'],
-    },
   ],
 
   // 북미 ESS CAPA (GWh)
   northAmericaCapa: {
     '2025E':40.5, '2026E':106.5, '2027E':112.5,
-    backlog: {sdi:80, lges:100, skon:20, note:'26.05 기준 K3 합산 ~200GWh'},
     detail: [
       {name:'SDI', y25:14, y26:28, y27:28, note:'NCA 7G+LFP 21G'},
       {name:'LGES', y25:16.5, y26:56.5, y27:56.5, note:'홀랜드+온타리오+랜싱+JV'},
@@ -669,7 +650,7 @@ main{max-width:1080px;margin:0 auto;padding:20px 16px 60px}
 <body>
 <main>
   <header class="hdr">
-    <div class="hdr-tag">Battery Scenario Simulator by. sangmin woo</div>
+    <div class="hdr-tag">Battery Scenario Simulator</div>
     <h1><b>Battery</b>Scenario</h1>
     <p class="hdr-sub">셀사별 CAPA × 가동률 × 부품사 $/kWh → TAM 시뮬레이터. 시나리오 프리셋으로 ESS + EV 통합 TAM 변동을 즉시 확인.</p>
     <nav style="display:flex;gap:10px;margin:12px 0 20px;font-size:12px;flex-wrap:wrap">
@@ -801,7 +782,7 @@ main{max-width:1080px;margin:0 auto;padding:20px 16px 60px}
 <th colspan="4" class="year-header year-border">2028</th>
 </tr>
 <tr>
-<th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th>
+<th>Q1</th><th class="now">Q2</th><th>Q3</th><th>Q4</th>
 <th class="year-border">Q1</th><th>Q2</th><th>Q3</th><th>Q4</th>
 <th class="year-border">Q1</th><th>Q2</th><th>Q3</th><th>Q4</th>
 </tr>
@@ -873,11 +854,7 @@ function renderCapa(){
       <div class="capa-td">${r.name}</div><div class="capa-td">${r.y25||'-'}</div><div class="capa-td">${r.y26||'-'}</div><div class="capa-td">${r.y27||'-'}</div><div class="capa-td">${r.note}</div>
     `).join('')}
     <div class="capa-td capa-sum">합계</div><div class="capa-td capa-sum">${d['2025E']}</div><div class="capa-td capa-sum">${d['2026E']}</div><div class="capa-td capa-sum">${d['2027E']}</div><div class="capa-td capa-sum">GWh</div>
-  `+( d.backlog ? `<div style="margin-top:12px;padding:10px 12px;background:var(--bg-soft);border-radius:7px;font-family:var(--mono);font-size:10px;color:var(--ink-2);line-height:1.8">
-    <span style="font-weight:700;color:var(--ink)">📋 수주잔고 vs 소화연수 (26E 출하 기준)</span><br>
-    ${['sdi','lges','skon'].map((k,i)=>{const cm=DATA.cellMakers[i];const out=(cm.essGwh.y26||0)*(cm.essUtil.y26||0);const bl=d.backlog[k]||0;const yrs=out>0?(bl/out).toFixed(1):'∞';return cm.name+': 잔고 '+bl+'GWh ÷ 출하 '+out.toFixed(1)+'GWh = <b>'+yrs+'년</b>'}).join(' · ')}
-    <br><span style="font-size:9px;color:var(--ink-3)">${d.backlog.note||''}</span>
-  </div>`:'' );
+  `;
 }
 
 // ===== OEM Bottom-Up =====
@@ -925,8 +902,20 @@ function renderOem(){
       <span style="color:var(--ink-3)">Total ${pm.total?(pm.total/10000).toFixed(1)+'만':'-'}</span>
     </div>`;
   }
+  // 2025 annual reference
+  const a25=region.annual25;
+  let a25Html='';
+  if(a25){
+    a25Html=`<div style="display:flex;gap:16px;margin-bottom:10px;padding:8px 14px;background:var(--bg-soft);border-radius:8px;font-family:var(--mono);font-size:10px;color:var(--ink-3);flex-wrap:wrap;border-left:3px solid var(--line-s)">
+      <span style="font-weight:700;color:var(--ink-2)">2025Y 연간</span>
+      <span>BEV <strong style="color:var(--ink)">${(a25.bev/10000).toFixed(1)}만</strong></span>
+      <span>PHEV <strong style="color:var(--ink)">${(a25.phev/10000).toFixed(1)}만</strong></span>
+      <span>Total <strong style="color:var(--ink)">${(a25.total/10000).toFixed(1)}만</strong></span>
+      <span style="font-size:9px">${a25.note||''}</span>
+    </div>`;
+  }
   const msInfo=region.msSource?`<div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);margin-bottom:10px;letter-spacing:.04em">M/S 출처: <strong style="color:var(--ink-2)">${region.msSource}</strong> · as of <strong style="color:var(--ink-2)">${region.msAsOf}</strong></div>`:'';
-  let html=pmHtml+msInfo+`<div class="oem-tbl">
+  let html=pmHtml+a25Html+msInfo+`<div class="oem-tbl">
     <div class="oem-th">OEM</div><div class="oem-th">BEV/월</div><div class="oem-th">YoY</div>
     <div class="oem-th">kWh</div><div class="oem-th">SDI</div><div class="oem-th">LGES</div><div class="oem-th">SKON</div><div class="oem-th">M/S 근거</div>`;
   let sumBev=0,sumK3={sdi:0,lges:0,skon:0};
@@ -938,8 +927,9 @@ function renderOem(){
     const hasK3=(k3vals.sdi+k3vals.lges+k3vals.skon)>0.01;
     sumBev+=adj;['sdi','lges','skon'].forEach(k=>sumK3[k]+=k3vals[k]);
     const yoyStr=o.yoy>0?`+${o.yoy}%`:`${o.yoy}%`;const yoyCls=o.yoy>0?'color:#00A878':'color:#E91E63';
+    const bev25=Math.round(adj/(1+o.yoy/100));
     html+=`<div class="oem-td" style="font-family:var(--sans);font-weight:${hasK3?600:400}">${o.oem}</div>`;
-    html+=`<div class="oem-td" style="${changed?'color:#E91E63;font-weight:700':'font-weight:600'}">${adj.toLocaleString()}${changed?'*':''}</div>`;
+    html+=`<div class="oem-td" style="${changed?'color:#E91E63;font-weight:700':'font-weight:600'}">${adj.toLocaleString()}${changed?'*':''}<br><span style="font-size:8px;color:var(--ink-3)">25Y ${bev25.toLocaleString()}</span></div>`;
     html+=`<div class="oem-td" style="${yoyCls};font-size:9.5px">${yoyStr}</div>`;
     html+=`<div class="oem-td">${o.kWh}</div>`;
     ['sdi','lges','skon'].forEach(k=>{const v=k3vals[k];const origShare=o.k3[k]||0;const curShare=k3shares[k]||0;const shareChanged=msChanged&&curShare!==origShare;
@@ -1311,7 +1301,7 @@ const METALS = {
   Ni:  {name:'니켈(Ni)',      price:19276, unit:'$/ton', kgPerKwh:{ncm:0.86,lfp:0},    color:'#1B6CFF'},
   Co:  {name:'코발트(Co)',    price:56290, unit:'$/ton', kgPerKwh:{ncm:0.08,lfp:0},    color:'#7C3AED'},
   Mn:  {name:'망간(Mn)',      price:30000, unit:'$/ton', kgPerKwh:{ncm:0.08,lfp:0},    color:'#E9A23B'},
-  Fe:  {name:'철(FePO₄)',     price:1000,  unit:'$/ton', kgPerKwh:{ncm:0,   lfp:1.43}, color:'#64748b'},
+  Fe:  {name:'철(Fe)',        price:100,   unit:'$/ton', kgPerKwh:{ncm:0,   lfp:1.43}, color:'#64748b'},
 };
 let metalAdj={Li:0,Ni:0,Co:0,Mn:0,Fe:0}; // % change
 
@@ -1359,33 +1349,6 @@ function renderMetalCalc(){
   html+=`<div style="margin-top:10px;font-size:10px;color:var(--ink-3);font-family:var(--mono)">
     ※ LFP는 재료원가 절대값이 NCM의 ~1/10이나 리튬 의존도가 높아 원가 상승률이 NCM 대비 ~3.8배 민감.
     단, 절대 금액 기준으로는 NCM이 더 큼. (Li +50% 가정 시 NCM +$${calc('ncm').deltaKg>0?calc('ncm').deltaKg.toFixed(2):'0'}/kg vs LFP +$${calc('lfp').deltaKg>0?calc('lfp').deltaKg.toFixed(2):'0'}/kg)
-  </div>`;
-  // ── perGwh 환산 (원가율 85%) ──
-  const fx=DATA.basis?DATA.basis.fx:1450;
-  const costRatio=0.85;
-  const lfpAsp=lfp.adjKg/costRatio;const ncmAsp=ncm.adjKg/costRatio;
-  const lfpPerGwh=(lfpAsp*2400000*fx/1e8).toFixed(0);
-  const ncmPerGwh=(ncmAsp*1400000*fx/1e8).toFixed(0);
-  const lfpBaseAsp=lfp.baseKg/costRatio;const ncmBaseAsp=ncm.baseKg/costRatio;
-  const lfpBasePerGwh=(lfpBaseAsp*2400000*fx/1e8).toFixed(0);
-  const ncmBasePerGwh=(ncmBaseAsp*1400000*fx/1e8).toFixed(0);
-  html+=`<div style="margin-top:14px;padding:12px 14px;background:var(--bg-card);border:1px solid var(--line);border-radius:10px;font-family:var(--mono);font-size:10px;line-height:1.9">
-    <div style="font-weight:700;color:var(--ink);font-size:11px;margin-bottom:6px">📐 perGwh 환산 (원가율 ${(costRatio*100).toFixed(0)}% · 환율 ${fx.toLocaleString()})</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-      <div style="padding:8px;background:var(--bg-soft);border-radius:6px;border-left:3px solid #E91E63">
-        <div style="font-weight:600;color:#E91E63">ESS (LFP · 2,400톤/GWh)</div>
-        원재료 $${lfp.adjKg.toFixed(2)}/kg → ASP $${lfpAsp.toFixed(2)}/kg<br>
-        <span style="font-size:13px;font-weight:700;color:var(--ink)">→ ${lfpPerGwh}억원/GWh</span>
-        <span style="font-size:9px;color:var(--ink-3)"> (Base ${lfpBasePerGwh})</span>
-      </div>
-      <div style="padding:8px;background:var(--bg-soft);border-radius:6px;border-left:3px solid #00A878">
-        <div style="font-weight:600;color:#00A878">EV (NCM · 1,400톤/GWh)</div>
-        원재료 $${ncm.adjKg.toFixed(2)}/kg → ASP $${ncmAsp.toFixed(2)}/kg<br>
-        <span style="font-size:13px;font-weight:700;color:var(--ink)">→ ${ncmPerGwh}억원/GWh</span>
-        <span style="font-size:9px;color:var(--ink-3)"> (Base ${ncmBasePerGwh})</span>
-      </div>
-    </div>
-    <div style="margin-top:6px;font-size:9px;color:var(--ink-3)">※ 원재료비 ÷ 원가율(${(costRatio*100).toFixed(0)}%) = 양극재 ASP → ×로딩(톤/GWh) × 환율 ÷ 1억 = 억원/GWh. 에디터 cathode perGwh와 비교용.</div>
   </div>`;
   box.innerHTML=html;
   // Bind sliders
@@ -1452,92 +1415,8 @@ function renderLfpCost(){
     </div>`;
   });
   html+=`</div>`;
-  // ── Custom tariff slider ──
-  const customRate=window._customTariff||48.4;
-  const cnBase=46.20;
-  const cLanded=cnBase+4.0+(cnBase*customRate/100);
-  const cGap=usLocal-cLanded;
-  const usAmpc=usLocal-ampc;
-  const ampcGap=cLanded-usAmpc;
-  const bep=((usLocal-cnBase-4.0)/cnBase*100).toFixed(1);
-  html+=`<div style="margin-top:16px;padding:14px;background:var(--bg-card);border:1px solid var(--line);border-radius:10px">
-    <div style="font-family:var(--mono);font-size:10px;font-weight:700;color:var(--ink);margin-bottom:8px">🎚️ 관세율 시뮬레이터 — 중국 LFP → 미국</div>
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
-      <input type="range" min="30" max="80" value="${customRate}" id="tariffSlider" style="flex:1;accent-color:#E91E63">
-      <span id="tariffPct" style="font-family:var(--mono);font-size:16px;font-weight:700;color:var(--ink);min-width:50px">${customRate}%</span>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px">
-      <div style="padding:10px;background:var(--bg-soft);border-radius:8px;border-top:3px solid #E91E63;text-align:center">
-        <div style="font-size:9px;color:var(--ink-3);margin-bottom:4px">🇨🇳 중국산 (관세 ${customRate}%)</div>
-        <div style="font-size:9px;color:var(--ink-3)">$${cnBase} + 운송 $4.0 + 관세 $${(cnBase*customRate/100).toFixed(1)}</div>
-        <div style="font-size:18px;font-weight:700;color:#E91E63;margin:4px 0">$${cLanded.toFixed(1)}</div>
-        <div style="font-size:9px;color:var(--ink-3)">ITC/AMPC 수취 불가</div>
-      </div>
-      <div style="padding:10px;background:var(--bg-soft);border-radius:8px;border-top:3px solid var(--ink-3);text-align:center">
-        <div style="font-size:9px;color:var(--ink-3);margin-bottom:4px">🇺🇸 미국산 (보조금 없음)</div>
-        <div style="font-size:9px;color:var(--ink-3)">제조원가 $64.4 × 마진 10%</div>
-        <div style="font-size:18px;font-weight:700;color:var(--ink);margin:4px 0">$${usLocal}</div>
-        <div style="font-size:9px;color:${cGap>0?'#00A878':'#E91E63'}">${cGap>0?'중국산 대비 $'+cGap.toFixed(1)+' 비쌈':'중국산 대비 $'+Math.abs(cGap).toFixed(1)+' 저렴'}</div>
-      </div>
-      <div style="padding:10px;background:var(--bg-soft);border-radius:8px;border-top:3px solid #00A878;text-align:center">
-        <div style="font-size:9px;color:var(--ink-3);margin-bottom:4px">🇺🇸 미국산 (AMPC Base)</div>
-        <div style="font-size:9px;color:var(--ink-3)">$${usLocal} − AMPC $${ampc}</div>
-        <div style="font-size:18px;font-weight:700;color:#00A878;margin:4px 0">$${usAmpc.toFixed(1)}</div>
-        <div style="font-size:9px;color:#00A878;font-weight:700">중국산 대비 $${ampcGap.toFixed(1)} 저렴</div>
-      </div>
-    </div>
-    <div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);line-height:1.6">
-      ⚠️ 보조금 미적용 BEP 관세율: <b style="color:#E91E63">${bep}%</b> — 이 이상이면 보조금 없이도 중국산이 더 비쌈<br>
-      💡 AMPC 적용 시 관세 0%에서도 미국산($${usAmpc.toFixed(1)}) < 중국산($${(cnBase+4.0).toFixed(1)}) → <b>관세는 추가 안전마진</b>
-    </div>
-  </div>`;
-  html+=`<div style="margin-top:12px;padding:12px 14px;background:var(--bg-soft);border-radius:8px;font-family:var(--mono);font-size:10px;color:var(--ink-2);line-height:1.9">
-    <div style="font-weight:700;color:var(--ink);margin-bottom:4px">📐 현지생산가 $${usLocal}/kWh 산정 근거</div>
-    상단 테이블 미국 LFP 셀 제조원가(소재 $39.2 + 임가공 $25.2 = $64.4) × 마진 10% = <b>$${usLocal}</b><br>
-    중국 내수가도 동일: 제조원가 $41.9 × 마진 10% = $46.2 (CATL 기준)<br>
-    <div style="margin-top:8px;font-weight:700;color:var(--ink)">💰 미국 보조금 효과</div>
-    <b>AMPC (45X)</b>: 셀 $35/kWh + 모듈 $10/kWh = $45/kWh. 미국 현지 생산 시 수취 → 현지생산 실질가 $${usLocal} − $${ampc} = <b style="color:#00A878">$${(usLocal-ampc).toFixed(1)}/kWh</b><br>
-    <b>ITC (48E)</b>: ESS 프로젝트 투자비의 30~60% 세액공제<br>
-    <b>MACR 요건</b>: ITC/AMPC 수취를 위한 비중국(Non-PFE) 부품 조달 비율. 2026년 ESS 55% / 배터리 60% 이상 충족 필요<br>
-    <span style="font-size:9px;color:var(--ink-3)">→ AMPC + ITC 동시 수취 시, 관세 없이도 중국산 대비 미국 현지생산이 경제적으로 우위. 관세는 추가 안전마진.</span>
-    <table style="margin-top:10px;width:100%;border-collapse:collapse;font-family:var(--mono);font-size:10px">
-      <tr style="border-bottom:2px solid var(--line-s)">
-        <th style="text-align:left;padding:5px 6px;color:var(--ink-3);font-size:9px">구분</th>
-        <th style="text-align:right;padding:5px 6px;color:var(--ink-3);font-size:9px">공제율</th>
-        <th style="text-align:left;padding:5px 6px;color:var(--ink-3);font-size:9px">요건</th>
-      </tr>
-      <tr style="border-bottom:.5px solid var(--line)">
-        <td style="padding:4px 6px;font-weight:700">Base ITC</td>
-        <td style="text-align:right;padding:4px 6px;font-weight:700">30%</td>
-        <td style="padding:4px 6px;color:var(--ink-2)">MACR + 노동조건(Prevailing Wage) 충족</td>
-      </tr>
-      <tr style="border-bottom:.5px solid var(--line)">
-        <td style="padding:4px 6px">Domestic Content Bonus</td>
-        <td style="text-align:right;padding:4px 6px">+10%</td>
-        <td style="padding:4px 6px;color:var(--ink-2)">미국 내 부품 생산 비중 충족 (25Y 45%, 26Y 50%, 27Y 55%)</td>
-      </tr>
-      <tr style="border-bottom:.5px solid var(--line)">
-        <td style="padding:4px 6px">Energy Community Bonus</td>
-        <td style="text-align:right;padding:4px 6px">+10%</td>
-        <td style="padding:4px 6px;color:var(--ink-2)">석탄 폐광 지역 등 지정 커뮤니티 소재 프로젝트</td>
-      </tr>
-      <tr style="border-bottom:1px solid var(--line)">
-        <td style="padding:4px 6px">Low-Income Community Bonus</td>
-        <td style="text-align:right;padding:4px 6px">+10~20%</td>
-        <td style="padding:4px 6px;color:var(--ink-2)">저소득 지역 소재 또는 저소득층 대상 프로젝트</td>
-      </tr>
-      <tr style="background:var(--bg-card)">
-        <td style="padding:5px 6px;font-weight:700;color:var(--ink)">합계</td>
-        <td style="text-align:right;padding:5px 6px;font-weight:700;color:#00A878">30~60%</td>
-        <td style="padding:5px 6px;font-size:9px;color:var(--ink-3)">IRA Section 48E · Source: NREL, US Congress</td>
-      </tr>
-    </table>
-  </div>`;
-  html+=`<div style="margin-top:8px;font-size:9px;color:var(--ink-3);font-family:var(--mono)">Source: BNEF, SMM, Infolink, Bloomberg, IRS Notice 2025-08 · 중국 판가 = 셀 제조원가 + CATL 마진 10% · 1 CNY = 0.1404 USD</div>`;
+  html+=`<div style="margin-top:8px;font-size:9px;color:var(--ink-3);font-family:var(--mono)">Source: BNEF, SMM, Infolink, Bloomberg · 중국 판가 = 셀 제조원가 + CATL 마진 10% · 1 CNY = 0.1404 USD</div>`;
   box.innerHTML=html;
-  // Tariff slider binding
-  const tSlider=document.getElementById('tariffSlider');
-  if(tSlider)tSlider.addEventListener('input',e=>{window._customTariff=+e.target.value;renderLfpCost()});
 }
 
 // ===== Editor =====
@@ -1621,8 +1500,6 @@ renderCapa();renderRegionTabs();renderOem();renderCellMakers();
 renderScenTabs();renderScenario();renderCell3Tabs();renderCell3();
 renderLiTabs();renderLiChart();renderMetalCalc();renderLfpCost();buildEditorSections();
 window.addEventListener('resize',()=>renderLiChart());
-// Auto-detect current quarter for timeline "now" highlight
-(function(){const m=new Date().getMonth(),y=new Date().getFullYear(),q=Math.floor(m/3);const ths=document.querySelectorAll('.launch-table thead tr:last-child th');const baseYear=2026;const idx=(y-baseYear)*4+q;if(idx>=0&&idx<12){const thArr=[...ths].slice(1);if(thArr[idx])thArr[idx].classList.add('now')}})();
 </script>
 </body>
 </html>
