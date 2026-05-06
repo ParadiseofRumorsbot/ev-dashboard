@@ -586,11 +586,6 @@ main{max-width:1240px;margin:0 auto;padding:48px 28px 80px}
     <div class="sg-sum" id="scaleSum"></div>
   </section>
 
-  
-
-  
-
-  
 
   <footer class="ft">
     <span><strong>ESS BOM Routing Map</strong> · IRS Notice 2025-08</span>
@@ -868,6 +863,20 @@ function renderScaleTable(){
 // ===== CAPA Table =====
 
 // Scenario functions moved to battery_scenario.html
+// ===== Editor helpers =====
+const edOriginal = JSON.parse(JSON.stringify(DATA));
+let edChangeCount = 0;
+
+function setByPath(obj, path, value) {
+  const parts = path.replace(/\[(\d+)\]/g, '.$1').split('.');
+  let cur = obj;
+  for (let i = 0; i < parts.length - 1; i++) {
+    const key = isNaN(parts[i]) ? parts[i] : parseInt(parts[i]);
+    cur = cur[key];
+  }
+  cur[isNaN(parts[parts.length-1]) ? parts[parts.length-1] : parseInt(parts[parts.length-1])] = value;
+}
+
 function buildEditorSections() {
   const box = document.getElementById('edSections');
   let h = '';
@@ -1024,57 +1033,24 @@ function edReset() {
   document.getElementById('edStatus').textContent = 'Notion 기본값으로 복원됨';
 }
 
+// ===== Init =====
+buildSvg(); renderCats(); selectCat(0); renderScaleTabs(); renderScaleTable(); buildEditorSections();
+
+// Editor toggle
+const edToggle = document.getElementById('edToggle');
+const edPanel = document.getElementById('edPanel');
+edToggle.addEventListener('click', () => {
+  edPanel.classList.toggle('open');
+  edToggle.classList.toggle('open');
+  edToggle.textContent = edPanel.classList.contains('open') ? '닫기' : '✏️';
+});
+
 document.addEventListener('keydown',e=>{
   if(e.key==='ArrowRight'||e.key==='ArrowDown')selectCat((activeIdx+1)%DATA.cats.length);
   else if(e.key==='ArrowLeft'||e.key==='ArrowUp')selectCat((activeIdx-1+DATA.cats.length)%DATA.cats.length);
   else if(/^[1-6]$/.test(e.key))selectCat(+e.key-1);
 });
 </script>
-<div class="dia-card" style="margin-top:24px">
-<div style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;letter-spacing:.08em;text-transform:uppercase;font-weight:600">🚗 글로벌 주요 EV 신차 출시 타임라인 (2026~2028)</div>
-<div style="font-size:12px;color:var(--ink-3);margin-bottom:16px">미국·유럽 출시 기준 · 배터리 케미스트리 + 용량 구분 · 출처: OEM IR, Consumer Reports, TopElectricSUV, electrive</div>
-<div class="chem-legend">
-<span><i style="background:#22c55e"></i>NCM (삼원계)</span>
-<span><i style="background:#ef4444"></i>LFP (인산철)</span>
-<span><i style="background:linear-gradient(135deg,#22c55e,#ef4444)"></i>NCM/LFP 혼용</span>
-<span><i style="background:#8b8b82"></i>미확인</span>
-<span style="color:#b45309;font-weight:500">⚡ 800V</span>
-</div>
-<div class="launch-table-wrap">
-<table class="launch-table">
-<thead>
-<tr>
-<th rowspan="2" style="min-width:90px;border-right:2px solid var(--line)">OEM</th>
-<th colspan="4" class="year-header">2026</th>
-<th colspan="4" class="year-header year-border">2027</th>
-<th colspan="4" class="year-header year-border">2028</th>
-</tr>
-<tr>
-<th>Q1</th><th class="now">Q2</th><th>Q3</th><th>Q4</th>
-<th class="year-border">Q1</th><th>Q2</th><th>Q3</th><th>Q4</th>
-<th class="year-border">Q1</th><th>Q2</th><th>Q3</th><th>Q4</th>
-</tr>
-</thead>
-<tbody>
-<tr><td class="brand"><span class="flag">🇺🇸</span>Tesla</td><td><span class="model-chip chip-lfp">Cybercab<span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc-lfp">Semi 파일럿<span class="chip-kwh">~1MWh</span></span></td><td><span class="model-chip chip-nmc-lfp">Semi 램프</span></td><td><span class="model-chip chip-unknown">Roadster<span class="chip-kwh">미확인</span></span></td><td class="empty year-border">-</td><td><span class="model-chip chip-nmc-lfp">Semi 풀램프</span></td><td class="empty">-</td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
-<tr><td class="brand"><span class="flag">🇩🇪</span>BMW</td><td><span class="model-chip chip-nmc">iX3 NK<span class="chip-kwh">108kWh</span><span class="chip-800v">⚡</span></span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-nmc">iX1 NK<span class="chip-kwh">~83kWh</span><span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">i7 Gen6<span class="chip-kwh">112kWh</span><span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">iX7<span class="chip-kwh">미확인</span><span class="chip-800v">⚡</span></span></td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
-<tr><td class="brand"><span class="flag">🇩🇪</span>Mercedes</td><td class="empty">-</td><td><span class="model-chip chip-nmc">CLA EV<span class="chip-kwh">~66kWh</span><span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">GLC EV<span class="chip-kwh">~94kWh</span><span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">GLB EV<span class="chip-kwh">미확인</span></span></td><td class="year-border"><span class="model-chip chip-nmc">C400 EV<span class="chip-kwh">미확인</span><span class="chip-800v">⚡</span></span></td><td class="empty">-</td><td><span class="model-chip chip-nmc">EQS F/L<span class="chip-kwh">미확인</span></span></td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-nmc">E-Class EV<span class="chip-kwh">미확인</span></span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
-<tr><td class="brand"><span class="flag">🇩🇪</span>VW그룹</td><td class="empty">-</td><td><span class="model-chip chip-nmc-lfp">ID.Polo<span class="chip-kwh">37/52kWh</span></span><span class="model-chip chip-lfp">Skoda Epiq<span class="chip-kwh">~37kWh</span></span></td><td class="empty">-</td><td><span class="model-chip chip-nmc">718 EV<span class="chip-kwh">~100kWh</span><span class="chip-800v">⚡</span></span></td><td class="year-border"><span class="model-chip chip-lfp">ID.Every1<span class="chip-kwh">~37kWh</span></span></td><td><span class="model-chip chip-nmc">Cayenne EV<span class="chip-kwh">미확인</span><span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-unknown">Scout 생산<span class="chip-kwh">미확인</span></span></td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-unknown">Scout 판매</span></td><td><span class="model-chip chip-lfp">ID.Golf EV<span class="chip-kwh">미확인</span></span></td><td class="empty">-</td><td class="empty">-</td></tr>
-<tr><td class="brand"><span class="flag">🇰🇷</span>현대·기아</td><td><span class="model-chip chip-nmc">아이오닉9<span class="chip-kwh">110kWh</span></span></td><td class="empty">-</td><td><span class="model-chip chip-nmc">EV3 (US)<span class="chip-kwh">81kWh</span></span></td><td><span class="model-chip chip-lfp">EV2 (EU)<span class="chip-kwh">~58kWh</span></span></td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-unknown">GV90 EV<span class="chip-kwh">미확인</span></span></td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
-<tr><td class="brand"><span class="flag">🇯🇵</span>일본차</td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-nmc">Nissan Leaf 3<span class="chip-kwh">~60kWh</span></span></td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-unknown">Toyota Highlander EV<span class="chip-kwh">미확인</span></span></td><td class="empty">-</td><td><span class="model-chip chip-nmc">Lexus ES EV<span class="chip-kwh">미확인</span></span></td><td><span class="model-chip chip-nmc">Honda 0 RSX<span class="chip-kwh">미확인</span></span></td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
-<tr><td class="brand"><span class="flag">🇸🇪</span>Volvo</td><td><span class="model-chip chip-nmc">EX60<span class="chip-kwh">~100kWh</span><span class="chip-800v">⚡</span></span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-lfp">EX40<span class="chip-kwh">미확인</span></span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
-<tr><td class="brand"><span class="flag">🇺🇸</span>Rivian</td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-lfp">R2<span class="chip-kwh">~75kWh</span></span></td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-unknown">로보택시 (우버)<span class="chip-kwh">미확인</span></span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
-<tr><td class="brand"><span class="flag">🇺🇸</span>Lucid</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-nmc">Earth<span class="chip-kwh">~92kWh</span><span class="chip-800v">⚡</span></span></td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-nmc">Cosmos<span class="chip-kwh">미확인</span></span></td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
-<tr><td class="brand"><span class="flag">🇺🇸</span>GM·Ford</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-nmc">Bolt EUV 신형<span class="chip-kwh">~66kWh</span></span></td><td><span class="model-chip chip-unknown">Ford EV픽업<span class="chip-kwh">미확인</span></span></td><td class="empty">-</td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-nmc-lfp">F-150 EREV<span class="chip-kwh">미확인</span></span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
-</tbody>
-</table>
-</div>
-<div style="margin-top:14px;font-size:11px;color:var(--ink-3);line-height:1.7">
-※ 일정은 OEM 발표 기준이며 변경 가능 · ~표기는 추정치<br>
-※ Tesla Semi: 네바다 전용공장 연 5만대·$14B 매출 목표 (Q1 26 컨콜) · Cybercab: NC05 LFP 4680 추정<br>
-※ BMW NK: 4695 원통형 NMC, CTP, 400kW 충전 · VW ID.Polo: Group unified cell · <span style="color:#dc2626">LFP 37kWh</span> (베이스) / <span style="color:#15803d">NMC 52kWh</span> (상위)
-</div>
-</div>
 
 </body>
 </html>
