@@ -238,23 +238,23 @@ const DATA = {
   // ═══════════════════════════════════════════════════════
   oemSales: {
     us: {
-      label:'미국', month:'2026.04', source:'Autodata via 미래에셋 김진석', annual25:{bev:1423000,phev:331000,total:1825000,note:'2025Y 연간 · EV-Volumes'},
+      label:'미국', month:'2026.04', source:'Autodata', annual25:{bev:1423000,phev:331000,total:1825000,note:'2025Y 연간 · EV-Volumes'},
       msSource:'OEM_Cell_Map · SNE Research급 원데이터 · MWh 기준',
       msAsOf:'2026.02',
       powertrainMix: {bev:78000, hev:223000, phev:15000, total:1380000},
       oems: [
-        {oem:'Tesla',    bev:37550, yoy:-16, kWh:90,  k3:{sdi:0,lges:0,skon:0},     note:'Panasonic 96%. K3 무관'},
-        {oem:'GM',       bev:10800, yoy:-29, kWh:85,  k3:{sdi:0,lges:1.0,skon:0},   note:'Ultium JV. LGES 100%'},
-        {oem:'현대기아',  bev:7186,  yoy:+8,  kWh:84,  k3:{sdi:0,lges:0.05,skon:0.95},note:'SK온 95%. 기아 BEV+65%'},
-        {oem:'Ford',     bev:3655,  yoy:-25, kWh:90,  k3:{sdi:0,lges:0.25,skon:0.39},note:'3사 분배. CATL 33%'},
+        {oem:'Tesla',bev25y:590000,    bev:37550, yoy:-16, kWh:90,  k3:{sdi:0,lges:0,skon:0},     note:'Panasonic 96%. K3 무관'},
+        {oem:'GM',bev25y:166000,       bev:10800, yoy:-29, kWh:85,  k3:{sdi:0,lges:1.0,skon:0},   note:'Ultium JV. LGES 100%'},
+        {oem:'현대기아',bev25y:104000,  bev:7186,  yoy:+8,  kWh:84,  k3:{sdi:0,lges:0.05,skon:0.95},note:'SK온 95%. 기아 BEV+65%'},
+        {oem:'Ford',bev25y:84000,     bev:3655,  yoy:-25, kWh:90,  k3:{sdi:0,lges:0.25,skon:0.39},note:'3사 분배. CATL 33%'},
         {oem:'Rivian',   bev:3480,  yoy:+17, kWh:75,  k3:{sdi:0,lges:1.0,skon:0},   note:'LGES 추정'},
-        {oem:'Toyota',   bev:4847,  yoy:+183,kWh:70,  k3:{sdi:0,lges:0,skon:0},     note:'CATL+파나소닉. K3 미미'},
-        {oem:'BMW',      bev:2343,  yoy:-55, kWh:90,  k3:{sdi:0.25,lges:0,skon:0},  note:'SDI 25%. CATL 65%'},
-        {oem:'VW',       bev:1791,  yoy:-52, kWh:80,  k3:{sdi:0,lges:0.12,skon:0.33},note:'CATL 45%'},
-        {oem:'Stellantis',bev:156,  yoy:-94, kWh:100, k3:{sdi:0.88,lges:0.07,skon:0},note:'SDI 88%'},
-        {oem:'Subaru',   bev:2053,  yoy:+116,kWh:70,  k3:{sdi:0,lges:0,skon:0},     note:'파나소닉'},
-        {oem:'Honda',    bev:1518,  yoy:-64, kWh:80,  k3:{sdi:0,lges:0.5,skon:0},   note:'0 Series 취소'},
-        {oem:'Lucid',    bev:840,   yoy:+3,  kWh:100, k3:{sdi:0,lges:1.0,skon:0},   note:'LGES 추정'},
+        {oem:'Toyota',bev25y:42000,   bev:4847,  yoy:+183,kWh:70,  k3:{sdi:0,lges:0,skon:0},     note:'CATL+파나소닉. K3 미미'},
+        {oem:'BMW',bev25y:33000,      bev:2343,  yoy:-55, kWh:90,  k3:{sdi:0.25,lges:0,skon:0},  note:'SDI 25%. CATL 65%'},
+        {oem:'VW',bev25y:72000,       bev:1791,  yoy:-52, kWh:80,  k3:{sdi:0,lges:0.12,skon:0.33},note:'CATL 45%'},
+        {oem:'Stellantis',bev25y:15000,bev:156,  yoy:-94, kWh:100, k3:{sdi:0.88,lges:0.07,skon:0},note:'SDI 88%'},
+        {oem:'Subaru',bev25y:20000,   bev:2053,  yoy:+116,kWh:70,  k3:{sdi:0,lges:0,skon:0},     note:'파나소닉'},
+        {oem:'Honda',bev25y:42000,    bev:1518,  yoy:-64, kWh:80,  k3:{sdi:0,lges:0.5,skon:0},   note:'0 Series 취소'},
+        {oem:'Lucid',bev25y:10000,    bev:840,   yoy:+3,  kWh:100, k3:{sdi:0,lges:1.0,skon:0},   note:'LGES 추정'},
       ]
     },
     eu: {
@@ -263,13 +263,13 @@ const DATA = {
       msAsOf:'2026.02',
       powertrainMix: {bev:114700, hev:null, phev:52700, total:null},
       oems: [
-        {oem:'Tesla',     bev:20000, yoy:+30, kWh:70,  k3:{sdi:0,lges:0.64,skon:0},   note:'LGES 유럽 1위 고객 64%'},
-        {oem:'VW Group',  bev:30000, yoy:+35, kWh:80,  k3:{sdi:0,lges:0.32,skon:0.18}, note:'CATL 42%. K3 합산 56%'},
-        {oem:'BMW',       bev:15000, yoy:+40, kWh:85,  k3:{sdi:0.25,lges:0,skon:0},   note:'SDI 25%'},
-        {oem:'벤츠',      bev:8000,  yoy:+20, kWh:80,  k3:{sdi:0,lges:0,skon:0.20},   note:'CATL 53%. SDI 28년~'},
-        {oem:'현대기아',   bev:12000, yoy:+45, kWh:65,  k3:{sdi:0,lges:0.15,skon:0.85},note:'SK온 85%'},
-        {oem:'Stellantis', bev:8000, yoy:+10, kWh:55,  k3:{sdi:0,lges:0,skon:0},      note:'CATL 40%+중국 86%'},
-        {oem:'Geely-Volvo',bev:6000, yoy:+25, kWh:70,  k3:{sdi:0,lges:0.23,skon:0},   note:'CATL 54%'},
+        {oem:'Tesla',bev25y:240000,     bev:20000, yoy:+30, kWh:70,  k3:{sdi:0,lges:0.64,skon:0},   note:'LGES 유럽 1위 고객 64%'},
+        {oem:'VW Group',bev25y:380000,  bev:30000, yoy:+35, kWh:80,  k3:{sdi:0,lges:0.32,skon:0.18}, note:'CATL 42%. K3 합산 56%'},
+        {oem:'BMW',bev25y:180000,       bev:15000, yoy:+40, kWh:85,  k3:{sdi:0.25,lges:0,skon:0},   note:'SDI 25%'},
+        {oem:'벤츠',bev25y:80000,      bev:8000,  yoy:+20, kWh:80,  k3:{sdi:0,lges:0,skon:0.20},   note:'CATL 53%. SDI 28년~'},
+        {oem:'현대기아',bev25y:130000,   bev:12000, yoy:+45, kWh:65,  k3:{sdi:0,lges:0.15,skon:0.85},note:'SK온 85%'},
+        {oem:'Stellantis',bev25y:120000, bev:8000, yoy:+10, kWh:55,  k3:{sdi:0,lges:0,skon:0},      note:'CATL 40%+중국 86%'},
+        {oem:'Geely-Volvo',bev25y:90000,bev:6000, yoy:+25, kWh:70,  k3:{sdi:0,lges:0.23,skon:0},   note:'CATL 54%'},
       ]
     },
   },
@@ -927,9 +927,8 @@ function renderOem(){
     const hasK3=(k3vals.sdi+k3vals.lges+k3vals.skon)>0.01;
     sumBev+=adj;['sdi','lges','skon'].forEach(k=>sumK3[k]+=k3vals[k]);
     const yoyStr=o.yoy>0?`+${o.yoy}%`:`${o.yoy}%`;const yoyCls=o.yoy>0?'color:#00A878':'color:#E91E63';
-    const bev25=Math.round(adj/(1+o.yoy/100));
     html+=`<div class="oem-td" style="font-family:var(--sans);font-weight:${hasK3?600:400}">${o.oem}</div>`;
-    html+=`<div class="oem-td" style="${changed?'color:#E91E63;font-weight:700':'font-weight:600'}">${adj.toLocaleString()}${changed?'*':''}<br><span style="font-size:8px;color:var(--ink-3)">25Y ${bev25.toLocaleString()}</span></div>`;
+    html+=`<div class="oem-td" style="${changed?'color:#E91E63;font-weight:700':'font-weight:600'}">${adj.toLocaleString()}${changed?'*':''}${o.bev25y?`<br><span style="font-size:8px;color:var(--ink-3)">25Y ${(o.bev25y/10000).toFixed(1)}만</span>`:''}</div>`;
     html+=`<div class="oem-td" style="${yoyCls};font-size:9.5px">${yoyStr}</div>`;
     html+=`<div class="oem-td">${o.kWh}</div>`;
     ['sdi','lges','skon'].forEach(k=>{const v=k3vals[k];const origShare=o.k3[k]||0;const curShare=k3shares[k]||0;const shareChanged=msChanged&&curShare!==origShare;
@@ -1415,8 +1414,45 @@ function renderLfpCost(){
     </div>`;
   });
   html+=`</div>`;
-  html+=`<div style="margin-top:8px;font-size:9px;color:var(--ink-3);font-family:var(--mono)">Source: BNEF, SMM, Infolink, Bloomberg · 중국 판가 = 셀 제조원가 + CATL 마진 10% · 1 CNY = 0.1404 USD</div>`;
+  // ── Custom tariff slider ──
+  const customRate=window._customTariff||48.4;
+  const cnBase=46.20;
+  const cLanded=cnBase+4.0+(cnBase*customRate/100);
+  const cGap=usLocal-cLanded;
+  const usAmpc=usLocal-ampc;
+  const ampcGap=cLanded-usAmpc;
+  const bep=((usLocal-cnBase-4.0)/cnBase*100).toFixed(1);
+  html+=`<div style="margin-top:16px;padding:14px;background:var(--bg-card);border:1px solid var(--line);border-radius:10px">
+    <div style="font-family:var(--mono);font-size:10px;font-weight:700;color:var(--ink);margin-bottom:8px">🎚️ 관세율 시뮬레이터 — 중국 LFP → 미국</div>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+      <input type="range" min="0" max="100" value="${customRate}" id="tariffSlider" style="flex:1;accent-color:#E91E63">
+      <span id="tariffPct" style="font-family:var(--mono);font-size:16px;font-weight:700;color:var(--ink);min-width:50px">${customRate}%</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+      <div style="padding:10px;background:var(--bg-soft);border-radius:8px;border-top:3px solid #E91E63;text-align:center">
+        <div style="font-size:9px;color:var(--ink-3)">🇨🇳 중국산 (관세 ${customRate}%)</div>
+        <div style="font-size:18px;font-weight:700;color:#E91E63;margin:4px 0">$${cLanded.toFixed(1)}</div>
+        <div style="font-size:9px;color:var(--ink-3)">AMPC 불가</div>
+      </div>
+      <div style="padding:10px;background:var(--bg-soft);border-radius:8px;border-top:3px solid var(--ink-3);text-align:center">
+        <div style="font-size:9px;color:var(--ink-3)">🇺🇸 미국산 (보조금 없음)</div>
+        <div style="font-size:18px;font-weight:700;color:var(--ink);margin:4px 0">$${usLocal}</div>
+        <div style="font-size:9px;color:${cGap>0?'#00A878':'#E91E63'}">${cGap>0?'중국산 $'+cGap.toFixed(1)+' 저렴':'중국산 $'+Math.abs(cGap).toFixed(1)+' 비쌈'}</div>
+      </div>
+      <div style="padding:10px;background:var(--bg-soft);border-radius:8px;border-top:3px solid #00A878;text-align:center">
+        <div style="font-size:9px;color:var(--ink-3)">🇺🇸 미국산 (AMPC)</div>
+        <div style="font-size:18px;font-weight:700;color:#00A878;margin:4px 0">$${usAmpc.toFixed(1)}</div>
+        <div style="font-size:9px;color:#00A878">중국산 대비 $${ampcGap.toFixed(1)} 저렴</div>
+      </div>
+    </div>
+    <div style="margin-top:8px;font-family:var(--mono);font-size:9px;color:var(--ink-3)">
+      ⚠️ BEP 관세율: <b style="color:#E91E63">${bep}%</b> · AMPC 적용 시 관세 0%에서도 미국산 우위
+    </div>
+  </div>`;
+  html+=`<div style="margin-top:8px;font-size:9px;color:var(--ink-3);font-family:var(--mono)">Source: BNEF, SMM, Infolink, Bloomberg · 중국 판가 = 셀 제조원가 + CATL 마진 10% · 1 CNY = 0.1464 USD</div>`;
   box.innerHTML=html;
+  const tSlider=document.getElementById('tariffSlider');
+  if(tSlider)tSlider.addEventListener('input',e=>{window._customTariff=+e.target.value;renderLfpCost()});
 }
 
 // ===== Editor =====
