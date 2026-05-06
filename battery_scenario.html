@@ -278,25 +278,25 @@ const DATA = {
   // k3Override: {셀사id: 새 M/S%} — 해당 OEM의 셀사 점유율을 직접 변경. null이면 M/S 유지.
   // 예: SDI-벤츠 수주 → 벤츠 k3.sdi가 0→0.15로 변동
   oemEvents: [
-    {id:'gm_sierra',    oem:'GM',       region:'us', bevDelta:+3000, k3Override:null,
+    {id:'gm_sierra',chem:'ncm',    oem:'GM',       region:'us', bevDelta:+3000, k3Override:null,
      trigger:'Sierra EV 26H1 출시',           cellmaker:'lges', status:'confirmed'},
-    {id:'tesla_reopen', oem:'Tesla',    region:'eu', bevDelta:+5000, k3Override:null,
+    {id:'tesla_reopen',chem:'ncm', oem:'Tesla',    region:'eu', bevDelta:+5000, k3Override:null,
      trigger:'하반기 전략고객 물량 재개',       cellmaker:'lges', status:'1Q26 CC'},
-    {id:'honda_cancel', oem:'Honda',    region:'us', bevDelta:-1518, k3Override:{sdi:0,lges:0,skon:0},
+    {id:'honda_cancel',chem:'ncm', oem:'Honda',    region:'us', bevDelta:-1518, k3Override:{sdi:0,lges:0,skon:0},
      trigger:'0 Series 취소 → LGES M/S 50→0%',cellmaker:'lges', status:'confirmed'},
-    {id:'ford_erev',    oem:'Ford',     region:'us', bevDelta:-2000, k3Override:null,
+    {id:'ford_erev',chem:'ncm',    oem:'Ford',     region:'us', bevDelta:-2000, k3Override:null,
      trigger:'F-150 EREV 전환 → BEV↓',       cellmaker:'skon', status:'confirmed'},
-    {id:'ioniq3',       oem:'현대기아',  region:'us', bevDelta:+1500, k3Override:null,
+    {id:'ioniq3',chem:'ncm',       oem:'현대기아',  region:'us', bevDelta:+1500, k3Override:null,
      trigger:'Ioniq 3 26H2',                 cellmaker:'skon', status:'planned'},
-    {id:'ioniq3_eu',    oem:'현대기아',  region:'eu', bevDelta:+3000, k3Override:null,
+    {id:'ioniq3_eu',chem:'ncm',    oem:'현대기아',  region:'eu', bevDelta:+3000, k3Override:null,
      trigger:'Ioniq 3 유럽',                  cellmaker:'skon', status:'planned'},
-    {id:'byd_eu',       oem:'Stellantis',region:'eu',bevDelta:+2000, k3Override:null,
+    {id:'byd_eu',chem:'lfp',       oem:'Stellantis',region:'eu',bevDelta:+2000, k3Override:null,
      trigger:'BYD Seagull 유럽 (LFP 침투)',   cellmaker:'none', status:'LFP'},
-    {id:'bmw_ix3',      oem:'BMW',      region:'eu', bevDelta:+5000, k3Override:{sdi:0.35,lges:0,skon:0},
+    {id:'bmw_ix3',chem:'ncm',      oem:'BMW',      region:'eu', bevDelta:+5000, k3Override:{sdi:0.35,lges:0,skon:0},
      trigger:'iX3/i3 NK-1 → SDI 25→35%',    cellmaker:'sdi',  status:'2025H2~'},
-    {id:'benz_sdi',     oem:'벤츠',     region:'eu', bevDelta:+3000, k3Override:{sdi:0.15,lges:0,skon:0.20},
+    {id:'benz_sdi',chem:'ncm',     oem:'벤츠',     region:'eu', bevDelta:+3000, k3Override:{sdi:0.15,lges:0,skon:0.20},
      trigger:'GLB BEV 26H2 → SDI 0→15%',    cellmaker:'sdi',  status:'1Q26 CC'},
-    {id:'vw_down',      oem:'VW Group', region:'eu', bevDelta:-5000, k3Override:null,
+    {id:'vw_down',chem:'mixed',      oem:'VW Group', region:'eu', bevDelta:-5000, k3Override:null,
      trigger:'VW 100만대 감축',               cellmaker:'skon', status:'CEO 발언'},
   ],
 
@@ -689,7 +689,27 @@ main{max-width:1080px;margin:0 auto;padding:20px 16px 60px}
     </div>
     <div id="oemContent"></div>
     <div style="margin-top:16px;padding:14px 16px;background:var(--bg-soft);border-radius:8px">
-      <div style="font-family:var(--mono);font-size:10px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:8px">OEM 이벤트 — 시나리오 입력 (클릭 시 BEV 대수 자동 반영)</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:8px">
+        <div style="font-family:var(--mono);font-size:10px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;font-weight:600">OEM 이벤트 — 시나리오 입력</div>
+        <div style="display:flex;gap:3px" id="evFilterBtns">
+          <button class="st-btn on" data-ef="all" onclick="evFilter='all';renderOemEvents()">전체</button>
+          <button class="st-btn" data-ef="ncm" onclick="evFilter='ncm';renderOemEvents()">NCM</button>
+          <button class="st-btn" data-ef="lfp" onclick="evFilter='lfp';renderOemEvents()">LFP</button>
+          <button class="st-btn" data-ef="us" onclick="evFilter='us';renderOemEvents()">US</button>
+          <button class="st-btn" data-ef="eu" onclick="evFilter='eu';renderOemEvents()">EU</button>
+          <button class="st-btn" style="color:#00A878" onclick="showAddEvent()">+ 추가</button>
+        </div>
+      </div>
+      <div id="addEventForm" style="display:none;margin-bottom:10px;padding:10px;background:var(--bg-card);border:1px solid var(--line);border-radius:8px;font-family:var(--mono);font-size:10px">
+        <div style="display:grid;grid-template-columns:1fr 80px 80px 80px auto;gap:6px;align-items:end">
+          <div><label style="font-size:8px;color:var(--ink-3)">OEM</label><input id="aeOem" style="width:100%;padding:3px 6px;border:1px solid var(--line);border-radius:4px;font-size:10px" placeholder="OEM명"></div>
+          <div><label style="font-size:8px;color:var(--ink-3)">지역</label><select id="aeRegion" style="width:100%;padding:3px;border:1px solid var(--line);border-radius:4px;font-size:10px"><option value="us">US</option><option value="eu">EU</option></select></div>
+          <div><label style="font-size:8px;color:var(--ink-3)">BEV/월</label><input id="aeBev" type="number" style="width:100%;padding:3px 6px;border:1px solid var(--line);border-radius:4px;font-size:10px" placeholder="+5000"></div>
+          <div><label style="font-size:8px;color:var(--ink-3)">케미</label><select id="aeChem" style="width:100%;padding:3px;border:1px solid var(--line);border-radius:4px;font-size:10px"><option value="ncm">NCM</option><option value="lfp">LFP</option><option value="mixed">Mixed</option></select></div>
+          <button onclick="addCustomEvent()" style="padding:4px 10px;background:var(--ink);color:var(--bg);border:none;border-radius:4px;cursor:pointer;font-size:10px">추가</button>
+        </div>
+        <input id="aeTrigger" style="width:100%;padding:3px 6px;border:1px solid var(--line);border-radius:4px;font-size:10px;margin-top:4px" placeholder="이벤트 설명">
+      </div>
       <div id="oemEventList" style="display:flex;flex-wrap:wrap;gap:6px"></div>
     </div>
     <div style="margin-top:14px;font-family:var(--mono);font-size:10px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:8px">★ K3 셀사별 연환산 EV GWh (OEM Bottom-Up 합산)</div>
@@ -944,15 +964,30 @@ function renderOem(){
   box.innerHTML=html;
   renderOemEvents();renderOemK3Summary();
 }
+let evFilter='all';
+function showAddEvent(){const f=document.getElementById('addEventForm');f.style.display=f.style.display==='none'?'block':'none'}
+function addCustomEvent(){
+  const oem=document.getElementById('aeOem').value,region=document.getElementById('aeRegion').value;
+  const bev=parseInt(document.getElementById('aeBev').value),chem=document.getElementById('aeChem').value;
+  const trigger=document.getElementById('aeTrigger').value;
+  if(!oem||isNaN(bev))return;
+  DATA.oemEvents.push({id:'c_'+Date.now(),chem,oem,region,bevDelta:bev,k3Override:null,trigger:trigger||oem,cellmaker:'none',status:'custom'});
+  document.getElementById('addEventForm').style.display='none';renderOemEvents();
+}
+function deleteEvent(eid){DATA.oemEvents=DATA.oemEvents.filter(e=>e.id!==eid);activeEvents.delete(eid);renderOem();renderScenario()}
 function renderOemEvents(){
+  document.querySelectorAll('#evFilterBtns .st-btn[data-ef]').forEach(b=>b.classList.toggle('on',b.dataset.ef===evFilter));
   const list=document.getElementById('oemEventList');
   const colors={sdi:'#1B6CFF',lges:'#00A878',skon:'#E9A23B',none:'#8B8B82'};
-  list.innerHTML=DATA.oemEvents.map(ev=>{
+  const filtered=DATA.oemEvents.filter(ev=>evFilter==='all'||ev.chem===evFilter||ev.region===evFilter);
+  list.innerHTML=filtered.map(ev=>{
     const on=activeEvents.has(ev.id);const sign=ev.bevDelta>0?'+':'';
     return `<button class="oem-event-btn ${on?'on':''}" data-eid="${ev.id}">
       <span class="ev-dot" style="background:${on?'#fff':colors[ev.cellmaker]||'#8B8B82'}"></span>
       <span>${ev.oem}</span><span class="ev-delta" style="color:${on?'#fff':(ev.bevDelta>0?'#00A878':'#E91E63')}">${sign}${ev.bevDelta.toLocaleString()}</span>
-      <span style="opacity:.7">${ev.trigger}</span></button>`;
+      <span style="opacity:.7">${ev.trigger}</span>
+      <span style="font-size:7px;padding:1px 3px;border-radius:2px;background:${ev.chem==='lfp'?'rgba(239,68,68,.12)':ev.chem==='ncm'?'rgba(34,197,94,.12)':'rgba(107,122,153,.1)'};color:${ev.chem==='lfp'?'#dc2626':ev.chem==='ncm'?'#15803d':'var(--ink-3)'}">${(ev.chem||'?').toUpperCase()}</span>
+      </button>`;
   }).join('');
   list.querySelectorAll('.oem-event-btn').forEach(b=>b.addEventListener('click',()=>{
     const eid=b.dataset.eid;if(activeEvents.has(eid))activeEvents.delete(eid);else activeEvents.add(eid);renderOem();renderScenario();
@@ -1193,7 +1228,10 @@ function renderLiChart(){
     ma.forEach((v,i)=>{const x=pad.l+cW*i/(data.length-1);const y=pad.t+cH*(1-(v-minV)/(maxV-minV));i===0?ctx.moveTo(x,y):ctx.lineTo(x,y)});ctx.stroke();ctx.setLineDash([]);
     const last=data[data.length-1];
     document.getElementById('liLatest').textContent=`최신: ${last.d} · 중국 탄산리튬 $${last.cc.toLocaleString()}/톤 · 12MA $${Math.round(ma[ma.length-1]).toLocaleString()}/톤`;
-    document.getElementById('liLegend').innerHTML=`<span><i style="background:#E91E63"></i>중국 탄산리튬 (주간)</span><span><i style="background:#1B6CFF;height:1px;border-top:1px dashed #1B6CFF"></i>12개월 이동평균</span>`;
+    // Nickel reference
+    const niP=METALS.Ni.price;
+    if(niP>=minV&&niP<=maxV){const niY=pad.t+cH*(1-(niP-minV)/(maxV-minV));ctx.beginPath();ctx.strokeStyle='#E9A23B';ctx.lineWidth=1;ctx.setLineDash([6,4]);ctx.moveTo(pad.l,niY);ctx.lineTo(W-pad.r,niY);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='#E9A23B';ctx.textAlign='left';ctx.font='9px JetBrains Mono';ctx.fillText('Ni $'+(niP/1000).toFixed(1)+'K',pad.l+4,niY-4)}
+    document.getElementById('liLegend').innerHTML=`<span><i style="background:#E91E63"></i>중국 탄산리튬</span><span><i style="background:#1B6CFF;height:1px;border-top:1px dashed #1B6CFF"></i>12MA</span><span><i style="background:#E9A23B;height:1px;border-top:1px dashed #E9A23B"></i>LME 니켈</span>`;
   } else {
     const series=[{key:'cn',name:'중국 탄산리튬',color:'#E91E63'},{key:'exw',name:'EXW 중국(배터리)',color:'#dc2626'},{key:'asia',name:'CIF 아시아',color:'#E9A23B'},{key:'na',name:'CIF 북미',color:'#1B6CFF'},{key:'eu',name:'CIF 유럽',color:'#00A878'},{key:'hlme',name:'LME 수산화리튬',color:'#8b5cf6'}];
     const data=LI_MONTHLY;
