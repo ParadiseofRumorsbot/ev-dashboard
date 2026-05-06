@@ -1457,19 +1457,39 @@ function renderLfpCost(){
   const cnBase=46.20;
   const cLanded=cnBase+4.0+(cnBase*customRate/100);
   const cGap=usLocal-cLanded;
+  const usAmpc=usLocal-ampc;
+  const ampcGap=cLanded-usAmpc;
   const bep=((usLocal-cnBase-4.0)/cnBase*100).toFixed(1);
   html+=`<div style="margin-top:16px;padding:14px;background:var(--bg-card);border:1px solid var(--line);border-radius:10px">
     <div style="font-family:var(--mono);font-size:10px;font-weight:700;color:var(--ink);margin-bottom:8px">🎚️ 관세율 시뮬레이터 — 중국 LFP → 미국</div>
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
       <input type="range" min="30" max="80" value="${customRate}" id="tariffSlider" style="flex:1;accent-color:#E91E63">
       <span id="tariffPct" style="font-family:var(--mono);font-size:16px;font-weight:700;color:var(--ink);min-width:50px">${customRate}%</span>
     </div>
-    <div style="font-family:var(--mono);font-size:11px;color:var(--ink-2);line-height:1.8" id="tariffResult">
-      중국 내수가 $${cnBase} + 운송 $4.0 + 관세 ${customRate}% $${(cnBase*customRate/100).toFixed(1)} = <b style="font-size:13px;color:var(--ink)">미국 유통가 $${cLanded.toFixed(1)}</b><br>
-      <span style="color:${cGap>0?'#00A878':'#E91E63'};font-weight:700">vs 현지생산 $${usLocal} → ${cGap>0?'중국산 $'+cGap.toFixed(1)+' 저렴':'중국산 $'+Math.abs(cGap).toFixed(1)+' 비쌈'}</span>
-      · AMPC 적용 시 현지 $${(usLocal-ampc).toFixed(1)}
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px">
+      <div style="padding:10px;background:var(--bg-soft);border-radius:8px;border-top:3px solid #E91E63;text-align:center">
+        <div style="font-size:9px;color:var(--ink-3);margin-bottom:4px">🇨🇳 중국산 (관세 ${customRate}%)</div>
+        <div style="font-size:9px;color:var(--ink-3)">$${cnBase} + 운송 $4.0 + 관세 $${(cnBase*customRate/100).toFixed(1)}</div>
+        <div style="font-size:18px;font-weight:700;color:#E91E63;margin:4px 0">$${cLanded.toFixed(1)}</div>
+        <div style="font-size:9px;color:var(--ink-3)">ITC/AMPC 수취 불가</div>
+      </div>
+      <div style="padding:10px;background:var(--bg-soft);border-radius:8px;border-top:3px solid var(--ink-3);text-align:center">
+        <div style="font-size:9px;color:var(--ink-3);margin-bottom:4px">🇺🇸 미국산 (보조금 없음)</div>
+        <div style="font-size:9px;color:var(--ink-3)">제조원가 $64.4 × 마진 10%</div>
+        <div style="font-size:18px;font-weight:700;color:var(--ink);margin:4px 0">$${usLocal}</div>
+        <div style="font-size:9px;color:${cGap>0?'#00A878':'#E91E63'}">${cGap>0?'중국산 대비 $'+cGap.toFixed(1)+' 비쌈':'중국산 대비 $'+Math.abs(cGap).toFixed(1)+' 저렴'}</div>
+      </div>
+      <div style="padding:10px;background:var(--bg-soft);border-radius:8px;border-top:3px solid #00A878;text-align:center">
+        <div style="font-size:9px;color:var(--ink-3);margin-bottom:4px">🇺🇸 미국산 (AMPC Base)</div>
+        <div style="font-size:9px;color:var(--ink-3)">$${usLocal} − AMPC $${ampc}</div>
+        <div style="font-size:18px;font-weight:700;color:#00A878;margin:4px 0">$${usAmpc.toFixed(1)}</div>
+        <div style="font-size:9px;color:#00A878;font-weight:700">중국산 대비 $${ampcGap.toFixed(1)} 저렴</div>
+      </div>
     </div>
-    <div style="margin-top:6px;font-size:9px;color:var(--ink-3);font-family:var(--mono)">⚠️ 동가(BEP) 관세율: <b style="color:#E91E63">${bep}%</b> — 이 이상이면 중국산이 더 비싸짐 (AMPC 미적용 기준)</div>
+    <div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);line-height:1.6">
+      ⚠️ 보조금 미적용 BEP 관세율: <b style="color:#E91E63">${bep}%</b> — 이 이상이면 보조금 없이도 중국산이 더 비쌈<br>
+      💡 AMPC 적용 시 관세 0%에서도 미국산($${usAmpc.toFixed(1)}) < 중국산($${(cnBase+4.0).toFixed(1)}) → <b>관세는 추가 안전마진</b>
+    </div>
   </div>`;
   html+=`<div style="margin-top:12px;padding:12px 14px;background:var(--bg-soft);border-radius:8px;font-family:var(--mono);font-size:10px;color:var(--ink-2);line-height:1.9">
     <div style="font-weight:700;color:var(--ink);margin-bottom:4px">📐 현지생산가 $${usLocal}/kWh 산정 근거</div>
@@ -1509,7 +1529,7 @@ function renderLfpCost(){
       <tr style="background:var(--bg-card)">
         <td style="padding:5px 6px;font-weight:700;color:var(--ink)">합계</td>
         <td style="text-align:right;padding:5px 6px;font-weight:700;color:#00A878">30~60%</td>
-        <td style="padding:5px 6px;font-size:9px;color:var(--ink-3)">IRA Section 48E · Source: NREL, US Congress </td>
+        <td style="padding:5px 6px;font-size:9px;color:var(--ink-3)">IRA Section 48E · Source: NREL, US Congress, 한화투자증권(26.03)</td>
       </tr>
     </table>
   </div>`;
