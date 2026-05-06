@@ -15,7 +15,7 @@ const DATA = {
     lfpCellPrice: 85,      // $/kWh — 미국 생산 LFP 셀
     totalMfg: 163.5,       // $/kWh — IRS 제조제품 합계 (= cellPrice / 0.52)
     serviceAddon: 43.5,    // $/kWh — EMS·변압기·SI·물류·보증
-    turnkey: 207.0,        // $/kWh — 턴키 시스템 (삼성증권 2025.1.5)
+    turnkey: 207.0,        // $/kWh — 턴키 시스템
     fx: 1450,              // KRW/USD
   },
 
@@ -363,23 +363,23 @@ const DATA = {
       catAdj:{enclosure:{perGwh:400}, thermal:{perGwh:220}, cathode:{perGwh:570}, electrolyte:{perGwh:150}},
       evAdj:{},
       evCatAdj:{},
-      notes:['CHARGE Act 60일 내 즉시 집행 → 탈중국 벤더 교체 수요 폭증','서진시스템 Fluence 물량 급증 + North Belt 현지 조립','한중엔시에스 인디애나 현지 생산 프리미엄','대신증권: K3 셀사 북미 ESS 수주잔고 ~200GWh','비중국 LFP 양극재 숏티지 가속 (수요 30만톤 vs 공급 13만톤)'],
+      notes:['CHARGE Act 60일 내 즉시 집행 → 탈중국 벤더 교체 수요 폭증','서진시스템 Fluence 물량 급증 + North Belt 현지 조립','한중엔시에스 인디애나 현지 생산 프리미엄','K3 셀사 북미 ESS 수주잔고 ~200GWh','비중국 LFP 양극재 숏티지 가속 (수요 30만톤 vs 공급 13만톤)'],
     },
     {
       id:'ai_dc_btm', name:'AI DC BTM ESS',
-      desc:'AI 데이터센터 BTM ESS 수요 급증. 유진투자증권 2026F 5.7GWh → 2028F 21GWh. Grid ESS 위에 BTM 추가 적재.',
+      desc:'AI 데이터센터 BTM ESS 수요 급증. 2026F 5.7GWh → 2028F 21GWh 추정. Grid ESS 위에 BTM 추가 적재.',
       cm:{lges:{essGwh_y26:70,essUtil_y26:0.5,essUtil_y27:0.65}, sdi:{essUtil_y26:0.65,essUtil_y27:0.8}},
       catAdj:{cathode:{perGwh_lges:400}, enclosure:{perGwh_lges:280}, thermal:{perGwh_lges:100}},
       evAdj:{},
       evCatAdj:{},
-      notes:['유진증권: 북미 DC BTM ESS 2026F 5.7→2028F 21GWh (CAGR 60%)','LGES 미시건 ESS CAPA 확장 + 스텔란티스 JV 전환','UPS/BBU는 셀 납품이라 인클로저·냉각 TAM 부분 반영','800V DC 배전 + 무정전 전원 ESS 필수화'],
+      notes:['북미 DC BTM ESS 2026F 5.7→2028F 21GWh 추정 (CAGR 60%)','LGES 미시건 ESS CAPA 확장 + 스텔란티스 JV 전환','UPS/BBU는 셀 납품이라 인클로저·냉각 TAM 부분 반영','800V DC 배전 + 무정전 전원 ESS 필수화'],
     },
   ],
 
   // 북미 ESS CAPA (GWh)
   northAmericaCapa: {
     '2025E':40.5, '2026E':106.5, '2027E':112.5,
-    backlog: {sdi:80, lges:100, skon:20, note:'대신증권 26.05 기준 K3 합산 ~200GWh'},
+    backlog: {sdi:80, lges:100, skon:20, note:'26.05 기준 K3 합산 ~200GWh'},
     detail: [
       {name:'SDI', y25:14, y26:28, y27:28, note:'NCA 7G+LFP 21G'},
       {name:'LGES', y25:16.5, y26:56.5, y27:56.5, note:'홀랜드+온타리오+랜싱+JV'},
@@ -1529,11 +1529,11 @@ function renderLfpCost(){
       <tr style="background:var(--bg-card)">
         <td style="padding:5px 6px;font-weight:700;color:var(--ink)">합계</td>
         <td style="text-align:right;padding:5px 6px;font-weight:700;color:#00A878">30~60%</td>
-        <td style="padding:5px 6px;font-size:9px;color:var(--ink-3)">IRA Section 48E · Source: NREL, US Congress, 한화투자증권(26.03)</td>
+        <td style="padding:5px 6px;font-size:9px;color:var(--ink-3)">IRA Section 48E · Source: NREL, US Congress</td>
       </tr>
     </table>
   </div>`;
-  html+=`<div style="margin-top:8px;font-size:9px;color:var(--ink-3);font-family:var(--mono)">Source: BNEF, SMM, Infolink, Bloomberg, IRS Notice 2025-08, 삼성증권, NH투자증권 · 중국 판가 = 셀 제조원가 + CATL 마진 10% · 1 CNY = 0.1404 USD</div>`;
+  html+=`<div style="margin-top:8px;font-size:9px;color:var(--ink-3);font-family:var(--mono)">Source: BNEF, SMM, Infolink, Bloomberg, IRS Notice 2025-08 · 중국 판가 = 셀 제조원가 + CATL 마진 10% · 1 CNY = 0.1404 USD</div>`;
   box.innerHTML=html;
   // Tariff slider binding
   const tSlider=document.getElementById('tariffSlider');
