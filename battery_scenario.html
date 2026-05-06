@@ -1471,7 +1471,49 @@ function renderLfpCost(){
     </div>
     <div style="margin-top:6px;font-size:9px;color:var(--ink-3);font-family:var(--mono)">⚠️ 동가(BEP) 관세율: <b style="color:#E91E63">${bep}%</b> — 이 이상이면 중국산이 더 비싸짐 (AMPC 미적용 기준)</div>
   </div>`;
-  html+=`<div style="margin-top:8px;font-size:9px;color:var(--ink-3);font-family:var(--mono)">Source: BNEF, SMM, Infolink, Bloomberg · 중국 판가 = 셀 제조원가 + CATL 마진 10% · 1 CNY = 0.1404 USD</div>`;
+  html+=`<div style="margin-top:12px;padding:12px 14px;background:var(--bg-soft);border-radius:8px;font-family:var(--mono);font-size:10px;color:var(--ink-2);line-height:1.9">
+    <div style="font-weight:700;color:var(--ink);margin-bottom:4px">📐 현지생산가 $${usLocal}/kWh 산정 근거</div>
+    상단 테이블 미국 LFP 셀 제조원가(소재 $39.2 + 임가공 $25.2 = $64.4) × 마진 10% = <b>$${usLocal}</b><br>
+    중국 내수가도 동일: 제조원가 $41.9 × 마진 10% = $46.2 (CATL 기준)<br>
+    <div style="margin-top:8px;font-weight:700;color:var(--ink)">💰 미국 보조금 효과</div>
+    <b>AMPC (45X)</b>: 셀 $35/kWh + 모듈 $10/kWh = $45/kWh. 미국 현지 생산 시 수취 → 현지생산 실질가 $${usLocal} − $${ampc} = <b style="color:#00A878">$${(usLocal-ampc).toFixed(1)}/kWh</b><br>
+    <b>ITC (48E)</b>: ESS 프로젝트 투자비의 30~60% 세액공제<br>
+    <b>MACR 요건</b>: ITC/AMPC 수취를 위한 비중국(Non-PFE) 부품 조달 비율. 2026년 ESS 55% / 배터리 60% 이상 충족 필요<br>
+    <span style="font-size:9px;color:var(--ink-3)">→ AMPC + ITC 동시 수취 시, 관세 없이도 중국산 대비 미국 현지생산이 경제적으로 우위. 관세는 추가 안전마진.</span>
+    <table style="margin-top:10px;width:100%;border-collapse:collapse;font-family:var(--mono);font-size:10px">
+      <tr style="border-bottom:2px solid var(--line-s)">
+        <th style="text-align:left;padding:5px 6px;color:var(--ink-3);font-size:9px">구분</th>
+        <th style="text-align:right;padding:5px 6px;color:var(--ink-3);font-size:9px">공제율</th>
+        <th style="text-align:left;padding:5px 6px;color:var(--ink-3);font-size:9px">요건</th>
+      </tr>
+      <tr style="border-bottom:.5px solid var(--line)">
+        <td style="padding:4px 6px;font-weight:700">Base ITC</td>
+        <td style="text-align:right;padding:4px 6px;font-weight:700">30%</td>
+        <td style="padding:4px 6px;color:var(--ink-2)">MACR + 노동조건(Prevailing Wage) 충족</td>
+      </tr>
+      <tr style="border-bottom:.5px solid var(--line)">
+        <td style="padding:4px 6px">Domestic Content Bonus</td>
+        <td style="text-align:right;padding:4px 6px">+10%</td>
+        <td style="padding:4px 6px;color:var(--ink-2)">미국 내 부품 생산 비중 충족 (25Y 45%, 26Y 50%, 27Y 55%)</td>
+      </tr>
+      <tr style="border-bottom:.5px solid var(--line)">
+        <td style="padding:4px 6px">Energy Community Bonus</td>
+        <td style="text-align:right;padding:4px 6px">+10%</td>
+        <td style="padding:4px 6px;color:var(--ink-2)">석탄 폐광 지역 등 지정 커뮤니티 소재 프로젝트</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--line)">
+        <td style="padding:4px 6px">Low-Income Community Bonus</td>
+        <td style="text-align:right;padding:4px 6px">+10~20%</td>
+        <td style="padding:4px 6px;color:var(--ink-2)">저소득 지역 소재 또는 저소득층 대상 프로젝트</td>
+      </tr>
+      <tr style="background:var(--bg-card)">
+        <td style="padding:5px 6px;font-weight:700;color:var(--ink)">합계</td>
+        <td style="text-align:right;padding:5px 6px;font-weight:700;color:#00A878">30~60%</td>
+        <td style="padding:5px 6px;font-size:9px;color:var(--ink-3)">IRA Section 48E · Source: NREL, US Congress </td>
+      </tr>
+    </table>
+  </div>`;
+  html+=`<div style="margin-top:8px;font-size:9px;color:var(--ink-3);font-family:var(--mono)">Source: BNEF, SMM, Infolink, Bloomberg, IRS Notice 2025-08, 삼성증권, NH투자증권 · 중국 판가 = 셀 제조원가 + CATL 마진 10% · 1 CNY = 0.1404 USD</div>`;
   box.innerHTML=html;
   // Tariff slider binding
   const tSlider=document.getElementById('tariffSlider');
