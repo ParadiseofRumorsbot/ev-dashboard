@@ -247,7 +247,7 @@ const DATA = {
         {oem:'GM',bev25y:166000,       bev:10800, yoy:-29, kWh:85,  k3:{sdi:0,lges:1.0,skon:0},   note:'Ultium JV. LGES 100%'},
         {oem:'현대기아',bev25y:104000,  bev:7186,  yoy:+8,  kWh:84,  k3:{sdi:0,lges:0.05,skon:0.95},note:'SK온 95%. 기아 BEV+65%'},
         {oem:'Ford',bev25y:84000,     bev:3655,  yoy:-25, kWh:90,  k3:{sdi:0,lges:0.25,skon:0.39},note:'3사 분배. CATL 33%'},
-        {oem:'Rivian',   bev:3480,  yoy:+17, kWh:75,  k3:{sdi:0,lges:1.0,skon:0},   note:'LGES 추정'},
+        {oem:'Rivian',bev25y:51000,   bev:3480,  yoy:+17, kWh:75,  k3:{sdi:0,lges:1.0,skon:0},   note:'LGES 추정'},
         {oem:'Toyota',bev25y:42000,   bev:4847,  yoy:+183,kWh:70,  k3:{sdi:0,lges:0,skon:0},     note:'CATL+파나소닉. K3 미미'},
         {oem:'BMW',bev25y:33000,      bev:2343,  yoy:-55, kWh:90,  k3:{sdi:0.25,lges:0,skon:0},  note:'SDI 25%. CATL 65%'},
         {oem:'VW',bev25y:72000,       bev:1791,  yoy:-52, kWh:80,  k3:{sdi:0,lges:0.12,skon:0.33},note:'CATL 45%'},
@@ -1449,7 +1449,25 @@ function renderLfpCost(){
       ⚠️ BEP 관세율: <b style="color:#E91E63">${bep}%</b> · AMPC 적용 시 관세 0%에서도 미국산 우위
     </div>
   </div>`;
-  html+=`<div style="margin-top:8px;font-size:9px;color:var(--ink-3);font-family:var(--mono)">Source: BNEF, SMM, Infolink, Bloomberg · 중국 판가 = 셀 제조원가 + CATL 마진 10% · 1 CNY = 0.1464 USD</div>`;
+  html+=`<div style="margin-top:12px;padding:12px 14px;background:var(--bg-soft);border-radius:8px;font-family:var(--mono);font-size:10px;color:var(--ink-2);line-height:1.9">
+    <div style="font-weight:700;color:var(--ink);margin-bottom:4px">📐 현지생산가 $${usLocal}/kWh 산정 근거</div>
+    미국 LFP 셀 제조원가(소재 $39.2 + 임가공 $25.2 = $64.4) × 마진 10% = <b>$${usLocal}</b><br>
+    중국 내수가: 제조원가 $42.0 × 마진 10% = $46.2 (CATL 기준)<br>
+    <div style="margin-top:8px;font-weight:700;color:var(--ink)">💰 미국 보조금 효과</div>
+    <b>AMPC (45X)</b>: 셀 $35/kWh + 모듈 $10/kWh = $45/kWh → 실질가 $${usLocal} − $${ampc} = <b style="color:#00A878">$${(usLocal-ampc).toFixed(1)}/kWh</b><br>
+    <b>ITC (48E)</b>: ESS 프로젝트 투자비의 30~60% 세액공제<br>
+    <b>MACR 요건</b>: 비중국(Non-PFE) 부품 조달 비율. 2026년 ESS 55% / 배터리 60% 충족 필요<br>
+    <span style="font-size:9px;color:var(--ink-3)">→ AMPC + ITC 동시 수취 시 관세 없이도 미국 현지생산이 우위. 관세는 추가 안전마진.</span>
+    <table style="margin-top:10px;width:100%;border-collapse:collapse;font-size:10px">
+      <tr style="border-bottom:2px solid var(--line-s)"><th style="text-align:left;padding:5px 6px;color:var(--ink-3);font-size:9px">구분</th><th style="text-align:right;padding:5px 6px;color:var(--ink-3);font-size:9px">공제율</th><th style="text-align:left;padding:5px 6px;color:var(--ink-3);font-size:9px">요건</th></tr>
+      <tr style="border-bottom:.5px solid var(--line)"><td style="padding:4px 6px;font-weight:700">Base ITC</td><td style="text-align:right;padding:4px 6px;font-weight:700">30%</td><td style="padding:4px 6px;color:var(--ink-2)">MACR + Prevailing Wage 충족</td></tr>
+      <tr style="border-bottom:.5px solid var(--line)"><td style="padding:4px 6px">Domestic Content Bonus</td><td style="text-align:right;padding:4px 6px">+10%</td><td style="padding:4px 6px;color:var(--ink-2)">미국 내 부품 생산 비중 (26Y 50%, 27Y 55%)</td></tr>
+      <tr style="border-bottom:.5px solid var(--line)"><td style="padding:4px 6px">Energy Community Bonus</td><td style="text-align:right;padding:4px 6px">+10%</td><td style="padding:4px 6px;color:var(--ink-2)">석탄 폐광 지역 등 지정 커뮤니티</td></tr>
+      <tr style="border-bottom:1px solid var(--line)"><td style="padding:4px 6px">Low-Income Community Bonus</td><td style="text-align:right;padding:4px 6px">+10~20%</td><td style="padding:4px 6px;color:var(--ink-2)">저소득 지역/저소득층 대상</td></tr>
+      <tr style="background:var(--bg-card)"><td style="padding:5px 6px;font-weight:700;color:var(--ink)">합계</td><td style="text-align:right;padding:5px 6px;font-weight:700;color:#00A878">30~60%</td><td style="padding:5px 6px;font-size:9px;color:var(--ink-3)">IRA Section 48E · Source: NREL </td></tr>
+    </table>
+  </div>`;
+  html+=`<div style="margin-top:8px;font-size:9px;color:var(--ink-3);font-family:var(--mono)">Source: BNEF, SMM, Infolink, Bloomberg · 1 CNY = 0.1464 USD</div>`;
   box.innerHTML=html;
   const tSlider=document.getElementById('tariffSlider');
   if(tSlider)tSlider.addEventListener('input',e=>{window._customTariff=+e.target.value;renderLfpCost()});
