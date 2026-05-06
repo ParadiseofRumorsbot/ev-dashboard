@@ -886,12 +886,13 @@ document.getElementById('baseDesc').textContent=DATA.scenarios[0].desc;
 function renderCapa(){
   const g=document.getElementById('capaGrid');
   const d=DATA.northAmericaCapa;
+  let s25=0,s26=0,s27=0;d.detail.forEach(r=>{s25+=(r.y25||0);s26+=(r.y26||0);s27+=(r.y27||0)});
   g.innerHTML=`
     <div class="capa-th">셀사</div><div class="capa-th">2025E</div><div class="capa-th">2026E</div><div class="capa-th">2027E</div><div class="capa-th">비고</div>
     ${d.detail.map(r=>`
       <div class="capa-td">${r.name}</div><div class="capa-td">${r.y25||'-'}</div><div class="capa-td">${r.y26||'-'}</div><div class="capa-td">${r.y27||'-'}</div><div class="capa-td">${r.note}</div>
     `).join('')}
-    <div class="capa-td capa-sum">합계</div><div class="capa-td capa-sum">${d['2025E']}</div><div class="capa-td capa-sum">${d['2026E']}</div><div class="capa-td capa-sum">${d['2027E']}</div><div class="capa-td capa-sum">GWh</div>
+    <div class="capa-td capa-sum">합계</div><div class="capa-td capa-sum">${s25}</div><div class="capa-td capa-sum">${s26}</div><div class="capa-td capa-sum">${s27}</div><div class="capa-td capa-sum">GWh</div>
   `;
 }
 
@@ -1564,7 +1565,7 @@ function buildEditorSections(){
     });
   });
   h+=edSection('EV 부품사별 셀사 M/S (%)', evRows);
-  h+=edSection('북미 ESS CAPA',DATA.northAmericaCapa.detail.map((r,ri)=>edField('northAmericaCapa.detail['+ri+'].y26',r.name+' 26E',r.y26,'GWh')));
+  h+=edSection('북미 ESS CAPA',DATA.northAmericaCapa.detail.flatMap((r,ri)=>[edField('northAmericaCapa.detail['+ri+'].y26',r.name+' 26E',r.y26,'GWh'),edField('northAmericaCapa.detail['+ri+'].y27',r.name+' 27E',r.y27,'GWh')]));
   // Cell 3 CAPA editor
   Object.keys(CELL3_CAPA).forEach(cmk=>{
     const cm=CELL3_CAPA[cmk];const rows=[];
@@ -1603,7 +1604,7 @@ function reRenderAll(){renderCapa();renderRegionTabs();renderOem();renderCellMak
 function edExport(){const snapshot={exportedAt:new Date().toISOString(),source:'editor',changes:edChangeCount,data:{}};document.querySelectorAll('.ed-input.changed').forEach(inp=>{snapshot.data[inp.dataset.path]=parseFloat(inp.value)});const blob=new Blob([JSON.stringify(snapshot,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='scenario_snapshot_'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url)}
 function edImport(){const input=document.createElement('input');input.type='file';input.accept='.json';input.onchange=async(e)=>{const file=e.target.files[0];if(!file)return;const text=await file.text();const snapshot=JSON.parse(text);if(snapshot.data){Object.entries(snapshot.data).forEach(([path,val])=>setByPath(DATA,path,val));reRenderAll();buildEditorSections();document.getElementById('edStatus').textContent='📂 '+file.name+' 로드됨 ('+Object.keys(snapshot.data).length+'건)'}};input.click()}
 function edReset(){Object.assign(DATA.basis,JSON.parse(JSON.stringify(edOriginal.basis)));DATA.cellMakers.forEach((cm,i)=>{Object.assign(cm.essGwh,JSON.parse(JSON.stringify(edOriginal.cellMakers[i].essGwh)));Object.assign(cm.essUtil,JSON.parse(JSON.stringify(edOriginal.cellMakers[i].essUtil)));Object.assign(cm.evGwh,JSON.parse(JSON.stringify(edOriginal.cellMakers[i].evGwh)))});DATA.cats.forEach((c,i)=>{c.perGwh=edOriginal.cats[i].perGwh});if(DATA.evMS&&edOriginal.evMS)Object.keys(DATA.evMS).forEach(k=>{Object.assign(DATA.evMS[k],JSON.parse(JSON.stringify(edOriginal.evMS[k])))});
-  if(DATA.essMS&&edOriginal.essMS)Object.keys(DATA.essMS).forEach(k=>{Object.assign(DATA.essMS[k],JSON.parse(JSON.stringify(edOriginal.essMS[k])))});DATA.northAmericaCapa.detail.forEach((r,i)=>{r.y26=edOriginal.northAmericaCapa.detail[i].y26});reRenderAll();buildEditorSections();document.getElementById('edStatus').textContent='Notion 기본값으로 복원됨'}
+  if(DATA.essMS&&edOriginal.essMS)Object.keys(DATA.essMS).forEach(k=>{Object.assign(DATA.essMS[k],JSON.parse(JSON.stringify(edOriginal.essMS[k])))});DATA.northAmericaCapa.detail.forEach((r,i)=>{r.y26=edOriginal.northAmericaCapa.detail[i].y26;r.y27=edOriginal.northAmericaCapa.detail[i].y27});reRenderAll();buildEditorSections();document.getElementById('edStatus').textContent='Notion 기본값으로 복원됨'}
 
 // ===== Init =====
 renderCapa();renderRegionTabs();renderOem();renderCellMakers();
