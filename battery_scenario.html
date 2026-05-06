@@ -15,7 +15,7 @@ const DATA = {
     lfpCellPrice: 85,      // $/kWh — 미국 생산 LFP 셀
     totalMfg: 163.5,       // $/kWh — IRS 제조제품 합계 (= cellPrice / 0.52)
     serviceAddon: 43.5,    // $/kWh — EMS·변압기·SI·물류·보증
-    turnkey: 207.0,        // $/kWh — 턴키 시스템
+    turnkey: 207.0,        // $/kWh — 턴키 시스템 (삼성증권 2025.1.5)
     fx: 1450,              // KRW/USD
   },
 
@@ -94,7 +94,7 @@ const DATA = {
       company:'엘앤에프', costPct:0, apcId:'apc1',
       perGwh: 552,  // 억원/GWh — 2,400t × ASP 23만원/kg
       color:'#E91E63', bg:'#FBE0EA',
-      desc:'Cells 52% 내부. LFP는 NCM 대비 GWh당 소요량 1.71배(1,400→2,400t). 엘앤에프가 SDI LFP ESS 양극재 솔밴더로 3Q26 SOP, 6만톤+ 증설 논의 중. 이원화 가능성 있음(피노)',
+      desc:'Cells 52% 내부. LFP는 NCM 대비 GWh당 소요량 1.71배(1,400→2,400t). 엘앤에프가 SDI LFP ESS 양극재 솔밴더로 3Q26 SOP, 6만톤+ 증설 논의 중.',
       bomItems:[
         {name:'LFP 양극재', note:'2,400톤/GWh'},
         {name:'NCM 양극재 (비교)', note:'1,400톤/GWh'},
@@ -669,7 +669,7 @@ main{max-width:1080px;margin:0 auto;padding:20px 16px 60px}
 <body>
 <main>
   <header class="hdr">
-    <div class="hdr-tag">Battery Scenario Simulator</div>
+    <div class="hdr-tag">Battery Scenario Simulator by. sangmin woo</div>
     <h1><b>Battery</b>Scenario</h1>
     <p class="hdr-sub">셀사별 CAPA × 가동률 × 부품사 $/kWh → TAM 시뮬레이터. 시나리오 프리셋으로 ESS + EV 통합 TAM 변동을 즉시 확인.</p>
     <nav style="display:flex;gap:10px;margin:12px 0 20px;font-size:12px;flex-wrap:wrap">
