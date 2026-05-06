@@ -356,6 +356,24 @@ const DATA = {
       evCatAdj:{},
       notes:['EREV 30만대 전환 → GWh -12 감소','Honda 0 Series 취소 → LGES -10GWh','Ford EV 취소 → SKON -15GWh','CHARGE Act 미통과 → 중국산 ESS 지속'],
     },
+    {
+      id:'charge_act', name:'CHARGE Act 통과',
+      desc:'CHARGE Act 통과 → 중국산 ESS 배터리 미국 시장 원천 차단. K3 셀사 가동률 전면 상향. 탈중국 프리미엄으로 부품사 ASP 상승.',
+      cm:{sdi:{essUtil_y26:0.75,essUtil_y27:0.9}, lges:{essUtil_y26:0.6,essUtil_y27:0.75}, skon:{essGwh_y26:8,essGwh_y27:15,essUtil_y26:0.65,essUtil_y27:0.75}},
+      catAdj:{enclosure:{perGwh:400}, thermal:{perGwh:210}, cathode:{perGwh:600}, electrolyte:{perGwh:160}, alfoil:{perGwh:45}, separator:{perGwh:40}},
+      evAdj:{},  // EV는 변동 없음 — ESS 전용 시나리오
+      evCatAdj:{},
+      notes:['CHARGE Act: 중국산 FEOC 배터리 ESS 설치 금지(ITC 수급 요건 강화)','중국산 퇴출 → K3 3사 북미 ESS 수주 급증. CATL·BYD 미국 ESS 사실상 차단','서진시스템 탈중국 프리미엄: 350→400억/GWh. SDI SBB 독점 + LGES Fluence 진입 가능','한중엔시에스 SDI 가동률 급등 시 사실상 독점 수혜. 인디애나 공장 27년 풀가동','엘앤에프 LFP 양극재 소요 비례 증가. 6만톤 CAPA 풀가동 시나리오','SKON 테네시 ESS 전환 + Flatiron 후속 수주 가속'],
+    },
+    {
+      id:'ai_dc', name:'AI DC BTM (데이터센터)',
+      desc:'AI 데이터센터 BTM(Behind-The-Meter) ESS 수요 10~15GWh 추가. Hyperscaler 전력 자급 + 피크 셰이빙 + UPS 대체. SDI DC ESS CAGR 30%+.',
+      cm:{sdi:{essGwh_y26:35,essUtil_y26:0.65,essGwh_y27:40,essUtil_y27:0.8}, lges:{essGwh_y26:65,essUtil_y26:0.5,essUtil_y27:0.65}, skon:{essGwh_y26:6,essUtil_y26:0.55,essUtil_y27:0.65}},
+      catAdj:{enclosure:{perGwh:380}, thermal:{perGwh:200}, cathode:{perGwh:570}},
+      evAdj:{},  // EV 무관
+      evCatAdj:{},
+      notes:['AI DC 전력 수요 폭증 → BTM ESS 신규 시장 10~15GWh(26~27E)','SDI 1Q26 CC: DC ESS CAGR 30%+, 마이크로그리드 60%+. BBU $8억(+70%Y)','Hyperscaler(AWS·MS·Google) BTM ESS RFP 급증. 4시간+ 장주기 수요','서진시스템: DC ESS 인클로저 → 기존 Grid-scale 대비 고사양·고ASP. 랙마운트형 추가','한중엔시에스: DC 냉각 기술 기보유(서버 수냉). ESS+서버 통합 냉각 가능','LGES CAPA 56.5→65GWh: 온타리오·랜싱 증설분 DC ESS 할당'],
+    },
   ],
 
   // 북미 ESS CAPA (GWh)
