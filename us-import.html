@@ -193,6 +193,11 @@ function genBanner(tab){
     // Alert detection
     const alerts=circ.filter(cc=>{const v=ld.countries[cc]?.val||0,yv=yd?.countries[cc]?.val||0;return yv&&((v-yv)/yv*100)>50});
     if(alerts.length)lines.push(`⚠️ <span class="warn"><b>우회 급증</b> ${alerts.map(cc=>`${FL[cc]}${D.meta.countries[cc]?.label} YoY ${pct(yd.countries[cc]?.val?((ld.countries[cc].val-yd.countries[cc].val)/yd.countries[cc].val*100):0)}`).join(' · ')}</span>`);
+    // 2026-03 중국 비중 급반등 코멘터리
+    if(lat==='2026-03'||lat==='2026-04'){
+      lines.push(`📌 <b>3월 중국 40.3%(+8.1%p MoM)</b>: 관세 전 Front-loading + 한국 $241M→$95M 급감(-61%) 반사효과`);
+      lines.push(`<span style="font-size:10.5px;color:#6b7a99;line-height:1.6">· 중국: 관세 인상 전 선적 집중(Front-loading) — 2025~26년 반복적 패턴<br>· 한국: 설 연휴 생산 공백 + LGES/SDI 북미 현지 생산 전환으로 한국발 수출 구조적 감소<br>· 폴란드: LG 브로츠와프 발 물량 월별 편차 (2월 $90M → 3월 $41M)</span>`);
+    }
   }
   if(tab==='material'){
     // Find biggest MoM mover among material codes
@@ -255,7 +260,7 @@ function renderTab(tab){
 
   app.innerHTML=kpi+`<div class="cg">
     <div class="cb f"><h3><span id="c1title">월별 수입 추이 ($M)</span><span class="dl" onclick="dlExcel('current')">📥</span></h3><canvas id="c1"></canvas></div>
-    <div class="cb f"><h3><span id="c2title">국가별 점유율 (Stacked %)</span><span class="dl" onclick="dlExcel('current')">📥</span></h3><canvas id="c2"></canvas></div>
+    <div class="cb f"><h3><span id="c2title">국가별 점유율 (Stacked %)</span><span class="dl" onclick="dlExcel('current')">📥</span></h3><div style="font-size:10px;color:#6b7a99;margin:-4px 0 8px;line-height:1.5">📊 수입 금액(USD, CIF) 기준 · HS6 850760 전체(EV+ESS+IT, NCM/LFP 무구분)</div><canvas id="c2"></canvas></div>
     <div class="cb"><h3><span>주요국 추이 ($M)</span><span class="dl" onclick="dlImg()">🖼️</span></h3><canvas id="c3"></canvas></div>
     <div class="cb"><h3><span>최신월 비중</span></h3><canvas id="c4"></canvas></div>
     <div class="cb f" style="padding:0;overflow-x:auto"><table class="dt" id="tbl"></table></div></div>`;
