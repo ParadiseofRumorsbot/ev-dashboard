@@ -40,11 +40,14 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 
 <div style="background:#0a0f1a;border:1px solid #2d3a52;border-left:3px solid #4ecdc4;border-radius:8px;padding:12px 16px;margin-bottom:20px;font-size:11px;color:#94a3c0;line-height:1.7">
 <strong style="color:#4ecdc4">📝 Update Log · 2026.05.10</strong><br>
-• 배터리성능 매트릭스 컬럼 추가 (한국·일본·미국 메인스트림 좌측 / 차세대·특수용 셀 우측)<br>
+• 배터리성능 매트릭스 컬럼 재배열 (한국·일본·미국 메인스트림 좌측 / 차세대·특수용 셀 우측)<br>
+• 삼성SDI 명칭 정정 (P5/P6/전고체*)<br>
 • Wh/kg·Wh/L 함의 박스 신규 추가 (해석 가이드 포함)<br>
+• 매트릭스 셀 16개 최종 (MicroVast 300, 파나소닉 2170 269, Tesla Gen1 244 등 양산 실측 반영)<br>
 • 한국 밸류체인 4줄 (LGES 4680 → 엘앤에프·대주전자재료, 삼성SDI → 에코프로비엠·포스코퓨처엠·솔브레인홀딩스)<br>
 • FSD 10B 마일 돌파 반영 (KPI·차트·타임라인) · 일일 29M · 9→10B 31일<br>
-• THIS WEEK 6건 (FSD 10B, 4680 244 Wh/kg, Semi 822 kWh, Rivian R2, CATL 나트륨, Fluence)<br>
+• THIS WEEK 7건 (FSD 10B, 무감독 38대, 4680 244 Wh/kg, Semi 822 kWh, Rivian R2, CATL 나트륨, Fluence)<br>
+• 로보택시 플릿 업데이트: Austin 무감독 27대(+야간), 3개 도시 합산 38대, 도시별 Day 1 vs 현재 비교 차트<br>
 • 타임라인 8건 추가 (4680 실측, Semi 스펙, R2 출시, CATL 나트륨 등)
 </div>
 
@@ -52,11 +55,12 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 <div style="font-size:12px;color:#a78bfa;font-weight:600;letter-spacing:1px;margin-bottom:10px">⚡ THIS WEEK · 2026.05.10</div>
 <div style="color:#e0e6f0">
 🏁 <strong style="color:#a78bfa">FSD 10B 마일 돌파 (5/4)</strong> · 도시 3.76B · 일일 29M · 9→10B 31일(역대 최단) · 구독 1.28M · 머스크 "10B=무감독 임계" 달성<br>
-🔋 <strong style="color:#ff6b6b">Tesla 4680 실측 244 Wh/kg</strong> · Panasonic 2170(269) 대비 <span style="color:#ff6b6b">13%↓</span> · 유럽 Model Y 4680 탑재 불만 확산<br>
+🚕 <strong style="color:#4ecdc4">무감독 38대</strong> (Austin 27 + Dallas 5 + Houston 6) · Austin 야간 무감독 5/4~ · FSD v14.3.2 와이드 · Austin 총 53대<br>
+🔋 <strong style="color:#ff6b6b">Tesla 4680 실측 244 Wh/kg</strong> · Panasonic 2170(269) 대비 <span style="color:#ff6b6b">13%↓</span> · 유럽 Model Y 4680 탑재 불만 확산 · L&F 계약 99.9% 축소<br>
 🚛 <strong style="color:#4ecdc4">Tesla Semi 배터리 공식 (CARB)</strong> · LR 822kWh / SR 548kWh · 4680 NCMA · 500마일(82,000lb) · 효율성 입증<br>
 🛻 <strong style="color:#ffd93d">Rivian R2 출시</strong> · $48,490~ · 330마일 · Autonomy+ 평생 무료 · 자체 라이다 생산 검토(중국 JV)<br>
-🇨🇳 <strong style="color:#a78bfa">CATL 나트륨 40GWh 증설</strong> · 50억위안 투자 예정<br>
-⚡ <strong style="color:#556dff">Fluence Energy 데이터센터 ESS +98%</strong> · 하이퍼스케일러 2곳 직접 계약 · LGES/삼성SDI Re-rating 논리 강화</div>
+🇨🇳 <strong style="color:#a78bfa">CATL 나트륨 40GWh 증설</strong> · 50억위안 · Fuding Shidai 총 149GWh · 나트륨 시장 30~40% 대체 전망<br>
+⚡ <strong style="color:#556dff">Fluence Energy 데이터센터 ESS +98%</strong> · 하이퍼스케일러 2곳 직접 계약 · LGES/SDI Re-rating 논리</div>
 </div>
 
 <div class="chart-section">
@@ -176,8 +180,8 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 </div>
 <div class="metric">
 <div class="label">Austin 무감독</div>
-<div class="value">12대</div>
-<div class="delta up">▲ 4/16 신고치 (총 46대)</div>
+<div class="value">27대</div>
+<div class="delta up">▲ 5/6 기준 (총 53대)</div>
 </div>
 <div class="metric">
 <div class="label">Cybercab 생산</div>
@@ -234,19 +238,19 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 <div style="display:flex;flex-direction:column;gap:10px;font-size:13px">
 <div style="background:#0a0f1a;padding:12px;border-radius:8px;border-left:3px solid #4ecdc4">
 <div style="display:flex;justify-content:space-between;margin-bottom:4px"><strong style="color:#f0f4ff">Austin, TX</strong><span style="color:#4ecdc4;font-size:11px">MATURE</span></div>
-<div style="color:#94a3c0;font-size:12px">Day 1 (25.6.22): 13대 → 현재 46대 · Unsupervised 12대 · Geofence 245 sq mi</div>
+<div style="color:#94a3c0;font-size:12px">Day 1 (25.6.22): 13대 → 현재 ~53대 · Unsupervised 27대 · 야간 무감독 5/4~ · Geofence 245 sq mi</div>
 </div>
 <div style="background:#0a0f1a;padding:12px;border-radius:8px;border-left:3px solid #ffd93d">
-<div style="display:flex;justify-content:space-between;margin-bottom:4px"><strong style="color:#f0f4ff">Dallas, TX</strong><span style="color:#ffd93d;font-size:11px">LAUNCH</span></div>
-<div style="color:#94a3c0;font-size:12px">Day 1 (26.4.18): 1대 Unsupervised · Supervised 단계 생략</div>
+<div style="display:flex;justify-content:space-between;margin-bottom:4px"><strong style="color:#f0f4ff">Dallas, TX</strong><span style="color:#ffd93d;font-size:11px">RAMP</span></div>
+<div style="color:#94a3c0;font-size:12px">Day 1 (26.4.18): 1대 → 현재 5대 Unsupervised · Supervised 단계 생략</div>
 </div>
 <div style="background:#0a0f1a;padding:12px;border-radius:8px;border-left:3px solid #ff6b6b">
-<div style="display:flex;justify-content:space-between;margin-bottom:4px"><strong style="color:#f0f4ff">Houston, TX 🔥</strong><span style="color:#ff6b6b;font-size:11px">NEW</span></div>
-<div style="color:#94a3c0;font-size:12px">4/19 home base 30+대 pre-positioned · Austin Day 1 대비 2.3x</div>
+<div style="display:flex;justify-content:space-between;margin-bottom:4px"><strong style="color:#f0f4ff">Houston, TX</strong><span style="color:#ff6b6b;font-size:11px">RAMP</span></div>
+<div style="color:#94a3c0;font-size:12px">Day 1 (26.4.18): 1대 → 현재 6대 Unsupervised · 야간 운행 Day 1부터</div>
 </div>
 <div style="background:#0a0f1a;padding:12px;border-radius:8px;border-left:3px solid #6b7a99;opacity:.7">
 <div style="display:flex;justify-content:space-between;margin-bottom:4px"><strong style="color:#f0f4ff">Bay Area, CA</strong><span style="color:#6b7a99;font-size:11px">REF</span></div>
-<div style="color:#94a3c0;font-size:12px">~130대 Supervised · Driverless 퍼밋 미취득</div>
+<div style="color:#94a3c0;font-size:12px">~107대 Supervised (500+ 등록) · Driverless 퍼밋 미취득 · CA 규제 7/1~</div>
 </div>
 </div>
 </div>
@@ -271,10 +275,13 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 <div class="event"><div class="date">26.04.22</div><div class="desc">⚡ Tesla Q1 2026 실적 발표 · 자본지출 확대 코멘트로 주가 -6.1% 하락</div></div>
 <div class="event"><div class="date">26.04.24</div><div class="desc">Tesla Dallas · Houston 정식 로보택시 서비스 운영 메시지 (하나증권)</div></div>
 <div class="event"><div class="date">26.04.25</div><div class="desc">Tesla 독일 기가팩토리 1,000명 충원 + 배터리 셀 생산 인력 별도 채용 시작</div></div>
+<div class="event"><div class="date">26.04.30</div><div class="desc">🚕 무감독 25대 돌파 (Austin 19 + Dallas 3 + Houston 3) · RtaxiTracker · 하루 +5대 추가</div></div>
 <div class="event"><div class="date">26.05.01</div><div class="desc">리비안 조지아 공장 30만대 확대(+50%) + DOE $45억 대출 · R2 판매용 생산 시작</div></div>
 <div class="event"><div class="date">26.05.01</div><div class="desc">🤝 리비안-우버 로보택시 파트너십 · 2028년부터 조지아에서 최대 5만대 생산</div></div>
 <div class="event"><div class="date">26.05.01</div><div class="desc">US-EU 자동차 관세 25% 재부과 예고 (기존 Turnberry 15% → 25%)</div></div>
 <div class="event"><div class="date">26.05.04</div><div class="desc">🏁 FSD 10B 마일 돌파 (10,010,684,206) · 도시 3.76B · 일일 28.8M · 구독 1.28M · 9→10B 31일(역대 최단) · 머스크 "10B=안전 무감독 임계" 달성</div></div>
+<div class="event"><div class="date">26.05.04</div><div class="desc">🌙 Austin 야간 무감독 운행 최초 시작 · 기존 오후 4시 종료 → 야간까지 확대 · Dallas·Houston은 Day 1부터 야간 운행</div></div>
+<div class="event"><div class="date">26.05.06</div><div class="desc">🚕 무감독 38대 (Austin 27 + Dallas 5 + Houston 6) · Austin 총 fleet 53대 · FSD v14.3.2 와이드 롤아웃</div></div>
 <div class="event"><div class="date">26.05.07</div><div class="desc">Tesla 4680 실측 244Wh/kg — Panasonic 2170(269) 대비 13%↓ · 유럽 Model Y 4680 탑재 불만 확산</div></div>
 <div class="event"><div class="date">26.05.08</div><div class="desc">Tesla Semi 배터리 공식: LR 822kWh / SR 548kWh (CARB) · 4680 NCMA · 500마일(82,000lb)</div></div>
 <div class="event"><div class="date">26.05.08</div><div class="desc">Rivian R2 퍼포먼스 런칭 · $48,490~ · 330마일 · Autonomy+ 평생 무료 · 자체 라이다 생산 검토(중국 JV)</div></div>
@@ -304,20 +311,25 @@ data:[5300676,2175763,485133,397274],
 backgroundColor:['#4ecdc4','#556dff','#ffd93d','#ff6b6b'],borderRadius:6
 }]},options:{...defOpt,indexAxis:'y',scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,callback:v=>(v/1000000).toFixed(1)+'M'}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:10}}}}}});
 
-new Chart(document.getElementById('c4'),{type:'line',data:{labels:['25.06','25.12','26.01','26.03','26.04.16','26.04.18'],datasets:[
-{label:'총 차량',data:[13,135,200,37,44,46],borderColor:'#556dff',borderWidth:2,tension:.3,pointRadius:4},
-{label:'무감독',data:[0,0,8,4,12,12],borderColor:'#ff6b6b',borderWidth:2,tension:.3,pointRadius:4,borderDash:[5,3]}
+new Chart(document.getElementById('c4'),{type:'line',data:{labels:['25.06','25.12','26.01','26.03','26.04.16','26.04.18','26.04.30','26.05.06'],datasets:[
+{label:'총 차량',data:[13,135,200,37,46,46,46,53],borderColor:'#556dff',borderWidth:2,tension:.3,pointRadius:4},
+{label:'무감독',data:[0,0,8,4,12,12,19,27],borderColor:'#ff6b6b',borderWidth:2,tension:.3,pointRadius:4,borderDash:[5,3]}
 ]},options:defOpt});
 
 new Chart(document.getElementById('c5'),{type:'bar',data:{labels:['26.02','26.03','26.04'],datasets:[{
 data:[1,25,60],backgroundColor:['#2d3a52','#556dff','#a78bfa'],borderRadius:4
 }]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'누적 대수',color:tickColor}}}}});
 
-// 도시별 Day 1 Fleet Size 비교
-new Chart(document.getElementById('c6'),{type:'bar',data:{labels:['Austin\n(25.6.22)','Dallas\n(26.4.18)','Houston\n(26.4.19)','Bay Area\n(Supervised)'],datasets:[{
-data:[13,1,30,130],
+// 도시별 Day 1 Fleet Size vs 현재 무감독 비교
+new Chart(document.getElementById('c6'),{type:'bar',data:{labels:['Austin\n(25.6.22)','Dallas\n(26.4.18)','Houston\n(26.4.18)','Bay Area\n(Supervised)'],datasets:[{
+label:'Day 1',
+data:[13,1,1,130],
 backgroundColor:['#4ecdc4','#ffd93d','#ff6b6b','#6b7a99'],borderRadius:6
-}]},options:{...defOpt,indexAxis:'y',scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:11}}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}}},plugins:{...defOpt.plugins,tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>{const labels=['Active Day 1','Active Day 1 (crowdsourced)','Pre-positioned at home base','Supervised fleet (driver present)'];return ctx.parsed.x+'대 · '+labels[ctx.dataIndex]}}}}}});
+},{
+label:'현재 (5/6)',
+data:[27,5,6,0],
+backgroundColor:['rgba(78,205,196,0.4)','rgba(255,217,61,0.4)','rgba(255,107,107,0.4)','rgba(107,122,153,0.2)'],borderRadius:6,borderWidth:2,borderColor:['#4ecdc4','#ffd93d','#ff6b6b','#6b7a99']
+}]},options:{...defOpt,scales:{x:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}},y:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:11}}}},plugins:{...defOpt.plugins,legend:{display:true,position:'top',labels:{color:tickColor,font:{size:10}}},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>{const labels=[['13대 Active Day 1','1대 Unsupervised Day 1','1대 Unsupervised Day 1','~130대 Supervised'],['27대 Unsupervised (5/6)','5대 Unsupervised (5/6)','6대 Unsupervised (5/6)','CA 퍼밋 미취득']];return labels[ctx.datasetIndex][ctx.dataIndex]}}}}});
 </script>
 </body>
 </html>
