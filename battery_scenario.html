@@ -323,7 +323,7 @@ const DATA = {
     {
       id:'sdi_vw', name:'SDI VW LFP 수주',
       desc:'VW LFP 각형 20GWh 수주 확정 → 헝가리 라인 2개 LFP 전환. 엘앤에프 LFP 6→12만톤. EV: SDI 벤츠+BMW 가동률 상향.',
-      cm:{sdi:{essGwh_y26:35, essGwh_y27:35, essUtil_y26:0.6, essUtil_y27:0.8}},
+      cm:{sdi:{essGwh_y26:35, essGwh_y27:35, essUtil_y26:0.6, essUtil_y27:0.9}},
       catAdj:{cathode:{perGwh_sdi:580}, enclosure:{perGwh_sdi:370}, electrolyte:{perGwh_sdi:154}},
       evAdj:{sdi:{evGwh_y26:40, evGwh_y27:55}},  // 벤츠+BMW 물량 증가
       evCatAdj:{},
@@ -1182,20 +1182,22 @@ function renderCellMakers(){
     const sc=cm.supplyChain;const supplyHtml=Object.entries(sc).map(([k,v])=>`<span class="cm-k">${k}</span> <span class="cm-v">${v}</span>`).join('<br>');
     return `<div class="cm-box" style="--mc:${cm.color}"><div class="cm-box-hd"><span class="cm-box-name">${cm.name}</span><span class="cm-box-capa">${cm.essGwh.y26}GWh (26E)</span></div><div class="cm-supply">${supplyHtml}</div><div class="cm-guide">${cm.guidance}</div></div>`;
   }).join('')}</div>
-  <div style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;letter-spacing:.08em;text-transform:uppercase;font-weight:600">셀사별 부품 TAM (2026E · Base Case · CAPA×가동률×부품사 억원/GWh)</div>
-  <div class="cm-tam-grid" id="cmTamGrid"></div>`;
+  <div style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;letter-spacing:.08em;text-transform:uppercase;font-weight:600">셀사별 부품 TAM (2026E · CAPA×가동률×부품사 억원/GWh)</div>
+  <div class="cm-tam-grid" id="cmTamGrid"></div>
+  <div style="margin-top:16px;font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;letter-spacing:.08em;text-transform:uppercase;font-weight:600">셀사별 부품 TAM (2027E · CAPA×가동률×부품사 억원/GWh)</div>
+  <div class="cm-tam-grid" id="cmTamGrid27"></div>`;
   renderCmTam(null);
 }
-function renderCmTam(scen){
-  const g=document.getElementById('cmTamGrid');if(!g)return;
+function renderCmTamYear(gridId,yr,scen){
+  const g=document.getElementById(gridId);if(!g)return;
   let html=`<div class="cm-tam-th">부품사</div>`;
-  DATA.cellMakers.forEach(cm=>html+=`<div class="cm-tam-th">${cm.name}<br><span style="font-size:8px;opacity:.7">${getCmGwh(cm,'y26',scen).output.toFixed(1)} GWh</span></div>`);
+  DATA.cellMakers.forEach(cm=>html+=`<div class="cm-tam-th">${cm.name}<br><span style="font-size:8px;opacity:.7">${getCmGwh(cm,yr,scen).output.toFixed(1)} GWh</span></div>`);
   html+=`<div class="cm-tam-th">합계</div>`;
   const totals=new Array(DATA.cellMakers.length+1).fill(0);
   DATA.cats.forEach(cat=>{
     html+=`<div class="cm-tam-td" style="font-family:var(--sans);font-weight:500;display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:${cat.color};flex-shrink:0"></span>${cat.company}</div>`;
     let rowSum=0;
-    DATA.cellMakers.forEach((cm,ci)=>{const tam=calcTam(cat,cm,'y26',scen);const pgwh=getCatPerGwh(cat,cm.id,scen);const basePgwh=getCatPerGwh(cat,cm.id,null);const changed=scen&&pgwh!==basePgwh;
+    DATA.cellMakers.forEach((cm,ci)=>{const tam=calcTam(cat,cm,yr,scen);const pgwh=getCatPerGwh(cat,cm.id,scen);const basePgwh=getCatPerGwh(cat,cm.id,null);const changed=scen&&pgwh!==basePgwh;
       html+=`<div class="cm-tam-td" style="font-weight:600${changed?';color:#E91E63':''}">${tam.toLocaleString()}${changed?`<br><span style="font-size:8px;color:var(--ink-3)">${pgwh}억/G</span>`:''}</div>`;
       totals[ci]+=tam;rowSum+=tam});
     totals[DATA.cellMakers.length]+=rowSum;html+=`<div class="cm-tam-td" style="font-weight:700">${rowSum.toLocaleString()}</div>`;
@@ -1203,6 +1205,10 @@ function renderCmTam(scen){
   html+=`<div class="cm-tam-td cm-tam-sum" style="font-family:var(--sans)">합계</div>`;
   totals.forEach(t=>html+=`<div class="cm-tam-td cm-tam-sum">${Math.round(t).toLocaleString()}</div>`);
   g.innerHTML=html;
+}
+function renderCmTam(scen){
+  renderCmTamYear('cmTamGrid','y26',scen);
+  renderCmTamYear('cmTamGrid27','y27',scen);
 }
 
 // ===== Scenario =====
@@ -1217,7 +1223,7 @@ function renderScenario(){
   const evtNote=activeEvents.size>0?` · ⚡ OEM 이벤트 ${activeEvents.size}개 반영됨 (EV GWh 변동이 TAM에 자동 전파)`:'';
   document.getElementById('scenDesc').innerHTML=scen.desc+(evtNote?`<span style="color:#E91E63;font-weight:700">${evtNote}</span>`:'');
   const box=document.getElementById('scenContent');
-  let html=`<div style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;letter-spacing:.08em;text-transform:uppercase;font-weight:600">❶ 셀사 CAPA × 가동률 변동 (GWh)</div>
+  let html=`<div style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;letter-spacing:.08em;text-transform:uppercase;font-weight:600">❶ 셀사 CAPA × 가동률 변동 (2026E GWh)</div>
   <div class="scen-grid"><div class="scen-th">셀사</div><div class="scen-th">CAPA(26E)</div><div class="scen-th">가동률</div><div class="scen-th">출하 GWh</div><div class="scen-th">vs Base</div>`;
   let totalBaseOut=0,totalScenOut=0;
   DATA.cellMakers.forEach(cm=>{const b=getCmGwh(cm,'y26',null);const s=getCmGwh(cm,'y26',scen);const dGwh=s.output-b.output;totalBaseOut+=b.output;totalScenOut+=s.output;
@@ -1230,6 +1236,20 @@ function renderScenario(){
   });
   const tDiff=totalScenOut-totalBaseOut;const tCls=tDiff>0?'scen-delta-up':tDiff<0?'scen-delta-dn':'';
   html+=`<div class="scen-td scen-sum">합계</div><div class="scen-td scen-sum"></div><div class="scen-td scen-sum"></div><div class="scen-td scen-sum" style="font-weight:700">${totalScenOut.toFixed(1)}</div><div class="scen-td scen-sum ${tCls}">${tDiff!==0?(tDiff>0?'+':'')+tDiff.toFixed(1):'-'}</div></div>`;
+  // 2027E
+  html+=`<div style="margin-top:16px;font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;letter-spacing:.08em;text-transform:uppercase;font-weight:600">❶-② 셀사 CAPA × 가동률 변동 (2027E GWh)</div>
+  <div class="scen-grid"><div class="scen-th">셀사</div><div class="scen-th">CAPA(27E)</div><div class="scen-th">가동률</div><div class="scen-th">출하 GWh</div><div class="scen-th">vs Base</div>`;
+  let totalBaseOut27=0,totalScenOut27=0;
+  DATA.cellMakers.forEach(cm=>{const b=getCmGwh(cm,'y27',null);const s=getCmGwh(cm,'y27',scen);const dGwh=s.output-b.output;totalBaseOut27+=b.output;totalScenOut27+=s.output;
+    const capChanged=s.gwh!==b.gwh;const utilChanged=s.util!==b.util;const cls=dGwh>0?'scen-delta-up':dGwh<0?'scen-delta-dn':'';
+    html+=`<div class="scen-td" style="font-family:var(--sans);font-weight:600">${cm.name}</div>`;
+    html+=`<div class="scen-td" style="${capChanged?'color:#E91E63;font-weight:700':''}">${s.gwh}${capChanged?` <span style="font-size:9px">(${b.gwh}→)</span>`:''}</div>`;
+    html+=`<div class="scen-td" style="${utilChanged?'color:#E91E63;font-weight:700':''}">${(s.util*100).toFixed(0)}%${utilChanged?` <span style="font-size:9px">(${(b.util*100).toFixed(0)}→)</span>`:''}</div>`;
+    html+=`<div class="scen-td" style="font-weight:700">${s.output.toFixed(1)}</div>`;
+    html+=`<div class="scen-td ${cls}" style="font-weight:700">${dGwh!==0?(dGwh>0?'+':'')+dGwh.toFixed(1):'-'}</div>`;
+  });
+  const tDiff27=totalScenOut27-totalBaseOut27;const tCls27=tDiff27>0?'scen-delta-up':tDiff27<0?'scen-delta-dn':'';
+  html+=`<div class="scen-td scen-sum">합계</div><div class="scen-td scen-sum"></div><div class="scen-td scen-sum"></div><div class="scen-td scen-sum" style="font-weight:700">${totalScenOut27.toFixed(1)}</div><div class="scen-td scen-sum ${tCls27}">${tDiff27!==0?(tDiff27>0?'+':'')+tDiff27.toFixed(1):'-'}</div></div>`;
   const hasAdj=scen.catAdj&&Object.keys(scen.catAdj).length>0;
   if(hasAdj){
     html+=`<div style="margin-top:16px;font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;letter-spacing:.08em;text-transform:uppercase;font-weight:600">❷ 부품사 억원/GWh 변동 (ASP · M/S · 공급망)</div><div class="scen-grid"><div class="scen-th">부품사</div>`;
