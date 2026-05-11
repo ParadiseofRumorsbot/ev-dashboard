@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>미국 2차전지 수입 트래커</title>
+<title>미국 수입 트래커</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
@@ -15,18 +15,20 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--tx);
 header{padding:28px 0 14px;border-bottom:1px solid var(--bd);margin-bottom:18px}
 header h1{font-size:1.45rem;font-weight:900;background:linear-gradient(135deg,var(--ac),var(--cy));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .sub{font-size:.76rem;color:var(--td);margin-top:3px}
-.nv{margin-top:8px;display:flex;gap:10px;font-size:.73rem}
+.nv{margin-top:8px;display:flex;gap:10px;font-size:.73rem;flex-wrap:wrap}
 .nv a{color:var(--tm);text-decoration:none;padding:3px 8px;border-radius:4px;transition:.2s}
 .nv a:hover,.nv a.on{color:var(--ac);background:var(--ag)}
-/* THIS WEEK Banner */
 .wk{background:linear-gradient(135deg,rgba(59,130,246,.07),rgba(34,211,238,.04));border:1px solid rgba(59,130,246,.12);border-radius:9px;padding:14px 18px;margin-bottom:16px;font-size:.78rem;line-height:1.8}
 .wk .tg{font-size:.65rem;font-weight:700;color:var(--cy);letter-spacing:1px}.wk .dt{color:var(--tm);font-size:.68rem}
 .wk b{color:var(--tx)}.wk .up{color:var(--gn)}.wk .dn{color:var(--rd)}.wk .warn{color:var(--am)}
-/* Tabs */
 .tabs{display:flex;gap:2px;margin-bottom:16px;border-bottom:1px solid var(--bd);overflow-x:auto}
 .tabs button{background:none;border:none;color:var(--tm);font-family:inherit;font-size:.82rem;font-weight:600;padding:9px 15px;cursor:pointer;border-bottom:2px solid transparent;transition:.2s;white-space:nowrap}
 .tabs button:hover{color:var(--tx)}.tabs button.on{color:var(--ac);border-bottom-color:var(--ac)}
-/* KPI Cards */
+/* Sub Tabs */
+.stabs{display:flex;gap:4px;margin-bottom:14px}
+.stabs button{background:var(--cd);border:1px solid var(--bd);color:var(--tm);font-family:inherit;font-size:.73rem;padding:5px 12px;border-radius:6px;cursor:pointer;transition:.2s}
+.stabs button:hover{color:var(--tx);border-color:var(--tm)}
+.stabs button.on{color:var(--ac);border-color:var(--ac);background:var(--ag)}
 .kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-bottom:18px}
 .kc{background:var(--cd);border:1px solid var(--bd);border-radius:8px;padding:13px 12px;transition:.2s;cursor:pointer;user-select:none}
 .kc:hover{border-color:var(--ac);background:var(--cd2)}
@@ -36,33 +38,31 @@ header h1{font-size:1.45rem;font-weight:900;background:linear-gradient(135deg,va
 .kch{font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:600}
 .kch.u{color:var(--gn)}.kch.d{color:var(--rd)}
 .ks{font-size:.66rem;color:var(--tm)}
-/* Charts */
 .cg{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
 .cb{background:var(--cd);border:1px solid var(--bd);border-radius:8px;padding:14px;position:relative}
 .cb.f{grid-column:1/-1}
 .cb h3{font-size:.8rem;font-weight:600;margin-bottom:10px;color:var(--td);display:flex;align-items:center;justify-content:space-between}
 .cb h3 .dl{cursor:pointer;font-size:.7rem;color:var(--tm);padding:2px 6px;border-radius:3px;transition:.2s}
 .cb h3 .dl:hover{color:var(--ac);background:var(--ag)}
-/* Table */
 table.dt{width:100%;border-collapse:collapse;font-size:.72rem}
 .dt th{text-align:left;padding:6px 8px;border-bottom:1px solid var(--bd);color:var(--tm);font-weight:500;font-size:.66rem;text-transform:uppercase;letter-spacing:.4px}
 .dt td{padding:6px 8px;border-bottom:1px solid rgba(30,41,59,.4);font-family:'JetBrains Mono',monospace;font-size:.7rem}
 .dt tr:hover td{background:var(--cd2)}.ar td{background:rgba(239,68,68,.05)}
-/* Context Menu */
 .ctx{position:fixed;background:var(--cd);border:1px solid var(--bd);border-radius:6px;padding:4px 0;z-index:9999;display:none;box-shadow:0 4px 20px rgba(0,0,0,.5);min-width:180px}
 .ctx div{padding:7px 14px;font-size:.75rem;cursor:pointer;display:flex;align-items:center;gap:6px}
 .ctx div:hover{background:var(--cd2);color:var(--ac)}
 footer{border-top:1px solid var(--bd);padding:16px 0;text-align:center;font-size:.68rem;color:var(--tm);margin-top:30px}
 .ld{text-align:center;padding:50px;color:var(--tm)}
+.comp-tags{font-size:10.5px;color:#6b7a99;line-height:1.6}
 @media(max-width:768px){.cg{grid-template-columns:1fr}.kpi{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
 <div class="ct">
 <header>
-  <h1>🔋 미국 2차전지 수입 트래커</h1>
-  <div class="sub">U.S. Census Bureau · 셀 · 소재 · 원료 · 차량 · 주간 자동 업데이트</div>
-  <nav class="nv"><a href="index.html">EV 판매</a><a href="robotaxi.html">FSD·로보택시</a><a href="us-import.html" class="on">US 수입</a><a href="Battery_bom_routing.html">ESS BOM</a><a href="battery_scenario.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">Battery Scenario</a><a href="2차전지_컨콜정리.html">컨콜 정리</a></nav>
+  <h1>📊 미국 수입 트래커</h1>
+  <div class="sub">U.S. Census Bureau · 셀 · 소재 · 원료 · 차량 · 알루미늄 · 솔라 · 로보틱스 · 주간 자동 업데이트</div>
+  <nav class="nv"><a href="index.html">EV 판매</a><a href="robotaxi.html">FSD·로보택시</a><a href="us-import.html" class="on">US 수입</a><a href="Battery_bom_routing.html">ESS BOM</a><a href="battery_scenario.html">Battery Scenario</a><a href="2차전지_컨콜정리.html">컨콜 정리</a></nav>
 </header>
 <div class="tabs" id="tabs">
   <button class="on" data-tab="cell">⚡ 셀·완제품</button>
@@ -70,11 +70,13 @@ footer{border-top:1px solid var(--bd);padding:16px 0;text-align:center;font-size
   <button data-tab="raw">⛏️ 원료</button>
   <button data-tab="vehicle">🚗 차량</button>
   <button data-tab="alert">⚠️ 우회감시</button>
+  <button data-tab="aluminum">⚒️ 알루미늄</button>
+  <button data-tab="solar">☀️ 솔라</button>
+  <button data-tab="robotics">🤖 로보틱스</button>
 </div>
 <div id="app"><div class="ld">데이터 로딩 중...</div></div>
 <footer id="ft"></footer>
 </div>
-<!-- Context Menu -->
 <div class="ctx" id="ctxMenu">
   <div onclick="dlExcel('current')">📥 현재 차트 RAW DATA (.xlsx)</div>
   <div onclick="dlExcel('all')">📦 전체 데이터 다운로드 (.xlsx)</div>
@@ -85,130 +87,108 @@ footer{border-top:1px solid var(--bd);padding:16px 0;text-align:center;font-size
 <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 <script>
 // ── Constants ──
-const FL={KR:'🇰🇷',CN:'🇨🇳',JP:'🇯🇵',DE:'🇩🇪',CA:'🇨🇦',AU:'🇦🇺',CL:'🇨🇱',AR:'🇦🇷',GB:'🇬🇧',SE:'🇸🇪',MA:'🇲🇦',HU:'🇭🇺',TH:'🇹🇭',ID:'🇮🇩',VN:'🇻🇳',MX:'🇲🇽',PL:'🇵🇱',MY:'🇲🇾',IN:'🇮🇳',OTHER:'🌐'};
+const FL={KR:'🇰🇷',CN:'🇨🇳',JP:'🇯🇵',DE:'🇩🇪',CA:'🇨🇦',AU:'🇦🇺',CL:'🇨🇱',AR:'🇦🇷',GB:'🇬🇧',SE:'🇸🇪',MA:'🇲🇦',HU:'🇭🇺',TH:'🇹🇭',ID:'🇮🇩',VN:'🇻🇳',MX:'🇲🇽',PL:'🇵🇱',MY:'🇲🇾',IN:'🇮🇳',KH:'🇰🇭',PH:'🇵🇭',OTHER:'🌐'};
 const CX={KR:'#3b82f6',CN:'#ef4444',JP:'#f59e0b',DE:'#a78bfa',CA:'#10b981',AU:'#06b6d4',CL:'#8b5cf6',AR:'#d946ef',GB:'#6366f1',SE:'#14b8a6',
-MA:'#f472b6',HU:'#22d3ee',TH:'#fb923c',ID:'#818cf8',VN:'#34d399',MX:'#fbbf24',PL:'#c084fc',MY:'#2dd4bf',IN:'#f87171',OTHER:'#475569'};
-const HC=['#3b82f6','#ef4444','#f59e0b','#10b981','#a78bfa','#22d3ee','#fb923c','#f472b6','#818cf8','#34d399'];
+MA:'#f472b6',HU:'#22d3ee',TH:'#fb923c',ID:'#818cf8',VN:'#34d399',MX:'#fbbf24',PL:'#c084fc',MY:'#2dd4bf',IN:'#f87171',KH:'#fca5a5',PH:'#86efac',OTHER:'#475569'};
 const fmt=v=>v>=1e9?`$${(v/1e9).toFixed(1)}B`:v>=1e6?`$${(v/1e6).toFixed(0)}M`:`$${(v/1e3).toFixed(0)}K`;
 const pct=v=>v>0?`+${v.toFixed(1)}%`:`${v.toFixed(1)}%`;
 const ml=t=>{const[y,m]=t.split('-');return`${y.slice(2)}.${m}`};
 if(typeof Chart!=='undefined'){Chart.defaults.color='#94a3b8';Chart.defaults.borderColor='rgba(30,41,59,.5)';Chart.defaults.font.family="'Noto Sans KR',sans-serif";Chart.defaults.font.size=11;Chart.defaults.plugins.legend.labels.boxWidth=10;Chart.defaults.plugins.legend.labels.padding=8}
 
-let D,SEL=null,CUR_TAB='cell'; // SEL = {type:'hs'|'country',code:'...'} or null
+let D,SEL=null,CUR_TAB='cell',CUR_SUB=null;
 
 // ── Context Menu ──
 let ctxTarget=null;
 document.addEventListener('contextmenu',e=>{
-  const card=e.target.closest('.cb,.kc');
-  if(!card)return;
-  e.preventDefault();
-  ctxTarget=card;
-  const m=document.getElementById('ctxMenu');
-  m.style.display='block';m.style.left=e.pageX+'px';m.style.top=e.pageY+'px';
+  const card=e.target.closest('.cb,.kc');if(!card)return;e.preventDefault();ctxTarget=card;
+  const m=document.getElementById('ctxMenu');m.style.display='block';m.style.left=e.pageX+'px';m.style.top=e.pageY+'px';
 });
 document.addEventListener('click',()=>{document.getElementById('ctxMenu').style.display='none'});
 
 function dlExcel(scope){
   if(typeof XLSX==='undefined'){alert('XLSX 라이브러리 로드 실패');return}
   const wb=XLSX.utils.book_new();
+  const tabKey=['aluminum','solar','robotics'].includes(CUR_TAB)?CUR_TAB:CUR_TAB;
+  const codes=D.meta.tabs[tabKey==='alert'?'cell':tabKey]?.codes||[];
   if(scope==='all'){
-    // Full data dump for current tab
-    const codes=D.meta.tabs[CUR_TAB]?.codes||[];
     codes.forEach(hs=>{
-      const md=D.monthly[hs]||{};
-      const months=Object.keys(md).sort();
-      const rows=months.map(m=>{
-        const d=md[m];if(!d)return{월:m};
-        const row={월:m,총수입:d.total};
-        Object.entries(d.countries).forEach(([cc,v])=>{row[`${FL[cc]||''} ${D.meta.countries[cc]?.label||cc}`]=v.val});
-        return row;
-      });
-      const ws=XLSX.utils.json_to_sheet(rows);
-      const name=(D.meta.hsCodes[hs]?.label||hs).slice(0,31);
-      XLSX.utils.book_append_sheet(wb,ws,name);
+      const md=D.monthly[hs]||{};const months=Object.keys(md).sort();
+      const rows=months.map(m=>{const d=md[m];if(!d)return{월:m};
+        const row={월:m,총수입:d.total,총중량:d.totalQty||0};
+        Object.entries(d.countries).forEach(([cc,v])=>{row[`${FL[cc]||''} ${D.meta.countries[cc]?.label||cc}`]=v.val});return row});
+      const ws=XLSX.utils.json_to_sheet(rows);XLSX.utils.book_append_sheet(wb,ws,(D.meta.hsCodes[hs]?.label||hs).slice(0,31));
     });
   } else {
-    // Current selection
-    const codes=D.meta.tabs[CUR_TAB]?.codes||[];
-    const primary=codes[0];
-    const hs=SEL?.type==='hs'?SEL.code:primary;
-    const md=D.monthly[hs]||{};
-    const months=Object.keys(md).sort();
-    const rows=months.map(m=>{
-      const d=md[m];if(!d)return{월:m};
-      const row={월:m,총수입:d.total};
-      Object.entries(d.countries).forEach(([cc,v])=>{row[`${FL[cc]||''} ${D.meta.countries[cc]?.label||cc}`]=v.val});
-      return row;
-    });
-    const ws=XLSX.utils.json_to_sheet(rows);
-    XLSX.utils.book_append_sheet(wb,ws,'Data');
+    const primary=codes[0];const hs=CUR_SUB||primary;
+    const md=D.monthly[hs]||{};const months=Object.keys(md).sort();
+    const rows=months.map(m=>{const d=md[m];if(!d)return{월:m};
+      const row={월:m,총수입:d.total,총중량:d.totalQty||0,단가:d.totalQty>0?(d.total/d.totalQty).toFixed(2):''};
+      Object.entries(d.countries).forEach(([cc,v])=>{row[`${FL[cc]||''} ${D.meta.countries[cc]?.label||cc}`]=v.val});return row});
+    const ws=XLSX.utils.json_to_sheet(rows);XLSX.utils.book_append_sheet(wb,ws,'Data');
   }
-  const fn=`census_${CUR_TAB}_${D.meta.dataRange.to}.xlsx`;
-  XLSX.writeFile(wb,fn);
+  XLSX.writeFile(wb,`census_${CUR_TAB}_${D.meta.dataRange.to}.xlsx`);
 }
 
 function dlImg(){
-  const canvas=document.querySelector('#app canvas');
-  if(!canvas){alert('차트 없음');return}
-  const a=document.createElement('a');a.href=canvas.toDataURL('image/png');
-  a.download=`chart_${CUR_TAB}_${Date.now()}.png`;a.click();
+  const canvas=document.querySelector('#app canvas');if(!canvas){alert('차트 없음');return}
+  const a=document.createElement('a');a.href=canvas.toDataURL('image/png');a.download=`chart_${CUR_TAB}_${Date.now()}.png`;a.click();
 }
 
 // ── Init ──
 async function init(){
-  if(typeof Chart==='undefined'){document.getElementById('app').innerHTML='<div class="ld" style="color:var(--rd)"><b>Chart.js 로드 실패</b><br>페이지를 새로고침 해보세요.</div>';return}
+  if(typeof Chart==='undefined'){document.getElementById('app').innerHTML='<div class="ld" style="color:var(--rd)"><b>Chart.js 로드 실패</b></div>';return}
   try{const r=await fetch('data/census-import.json');if(!r.ok)throw new Error(r.status);D=await r.json()}
   catch(e){document.getElementById('app').innerHTML=`<div class="ld" style="color:var(--rd)"><b>데이터 로드 실패</b><br><span style="color:var(--td)">data/census-import.json 필요</span></div>`;return}
   renderTab('cell');
   document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>{
     document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('on'));
-    b.classList.add('on');SEL=null;CUR_TAB=b.dataset.tab;renderTab(b.dataset.tab)}));
-  document.getElementById('ft').textContent=`마지막 업데이트: ${D.meta.lastUpdated} · U.S. Census Bureau · 자동 갱신: 매주 월요일`;
+    b.classList.add('on');SEL=null;CUR_SUB=null;CUR_TAB=b.dataset.tab;renderTab(b.dataset.tab)}));
+  document.getElementById('ft').textContent=`마지막 업데이트: ${D.meta.lastUpdated} · U.S. Census Bureau · 자동 갱신: 매주 일요일`;
 }
 
 function destroyCharts(){Object.values(Chart.instances).forEach(c=>c.destroy())}
 
+// ── Companies tag helper ──
+function compTag(hsCode){
+  const c=D.meta.hsCodes[hsCode]?.companies;
+  if(!c||!c.length)return'';
+  return`<span class="comp-tags">📌 관련기업: ${c.map(x=>'#'+x.replace(/\s/g,'_')).join(' ')}</span>`;
+}
+
 // ── THIS WEEK Banner ──
 function genBanner(tab){
-  const codes=D.meta.tabs[tab==='alert'?'cell':tab]?.codes||[];
-  const primary=codes[0];if(!primary)return'';
+  const tabKey=['alert'].includes(tab)?'cell':['aluminum','solar','robotics'].includes(tab)?tab:tab;
+  const codes=D.meta.tabs[tabKey]?.codes||[];
+  const primary=CUR_SUB||codes[0];if(!primary)return'';
   const md=D.monthly[primary]||{};
-  const months=Object.keys(md).sort();if(!months.length)return'';
+  const months=Object.keys(md).sort();if(!months.length)return`<div class="wk"><span class="tg">📊 THIS WEEK</span><br>파이프라인 실행 후 데이터가 표시됩니다.</div>`;
   const lat=months.at(-1),prev=months.at(-2);
   const yoyM=months.find(m=>{const[y,mo]=lat.split('-');return m===`${+y-1}-${mo}`});
   const ld=md[lat],pd=prev?md[prev]:null,yd=yoyM?md[yoyM]:null;
   const mom=pd?((ld.total-pd.total)/pd.total*100):0;
   const yoy=yd?((ld.total-yd.total)/yd.total*100):0;
-  const cns=ld.countries.CN?(ld.countries.CN.val/ld.total*100):0;
-  const cnp=yd?.countries.CN?(yd.countries.CN.val/yd.total*100):0;
-  const krs=ld.countries.KR?(ld.countries.KR.val/ld.total*100):0;
-  const krp=yd?.countries.KR?(yd.countries.KR.val/yd.total*100):0;
+  const cns=ld.countries?.CN?(ld.countries.CN.val/ld.total*100):0;
+  const cnp=yd?.countries?.CN?(yd.countries.CN.val/yd.total*100):0;
+  const krs=ld.countries?.KR?(ld.countries.KR.val/ld.total*100):0;
+  const krp=yd?.countries?.KR?(yd.countries.KR.val/yd.total*100):0;
 
-  let lines=[`<span class="tg">⚡ THIS WEEK</span> <span class="dt">${D.meta.lastUpdated} (데이터: ${lat})</span><br>`];
+  let lines=[`<span class="tg">📊 THIS WEEK</span> <span class="dt">${D.meta.lastUpdated} (데이터: ${lat})</span><br>`];
   const circ=Object.entries(D.meta.countries).filter(([,v])=>v.group==='circumvention').map(([k])=>k);
 
   if(tab==='cell'||tab==='alert'){
-    lines.push(`🔋 <b>${D.meta.hsCodes[primary].label}</b> ${fmt(ld.total)} (MoM <span class="${mom>=0?'up':'dn'}">${pct(mom)}</span>, YoY <span class="${yoy>=0?'up':'dn'}">${pct(yoy)}</span>)`);
+    lines.push(`🔋 <b>${D.meta.hsCodes[primary]?.label||primary}</b> ${fmt(ld.total)} (MoM <span class="${mom>=0?'up':'dn'}">${pct(mom)}</span>, YoY <span class="${yoy>=0?'up':'dn'}">${pct(yoy)}</span>)`);
     lines.push(`🇨🇳 <b>중국</b> ${cns.toFixed(1)}% <span class="${cns<cnp?'dn':'up'}">(YoY ${pct(cns-cnp)})</span> · 🇰🇷 <b>한국</b> ${krs.toFixed(1)}% <span class="${krs>krp?'up':'dn'}">(YoY ${pct(krs-krp)})</span>`);
-    // Alert detection
     const alerts=circ.filter(cc=>{const v=ld.countries[cc]?.val||0,yv=yd?.countries[cc]?.val||0;return yv&&((v-yv)/yv*100)>50});
     if(alerts.length)lines.push(`⚠️ <span class="warn"><b>우회 급증</b> ${alerts.map(cc=>`${FL[cc]}${D.meta.countries[cc]?.label} YoY ${pct(yd.countries[cc]?.val?((ld.countries[cc].val-yd.countries[cc].val)/yd.countries[cc].val*100):0)}`).join(' · ')}</span>`);
-    // 2026-03 중국 비중 급반등 코멘터리
-    if(lat==='2026-03'||lat==='2026-04'){
-      lines.push(`📌 <b>3월 중국 40.3%(+8.1%p MoM)</b>: 관세 전 Front-loading + 한국 $241M→$95M 급감(-61%) 반사효과`);
-      lines.push(`<span style="font-size:10.5px;color:#6b7a99;line-height:1.6">· 중국: 관세 인상 전 선적 집중(Front-loading) — 2025~26년 반복적 패턴<br>· 한국: 설 연휴 생산 공백 + LGES/SDI 북미 현지 생산 전환으로 한국발 수출 구조적 감소<br>· 폴란드: LG 브로츠와프 발 물량 월별 편차 (2월 $90M → 3월 $41M)</span>`);
-    }
   }
   if(tab==='material'){
-    // Find biggest MoM mover among material codes
     let maxMov={code:'',mom:0,label:''};
     codes.forEach(c=>{const dl=D.monthly[c]?.[lat]?.total,dp=D.monthly[c]?.[prev]?.total;
       if(dl&&dp){const m=((dl-dp)/dp*100);if(Math.abs(m)>Math.abs(maxMov.mom))maxMov={code:c,mom:m,label:D.meta.hsCodes[c]?.label||c}}});
     lines.push(`🧪 <b>소재 최대 변동</b>: ${maxMov.label} MoM <span class="${maxMov.mom>=0?'up':'dn'}">${pct(maxMov.mom)}</span>`);
   }
   if(tab==='raw'){
-    const li2co3=D.monthly['283691']?.[lat]?.total;
-    const lioh=D.monthly['282520']?.[lat]?.total;
+    const li2co3=D.monthly['283691']?.[lat]?.total;const lioh=D.monthly['282520']?.[lat]?.total;
     if(li2co3)lines.push(`⛏️ <b>탄산리튬</b> ${fmt(li2co3)} · <b>수산화리튬</b> ${fmt(lioh||0)}`);
   }
   if(tab==='vehicle'){
@@ -216,146 +196,193 @@ function genBanner(tab){
     const all=['870380','870340','870350','870360','870321','870322','870323','870324'].reduce((s,c)=>s+(D.monthly[c]?.[lat]?.total||0),0);
     lines.push(`🚗 <b>BEV</b> ${fmt(bev)} · 전체 승용차 대비 <b>${all?(bev/all*100).toFixed(1):'0'}%</b>`);
   }
-  return`<div class="wk">${lines.join('<br>')}</div>`;
+  if(tab==='aluminum'){
+    const lbl=D.meta.hsCodes[primary]?.label||primary;
+    lines.push(`⚒️ <b>${lbl}</b> ${fmt(ld.total)} (MoM <span class="${mom>=0?'up':'dn'}">${pct(mom)}</span>, YoY <span class="${yoy>=0?'up':'dn'}">${pct(yoy)}</span>)`);
+    if(ld.totalQty>0){const pkg=(ld.total/ld.totalQty).toFixed(2);lines.push(`📦 단가 <b>$${pkg}/kg</b> · 중량 <b>${(ld.totalQty/1e6).toFixed(1)}M kg</b>`);}
+  }
+  if(tab==='solar'){
+    const lbl=D.meta.hsCodes[primary]?.label||primary;
+    lines.push(`☀️ <b>${lbl}</b> ${fmt(ld.total)} (MoM <span class="${mom>=0?'up':'dn'}">${pct(mom)}</span>, YoY <span class="${yoy>=0?'up':'dn'}">${pct(yoy)}</span>)`);
+    if(cns>0)lines.push(`🇨🇳 <b>중국</b> ${cns.toFixed(1)}% · 동남아 우회감시 (캄보디아·베트남·말레이시아·태국)`);
+  }
+  if(tab==='robotics'){
+    const lbl=D.meta.hsCodes[primary]?.label||primary;
+    lines.push(`🤖 <b>${lbl}</b> ${fmt(ld.total)} (MoM <span class="${mom>=0?'up':'dn'}">${pct(mom)}</span>, YoY <span class="${yoy>=0?'up':'dn'}">${pct(yoy)}</span>)`);
+    const jps=ld.countries?.JP?(ld.countries.JP.val/ld.total*100):0;
+    if(jps>0)lines.push(`🇯🇵 <b>일본</b> ${jps.toFixed(1)}% · 🇩🇪 <b>독일</b> ${ld.countries?.DE?(ld.countries.DE.val/ld.total*100).toFixed(1):'0'}%`);
+  }
+
+  // Companies tag (for all tabs)
+  lines.push(compTag(primary));
+
+  return`<div class="wk">${lines.filter(l=>l).join('<br>')}</div>`;
 }
 
-// ── Render generic tab ──
+// ── Sub-toggle helper ──
+function mkSubTabs(containerId, items, onChange){
+  const wrap=document.createElement('div');wrap.className='stabs';wrap.id=containerId;
+  items.forEach((it,i)=>{
+    const b=document.createElement('button');b.textContent=it.label;b.dataset.code=it.code;
+    if(i===0)b.classList.add('on');
+    b.addEventListener('click',()=>{wrap.querySelectorAll('button').forEach(x=>x.classList.remove('on'));b.classList.add('on');onChange(it.code)});
+    wrap.appendChild(b);
+  });
+  return wrap;
+}
+
+// ── Render Tab Router ──
 function renderTab(tab){
   destroyCharts();CUR_TAB=tab;
   if(tab==='alert'){renderAlert();return}
   if(tab==='vehicle'){renderVehicle();return}
+  if(['aluminum','solar','robotics'].includes(tab)){renderSubTabbed(tab);return}
+  // Default: cell, material, raw
+  renderGeneric(tab);
+}
+
+// ── Generic tab (cell, material, raw) ──
+function renderGeneric(tab){
   const app=document.getElementById('app');
-  const codes=D.meta.tabs[tab].codes;
-  const primary=codes[0];
-  const md=D.monthly[primary]||{};
-  const months=Object.keys(md).sort();
+  const codes=D.meta.tabs[tab]?.codes||[];const primary=codes[0];
+  const md=D.monthly[primary]||{};const months=Object.keys(md).sort();
   if(!months.length){app.innerHTML='<div class="ld">데이터 없음</div>';return}
   const lat=months.at(-1),prev=months.at(-2);
   const yoyM=months.find(m=>{const[y,mo]=lat.split('-');return m===`${+y-1}-${mo}`});
   const ld=md[lat],pd=prev?md[prev]:null,yd=yoyM?md[yoyM]:null;
 
-  // Build KPI HTML
   let kpi=`${genBanner(tab)}<div class="kpi">`;
-  // Primary total
   const mom=pd?((ld.total-pd.total)/pd.total*100):0;
   const yoy=yd?((ld.total-yd.total)/yd.total*100):0;
   kpi+=mkKpiCard(primary,'hs',D.meta.hsCodes[primary].label,fmt(ld.total),mom,`YoY ${pct(yoy)}`);
-
-  // Country cards
-  const cns=ld.countries.CN?(ld.countries.CN.val/ld.total*100):0;
-  const cnp=yd?.countries.CN?(yd.countries.CN.val/yd.total*100):0;
+  const cns=ld.countries?.CN?(ld.countries.CN.val/ld.total*100):0;const cnp=yd?.countries?.CN?(yd.countries.CN.val/yd.total*100):0;
   kpi+=mkKpiCard('CN','country','🇨🇳 중국',cns.toFixed(1)+'%',cns-cnp,fmt(ld.countries.CN?.val||0),'var(--rd)');
-  const krs=ld.countries.KR?(ld.countries.KR.val/ld.total*100):0;
-  const krp=yd?.countries.KR?(yd.countries.KR.val/yd.total*100):0;
+  const krs=ld.countries?.KR?(ld.countries.KR.val/ld.total*100):0;const krp=yd?.countries?.KR?(yd.countries.KR.val/yd.total*100):0;
   kpi+=mkKpiCard('KR','country','🇰🇷 한국',krs.toFixed(1)+'%',krs-krp,fmt(ld.countries.KR?.val||0),'var(--ac)');
-
-  // Sub code cards
   for(let i=1;i<codes.length;i++){
-    const c=codes[i],dl=D.monthly[c]?.[lat];if(!dl)continue;
-    const dp=D.monthly[c]?.[prev];
+    const c=codes[i],dl=D.monthly[c]?.[lat];if(!dl)continue;const dp=D.monthly[c]?.[prev];
     const mm=dp?((dl.total-dp.total)/dp.total*100):0;
-    kpi+=mkKpiCard(c,'hs',D.meta.hsCodes[c].label,fmt(dl.total),mm,D.meta.hsCodes[c].labelEn);
+    kpi+=mkKpiCard(c,'hs',D.meta.hsCodes[c]?.label||c,fmt(dl.total),mm,D.meta.hsCodes[c]?.labelEn||'');
   }
   kpi+='</div>';
 
   app.innerHTML=kpi+`<div class="cg">
     <div class="cb f"><h3><span id="c1title">월별 수입 추이 ($M)</span><span class="dl" onclick="dlExcel('current')">📥</span></h3><canvas id="c1"></canvas></div>
-    <div class="cb f"><h3><span id="c2title">국가별 점유율 (Stacked %)</span><span class="dl" onclick="dlExcel('current')">📥</span></h3><div style="font-size:10px;color:#6b7a99;margin:-4px 0 8px;line-height:1.5">📊 수입 금액(USD, CIF) 기준 · HS6 850760 전체(EV+ESS+IT, NCM/LFP 무구분)</div><canvas id="c2"></canvas></div>
+    <div class="cb f"><h3><span id="c2title">국가별 점유율 (Stacked %)</span><span class="dl" onclick="dlExcel('current')">📥</span></h3><canvas id="c2"></canvas></div>
     <div class="cb"><h3><span>주요국 추이 ($M)</span><span class="dl" onclick="dlImg()">🖼️</span></h3><canvas id="c3"></canvas></div>
     <div class="cb"><h3><span>최신월 비중</span></h3><canvas id="c4"></canvas></div>
     <div class="cb f" style="padding:0;overflow-x:auto"><table class="dt" id="tbl"></table></div></div>`;
 
-  bindKpiClicks();
-  updateCharts();
+  bindKpiClicks();updateCharts();
 }
 
-function fmtHS(code){
-  if(!code||code==='ICE_ALL')return'';
-  const c=code.replace(/\D/g,'');
-  if(c.length===6)return`HS ${c.slice(0,4)}.${c.slice(4)}`;
-  if(c.length===8)return`HS ${c.slice(0,4)}.${c.slice(4,6)}.${c.slice(6)}`;
-  if(c.length===10)return`HS ${c.slice(0,4)}.${c.slice(4,6)}.${c.slice(6,8)}.${c.slice(8)}`;
-  return`HS ${c}`;
+// ── Sub-tabbed tabs (aluminum, solar, robotics) ──
+function renderSubTabbed(tab){
+  const app=document.getElementById('app');
+  const codes=D.meta.tabs[tab]?.codes||[];
+  if(!codes.length){app.innerHTML='<div class="ld">파이프라인 실행 후 데이터가 표시됩니다.</div>';return}
+
+  // Set initial sub
+  if(!CUR_SUB||!codes.includes(CUR_SUB))CUR_SUB=codes[0];
+  const items=codes.map(c=>({code:c,label:D.meta.hsCodes[c]?.label||c}));
+
+  // Build container
+  app.innerHTML='';
+  const stWrap=mkSubTabs('stabs',items,code=>{CUR_SUB=code;destroyCharts();renderSubContent(tab)});
+  app.appendChild(stWrap);
+  const content=document.createElement('div');content.id='sub-content';app.appendChild(content);
+  renderSubContent(tab);
 }
 
-function mkKpiCard(code,type,label,value,change,sub,color){
-  const cls=SEL&&SEL.code===code?'kc sel':'kc';
-  const vc=color?`style="color:${color}"`:'';
-  const hsTag=type==='hs'&&code!=='ICE_ALL'?`<span style="color:var(--tm);font-size:.62rem;opacity:.7">${fmtHS(code)}</span>`:'';
-  const subText=sub?`${sub}`:'';
-  const divider=subText&&hsTag?' · ':'';
-  return`<div class="${cls}" data-code="${code}" data-type="${type}">
-    <div class="kl">${label}</div><div class="kv" ${vc}>${value}</div>
-    <div class="kch ${change>=0?'u':'d'}">${typeof change==='number'?pct(change):change}</div>
-    <div class="ks">${subText}${divider}${hsTag}</div></div>`;
-}
-
-function bindKpiClicks(){
-  document.querySelectorAll('.kc').forEach(el=>el.addEventListener('click',()=>{
-    const code=el.dataset.code,type=el.dataset.type;
-    if(SEL&&SEL.code===code){SEL=null}else{SEL={type,code}}
-    document.querySelectorAll('.kc').forEach(x=>x.classList.remove('sel'));
-    if(SEL)el.classList.add('sel');
-    destroyCharts();updateCharts();
-  }));
-}
-
-function updateCharts(){
-  const codes=D.meta.tabs[CUR_TAB].codes;
-  const primary=codes[0];
-  const months=Object.keys(D.monthly[primary]||{}).sort();
-
-  // Determine what to show based on SEL
-  let chartHS=primary, chartTitle=D.meta.hsCodes[primary].label+' 월별 수입 추이 ($M)';
-  let countryFilter=null;
-
-  if(SEL){
-    if(SEL.type==='hs'){
-      chartHS=SEL.code;
-      chartTitle=D.meta.hsCodes[SEL.code]?.label+' 월별 수입 추이 ($M)';
-    }else if(SEL.type==='country'){
-      countryFilter=SEL.code;
-      chartTitle=`${FL[SEL.code]} ${D.meta.countries[SEL.code]?.label} — ${D.meta.hsCodes[primary].label} 수입 추이 ($M)`;
-    }
-  }
-
-  const md=D.monthly[chartHS]||{};
-  const lat=months.at(-1);
-  const ld=md[lat];if(!ld)return;
-  document.getElementById('c1title').textContent=chartTitle;
-
-  // C1: Bar chart
-  if(countryFilter){
-    mkBar('c1',months,m=>(md[m]?.countries[countryFilter]?.val||0)/1e6,CX[countryFilter]);
-  }else{
-    mkBar('c1',months,m=>(md[m]?.total||0)/1e6);
-  }
-
-  // C2: Stacked share (always based on chartHS)
-  document.getElementById('c2title').textContent=countryFilter
-    ?`${FL[countryFilter]} ${D.meta.countries[countryFilter]?.label} 점유율 추이 (%)`
-    :(D.meta.hsCodes[chartHS]?.label||'')+' 국가별 점유율 (Stacked %)';
-
-  if(countryFilter){
-    // Single country share line
-    new Chart(document.getElementById('c2'),{type:'line',data:{labels:months.map(ml),
-      datasets:[{label:`${FL[countryFilter]} 점유율`,
-        data:months.map(m=>{const d=md[m];return d?.total?((d.countries[countryFilter]?.val||0)/d.total*100):0}),
-        borderColor:CX[countryFilter],backgroundColor:CX[countryFilter]+'20',fill:true,tension:.3,pointRadius:0,borderWidth:2}]},
-      options:{responsive:true,plugins:{legend:{display:false}},
-      scales:{y:{ticks:{callback:v=>`${v}%`},grid:{color:'rgba(30,41,59,.3)'}},x:{ticks:{maxRotation:45,font:{size:9}},grid:{display:false}}}}});
-  }else{
-    mkStacked('c2',months,ld,md,chartHS);
-  }
-
-  // C3: Lines
-  mkLines('c3',months,md,ld);
-  // C4: Pie
-  mkPie('c4',ld);
-  // Table
-  const prev=months.at(-2);
+function renderSubContent(tab){
+  const el=document.getElementById('sub-content');if(!el)return;
+  const hs=CUR_SUB;const md=D.monthly[hs]||{};const months=Object.keys(md).sort();
+  if(!months.length){el.innerHTML=`<div class="ld">📭 <b>${D.meta.hsCodes[hs]?.label||hs}</b> 데이터 없음<br><span style="font-size:.72rem">GitHub Actions 파이프라인 실행 후 데이터가 표시됩니다.</span></div>`;return}
+  const lat=months.at(-1),prev=months.at(-2);
   const yoyM=months.find(m=>{const[y,mo]=lat.split('-');return m===`${+y-1}-${mo}`});
-  mkTable('tbl',ld,prev?md[prev]:null,yoyM?md[yoyM]:null);
+  const ld=md[lat],pd=prev?md[prev]:null,yd=yoyM?md[yoyM]:null;
+  const mom=pd?((ld.total-pd.total)/pd.total*100):0;
+  const yoy=yd?((ld.total-yd.total)/yd.total*100):0;
+
+  // KPI
+  let kpi=`${genBanner(tab)}<div class="kpi">`;
+  kpi+=mkKpiCard(hs,'hs',D.meta.hsCodes[hs]?.label||hs,fmt(ld.total),mom,`YoY ${pct(yoy)}`);
+
+  // Unit price KPI (if qty available)
+  if(ld.totalQty>0){
+    const pkg=ld.total/ld.totalQty;const ppkg=pd?.totalQty>0?pd.total/pd.totalQty:0;
+    const pkgMom=ppkg?((pkg-ppkg)/ppkg*100):0;
+    kpi+=`<div class="kc"><div class="kl">단가 ($/kg)</div><div class="kv" style="color:var(--or)">$${pkg.toFixed(2)}</div>
+      <div class="kch ${pkgMom>=0?'u':'d'}">${pct(pkgMom)}</div><div class="ks">MoM</div></div>`;
+    const wtMom=pd?.totalQty>0?((ld.totalQty-pd.totalQty)/pd.totalQty*100):0;
+    kpi+=`<div class="kc"><div class="kl">중량</div><div class="kv">${(ld.totalQty/1e6).toFixed(1)}M kg</div>
+      <div class="kch ${wtMom>=0?'u':'d'}">${pct(wtMom)}</div><div class="ks">MoM</div></div>`;
+  }
+
+  // Country KPIs
+  const cns=ld.countries?.CN?(ld.countries.CN.val/ld.total*100):0;const cnp=yd?.countries?.CN?(yd.countries.CN.val/yd.total*100):0;
+  kpi+=mkKpiCard('CN','country','🇨🇳 중국',cns.toFixed(1)+'%',cns-cnp,fmt(ld.countries?.CN?.val||0),'var(--rd)');
+
+  // Tab-specific focus country
+  if(tab==='robotics'){
+    const jps=ld.countries?.JP?(ld.countries.JP.val/ld.total*100):0;const jpp=yd?.countries?.JP?(yd.countries.JP.val/yd.total*100):0;
+    kpi+=mkKpiCard('JP','country','🇯🇵 일본',jps.toFixed(1)+'%',jps-jpp,fmt(ld.countries?.JP?.val||0),'var(--am)');
+  } else {
+    const krs=ld.countries?.KR?(ld.countries.KR.val/ld.total*100):0;const krp=yd?.countries?.KR?(yd.countries.KR.val/yd.total*100):0;
+    kpi+=mkKpiCard('KR','country','🇰🇷 한국',krs.toFixed(1)+'%',krs-krp,fmt(ld.countries?.KR?.val||0),'var(--ac)');
+  }
+  kpi+=`<div class="kc"><div class="kl">YoY</div><div class="kv ${yoy>=0?'':'style="color:var(--rd)"'}" style="color:${yoy>=0?'var(--gn)':'var(--rd)'}">${pct(yoy)}</div><div class="ks">${lat} vs ${yoyM||'N/A'}</div></div>`;
+  kpi+='</div>';
+
+  // Charts
+  const hasDual=ld.totalQty>0;
+  el.innerHTML=kpi+`<div class="cg">
+    <div class="cb f"><h3><span id="sc1title">${D.meta.hsCodes[hs]?.label||hs} 수입 추이</span><span class="dl" onclick="dlExcel('current')">📥</span></h3><canvas id="sc1"></canvas></div>
+    ${hasDual?'<div class="cb f"><h3><span>단가 추이 ($/kg)</span></h3><canvas id="sc1b"></canvas></div>':''}
+    <div class="cb f"><h3><span id="sc2title">국가별 점유율 (Stacked %)</span></h3><canvas id="sc2"></canvas></div>
+    <div class="cb"><h3><span>주요국 추이 ($M)</span><span class="dl" onclick="dlImg()">🖼️</span></h3><canvas id="sc3"></canvas></div>
+    <div class="cb"><h3><span>최신월 비중</span></h3><canvas id="sc4"></canvas></div>
+    <div class="cb f" style="padding:0;overflow-x:auto"><table class="dt" id="stbl"></table></div></div>`;
+
+  // Render charts
+  if(hasDual){
+    // Dual axis: bar (value in $K) + line (unit price $/kg)
+    mkDualChart('sc1',months,md);
+    // Separate unit price trend line
+    new Chart(document.getElementById('sc1b'),{type:'line',data:{labels:months.map(ml),
+      datasets:[{label:'단가 ($/kg)',data:months.map(m=>{const d=md[m];return d?.totalQty>0?(d.total/d.totalQty):null}),
+        borderColor:'#f472b6',backgroundColor:'rgba(244,114,182,.08)',fill:true,tension:.3,pointRadius:0,borderWidth:2,spanGaps:true}]},
+      options:{responsive:true,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`$${c.raw?.toFixed(2)}/kg`}}},
+        scales:{y:{ticks:{callback:v=>`$${v.toFixed(1)}`},grid:{color:'rgba(30,41,59,.3)'}},x:{ticks:{maxRotation:45,font:{size:9}},grid:{display:false}}}}});
+  } else {
+    mkBar('sc1',months,m=>(md[m]?.total||0)/1e6);
+  }
+  mkStacked('sc2',months,ld,md);
+  mkLines('sc3',months,md,ld);
+  mkPie('sc4',ld);
+  mkTable('stbl',ld,pd,yd);
+}
+
+// ── Dual axis chart (bar=value, line=unit price) ──
+function mkDualChart(id,months,md){
+  new Chart(document.getElementById(id),{
+    data:{labels:months.map(ml),
+      datasets:[
+        {type:'bar',label:'수입금액 ($K)',data:months.map(m=>(md[m]?.total||0)/1e3),
+          backgroundColor:months.map(m=>{const y=m.split('-')[0];return y==='2023'?'rgba(59,130,246,.3)':y==='2024'?'rgba(59,130,246,.5)':y==='2025'?'rgba(59,130,246,.75)':'rgba(59,130,246,.9)'}),
+          borderRadius:2,yAxisID:'y',order:2},
+        {type:'line',label:'단가 ($/kg)',data:months.map(m=>{const d=md[m];return d?.totalQty>0?(d.total/d.totalQty):null}),
+          borderColor:'#f472b6',backgroundColor:'transparent',tension:.3,pointRadius:0,borderWidth:2,yAxisID:'y1',order:1,spanGaps:true}
+      ]},
+    options:{responsive:true,
+      plugins:{legend:{position:'bottom',labels:{font:{size:9}}},
+        tooltip:{callbacks:{label:c=>c.dataset.yAxisID==='y1'?`단가: $${c.raw?.toFixed(2)}/kg`:`수입: $${(c.raw/1000).toFixed(0)}M`}}},
+      scales:{
+        y:{position:'left',title:{display:true,text:'수입금액 (USD K$)',font:{size:9},color:'#64748b'},ticks:{callback:v=>`$${(v/1000).toFixed(0)}M`},grid:{color:'rgba(30,41,59,.3)'}},
+        y1:{position:'right',title:{display:true,text:'단가 ($/kg)',font:{size:9},color:'#f472b6'},ticks:{callback:v=>`$${v.toFixed(1)}`,color:'#f472b6'},grid:{drawOnChartArea:false}},
+        x:{ticks:{maxRotation:45,font:{size:9}},grid:{display:false}}
+      }}
+  });
 }
 
 // ── Vehicle tab ──
@@ -366,12 +393,10 @@ function renderVehicle(){
   if(!months.length){app.innerHTML='<div class="ld">데이터 없음</div>';return}
   const lat=months.at(-1),prev=months.at(-2);
   const yoyM=months.find(m=>{const[y,mo]=lat.split('-');return m===`${+y-1}-${mo}`});
-  const bevL=D.monthly[bevCode]?.[lat]?.total||0;
-  const bevP=D.monthly[bevCode]?.[prev]?.total||0;
+  const bevL=D.monthly[bevCode]?.[lat]?.total||0;const bevP=D.monthly[bevCode]?.[prev]?.total||0;
   const phevL=phevCodes.reduce((s,c)=>s+(D.monthly[c]?.[lat]?.total||0),0);
   const iceL=iceCodes.reduce((s,c)=>s+(D.monthly[c]?.[lat]?.total||0),0);
-  const hevL=D.monthly[hevCode]?.[lat]?.total||0;
-  const allL=bevL+phevL+hevL+iceL;
+  const hevL=D.monthly[hevCode]?.[lat]?.total||0;const allL=bevL+phevL+hevL+iceL;
   const bevMom=bevP?((bevL-bevP)/bevP*100):0;
   const bevYoy=(()=>{const y=yoyM?D.monthly[bevCode]?.[yoyM]?.total||0:0;return y?((bevL-y)/y*100):0})();
   const krBev=D.monthly[bevCode]?.[lat]?.countries.KR?.val||0;
@@ -383,30 +408,24 @@ function renderVehicle(){
     ${mkKpiCard('ICE_ALL','hs','ICE 합산',fmt(iceL),0,'')}
     <div class="kc" data-code="SHARE" data-type="special"><div class="kl">BEV 점유율</div><div class="kv" style="color:var(--gn)">${allL?(bevL/allL*100).toFixed(1):'0'}%</div><div class="ks">전체 승용차 대비</div></div>
     ${mkKpiCard('KR','country','🇰🇷 한국산 BEV',fmt(krBev),0,`${bevL?(krBev/bevL*100).toFixed(1):'0'}%`,'var(--ac)')}
-  </div>
-  <div class="cg">
+  </div><div class="cg">
     <div class="cb f"><h3><span>파워트레인별 수입 추이 ($M)</span><span class="dl" onclick="dlExcel('all')">📥</span></h3><canvas id="v1"></canvas></div>
     <div class="cb f"><h3><span>BEV 점유율 추이 (%)</span></h3><canvas id="v2"></canvas></div>
     <div class="cb"><h3><span>BEV 국가별 추이 ($M)</span></h3><canvas id="v3"></canvas></div>
     <div class="cb"><h3><span>BEV 국가별 비중</span></h3><canvas id="v4"></canvas></div>
-    <div class="cb f" style="padding:0;overflow-x:auto"><table class="dt" id="vtbl"></table></div>
-  </div>`;
+    <div class="cb f" style="padding:0;overflow-x:auto"><table class="dt" id="vtbl"></table></div></div>`;
 
-  // V1
   new Chart(document.getElementById('v1'),{type:'line',data:{labels:months.map(ml),datasets:[
     {label:'BEV',data:months.map(m=>(D.monthly[bevCode]?.[m]?.total||0)/1e6),borderColor:'#3b82f6',backgroundColor:'rgba(59,130,246,.12)',fill:true,tension:.3,pointRadius:0,borderWidth:2},
     {label:'PHEV',data:months.map(m=>phevCodes.reduce((s,c)=>s+(D.monthly[c]?.[m]?.total||0),0)/1e6),borderColor:'#10b981',backgroundColor:'rgba(16,185,129,.12)',fill:true,tension:.3,pointRadius:0,borderWidth:2},
     {label:'HEV',data:months.map(m=>(D.monthly[hevCode]?.[m]?.total||0)/1e6),borderColor:'#f59e0b',backgroundColor:'rgba(245,158,11,.08)',fill:true,tension:.3,pointRadius:0,borderWidth:2},
     {label:'ICE',data:months.map(m=>iceCodes.reduce((s,c)=>s+(D.monthly[c]?.[m]?.total||0),0)/1e6),borderColor:'#64748b',backgroundColor:'rgba(100,116,139,.08)',fill:true,tension:.3,pointRadius:0,borderWidth:2}
   ]},options:chartOpt('$M')});
-
-  // V2
   new Chart(document.getElementById('v2'),{type:'line',data:{labels:months.map(ml),datasets:[{
     label:'BEV %',data:months.map(m=>{const b=D.monthly[bevCode]?.[m]?.total||0;
       const a=b+phevCodes.reduce((s,c)=>s+(D.monthly[c]?.[m]?.total||0),0)+(D.monthly[hevCode]?.[m]?.total||0)+iceCodes.reduce((s,c)=>s+(D.monthly[c]?.[m]?.total||0),0);
       return a?(b/a*100):0}),borderColor:'#3b82f6',backgroundColor:'rgba(59,130,246,.1)',fill:true,tension:.3,pointRadius:0,borderWidth:2}]},
     options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{ticks:{callback:v=>`${v}%`},grid:{color:'rgba(30,41,59,.3)'}},x:{ticks:{maxRotation:45,font:{size:9}},grid:{display:false}}}}});
-
   const bevMd=D.monthly[bevCode]||{};const bevLd=bevMd[lat];
   if(bevLd){mkLines('v3',months,bevMd,bevLd);mkPie('v4',bevLd);
     const pd2=prev?bevMd[prev]:null,yd2=yoyM?bevMd[yoyM]:null;mkTable('vtbl',bevLd,pd2,yd2)}
@@ -415,22 +434,19 @@ function renderVehicle(){
 // ── Alert tab ──
 function renderAlert(){
   const app=document.getElementById('app');
-  const hs='850760',md=D.monthly[hs]||{};
-  const months=Object.keys(md).sort();const lat=months.at(-1);
+  const hs='850760',md=D.monthly[hs]||{};const months=Object.keys(md).sort();const lat=months.at(-1);
   const yoyM=months.find(m=>{const[y,mo]=lat.split('-');return m===`${+y-1}-${mo}`});
   const ld=md[lat],yd=yoyM?md[yoyM]:null;
   const circ=Object.entries(D.meta.countries).filter(([,v])=>v.group==='circumvention').map(([k])=>k);
   const cSum=circ.reduce((s,k)=>s+(ld.countries[k]?.val||0),0);
-  const cPct=cSum/ld.total*100;
-  const cPctP=yd?circ.reduce((s,k)=>s+(yd.countries[k]?.val||0),0)/yd.total*100:0;
+  const cPct=cSum/ld.total*100;const cPctP=yd?circ.reduce((s,k)=>s+(yd.countries[k]?.val||0),0)/yd.total*100:0;
 
   let kpi=`${genBanner('alert')}<div class="kpi">
     <div class="kc"><div class="kl">우회 의심국 합산 (${lat})</div><div class="kv" style="color:var(--am)">${fmt(cSum)}</div>
     <div class="kch ${cPct>cPctP?'u':'d'}">점유율 ${cPct.toFixed(1)}%</div><div class="ks">전년 ${cPctP.toFixed(1)}%</div></div>`;
   circ.filter(cc=>{const v=ld.countries[cc]?.val||0,yv=yd?.countries[cc]?.val||0;return yv?(((v-yv)/yv*100)>30):v>1e6}).slice(0,5).forEach(cc=>{
-    const v=ld.countries[cc]?.val||0,yv=yd?.countries[cc]?.val||0;
-    const yy=yv?((v-yv)/yv*100):999;
-    kpi+=`<div class="kc" style="border-color:rgba(239,68,68,.3)"><div class="kl">${FL[cc]} ${D.meta.countries[cc]?.label} ⚠️</div>
+    const v=ld.countries[cc]?.val||0,yv=yd?.countries[cc]?.val||0;const yy=yv?((v-yv)/yv*100):999;
+    kpi+=`<div class="kc" style="border-color:rgba(239,68,68,.3)"><div class="kl">${FL[cc]||''} ${D.meta.countries[cc]?.label||cc} ⚠️</div>
       <div class="kv" style="color:var(--rd)">${pct(yy)}</div><div class="kch u">${fmt(v)}</div></div>`;
   });
   kpi+='</div>';
@@ -441,32 +457,82 @@ function renderAlert(){
     <div class="cb f" style="padding:0;overflow-x:auto"><table class="dt" id="atbl"></table></div></div>`;
 
   new Chart(document.getElementById('a1'),{type:'line',data:{labels:months.map(ml),
-    datasets:circ.map(cc=>({label:`${FL[cc]} ${D.meta.countries[cc]?.label||cc}`,
-      data:months.map(m=>(md[m]?.countries[cc]?.val||0)/1e6),borderColor:CX[cc],
+    datasets:circ.map(cc=>({label:`${FL[cc]||''} ${D.meta.countries[cc]?.label||cc}`,
+      data:months.map(m=>(md[m]?.countries[cc]?.val||0)/1e6),borderColor:CX[cc]||'#475569',
       backgroundColor:'transparent',tension:.3,pointRadius:0,borderWidth:2}))},options:chartOpt('$M')});
-
   new Chart(document.getElementById('a2'),{type:'line',data:{labels:months.map(ml),
     datasets:[{label:'합산 %',data:months.map(m=>{const d=md[m];if(!d?.total)return 0;
       return circ.reduce((s,cc)=>s+(d.countries[cc]?.val||0),0)/d.total*100}),
       borderColor:'var(--am)',backgroundColor:'rgba(245,158,11,.1)',fill:true,tension:.3,pointRadius:0,borderWidth:2}]},
     options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{ticks:{callback:v=>`${v}%`},grid:{color:'rgba(30,41,59,.3)'}},x:{ticks:{maxRotation:45,font:{size:9}},grid:{display:false}}}}});
 
-  const notes={MA:'CATL 모로코',HU:'CATL·Eve 헝가리',TH:'BYD·GWM 태국',ID:'중국 니켈→배터리',VN:'우회 전례 다수',MX:'USMCA 우회',PL:'LG·SK 폴란드',MY:'중국 소재 중간가공',IN:'신규 감시'};
+  const notes={MA:'CATL 모로코',HU:'CATL·Eve 헝가리',TH:'BYD·GWM 태국',ID:'중국 니켈→배터리',VN:'우회 전례 다수',MX:'USMCA 우회',PL:'LG·SK 폴란드',MY:'중국 소재 중간가공',IN:'신규 감시',KH:'솔라 우회 핵심',PH:'솔라 우회'};
   const t=document.getElementById('atbl');
   let h='<thead><tr><th>국가</th><th style="text-align:right">당월</th><th style="text-align:right">전년동월</th><th style="text-align:right">YoY</th><th style="text-align:right">점유율</th><th>시사점</th></tr></thead><tbody>';
   circ.sort((a,b)=>(ld.countries[b]?.val||0)-(ld.countries[a]?.val||0)).forEach(cc=>{
-    const v=ld.countries[cc]?.val||0,yv=yd?.countries[cc]?.val||0;
-    const yy=yv?((v-yv)/yv*100):(v>0?999:0);
-    h+=`<tr${yy>50?' class="ar"':''}>
-      <td>${FL[cc]} ${D.meta.countries[cc]?.label}</td><td style="text-align:right">${fmt(v)}</td>
-      <td style="text-align:right">${fmt(yv)}</td>
-      <td style="text-align:right;color:${yy>30?'var(--rd)':'var(--gn)'};font-weight:600">${yv?pct(yy):'NEW'}</td>
-      <td style="text-align:right">${(v/ld.total*100).toFixed(1)}%</td>
-      <td style="color:var(--am);font-size:.68rem">${notes[cc]||''}</td></tr>`});
+    const v=ld.countries[cc]?.val||0,yv=yd?.countries[cc]?.val||0;const yy=yv?((v-yv)/yv*100):(v>0?999:0);
+    h+=`<tr${yy>50?' class="ar"':''}><td>${FL[cc]||''} ${D.meta.countries[cc]?.label||cc}</td><td style="text-align:right">${fmt(v)}</td>
+      <td style="text-align:right">${fmt(yv)}</td><td style="text-align:right;color:${yy>30?'var(--rd)':'var(--gn)'};font-weight:600">${yv?pct(yy):'NEW'}</td>
+      <td style="text-align:right">${(v/ld.total*100).toFixed(1)}%</td><td style="color:var(--am);font-size:.68rem">${notes[cc]||''}</td></tr>`});
   t.innerHTML=h+'</tbody>';
 }
 
-// ── Chart Helpers ──
+// ── KPI & Chart Helpers ──
+function fmtHS(code){
+  if(!code||code==='ICE_ALL')return'';const c=code.replace(/\D/g,'');
+  if(c.length===6)return`HS ${c.slice(0,4)}.${c.slice(4)}`;
+  if(c.length===8)return`HS ${c.slice(0,4)}.${c.slice(4,6)}.${c.slice(6)}`;
+  if(c.length===10)return`HS ${c.slice(0,4)}.${c.slice(4,6)}.${c.slice(6,8)}.${c.slice(8)}`;
+  return`HS ${c}`;
+}
+
+function mkKpiCard(code,type,label,value,change,sub,color){
+  const cls=SEL&&SEL.code===code?'kc sel':'kc';const vc=color?`style="color:${color}"`:'';
+  const hsTag=type==='hs'&&code!=='ICE_ALL'?`<span style="color:var(--tm);font-size:.62rem;opacity:.7">${fmtHS(code)}</span>`:'';
+  const subText=sub?`${sub}`:'';const divider=subText&&hsTag?' · ':'';
+  return`<div class="${cls}" data-code="${code}" data-type="${type}">
+    <div class="kl">${label}</div><div class="kv" ${vc}>${value}</div>
+    <div class="kch ${change>=0?'u':'d'}">${typeof change==='number'?pct(change):change}</div>
+    <div class="ks">${subText}${divider}${hsTag}</div></div>`;
+}
+
+function bindKpiClicks(){
+  document.querySelectorAll('.kc').forEach(el=>el.addEventListener('click',()=>{
+    const code=el.dataset.code,type=el.dataset.type;
+    if(SEL&&SEL.code===code){SEL=null}else{SEL={type,code}}
+    document.querySelectorAll('.kc').forEach(x=>x.classList.remove('sel'));
+    if(SEL)el.classList.add('sel');destroyCharts();updateCharts();
+  }));
+}
+
+function updateCharts(){
+  const codes=D.meta.tabs[CUR_TAB]?.codes||[];const primary=codes[0];
+  const months=Object.keys(D.monthly[primary]||{}).sort();
+  let chartHS=primary,chartTitle=D.meta.hsCodes[primary]?.label+' 월별 수입 추이 ($M)';let countryFilter=null;
+  if(SEL){
+    if(SEL.type==='hs'){chartHS=SEL.code;chartTitle=D.meta.hsCodes[SEL.code]?.label+' 월별 수입 추이 ($M)'}
+    else if(SEL.type==='country'){countryFilter=SEL.code;chartTitle=`${FL[SEL.code]} ${D.meta.countries[SEL.code]?.label} — ${D.meta.hsCodes[primary]?.label} 수입 추이 ($M)`}
+  }
+  const md=D.monthly[chartHS]||{};const lat=months.at(-1);const ld=md[lat];if(!ld)return;
+  document.getElementById('c1title').textContent=chartTitle;
+  if(countryFilter){mkBar('c1',months,m=>(md[m]?.countries[countryFilter]?.val||0)/1e6,CX[countryFilter])}
+  else{mkBar('c1',months,m=>(md[m]?.total||0)/1e6)}
+  document.getElementById('c2title').textContent=countryFilter
+    ?`${FL[countryFilter]} ${D.meta.countries[countryFilter]?.label} 점유율 추이 (%)`
+    :(D.meta.hsCodes[chartHS]?.label||'')+' 국가별 점유율 (Stacked %)';
+  if(countryFilter){
+    new Chart(document.getElementById('c2'),{type:'line',data:{labels:months.map(ml),
+      datasets:[{label:`${FL[countryFilter]} 점유율`,
+        data:months.map(m=>{const d=md[m];return d?.total?((d.countries[countryFilter]?.val||0)/d.total*100):0}),
+        borderColor:CX[countryFilter],backgroundColor:CX[countryFilter]+'20',fill:true,tension:.3,pointRadius:0,borderWidth:2}]},
+      options:{responsive:true,plugins:{legend:{display:false}},
+      scales:{y:{ticks:{callback:v=>`${v}%`},grid:{color:'rgba(30,41,59,.3)'}},x:{ticks:{maxRotation:45,font:{size:9}},grid:{display:false}}}}});
+  }else{mkStacked('c2',months,ld,md)}
+  mkLines('c3',months,md,ld);mkPie('c4',ld);
+  const prev=months.at(-2);const yoyM=months.find(m=>{const[y,mo]=lat.split('-');return m===`${+y-1}-${mo}`});
+  mkTable('tbl',ld,prev?md[prev]:null,yoyM?md[yoyM]:null);
+}
+
 function chartOpt(unit){return{responsive:true,plugins:{legend:{position:'bottom',labels:{font:{size:9}}},tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${unit==='%'?c.raw.toFixed(1)+'%':'$'+c.raw.toFixed(0)+'M'}`}}},
   scales:{y:{ticks:{callback:v=>unit==='%'?`${v}%`:`$${v}M`},grid:{color:'rgba(30,41,59,.3)'}},x:{ticks:{maxRotation:45,font:{size:9}},grid:{display:false}}}}}
 
@@ -491,8 +557,8 @@ function mkStacked(id,months,ld,md){
 function mkLines(id,months,md,ld){
   const top=Object.entries(ld.countries).filter(([k])=>k!=='OTHER').sort((a,b)=>b[1].val-a[1].val).slice(0,6).map(([k])=>k);
   new Chart(document.getElementById(id),{type:'line',data:{labels:months.map(ml),
-    datasets:top.map(cc=>({label:`${FL[cc]} ${D.meta.countries[cc]?.label||cc}`,
-      data:months.map(m=>(md[m]?.countries[cc]?.val||0)/1e6),borderColor:CX[cc],
+    datasets:top.map(cc=>({label:`${FL[cc]||''} ${D.meta.countries[cc]?.label||cc}`,
+      data:months.map(m=>(md[m]?.countries[cc]?.val||0)/1e6),borderColor:CX[cc]||'#475569',
       backgroundColor:'transparent',tension:.3,pointRadius:0,borderWidth:2}))},options:chartOpt('$M')});
 }
 
@@ -509,81 +575,18 @@ function mkTable(id,ld,pd,yd){
   const all=Object.entries(ld.countries).filter(([k])=>k!=='OTHER').sort((a,b)=>b[1].val-a[1].val);
   let h='<thead><tr><th>국가</th><th style="text-align:right">수입액</th><th style="text-align:right">점유율</th><th style="text-align:right">MoM</th><th style="text-align:right">YoY</th><th>그룹</th></tr></thead><tbody>';
   for(const[cc,info]of all){
-    const sh=(info.val/ld.total*100).toFixed(1);
-    const pv=pd?.countries[cc]?.val||0,yv=yd?.countries[cc]?.val||0;
+    const sh=(info.val/ld.total*100).toFixed(1);const pv=pd?.countries[cc]?.val||0,yv=yd?.countries[cc]?.val||0;
     const mm=pv?((info.val-pv)/pv*100):0,yy=yv?((info.val-yv)/yv*100):0;
     const g=D.meta.countries[cc]?.group||'';const ic=g==='circumvention';
     h+=`<tr${ic&&yy>50?' class="ar"':''}>
       <td>${FL[cc]||''} ${D.meta.countries[cc]?.label||cc}</td><td style="text-align:right">${fmt(info.val)}</td>
-      <td style="text-align:right">${sh}%</td>
-      <td style="text-align:right;color:${mm>=0?'var(--gn)':'var(--rd)'}">${pct(mm)}</td>
+      <td style="text-align:right">${sh}%</td><td style="text-align:right;color:${mm>=0?'var(--gn)':'var(--rd)'}">${pct(mm)}</td>
       <td style="text-align:right;color:${yy>=0?'var(--gn)':'var(--rd)'}">${pct(yy)}</td>
       <td style="color:${ic?'var(--am)':'var(--tm)'}">${ic?'⚠️ 감시':'주요국'}</td></tr>`}
   tbl.innerHTML=h+'</tbody>';
 }
 
-// Lithium weekly data (2020+)
-const LI_WEEKLY_DATA = [{"d":"2020-01-05","cc":7106},{"d":"2020-01-12","cc":7080},{"d":"2020-01-19","cc":7135},{"d":"2020-01-26","cc":7110},{"d":"2020-02-02","cc":7110},{"d":"2020-02-09","cc":6998},{"d":"2020-02-16","cc":7013},{"d":"2020-02-23","cc":6973},{"d":"2020-03-01","cc":7008},{"d":"2020-03-08","cc":7068},{"d":"2020-03-15","cc":6991},{"d":"2020-03-22","cc":6835},{"d":"2020-03-29","cc":6694},{"d":"2020-04-05","cc":6557},{"d":"2020-04-12","cc":6609},{"d":"2020-04-19","cc":6432},{"d":"2020-04-26","cc":6425},{"d":"2020-05-03","cc":6371},{"d":"2020-05-10","cc":6290},{"d":"2020-05-17","cc":6125},{"d":"2020-05-24","cc":5961},{"d":"2020-05-31","cc":5955},{"d":"2020-06-07","cc":5929},{"d":"2020-06-14","cc":5859},{"d":"2020-06-21","cc":5869},{"d":"2020-06-28","cc":5722},{"d":"2020-07-05","cc":5661},{"d":"2020-07-12","cc":5715},{"d":"2020-07-19","cc":5720},{"d":"2020-07-26","cc":5700},{"d":"2020-08-02","cc":5663},{"d":"2020-08-09","cc":5669},{"d":"2020-08-16","cc":5683},{"d":"2020-08-23","cc":5752},{"d":"2020-08-30","cc":5797},{"d":"2020-09-06","cc":5816},{"d":"2020-09-13","cc":5853},{"d":"2020-09-20","cc":5909},{"d":"2020-09-27","cc":5906},{"d":"2020-10-04","cc":5942},{"d":"2020-10-11","cc":5942},{"d":"2020-10-18","cc":6122},{"d":"2020-10-25","cc":6131},{"d":"2020-11-01","cc":6127},{"d":"2020-11-08","cc":6353},{"d":"2020-11-15","cc":6433},{"d":"2020-11-22","cc":6704},{"d":"2020-11-29","cc":6689},{"d":"2020-12-06","cc":6890},{"d":"2020-12-13","cc":7103},{"d":"2020-12-20","cc":7187},{"d":"2020-12-27","cc":7643},{"d":"2021-01-03","cc":8043},{"d":"2021-01-10","cc":8881},{"d":"2021-01-17","cc":9412},{"d":"2021-01-24","cc":10491},{"d":"2021-01-31","cc":11200},{"d":"2021-02-07","cc":11136},{"d":"2021-02-14","cc":11136},{"d":"2021-02-21","cc":11136},{"d":"2021-02-28","cc":12513},{"d":"2021-03-07","cc":12929},{"d":"2021-03-14","cc":12906},{"d":"2021-03-21","cc":13366},{"d":"2021-03-28","cc":13453},{"d":"2021-04-04","cc":13552},{"d":"2021-04-11","cc":13582},{"d":"2021-04-18","cc":13649},{"d":"2021-04-25","cc":13701},{"d":"2021-05-02","cc":13745},{"d":"2021-05-09","cc":13834},{"d":"2021-05-16","cc":13826},{"d":"2021-05-23","cc":13833},{"d":"2021-05-30","cc":13975},{"d":"2021-06-06","cc":13760},{"d":"2021-06-13","cc":13753},{"d":"2021-06-20","cc":13637},{"d":"2021-06-27","cc":13475},{"d":"2021-07-04","cc":13440},{"d":"2021-07-11","cc":13428},{"d":"2021-07-18","cc":13428},{"d":"2021-07-25","cc":13423},{"d":"2021-08-01","cc":14083},{"d":"2021-08-08","cc":14191},{"d":"2021-08-15","cc":15284},{"d":"2021-08-22","cc":16150},{"d":"2021-08-29","cc":17460},{"d":"2021-09-05","cc":19362},{"d":"2021-09-12","cc":21569},{"d":"2021-09-19","cc":24126},{"d":"2021-09-26","cc":25981},{"d":"2021-10-03","cc":27199},{"d":"2021-10-10","cc":27199},{"d":"2021-10-17","cc":28124},{"d":"2021-10-24","cc":28583},{"d":"2021-10-31","cc":30052},{"d":"2021-11-07","cc":30396},{"d":"2021-11-14","cc":30644},{"d":"2021-11-21","cc":30922},{"d":"2021-11-28","cc":31048},{"d":"2021-12-05","cc":32071},{"d":"2021-12-12","cc":34929},{"d":"2021-12-19","cc":36939},{"d":"2021-12-26","cc":41067},{"d":"2022-01-02","cc":43659},{"d":"2022-01-09","cc":46803},{"d":"2022-01-16","cc":51552},{"d":"2022-01-23","cc":56556},{"d":"2022-01-30","cc":59343},{"d":"2022-02-06","cc":59343},{"d":"2022-02-13","cc":61766},{"d":"2022-02-20","cc":69163},{"d":"2022-02-27","cc":75903},{"d":"2022-03-06","cc":78092},{"d":"2022-03-13","cc":77848},{"d":"2022-03-20","cc":78209},{"d":"2022-03-27","cc":78147},{"d":"2022-04-03","cc":78030},{"d":"2022-04-10","cc":78005},{"d":"2022-04-17","cc":75728},{"d":"2022-04-24","cc":73753},{"d":"2022-05-01","cc":69986},{"d":"2022-05-08","cc":68625},{"d":"2022-05-15","cc":67385},{"d":"2022-05-22","cc":68355},{"d":"2022-05-29","cc":69782},{"d":"2022-06-05","cc":70342},{"d":"2022-06-12","cc":70725},{"d":"2022-06-19","cc":71091},{"d":"2022-06-26","cc":71376},{"d":"2022-07-03","cc":70954},{"d":"2022-07-10","cc":71027},{"d":"2022-07-17","cc":70369},{"d":"2022-07-24","cc":70429},{"d":"2022-07-31","cc":70650},{"d":"2022-08-07","cc":70468},{"d":"2022-08-14","cc":70816},{"d":"2022-08-21","cc":70625},{"d":"2022-08-28","cc":71670},{"d":"2022-09-04","cc":71377},{"d":"2022-09-11","cc":71826},{"d":"2022-09-18","cc":71633},{"d":"2022-09-25","cc":70352},{"d":"2022-10-02","cc":71649},{"d":"2022-10-09","cc":71649},{"d":"2022-10-16","cc":74731},{"d":"2022-10-23","cc":76411},{"d":"2022-10-30","cc":77835},{"d":"2022-11-06","cc":81766},{"d":"2022-11-13","cc":84187},{"d":"2022-11-20","cc":83078},{"d":"2022-11-27","cc":80600},{"d":"2022-12-04","cc":81874},{"d":"2022-12-11","cc":81700},{"d":"2022-12-18","cc":79510},{"d":"2022-12-25","cc":76896},{"d":"2023-01-01","cc":75305},{"d":"2023-01-08","cc":73578},{"d":"2023-01-15","cc":71706},{"d":"2023-01-22","cc":70659},{"d":"2023-01-29","cc":70659},{"d":"2023-02-05","cc":67914},{"d":"2023-02-12","cc":65978},{"d":"2023-02-19","cc":62239},{"d":"2023-02-26","cc":54958},{"d":"2023-03-05","cc":51774},{"d":"2023-03-12","cc":48099},{"d":"2023-03-19","cc":44651},{"d":"2023-03-26","cc":39098},{"d":"2023-04-02","cc":33411},{"d":"2023-04-09","cc":31667},{"d":"2023-04-16","cc":28015},{"d":"2023-04-23","cc":24305},{"d":"2023-04-30","cc":25681},{"d":"2023-05-07","cc":27137},{"d":"2023-05-14","cc":29820},{"d":"2023-05-21","cc":38155},{"d":"2023-05-28","cc":42114},{"d":"2023-06-04","cc":41970},{"d":"2023-06-11","cc":43817},{"d":"2023-06-18","cc":43849},{"d":"2023-06-25","cc":43248},{"d":"2023-07-02","cc":42392},{"d":"2023-07-09","cc":42569},{"d":"2023-07-16","cc":43090},{"d":"2023-07-23","cc":40970},{"d":"2023-07-30","cc":37705},{"d":"2023-08-06","cc":36887},{"d":"2023-08-13","cc":35158},{"d":"2023-08-20","cc":29871},{"d":"2023-08-27","cc":29844},{"d":"2023-09-03","cc":27730},{"d":"2023-09-10","cc":27301},{"d":"2023-09-17","cc":25086},{"d":"2023-09-24","cc":23635},{"d":"2023-10-01","cc":22782},{"d":"2023-10-08","cc":22782},{"d":"2023-10-15","cc":23201},{"d":"2023-10-22","cc":23034},{"d":"2023-10-29","cc":22345},{"d":"2023-11-05","cc":22296},{"d":"2023-11-12","cc":20372},{"d":"2023-11-19","cc":19482},{"d":"2023-11-26","cc":17695},{"d":"2023-12-03","cc":15779},{"d":"2023-12-10","cc":13737},{"d":"2023-12-17","cc":13694},{"d":"2023-12-24","cc":13525},{"d":"2023-12-31","cc":13589},{"d":"2024-01-07","cc":13502},{"d":"2024-01-14","cc":13322},{"d":"2024-01-21","cc":13275},{"d":"2024-01-28","cc":13306},{"d":"2024-02-04","cc":13415},{"d":"2024-02-11","cc":13551},{"d":"2024-02-18","cc":13551},{"d":"2024-02-25","cc":13271},{"d":"2024-03-03","cc":14520},{"d":"2024-03-10","cc":15099},{"d":"2024-03-17","cc":15772},{"d":"2024-03-24","cc":15838},{"d":"2024-03-31","cc":14884},{"d":"2024-04-07","cc":15139},{"d":"2024-04-14","cc":15406},{"d":"2024-04-21","cc":15262},{"d":"2024-04-28","cc":15249},{"d":"2024-05-05","cc":15260},{"d":"2024-05-12","cc":15015},{"d":"2024-05-19","cc":14604},{"d":"2024-05-26","cc":14565},{"d":"2024-06-02","cc":14568},{"d":"2024-06-09","cc":14005},{"d":"2024-06-16","cc":13438},{"d":"2024-06-23","cc":12877},{"d":"2024-06-30","cc":12591},{"d":"2024-07-07","cc":12589},{"d":"2024-07-14","cc":12482},{"d":"2024-07-21","cc":11761},{"d":"2024-07-28","cc":11792},{"d":"2024-08-04","cc":11087},{"d":"2024-08-11","cc":10813},{"d":"2024-08-18","cc":10264},{"d":"2024-08-25","cc":10387},{"d":"2024-09-01","cc":10575},{"d":"2024-09-08","cc":10213},{"d":"2024-09-15","cc":10221},{"d":"2024-09-22","cc":10288},{"d":"2024-09-29","cc":10769},{"d":"2024-10-06","cc":10769},{"d":"2024-10-13","cc":10614},{"d":"2024-10-20","cc":10068},{"d":"2024-10-27","cc":10041},{"d":"2024-11-03","cc":10172},{"d":"2024-11-10","cc":10509},{"d":"2024-11-17","cc":10996},{"d":"2024-11-24","cc":10969},{"d":"2024-12-01","cc":10763},{"d":"2024-12-08","cc":10521},{"d":"2024-12-15","cc":10449},{"d":"2024-12-22","cc":10349},{"d":"2024-12-29","cc":10345},{"d":"2025-01-05","cc":10244},{"d":"2025-01-12","cc":10228},{"d":"2025-01-19","cc":10443},{"d":"2025-01-26","cc":10565},{"d":"2025-02-02","cc":10565},{"d":"2025-02-09","cc":10419},{"d":"2025-02-16","cc":10476},{"d":"2025-02-23","cc":10411},{"d":"2025-03-02","cc":10239},{"d":"2025-03-09","cc":10353},{"d":"2025-03-16","cc":10307},{"d":"2025-03-23","cc":10094},{"d":"2025-03-30","cc":10149},{"d":"2025-04-06","cc":10093},{"d":"2025-04-13","cc":9791},{"d":"2025-04-20","cc":9725},{"d":"2025-04-27","cc":9510},{"d":"2025-05-04","cc":9255},{"d":"2025-05-11","cc":8940},{"d":"2025-05-18","cc":8848},{"d":"2025-05-25","cc":8704},{"d":"2025-06-01","cc":8404},{"d":"2025-06-08","cc":8482},{"d":"2025-06-15","cc":8423},{"d":"2025-06-22","cc":8314},{"d":"2025-06-29","cc":8575},{"d":"2025-07-06","cc":8862},{"d":"2025-07-13","cc":8969},{"d":"2025-07-20","cc":9394},{"d":"2025-07-27","cc":10335},{"d":"2025-08-03","cc":9732},{"d":"2025-08-10","cc":10205},{"d":"2025-08-17","cc":11691},{"d":"2025-08-24","cc":11647},{"d":"2025-08-31","cc":11079},{"d":"2025-09-07","cc":10487},{"d":"2025-09-14","cc":10006},{"d":"2025-09-21","cc":10327},{"d":"2025-09-28","cc":10233},{"d":"2025-10-05","cc":10250},{"d":"2025-10-12","cc":10146},{"d":"2025-10-19","cc":10509},{"d":"2025-10-26","cc":10883},{"d":"2025-11-02","cc":11376},{"d":"2025-11-09","cc":11232},{"d":"2025-11-16","cc":12117},{"d":"2025-11-23","cc":12807},{"d":"2025-11-30","cc":13003},{"d":"2025-12-07","cc":12940},{"d":"2025-12-14","cc":13395},{"d":"2025-12-21","cc":14061},{"d":"2025-12-28","cc":16099},{"d":"2026-01-04","cc":17027},{"d":"2026-01-11","cc":19418},{"d":"2026-01-18","cc":22809},{"d":"2026-01-25","cc":23480},{"d":"2026-02-01","cc":21933},{"d":"2026-02-08","cc":19824},{"d":"2026-02-15","cc":19921},{"d":"2026-02-22","cc":19921},{"d":"2026-03-01","cc":23099},{"d":"2026-03-08","cc":22627},{"d":"2026-03-15","cc":22382},{"d":"2026-03-22","cc":21366},{"d":"2026-03-29","cc":22357},{"d":"2026-04-05","cc":22595},{"d":"2026-04-12","cc":22475},{"d":"2026-04-19","cc":24568},{"d":"2026-04-26","cc":24737}];
-
-// CSV download for lithium data
-function dlLiCSV(){
-  let csv='Date,China_Carbonate_USD_T\n';
-  LI_WEEKLY_DATA.forEach(d=>{if(d.cc)csv+=`${d.d},${d.cc}\n`});
-  const blob=new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
-  a.download=`lithium_weekly_${new Date().toISOString().slice(0,10)}.csv`;a.click();URL.revokeObjectURL(a.href);
-}
-
 init();
-
-// ── Lithium Price Chart ──
-const LI_W = LI_WEEKLY_DATA;
-function renderLithium(){
-  const wrap=document.getElementById('liWrap');if(!wrap)return;
-  const data=LI_W.filter(d=>d.cc);
-  const labels=data.map(d=>d.d);
-  const vals=data.map(d=>d.cc);
-  // 12MA
-  const ma=vals.map((_,i)=>{const s=Math.max(0,i-51);const sl=vals.slice(s,i+1);return sl.reduce((a,b)=>a+b,0)/sl.length});
-  new Chart(document.getElementById('liC'),{type:'line',data:{labels:labels.map(l=>{const p=l.split('-');return p[1]==='01'?p[0]:'';}),
-    datasets:[
-      {label:'중국 탄산리튬 ($/톤)',data:vals,borderColor:'#f43f5e',backgroundColor:'rgba(244,63,94,0.08)',fill:true,tension:.2,pointRadius:0,borderWidth:1.5},
-      {label:'12개월 이동평균',data:ma,borderColor:'#3b82f6',backgroundColor:'transparent',tension:.2,pointRadius:0,borderWidth:1.2,borderDash:[4,3]},
-    ]},options:{responsive:true,plugins:{legend:{position:'bottom',labels:{font:{size:9}}},
-      tooltip:{callbacks:{label:c=>`${c.dataset.label}: $${c.raw.toLocaleString(undefined,{maximumFractionDigits:0})}/톤`}}},
-    scales:{y:{ticks:{callback:v=>`$${(v/1000).toFixed(0)}K`},grid:{color:'rgba(30,41,59,.3)'}},
-      x:{ticks:{maxRotation:0,font:{size:9},autoSkip:true,maxTicksLimit:12},grid:{display:false}}}}});
-  const last=data[data.length-1];
-  document.getElementById('liInfo').textContent=`최신: ${last.d} · $${last.cc.toLocaleString()}/톤 · 12MA $${Math.round(ma[ma.length-1]).toLocaleString()}/톤`;
-}
-
-// Inject lithium section HTML after main content
-const ftEl=document.getElementById('ft');
-if(ftEl){
-  const liDiv=document.createElement('div');
-  liDiv.style.cssText='background:var(--cd);border:1px solid var(--bd);border-radius:12px;padding:16px 20px;margin-top:20px';
-  liDiv.innerHTML=`<h3 style="font-size:13px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center">
-    <span>⛏️ 리튬 현물가 ($/톤) — Bloomberg</span><button onclick="dlLiCSV()" style="font-size:10px;padding:4px 10px;border:1px solid var(--bd);border-radius:6px;background:var(--cd2);color:var(--tx);cursor:pointer;font-family:inherit">📥 CSV</button></h3>
-    <div id="liWrap"><canvas id="liC"></canvas></div>
-    <div id="liInfo" style="font-size:.68rem;color:var(--tm);margin-top:6px"></div>
-    <div id="liQ" style="margin-top:10px"></div>`;
-  ftEl.parentNode.insertBefore(liDiv,ftEl);
-  renderLithium();
-  // Quarterly averages
-  const qMap={};LI_W.filter(d=>d.cc).forEach(d=>{
-    const yr=d.d.substring(0,4),m=parseInt(d.d.substring(5,7)),q=`${yr}Q${Math.ceil(m/3)}`;
-    if(!qMap[q])qMap[q]={s:0,n:0};qMap[q].s+=d.cc;qMap[q].n++});
-  const qs=Object.keys(qMap).sort().slice(-12);
-  const qAvgs=qs.map(q=>({q,avg:Math.round(qMap[q].s/qMap[q].n)}));
-  let qh=`<div style="font-size:.68rem;color:var(--tm);margin-bottom:6px;letter-spacing:.06em;text-transform:uppercase;font-weight:600">분기별 평균 ($/톤)</div>`;
-  qh+=`<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(80px,1fr));gap:4px;font-size:.68rem">`;
-  qAvgs.forEach((q,i)=>{const prev=i>0?qAvgs[i-1].avg:null;const chg=prev?((q.avg-prev)/prev*100):0;
-    qh+=`<div style="background:var(--cd2);padding:6px;border-radius:4px;text-align:center">
-      <div style="color:var(--tm);font-size:.6rem">${q.q}</div>
-      <div style="font-weight:700;color:var(--tx);font-size:.8rem">$${q.avg.toLocaleString()}</div>
-      ${prev?`<div style="font-size:.55rem;color:${chg>0?'var(--gn)':chg<0?'var(--rd)':'var(--tm)'}">${chg>0?'+':''}${chg.toFixed(1)}%</div>`:''}</div>`});
-  qh+=`</div>`;document.getElementById('liQ').innerHTML=qh;
-}
 </script>
 </body>
 </html>
