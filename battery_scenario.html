@@ -378,13 +378,15 @@ const DATA = {
 
   // 북미 ESS CAPA (GWh)
   northAmericaCapa: {
-    '2025E':40.5, '2026E':106.5, '2027E':112.5,
+    '2025E':40.5, '2026E':106.5, '2027E':142.5,
     detail: [
       {name:'SDI', y25:14, y26:28, y27:28, note:'NCA 7G+LFP 21G'},
       {name:'LGES', y25:16.5, y26:56.5, y27:56.5, note:'홀랜드+온타리오+랜싱+JV'},
-      {name:'SK ON', y25:0, y26:4, y27:10, note:'테네시 ESS 전환'},
+      {name:'SK ON', y25:0, y26:4, y27:10, note:'테네시 단독(JV해체), ESS 전환'},
       {name:'AESC', y25:7, y26:7, y27:7, note:''},
-      {name:'Tesla', y25:0, y26:10, y27:10, note:'지연 중'},
+      {name:'Tesla', y25:0, y26:10, y27:10, note:'네바다 LFP, Megapack'},
+      {name:'Ford Energy', y25:0, y26:0, y27:20, note:'KY BlueOval→ESS LFP, CATL 라이선스, 27H2'},
+      {name:'EnerSys', y25:0, y26:1, y27:5, note:'그린빌 SC 4-5G 27/28'},
     ]
   },
 };
@@ -479,7 +481,7 @@ const CELL3_CAPA = {
   skon: {
     name:'SK ON', color:'#E9A23B',
     years:[2024,2025,2026,2027,2028,2029,2030],
-    total:{2024:106,2025:189,2026:257,2027:283,2028:283,2029:283,2030:283},
+    total:{2024:106,2025:189,2026:220,2027:246,2028:246,2029:246,2030:246},
     regions:[
       {name:'국내',sub:{2024:7,2025:5,2026:19,2027:19,2028:19,2029:19,2030:19},
        factories:[
@@ -494,14 +496,14 @@ const CELL3_CAPA = {
         {name:'옌청 1,2동(SKOJ JV)',app:'EV',client:'샤오펑',note:'파우치 2Q24',d:{2024:27,2025:27,2026:27,2027:27,2028:27,2029:27,2030:27}},
         {name:'옌청 2(SKOY)',app:'EV',client:'샤오펑',note:'파우치 SOP 연기→25',d:{2024:0,2025:33,2026:33,2027:33,2028:33,2029:33,2030:33}},
       ]},
-      {name:'북미',sub:{2024:22,2025:59,2026:113,2027:139,2028:139,2029:139,2030:139},
+      {name:'북미',sub:{2024:22,2025:59,2026:76,2027:102,2028:102,2029:102,2030:102},
        factories:[
         {name:'조지아 1공장',app:'EV',client:'VW',note:'파우치',d:{2024:10,2025:10,2026:10,2027:10,2028:10,2029:10,2030:10}},
         {name:'조지아 2공장',app:'EV',client:'FORD,현대',note:'파우치',d:{2024:12,2025:12,2026:12,2027:12,2028:12,2029:12,2030:12}},
         {name:'조지아 HMG(현대 JV)',app:'EV',client:'현대',note:'파우치 2026',d:{2024:0,2025:0,2026:9,2027:35,2028:35,2029:35,2030:35}},
-        {name:'테네시(블루오벌 SK)',app:'EV',client:'FORD',note:'파우치 2025',d:{2024:0,2025:0,2026:45,2027:45,2028:45,2029:45,2030:45}},
-        {name:'켄터키 1(블루오벌 SK)',app:'EV',client:'FORD,닛산',note:'파우치 3Q25',d:{2024:0,2025:37,2026:37,2027:37,2028:37,2029:37,2030:37}},
-        {name:'켄터키 2(블루오벌 SK)',app:'EV',client:'Ford',note:'무기한 연기',d:{2024:0,2025:0,2026:0,2027:0,2028:0,2029:0,2030:0}},
+        {name:'테네시(SK온 단독)',app:'EV,EREV',client:'FORD',note:'JV해체→SK온 단독(26Q1), EREV 2028~',d:{2024:0,2025:0,2026:45,2027:45,2028:45,2029:45,2030:45}},
+        {name:'켄터키 1(→Ford)',app:'-',client:'-',note:'Ford이관(26.02), ESS LFP 전환(Ford Energy)',d:{2024:0,2025:37,2026:0,2027:0,2028:0,2029:0,2030:0}},
+        {name:'켄터키 2(→Ford)',app:'-',client:'-',note:'Ford이관, 미가동',d:{2024:0,2025:0,2026:0,2027:0,2028:0,2029:0,2030:0}},
       ]},
       {name:'유럽',sub:{2024:32.5,2025:47.5,2026:47.5,2027:47.5,2028:47.5,2029:47.5,2030:47.5},
        factories:[
@@ -511,6 +513,24 @@ const CELL3_CAPA = {
       ]},
     ],
     shipment:null,
+  },
+  tesla: {
+    name:'Tesla (자체 셀)', color:'#c41e3a',
+    years:[2024,2025,2026,2027,2028,2029,2030],
+    total:{2024:4,2025:15,2026:51,2027:78,2028:108,2029:138,2030:168},
+    regions:[
+      {name:'북미',sub:{2024:4,2025:15,2026:49,2027:60,2028:90,2029:120,2030:150},
+       factories:[
+        {name:'텍사스 4680',app:'EV',client:'Cybertruck,Model Y',note:'NMC811 건식전극, 40G 설치(Q4 25 IR)',d:{2024:4,2025:15,2026:40,2027:40,2028:40,2029:40,2030:40}},
+        {name:'네바다 LFP',app:'ESS',client:'Megapack',note:'CATL 장비, 7G Early Ramp(Q4 25 IR)',d:{2024:0,2025:0,2026:7,2027:10,2028:10,2029:10,2030:10}},
+        {name:'네바다 4680 확장',app:'EV,ESS',client:'Semi,Cybercab',note:'100G 디자인, $3.6B',d:{2024:0,2025:0,2026:2,2027:10,2028:40,2029:70,2030:100}},
+      ]},
+      {name:'유럽',sub:{2024:0,2025:0,2026:2,2027:18,2028:18,2029:18,2030:18},
+       factories:[
+        {name:'기가베를린 4680',app:'EV',client:'Model Y EU',note:'NMC, $250M 추가→18G(26.05), 2027H1 양산',d:{2024:0,2025:0,2026:2,2027:18,2028:18,2029:18,2030:18}},
+      ]},
+    ],
+    shipment:{2025:{util:27,total:4,ess:0,ev:4},2026:{util:45,total:23,ess:5,ev:18},2027:{util:55,total:43,ess:10,ev:33}},
   },
 };
 </script>
@@ -683,7 +703,13 @@ main{max-width:1080px;margin:0 auto;padding:20px 16px 60px}
 
   <section class="guide-card" style="border-left:3px solid #00A878;padding:14px 18px">
     <div style="font-family:var(--mono);font-size:11px;color:var(--ink-2);letter-spacing:.04em;line-height:1.8">
-      <strong style="color:#00A878">📝 Update Log · 2026.05.10</strong><br>
+      <strong style="color:#00A878">📝 Update Log · 2026.05.13</strong><br>
+      • <strong>Tesla (자체 셀) CELL3_CAPA 신규 추가</strong> — 텍사스 4680(40G) · 네바다 LFP(7G) · 네바다 확장(100G 디자인) · 기가베를린(8→18G, $250M 추가) · 출하 추정 포함<br>
+      • <strong>SK ON BlueOval SK JV 해체 반영</strong> — 켄터키 2개 공장 Ford 이관(26Q1), 테네시 SK온 단독 소유, 북미 CAPA 113→76(26E), 139→102(27E)<br>
+      • <strong>Ford Energy 20GWh ESS 추가</strong> — 북미 ESS CAPA 테이블에 Ford Energy(KY BlueOval→LFP ESS, 27H2) · EnerSys(그린빌 SC) 신규 반영<br>
+      • <strong>밸류체인 업데이트</strong> — Tesla Gen1·Gen3에 솔루스첨단소재(동박) 추가 · LGES 핀란드 양극재 JV(FMG+당셩과기, 연 6만톤, 27 가동) · 공급망 업데이트 섹션 신설<br>
+      <br>
+      <strong style="color:#888">📝 Update Log · 2026.05.10</strong><br>
       • <strong>배터리성능 매트릭스 신규 추가 (Base Case 섹션 아래)<br>
       • 매트릭스 컬럼 재배열 — 한국·일본·미국 메인스트림 좌측 / 차세대·특수용 셀 우측 (점선 구분)<br>
       • Wh/kg·Wh/L 함의 박스 신규 (해석 가이드 5가지 포인트 포함)<br>
@@ -796,8 +822,12 @@ main{max-width:1080px;margin:0 auto;padding:20px 16px 60px}
       <strong style="color:var(--ink)">한국 밸류체인 (셀 소재 레벨, Non-LFP):</strong><br>
       • <strong>삼성SDI P5·P6</strong>: 양극재 <strong style="color:#0066cc">에코프로비엠·포스코퓨처엠</strong> · 전해질 <strong style="color:#0066cc">솔브레인홀딩스</strong><br>
       • <strong>LGES 4680</strong>: 양극재 <strong style="color:#0066cc">엘앤에프</strong> (NCMA Ni95%, 세계 최초 4680 양극재 양산) · 실리콘 음극 <strong style="color:#0066cc">대주전자재료</strong> (SiOx, 5~10wt% 첨가)<br>
-      • <strong>Tesla Gen1</strong>: 양극재 <strong style="color:#0066cc">엘앤에프</strong> (Tesla 직납, $29억→$7,386 / 2025년 12월 99.9% 축소 공시) · F전해질 <strong style="color:#0066cc">천보 BLS</strong> (LiFSI)<br>
-      • <strong>Tesla Gen3(추정)</strong>: 실리콘 음극 Sila Nanotechnologies (미국 기업)· F전해질 <strong style="color:#0066cc">천보 BLS</strong> (LiFSI)
+      • <strong>Tesla Gen1 (4680)</strong>: 양극재 <strong style="color:#0066cc">엘앤에프</strong> (Tesla 직납, $29억→$7,386 / 2025년 12월 99.9% 축소 공시) · F전해질 <strong style="color:#0066cc">천보 BLS</strong> (LiFSI) · 동박 <strong style="color:#0066cc">솔루스첨단소재</strong><br>
+      • <strong>Tesla Gen3(추정)</strong>: 실리콘 음극 Sila Nanotechnologies (미국 기업) · F전해질 <strong style="color:#0066cc">천보 BLS</strong> (LiFSI) · 동박 <strong style="color:#0066cc">솔루스첨단소재</strong><br>
+      <br>
+      <strong style="color:var(--ink)">📌 공급망 업데이트 (2026.05):</strong><br>
+      • <strong>LGES 핀란드 양극재 JV 지분 인수</strong>: FMG+당셩과기 JV · 연 6만톤 양극재 · 코트카 €8억 투자 · 2027 가동 → 브로츠와프 공장 투입. 에코프로비엠·포스코퓨처엠 유럽향 대체 변수<br>
+      • <strong>Tesla 기가베를린 셀 CAPA 8→18GWh</strong>: $2.5억 추가 투자(누적 €10억) · 1,500명 채용 · 2027H1 양산 · 아시아 셀 의존도 축소 → 유럽 K3 물량 직접 위협은 제한적(자체 소화), 수직계열화 가속 신호
     </div>
   </section>
 
@@ -952,6 +982,8 @@ main{max-width:1080px;margin:0 auto;padding:20px 16px 60px}
 <div style="margin-top:14px;font-size:11px;color:var(--ink-3);line-height:1.7">
 ※ 일정은 OEM 발표 기준이며 변경 가능 · ~표기는 추정치<br>
 ※ <strong style="color:#c41e3a">Tesla Semi</strong>: 네바다 전용공장 연 5만대·$14B 매출 목표 (Q1 26 컨콜) · <span style="color:#b45309">LR 822kWh / SR 548kWh (CARB 공식, 2026.05)</span> · Cybercab: NC05 LFP 4680 추정<br>
+※ <strong style="color:#c41e3a">Tesla 자체 셀 CAPA</strong>: 텍사스 4680 40G(Production) + 네바다 LFP 7G(Early Ramp) + 기가베를린 8→18G($250M 추가, 누적 €10억, 2027H1) · Q4 25 IR 기준 · 네바다 4680 100G 디자인(건설 중)<br>
+※ <strong style="color:#2563eb">Ford Energy 20GWh ESS</strong>: BlueOval SK JV 해체(26Q1) → KY 공장 Ford 단독 이관 → ESS LFP 전환(CATL 라이선스) · 2027H2 첫 인도 목표 · SK ON은 테네시만 단독 보유<br>
 ※ <strong style="color:#c41e3a">Tesla Model Y AWD 가격 인하</strong>: 2026 Q4 출시, "Standard" 라벨 미포함, 라인업 가격 재편<br>
 ※ <strong style="color:#15803d">현대 아이오닉3</strong>: B-segment EV 해치백 · 2026 Q2 · LFP 베이스 추정 · 아이오닉9 다음 신차<br>
 ※ <strong style="color:#15803d">현대 EREV</strong>: 2027 Q1 출시 확정 · 600+ 마일 주행 · 北미·중국 생산 · EV 캐즘 대응 전략<br>
