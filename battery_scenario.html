@@ -111,7 +111,7 @@ const DATA = {
       company:'솔브레인홀딩스', costPct:0, apcId:'apc1',
       perGwh: 139,  // 억원/GWh — 1,700t × ASP 1,165만원/t × M/S 70%
       color:'#5B4FE9', bg:'#EFEDFE',
-      desc:'Cells 52% 내부. LFP는 NCM 대비 전해액 소요 1.70배(1,000→1,700t). 솔브레인홀딩스가 SDI ESS 전해액 메인(M/S 70%, 동화 30%). Michigan 공장 AMPC 수혜.',
+      desc:'Cells 52% 내부. LFP는 NCM 대비 전해액 소요 1.70배(1,000→1,700t). 솔브레인홀딩스가 SDI ESS 전해액 메인(M/S 70%, 동화 30%). Michigan 공장 AMPC 수혜. ⚗️ LiPF6(전해염): 전해액 원가의 62% 비중(솔브레인 1Q26 분기보고서 매입 USD 24.6M). 후성 국내 LiPF6 1천→2천톤 가동 상승 중 → 가격 안정화 시그널(자체 추정).',
       bomItems:[
         {name:'LFP 전해액', note:'1,700톤/GWh'},
         {name:'NCM 전해액 (비교)', note:'1,000톤/GWh'},
@@ -697,6 +697,7 @@ main{max-width:1080px;margin:0 auto;padding:20px 16px 60px}
       <a href="Battery_bom_routing.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">ESS BOM</a>
       <a href="battery_scenario.html" style="color:#4ecdc4;text-decoration:none;padding:4px 10px;border-radius:6px;background:#1e293b">Battery Scenario</a>
       <a href="2차전지_컨콜정리.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">컨콜 정리</a>
+      <a href="global_battery_map.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">🗺️ 배터리 맵</a>
     </nav>
   </header>
 
@@ -990,7 +991,10 @@ main{max-width:1080px;margin:0 auto;padding:20px 16px 60px}
 ※ <strong style="color:#6b7a99">Lucid Gravity</strong>: 2026 양산 · Uber·Nuro 로보택시 협력 (San Francisco Bay Area, 2026 H2 상용 런칭) · Lucid Midsize SUV 2027 Q4 출시<br>
 ※ <strong style="color:#6b7a99">GM Bolt 신형</strong>: 2026 Q1 재출시 · $30k 미만 · 미국 최저가 EV · Cadillac Optiq-V 519hp/85kWh (2026 Q2)<br>
 ※ <strong style="color:#6b7a99">Honda 캐나다 EV공장 무기한 보류</strong> (2026.05.06) · 24만대 규모 · 北미 EV 캐즘 + 관세 불확실성 · Honda 0 RSX 일정 영향 가능성<br>
-※ BMW NK: 4695 원통형 NMC, CTP, 400kW 충전 · VW ID.Polo: Group unified cell · <span style="color:#dc2626">LFP 37kWh</span> (베이스) / <span style="color:#15803d">NMC 52kWh</span> (상위)
+※ BMW NK: 4695 원통형 NMC, CTP, 400kW 충전 · VW ID.Polo: Group unified cell · <span style="color:#dc2626">LFP 37kWh</span> (베이스) / <span style="color:#15803d">NMC 52kWh</span> (상위)<br>
+※ <strong style="color:#c41e3a">Tesla Cybertruck</strong>: RWD 단종(173대, 25.09) → 듀얼모터 AWD $59,990 교체(26~27년) · 26년 매진 · 25년 ~2만대(목표 25만대 대비 8%)<br>
+※ <strong style="color:#b45309">Honda EV 구조조정</strong>: FY2025 $90억 손실 · 2040 EV 100% 철회 · 캐나다 EV공장 무기한 보류<br>
+※ <strong style="color:#6b7280">Stellantis Opel-Leapmotor</strong>: 전기 SUV 2028 스페인 발렌시아 · Geely 바디3 라인 인수
 </div>
   </div>
 
@@ -1770,7 +1774,23 @@ function edImport(){const input=document.createElement('input');input.type='file
 function edReset(){Object.assign(DATA.basis,JSON.parse(JSON.stringify(edOriginal.basis)));DATA.cellMakers.forEach((cm,i)=>{Object.assign(cm.essGwh,JSON.parse(JSON.stringify(edOriginal.cellMakers[i].essGwh)));Object.assign(cm.essUtil,JSON.parse(JSON.stringify(edOriginal.cellMakers[i].essUtil)));Object.assign(cm.evGwh,JSON.parse(JSON.stringify(edOriginal.cellMakers[i].evGwh)))});DATA.cats.forEach((c,i)=>{c.perGwh=edOriginal.cats[i].perGwh});if(DATA.evMS&&edOriginal.evMS)Object.keys(DATA.evMS).forEach(k=>{Object.assign(DATA.evMS[k],JSON.parse(JSON.stringify(edOriginal.evMS[k])))});
   if(DATA.essMS&&edOriginal.essMS)Object.keys(DATA.essMS).forEach(k=>{Object.assign(DATA.essMS[k],JSON.parse(JSON.stringify(edOriginal.essMS[k])))});DATA.northAmericaCapa.detail.forEach((r,i)=>{r.y26=edOriginal.northAmericaCapa.detail[i].y26;r.y27=edOriginal.northAmericaCapa.detail[i].y27});reRenderAll();buildEditorSections();document.getElementById('edStatus').textContent='Notion 기본값으로 복원됨'}
 
+// ===== BU→TD Sync (슬라이더 기본값 버그 수정) =====
+function syncBuToTd(){
+  const cmIds=['sdi','lges','skon'];
+  const buTotals={sdi:0,lges:0,skon:0};
+  Object.keys(DATA.oemSales).forEach(regionId=>{
+    const k3=computeOemGwh(regionId);
+    cmIds.forEach(k=>buTotals[k]+=k3[k]);
+  });
+  DATA.cellMakers.forEach(cm=>{
+    if(buTotals[cm.id]>0.1){
+      cm.evGwh.y26=Math.round(buTotals[cm.id]*10)/10;
+    }
+  });
+}
+
 // ===== Init =====
+syncBuToTd();
 renderCapa();renderRegionTabs();renderOem();renderCellMakers();
 renderScenTabs();renderScenario();renderCell3Tabs();renderCell3();
 renderLiTabs();renderLiChart();renderMetalCalc();renderLfpCost();buildEditorSections();
