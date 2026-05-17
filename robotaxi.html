@@ -328,7 +328,7 @@ backgroundColor:['#4ecdc4','#ffd93d','#ff6b6b','#6b7a99'],borderRadius:6
 label:'현재 (5/13)',
 data:[27,5,6,0],
 backgroundColor:['rgba(78,205,196,0.4)','rgba(255,217,61,0.4)','rgba(255,107,107,0.4)','rgba(107,122,153,0.2)'],borderRadius:6,borderWidth:2,borderColor:['#4ecdc4','#ffd93d','#ff6b6b','#6b7a99']
-}]},options:{...defOpt,scales:{x:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}},y:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:11}}}},plugins:{...defOpt.plugins,legend:{display:true,position:'top',labels:{color:tickColor,font:{size:10}}},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>{const labels=[['13대 Active Day 1','1대 Unsupervised Day 1','1대 Unsupervised Day 1','~130대 Supervised'],['27대 Unsupervised (5/13)','5대 Unsupervised (5/13)','6대 Unsupervised (5/13)','CA 퍼밋 미취득']];return labels[ctx.datasetIndex][ctx.dataIndex]}}}}});
+}]},options:{...defOpt,scales:{x:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}},y:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:11}}}},plugins:{...defOpt.plugins,legend:{display:true,position:'top',labels:{color:tickColor,font:{size:10}}},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>{const labels=[['13대 Active Day 1','1대 Unsupervised Day 1','1대 Unsupervised Day 1','~130대 Supervised'],['27대 Unsupervised (5/13)','5대 Unsupervised (5/13)','6대 Unsupervised (5/13)','CA 퍼밋 미취득']];return labels[ctx.datasetIndex][ctx.dataIndex]}}}}}});
 </script>
 </body>
 </html>
