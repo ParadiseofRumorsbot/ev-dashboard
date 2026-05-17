@@ -76,42 +76,6 @@ footer{border-top:1px solid var(--bd);padding:16px 0;text-align:center;font-size
 </div>
 <div id="app"><div class="ld">데이터 로딩 중...</div></div>
 
-<!-- ── 인사이트 코멘트 박스 ── -->
-<div id="insightBox" style="background:#0f172a;border:1px solid #334155;border-left:4px solid #3b82f6;border-radius:8px;padding:14px 18px;margin:16px auto;max-width:1200px;font-size:11px;color:#94a3b8;line-height:1.7">
-<div style="font-size:12px;font-weight:700;color:#3b82f6;margin-bottom:8px">📊 3월 Census 인사이트 (2026.05.17)</div>
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
-<div>
-<div style="font-weight:600;color:#e2e8f0;margin-bottom:4px">🔋 Cell (HS 850760)</div>
-전체 $1.28B (+9.7% MoM)<br>
-🇨🇳 중국 40.3% (+8.1%p MoM) — 관세 전 Front-loading 반복<br>
-🇰🇷 한국 7.4% (2월 $241M→$95M, -61%) — 설 공백 + 현지생산 전환<br>
-🇲🇾 말레이 9.7% (+55% MoM) — 우회 의심 급증<br>
-🇹🇭 태국 3.1% (+89% MoM, YoY +42,457%) — BYD 공장 + 우회
-</div>
-<div>
-<div style="font-weight:600;color:#e2e8f0;margin-bottom:4px">🏗️ 알루미늄 (HS 7602)</div>
-전체 $330M (+24% MoM)<br>
-🇨🇦 캐나다 65% — Section 232 25% 관세 하 FTA 면세 효과<br>
-🇲🇽 멕시코 24% — 배터리 팩 알루미늄 부품 수입 증가<br>
-🇰🇷 한국 1.7% ($5.5M) — 삼아알미늄 등 합금 수출
-</div>
-<div>
-<div style="font-weight:600;color:#e2e8f0;margin-bottom:4px">☀️ 솔라 (HS 280461 폴리실리콘)</div>
-전체 $4.8M (-36% MoM)<br>
-🇩🇪 독일 40% — OCI홀딩스 폴리실리콘 주요 수출원<br>
-🇯🇵 일본 12% — 토쿠야마 등 非중국산<br>
-🇨🇳 중국 4.0% — UFLPA·Section 301 이중규제<br>
-OBBBA AMPC·FEOC·PFE·MACR 등 핵심 규정은 법률사항으로 변경 어려움. Sunrun 등 이미 중국산 승인목록 제외. 폴리실리콘은 공급망 추적 최상단 → 규제 완화 가능성 극히 낮음
-</div>
-</div>
-<div style="margin-top:10px;padding:10px 14px;background:#1e293b;border-radius:6px;border-left:3px solid #a78bfa">
-<strong style="color:#a78bfa">[개인의견]</strong><br>
-· 한국 M/S 7.4%는 구조적 바닥 근접. LGES·SDI·SK on 미국 현지 양산 본격화로 한국발 수출은 소형배터리·부품 중심 재편<br>
-· 중국 40%는 Front-loading 피크. 48% 관세 + FEOC 비율 강화(26년 65%→30년 85%) 시행 시 4~5월부터 급감 예상. 공백을 한국 현지공장 + 일본이 채움<br>
-· 태국·말레이시아·인도네시아 3국 합산 M/S 1년 전 ~3%→현재 13%+. Section 301 우회관세 부과 시 미국 현지생산 셀사 직접 수혜<br>
-· 솔라: 미중 회담은 스몰딜 성격. 중국 태양광 규제 완화 논의 자체가 없었음. 데이터센터 미국 유턴으로 태양광+ESS 수요 오히려 급증 추정. 한국 태양광 주가 급락(-15~20%)은 매수 기회
-</div>
-</div>
 <footer id="ft"></footer>
 </div>
 <div class="ctx" id="ctxMenu">
@@ -256,6 +220,62 @@ function genBanner(tab){
   return`<div class="wk">${lines.filter(l=>l).join('<br>')}</div>`;
 }
 
+// ── Insight + 개인의견 ──
+function genInsight(tab){
+  const sty='background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:12px 16px;margin-bottom:14px;font-size:10.5px;color:var(--tx2);line-height:1.7';
+  const opSty='margin-top:8px;padding:8px 12px;background:rgba(139,92,246,0.08);border-radius:6px;border-left:3px solid #8b5cf6';
+
+  const updateLog=`<div style="${sty};border-left:4px solid #3b82f6">
+<div style="font-size:11px;font-weight:700;color:#3b82f6;margin-bottom:6px">📝 Update Log · 2026.05.17 (데이터: 3월, Census Bureau 2개월 래그)</div>
+🔋 <b>Cell</b>: 전체 $1.28B(+9.7% MoM). 중국 40.3%(+8.1%p) Front-loading. 한국 7.4%(2월 $241M→$95M). 태국·말레이·인도네시아 3국 M/S 13%+(전년 ~3%)<br>
+🏗️ <b>알루미늄</b>: 전체 $330M(+24% MoM). 캐나다 65%. Section 232 25% 관세 하 FTA 면세 효과<br>
+☀️ <b>솔라</b>: 전체 $4.8M(-36% MoM). 독일 40%(OCI홀딩스). 중국 4% UFLPA·301 이중규제. OBBBA 핵심 규정 변경 어려움. 데이터센터 미국 유턴 → 태양광+ESS 급증<br>
+🤖 <b>로보틱스</b>: 전체 $318M(+19% MoM). 독일 14%, 인도 19%. 중국 6% 지속 하락
+<div style="${opSty}">
+<b style="color:#8b5cf6">[개인의견]</b><br>
+· <b>Cell</b>: 한국 M/S 7.4% 구조적 바닥 근접. 현지 양산 본격화로 한국발 수출 소형배터리·부품 중심 재편. 중국 40% Front-loading 피크 → 48% 관세+FEOC 강화(26년 65%→30년 85%) 시행 시 4~5월 급감. 태국·말레이·인도네시아 3국 13%+ 우회 → Section 301 부과 시 현지생산 셀사 직접 수혜<br>
+· <b>알루미늄</b>: USMCA FTA 면세로 캐나다·멕시코 집중 고착화. LFP 전환 시 양극박 소요 ×1.43 → 삼아알미늄·DI동일 우호적<br>
+· <b>솔라</b>: 미중 회담 스몰딜. 중국 태양광 규제 완화 논의 자체 없음. OBBBA 핵심 규정(AMPC·FEOC/PFE·MACR) 법률사항으로 변경 6~12개월. Sunrun 등 이미 중국산 배제. 폴리실리콘 공급망 최상단 → 완화 가능성 극히 낮음. 이란 전쟁으로 DC 미국 유턴 → 태양광+ESS 급증. 한화솔루션 -15%, OCI홀딩스 -20% 급락은 매수 기회</div></div>`;
+
+  const cellInsight=`<div style="${sty};border-left:4px solid #4ecdc4">
+<div style="font-size:11px;font-weight:700;color:#4ecdc4;margin-bottom:6px">📊 Cell 인사이트</div>
+· 🇨🇳 중국 40.3%(+8.1%p MoM) — 관세 전 Front-loading 반복. 48% 관세+반덤핑 검토 중<br>
+· 🇰🇷 한국 7.4%(2월 $241M→$95M, -61%) — 설 공백 + 현지생산 전환<br>
+· 🇯🇵 일본 19.1%(+2.3%p) — Panasonic 현지생산에도 2170 셀 수출 지속<br>
+· 🇲🇾 말레이시아 9.7%(+55% MoM) — 우회 의심. CATL/BYD 경유 가능성<br>
+· 🇹🇭 태국 3.1%(+89% MoM, YoY +42,457%) — BYD 공장 + 우회 루트
+<div style="${opSty}"><b style="color:#8b5cf6">[개인의견]</b><br>
+· 한국 M/S 7.4% 구조적 바닥 근접. LGES·SDI·SK on 미국 현지 양산 본격화로 한국발 수출 소형배터리·부품 중심 재편<br>
+· 중국 40% Front-loading 피크. 48% 관세+FEOC(26년 65%→30년 85%) 시행 시 4~5월 급감. 공백을 한국 현지공장+일본이 채움<br>
+· 태국·말레이·인도네시아 3국 합산 M/S 전년 ~3%→현재 13%+. Section 301 우회관세 부과 시 현지생산 셀사 직접 수혜</div></div>`;
+
+  const alInsight=`<div style="${sty};border-left:4px solid #FF9800">
+<div style="font-size:11px;font-weight:700;color:#FF9800;margin-bottom:6px">📊 알루미늄 인사이트</div>
+· 🇨🇦 캐나다 65%($214M) — Section 232 25% 관세에도 FTA 면세로 비중 오히려 증가<br>
+· 🇲🇽 멕시코 24%($80M) — 배터리 팩 알루미늄 부품 수입 증가<br>
+· 🇰🇷 한국 1.7%($5.5M) — 삼아알미늄 등 합금 수출
+<div style="${opSty}"><b style="color:#8b5cf6">[개인의견]</b><br>
+· USMCA FTA 면세로 캐나다·멕시코 집중 고착화. 비FTA 국가(중국 등) 사실상 차단<br>
+· 양극박 수요 증가(LFP ×1.43, 소디움 ×2.5)와 맞물려 삼아알미늄·DI동일에 우호적</div></div>`;
+
+  const solarInsight=`<div style="${sty};border-left:4px solid #FFC107">
+<div style="font-size:11px;font-weight:700;color:#FFC107;margin-bottom:6px">📊 솔라 인사이트</div>
+· 🇩🇪 독일 40%($1.9M) — OCI홀딩스 폴리실리콘 주요 수출원<br>
+· 🇯🇵 일본 12%($0.6M) — 토쿠야마 등 비중국산<br>
+· 🇨🇳 중국 4%($0.2M) — UFLPA(강제노동수입금지) + Section 301(보복관세) 이중규제
+<div style="${opSty}"><b style="color:#8b5cf6">[개인의견]</b><br>
+· 미중 회담 스몰딜. 중국 태양광 규제 완화 논의 자체 없음<br>
+· OBBBA AMPC·FEOC/PFE·MACR 핵심 규정 법률사항 → 변경 6~12개월. 최악이라도 시행규칙 수준<br>
+· Sunrun 등 이미 중국산 승인목록 제외. 폴리실리콘 공급망 최상단 → 완화 가능성 극히 낮음<br>
+· 이란 전쟁 → DC 중동→미국 유턴 → 태양광+ESS 수요 급증(NextEra CEO: 태양광+ESS 초기가동→가스터빈 추가→4~5GW 가능)<br>
+· 5/15 한화솔루션 -15%, OCI홀딩스 -20% 급락은 매수 기회</div></div>`;
+
+  if(tab==='cell'||tab==='vehicle') return updateLog + (tab==='cell'?cellInsight:'');
+  if(tab==='aluminum') return alInsight;
+  if(tab==='solar') return solarInsight;
+  return '';
+}
+
 // ── Sub-toggle helper ──
 function mkSubTabs(containerId, items, onChange){
   const wrap=document.createElement('div');wrap.className='stabs';wrap.id=containerId;
@@ -288,7 +308,7 @@ function renderGeneric(tab){
   const yoyM=months.find(m=>{const[y,mo]=lat.split('-');return m===`${+y-1}-${mo}`});
   const ld=md[lat],pd=prev?md[prev]:null,yd=yoyM?md[yoyM]:null;
 
-  let kpi=`${genBanner(tab)}<div class="kpi">`;
+  let kpi=`${genBanner(tab)}${genInsight(tab)}<div class="kpi">`;
   const mom=pd?((ld.total-pd.total)/pd.total*100):0;
   const yoy=yd?((ld.total-yd.total)/yd.total*100):0;
   kpi+=mkKpiCard(primary,'hs',D.meta.hsCodes[primary].label,fmt(ld.total),mom,`YoY ${pct(yoy)}`);
@@ -342,7 +362,7 @@ function renderSubContent(tab){
   const yoy=yd?((ld.total-yd.total)/yd.total*100):0;
 
   // KPI
-  let kpi=`${genBanner(tab)}<div class="kpi">`;
+  let kpi=`${genBanner(tab)}${genInsight(tab)}<div class="kpi">`;
   kpi+=mkKpiCard(hs,'hs',D.meta.hsCodes[hs]?.label||hs,fmt(ld.total),mom,`YoY ${pct(yoy)}`);
 
   // Unit price KPI (if qty available)
@@ -438,7 +458,7 @@ function renderVehicle(){
   const bevYoy=(()=>{const y=yoyM?D.monthly[bevCode]?.[yoyM]?.total||0:0;return y?((bevL-y)/y*100):0})();
   const krBev=D.monthly[bevCode]?.[lat]?.countries.KR?.val||0;
 
-  app.innerHTML=`${genBanner('vehicle')}<div class="kpi">
+  app.innerHTML=`${genBanner('vehicle')}${genInsight('vehicle')}<div class="kpi">
     ${mkKpiCard(bevCode,'hs','BEV',fmt(bevL),bevMom,`YoY ${pct(bevYoy)}`,'var(--ac)')}
     ${mkKpiCard('870340','hs','PHEV',fmt(phevL),0,'')}
     ${mkKpiCard('870360','hs','HEV',fmt(hevL),0,'')}
