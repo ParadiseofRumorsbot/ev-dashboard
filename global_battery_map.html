@@ -1,83 +1,154 @@
 <!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><title>Battery Value-Chain Map v5</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:#f5f7fa;color:#1a202c;overflow:hidden;height:100vh}
-.app{display:grid;grid-template-rows:44px 1fr 340px;grid-template-columns:250px 1fr 310px;height:100vh}
-.hd{grid-column:1/-1;background:#fff;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;padding:0 10px;gap:6px;z-index:10}
-.tt{font-size:11px;font-weight:700;white-space:nowrap}.tt span{font-size:8px;color:#718096;font-weight:400;margin-left:3px}
-.fl{display:flex;gap:4px;align-items:center;flex-wrap:wrap;font-size:9px}
-.fl select,.fl input[type=range]{font-size:9px;border:1px solid #cbd5e0;border-radius:3px;padding:1px 3px;background:#f7fafc}
-.fl label{color:#718096;font-weight:500}.yr-v{font-weight:700;color:#2b6cb0;min-width:28px}
-.ev-links{margin-left:auto;display:flex;gap:6px;font-size:8px}
-.ev-links a{color:#2b6cb0;text-decoration:none;padding:2px 5px;border:1px solid #bee3f8;border-radius:3px;background:#ebf8ff}
-.ev-links a:hover{background:#bee3f8}
-.sb{background:#fff;border-right:1px solid #e2e8f0;overflow-y:auto;font-size:9px}
-.sb input{width:calc(100% - 10px);margin:5px;border:1px solid #cbd5e0;border-radius:3px;padding:2px 5px;font-size:9px}
-.gi{padding:2px 7px;cursor:pointer;border-left:3px solid transparent;line-height:1.3}
-.gi:hover{background:#ebf8ff}.gi.a{background:#ebf8ff;border-left-color:#ed8936}
-.gn{font-weight:600;display:flex;justify-content:space-between;font-size:9px}.gm{font-size:7px;color:#718096}
-.sw{display:inline-block;width:5px;height:5px;border-radius:50%;margin-right:2px}
-.gh{padding:2px 7px;background:#f7fafc;font-size:7px;font-weight:700;color:#4a5568;text-transform:uppercase;letter-spacing:.3px;border-top:1px solid #edf2f7}
-.mc{background:#fff;position:relative;overflow:hidden}
+:root{--bg:#f8f5f0;--card:#fff;--border:#e8e0d4;--accent:#c4721a;--accent2:#8b6914;--text:#2c2418;--sub:#8a7e6e;--green:#38a169;--red:#e53e3e;--blue:#2b6cb0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;min-height:100vh}
+.app{max-width:1400px;margin:0 auto;padding:0 20px}
+/* HEADER */
+.hd{padding:16px 0 8px;display:flex;justify-content:space-between;align-items:flex-start}
+.hd-left{flex:1}.hd-meta{font-size:10px;color:var(--sub);font-family:monospace;letter-spacing:.5px;margin-bottom:4px}
+.hd-title{font-size:28px;font-weight:300;color:var(--text);line-height:1.2}.hd-title i{font-family:Georgia,serif;color:var(--accent)}
+.hd-sub{font-size:11px;color:var(--sub);margin-top:4px;line-height:1.5}
+.hd-sub b{color:var(--accent)}
+.live-badge{font-size:11px;font-family:monospace;border:1px solid var(--border);padding:4px 12px;border-radius:4px;white-space:nowrap}
+.live-badge::before{content:"● ";color:var(--accent)}
+/* KPI */
+.kpi-row{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin:12px 0}
+.kpi{background:var(--card);padding:12px 16px}
+.kpi-label{font-size:9px;font-family:monospace;text-transform:uppercase;letter-spacing:1px;color:var(--sub);margin-bottom:4px}
+.kpi-val{font-size:28px;font-weight:300;color:var(--text)}.kpi-val small{font-size:14px;color:var(--sub)}
+.kpi-desc{font-size:9px;color:var(--sub);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+/* FILTERS */
+.filter-section{display:flex;gap:24px;flex-wrap:wrap;padding:10px 0;border-bottom:1px solid var(--border)}
+.filter-group{display:flex;flex-direction:column;gap:4px}
+.filter-title{font-size:9px;font-family:monospace;text-transform:uppercase;letter-spacing:1px;color:var(--sub)}
+.filter-pills{display:flex;gap:3px;flex-wrap:wrap}
+.pill{font-size:10px;padding:3px 10px;border:1px solid var(--border);border-radius:3px;cursor:pointer;background:var(--card);color:var(--text);font-family:monospace}
+.pill:hover{border-color:var(--accent)}.pill.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.yr-ctrl{display:flex;align-items:center;gap:6px;margin-top:auto}
+.yr-ctrl input[type=range]{width:100px}.yr-ctrl .yr-v{font-size:14px;font-weight:600;color:var(--accent);font-family:monospace}
+/* TABS */
+.tab-bar{display:flex;gap:0;border-bottom:1px solid var(--border);margin:8px 0 0;padding:0}
+.tab-btn{font-size:12px;padding:8px 16px;background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;color:var(--sub);font-family:inherit}
+.tab-btn:hover{color:var(--text)}.tab-btn.active{color:var(--accent);border-bottom-color:var(--accent)}
+/* TAB PANES */
+.tab-pane{display:none;padding:12px 0}.tab-pane.active{display:block}
+/* GEO TAB */
+.geo-grid{display:grid;grid-template-columns:220px 1fr 260px;height:calc(100vh - 320px);gap:0;border:1px solid var(--border);background:var(--card)}
+.sb{overflow-y:auto;font-size:9px;border-right:1px solid var(--border);background:var(--card)}
+.sb input{width:calc(100% - 10px);margin:5px;border:1px solid var(--border);border-radius:3px;padding:3px 6px;font-size:9px}
+.gi{padding:3px 8px;cursor:pointer;border-left:3px solid transparent;line-height:1.3}
+.gi:hover{background:#f5f0e8}.gi.a{background:#f5f0e8;border-left-color:var(--accent)}
+.gn{font-weight:600;display:flex;justify-content:space-between;font-size:9px}.gm{font-size:7px;color:var(--sub)}
+.sw{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:3px}
+.gh{padding:3px 8px;background:#f5f0e8;font-size:8px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.5px;border-top:1px solid var(--border)}
+.mc{position:relative;overflow:hidden;background:var(--card)}
 .mc svg{width:100%;height:100%;cursor:grab}.mc svg:active{cursor:grabbing}
-.state{fill:#f0f4f8;stroke:#cbd5e0;stroke-width:.3;transition:fill .15s}.state:hover{fill:#e2e8f0;cursor:pointer}
-.state-label{font-size:7px;fill:#a0aec0;font-weight:600;pointer-events:none;text-anchor:middle}
-.state-label.has-fac{fill:#4a5568;font-size:8px}
+.state{fill:#f0ebe3;stroke:var(--border);stroke-width:.3;transition:fill .15s}.state:hover{fill:#e8e0d4;cursor:pointer}
+.state-label{font-size:7px;fill:#b8aa98;font-weight:600;pointer-events:none;text-anchor:middle}
+.state-label.has-fac{fill:var(--text);font-size:8px}
 .country{fill:#e8ece0;stroke:#b8c0b0;stroke-width:.5}
-.ocean{fill:#f0f4f8}
-.fc{cursor:pointer;transition:all .12s;stroke-width:1}.fc:hover{stroke-width:2.5}
-.fc.sel{stroke:#ed8936!important;stroke-width:3!important}.fc.dim{opacity:.15!important}
-.fc-ev{fill:#2b6cb0}.fc-ess{fill:#38a169}.fc-both{fill:#805ad5}
-.tip{position:absolute;background:rgba(255,255,255,.98);border:1px solid #2b6cb0;border-radius:5px;padding:5px 8px;font-size:8px;pointer-events:none;z-index:100;box-shadow:0 3px 10px rgba(0,0,0,.1);max-width:280px;line-height:1.4}
-.tip .th{font-size:10px;font-weight:600;color:#2b6cb0;margin-bottom:1px}.tip .tl{color:#718096}
-.cb{display:inline-block;padding:0 3px;border-radius:2px;font-size:6px;font-weight:600;color:#fff}
-.lg{position:absolute;bottom:6px;left:6px;background:rgba(255,255,255,.94);border:1px solid #e2e8f0;border-radius:4px;padding:5px 7px;font-size:7px}
-.lg div{display:flex;align-items:center;gap:3px;margin:1px 0}
-.lg-s{margin-top:3px;padding-top:3px;border-top:1px solid #e2e8f0;font-size:6px;color:#718096}
-.dp{background:#fff;border-left:1px solid #e2e8f0;overflow-y:auto;padding:7px;font-size:9px}
-.de{color:#718096;text-align:center;padding:15px 6px;font-size:8px;line-height:1.5}.de .ic{font-size:18px;margin-bottom:3px}
-.dc{font-size:13px;font-weight:600;color:#2b6cb0;margin-bottom:1px}.dt{font-size:7px;color:#718096;margin-bottom:5px}
-.kg{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:5px}
-.kp{background:#f7fafc;padding:3px 5px;border-radius:3px;border:1px solid #edf2f7}.kl{font-size:6px;color:#718096;text-transform:uppercase;font-weight:600}.kv{font-size:11px;font-weight:600}
-.fi{background:#f7fafc;border-radius:3px;padding:3px 5px;margin-bottom:2px;cursor:pointer;border:1px solid #edf2f7;border-left:3px solid transparent}
-.fi:hover{background:#edf2f7}.fi.sel{background:#ebf8ff;border-left-color:#ed8936}
-.fn{font-size:8px;font-weight:600}.fp{font-size:8px;color:#2b6cb0;font-weight:600}
-.fm{font-size:6.5px;color:#718096;margin-top:1px;font-style:italic}
-.tc{grid-column:1/-1;background:#fff;border-top:1px solid #e2e8f0;padding:3px 8px;overflow-y:auto;display:grid;grid-template-columns:1fr 360px;gap:6px}
-.tc-l{position:relative}.tc-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:1px}
-.tc-t{font-size:9px;font-weight:600}.tc-t span{color:#718096;font-weight:400;font-size:7px;margin-left:3px}
-.tc-c{display:flex;gap:6px;align-items:center;font-size:7px;color:#4a5568}
-.tc-c label{display:flex;align-items:center;gap:2px;cursor:pointer}
-.tc-c .ls{display:inline-block;width:8px;height:2px;border-radius:1px}
-.tc-r{font-size:7.5px;color:#4a5568;line-height:1.5;overflow-y:auto;padding:2px 0}
-.tc-r h4{font-size:8px;font-weight:700;color:#2b6cb0;margin:4px 0 1px;border-bottom:1px solid #edf2f7;padding-bottom:1px}
+.ocean{fill:#f0ebe3}
+.fc{cursor:pointer;transition:all .12s;stroke-width:1.5}.fc:hover{stroke-width:3}
+.fc.sel{stroke:var(--accent)!important;stroke-width:3!important}.fc.dim{opacity:.12!important}
+.tip{position:absolute;background:rgba(255,255,255,.98);border:1px solid var(--accent);border-radius:4px;padding:6px 10px;font-size:9px;pointer-events:none;z-index:100;box-shadow:0 3px 12px rgba(0,0,0,.08);max-width:300px;line-height:1.4}
+.tip .th{font-size:11px;font-weight:600;color:var(--accent);margin-bottom:2px}.tip .tl{color:var(--sub)}
+.cb{display:inline-block;padding:1px 4px;border-radius:2px;font-size:7px;font-weight:600;color:#fff}
+.lg{position:absolute;bottom:8px;left:8px;background:rgba(255,255,255,.95);border:1px solid var(--border);border-radius:4px;padding:6px 8px;font-size:8px}
+.lg div{display:flex;align-items:center;gap:4px;margin:1px 0}
+.lg-s{margin-top:4px;padding-top:4px;border-top:1px solid var(--border);font-size:7px;color:var(--sub)}
+.dp{overflow-y:auto;padding:8px;font-size:9px;border-left:1px solid var(--border);background:var(--card)}
+.de{color:var(--sub);text-align:center;padding:20px 8px;font-size:9px;line-height:1.6}.de .ic{font-size:20px;margin-bottom:4px}
+.dc{font-size:14px;font-weight:600;color:var(--accent);margin-bottom:2px}.dt{font-size:8px;color:var(--sub);margin-bottom:6px}
+.fi{background:#f5f0e8;border-radius:3px;padding:4px 6px;margin-bottom:2px;cursor:pointer;border:1px solid var(--border);border-left:3px solid transparent}
+.fi:hover{background:#ebe5da}.fi.sel{background:#f5f0e8;border-left-color:var(--accent)}
+.fn{font-size:9px;font-weight:600}.fp{font-size:9px;color:var(--accent);font-weight:600}
+.fm{font-size:7px;color:var(--sub);margin-top:1px;font-style:italic}
+/* SVD */
+.svd-grid{display:grid;grid-template-columns:1fr 360px;gap:8px}
+.tc-l{position:relative}.tc-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:2px}
+.tc-t{font-size:10px;font-weight:600;color:var(--accent)}.tc-c{display:flex;gap:8px;align-items:center;font-size:8px;color:var(--sub)}
+.tc-c label{display:flex;align-items:center;gap:3px;cursor:pointer}
+.tc-c .ls{display:inline-block;width:10px;height:2px;border-radius:1px}
+.tc-r{font-size:8px;color:var(--sub);line-height:1.6;overflow-y:auto}
+.tc-r h4{font-size:9px;font-weight:700;color:var(--accent);margin:6px 0 2px;border-bottom:1px solid var(--border);padding-bottom:2px}
 .tc-r h4:first-child{margin-top:0}
-.tc-r table{width:100%;border-collapse:collapse;margin:2px 0;font-size:7px}
-.tc-r th,.tc-r td{padding:1px 3px;border:1px solid #edf2f7;text-align:center}
-.tc-r th{background:#f7fafc;font-weight:600}.tc-r .hl{background:#fff5f5;color:#e53e3e;font-weight:600}.tc-r .safe{background:#f0fff4;color:#38a169}
-.tsvg{width:100%;height:285px}
-.ta text{fill:#718096;font-size:7px}.ta path,.ta line{stroke:#cbd5e0}
-.tg line{stroke:#edf2f7;stroke-dasharray:2,2}.tg path{stroke:none}
-.tltip{position:absolute;background:rgba(255,255,255,.98);border:1px solid #2b6cb0;border-radius:3px;padding:3px 6px;font-size:7px;pointer-events:none;box-shadow:0 2px 6px rgba(0,0,0,.1);z-index:100}
-.tltip .r{display:flex;justify-content:space-between;gap:5px;margin:1px 0}.tltip .l{color:#718096}.tltip .v{font-weight:600}
-::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:#f7fafc}::-webkit-scrollbar-thumb{background:#cbd5e0;border-radius:2px}
+.tc-r table{width:100%;border-collapse:collapse;margin:3px 0;font-size:8px}
+.tc-r th,.tc-r td{padding:2px 4px;border:1px solid var(--border);text-align:center}
+.tc-r th{background:#f5f0e8;font-weight:600}.tc-r .hl{background:#fff5f5;color:var(--red);font-weight:600}.tc-r .safe{background:#f0fff4;color:var(--green)}
+.tsvg{width:100%;height:300px}
+.ta text{fill:var(--sub);font-size:8px}.ta path,.ta line{stroke:var(--border)}
+.tg line{stroke:#e8e0d4;stroke-dasharray:2,2}.tg path{stroke:none}
+.tltip{position:absolute;background:rgba(255,255,255,.98);border:1px solid var(--accent);border-radius:3px;padding:4px 8px;font-size:8px;pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,.08);z-index:100}
+.tltip .r{display:flex;justify-content:space-between;gap:6px;margin:1px 0}.tltip .l{color:var(--sub)}.tltip .v{font-weight:600}
+/* LEADERBOARD */
+.lb-row{display:flex;align-items:center;gap:0;padding:8px 0;border-bottom:1px solid var(--border);cursor:pointer}
+.lb-row:hover{background:#f5f0e8}
+.lb-num{width:36px;font-size:14px;font-weight:300;color:var(--sub);text-align:right;padding-right:12px;font-family:monospace}
+.lb-info{width:200px}.lb-name{font-size:12px;font-weight:500}.lb-meta{font-size:9px;color:var(--sub);font-family:monospace;margin-top:1px}
+.lb-bar-wrap{flex:1;height:18px;position:relative}.lb-bar-fill{height:100%;border-radius:2px;transition:width .3s}
+.lb-val{width:80px;text-align:right;font-size:16px;font-weight:300;font-family:monospace}.lb-val small{font-size:10px;color:var(--sub)}
+/* TIMELINE */
+.tl-head{display:flex;margin-left:200px;margin-bottom:4px}
+.tl-head span{flex:1;font-size:10px;color:var(--sub);text-align:center;font-family:monospace}
+.tl-row{display:flex;align-items:center;height:28px;border-bottom:1px solid #f0ebe3}
+.tl-label{width:200px;display:flex;align-items:center;gap:6px;padding-right:8px;overflow:hidden}
+.tl-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.tl-co{font-size:10px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-site{font-size:10px;color:var(--sub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-left:4px}
+.tl-track{flex:1;height:16px;position:relative;background:#f8f5f0}
+.tl-seg{position:absolute;height:100%;border-radius:3px;top:0;display:flex;align-items:center;justify-content:center}
+.tl-seg span{font-size:7px;color:#fff;font-weight:600;text-shadow:0 0 2px rgba(0,0,0,.3)}
+.tl-today{position:absolute;top:-8px;bottom:0;border-left:2px dashed var(--red);z-index:5}
+.tl-today-lbl{position:absolute;top:-14px;font-size:8px;color:var(--red);font-weight:600;font-family:monospace;white-space:nowrap}
+/* SANKEY */
+.sankey-wrap{position:relative;width:100%}
+.sankey-header{display:flex;justify-content:space-between;margin-bottom:8px}
+.sankey-header span{font-size:11px;font-family:monospace;text-transform:uppercase;letter-spacing:1px;color:var(--sub)}
+/* CAPACITY CURVE */
+.cc-svg{width:100%;height:calc(100vh - 380px);min-height:300px}
+.cc-legend{display:flex;flex-wrap:wrap;gap:10px;padding:8px 0;font-size:9px;justify-content:center}
+.cc-legend span{display:flex;align-items:center;gap:3px}
+.cc-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+/* FOOTER */
+.src-footer{background:var(--card);border-top:1px solid var(--border);padding:8px 20px;font-size:8px;font-family:monospace;color:var(--sub);margin-top:12px}
+.ev-links{display:flex;gap:6px;font-size:9px;flex-wrap:wrap}
+.ev-links a{color:var(--accent);text-decoration:none;padding:2px 6px;border:1px solid var(--border);border-radius:3px;background:var(--card)}
+.ev-links a:hover{background:#f5f0e8}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
 </style></head><body>
 <div class="app">
-<div class="hd"><button id="cmBtn" onclick="toggleColorMode()" style="font-size:9px;padding:3px 8px;border:1px solid #e2e8f0;border-radius:4px;background:#fff;cursor:pointer;font-family:monospace">🎨 By Company</button>
-<div class="tt">🔋 Battery Value-Chain Map <span>v4 · 2026.05</span></div>
-<div class="fl">
-<label>Category</label><select id="fc"><option value="">All</option><option value="cell">Cell</option><option value="cathode">Cathode</option><option value="electrolyte">Electrolyte</option><option value="energy">Energy</option></select>
-<label>App</label><select id="fa"><option value="">All</option><option value="EV">EV</option><option value="ESS">ESS</option></select>
-<label>Year</label><input type="range" id="fy" min="2026" max="2028" value="2026" step="1"><span class="yr-v" id="yv">2026</span>
+<!-- HEADER -->
+<div class="hd">
+<div class="hd-left">
+<div class="hd-meta">● OBS-01 / 26.05.17 · Battery Value Chain · by. SANGMIN WOO</div>
+<div class="hd-title">Battery Value-Chain <i>Observatory</i></div>
+<div class="hd-sub"><b>31</b> sites tracked · Cell + Energy + Cathode + Electrolyte · ev-dashboard CELL3_CAPA 기반</div>
 </div>
-<div class="ev-links">
-<a href="index.html">EV 판매</a>
-<a href="robotaxi.html">FSD·로보택시</a>
-<a href="battery_scenario.html">Battery Scenario</a>
-<a href="us-import.html">US Import</a>
-<a href="Battery_bom_routing.html">ESS BOM</a>
-<a href="2차전지_컨콜정리.html">컨콜 정리</a>
+<div class="live-badge">LIVE · Q2 2026</div>
 </div>
+<!-- KPI -->
+<div class="kpi-row" id="kpiRow"></div>
+<!-- FILTERS -->
+<div class="filter-section">
+<div class="filter-group"><div class="filter-title">Category</div><div class="filter-pills" id="fCat"></div></div>
+<div class="filter-group"><div class="filter-title">Company</div><div class="filter-pills" id="fCo"></div></div>
+<div class="filter-group"><div class="filter-title">App</div><div class="filter-pills" id="fApp"></div></div>
+<div class="filter-group"><div class="filter-title">Status</div><div class="filter-pills" id="fStat"></div></div>
+<div class="yr-ctrl"><span style="font-size:9px;color:#8a7e6e;font-family:monospace">YEAR</span><input type="range" id="fy" min="2026" max="2028" value="2026" step="1"><span class="yr-v" id="yv">2026</span></div>
 </div>
+<!-- TABS -->
+<div class="tab-bar">
+<button class="tab-btn active" onclick="switchTab('geo')">Geography</button>
+<button class="tab-btn" onclick="switchTab('lb')">Leaderboard</button>
+<button class="tab-btn" onclick="switchTab('tl')">Construction Timeline</button>
+<button class="tab-btn" onclick="switchTab('ac')">Cell → Customer</button>
+<button class="tab-btn" onclick="switchTab('cc')">Capacity Curve</button>
+<button class="tab-btn" onclick="switchTab('svd')">Supply vs Demand</button>
+</div>
+<!-- TAB: Geography -->
+<div id="tab-geo" class="tab-pane active">
+<div class="geo-grid">
 <div class="sb" id="sb"></div>
 <div class="mc"><svg id="map"></svg><div class="tip" id="tip" style="display:none"></div>
 <div class="lg">
@@ -85,35 +156,52 @@
 <div><span class="sw" style="background:#d53f8c"></span>Cathode</div>
 <div><span class="sw" style="background:#38a169"></span>Electrolyte</div>
 <div><span class="sw" style="background:#805ad5"></span>Energy</div>
-<div class="lg-s">EV=파랑 · ESS=초록 · 혼합=보라<br>원 크기=CAPA · 주 클릭=공장목록</div>
+<div class="lg-s">원 크기=CAPA · 색상=기업 · 테두리=App<br>주 클릭=공장목록 · 원 클릭=기업선택</div>
 </div></div>
-<div class="dp" id="dp"><div class="de"><div class="ic">🔋</div>지도에서 <b>주(State)</b> 클릭 → 해당 주 공장 목록<br><b>원(Dot)</b> 클릭 → 기업 상세</div></div>
-<div class="tc">
+<div class="dp" id="dp"><div class="de"><div class="ic">🔋</div>지도에서 <b>주(State)</b> 클릭 → 공장 목록<br><b>원(Dot)</b> 클릭 → 기업 상세</div></div>
+</div></div>
+<!-- TAB: Leaderboard -->
+<div id="tab-lb" class="tab-pane"></div>
+<!-- TAB: Timeline -->
+<div id="tab-tl" class="tab-pane"></div>
+<!-- TAB: Cell→Customer (Sankey) -->
+<div id="tab-ac" class="tab-pane"><div class="sankey-wrap"><div class="sankey-header"><span>Cell Maker / Owner →</span><span>← Customer / OEM</span></div><svg id="sankeySvg" style="width:100%;height:500px"></svg></div></div>
+<!-- TAB: Capacity Curve -->
+<div id="tab-cc" class="tab-pane"><svg class="cc-svg" id="ccSvg"></svg><div class="cc-legend" id="ccLeg"></div></div>
+<!-- TAB: Supply vs Demand -->
+<div id="tab-svd" class="tab-pane">
+<div class="svd-grid">
 <div class="tc-l"><div class="tc-h">
 <div class="tc-t">US Cell+ESS: Supply vs Demand</div>
 <div class="tc-c">
-<label><input type="checkbox" id="chkS" checked><span class="ls" style="background:#2b6cb0"></span>Supply</label>
-<label><input type="checkbox" id="chkD" checked><span class="ls" style="background:#e53e3e"></span>Demand</label>
-<label><input type="checkbox" id="chkU" checked><span class="ls" style="background:#ed8936;height:2px"></span>가동률</label>
+<label><input type="checkbox" id="chkS" checked><span class="ls" style="background:var(--blue)"></span>Supply</label>
+<label><input type="checkbox" id="chkD" checked><span class="ls" style="background:var(--red)"></span>Demand</label>
+<label><input type="checkbox" id="chkU" checked><span class="ls" style="background:var(--accent);height:2px"></span>Util</label>
 </div></div>
 <svg class="tsvg" id="tl"></svg><div class="tltip" id="tltp" style="display:none"></div>
 </div>
 <div class="tc-r">
 <h4>📊 차트 읽는 법</h4>
-<b>파란 실선</b>=설치 CAPA. <b>회색(85%)</b>=실질 Max. <b>주황(55%)</b>=현재 평균 가동률(ev-dashboard 출하 가중평균).<br>
+<b>파란 실선</b>=설치 CAPA. <b>회색(85%)</b>=실질 Max. <b>주황(55%)</b>=현재 평균 가동률.<br>
 <b>빨간 밴드</b>=수요 범위(Bear~Bull). 가운데 점선=Base.
 <h4>📈 수요 시나리오</h4>
 <table><tr><th></th><th>EV침투율</th><th>ESS</th><th>전제</th></tr>
-<tr><td><b>Bear</b></td><td>5.5→8%</td><td>IEA×0.85</td><td>IRA 폐지 장기화, 보조금 미재개</td></tr>
+<tr><td><b>Bear</b></td><td>5.5→8%</td><td>IEA×0.85</td><td>IRA 폐지 장기화</td></tr>
 <tr><td><b>Base</b></td><td>6.5→10%</td><td>IEA</td><td>고유가 점진 회복</td></tr>
-<tr><td><b>Bull</b></td><td>7.5→13%</td><td>IEA×1.2</td><td>고유가 고착+AI DC BTM ESS 가속</td></tr></table>
-EV=SAAR 1,600만대×침투율×80kWh/대.
+<tr><td><b>Bull</b></td><td>7.5→13%</td><td>IEA×1.2</td><td>AI DC BTM ESS 가속</td></tr></table>
 <h4>⚠️ 공급 부족 조건</h4>
 <table><tr><th></th><th>EV</th><th>ESS</th></tr>
 <tr><th>NCM</th><td class="safe">한국3사+Panasonic 여유</td><td>소수</td></tr>
 <tr><th>LFP</th><td>Tesla,중국</td><td class="hl">⚠ 비중국 LFP 부족</td></tr></table>
-중국산 셀 수입 <b>40.3%</b>(26.03 Census). FEOC=보조금 미적용(수입 금지 아님). CHARGE Act(발의 단계) 통과 시 ESS 한정 차단 가능.</div><div class="tc-i"><b>ESS 프로젝트 취소/지연 (~38.8GWh, 자체추정)</b><br>FREYR(10.2G)·KORE(9.6G)·iM3NY(0.8G)·ABF(7.2G)·Gotion(4G)·Microvast(4G)·Kontrolmatik(3G)·AESC(증설미진). → 비중국 ESS 공급 부족 가시화. 셀3사 북미 ESS 수주잔고 ~200GWh
-</div></div></div>
+중국산 셀 수입 <b>40.3%</b>(26.03 Census). FEOC=보조금 미적용(수입 금지 아님).<br>
+<b>ESS 프로젝트 취소/지연 (~38.8GWh, 자체추정)</b><br>FREYR(10.2G)·KORE(9.6G)·iM3NY(0.8G)·ABF(7.2G)·Gotion(4G)·Microvast(4G)·Kontrolmatik(3G)·AESC(증설미진). → 비중국 ESS 공급 부족 가시화. 셀3사 북미 ESS 수주잔고 ~200GWh
+</div>
+</div></div>
+<!-- EV-LINKS -->
+<div style="padding:8px 0"><div class="ev-links">
+<a href="index.html">EV 판매</a><a href="robotaxi.html">FSD·로보택시</a><a href="battery_scenario.html">Battery Scenario</a><a href="us-import.html">US Import</a><a href="Battery_bom_routing.html">ESS BOM</a><a href="2차전지_컨콜정리.html">컨콜 정리</a>
+</div></div>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
@@ -172,20 +260,20 @@ const CUR_UTIL=0.55;
 const cos=[...new Set(D.map(f=>f.co))].sort();
 const sS={cell:d3.scaleSqrt().domain([1,100]).range([3,17]).clamp(true),cathode:d3.scaleSqrt().domain([1,12]).range([3,13]).clamp(true),electrolyte:d3.scaleSqrt().domain([1,20]).range([3,15]).clamp(true),energy:d3.scaleSqrt().domain([1,60]).range([3,17]).clamp(true)};
 
-let S={selCos:new Set(),selF:null,selSt:null,fq:'',fcat:'',fapp:'',yr:2026,showS:true,showD:true,showU:true};
+let S={selCos:new Set(),selF:null,selSt:null,fq:'',fcat:'',fapp:'',fco:'',fstat:'',yr:2026,showS:true,showD:true,showU:true};
 const gC=(f,y)=>f.r?f.r[y]||0:0;
 const af=()=>D.filter(f=>{
   if(S.fq&&!f.co.toLowerCase().includes(S.fq.toLowerCase())&&!f.id.toLowerCase().includes(S.fq.toLowerCase()))return false;
   if(S.fcat&&f.cat!==S.fcat)return false;
   if(S.fapp&&!f.app.includes(S.fapp))return false;
+  if(S.fco&&f.co!==S.fco)return false;
+  if(S.fstat&&f.status!==S.fstat)return false;
   return true;
 });
 const appColor=(a)=>a==='EV'?'#2b6cb0':a==='ESS'?'#38a169':'#805ad5';
 
 const CO_COL={"삼성SDI":"#1B6CFF","LG에너지솔루션":"#00A878","SK온":"#E9A23B","Tesla":"#c41e3a","Panasonic":"#005BAC","AESC":"#6B4C9A","Ford Energy":"#003478","LG화학":"#5BB536","에코프로비엠":"#FF6B35","포스코퓨처엠":"#0068B5","솔브레인홀딩스":"#8B6914","덕산일렉테라":"#D4563A","엔켐":"#2E86AB","동화일렉트로라이트":"#4A7C59"};
-let colorMode='company';
-
-const dotFill=(f)=>colorMode==='company'?(CO_COL[f.co]||'#888'):(f.app==='EV'?'#2b6cb0':f.app==='ESS'?'#38a169':'#805ad5');
+const dotFill=(f)=>CO_COL[f.co]||'#888';
 
 // MAP
 const mSvg=d3.select('#map');let proj,path,stTopo=null,wTopo=null;
@@ -227,7 +315,7 @@ function renderFabs(){
     .attr('cy',d=>{const p=proj([d.lon,d.lat]);return p?p[1]:0;})
     .attr('r',d=>{const c=gC(d,S.yr);return c>0?(sS[d.cat]||sS.cell)(c):3;})
     .attr('fill',d=>dotFill(d)).attr('fill-opacity',d=>gC(d,S.yr)>0?.75:.3)
-    .attr('stroke',d=>colorMode==='company'?appColor(d.app.includes('+')?'EV+ESS':d.app):d3.color(CO_COL[d.co]||'#888').darker(.3)).attr('stroke-opacity',.8)
+    .attr('stroke',d=>appColor(d.app.includes('+')?'EV+ESS':d.app)).attr('stroke-opacity',.8)
     .classed('sel',d=>S.selCos.has(d.co)).classed('dim',d=>(S.selCos.size&&!S.selCos.has(d.co))||(S.selSt&&d.st!==S.selSt));
 }
 
@@ -239,7 +327,6 @@ function selFab(d){S.selSt=null;S.selF=d;if(S.selCos.has(d.co))S.selCos.delete(d
 function selState(st){S.selCos.clear();S.selF=null;if(S.selSt===st)S.selSt=null;else S.selSt=st;renderAll();}
 window.selFId=function(co,id){const f=D.find(x=>x.co===co&&x.id===id);if(f)selFab(f);};
 window.selSt=function(st){selState(st);};
-window.toggleColorMode=function(){colorMode=colorMode==='company'?'app':'company';document.getElementById('cmBtn').textContent=colorMode==='company'?'🎨 By Company':'🔵 By App';renderAll();};
 
 // SIDEBAR
 function renderSB(){const fl=af(),p=document.getElementById('sb');
@@ -345,22 +432,208 @@ g.append('rect').attr('width',w).attr('height',h).attr('fill','transparent')
   }).on('mouseleave',()=>{tt.style.display='none';});
 }
 
-function renderAll(){renderFabs();renderSB();renderDP();renderTL();}
-document.getElementById('fc').addEventListener('change',e=>{S.fcat=e.target.value;renderAll();});
-document.getElementById('fa').addEventListener('change',e=>{S.fapp=e.target.value;renderAll();});
+// === TAB SYSTEM ===
+let activeTab='geo';
+window.switchTab=function(id){
+  activeTab=id;
+  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  event.target.classList.add('active');
+  renderTab();
+};
+function renderTab(){
+  if(activeTab==='geo'){renderFabs();renderSB();renderDP();}
+  else if(activeTab==='lb')renderLeaderboard();
+  else if(activeTab==='tl')renderTimeline();
+  else if(activeTab==='ac')renderSankey();
+  else if(activeTab==='cc')renderCapCurve();
+  else if(activeTab==='svd')renderTL();
+}
+
+// === KPI ===
+function renderKPI(){
+  const fl=af();const cl=fl.filter(f=>f.cat==='cell'||f.cat==='energy');
+  const cellCap=fl.filter(f=>f.cat==='cell').reduce((s,f)=>s+gC(f,S.yr),0);
+  const essCap=fl.filter(f=>f.cat==='energy').reduce((s,f)=>s+gC(f,S.yr),0);
+  const k3=['삼성SDI','LG에너지솔루션','SK온'];
+  const k3s=fl.filter(f=>k3.includes(f.co));
+  const k3cap=k3s.reduce((s,f)=>s+gC(f,S.yr),0);
+  document.getElementById('kpiRow').innerHTML=
+    '<div class="kpi"><div class="kpi-label">Total Sites</div><div class="kpi-val">'+fl.length+'</div><div class="kpi-desc">filtered sites</div></div>'+
+    '<div class="kpi"><div class="kpi-label">Cell CAPA</div><div class="kpi-val">'+Math.round(cellCap)+'<small>GWh</small></div><div class="kpi-desc">'+S.yr+' cell only</div></div>'+
+    '<div class="kpi"><div class="kpi-label">ESS System</div><div class="kpi-val">'+Math.round(essCap)+'<small>GWh</small></div><div class="kpi-desc">Megapack etc</div></div>'+
+    '<div class="kpi"><div class="kpi-label">K3 Sites</div><div class="kpi-val">'+k3s.length+'</div><div class="kpi-desc">SDI+LGES+SK</div></div>'+
+    '<div class="kpi"><div class="kpi-label">K3 CAPA</div><div class="kpi-val">'+Math.round(k3cap)+'<small>GWh</small></div><div class="kpi-desc">'+S.yr+'</div></div>'+
+    '<div class="kpi"><div class="kpi-label">Avg Util</div><div class="kpi-val">'+Math.round(CUR_UTIL*100)+'<small>%</small></div><div class="kpi-desc">출하 가중평균</div></div>';
+}
+
+// === FILTER PILLS ===
+function renderFilters(){
+  const mkPill=(v,l,cur)=>'<span class="pill'+(v===cur?' active':'')+'" data-v="'+v+'">'+l+'</span>';
+  // Category
+  let h='';h+=mkPill('','ALL',S.fcat);['cell','cathode','electrolyte','energy'].forEach(c=>h+=mkPill(c,c.toUpperCase(),S.fcat));
+  document.getElementById('fCat').innerHTML=h;
+  document.getElementById('fCat').onclick=e=>{if(e.target.classList.contains('pill')){S.fcat=e.target.dataset.v;renderAll();}};
+  // Company
+  h='';h+=mkPill('','ALL',S.fco||'');
+  [...new Set(D.map(f=>f.co))].sort().forEach(co=>{h+=mkPill(co,co,S.fco||'');});
+  document.getElementById('fCo').innerHTML=h;
+  document.getElementById('fCo').onclick=e=>{if(e.target.classList.contains('pill')){S.fco=e.target.dataset.v;renderAll();}};
+  // App
+  h='';h+=mkPill('','ALL',S.fapp);['EV','ESS'].forEach(a=>h+=mkPill(a,a,S.fapp));
+  document.getElementById('fApp').innerHTML=h;
+  document.getElementById('fApp').onclick=e=>{if(e.target.classList.contains('pill')){S.fapp=e.target.dataset.v;renderAll();}};
+  // Status
+  h='';h+=mkPill('','ALL',S.fstat||'');
+  ['operational','ramping','construction','suspended'].forEach(s=>h+=mkPill(s,s.toUpperCase(),S.fstat||''));
+  document.getElementById('fStat').innerHTML=h;
+  document.getElementById('fStat').onclick=e=>{if(e.target.classList.contains('pill')){S.fstat=e.target.dataset.v;renderAll();}};
+}
+
+// af() already handles all filters
+
+// === LEADERBOARD ===
+function renderLeaderboard(){
+  const fl=af().filter(f=>f.cat==='cell'||f.cat==='energy');
+  const coMap={};
+  fl.forEach(f=>{if(!coMap[f.co])coMap[f.co]={cap:0,sts:new Set(),sites:0};coMap[f.co].cap+=gC(f,S.yr);coMap[f.co].sts.add(f.status);coMap[f.co].sites++;});
+  const sorted=Object.entries(coMap).sort((a,b)=>b[1].cap-a[1].cap);
+  const maxCap=sorted.length?sorted[0][1].cap:1;
+  let h='';let i=1;
+  sorted.forEach(([co,d])=>{
+    const pct=Math.round(d.cap/maxCap*100);const col=CO_COL[co]||'#888';
+    const sts=[...d.sts].join(' · ');
+    h+='<div class="lb-row" onclick="selFId(\''+co+'\',\''+D.find(f=>f.co===co).id+'\')">';
+    h+='<div class="lb-num">'+String(i).padStart(2,'0')+'</div>';
+    h+='<div class="lb-info"><div class="lb-name" style="color:'+col+'">'+co+'</div><div class="lb-meta">● '+d.sites+' SITES · '+sts+'</div></div>';
+    h+='<div class="lb-bar-wrap"><div class="lb-bar-fill" style="width:'+pct+'%;background:'+col+';opacity:.6"></div></div>';
+    h+='<div class="lb-val">'+Math.round(d.cap)+'<small> GWh</small></div>';
+    h+='</div>';i++;
+  });
+  document.getElementById('tab-lb').innerHTML=h;
+}
+
+// === TIMELINE ===
+function renderTimeline(){
+  const fl=af();const minY=2022,maxY=2030,todayY=2026.38,span=maxY-minY;
+  function parseSop(s){if(!s)return 2026;const m=s.match(/(\d)H(\d{2,4})/);if(m){const yr=+m[2]<100?2000+ +m[2]:+m[2];return yr+(m[1]==='2'?.5:0);}return +s||2026;}
+  let h='<div class="tl-head">';for(let y=minY;y<=maxY;y++)h+='<span>'+y+'</span>';h+='</div>';
+  const todayL=((todayY-minY)/span*100);
+  fl.sort((a,b)=>parseSop(a.sop)-parseSop(b.sop)).forEach(f=>{
+    const sopY=parseSop(f.sop);const col=CO_COL[f.co]||'#888';
+    const conStart=Math.max(minY,sopY-2);
+    const visibleSop=Math.max(minY,sopY);
+    const conL=((conStart-minY)/span*100),conW=Math.max(0,(visibleSop-conStart)/span*100);
+    const opL=((visibleSop-minY)/span*100);
+    const endY=Math.max(...Object.keys(f.r).map(Number).filter(y=>f.r[y]>0),sopY);
+    const opW=Math.max(0,(Math.min(maxY,endY+1)-visibleSop)/span*100);
+    const cap=gC(f,S.yr);
+    h+='<div class="tl-row"><div class="tl-label"><div class="tl-dot" style="background:'+col+'"></div><div class="tl-co" style="color:'+col+'">'+f.co+'</div><div class="tl-site">'+f.id+'</div></div>';
+    h+='<div class="tl-track">';
+    if(f.status==='suspended'){
+      h+='<div class="tl-seg" style="left:'+conL+'%;width:'+Math.max(conW+opW,1)+'%;background:#fed7d7;border:1px solid #fc8181"><span style="color:#e53e3e">SUSPENDED</span></div>';
+    }else{
+      if(conW>0)h+='<div class="tl-seg" style="left:'+conL+'%;width:'+Math.max(conW,.5)+'%;background:#d4e8f0;opacity:.7"></div>';
+      if(opW>0)h+='<div class="tl-seg" style="left:'+opL+'%;width:'+Math.max(opW,.5)+'%;background:'+col+';opacity:.6"><span>'+(cap>0?cap+'G':'')+'</span></div>';
+    }
+    h+='<div class="tl-today" style="left:'+todayL+'%"><span class="tl-today-lbl">TODAY · 26Q2</span></div>';
+    h+='</div></div>';
+  });
+  document.getElementById('tab-tl').innerHTML=h;
+}
+
+// === SANKEY (Cell→Customer) ===
+function renderSankey(){
+  const svg=d3.select('#sankeySvg');svg.selectAll('*').remove();
+  const fl=af().filter(f=>f.cat==='cell'&&f.alloc);
+  const w=svg.node().clientWidth||900,h=svg.node().clientHeight||500;
+  const m={top:20,right:120,bottom:20,left:120},iw=w-m.left-m.right,ih=h-m.top-m.bottom;
+  const g=svg.append('g').attr('transform','translate('+m.left+','+m.top+')');
+  // Build nodes & links
+  const coSet=new Set(),custSet=new Set(),links=[];
+  fl.forEach(f=>{coSet.add(f.co);Object.entries(f.alloc||{}).forEach(([c,v])=>{if(v>0){custSet.add(c);links.push({s:f.co,t:c,v});}});});
+  const coArr=[...coSet].sort((a,b)=>{const va=links.filter(l=>l.s===a).reduce((s,l)=>s+l.v,0);const vb=links.filter(l=>l.s===b).reduce((s,l)=>s+l.v,0);return vb-va;});
+  const custArr=[...custSet].sort((a,b)=>{const va=links.filter(l=>l.t===a).reduce((s,l)=>s+l.v,0);const vb=links.filter(l=>l.t===b).reduce((s,l)=>s+l.v,0);return vb-va;});
+  if(!coArr.length)return;
+  // Y positions
+  const totalV=links.reduce((s,l)=>s+l.v,0);
+  const nodeH=d3.scaleLinear().domain([0,totalV]).range([0,ih-coArr.length*4]);
+  let yL=0;const coY={};coArr.forEach(co=>{const v=links.filter(l=>l.s===co).reduce((s,l)=>s+l.v,0);coY[co]={y:yL,h:nodeH(v)};yL+=nodeH(v)+4;});
+  let yR=0;const custY={};custArr.forEach(c=>{const v=links.filter(l=>l.t===c).reduce((s,l)=>s+l.v,0);custY[c]={y:yR,h:nodeH(v)};yR+=nodeH(v)+4;});
+  // Draw links
+  const coOff={},custOff={};coArr.forEach(c=>coOff[c]=0);custArr.forEach(c=>custOff[c]=0);
+  links.sort((a,b)=>b.v-a.v).forEach(l=>{
+    const sy=coY[l.s].y+coOff[l.s],lh=nodeH(l.v);
+    const ty=custY[l.t].y+custOff[l.t];
+    const col=CO_COL[l.s]||'#888';
+    g.append('path').attr('d','M0,'+(sy+lh/2)+' C'+iw*.4+','+(sy+lh/2)+' '+iw*.6+','+(ty+lh/2)+' '+iw+','+(ty+lh/2))
+      .attr('fill','none').attr('stroke',col).attr('stroke-width',Math.max(lh,1.5)).attr('stroke-opacity',.25);
+    coOff[l.s]+=lh;custOff[l.t]+=lh;
+  });
+  // Left nodes (Cell Maker)
+  coArr.forEach(co=>{const d=coY[co],col=CO_COL[co]||'#888',v=links.filter(l=>l.s===co).reduce((s,l)=>s+l.v,0);
+    g.append('rect').attr('x',-8).attr('y',d.y).attr('width',8).attr('height',Math.max(d.h,2)).attr('fill',col);
+    g.append('text').attr('x',-14).attr('y',d.y+d.h/2).attr('dy','.35em').attr('text-anchor','end').style('font-size','10px').style('font-weight','600').style('fill',col).text(co);
+    g.append('text').attr('x',-14).attr('y',d.y+d.h/2+12).attr('dy','.35em').attr('text-anchor','end').style('font-size','9px').style('fill','#8a7e6e').text(Math.round(v)+' GWh');
+  });
+  // Right nodes (Customer)
+  custArr.forEach(c=>{const d=custY[c],v=links.filter(l=>l.t===c).reduce((s,l)=>s+l.v,0);
+    g.append('rect').attr('x',iw).attr('y',d.y).attr('width',8).attr('height',Math.max(d.h,2)).attr('fill','#8a7e6e');
+    g.append('text').attr('x',iw+14).attr('y',d.y+d.h/2).attr('dy','.35em').style('font-size','10px').style('font-weight','500').text(c);
+    g.append('text').attr('x',iw+14).attr('y',d.y+d.h/2+12).attr('dy','.35em').style('font-size','9px').style('fill','#8a7e6e').text(Math.round(v)+' GWh');
+  });
+}
+
+// === CAPACITY CURVE ===
+function renderCapCurve(){
+  const svg=d3.select('#ccSvg');svg.selectAll('*').remove();
+  const w2=svg.node().clientWidth||900,h2=svg.node().clientHeight||400;
+  const m={top:10,right:20,bottom:24,left:50},iw=w2-m.left-m.right,ih=h2-m.top-m.bottom;
+  const g=svg.append('g').attr('transform','translate('+m.left+','+m.top+')');
+  const yrs=[2026,2027,2028];
+  const fl=af().filter(f=>f.cat==='cell'||f.cat==='energy');
+  const coList=[...new Set(fl.map(f=>f.co))];
+  const stackData=yrs.map(yr=>{const row={yr};coList.forEach(co=>{row[co]=fl.filter(f=>f.co===co).reduce((s,f)=>s+gC(f,yr),0);});return row;});
+  const series=d3.stack().keys(coList)(stackData);
+  const maxV=d3.max(series,s=>d3.max(s,d=>d[1]))||100;
+  const x=d3.scaleLinear().domain([2026,2028]).range([0,iw]);
+  const y=d3.scaleLinear().domain([0,maxV*1.1]).range([ih,0]);
+  g.append('g').attr('class','tg').call(d3.axisLeft(y).tickSize(-iw).tickFormat(''));
+  g.append('g').attr('class','ta').attr('transform','translate(0,'+ih+')').call(d3.axisBottom(x).tickFormat(d=>d).ticks(3));
+  g.append('g').attr('class','ta').call(d3.axisLeft(y).tickFormat(d=>Math.round(d)+' GWh'));
+  const area=d3.area().x(d=>x(d.data.yr)).y0(d=>y(d[0])).y1(d=>y(d[1])).curve(d3.curveMonotoneX);
+  g.selectAll('.cc-a').data(series).enter().append('path')
+    .attr('fill',d=>CO_COL[d.key]||'#888').attr('fill-opacity',.65).attr('stroke',d=>CO_COL[d.key]||'#888').attr('stroke-width',.5).attr('d',area);
+  // TODAY line
+  const todayX=x(2026.38);
+  g.append('line').attr('x1',todayX).attr('x2',todayX).attr('y1',0).attr('y2',ih).attr('stroke','var(--red)').attr('stroke-width',2).attr('stroke-dasharray','6,3');
+  g.append('text').attr('x',todayX+4).attr('y',12).style('fill','var(--red)').style('font-size','9px').style('font-weight','700').text('TODAY');
+  // Demand overlay
+  const ln=d3.line().x(d=>x(d.y)).y(d=>y(d.v)).curve(d3.curveMonotoneX);
+  g.append('path').datum(yrs.map(yr=>({y:yr,v:DEM.base.total[yr]}))).attr('fill','none').attr('stroke','var(--red)').attr('stroke-width',2).attr('stroke-dasharray','5,3').attr('d',ln);
+  // Legend
+  let leg='';coList.forEach(co=>{const v=stackData[2][co]||0;if(v<=0)return;
+    leg+='<span><span class="cc-dot" style="background:'+CO_COL[co]+'"></span>'+co+' '+Math.round(v)+'</span>';});
+  leg+='<span style="color:var(--red)">--- Base Demand '+DEM.base.total[2028]+'</span>';
+  document.getElementById('ccLeg').innerHTML=leg;
+}
+
+// === RENDER ALL ===
+function renderAll(){renderKPI();renderFilters();renderTab();}
+
+// === EVENT LISTENERS ===
 document.getElementById('fy').addEventListener('input',e=>{S.yr=+e.target.value;document.getElementById('yv').textContent=S.yr;renderAll();});
-document.getElementById('chkS').addEventListener('change',e=>{S.showS=e.target.checked;renderTL();});
-document.getElementById('chkD').addEventListener('change',e=>{S.showD=e.target.checked;renderTL();});
-document.getElementById('chkU').addEventListener('change',e=>{S.showU=e.target.checked;renderTL();});
+document.getElementById('chkS').addEventListener('change',e=>{S.showS=e.target.checked;if(activeTab==='svd')renderTL();});
+document.getElementById('chkD').addEventListener('change',e=>{S.showD=e.target.checked;if(activeTab==='svd')renderTL();});
+document.getElementById('chkU').addEventListener('change',e=>{S.showU=e.target.checked;if(activeTab==='svd')renderTL();});
 
 async function init(){
   try{const[w,s]=await Promise.all([fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(r=>r.json()),fetch('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json').then(r=>r.json())]);wTopo=w;stTopo=s;}catch(e){console.error(e);}
   initMap();renderAll();
 }
 window.addEventListener('load',init);
-window.addEventListener('resize',()=>{initMap();renderAll();});
+window.addEventListener('resize',()=>{if(activeTab==='geo'){initMap();renderFabs();}renderTab();});
 </script>
-<div style="position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e2e8f0;padding:4px 12px;font-size:8px;font-family:monospace;color:#718096;z-index:100;display:flex;justify-content:space-between">
-<span>Sources: ev-dashboard CELL3_CAPA (황소자산운용 자체 집계) · Tesla SEC 8-K/10-Q · Panasonic Energy IR · AESC/Ford Energy PR · LG화학·에코프로비엠·포스코퓨처엠 IR · 솔브레인 DART · 덕산일렉테라 NDR · 엔켐·동화 IR · IEA WEO · U.S. Census HS 850760 · ESS 프로젝트 취소: 자체추정</span>
-</div>
+<div class="src-footer">Sources: ev-dashboard CELL3_CAPA (황소자산운용 자체 집계) · Tesla SEC 8-K/10-Q · Panasonic Energy IR · AESC/Ford Energy PR · LG화학·에코프로비엠·포스코퓨처엠 IR · 솔브레인 DART · 덕산일렉테라 NDR · 엔켐·동화 IR · IEA WEO · U.S. Census HS 850760 · ESS 프로젝트 취소: 자체추정</div>
 </body></html>
