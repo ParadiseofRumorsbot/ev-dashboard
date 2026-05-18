@@ -1,0 +1,299 @@
+{
+  "syncedAt": "2026-05-18T06:03:08.637Z",
+  "metrics": {
+    "austin_total": {
+      "key": "austin_total",
+      "value": 53,
+      "unit": "대",
+      "date": "2026-05-13",
+      "note": "Austin 총 플릿"
+    },
+    "daily_miles": {
+      "key": "daily_miles",
+      "value": 29,
+      "unit": "M",
+      "date": "2026-05-13",
+      "note": "마일/일 (333/초) · 구독 1.28M"
+    },
+    "houston_unsupervised": {
+      "key": "houston_unsupervised",
+      "value": 6,
+      "unit": "대",
+      "date": "2026-05-13",
+      "note": "Houston 무감독"
+    },
+    "dallas_unsupervised": {
+      "key": "dallas_unsupervised",
+      "value": 5,
+      "unit": "대",
+      "date": "2026-05-13",
+      "note": "Dallas 무감독"
+    },
+    "total_unsupervised": {
+      "key": "total_unsupervised",
+      "value": 39,
+      "unit": "대",
+      "date": "2026-05-13",
+      "note": "Dallas 5 + Houston 6 + Austin 27 · 무감독"
+    },
+    "austin_unsupervised": {
+      "key": "austin_unsupervised",
+      "value": 27,
+      "unit": "대",
+      "date": "2026-05-13",
+      "note": "▲ 5/13 기준 · 야간 운행 개시 (5/4)"
+    },
+    "cum_miles": {
+      "key": "cum_miles",
+      "value": 10,
+      "unit": "B",
+      "date": "2026-05-04",
+      "note": "10B 돌파 (5/4) · 도시 3.76B"
+    },
+    "subscribers": {
+      "key": "subscribers",
+      "value": 1280000,
+      "unit": "명",
+      "date": "2026-05-04",
+      "note": "FSD 구독자"
+    }
+  },
+  "history": {
+    "austin_total": [
+      {
+        "date": "2026-05-13",
+        "value": 53
+      }
+    ],
+    "daily_miles": [
+      {
+        "date": "2026-05-13",
+        "value": 29
+      }
+    ],
+    "houston_unsupervised": [
+      {
+        "date": "2026-05-13",
+        "value": 6
+      }
+    ],
+    "dallas_unsupervised": [
+      {
+        "date": "2026-05-13",
+        "value": 5
+      }
+    ],
+    "total_unsupervised": [
+      {
+        "date": "2026-05-13",
+        "value": 39
+      }
+    ],
+    "austin_unsupervised": [
+      {
+        "date": "2026-05-13",
+        "value": 27
+      }
+    ],
+    "cum_miles": [
+      {
+        "date": "2026-05-04",
+        "value": 10
+      }
+    ],
+    "subscribers": [
+      {
+        "date": "2026-05-04",
+        "value": 1280000
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "date": "25.06",
+      "desc": "Austin 런칭 · Day 1 Active 13대 (Safety Monitor)",
+      "category": "fleet",
+      "priority": "high"
+    },
+    {
+      "date": "25.12",
+      "desc": "무감독 테스트 시작 · Bay Area 1,655대 CPUC 등록",
+      "category": "fleet",
+      "priority": "high"
+    },
+    {
+      "date": "26.01",
+      "desc": "무감독 공개 라이드 시작 · 플릿 ~200대 (Austin+SF)",
+      "category": "fleet",
+      "priority": "high"
+    },
+    {
+      "date": "26.1H",
+      "desc": "계획: Las Vegas · Miami · Orlando · Phoenix · Tampa",
+      "category": "fleet",
+      "priority": "high"
+    },
+    {
+      "date": "26.02",
+      "desc": "Cybercab 첫 라인오프 · FSD 8B 마일 돌파 · FSD 구독 전환 ($99/월)",
+      "category": "production",
+      "priority": "high"
+    },
+    {
+      "date": "26.03",
+      "desc": "Austin 지오펜스 245 sq mi 확대 · FSD 9B 돌파 · Austin 요금 기본료 $1→$3.25",
+      "category": "fleet",
+      "priority": "normal"
+    },
+    {
+      "date": "26.04.07",
+      "desc": "FSD v14.3 롤아웃 (MLIR 재작성 · 반응 20% 개선)",
+      "category": "fsd",
+      "priority": "normal"
+    },
+    {
+      "date": "26.04.10",
+      "desc": "네덜란드 RDW Tesla FSD 첫 유럽 승인",
+      "category": "regulation",
+      "priority": "high"
+    },
+    {
+      "date": "26.04.13",
+      "desc": "Giga Texas Cybercab 50+ 유닛 스팟 (크래시 테스트 포함)",
+      "category": "production",
+      "priority": "normal"
+    },
+    {
+      "date": "26.04.14",
+      "desc": "FSD v14.3.1 · Safety Score v3.0 출시 (FSD 마일 = 100점 자동)",
+      "category": "fsd",
+      "priority": "normal"
+    },
+    {
+      "date": "26.04.16",
+      "desc": "Austin Unsupervised 12대 신고치 (RobotaxiTracker)",
+      "category": "fleet",
+      "priority": "normal"
+    },
+    {
+      "date": "26.04.18",
+      "desc": "Dallas · Houston 공식 론칭 · Supervised 단계 생략 Day 1부터 Unsupervised",
+      "category": "fleet",
+      "priority": "high"
+    },
+    {
+      "date": "26.04.19",
+      "desc": "🔥 Houston home base 30+ Robotaxi pre-positioned 확인 (TeslaTracker)",
+      "category": "fleet",
+      "priority": "normal"
+    },
+    {
+      "date": "26.04.22",
+      "desc": "⚡ Tesla Q1 2026 실적 발표 · 자본지출 확대 코멘트로 주가 -6.1% 하락",
+      "category": "industry",
+      "priority": "high"
+    },
+    {
+      "date": "26.04.24",
+      "desc": "Tesla Dallas · Houston 정식 로보택시 서비스 운영 메시지 (하나증권)",
+      "category": "fleet",
+      "priority": "normal"
+    },
+    {
+      "date": "26.04.25",
+      "desc": "Tesla 독일 기가팩토리 1,000명 충원 + 배터리 셀 생산 인력 별도 채용 시작",
+      "category": "production",
+      "priority": "normal"
+    },
+    {
+      "date": "26.04.30",
+      "desc": "🚕 무감독 25대 돌파 (Austin 19 + Dallas 3 + Houston 3) · RtaxiTracker · 하루 +5대 추가",
+      "category": "fleet",
+      "priority": "high"
+    },
+    {
+      "date": "26.05.01",
+      "desc": "리비안 조지아 공장 30만대 확대(+50%) + DOE $45억 대출 · R2 판매용 생산 시작",
+      "category": "industry",
+      "priority": "normal"
+    },
+    {
+      "date": "26.05.01",
+      "desc": "US-EU 자동차 관세 25% 재부과 예고 (기존 Turnberry 15% → 25%)",
+      "category": "regulation",
+      "priority": "normal"
+    },
+    {
+      "date": "26.05.01",
+      "desc": "🤝 리비안-우버 로보택시 파트너십 · 2028년부터 조지아에서 최대 5만대 생산",
+      "category": "industry",
+      "priority": "high"
+    },
+    {
+      "date": "26.05.04",
+      "desc": "🏁 FSD 10B 마일 돌파 (10,010,684,206) · 도시 3.76B · 일일 28.8M · 구독 1.28M · 9→10B 31일(역대 최단)",
+      "category": "fsd",
+      "priority": "high"
+    },
+    {
+      "date": "26.05.04",
+      "desc": "🌙 Austin 야간 무감독 운행 최초 시작 · 기존 오후 4시 종료 → 야간까지 확대",
+      "category": "fleet",
+      "priority": "high"
+    },
+    {
+      "date": "26.05.06",
+      "desc": "🚕 무감독 38대 (Austin 27 + Dallas 5 + Houston 6) · Austin 총 fleet 53대 · FSD v14.3.2 와이드 롤아웃",
+      "category": "fleet",
+      "priority": "high"
+    },
+    {
+      "date": "26.05.07",
+      "desc": "Tesla 4680 실측 244Wh/kg — Panasonic 2170(269) 대비 13%↓ · 유럽 Model Y 4680 탑재 불만 확산",
+      "category": "production",
+      "priority": "normal"
+    },
+    {
+      "date": "26.05.08",
+      "desc": "Rivian R2 퍼포먼스 런칭 · $48,490~ · 330마일 · Autonomy+ 평생 무료",
+      "category": "industry",
+      "priority": "normal"
+    },
+    {
+      "date": "26.05.08",
+      "desc": "Tesla Semi 배터리 공식: LR 822kWh / SR 548kWh (CARB) · 4680 NCMA · 500마일",
+      "category": "production",
+      "priority": "normal"
+    },
+    {
+      "date": "26.05.09",
+      "desc": "CATL 나트륨 40GWh 증설(50억위안) · Fuding Shidai 총 149GWh",
+      "category": "production",
+      "priority": "normal"
+    },
+    {
+      "date": "26.05.13",
+      "desc": "Ford Energy 자회사 설립 · 켄터키 공장 ESS 20GWh · SDI-GM JV 5.2조 중단",
+      "category": "industry",
+      "priority": "high"
+    },
+    {
+      "date": "26.05.13",
+      "desc": "🚕 무감독 39대 달성 (Austin 27 + Dallas 5 + Houston 6+1) · v15 FSD 대기 중",
+      "category": "fleet",
+      "priority": "high"
+    },
+    {
+      "date": "26.05.14",
+      "desc": "Tesla 독일 기가팩토리 셀 CAPA 8→18GWh 확장 ($2.5억) · Morrow 파산 신청",
+      "category": "production",
+      "priority": "high"
+    },
+    {
+      "date": "26.05.15",
+      "desc": "LG화학 LMR ��극재 파일럿 양산 돌입(청주) · Albemarle EBITDA 마진 61.9%",
+      "category": "industry",
+      "priority": "normal"
+    }
+  ]
+}

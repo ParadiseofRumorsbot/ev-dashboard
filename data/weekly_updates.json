@@ -1,0 +1,182 @@
+{
+  "syncedAt": "2026-05-18T06:03:07.666Z",
+  "latestDate": "2026-05-17",
+  "count": 13,
+  "this_week": [
+    {
+      "title": "미국 4월 BEV",
+      "category": "미국",
+      "icon": "🇺🇸",
+      "body": "BEV 64,517대 (YoY -33.0%) · PHEV 18,309대 (YoY -40.8%) · Tesla 2.3만대 (-42%) · YTD 339K (-33%)",
+      "color": "teal",
+      "section": "this_week",
+      "targets": [
+        "index",
+        "both"
+      ],
+      "date": "2026-05-17",
+      "order": 1
+    },
+    {
+      "title": "FSD 10B+ 마일",
+      "category": "FSD",
+      "icon": "🏁",
+      "body": "일일 28.8M · 도시 3.76B · 구독 1.28M",
+      "color": "purple",
+      "section": "this_week",
+      "targets": [
+        "robotaxi"
+      ],
+      "date": "2026-05-17",
+      "order": 1
+    },
+    {
+      "title": "중국 4월 NEV",
+      "category": "중국",
+      "icon": "🇨🇳",
+      "body": "NEV 84.9만대 (YoY -7%, 침투율 61.4%) · BEV 57.9만 (+2.5%) · PHEV 19.2만 (-25.6%)",
+      "color": "red",
+      "section": "this_week",
+      "targets": [
+        "index",
+        "both"
+      ],
+      "date": "2026-05-17",
+      "order": 2
+    },
+    {
+      "title": "무감독 39대 (5/13)",
+      "category": "FSD",
+      "icon": "🚕",
+      "body": "Austin 27 + Dallas 5 + Houston 6 · 야간 운행 개시 (5/4)",
+      "color": "teal",
+      "section": "this_week",
+      "targets": [
+        "robotaxi"
+      ],
+      "date": "2026-05-17",
+      "order": 2
+    },
+    {
+      "title": "유럽 4월 BEV 7개국",
+      "category": "유럽",
+      "icon": "🇪🇺",
+      "body": "188,397대 (+43% YoY) · 🇩🇪 64,350 (+41%) · 🇫🇷 36,216 (+42%) · 🇬🇧 39,084 (+59%)",
+      "color": "blue",
+      "section": "this_week",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-05-17",
+      "order": 3
+    },
+    {
+      "title": "Cell 뉴스",
+      "category": "Cell",
+      "icon": "🔋",
+      "body": "SDI-GM 인디애나 JV 5.2조(36GWh) 중단 → LFP 전환 또는 GM 철수 가능성 · Tesla 독일 셀 8→18GWh · Ford Energy ESS 20GWh · Morrow 파산",
+      "color": "yellow",
+      "section": "this_week",
+      "targets": [
+        "index",
+        "both"
+      ],
+      "date": "2026-05-17",
+      "order": 4
+    },
+    {
+      "title": "ESS",
+      "category": "ESS",
+      "icon": "⚡",
+      "body": "3월 글로벌 ESS 24.2GWh (+33% YoY) · 유럽 4.3GWh (+100%) · Albemarle EBITDA 마진 61.9%",
+      "color": "purple",
+      "section": "this_week",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-05-17",
+      "order": 5
+    }
+  ],
+  "update_log": [
+    {
+      "title": "무감독 39대 반영",
+      "category": "FSD",
+      "icon": "🚕",
+      "body": "무감독 39대 반영 (5/13): Austin 27 + Dallas 5 + Houston 6+1. 도시별 차트 업데이트",
+      "color": "teal",
+      "section": "update_log",
+      "targets": [
+        "robotaxi"
+      ],
+      "date": "2026-05-17",
+      "order": 1
+    },
+    {
+      "title": "미국 BEV 모델별 판매량",
+      "category": "미국",
+      "icon": "🇺🇸",
+      "body": "미국 BEV 모델별 판매량 추이 테이블 신규 (WardsAuto, 2025.5~2026.4, OEM×모델 12개월 추적)",
+      "color": "teal",
+      "section": "update_log",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-05-17",
+      "order": 1
+    },
+    {
+      "title": "중국 4월 NEV 반영",
+      "category": "중국",
+      "icon": "🇨🇳",
+      "body": "중국 4월 NEV 판매 84.9만대 데이터 반영 (BEV 57.9만 / PHEV 19.2만) · CPCA",
+      "color": "red",
+      "section": "update_log",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-05-17",
+      "order": 2
+    },
+    {
+      "title": "야간 무감독 반영",
+      "category": "FSD",
+      "icon": "🌙",
+      "body": "야간 무감독 운행 개시 (5/4, Austin) 반영",
+      "color": "purple",
+      "section": "update_log",
+      "targets": [
+        "robotaxi"
+      ],
+      "date": "2026-05-17",
+      "order": 2
+    },
+    {
+      "title": "타임라인 5건 추가",
+      "category": "FSD",
+      "icon": "📅",
+      "body": "타임라인 5건: Ford Energy ESS 20GWh · SDI-GM JV 중단 · Tesla 독일 셀 · LG화학 LMR · Morrow 파산",
+      "color": "yellow",
+      "section": "update_log",
+      "targets": [
+        "robotaxi"
+      ],
+      "date": "2026-05-17",
+      "order": 3
+    },
+    {
+      "title": "유럽 4월 개별국 반영",
+      "category": "유럽",
+      "icon": "🇬🇧🇫🇷",
+      "body": "유럽 4월 영국·프랑스 개별국 EV 판매 데이터 반영",
+      "color": "blue",
+      "section": "update_log",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-05-17",
+      "order": 3
+    }
+  ],
+  "archive": []
+}
