@@ -38,24 +38,16 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 <p class="subtitle">robotaxitracker.com · fsdmiles.com · tesla.com/fsd/safety · TeslaTracker</p>
 <nav style="display:flex;gap:10px;margin-bottom:20px;font-size:12px"><a href="index.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">EV 판매</a><a href="robotaxi.html" style="color:#a78bfa;text-decoration:none;padding:4px 10px;border-radius:6px;background:#1e293b">FSD·로보택시</a><a href="us-import.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">US 수입</a><a href="Battery_bom_routing.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">ESS BOM</a><a href="battery_scenario.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">Battery Scenario</a><a href="2차전지_컨콜정리.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">컨콜 정리</a><a href="global_battery_map.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">🗺️ 배터리 맵</a></nav>
 
-<div style="background:#0a0f1a;border:1px solid #2d3a52;border-left:3px solid #4ecdc4;border-radius:8px;padding:12px 16px;margin-bottom:20px;font-size:11px;color:#94a3c0;line-height:1.7">
-<strong style="color:#4ecdc4">📝 Update Log · 2026.05.17</strong><br>
-• 무감독 39대 반영 (5/13): Austin 27 + Dallas 5 + Houston 6+1. 도시별 차트 업데이트<br>
-• 야간 무감독 운행 개시 (5/4, Austin) 반영<br>
-• 플릿 차트에 5/13 데이터포인트 추가 (총 53대 → 무감독 39대)<br>
-• 타임라인 5건: Ford Energy ESS 20GWh · SDI-GM JV 5.2조 중단 · Tesla 독일 셀 8→18GWh · LG화학 LMR 양산 · Morrow 파산<br>
-• THIS WEEK 6건 (FSD 10B+, 무감독 39대, 야간 운행, SDI-GM, Ford Energy, Tesla 독일)
+<!-- Update Log: Notion 자동 동기화 (fallback: 하드코딩) -->
+<div id="rt-update-log" style="background:#0a0f1a;border:1px solid #2d3a52;border-left:3px solid #4ecdc4;border-radius:8px;padding:12px 16px;margin-bottom:20px;font-size:11px;color:#94a3c0;line-height:1.7">
+<strong style="color:#4ecdc4">📝 Update Log · <span id="rt-log-date">loading...</span></strong><br>
+<div id="rt-log-body">로딩 중...</div>
 </div>
 
-<div style="background:linear-gradient(135deg,#111827,#0a0f1a);border-left:4px solid #a78bfa;border-radius:12px;padding:20px 24px;margin-bottom:24px;font-size:13px;line-height:1.7">
-<div style="font-size:12px;color:#a78bfa;font-weight:600;letter-spacing:1px;margin-bottom:10px">⚡ THIS WEEK · 2026.05.17</div>
-<div style="color:#e0e6f0">
-🏁 <strong style="color:#a78bfa">FSD 10B+ 마일</strong> · 일일 28.8M · 도시 3.76B · 구독 1.28M<br>
-🚕 <strong style="color:#4ecdc4">무감독 39대 (5/13)</strong>: Austin 27 + Dallas 5 + Houston 6 · 야간 운행 개시 (5/4)<br>
-🏭 <strong style="color:#ff6b6b">SDI-GM 인디애나 JV 5.2조(36GWh) 중단</strong> · LFP 전환 또는 GM 철수 가능성<br>
-⚡ <strong style="color:#ffd93d">Ford Energy</strong> 자회사 설립 · 켄터키 ESS 20GWh · 2027H2 첫 출하<br>
-🔋 <strong style="color:#556dff">Tesla 독일 셀 8→18GWh</strong> ($2.5억) · Morrow(노르웨이) 파산 신청<br>
-🤖 v15 FSD 대기 중 · 하반기: Phoenix · Miami · Orlando · Tampa · Las Vegas</div>
+<!-- This Week: Notion 자동 동기화 -->
+<div id="rt-this-week" style="background:linear-gradient(135deg,#111827,#0a0f1a);border-left:4px solid #a78bfa;border-radius:12px;padding:20px 24px;margin-bottom:24px;font-size:13px;line-height:1.7">
+<div style="font-size:12px;color:#a78bfa;font-weight:600;letter-spacing:1px;margin-bottom:10px">⚡ THIS WEEK · <span id="rt-week-date">loading...</span></div>
+<div id="rt-week-body" style="color:#e0e6f0">로딩 중...</div>
 </div>
 
 <div class="chart-section">
@@ -162,26 +154,26 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 </div>
 </div>
 
-<div class="metrics">
+<div class="metrics" id="rt-metrics">
 <div class="metric">
 <div class="label">FSD 누적 마일</div>
-<div class="value">10.0B+</div>
-<div class="delta up">10B 돌파 (5/4) · 도시 3.76B</div>
+<div class="value" id="m-cum-miles">10.0B+</div>
+<div class="delta up" id="m-cum-note">10B 돌파 (5/4) · 도시 3.76B</div>
 </div>
 <div class="metric">
 <div class="label">일일 축적</div>
-<div class="value">~29M</div>
-<div class="delta up">마일/일 (333/초) · 구독 1.28M</div>
+<div class="value" id="m-daily-miles">~29M</div>
+<div class="delta up" id="m-daily-note">마일/일 (333/초) · 구독 1.28M</div>
 </div>
 <div class="metric">
 <div class="label">Austin 무감독</div>
-<div class="value">27대</div>
-<div class="delta up">▲ 5/13 기준 · 야간 운행 개시 (5/4)</div>
+<div class="value" id="m-austin">27대</div>
+<div class="delta up" id="m-austin-note">▲ 5/13 기준 · 야간 운행 개시 (5/4)</div>
 </div>
 <div class="metric">
 <div class="label">3개 도시 합산</div>
-<div class="value">39대</div>
-<div class="delta up">Dallas 5 + Houston 6 + Austin 27 · 무감독</div>
+<div class="value" id="m-total-unsup">39대</div>
+<div class="delta up" id="m-total-note">Dallas 5 + Houston 6 + Austin 27 · 무감독</div>
 </div>
 </div>
 
@@ -254,42 +246,127 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 
 <div class="chart-section">
 <h2>도시 확장 타임라인</h2>
-<div class="timeline">
-<div class="event"><div class="date">25.06</div><div class="desc">Austin 런칭 · Day 1 Active 13대 (Safety Monitor)</div></div>
-<div class="event"><div class="date">25.12</div><div class="desc">무감독 테스트 시작 · Bay Area 1,655대 CPUC 등록</div></div>
-<div class="event"><div class="date">26.01</div><div class="desc">무감독 공개 라이드 시작 · 플릿 ~200대 (Austin+SF)</div></div>
-<div class="event"><div class="date">26.02</div><div class="desc">Cybercab 첫 라인오프 · FSD 8B 마일 돌파 · FSD 구독 전환 ($99/월)</div></div>
-<div class="event"><div class="date">26.03</div><div class="desc">Austin 지오펜스 245 sq mi 확대 · FSD 9B 돌파 · Austin 요금 기본료 $1→$3.25</div></div>
-<div class="event"><div class="date">26.04.07</div><div class="desc">FSD v14.3 롤아웃 (MLIR 재작성 · 반응 20% 개선)</div></div>
-<div class="event"><div class="date">26.04.10</div><div class="desc">네덜란드 RDW Tesla FSD 첫 유럽 승인</div></div>
-<div class="event"><div class="date">26.04.13</div><div class="desc">Giga Texas Cybercab 50+ 유닛 스팟 (크래시 테스트 포함)</div></div>
-<div class="event"><div class="date">26.04.14</div><div class="desc">FSD v14.3.1 · Safety Score v3.0 출시 (FSD 마일 = 100점 자동)</div></div>
-<div class="event"><div class="date">26.04.16</div><div class="desc">Austin Unsupervised 12대 신고치 (RobotaxiTracker)</div></div>
-<div class="event"><div class="date">26.04.18</div><div class="desc">Dallas · Houston 공식 론칭 · Supervised 단계 생략 Day 1부터 Unsupervised</div></div>
-<div class="event"><div class="date">26.04.19</div><div class="desc">🔥 Houston home base 30+ Robotaxi pre-positioned 확인 (TeslaTracker)</div></div>
-<div class="event"><div class="date">26.04.22</div><div class="desc">⚡ Tesla Q1 2026 실적 발표 · 자본지출 확대 코멘트로 주가 -6.1% 하락</div></div>
-<div class="event"><div class="date">26.04.24</div><div class="desc">Tesla Dallas · Houston 정식 로보택시 서비스 운영 메시지 (하나증권)</div></div>
-<div class="event"><div class="date">26.04.25</div><div class="desc">Tesla 독일 기가팩토리 1,000명 충원 + 배터리 셀 생산 인력 별도 채용 시작</div></div>
-<div class="event"><div class="date">26.04.30</div><div class="desc">🚕 무감독 25대 돌파 (Austin 19 + Dallas 3 + Houston 3) · RtaxiTracker · 하루 +5대 추가</div></div>
-<div class="event"><div class="date">26.05.01</div><div class="desc">리비안 조지아 공장 30만대 확대(+50%) + DOE $45억 대출 · R2 판매용 생산 시작</div></div>
-<div class="event"><div class="date">26.05.01</div><div class="desc">🤝 리비안-우버 로보택시 파트너십 · 2028년부터 조지아에서 최대 5만대 생산</div></div>
-<div class="event"><div class="date">26.05.01</div><div class="desc">US-EU 자동차 관세 25% 재부과 예고 (기존 Turnberry 15% → 25%)</div></div>
-<div class="event"><div class="date">26.05.04</div><div class="desc">🏁 FSD 10B 마일 돌파 (10,010,684,206) · 도시 3.76B · 일일 28.8M · 구독 1.28M · 9→10B 31일(역대 최단) · 머스크 "10B=안전 무감독 임계" 달성</div></div>
-<div class="event"><div class="date">26.05.04</div><div class="desc">🌙 Austin 야간 무감독 운행 최초 시작 · 기존 오후 4시 종료 → 야간까지 확대 · Dallas·Houston은 Day 1부터 야간 운행</div></div>
-<div class="event"><div class="date">26.05.06</div><div class="desc">🚕 무감독 38대 (Austin 27 + Dallas 5 + Houston 6) · Austin 총 fleet 53대 · FSD v14.3.2 와이드 롤아웃</div></div>
-<div class="event"><div class="date">26.05.07</div><div class="desc">Tesla 4680 실측 244Wh/kg — Panasonic 2170(269) 대비 13%↓ · 유럽 Model Y 4680 탑재 불만 확산</div></div>
-<div class="event"><div class="date">26.05.08</div><div class="desc">Tesla Semi 배터리 공식: LR 822kWh / SR 548kWh (CARB) · 4680 NCMA · 500마일(82,000lb)</div></div>
-<div class="event"><div class="date">26.05.08</div><div class="desc">Rivian R2 퍼포먼스 런칭 · $48,490~ · 330마일 · Autonomy+ 평생 무료 · 자체 라이다 생산 검토(중국 JV)</div></div>
-<div class="event"><div class="date">26.05.09</div><div class="desc">CATL 나트륨 40GWh 증설(50억위안) · Fuding Shidai 총 149GWh · 나트륨 시장 30~40% 대체 전망</div></div>
-<div class="event"><div class="date">26.05.13</div><div class="desc">🚕 무감독 39대 달성 (Austin 27 + Dallas 5 + Houston 6+1) · 4월초 9대→5월중 39대 · v15 FSD 대기 중</div></div>
-<div class="event"><div class="date">26.05.13</div><div class="desc">Ford Energy 자회사 설립 · 켄터키 공장 ESS 20GWh · 2027H2 첫 출하 · SDI-GM 인디애나 JV 5.2조(36GWh) 중단</div></div>
-<div class="event"><div class="date">26.05.14</div><div class="desc">Tesla 독일 기가팩토리 셀 CAPA 8→18GWh 확장 ($2.5억 투자) · Morrow(노르웨이) 파산 신청</div></div>
-<div class="event"><div class="date">26.05.15</div><div class="desc">LG화학 LMR 양극재 파일럿 양산 수준 생산 돌입(청주) · Albemarle 리튬 EBITDA 마진 61.9% (+36%p QoQ)</div></div>
-<div class="event"><div class="date">26.1H</div><div class="desc">계획: Las Vegas · Miami · Orlando · Phoenix · Tampa</div></div>
+<div class="timeline" id="rt-timeline">
+<!-- Notion에서 동적 로딩, fallback은 스크립트에서 처리 -->
+<div class="event"><div class="date">...</div><div class="desc">타임라인 로딩 중...</div></div>
 </div>
 </div>
 
-<p class="updated">마지막 업데이트: 2026.05.17</p>
+<p class="updated" id="rt-last-updated">마지막 업데이트: 2026.05.17</p>
+
+<script>
+// ═══ Notion 동기화: Update Log + This Week + 메트릭 + 타임라인 ═══
+(function(){
+  const COLOR_MAP = {teal:'#4ecdc4',red:'#ff6b6b',blue:'#556dff',yellow:'#ffd93d',purple:'#a78bfa',green:'#4ecdc4'};
+
+  // ── Fallback 데이터 ──
+  const FB_LOG = [
+    '무감독 39대 반영 (5/13): Austin 27 + Dallas 5 + Houston 6+1',
+    '야간 무감독 운행 개시 (5/4, Austin) 반영',
+    '플릿 차트에 5/13 데이터포인트 추가 (총 53대 → 무감독 39대)',
+    '타임라인 5건: Ford Energy · SDI-GM JV 중단 · Tesla 독일 셀 · LG화학 LMR · Morrow 파산',
+    'THIS WEEK 6건 (FSD 10B+, 무감독 39대, 야간 운행, SDI-GM, Ford Energy, Tesla 독일)',
+  ];
+  const FB_WEEK = [
+    {icon:'🏁',title:'FSD 10B+ 마일',body:'일일 28.8M · 도시 3.76B · 구독 1.28M',color:'purple'},
+    {icon:'🚕',title:'무감독 39대 (5/13)',body:'Austin 27 + Dallas 5 + Houston 6 · 야간 운행 개시',color:'teal'},
+    {icon:'🏭',title:'SDI-GM JV 5.2조 중단',body:'LFP 전환 또는 GM 철수 가능성',color:'red'},
+    {icon:'⚡',title:'Ford Energy',body:'자회사 설립 · 켄터키 ESS 20GWh · 2027H2 첫 출하',color:'yellow'},
+    {icon:'🔋',title:'Tesla 독일 셀 8→18GWh',body:'($2.5억) · Morrow 파산 신청',color:'blue'},
+    {icon:'🤖',title:'v15 FSD 대기 중',body:'하반기: Phoenix · Miami · Orlando · Tampa · Las Vegas',color:'purple'},
+  ];
+  const FB_DATE = '2026.05.17';
+  const FB_TIMELINE = [
+    {date:'25.06',desc:'Austin 런칭 · Day 1 Active 13대 (Safety Monitor)'},
+    {date:'25.12',desc:'무감독 테스트 시작 · Bay Area 1,655대 CPUC 등록'},
+    {date:'26.01',desc:'무감독 공개 라이드 시작 · 플릿 ~200대 (Austin+SF)'},
+    {date:'26.02',desc:'Cybercab 첫 라인오프 · FSD 8B 마일 돌파 · FSD 구독 전환 ($99/월)'},
+    {date:'26.03',desc:'Austin 지오펜스 245 sq mi 확대 · FSD 9B 돌파'},
+    {date:'26.04.07',desc:'FSD v14.3 롤아웃 (MLIR 재작성 · 반응 20% 개선)'},
+    {date:'26.04.18',desc:'Dallas · Houston 공식 론칭 · Day 1부터 Unsupervised'},
+    {date:'26.04.30',desc:'🚕 무감독 25대 돌파 (Austin 19 + Dallas 3 + Houston 3)'},
+    {date:'26.05.04',desc:'🏁 FSD 10B 마일 돌파 · 도시 3.76B · 일일 28.8M · 구독 1.28M'},
+    {date:'26.05.04',desc:'🌙 Austin 야간 무감독 운행 최초 시작'},
+    {date:'26.05.06',desc:'🚕 무감독 38대 (Austin 27 + Dallas 5 + Houston 6)'},
+    {date:'26.05.13',desc:'🚕 무감독 39대 달성 · v15 FSD 대기 중'},
+    {date:'26.05.13',desc:'Ford Energy ESS 20GWh · SDI-GM JV 5.2조 중단'},
+    {date:'26.05.14',desc:'Tesla 독일 셀 8→18GWh · Morrow 파산'},
+    {date:'26.05.15',desc:'LG화학 LMR 양산 · Albemarle EBITDA 마진 61.9%'},
+    {date:'26.1H',desc:'계획: Las Vegas · Miami · Orlando · Phoenix · Tampa'},
+  ];
+
+  function formatDate(d) {
+    if (!d) return FB_DATE;
+    var p = d.split('-');
+    return p[0]+'.'+p[1]+'.'+(p[2]||'').replace(/^0/,'');
+  }
+
+  function renderLog(items, date) {
+    document.getElementById('rt-log-date').textContent = date;
+    document.getElementById('rt-log-body').innerHTML = items
+      .map(function(i){ return '• ' + (typeof i==='string' ? i : (i.icon||'')+' '+i.body) + '<br>'; }).join('');
+  }
+
+  function renderWeek(items, date) {
+    document.getElementById('rt-week-date').textContent = date;
+    document.getElementById('rt-week-body').innerHTML = items
+      .map(function(i){
+        var c = COLOR_MAP[i.color]||'#94a3c0';
+        return '<strong style="color:'+c+'">'+(i.icon||'')+' '+(i.title||'')+'</strong> · '+i.body+'<br>';
+      }).join('');
+  }
+
+  function renderTimeline(events) {
+    var el = document.getElementById('rt-timeline');
+    el.innerHTML = events.map(function(e){
+      return '<div class="event"><div class="date">'+e.date+'</div><div class="desc">'+e.desc+'</div></div>';
+    }).join('');
+  }
+
+  function renderMetrics(m) {
+    if (m.cum_miles) {
+      document.getElementById('m-cum-miles').textContent = m.cum_miles.value + (m.cum_miles.unit==='B'?'B+':'');
+      if (m.cum_miles.note) document.getElementById('m-cum-note').textContent = m.cum_miles.note;
+    }
+    if (m.daily_miles) {
+      document.getElementById('m-daily-miles').textContent = '~' + m.daily_miles.value + (m.daily_miles.unit||'M');
+      if (m.daily_miles.note) document.getElementById('m-daily-note').textContent = m.daily_miles.note;
+    }
+    if (m.austin_unsupervised) {
+      document.getElementById('m-austin').textContent = m.austin_unsupervised.value + '대';
+      if (m.austin_unsupervised.note) document.getElementById('m-austin-note').textContent = m.austin_unsupervised.note;
+    }
+    if (m.total_unsupervised) {
+      document.getElementById('m-total-unsup').textContent = m.total_unsupervised.value + '대';
+      if (m.total_unsupervised.note) document.getElementById('m-total-note').textContent = m.total_unsupervised.note;
+    }
+  }
+
+  // ── 1. Update Log + This Week (주간 업데이트 DB) ──
+  fetch('data/weekly_updates.json')
+    .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function(data){
+      var date = formatDate(data.latestDate);
+      var log = data.update_log.filter(function(u){ return u.targets.indexOf('robotaxi')>=0 || u.targets.indexOf('both')>=0; });
+      var wk = data.this_week.filter(function(u){ return u.targets.indexOf('robotaxi')>=0 || u.targets.indexOf('both')>=0; });
+      if (log.length > 0) renderLog(log, date); else renderLog(FB_LOG, FB_DATE);
+      if (wk.length > 0) renderWeek(wk, date); else renderWeek(FB_WEEK, FB_DATE);
+    })
+    .catch(function(){ renderLog(FB_LOG, FB_DATE); renderWeek(FB_WEEK, FB_DATE); });
+
+  // ── 2. 메트릭 + 타임라인 (로보택시 DB) ──
+  fetch('data/robotaxi_data.json')
+    .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function(data){
+      if (data.metrics && Object.keys(data.metrics).length > 0) renderMetrics(data.metrics);
+      if (data.timeline && data.timeline.length > 0) renderTimeline(data.timeline);
+      else renderTimeline(FB_TIMELINE);
+      var d = data.syncedAt ? data.syncedAt.split('T')[0] : '';
+      if (d) document.getElementById('rt-last-updated').textContent = '마지막 업데이트: ' + formatDate(d);
+    })
+    .catch(function(){ renderTimeline(FB_TIMELINE); });
+})();
+</script>
 
 <script>
 const gridColor='rgba(255,255,255,0.06)';

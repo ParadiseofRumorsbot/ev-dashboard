@@ -55,28 +55,88 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 <p class="subtitle">출처: IEA · SNE Research · WardsAuto · CPCA · Cleantechnica · Benchmark</p>
 <nav style="display:flex;gap:10px;margin-bottom:20px;font-size:12px"><a href="index.html" style="color:#4ecdc4;text-decoration:none;padding:4px 10px;border-radius:6px;background:#1e293b">EV 판매</a><a href="robotaxi.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">FSD·로보택시</a><a href="us-import.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">US 수입</a><a href="Battery_bom_routing.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">ESS BOM</a><a href="battery_scenario.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">Battery Scenario</a><a href="2차전지_컨콜정리.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">컨콜 정리</a><a href="global_battery_map.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">🗺️ 배터리 맵</a></nav>
 
-<div style="background:#0a0f1a;border:1px solid #2d3a52;border-left:3px solid #4ecdc4;border-radius:8px;padding:12px 16px;margin-bottom:20px;font-size:11px;color:#94a3c0;line-height:1.7">
-<strong style="color:#4ecdc4">📝 Update Log · 2026.05.17</strong><br>
-• 🇺🇸 미국 BEV 모델별 판매량 추이 테이블 신규 (WardsAuto, 2025.5~2026.4, OEM×모델 12개월 추적)<br>
-• 🇨🇳 중국 4월 NEV 판매 84.9만대 데이터 반영 (BEV 57.9만 / PHEV 19.2만) · CPCA<br>
-• 🇬🇧🇫🇷 유럽 4월 영국·프랑스 개별국 EV 판매 데이터 반영<br>
-• 🗺️ Battery Value-Chain Map v5 (글로벌 배터리 공장 지도) 신규 삽입<br>
-• 🔋 ESS 설치 데이터: 3월 글로벌 ESS 24.2GWh (+33% YoY), 유럽 4.3GWh (+100%), 미국 2.5GWh (-50%)<br>
-• 컨콜 정리 탭: SK이노베이션·WCP·롯데에너지머티리얼즈·Albemarle 1Q26 컨콜 추가<br>
-• SDI-GM 인디애나 JV 5.2조 프로젝트 중단 · Tesla 독일 기가팩토리 셀 8→18GWh 확장 · Ford Energy ESS 진출 · Morrow 파산<br>
-• 로보택시: 무감독 39대(5/13), FSD 누적 100억 마일 돌파(5/4), 야간 운행 개시<br>
+<!-- Update Log: Notion 자동 동기화 (fallback: 하드코딩) -->
+<div id="update-log-container" style="background:#0a0f1a;border:1px solid #2d3a52;border-left:3px solid #4ecdc4;border-radius:8px;padding:12px 16px;margin-bottom:20px;font-size:11px;color:#94a3c0;line-height:1.7">
+<strong style="color:#4ecdc4">📝 Update Log · <span id="update-log-date">loading...</span></strong><br>
+<div id="update-log-body">로딩 중...</div>
 </div>
 
-<div style="background:linear-gradient(135deg,#111827,#0a0f1a);border-left:4px solid #4ecdc4;border-radius:12px;padding:20px 24px;margin-bottom:24px;font-size:13px;line-height:1.7">
-<div style="font-size:12px;color:#4ecdc4;font-weight:600;letter-spacing:1px;margin-bottom:10px">⚡ THIS WEEK · 2026.05.17</div>
-<div style="color:#e0e6f0">
-<strong style="color:#4ecdc4">🇺🇸 미국 4월</strong> · BEV 64,517대 (YoY <span style="color:#ff6b6b">-33.0%</span>) · PHEV 18,309대 (YoY <span style="color:#ff6b6b">-40.8%</span>) · Tesla 2.3만대 (<span style="color:#ff6b6b">-42%</span>) · YTD 339K (<span style="color:#ff6b6b">-33%</span>)<br>
-<strong style="color:#ff6b6b">🇨🇳 중국 4월</strong> · NEV 84.9만대 (YoY <span style="color:#ff6b6b">-7%</span>, 침투율 61.4%) · BEV 57.9만 (<span style="color:#4ecdc4">+2.5%</span>) · PHEV 19.2만 (<span style="color:#ff6b6b">-25.6%</span>)<br>
-<strong style="color:#556dff">🇪🇺 유럽 4월 BEV 7개국</strong> · 188,397대 (<span style="color:#4ecdc4">+43%</span> YoY) · 🇩🇪 64,350 (<span style="color:#4ecdc4">+41%</span>) · 🇫🇷 36,216 (<span style="color:#4ecdc4">+42%</span>) · 🇬🇧 39,084 (<span style="color:#4ecdc4">+59%</span>) · 🇮🇹 13,238 (<span style="color:#4ecdc4">+99%</span>) · ACEA 전체 5/25 발표<br>
-<strong style="color:#ffd93d">🔋 Cell</strong> · SDI-GM 인디애나 JV 5.2조(36GWh) 중단 → LFP 전환 또는 GM 철수 가능성 · Tesla 독일 셀 CAPA 8→18GWh · Ford Energy ESS 20GWh · Morrow 파산<br>
-<strong style="color:#a78bfa">⚡ ESS</strong> · 3월 글로벌 ESS 24.2GWh (<span style="color:#4ecdc4">+33%</span> YoY) · 유럽 4.3GWh (<span style="color:#4ecdc4">+100%</span>) · Albemarle EBITDA 마진 61.9% · 리튬 WoW <span style="color:#4ecdc4">+4.6%</span> · 구리 <span style="color:#4ecdc4">+5.4%</span> · 알루미늄 <span style="color:#4ecdc4">+5.0%</span>
+<!-- This Week: Notion 자동 동기화 (fallback: 하드코딩) -->
+<div id="this-week-container" style="background:linear-gradient(135deg,#111827,#0a0f1a);border-left:4px solid #4ecdc4;border-radius:12px;padding:20px 24px;margin-bottom:24px;font-size:13px;line-height:1.7">
+<div style="font-size:12px;color:#4ecdc4;font-weight:600;letter-spacing:1px;margin-bottom:10px">⚡ THIS WEEK · <span id="this-week-date">loading...</span></div>
+<div id="this-week-body" style="color:#e0e6f0">로딩 중...</div>
 </div>
-</div>
+
+<script>
+(function(){
+  const COLOR_MAP = {teal:'#4ecdc4',red:'#ff6b6b',blue:'#556dff',yellow:'#ffd93d',purple:'#a78bfa',green:'#4ecdc4'};
+
+  // Fallback 데이터 (JSON fetch 실패 시)
+  const FALLBACK_LOG = [
+    '🇺🇸 미국 BEV 모델별 판매량 추이 테이블 신규 (WardsAuto, 2025.5~2026.4)',
+    '🇨🇳 중국 4월 NEV 판매 84.9만대 데이터 반영 (BEV 57.9만 / PHEV 19.2만) · CPCA',
+    '🇬🇧🇫🇷 유럽 4월 영국·프랑스 개별국 EV 판매 데이터 반영',
+    '🗺️ Battery Value-Chain Map v5 신규',
+    '🔋 ESS: 3월 글로벌 24.2GWh (+33% YoY), 유럽 4.3GWh (+100%)',
+    'SDI-GM JV 중단 · Tesla 독일 셀 확장 · Ford Energy ESS · Morrow 파산',
+    '로보택시: 무감독 39대(5/13), FSD 10B+ 돌파(5/4), 야간 운행 개시',
+  ];
+  const FALLBACK_WEEK = [
+    {icon:'🇺🇸',title:'미국 4월',body:'BEV 64,517대 (YoY -33.0%) · Tesla 2.3만대 (-42%)',color:'teal'},
+    {icon:'🇨🇳',title:'중국 4월',body:'NEV 84.9만대 (YoY -7%, 침투율 61.4%)',color:'red'},
+    {icon:'🇪🇺',title:'유럽 4월 BEV',body:'188,397대 (+43% YoY) · 🇩🇪 64,350 (+41%)',color:'blue'},
+    {icon:'🔋',title:'Cell',body:'SDI-GM JV 중단 · Tesla 독일 셀 8→18GWh',color:'yellow'},
+    {icon:'⚡',title:'ESS',body:'3월 글로벌 24.2GWh (+33% YoY)',color:'purple'},
+  ];
+  const FALLBACK_DATE = '2026.05.17';
+
+  function renderUpdateLog(items, date) {
+    document.getElementById('update-log-date').textContent = date;
+    document.getElementById('update-log-body').innerHTML = items
+      .map(item => typeof item === 'string'
+        ? '• ' + item + '<br>'
+        : '• ' + (item.icon||'') + ' ' + item.body + '<br>'
+      ).join('');
+  }
+
+  function renderThisWeek(items, date) {
+    document.getElementById('this-week-date').textContent = date;
+    document.getElementById('this-week-body').innerHTML = items
+      .map(item => {
+        const c = COLOR_MAP[item.color] || '#94a3c0';
+        return '<strong style="color:'+c+'">'+(item.icon||'')+' '+(item.title||'')+'</strong> · '+item.body+'<br>';
+      }).join('');
+  }
+
+  function formatDate(d) {
+    if (!d) return FALLBACK_DATE;
+    const p = d.split('-');
+    return p[0]+'.'+p[1]+'.'+(p[2]||'').replace(/^0/,'');
+  }
+
+  fetch('data/weekly_updates.json')
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(data => {
+      const date = formatDate(data.latestDate);
+      const logItems = data.update_log
+        .filter(u => u.targets.includes('index') || u.targets.includes('both'))
+        .map(u => ({icon:u.icon, body:u.body, title:u.title, color:u.color}));
+      const weekItems = data.this_week
+        .filter(u => u.targets.includes('index') || u.targets.includes('both'))
+        .map(u => ({icon:u.icon, title:u.title, body:u.body, color:u.color}));
+
+      if (logItems.length > 0) renderUpdateLog(logItems, date);
+      else renderUpdateLog(FALLBACK_LOG, FALLBACK_DATE);
+
+      if (weekItems.length > 0) renderThisWeek(weekItems, date);
+      else renderThisWeek(FALLBACK_WEEK, FALLBACK_DATE);
+    })
+    .catch(() => {
+      renderUpdateLog(FALLBACK_LOG, FALLBACK_DATE);
+      renderThisWeek(FALLBACK_WEEK, FALLBACK_DATE);
+    });
+})();
+</script>
 
 <div class="metrics">
 <div class="metric">
