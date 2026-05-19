@@ -1,0 +1,44 @@
+name: 📰 Daily EV News Monitor
+
+on:
+  schedule:
+    # 매일 22:00 UTC = KST 07:00
+    - cron: '0 22 * * *'
+  workflow_dispatch:
+    # 수동 실행 가능
+
+jobs:
+  news-monitor:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch EV news from Google News RSS
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_UPDATES_DB_ID: ${{ secrets.NOTION_UPDATES_DB_ID }}
+        run: node scripts/news-monitor.js
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet data/daily_news.json 2>/dev/null && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "news-monitor-bot"
+          git config user.email "news-bot@users.noreply.github.com"
+          git add data/daily_news.json
+          git commit -m "📰 Daily EV news update $(date +%Y-%m-%d)"
+          git pull --rebase origin main
+          git push
