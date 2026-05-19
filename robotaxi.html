@@ -252,7 +252,7 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 </div>
 </div>
 
-<p class="updated" id="rt-last-updated">마지막 업데이트: 2026.05.17</p>
+<p class="updated" id="rt-last-updated">마지막 업데이트: 2026.05.19</p>
 
 <script>
 // ═══ Notion 동기화: Update Log + This Week + 메트릭 + 타임라인 ═══
@@ -261,6 +261,13 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 
   // ── Fallback 데이터 ──
   const FB_LOG = [
+    '🇪🇺 T&E "High Stakes" 보고서 통합 — EU_REF/COM/LOW 시나리오 전 대시보드 반영',
+    '🔋 Battery Scenario EU 정책 시나리오 3종 추가 (총 10개)',
+    '📊 index.html 시나리오 민감도 버블차트 + BEV/CAPA 미스매치 차트 신규',
+    '🔀 US 수입 "EU vs US 전동화 디버전스" 탭 신규',
+    '📰 매일 7AM KST EV 뉴스 자동 모니터링 워크플로우 (GitHub Actions)',
+  ];
+  const FB_LOG_PREV = [
     '무감독 39대 반영 (5/13): Austin 27 + Dallas 5 + Houston 6+1',
     '야간 무감독 운행 개시 (5/4, Austin) 반영',
     '플릿 차트에 5/13 데이터포인트 추가 (총 53대 → 무감독 39대)',
@@ -268,14 +275,14 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
     'THIS WEEK 6건 (FSD 10B+, 무감독 39대, 야간 운행, SDI-GM, Ford Energy, Tesla 독일)',
   ];
   const FB_WEEK = [
+    {icon:'🇪🇺',title:'EU 정책',body:'T&E "High Stakes" — REF/COM/LOW 시나리오 · K3 가동률 95%→45% 분기',color:'blue'},
     {icon:'🏁',title:'FSD 10B+ 마일',body:'일일 28.8M · 도시 3.76B · 구독 1.28M',color:'purple'},
     {icon:'🚕',title:'무감독 39대 (5/13)',body:'Austin 27 + Dallas 5 + Houston 6 · 야간 운행 개시',color:'teal'},
     {icon:'🏭',title:'SDI-GM JV 5.2조 중단',body:'LFP 전환 또는 GM 철수 가능성',color:'red'},
     {icon:'⚡',title:'Ford Energy',body:'자회사 설립 · 켄터키 ESS 20GWh · 2027H2 첫 출하',color:'yellow'},
-    {icon:'🔋',title:'Tesla 독일 셀 8→18GWh',body:'($2.5억) · Morrow 파산 신청',color:'blue'},
     {icon:'🤖',title:'v15 FSD 대기 중',body:'하반기: Phoenix · Miami · Orlando · Tampa · Las Vegas',color:'purple'},
   ];
-  const FB_DATE = '2026.05.17';
+  const FB_DATE = '2026.05.19';
   const FB_TIMELINE = [
     {date:'25.06',desc:'Austin 런칭 · Day 1 Active 13대 (Safety Monitor)'},
     {date:'25.12',desc:'무감독 테스트 시작 · Bay Area 1,655대 CPUC 등록'},
@@ -303,8 +310,13 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 
   function renderLog(items, date) {
     document.getElementById('rt-log-date').textContent = date;
-    document.getElementById('rt-log-body').innerHTML = items
+    var html = items
       .map(function(i){ return '• ' + (typeof i==='string' ? i : (i.icon||'')+' '+i.body) + '<br>'; }).join('');
+    if(typeof FB_LOG_PREV!=='undefined'&&FB_LOG_PREV.length){
+      html+='<br><strong style="color:#3a4a6b">📝 Update Log · 2026.05.17</strong><br>';
+      html+=FB_LOG_PREV.map(function(s){return '• '+s+'<br>';}).join('');
+    }
+    document.getElementById('rt-log-body').innerHTML = html;
   }
 
   function renderWeek(items, date) {

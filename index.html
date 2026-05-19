@@ -105,6 +105,16 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 
   // Fallback 데이터 (JSON fetch 실패 시)
   const FALLBACK_LOG = [
+    '🇪🇺 T&E "High Stakes" 보고서 통합 — EU_REF/COM/LOW 3종 시나리오 전 페이지 반영',
+    '📊 시나리오 민감도 버블차트 + BEV/CAPA 미스매치 차트 신규 (index.html)',
+    '🔋 Battery Scenario: EU 정책 시나리오 3종 추가 (총 10개 시나리오)',
+    '🔀 US 수입 탭 9 "EU vs US 전동화 디버전스" 신규 — T&E + S&P Global 좌우 분할',
+    '⚙️ ESS BOM: CAM/pCAM 시나리오별 분기 추가 (REF 1,640 / COM 1,000 / LOW 300 kt)',
+    '🚗 EV 타임라인 🇺🇸 북미 / 🇪🇺 유럽 탭 전환 + Ford EU 포함 10건 뉴스 반영',
+    '📰 매일 7AM KST EV 뉴스 자동 모니터링 워크플로우 신규 (GitHub Actions)',
+    '📝 Notion 동시 업데이트: 사용 가이드 + 주간배터리 + 주간 업데이트 DB',
+  ];
+  const FALLBACK_LOG_PREV = [
     '🇺🇸 미국 BEV 모델별 판매량 추이 테이블 신규 (WardsAuto, 2025.5~2026.4)',
     '🇨🇳 중국 4월 NEV 판매 84.9만대 데이터 반영 (BEV 57.9만 / PHEV 19.2만) · CPCA',
     '🇬🇧🇫🇷 유럽 4월 영국·프랑스 개별국 EV 판매 데이터 반영',
@@ -114,21 +124,27 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
     '로보택시: 무감독 39대(5/13), FSD 10B+ 돌파(5/4), 야간 운행 개시',
   ];
   const FALLBACK_WEEK = [
-    {icon:'🇺🇸',title:'미국 4월',body:'BEV 64,517대 (YoY -33.0%) · Tesla 2.3만대 (-42%)',color:'teal'},
+    {icon:'🇪🇺',title:'EU 정책',body:'T&E "High Stakes" — REF/COM/LOW 3종 시나리오 · CAPA -56%~-71% 위험',color:'blue'},
+    {icon:'🇺🇸',title:'미국 4월',body:'BEV 64,517대 (YoY -33.0%) · Tesla 2.3만대 (-42%) · HEV 회귀 가속',color:'teal'},
     {icon:'🇨🇳',title:'중국 4월',body:'NEV 84.9만대 (YoY -7%, 침투율 61.4%)',color:'red'},
-    {icon:'🇪🇺',title:'유럽 4월 BEV',body:'188,397대 (+43% YoY) · 🇩🇪 64,350 (+41%)',color:'blue'},
-    {icon:'🔋',title:'Cell',body:'SDI-GM JV 중단 · Tesla 독일 셀 8→18GWh',color:'yellow'},
+    {icon:'🔋',title:'Cell',body:'K3 유럽 가동률 시나리오 95%→45% 분기 · SDI-GM JV 중단',color:'yellow'},
     {icon:'⚡',title:'ESS',body:'3월 글로벌 24.2GWh (+33% YoY)',color:'purple'},
   ];
-  const FALLBACK_DATE = '2026.05.17';
+  const FALLBACK_DATE = '2026.05.19';
 
   function renderUpdateLog(items, date) {
     document.getElementById('update-log-date').textContent = date;
-    document.getElementById('update-log-body').innerHTML = items
+    var html = items
       .map(item => typeof item === 'string'
         ? '• ' + item + '<br>'
         : '• ' + (item.icon||'') + ' ' + item.body + '<br>'
       ).join('');
+    // 이전 로그 추가
+    if(typeof FALLBACK_LOG_PREV!=='undefined'&&FALLBACK_LOG_PREV.length){
+      html+='<br><strong style="color:#3a4a6b">📝 Update Log · 2026.05.17</strong><br>';
+      html+=FALLBACK_LOG_PREV.map(s=>'• '+s+'<br>').join('');
+    }
+    document.getElementById('update-log-body').innerHTML = html;
   }
 
   function renderThisWeek(items, date) {
