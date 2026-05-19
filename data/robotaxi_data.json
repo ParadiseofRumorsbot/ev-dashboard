@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-05-18T19:25:08.315Z",
+  "syncedAt": "2026-05-19T02:26:58.596Z",
   "metrics": {
     "austin_total": {
       "key": "austin_total",
@@ -149,7 +149,7 @@
       "date": "26.04.07",
       "desc": "FSD v14.3 롤아웃 (MLIR 재작성 · 반응 20% 개선)",
       "category": "fsd",
-      "priority": ""
+      "priority": "normal"
     },
     {
       "date": "26.04.10",
@@ -291,7 +291,7 @@
     },
     {
       "date": "26.05.15",
-      "desc": "LG화학 LMR 양극재 파일럿 양산 돌입(청주) · Albemarle EBITDA 마진 61.9%",
+      "desc": "LG화학 LMR ��극재 파일럿 양산 돌입(청주) · Albemarle EBITDA 마진 61.9%",
       "category": "industry",
       "priority": "normal"
     }

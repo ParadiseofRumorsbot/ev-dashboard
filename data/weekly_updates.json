@@ -1,8 +1,103 @@
 {
-  "syncedAt": "2026-05-18T19:25:06.309Z",
-  "latestDate": "2026-05-17",
-  "count": 13,
-  "this_week": [
+  "syncedAt": "2026-05-19T02:26:56.920Z",
+  "latestDate": "2026-05-19",
+  "count": 19,
+  "this_week": [],
+  "update_log": [
+    {
+      "title": "🇪🇺 T&E High Stakes — EU 시나리오 전 대시보드 반영",
+      "category": "유럽",
+      "icon": "🇪🇺",
+      "body": "T&E 2026.05 High Stakes 보고서 통합 — EU REF/COM/LOW 3종 시나리오 4개 페이지 반영",
+      "color": "blue",
+      "section": "update_log",
+      "targets": [],
+      "date": "2026-05-19",
+      "order": 1
+    },
+    {
+      "title": "📊 민감도 버블차트 + BEV/CAPA 미스매치 차트 신규",
+      "category": "유럽",
+      "icon": "📊",
+      "body": "index.html — 6개국 민감도 매트릭스(UK 81%p), BEV/CAPA 양방향, EU 타임라인 위젯",
+      "color": "blue",
+      "section": "update_log",
+      "targets": [],
+      "date": "2026-05-19",
+      "order": 2
+    },
+    {
+      "title": "🔋 Battery Scenario EU 정책 시나리오 3종 (총 10개)",
+      "category": "Cell",
+      "icon": "🔋",
+      "body": "EU_REF(14.6M, 1445GWh), EU_COM(10.1M, 632GWh), EU_LOW(7.3M, 421GWh) K3 가동률 시뮬레이션",
+      "color": "purple",
+      "section": "update_log",
+      "targets": [],
+      "date": "2026-05-19",
+      "order": 3
+    },
+    {
+      "title": "🔀 US 수입 EU vs US 전동화 디버전스 탭 신규",
+      "category": "미국",
+      "icon": "🔀",
+      "body": "T&E REF/COM/LOW vs S&P Global 미국 HEV 회귀 좌우 분할 · HEV 41→45개 · 기아 4→8개",
+      "color": "teal",
+      "section": "update_log",
+      "targets": [],
+      "date": "2026-05-19",
+      "order": 4
+    },
+    {
+      "title": "🚗 EV 타임라인 북미/유럽 탭 + 10건 뉴스",
+      "category": "미국",
+      "icon": "🚗",
+      "body": "탭 분할 + CLA EV·Lexus ES EV 출시완료, Rivian R2 Q2, GV60 Magma, Volvo EX60, Ford EU",
+      "color": "teal",
+      "section": "update_log",
+      "targets": [],
+      "date": "2026-05-19",
+      "order": 5
+    },
+    {
+      "title": "📰 7AM KST 뉴스 자동 모니터링 워크플로우",
+      "category": "ESS",
+      "icon": "📰",
+      "body": "GitHub Actions cron KST 07:00 · Google News RSS 11개 키워드 · Notion DB 자동 · index.html 피드",
+      "color": "yellow",
+      "section": "update_log",
+      "targets": [],
+      "date": "2026-05-19",
+      "order": 6
+    }
+  ],
+  "archive": [
+    {
+      "title": "무감독 39대 반영",
+      "category": "FSD",
+      "icon": "🚕",
+      "body": "무감독 39대 반영 (5/13): Austin 27 + Dallas 5 + Houston 6+1. 도시별 차트 업데이트",
+      "color": "teal",
+      "section": "update_log",
+      "targets": [
+        "robotaxi"
+      ],
+      "date": "2026-05-17",
+      "order": 1
+    },
+    {
+      "title": "미국 BEV 모델별 판매량",
+      "category": "미국",
+      "icon": "🇺🇸",
+      "body": "미국 BEV 모델별 판매량 추이 테이블 신규 (WardsAuto, 2025.5~2026.4, OEM×모델 12개월 추적)",
+      "color": "teal",
+      "section": "update_log",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-05-17",
+      "order": 1
+    },
     {
       "title": "미국 4월 BEV",
       "category": "미국",
@@ -31,6 +126,19 @@
       "order": 1
     },
     {
+      "title": "중국 4월 NEV 반영",
+      "category": "중국",
+      "icon": "🇨🇳",
+      "body": "중국 4월 NEV 판매 84.9만대 데이터 반영 (BEV 57.9만 / PHEV 19.2만) · CPCA",
+      "color": "red",
+      "section": "update_log",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-05-17",
+      "order": 2
+    },
+    {
       "title": "중국 4월 NEV",
       "category": "중국",
       "icon": "🇨🇳",
@@ -53,87 +161,6 @@
       "section": "this_week",
       "targets": [
         "robotaxi"
-      ],
-      "date": "2026-05-17",
-      "order": 2
-    },
-    {
-      "title": "유럽 4월 BEV 7개국",
-      "category": "유럽",
-      "icon": "🇪🇺",
-      "body": "188,397대 (+43% YoY) · 🇩🇪 64,350 (+41%) · 🇫🇷 36,216 (+42%) · 🇬🇧 39,084 (+59%)",
-      "color": "blue",
-      "section": "this_week",
-      "targets": [
-        "index"
-      ],
-      "date": "2026-05-17",
-      "order": 3
-    },
-    {
-      "title": "Cell 뉴스",
-      "category": "Cell",
-      "icon": "🔋",
-      "body": "SDI-GM 인디애나 JV 5.2조(36GWh) 중단 → LFP 전환 또는 GM 철수 가능성 · Tesla 독일 셀 8→18GWh · Ford Energy ESS 20GWh · Morrow 파산",
-      "color": "yellow",
-      "section": "this_week",
-      "targets": [
-        "index",
-        "both"
-      ],
-      "date": "2026-05-17",
-      "order": 4
-    },
-    {
-      "title": "ESS",
-      "category": "ESS",
-      "icon": "⚡",
-      "body": "3월 글로벌 ESS 24.2GWh (+33% YoY) · 유럽 4.3GWh (+100%) · Albemarle EBITDA 마진 61.9%",
-      "color": "purple",
-      "section": "this_week",
-      "targets": [
-        "index"
-      ],
-      "date": "2026-05-17",
-      "order": 5
-    }
-  ],
-  "update_log": [
-    {
-      "title": "무감독 39대 반영",
-      "category": "FSD",
-      "icon": "🚕",
-      "body": "무감독 39대 반영 (5/13): Austin 27 + Dallas 5 + Houston 6+1. 도시별 차트 업데이트",
-      "color": "teal",
-      "section": "update_log",
-      "targets": [
-        "robotaxi"
-      ],
-      "date": "2026-05-17",
-      "order": 1
-    },
-    {
-      "title": "미국 BEV 모델별 판매량",
-      "category": "미국",
-      "icon": "🇺🇸",
-      "body": "미국 BEV 모델별 판매량 추이 테이블 신규 (WardsAuto, 2025.5~2026.4, OEM×모델 12개월 추적)",
-      "color": "teal",
-      "section": "update_log",
-      "targets": [
-        "index"
-      ],
-      "date": "2026-05-17",
-      "order": 1
-    },
-    {
-      "title": "중국 4월 NEV 반영",
-      "category": "중국",
-      "icon": "🇨🇳",
-      "body": "중국 4월 NEV 판매 84.9만대 데이터 반영 (BEV 57.9만 / PHEV 19.2만) · CPCA",
-      "color": "red",
-      "section": "update_log",
-      "targets": [
-        "index"
       ],
       "date": "2026-05-17",
       "order": 2
@@ -176,7 +203,46 @@
       ],
       "date": "2026-05-17",
       "order": 3
+    },
+    {
+      "title": "유럽 4월 BEV 7개국",
+      "category": "유럽",
+      "icon": "🇪🇺",
+      "body": "188,397대 (+43% YoY) · 🇩🇪 64,350 (+41%) · 🇫🇷 36,216 (+42%) · 🇬🇧 39,084 (+59%)",
+      "color": "blue",
+      "section": "this_week",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-05-17",
+      "order": 3
+    },
+    {
+      "title": "Cell 뉴스",
+      "category": "Cell",
+      "icon": "🔋",
+      "body": "SDI-GM 인디애나 JV 5.2조(36GWh) 중단 → LFP 전환 또는 GM 철수 가능성 · Tesla 독일 셀 8→18GWh · Ford Energy ESS 20GWh · Morrow 파산",
+      "color": "yellow",
+      "section": "this_week",
+      "targets": [
+        "index",
+        "both"
+      ],
+      "date": "2026-05-17",
+      "order": 4
+    },
+    {
+      "title": "ESS",
+      "category": "ESS",
+      "icon": "⚡",
+      "body": "3월 글로벌 ESS 24.2GWh (+33% YoY) · 유럽 4.3GWh (+100%) · Albemarle EBITDA 마진 61.9%",
+      "color": "purple",
+      "section": "this_week",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-05-17",
+      "order": 5
     }
-  ],
-  "archive": []
+  ]
 }
