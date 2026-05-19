@@ -73,6 +73,7 @@ footer{border-top:1px solid var(--bd);padding:16px 0;text-align:center;font-size
   <button data-tab="aluminum">⚒️ 알루미늄</button>
   <button data-tab="solar">☀️ 솔라</button>
   <button data-tab="robotics">🤖 로보틱스</button>
+  <button data-tab="divergence">🔀 EU vs US 디버전스</button>
 </div>
 <div id="app"><div class="ld">데이터 로딩 중...</div></div>
 
@@ -293,6 +294,7 @@ function renderTab(tab){
   destroyCharts();CUR_TAB=tab;
   if(tab==='alert'){renderAlert();return}
   if(tab==='vehicle'){renderVehicle();return}
+  if(tab==='divergence'){renderDivergence();return}
   if(['aluminum','solar','robotics'].includes(tab)){renderSubTabbed(tab);return}
   // Default: cell, material, raw
   renderGeneric(tab);
@@ -641,6 +643,91 @@ function mkTable(id,ld,pd,yd){
       <td style="text-align:right;color:${yy>=0?'var(--gn)':'var(--rd)'}">${pct(yy)}</td>
       <td style="color:${ic?'var(--am)':'var(--tm)'}">${ic?'⚠️ 감시':'주요국'}</td></tr>`}
   tbl.innerHTML=h+'</tbody>';
+}
+
+// ── Tab 9: EU vs US 전동화 디버전스 ──
+function renderDivergence(){
+  const app=document.getElementById('app');
+  app.innerHTML=`
+<div class="wk">
+<span class="tg">🔀 EU vs US 전동화 디버전스</span> <span class="dt">T&E 2026.05 · S&P Global Mobility 2026.04</span><br>
+유럽은 <b>CO2 규제 강도</b>에 따라 BEV 의무화↔완화 논쟁 중. 미국은 <b>HEV 회귀</b> 가속.<br>
+한국 OEM·셀사는 <b class="warn">지역별 포트폴리오 디버전스</b>에 대비 필요. LGES·SK온 유럽 가동률 vs 현대기아 미국 HEV 비중이 핵심 변수.
+</div>
+
+<div class="cg">
+<!-- 좌측: EU BEV 시나리오 -->
+<div class="cb">
+<h3>🇪🇺 EU — CO2 규제 시나리오 (T&E 2026.05)</h3>
+<div style="font-size:.78rem;color:var(--td);line-height:1.8;margin-bottom:14px">
+3개 시나리오별 EU BEV 생산·배터리 CAPA 전망. 규제 완화 시 <b style="color:var(--rd)">Northvolt급 공장 최대 34개 무산</b>.
+</div>
+<table class="dt">
+<thead><tr><th></th><th style="color:var(--gn)">REF (현행)</th><th style="color:var(--am)">COM (집행위)</th><th style="color:var(--rd)">LOW (산업계)</th></tr></thead>
+<tbody>
+<tr><td style="color:var(--td)">2030 타깃</td><td>-55%</td><td>3년 평균제</td><td>5년 평균제</td></tr>
+<tr><td style="color:var(--td)">2035 타깃</td><td>-100%</td><td>-90%</td><td>-80%</td></tr>
+<tr><td style="color:var(--td)">2035 BEV</td><td style="color:var(--gn);font-weight:600">14.6M</td><td style="color:var(--am);font-weight:600">10.1M</td><td style="color:var(--rd);font-weight:600">7.3M</td></tr>
+<tr><td style="color:var(--td)">2030 CAPA</td><td style="color:var(--gn)">1,445 GWh</td><td style="color:var(--am)">632 GWh</td><td style="color:var(--rd)">421 GWh</td></tr>
+<tr><td style="color:var(--td)">공장 무산</td><td>—</td><td style="color:var(--am)">21개</td><td style="color:var(--rd)">34개</td></tr>
+<tr><td style="color:var(--td)">K3 가동률</td><td style="color:var(--gn)">95~100%</td><td style="color:var(--am)">65~75%</td><td style="color:var(--rd)">45~55%</td></tr>
+</tbody>
+</table>
+<div style="margin-top:14px;padding:10px 12px;background:rgba(59,130,246,.06);border-radius:6px;font-size:.72rem;color:var(--td);line-height:1.7">
+<b style="color:var(--ac)">민감도 1위: 영국</b> — REF +85% vs LOW +4% = <b>81%p 격차</b><br>
+절대 손실 1위: 독일 €283bn · 2위: 영국 €100bn · 3위: 프랑스 €43bn<br>
+<span style="color:var(--am)">[개인 의견]</span> 에너지 안보 논리 + 영국 정치적 압력 → REF 채택 가능성 ↑
+</div>
+</div>
+
+<!-- 우측: US HEV 회귀 -->
+<div class="cb">
+<h3>🇺🇸 US — HEV 회귀 가속 (S&P Global 2026.04)</h3>
+<div style="font-size:.78rem;color:var(--td);line-height:1.8;margin-bottom:14px">
+미국 시장은 BEV 성장 둔화 + <b style="color:var(--am)">HEV 모델 확대</b> 추세. 한국 OEM HEV 비중 급증.
+</div>
+<table class="dt">
+<thead><tr><th>항목</th><th>2025.3</th><th>2026.3</th><th>변화</th></tr></thead>
+<tbody>
+<tr><td style="color:var(--td)">미국 HEV 모델 수</td><td>41개</td><td>45개</td><td style="color:var(--gn)">+4개</td></tr>
+<tr style="border-top:1px solid var(--bd)"><td colspan="4" style="color:var(--tm);font-size:.68rem;padding-top:8px">🇰🇷 <b>한국 OEM HEV 확대</b></td></tr>
+<tr><td style="color:var(--td)">현대 팰리세이드 HEV</td><td colspan="2" style="text-align:center">전체 판매의 9.3%</td><td style="color:var(--am)">신규</td></tr>
+<tr><td style="color:var(--td)">기아 텔루라이드 HEV</td><td colspan="2" style="text-align:center">전체 판매의 22%</td><td style="color:var(--am)">급증</td></tr>
+<tr><td style="color:var(--td)">기아 HEV 라인업</td><td>4개</td><td>8개</td><td style="color:var(--gn)">+4 (CEO NDR)</td></tr>
+</tbody>
+</table>
+<div style="margin-top:14px;padding:10px 12px;background:rgba(239,68,68,.06);border-radius:6px;font-size:.72rem;color:var(--td);line-height:1.7">
+<b style="color:var(--rd)">미국 BEV 판매 추세</b><br>
+26.04 BEV 64,517대 (YoY <span class="dn">-33.0%</span>) · Tesla 23,400대 (<span class="dn">-42%</span>)<br>
+PHEV 18,309대 (YoY <span class="up">+44.1%</span>) → BEV→PHEV·HEV 전환 시그널<br>
+<span style="color:var(--am)">[개인 의견]</span> 한국 OEM 미국 HEV 비중 확대 = 셀사 미국 EV 수요 하방 리스크
+</div>
+</div>
+</div>
+
+<!-- 결론: 디버전스 시그널 -->
+<div class="cb f" style="border-left:3px solid var(--pp)">
+<h3 style="color:var(--pp)">📊 디버전스 시그널 — 한국 밸류체인 영향</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;font-size:.76rem;color:var(--td);line-height:1.8">
+<div>
+<div style="font-size:.72rem;font-weight:700;color:var(--ac);margin-bottom:6px;letter-spacing:.5px">🇪🇺 유럽 시나리오</div>
+<b>LGES</b> — 폴란드 115GWh, REF 시 최대 수혜 / LOW 시 가동률 45%<br>
+<b>SK온</b> — 헝가리 2개 거점, COM/LOW 시 가장 취약<br>
+<b>삼성SDI</b> — 헝가리 거점, 보고서 직접 언급 X [미확인]<br>
+<b>엘앤에프·에코프로비엠</b> — 폴란드 양극재 45% → 진출 압력<br>
+<b>솔브레인HD</b> — SDI 헝가리 의존, COM/LOW 시 TAM -15%~-35% [추정]
+</div>
+<div>
+<div style="font-size:.72rem;font-weight:700;color:var(--rd);margin-bottom:6px;letter-spacing:.5px">🇺🇸 미국 HEV 전환</div>
+<b>현대기아</b> — HEV 라인업 4→8개, 배터리 수요 분산<br>
+<b>LGES·SK온</b> — 미국 EV 출하 -33% YoY, IRA AMPC 수혜 둔화 우려<br>
+<b>Panasonic</b> — Tesla 의존도 ↑, 미국 MS 40% 유지 but 볼륨 ↓<br>
+<b>삼아알미늄</b> — HEV 알루미늄 수요는 유지, EV 전환 속도 지연 반영<br>
+<span style="color:var(--am)">→ EU는 정책, US는 시장이 드라이버. 양 지역 동시 하방 시나리오 대비 필요</span>
+</div>
+</div>
+</div>
+`;
 }
 
 init();

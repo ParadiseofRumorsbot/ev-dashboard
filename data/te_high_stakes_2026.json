@@ -1,0 +1,305 @@
+{
+  "metadata": {
+    "report_title": "High stakes: how much EV investment is at risk across Europe",
+    "publisher": "Transport & Environment (T&E)",
+    "published": "2026-05-12",
+    "lead_author": "Julia Poliscanova",
+    "lead_analyst": "Luca Poggi",
+    "geographic_scope": "EU27 + UK + Serbia",
+    "source": "Image table cross-verified against full report body (100% match)",
+    "extraction_date": "2026-05-19",
+    "scenario_definitions": {
+      "REF": "Current EU CO2 standards (2030 -55%, 2035 -100%)",
+      "EU": "Commission proposal (2030 3-year averaging, 2035 -90%)",
+      "LOW": "Industry proposal (2030 5-year averaging, 2035 -80%)",
+      "REG+": "REF + EU local content rules (battery value chain only)"
+    },
+    "unit_notes": {
+      "BEV_production": "million units (unless specified as thousand)",
+      "battery_nameplate": "GWh",
+      "GVA_revenue": "billion EUR",
+      "CAM_pCAM_lithium": "thousand tonnes (kt)",
+      "revenue_change": "% cumulative over 10 years (2026-2035)",
+      "cumulative_loss": "billion EUR (cumulative 2026-2035 vs REF)"
+    }
+  },
+
+  "eu_aggregate": {
+    "BEV_production_M": {
+      "2025": null,
+      "2030_REF": 7.4,
+      "2030_EU": 5.7,
+      "2030_LOW": 3.7,
+      "2035_REF": 14.6,
+      "2035_EU": 10.1,
+      "2035_LOW": 7.3
+    },
+    "battery_nameplate_GWh": {
+      "2025": null,
+      "2030_REF": 1445.0,
+      "2030_EU": 632.0,
+      "2030_LOW": 421.0,
+      "2035_REF": null,
+      "2035_EU": null,
+      "2035_LOW": null
+    },
+    "automotive_GVA_EURbn": {
+      "2025": 345.0,
+      "2035_REF": 380.0,
+      "2035_EU": 339.0,
+      "2035_LOW": 319.0
+    }
+  },
+
+  "countries": {
+    "Germany": {
+      "BEV_production_M": {
+        "2025": 1.2,
+        "2035_REF": 5.4
+      },
+      "battery_nameplate_GWh": {
+        "2025": 36.0,
+        "2030_REF": 125.0
+      },
+      "automotive_industry_value_EURbn": {
+        "2035_REF": 135.0
+      },
+      "revenue_change_10yr_pct": {
+        "2035_REF": 0.0,
+        "2035_EU": -10.0,
+        "2035_LOW": -25.0
+      },
+      "LOW_cumulative_loss_EURbn": -283.0
+    },
+
+    "France": {
+      "BEV_production_M": {
+        "2025": 0.3,
+        "2035_REF": 1.0
+      },
+      "battery_nameplate_GWh": {
+        "2025": 4.0,
+        "2030_REF": 187.0
+      },
+      "emotor_production_M_2035_REF": 4.4,
+      "transmission_production_M_2035_REF": 3.8,
+      "revenue_change_10yr_pct": {
+        "2035_REF": 4.0,
+        "2035_EU": -5.0,
+        "2035_LOW": -12.0
+      },
+      "LOW_cumulative_loss_EURbn": -43.0
+    },
+
+    "Spain": {
+      "battery_nameplate_GWh": {
+        "2025": 2.0,
+        "2030_REF": 228.0,
+        "2030_LOW": 82.0
+      },
+      "revenue_growth_10yr_pct": {
+        "2035_REF": 10.0,
+        "2035_EU": 5.0,
+        "2035_LOW": 0.0
+      }
+    },
+
+    "Poland": {
+      "automotive_industry_value_EURbn": {
+        "2025": 9.5,
+        "2035_REF": 11.4
+      },
+      "BEV_production_K": {
+        "2035_REF": 334.0
+      },
+      "battery_nameplate_GWh": {
+        "2025": 115.0
+      },
+      "revenue_change_10yr_pct": {
+        "2035_REF": 19.0,
+        "2035_EU": 3.0,
+        "2035_LOW": -12.0
+      },
+      "LOW_cumulative_loss_EURbn": -16.0,
+      "EU_cathode_share_2035_pct": 45.0
+    },
+
+    "Italy": {
+      "vehicle_production_K": {
+        "2025": 230.0,
+        "2035_REF": 412.0,
+        "2035_LOW": 350.0
+      },
+      "automotive_industry_value_EURbn": {
+        "2025": 7.5
+      },
+      "revenue_change_10yr_pct": {
+        "2035_REF": 109.0
+      },
+      "LOW_cumulative_loss_EURbn": -24.0,
+      "components_industry_value_2023_EURbn": 50.0
+    },
+
+    "UK": {
+      "BEV_production_M": {
+        "2035_REF": 1.3
+      },
+      "battery_operating_GWh_2025": 15.8,
+      "battery_planned_additional_GWh": 120.0,
+      "CAM_pCAM_kt_2030_REF": 60.0,
+      "lithium_refining_kt_2030_REF": 65.0,
+      "revenue_change_10yr_pct": {
+        "2035_REF": 85.0,
+        "2035_LOW": 4.0
+      },
+      "LOW_cumulative_loss_EURbn": -100.0
+    }
+  },
+
+  "derived_metrics": {
+    "sensitivity_ranking": {
+      "description": "Revenue change gap between REF and LOW scenarios (percentage points)",
+      "ranking": [
+        {"country": "UK", "REF_pct": 85.0, "LOW_pct": 4.0, "gap_pp": 81.0, "interpretation": "Most policy-sensitive"},
+        {"country": "Germany", "REF_pct": 0.0, "LOW_pct": -25.0, "gap_pp": 25.0},
+        {"country": "Poland", "REF_pct": 19.0, "LOW_pct": -12.0, "gap_pp": 31.0},
+        {"country": "France", "REF_pct": 4.0, "LOW_pct": -12.0, "gap_pp": 16.0},
+        {"country": "Spain", "REF_pct": 10.0, "LOW_pct": 0.0, "gap_pp": 10.0, "interpretation": "Least sensitive (low base + new entry effect)"},
+        {"country": "Italy", "REF_pct": 109.0, "LOW_pct": null, "gap_pp": null, "note": "LOW % not specified in report; loss=-€24bn"}
+      ]
+    },
+    "absolute_loss_ranking_EURbn": [
+      {"country": "Germany", "loss": -283.0},
+      {"country": "UK", "loss": -100.0},
+      {"country": "France", "loss": -43.0},
+      {"country": "Italy", "loss": -24.0},
+      {"country": "Poland", "loss": -16.0}
+    ],
+    "battery_capa_mismatch": {
+      "description": "2025 BEV production vs 2025 battery CAPA (role differentiation)",
+      "data": [
+        {"country": "Germany", "BEV_M": 1.2, "CAPA_GWh": 36, "role": "Assembly hub (battery-short)"},
+        {"country": "Poland", "BEV_M": null, "CAPA_GWh": 115, "role": "Battery hub (export-oriented)"},
+        {"country": "France", "BEV_M": 0.3, "CAPA_GWh": 4, "role": "Both underdeveloped"},
+        {"country": "Spain", "BEV_M": null, "CAPA_GWh": 2, "role": "Battery hub candidate (228 GWh planned)"},
+        {"country": "UK", "BEV_M": null, "CAPA_GWh": 15.8, "role": "Balanced (CAPA-short, demand-strong)"},
+        {"country": "Italy", "BEV_M": null, "CAPA_GWh": null, "vehicle_K": 230, "role": "Tier-2 components (€50bn)"}
+      ]
+    },
+    "capa_expansion_multiples": {
+      "description": "Planned 2030 CAPA / Current 2025 CAPA (execution risk indicator)",
+      "data": [
+        {"country": "Spain", "multiple": 114.0, "risk": "Highest (98% unrealized)"},
+        {"country": "France", "multiple": 46.8, "risk": "Very high (96% unrealized)"},
+        {"country": "UK", "multiple": 7.6, "risk": "Medium-high (Tata/JLR + WMG medium-to-high risk)"},
+        {"country": "Germany", "multiple": 3.5, "risk": "Medium"},
+        {"country": "Poland", "multiple": 1.0, "risk": "Low (mostly operational)"}
+      ]
+    },
+    "scenario_sensitivity_matrix": {
+      "description": "X=sensitivity gap (pp), Y=absolute loss (EURbn), quadrant classification",
+      "high_sensitivity_large_scale": ["UK", "Germany"],
+      "high_sensitivity_medium_scale": ["Italy"],
+      "low_sensitivity_large_scale": ["Spain"],
+      "low_sensitivity_medium_scale": ["Poland", "France"]
+    }
+  },
+
+  "battery_chain_eu_aggregate": {
+    "battery_cells_2030_GWh": {
+      "REF_nameplate": 1445,
+      "REF_actual_production": 820,
+      "EU_nameplate": 632,
+      "LOW_nameplate": 421,
+      "northvolt_equivalent_loss_EU": 21,
+      "northvolt_equivalent_loss_LOW": 34
+    },
+    "CAM_pCAM_2030_kt": {
+      "REF": 1640,
+      "EU": 1000,
+      "LOW": 300,
+      "demand_coverage_REF_pct": 67,
+      "demand_coverage_LOW_pct": 12
+    },
+    "lithium_refining_2030_kt_LCE": {
+      "current_2026": 24,
+      "REF_addition": 149,
+      "REF_total": 194,
+      "demand_2030_estimate": 310,
+      "REF_coverage_pct": 58
+    },
+    "battery_dependency_pct": {
+      "REG_plus": 7,
+      "EU_proposal": 49,
+      "LOW": 63,
+      "current_oil_dependency": 96
+    }
+  },
+
+  "korea_implications": {
+    "cell_makers_EU_exposure": {
+      "LGES": {
+        "main_site": "Wroclaw, Poland",
+        "CAPA_GWh": 115,
+        "share_of_2025_EU_total": "~38%",
+        "scenario_impact": "Most stable under REF; utilization pressure under EU/LOW",
+        "note": "Single-site concentration risk + opportunity"
+      },
+      "Samsung_SDI": {
+        "main_site": "Goed, Hungary",
+        "report_coverage": "Not directly mentioned (Hungary excluded from country deep-dives)",
+        "estimated_EU_capa_GWh": "~40 [estimated]",
+        "scenario_impact": "Indirect via EU aggregate; VW LFP scenario separate driver"
+      },
+      "SK_on": {
+        "main_site": "Ivancsa + Komarom, Hungary",
+        "report_coverage": "Not directly mentioned",
+        "scenario_impact": "Most vulnerable to utilization downgrade under EU/LOW"
+      }
+    },
+    "material_makers_priority_targets": {
+      "Poland_cluster": {
+        "rationale": "45% of 2035 EU cathode share concentrated in Poland",
+        "estimated_CAM_capa_kt": 740,
+        "Korea_target_companies": ["엘앤에프", "에코프로비엠", "코스모신소재", "포스코퓨처엠"]
+      },
+      "UK_cluster": {
+        "rationale": "60kt CAM/pCAM + 65kt lithium refining planned",
+        "constraint": "EU-UK TCA must remain intact",
+        "self_sufficiency_estimated_pct": 47
+      },
+      "Hungary_cluster_inference": {
+        "rationale": "Solbrain HD, 동화기업, 엔켐 already supplying SDI/SK-on Hungary",
+        "scenario_sensitivity": "EU/LOW scenarios = direct hit to electrolyte/separator/aluminum foil revenues"
+      }
+    },
+    "TAM_scenarios_for_battery_scenario_html": {
+      "EU_REF": {
+        "EU_BEV_2035_M": 14.6,
+        "EU_battery_2030_GWh": 1445,
+        "implied_Korea_3_utilization_pct": "95-100",
+        "use_case": "Base bull case for EU exposure"
+      },
+      "EU_COM": {
+        "EU_BEV_2035_M": 10.1,
+        "EU_battery_2030_GWh": 632,
+        "implied_Korea_3_utilization_pct": "65-75",
+        "use_case": "Base case (most likely political outcome)"
+      },
+      "EU_LOW": {
+        "EU_BEV_2035_M": 7.3,
+        "EU_battery_2030_GWh": 421,
+        "implied_Korea_3_utilization_pct": "45-55",
+        "use_case": "Bear case scenario"
+      }
+    }
+  },
+
+  "key_quotes_for_weekly_report": {
+    "structural_framing": "Oil = operating cost (burned every trip); batteries = capital cost (mined once, recycled forever)",
+    "material_intensity": "EV battery: 49kg new materials vs HEV: 12,400L fuel over lifetime",
+    "dependency_contrast": "EU oil dependency 96% today vs battery dependency 7% under REG+ scenario",
+    "BEV_collapse": "2030 BEV production halves (7.4M→3.7M) under industry amendments",
+    "investment_risk": "€50bn could be wasted on oil imports if industry amendments adopted"
+  }
+}
