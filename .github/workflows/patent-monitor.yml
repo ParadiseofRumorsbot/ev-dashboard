@@ -1,0 +1,41 @@
+name: 🔬 Weekly Battery Patent Monitor
+
+on:
+  schedule:
+    # 매주 월요일 23:00 UTC = KST 08:00
+    - cron: '0 23 * * 0'
+  workflow_dispatch:
+    # 수동 실행 가능
+
+jobs:
+  patent-monitor:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch battery patent news
+        run: node scripts/patent-monitor.js
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet data/weekly_patents.json 2>/dev/null && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "patent-monitor-bot"
+          git config user.email "patent-bot@users.noreply.github.com"
+          git add data/weekly_patents.json
+          git commit -m "🔬 Battery patent update $(date +%Y-%m-%d)"
+          git pull --rebase origin main
+          git push

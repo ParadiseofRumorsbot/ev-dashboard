@@ -769,6 +769,38 @@ main{max-width:1080px;margin:0 auto;padding:20px 16px 60px}
     </nav>
   </header>
 
+  <!-- 🔬 배터리 특허 피드: GitHub Actions 매주 월요일 8AM KST 자동 수집 -->
+  <div id="patent-feed-container" style="background:var(--bg-card);border:1px solid var(--line);border-left:3px solid #a78bfa;border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:11px;color:var(--ink-2);line-height:1.7;display:none">
+  <strong style="color:#a78bfa">🔬 배터리·EV 특허 모니터링 · <span id="patent-feed-date">loading...</span></strong>
+  <div id="patent-feed-body" style="margin-top:6px"></div>
+  </div>
+  <script>
+  (function(){
+    fetch('data/weekly_patents.json')
+      .then(r=>{if(!r.ok)throw new Error(r.status);return r.json()})
+      .then(data=>{
+        if(!data.items||!data.items.length||data.type!=='battery_patent_monitor')return;
+        const container=document.getElementById('patent-feed-container');
+        container.style.display='block';
+        document.getElementById('patent-feed-date').textContent=data.weekOf||'';
+        // 기술분류별 그룹핑
+        const byTech={};
+        data.items.forEach(it=>{
+          if(!byTech[it.tech])byTech[it.tech]=[];
+          byTech[it.tech].push(it);
+        });
+        let html='';
+        for(const[tech,items]of Object.entries(byTech)){
+          html+='<div style="margin-top:4px"><span style="color:#a78bfa;font-weight:600">['+tech+']</span> ';
+          html+=items.slice(0,3).map(it=>{
+            return '<span style="color:#6b7a99">['+it.company+']</span> <a href="'+it.link+'" target="_blank" rel="noopener" style="color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--line)">'+it.title.slice(0,65)+(it.title.length>65?'…':'')+'</a>';
+          }).join(' · ')+'</div>';
+        }
+        document.getElementById('patent-feed-body').innerHTML=html;
+      }).catch(()=>{});
+  })();
+  </script>
+
   <section class="guide-card" style="border-left:3px solid #00A878;padding:14px 18px">
     <div style="font-family:var(--mono);font-size:11px;color:var(--ink-2);letter-spacing:.04em;line-height:1.8">
       <strong style="color:#00A878">📝 Update Log · 2026.05.19</strong><br>
