@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-05-20T02:15:32.951Z",
+  "syncedAt": "2026-05-20T08:53:48.826Z",
   "latestDate": "2026-05-19",
   "count": 20,
   "this_week": [
@@ -81,12 +81,12 @@
       "targets": [],
       "date": "2026-05-19",
       "order": 6
-    },
+    }
   ],
   "archive": [
     {
       "title": "무감독 39대 반영",
-      "category": "FSD",
+      "category": "",
       "icon": "🚕",
       "body": "무감독 39대 반영 (5/13): Austin 27 + Dallas 5 + Houston 6+1. 도시별 차트 업데이트",
       "color": "teal",
@@ -129,7 +129,7 @@
       "category": "FSD",
       "icon": "🏁",
       "body": "일일 28.8M · 도시 3.76B · 구독 1.28M",
-      "color": "",
+      "color": "purple",
       "section": "this_week",
       "targets": [
         "robotaxi"
@@ -182,7 +182,7 @@
       "category": "FSD",
       "icon": "🌙",
       "body": "야간 무감독 운행 개시 (5/4, Austin) 반영",
-      "color": "purple",
+      "color": "",
       "section": "update_log",
       "targets": [
         "robotaxi"
