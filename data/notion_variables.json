@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-05-19T19:43:24.348Z",
+  "syncedAt": "2026-05-20T02:15:32.405Z",
   "dbId": "659a8d5a89c344a5b68960fead1cf889",
   "count": 33,
   "variables": [
@@ -9,11 +9,11 @@
       "target": "SDI",
       "region": "us",
       "year": "y27",
-      "value": 30,
+      "value": 28,
       "unit": "GWh",
       "path": "cellMakers[0].essGwh.y27",
-      "source": "260519 콥데이 (L2 7G+L3 12G+L4 10G=29G+여유)",
-      "updatedAt": "2026-05-20"
+      "source": "1Q26 CC",
+      "updatedAt": "2026-05-02"
     },
     {
       "name": "ESS CAPA",
@@ -369,11 +369,11 @@
       "target": "SDI",
       "region": "us",
       "year": "y27",
-      "value": 0.8,
+      "value": 0.7,
       "unit": "%",
       "path": "cellMakers[0].essUtil.y27",
-      "source": "260519 콥데이 (ESS 수주 가속 + L4 1Q27 가동)",
-      "updatedAt": "2026-05-20"
+      "source": "1Q26 CC",
+      "updatedAt": "2026-05-02"
     },
     {
       "name": "EV GWh",
