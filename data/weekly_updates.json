@@ -1,7 +1,7 @@
 {
   "syncedAt": "2026-05-20T02:15:32.951Z",
   "latestDate": "2026-05-19",
-  "count": 25,
+  "count": 20,
   "this_week": [
     {
       "title": "T&E High Stakes 보고서 — EU CO2 시나리오 3종 통합",
@@ -82,71 +82,6 @@
       "date": "2026-05-19",
       "order": 6
     },
-    {
-      "title": "LG엔솔·삼���SDI·SK온 가동률 '뚝'…투자는 온도차 - 데일리한국",
-      "category": "SK온",
-      "icon": "🔋",
-      "body": "LG엔솔·삼���SDI·SK온 가동률 '뚝'…투자는 온도차 - 데일리한국 · 데일리한국",
-      "color": "purple",
-      "section": "update_log",
-      "targets": [
-        "index"
-      ],
-      "date": "2026-05-19",
-      "order": 99
-    },
-    {
-      "title": "[EV캐즘종료] BYD에 밀린 포르쉐, 전기차는 강했다 - v.daum.net",
-      "category": "BYD",
-      "icon": "🇨🇳",
-      "body": "[EV캐즘종료] BYD에 밀린 포르쉐, 전기차는 강했다 - v.daum.net · v.daum.net",
-      "color": "teal",
-      "section": "update_log",
-      "targets": [
-        "index"
-      ],
-      "date": "2026-05-19",
-      "order": 99
-    },
-    {
-      "title": "BYD, 4300km 실주행 검증 돌입 '5분 충전' 배터리 자신감 - 다나와 자동차",
-      "category": "BYD",
-      "icon": "🇨🇳",
-      "body": "BYD, 4300km 실주행 검증 돌입 '5분 충전' 배터리 자신감 - 다나와 자동차 · 다나와 자동차",
-      "color": "teal",
-      "section": "update_log",
-      "targets": [
-        "index"
-      ],
-      "date": "2026-05-19",
-      "order": 99
-    },
-    {
-      "title": "40%대서 80%대로…SK온 헝가리 공장, 유럽 EV 시장 회복 수혜 - 네이트",
-      "category": "SK온",
-      "icon": "🔋",
-      "body": "40%대서 80%대로…SK온 헝가리 공장, 유럽 EV 시장 회복 수혜 - 네이트 · 네이트",
-      "color": "purple",
-      "section": "update_log",
-      "targets": [
-        "index"
-      ],
-      "date": "2026-05-19",
-      "order": 99
-    },
-    {
-      "title": "배터리는 빌리고 차만 산다…전기車 배터리 구독 득일까, 부담일까 - 네이트",
-      "category": "Battery",
-      "icon": "🔋",
-      "body": "배터리는 빌리고 차만 산다…전기車 배터리 구독 득일까, 부담일까 - 네이트 · 네이트",
-      "color": "purple",
-      "section": "update_log",
-      "targets": [
-        "index"
-      ],
-      "date": "2026-05-19",
-      "order": 99
-    }
   ],
   "archive": [
     {
