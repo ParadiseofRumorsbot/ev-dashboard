@@ -63,9 +63,9 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 <p class="subtitle">출처: IEA · SNE Research · WardsAuto · CPCA · Cleantechnica · Benchmark</p>
 <nav style="display:flex;gap:10px;margin-bottom:20px;font-size:12px"><a href="index.html" style="color:#4ecdc4;text-decoration:none;padding:4px 10px;border-radius:6px;background:#1e293b">EV 판매</a><a href="robotaxi.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">FSD·로보택시</a><a href="us-import.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">US 수입</a><a href="Battery_bom_routing.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">ESS BOM</a><a href="battery_scenario.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">Battery Scenario</a><a href="2차전지_컨콜정리.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">컨콜 정리</a><a href="global_battery_map.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">🗺️ 배터리 맵</a></nav>
 
-<!-- Daily News Feed: GitHub Actions 자동 수집 -->
+<!-- EV 신차 출시일정 피드: GitHub Actions 매일 8AM KST 자동 수집 -->
 <div id="news-feed-container" style="background:#0a0f1a;border:1px solid #2d3a52;border-left:3px solid #ffd93d;border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:11px;color:#94a3c0;line-height:1.7;display:none">
-<strong style="color:#ffd93d">📰 Daily EV News · <span id="news-feed-date">loading...</span></strong>
+<strong style="color:#ffd93d">🚗 신차 출시일정 모니터링 · <span id="news-feed-date">loading...</span></strong>
 <div id="news-feed-body" style="margin-top:6px"></div>
 </div>
 <script>
@@ -73,17 +73,15 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
   fetch('data/daily_news.json')
     .then(r=>{if(!r.ok)throw new Error(r.status);return r.json()})
     .then(data=>{
-      if(!data.items||!data.items.length)return;
+      if(!data.items||!data.items.length||data.type!=='ev_launch_timeline')return;
       const container=document.getElementById('news-feed-container');
       container.style.display='block';
       document.getElementById('news-feed-date').textContent=data.date||'';
-      const colorMap={red:'#ff6b6b',blue:'#556dff',teal:'#4ecdc4',purple:'#a78bfa',yellow:'#ffd93d'};
       document.getElementById('news-feed-body').innerHTML=data.items.slice(0,8).map(it=>{
-        const c=colorMap[it.color]||'#94a3c0';
-        return '<span style="color:'+c+'">'+it.icon+'</span> <a href="'+it.link+'" target="_blank" rel="noopener" style="color:#e0e6f0;text-decoration:none;border-bottom:1px dotted #2d3a52">'+it.title.slice(0,60)+(it.title.length>60?'…':'')+'</a> <span style="color:#3a4a6b;font-size:10px">'+it.category+'</span><br>';
+        return '<span style="color:#ffd93d">['+(it.oem||'')+']</span> <a href="'+it.link+'" target="_blank" rel="noopener" style="color:#e0e6f0;text-decoration:none;border-bottom:1px dotted #2d3a52">'+it.title.slice(0,70)+(it.title.length>70?'…':'')+'</a> <span style="color:#3a4a6b;font-size:10px">'+it.market+'</span><br>';
       }).join('');
     })
-    .catch(()=>{/* daily_news.json 없으면 숨김 유지 */});
+    .catch(()=>{});
 })();
 </script>
 

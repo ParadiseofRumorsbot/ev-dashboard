@@ -1,4 +1,4 @@
-name: 📰 Daily EV News Monitor
+name: 🚗 Daily EV Launch Timeline Monitor
 
 on:
   schedule:
@@ -8,7 +8,7 @@ on:
     # 수동 실행 가능
 
 jobs:
-  news-monitor:
+  launch-monitor:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -22,10 +22,7 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Fetch EV news from Google News RSS
-        env:
-          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-          NOTION_UPDATES_DB_ID: ${{ secrets.NOTION_UPDATES_DB_ID }}
+      - name: Fetch EV launch timeline news
         run: node scripts/news-monitor.js
 
       - name: Check for changes
@@ -36,9 +33,9 @@ jobs:
       - name: Commit and push
         if: steps.changes.outputs.changed == 'true'
         run: |
-          git config user.name "news-monitor-bot"
-          git config user.email "news-bot@users.noreply.github.com"
+          git config user.name "launch-monitor-bot"
+          git config user.email "launch-bot@users.noreply.github.com"
           git add data/daily_news.json
-          git commit -m "📰 Daily EV news update $(date +%Y-%m-%d)"
+          git commit -m "🚗 EV launch timeline update $(date +%Y-%m-%d)"
           git pull --rebase origin main
           git push

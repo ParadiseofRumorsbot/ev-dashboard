@@ -1,250 +1,243 @@
 /**
  * news-monitor.js
- * 매일 7AM KST 자동 실행 — EV·배터리 뉴스 모니터링
+ * 매일 8AM KST 자동 실행 — EV 신차 출시일정 모니터링 전용
  *
- * 1) Google News RSS에서 키워드별 뉴스 수집
- * 2) data/daily_news.json에 저장
- * 3) (선택) Notion 주간 업데이트 DB에 주요 항목 등록
+ * 목적: OEM 신차 발표·출시일 변경·스펙 확정 등 타임라인 테이블 반영 항목만 수집
+ * 프로세스: 수집 → data/daily_news.json 저장 → 사용자 확인 후 반영
  *
- * 환경변수:
- *   NOTION_TOKEN        — Notion API 토큰 (선택)
- *   NOTION_UPDATES_DB_ID — 주간 업데이트 DB ID (선택)
- *
- * 의존성: 없음 (Node.js 내장 모듈만 사용)
+ * 환경변수: (없음 — RSS만 사용)
+ * 의존성: 없음 (Node.js 내장 모듈만)
  */
 
 const https = require('https');
 const fs = require('fs');
-const { XMLParser } = (() => {
-  // Minimal RSS XML parser (no dependencies)
-  class XMLParser {
-    parse(xml) {
-      const items = [];
-      const itemRegex = /<item>([\s\S]*?)<\/item>/g;
-      let match;
-      while ((match = itemRegex.exec(xml)) !== null) {
-        const block = match[1];
-        const get = tag => {
-          const m = block.match(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`));
-          return m ? m[1].replace(/<!\[CDATA\[|\]\]>/g, '').trim() : '';
-        };
-        items.push({
-          title: get('title'),
-          link: get('link'),
-          pubDate: get('pubDate'),
-          source: get('source'),
-        });
-      }
-      return items;
-    }
-  }
-  return { XMLParser };
-})();
 
-// ── 설정 ──
+// ── 신차 출시일정 전용 키워드 ──
 const KEYWORDS = [
+  // 출시·발표 키워드
+  'EV launch date 2026 2027 2028',
+  'electric vehicle reveal debut 2026',
+  'new EV model release date',
+  // OEM별 (한국)
+  'Hyundai IONIQ EV new model launch',
+  'Kia EV launch 2026 2027',
+  'Genesis electric vehicle launch',
+  // OEM별 (글로벌)
+  'Tesla new model launch date',
+  'BMW electric vehicle launch 2026',
+  'Mercedes EQ EV launch date',
+  'VW Volkswagen electric vehicle launch',
+  'Volvo EX electric launch',
+  'Rivian R2 R3 launch production',
+  'Ford electric vehicle launch date',
+  'GM Chevrolet electric vehicle launch',
+  'Nissan Honda EV launch 2026',
+  // 유럽
+  'Porsche electric vehicle launch',
+  'Stellantis EV launch date',
+  'Skoda electric vehicle launch',
+  // 배터리 스펙
+  'EV battery kWh 800V new model specs',
   // 한국어
-  '전기차 배터리',
-  'LGES 엘지에너지솔루션',
-  '삼성SDI',
-  'SK온 배터리',
-  // 영어
-  'EV battery market',
-  'Tesla EV sales',
-  'CATL battery',
-  'EU CO2 regulation electric vehicle',
-  'IRA electric vehicle tax credit',
-  'BYD electric vehicle',
-  'Hyundai Kia EV',
+  '전기차 신차 출시일정 2026',
+  '전기차 출시 확정 발표',
+  '현대 기아 전기차 신모델',
 ];
 
-const MAX_ITEMS_PER_KEYWORD = 5;
+const MAX_ITEMS_PER_KEYWORD = 3;
 const MAX_TOTAL = 30;
 const OUTPUT_PATH = 'data/daily_news.json';
 
-// ── Google News RSS 가져오기 ──
+// ── 신차 출시 관련성 필터 키워드 ──
+const RELEVANCE_KEYWORDS = [
+  'launch', 'debut', 'reveal', 'unveil', 'production start',
+  'release date', 'on sale', 'deliveries begin', 'first delivery',
+  'new model', 'facelift', 'refresh', 'redesign',
+  'specs', 'range', 'kwh', '800v', 'battery capacity',
+  'price', 'msrp', 'starting at',
+  '출시', '공개', '발표', '양산', '인도', '사전예약',
+  '신차', '신모델', '페이스리프트', '항속거리', '배터리 용량',
+  'q1', 'q2', 'q3', 'q4', 'first half', 'second half',
+  '상반기', '하반기',
+];
+
+// ── 비관련 필터 (제외할 키워드) ──
+const EXCLUDE_KEYWORDS = [
+  'stock price', 'shares', 'earnings', 'revenue', 'profit',
+  'recall', 'accident', 'crash', 'fire', 'lawsuit',
+  '주가', '실적', '매출', '리콜', '사고',
+];
+
+// ── 미니 RSS 파서 ──
+function parseRSS(xml) {
+  const items = [];
+  const itemRegex = /<item>([\s\S]*?)<\/item>/g;
+  let match;
+  while ((match = itemRegex.exec(xml)) !== null) {
+    const block = match[1];
+    const get = tag => {
+      const m = block.match(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`));
+      return m ? m[1].replace(/<!\[CDATA\[|\]\]>/g, '').trim() : '';
+    };
+    items.push({
+      title: stripHtml(get('title')),
+      link: get('link'),
+      pubDate: get('pubDate'),
+      source: stripHtml(get('source')),
+    });
+  }
+  return items;
+}
+
+function stripHtml(str) {
+  return str.replace(/<[^>]*>/g, '')
+    .replace(/&amp;/g, '&').replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'");
+}
+
+// ── Google News RSS fetch ──
 function fetchRSS(keyword) {
   return new Promise((resolve, reject) => {
     const encoded = encodeURIComponent(keyword);
-    const url = `https://news.google.com/rss/search?q=${encoded}&hl=ko&gl=KR&ceid=KR:ko`;
-
-    https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0 ev-dashboard-bot' } }, res => {
-      if (res.statusCode === 301 || res.statusCode === 302) {
-        // Follow redirect
-        https.get(res.headers.location, res2 => {
-          let data = '';
-          res2.on('data', c => data += c);
-          res2.on('end', () => resolve(data));
-        }).on('error', reject);
-        return;
-      }
-      let data = '';
-      res.on('data', c => data += c);
-      res.on('end', () => resolve(data));
-    }).on('error', reject);
+    const url = `https://news.google.com/rss/search?q=${encoded}+when:3d&hl=en&gl=US&ceid=US:en`;
+    const doFetch = (fetchUrl) => {
+      https.get(fetchUrl, { headers: { 'User-Agent': 'Mozilla/5.0 ev-dashboard-bot' } }, res => {
+        if (res.statusCode === 301 || res.statusCode === 302) {
+          doFetch(res.headers.location);
+          return;
+        }
+        let data = '';
+        res.on('data', c => data += c);
+        res.on('end', () => resolve(data));
+      }).on('error', reject);
+    };
+    doFetch(url);
   });
 }
 
-// ── HTML 태그 제거 ──
-function stripHtml(str) {
-  return str.replace(/<[^>]*>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'");
+// ── 관련성 점수 계산 ──
+function relevanceScore(title) {
+  const t = title.toLowerCase();
+  // 제외 키워드 체크
+  for (const ex of EXCLUDE_KEYWORDS) {
+    if (t.includes(ex.toLowerCase())) return -1;
+  }
+  // 관련성 점수
+  let score = 0;
+  for (const kw of RELEVANCE_KEYWORDS) {
+    if (t.includes(kw.toLowerCase())) score++;
+  }
+  return score;
 }
 
-// ── 중복 제거 (제목 유사도) ──
+// ── OEM 자동 분류 ──
+function classifyOEM(title) {
+  const t = title.toLowerCase();
+  if (/tesla/.test(t)) return 'Tesla';
+  if (/hyundai|현대/.test(t)) return 'Hyundai';
+  if (/kia|기아/.test(t)) return 'Kia';
+  if (/genesis|제네시스/.test(t)) return 'Genesis';
+  if (/bmw/.test(t)) return 'BMW';
+  if (/mercedes|benz|벤츠/.test(t)) return 'Mercedes';
+  if (/volkswagen|vw/.test(t)) return 'VW';
+  if (/porsche|포르쉐/.test(t)) return 'Porsche';
+  if (/volvo|볼보/.test(t)) return 'Volvo';
+  if (/rivian/.test(t)) return 'Rivian';
+  if (/lucid/.test(t)) return 'Lucid';
+  if (/ford|포드/.test(t)) return 'Ford';
+  if (/gm|chevrolet|cadillac|buick/.test(t)) return 'GM';
+  if (/nissan|닛산/.test(t)) return 'Nissan';
+  if (/honda|혼다/.test(t)) return 'Honda';
+  if (/toyota|lexus|도요타|렉서스/.test(t)) return 'Toyota/Lexus';
+  if (/stellantis|jeep|fiat|peugeot|citroen|opel/.test(t)) return 'Stellantis';
+  if (/skoda|스코다/.test(t)) return 'Skoda';
+  if (/scout/.test(t)) return 'Scout';
+  if (/byd|비야디/.test(t)) return 'BYD';
+  return 'Other';
+}
+
+// ── 시장 분류 ──
+function classifyMarket(title) {
+  const t = title.toLowerCase();
+  if (/europe|eu |uk |germany|france|spain/.test(t)) return 'EU';
+  if (/us |america|north america/.test(t)) return 'NA';
+  if (/china|중국/.test(t)) return 'CN';
+  if (/korea|한국/.test(t)) return 'KR';
+  return 'Global';
+}
+
+// ── 중복 제거 ──
 function dedup(items) {
   const seen = new Set();
   return items.filter(item => {
-    const key = item.title.slice(0, 40).toLowerCase();
+    const key = item.title.slice(0, 50).toLowerCase().replace(/[^a-z0-9가-힣]/g, '');
     if (seen.has(key)) return false;
     seen.add(key);
     return true;
   });
 }
 
-// ── 카테고리 자동 분류 ──
-function categorize(title) {
-  const t = title.toLowerCase();
-  if (/tesla|테슬라/.test(t)) return { category: 'Tesla', icon: '🚗', color: 'red' };
-  if (/lges|lg에너지|엘지에너지|lg energy/.test(t)) return { category: 'LGES', icon: '🔋', color: 'purple' };
-  if (/삼성sdi|samsung sdi/.test(t)) return { category: 'SDI', icon: '🔋', color: 'purple' };
-  if (/sk온|sk on|sk이노/.test(t)) return { category: 'SK온', icon: '🔋', color: 'purple' };
-  if (/catl/.test(t)) return { category: 'CATL', icon: '🇨🇳', color: 'teal' };
-  if (/byd|비야디/.test(t)) return { category: 'BYD', icon: '🇨🇳', color: 'teal' };
-  if (/현대|기아|hyundai|kia|제네시스|genesis/.test(t)) return { category: '현대기아', icon: '🇰🇷', color: 'blue' };
-  if (/eu |유럽|europe/.test(t)) return { category: '유럽', icon: '🇪🇺', color: 'blue' };
-  if (/ira |미국|us |trump|관세|tariff/.test(t)) return { category: '미국', icon: '🇺🇸', color: 'teal' };
-  if (/중국|china|chinese/.test(t)) return { category: '중국', icon: '🇨🇳', color: 'red' };
-  if (/ess|에너지저장|energy storage/.test(t)) return { category: 'ESS', icon: '⚡', color: 'yellow' };
-  if (/배터리|battery|셀|cell/.test(t)) return { category: 'Battery', icon: '🔋', color: 'purple' };
-  return { category: 'EV', icon: '🚗', color: 'teal' };
-}
-
-// ── Notion에 주요 뉴스 등록 (선택) ──
-function notionRequest(path, body) {
-  return new Promise((resolve, reject) => {
-    const NOTION_TOKEN = process.env.NOTION_TOKEN;
-    if (!NOTION_TOKEN) { reject(new Error('No NOTION_TOKEN')); return; }
-    const data = JSON.stringify(body);
-    const options = {
-      hostname: 'api.notion.com',
-      path,
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${NOTION_TOKEN}`,
-        'Content-Type': 'application/json',
-        'Notion-Version': '2022-06-28',
-        'Content-Length': Buffer.byteLength(data),
-      },
-    };
-    const req = https.request(options, res => {
-      let chunks = '';
-      res.on('data', c => chunks += c);
-      res.on('end', () => {
-        if (res.statusCode >= 400) reject(new Error(`Notion ${res.statusCode}: ${chunks}`));
-        else resolve(JSON.parse(chunks));
-      });
-    });
-    req.on('error', reject);
-    req.end(data);
-  });
-}
-
-async function postToNotion(items) {
-  const DB_ID = process.env.NOTION_UPDATES_DB_ID;
-  if (!DB_ID || !process.env.NOTION_TOKEN) {
-    console.log('ℹ️  Notion 토큰 미설정 — DB 등록 건너뜀');
-    return;
-  }
-
-  // 상위 5개만 Notion에 등록
-  const top5 = items.slice(0, 5);
-  const today = new Date().toISOString().split('T')[0];
-
-  for (const item of top5) {
-    const cat = categorize(item.title);
-    try {
-      await notionRequest('/v1/pages', {
-        parent: { database_id: DB_ID },
-        properties: {
-          '제목': { title: [{ text: { content: stripHtml(item.title).slice(0, 100) } }] },
-          '카테고리': { select: { name: cat.category } },
-          '아이콘': { rich_text: [{ text: { content: cat.icon } }] },
-          '본문': { rich_text: [{ text: { content: `${stripHtml(item.title)} · ${item.source || 'Google News'}` } }] },
-          '색상': { select: { name: cat.color } },
-          '섹션': { select: { name: 'update_log' } },
-          '대상': { multi_select: [{ name: 'index' }] },
-          '날짜': { date: { start: today } },
-          '순서': { number: 99 },  // 뉴스봇은 낮은 우선순위
-        },
-      });
-      console.log(`  ✅ Notion 등록: ${stripHtml(item.title).slice(0, 50)}`);
-    } catch (e) {
-      console.log(`  ⚠️ Notion 등록 실패: ${e.message.slice(0, 80)}`);
-    }
-  }
-}
-
 // ── 메인 ──
 async function main() {
-  console.log(`\n📰 EV 뉴스 모니터링 시작 — ${new Date().toISOString()}\n`);
+  console.log(`\n🚗 EV 신차 출시일정 모니터링 — ${new Date().toISOString()}\n`);
 
-  const parser = new XMLParser();
   let allItems = [];
 
   for (const kw of KEYWORDS) {
     try {
-      console.log(`🔍 "${kw}" 검색 중...`);
+      process.stdout.write(`  🔍 "${kw.slice(0, 40)}..." `);
       const xml = await fetchRSS(kw);
-      const items = parser.parse(xml).slice(0, MAX_ITEMS_PER_KEYWORD);
-      console.log(`   → ${items.length}건 수집`);
-      allItems.push(...items.map(it => ({
+      const items = parseRSS(xml).slice(0, MAX_ITEMS_PER_KEYWORD);
+      // 관련성 필터
+      const relevant = items.filter(it => relevanceScore(it.title) > 0);
+      console.log(`${items.length}건 → ${relevant.length}건 관련`);
+      allItems.push(...relevant.map(it => ({
         ...it,
-        title: stripHtml(it.title),
         keyword: kw,
-        ...categorize(it.title),
+        oem: classifyOEM(it.title),
+        market: classifyMarket(it.title),
+        score: relevanceScore(it.title),
       })));
     } catch (e) {
-      console.log(`   ⚠️ "${kw}" 실패: ${e.message}`);
+      console.log(`⚠️ 실패: ${e.message.slice(0, 50)}`);
     }
   }
 
-  // 중복 제거 + 최신순 정렬 + 상한
+  // 중복 제거 + 관련성 높은 순 + 상한
   allItems = dedup(allItems)
-    .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate))
+    .sort((a, b) => b.score - a.score)
     .slice(0, MAX_TOTAL);
 
-  console.log(`\n📊 총 ${allItems.length}건 수집 완료`);
+  // OEM별 통계
+  const oemStats = {};
+  allItems.forEach(it => { oemStats[it.oem] = (oemStats[it.oem] || 0) + 1; });
 
-  // 카테고리별 통계
-  const stats = {};
-  allItems.forEach(it => { stats[it.category] = (stats[it.category] || 0) + 1; });
-  console.log('📈 카테고리:', JSON.stringify(stats));
+  console.log(`\n📊 총 ${allItems.length}건 수집`);
+  console.log('🏭 OEM:', JSON.stringify(oemStats));
 
   // JSON 저장
   const output = {
+    type: 'ev_launch_timeline',
     lastUpdated: new Date().toISOString(),
     date: new Date().toISOString().split('T')[0],
+    description: 'EV 신차 출시일정 모니터링 — 타임라인 테이블 반영용',
+    note: '⚠️ 자동 수집 결과입니다. 대시보드 반영 전 사용자 확인 필요.',
     totalItems: allItems.length,
-    categoryStats: stats,
+    oemStats,
     items: allItems.map(it => ({
       title: it.title,
       link: it.link,
       pubDate: it.pubDate,
       source: it.source,
-      category: it.category,
-      icon: it.icon,
-      color: it.color,
-      keyword: it.keyword,
+      oem: it.oem,
+      market: it.market,
+      score: it.score,
     })),
   };
 
   fs.writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2), 'utf-8');
-  console.log(`\n💾 ${OUTPUT_PATH} 저장 완료`);
-
-  // Notion 등록 (선택)
-  await postToNotion(allItems);
-
-  console.log('\n✅ 뉴스 모니터링 완료\n');
+  console.log(`💾 ${OUTPUT_PATH} 저장`);
+  console.log('\n✅ 완료 — 사용자 확인 대기\n');
 }
 
 main().catch(e => { console.error('❌ 실패:', e.message); process.exit(1); });
