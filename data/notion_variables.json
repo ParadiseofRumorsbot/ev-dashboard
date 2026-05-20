@@ -9,11 +9,11 @@
       "target": "SDI",
       "region": "us",
       "year": "y27",
-      "value": 28,
+      "value": 30,
       "unit": "GWh",
       "path": "cellMakers[0].essGwh.y27",
-      "source": "1Q26 CC",
-      "updatedAt": "2026-05-02"
+      "source": "260515 콥데이 (L2 7G+L3 12G+L4 10G=29G+여유)",
+      "updatedAt": "2026-05-20"
     },
     {
       "name": "ESS CAPA",
@@ -369,11 +369,11 @@
       "target": "SDI",
       "region": "us",
       "year": "y27",
-      "value": 0.7,
+      "value": 0.8,
       "unit": "%",
       "path": "cellMakers[0].essUtil.y27",
-      "source": "1Q26 CC",
-      "updatedAt": "2026-05-02"
+      "source": "260515 콥데이 (ESS 수주 가속 + L4 1Q27 가동)",
+      "updatedAt": "2026-05-20"
     },
     {
       "name": "EV GWh",
