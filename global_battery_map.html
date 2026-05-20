@@ -127,6 +127,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 </div>
 <div class="live-badge">LIVE · Q2 2026</div>
 </div>
+<!-- Update Log -->
+<div style="background:#1a1510;border:1px solid #3d3428;border-left:3px solid #c6973b;border-radius:6px;padding:12px 16px;margin:12px 16px 0;font-size:10px;color:#8a7e6e;line-height:1.8;font-family:monospace">
+<strong style="color:#c6973b">📝 Update Log · 2026.05.20</strong><br>
+• <strong style="color:#d4c5a9">Kokomo(삼성SDI) 라인별 상세 반영</strong> — L1~L4 케미스트리·용도·가동시점 (260519 콥데이 기준)<br>
+• <strong style="color:#d4c5a9">GM JV(New Carlisle) cancelled 처리</strong> — status suspended → cancelled, 2028 CAPA 27G → 0
+</div>
 <!-- KPI -->
 <div class="kpi-row" id="kpiRow"></div>
 <!-- FILTERS -->
@@ -212,8 +218,8 @@ const FAC_STATES=new Set();
 
 const D=[
 // CELL (ev-dashboard CELL3_CAPA 100%)
-{co:"삼성SDI",id:"Kokomo_IN",cat:"cell",city:"Kokomo",st:"IN",lat:40.49,lon:-86.13,unit:"GWh",status:"ramping",app:"EV+ESS",cust:"Stellantis,유틸리티",sop:"2H24",alloc:{Stellantis:29},r:{2026:27,2027:29,2028:29},note:"L1 NCA EV 8G(3Q26 종료) / L2 NCA ESS 7G(가동중) / L3 LFP ESS 12G(4Q26) / L4 LFP ESS 10G(1Q27). 260515 콥데이 기준"},
-{co:"삼성SDI",id:"NewCarlisle_GM",cat:"cell",city:"New Carlisle",st:"IN",lat:41.72,lon:-86.51,unit:"GWh",status:"cancelled",app:"EV",cust:"GM JV",sop:"N/A",alloc:{GM:0},r:{2026:0,2027:0,2028:0},note:"⚠ JV 중단 확정(260517). 5.2조원 규모. 260515 콥데이 '논의 중이나 정보 극히 제한적' → 260517 중단 보도"},
+{co:"삼성SDI",id:"Kokomo_IN",cat:"cell",city:"Kokomo",st:"IN",lat:40.49,lon:-86.13,unit:"GWh",status:"ramping",app:"EV+ESS",cust:"Stellantis,유틸리티",sop:"2H24",alloc:{Stellantis:29},r:{2026:27,2027:29,2028:29},note:"L1 NCA EV 8G(3Q26 종료) / L2 NCA ESS 7G(가동중) / L3 LFP ESS 12G(4Q26) / L4 LFP ESS 10G(1Q27). 260519 콥데이 기준"},
+{co:"삼성SDI",id:"NewCarlisle_GM",cat:"cell",city:"New Carlisle",st:"IN",lat:41.72,lon:-86.51,unit:"GWh",status:"cancelled",app:"EV",cust:"GM JV",sop:"N/A",alloc:{GM:0},r:{2026:0,2027:0,2028:0},note:"⚠ JV 중단 확정(260517). 5.2조원 규모. 260519 콥데이 '논의 중이나 정보 극히 제한적' → 260517 중단 보도"},
 {co:"LG에너지솔루션",id:"Holland_MI",cat:"cell",city:"Holland",st:"MI",lat:42.79,lon:-86.11,unit:"GWh",status:"operational",app:"EV+ESS",cust:"GM(Ultium),ESS(유틸리티)",sop:"2022",alloc:{GM:5,ESS:17},r:{2026:22,2027:22,2028:22},note:"EV5+ESS17. Tesla ESS LFP는 2027년~(6조원 계약, 2025.7 체결). 현재 Tesla ESS 셀은 CATL 공급"},
 {co:"LG에너지솔루션",id:"Michigan_2_3",cat:"cell",city:"Lansing",st:"MI",lat:42.73,lon:-84.56,unit:"GWh",status:"ramping",app:"ESS",cust:"Tesla(2027~),Toyota",sop:"1H26",alloc:{Tesla:16.5},r:{2026:16.5,2027:80,2028:80},note:"Mich2+Mich3. Tesla LFP ESS 납품 2027년 시작(6조원). 현재 ramp-up 중. Toyota향 병행"},
 {co:"LG에너지솔루션",id:"Ohio_GM",cat:"cell",city:"Warren",st:"OH",lat:41.24,lon:-80.77,unit:"GWh",status:"operational",app:"EV+ESS",cust:"GM Ultium",sop:"2022",alloc:{GM:30},r:{2026:30,2027:30,2028:30},note:"EV20+ESS10 (ev-dashboard)"},
