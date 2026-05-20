@@ -228,7 +228,7 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 <span><i style="background:#4ecdc4"></i>미국</span>
 <span><i style="background:#556dff"></i>유럽</span>
 </div>
-<div class="chart-wrap sm"><canvas id="c2"></canvas></div>
+<div class="chart-wrap"><canvas id="c2"></canvas></div>
 </div>
 <div class="chart-section">
 <h2>지역별 글로벌 점유율 (%)</h2>
@@ -908,11 +908,11 @@ new Chart(document.getElementById('c1'),{type:'bar',data:{labels:yrs,datasets:[
 ]},options:{...defOpt,scales:{...defOpt.scales,x:{...defOpt.scales.x,stacked:true},y:{...defOpt.scales.y,stacked:true,title:{display:true,text:'만대',color:tickColor}}}}});
 
 new Chart(document.getElementById('c2'),{type:'line',data:{labels:yrs,datasets:[
-{label:'글로벌',data:[76.5,1.5,42.8,122.2,54.5,34.3,27.7,21.0,null],borderColor:'#a78bfa',borderWidth:2.5,tension:.3,pointRadius:3},
-{label:'중국',data:[87.9,-2.8,7.5,185.1,81.5,37.3,39.5,14.2,null],borderColor:'#ff6b6b',borderWidth:1.5,tension:.3,pointRadius:2,borderDash:[5,3]},
-{label:'미국',data:[85.6,-9.7,-9.5,114.3,57.1,40.4,9.4,-14.5,null],borderColor:'#4ecdc4',borderWidth:1.5,tension:.3,pointRadius:2,borderDash:[5,3]},
-{label:'유럽',data:[21.9,46.2,142.1,66.7,13.0,23.1,-0.6,25.8,null],borderColor:'#556dff',borderWidth:1.5,tension:.3,pointRadius:2,borderDash:[5,3]}
-]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'YoY %',color:tickColor}}}}});
+{label:'글로벌',data:[76.5,1.5,42.8,122.2,54.5,34.3,27.7,21.0,null],borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,0.08)',fill:true,borderWidth:2.5,tension:.35,pointRadius:3,pointHoverRadius:6},
+{label:'중국',data:[87.9,-2.8,7.5,185.1,81.5,37.3,39.5,14.2,null],borderColor:'#ff6b6b',borderWidth:2,tension:.35,pointRadius:0,pointHoverRadius:5,borderDash:[6,3]},
+{label:'미국',data:[85.6,-9.7,-9.5,114.3,57.1,40.4,9.4,-14.5,null],borderColor:'#4ecdc4',borderWidth:2,tension:.35,pointRadius:0,pointHoverRadius:5,borderDash:[6,3]},
+{label:'유럽',data:[21.9,46.2,142.1,66.7,13.0,23.1,-0.6,25.8,null],borderColor:'#556dff',borderWidth:2,tension:.35,pointRadius:0,pointHoverRadius:5,borderDash:[6,3]}
+]},options:{...defOpt,interaction:{mode:'index',intersect:false},plugins:{...defOpt.plugins,datalabels:{display:false},tooltip:{...defOpt.plugins.tooltip,mode:'index',intersect:false}},scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'YoY %',color:tickColor}}}}});
 
 new Chart(document.getElementById('c3'),{type:'line',data:{labels:yrs,datasets:[
 {label:'중국',data:[53.2,51.0,38.4,49.2,57.8,59.1,64.6,62.3,null],borderColor:'#ff6b6b',backgroundColor:'rgba(255,107,107,0.1)',fill:true,borderWidth:2,tension:.3,pointRadius:3},
@@ -1018,7 +1018,7 @@ new Chart(document.getElementById('cBubble'),{type:'bubble',data:{datasets:bubbl
 
 // 버블 차트 위에 국가명 라벨 표시
 const bubbleChart=Chart.getChart('cBubble');
-const labelPlugin={id:'bubbleLabels',afterDraw(chart){const ctx=chart.ctx;ctx.save();chart.data.datasets.forEach((ds,i)=>{const meta=chart.getDatasetMeta(i);meta.data.forEach(pt=>{ctx.fillStyle='#e0e6f0';ctx.font='10px Noto Sans KR';ctx.textAlign='center';ctx.fillText(ds.label,pt.x,pt.y-pt.options.radius-4);});});ctx.restore();}};
+const labelPlugin={id:'bubbleLabels',afterDraw(chart){if(chart.canvas.id!=='cBubble')return;const ctx=chart.ctx;ctx.save();chart.data.datasets.forEach((ds,i)=>{const meta=chart.getDatasetMeta(i);meta.data.forEach(pt=>{ctx.fillStyle='#e0e6f0';ctx.font='10px Noto Sans KR';ctx.textAlign='center';ctx.fillText(ds.label,pt.x,pt.y-pt.options.radius-4);});});ctx.restore();}};
 if(bubbleChart){bubbleChart.options.plugins.bubbleLabels=true;Chart.register(labelPlugin);bubbleChart.update();}
 })();
 
