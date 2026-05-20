@@ -97,7 +97,7 @@ async function main() {
       date:     getDate(p['날짜']),
       order:    getNumber(p['순서']),
     };
-  }).filter(u => u.title && u.section);
+  }).filter(u => u.title && u.section && (u.order === null || u.order < 90));
 
   // 최신 날짜 기준으로 this_week / update_log 분리
   const latestDate = updates.length > 0 ? updates[0].date : '';
