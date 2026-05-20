@@ -356,83 +356,98 @@ const DATA = {
       evCatAdj:{},
       notes:['EREV 30만대 전환 → GWh -12 감소','Honda 0 Series 취소 → LGES -10GWh','Ford EV 취소 → SKON -15GWh','CHARGE Act 미통과 → 중국산 ESS 지속'],
     },
-    {
-      id:'charge_act', name:'CHARGE Act 통과',
-      desc:'CHARGE Act 통과 → 중국산 ESS 배터리 미국 시장 원천 차단. K3 셀사 가동률 전면 상향. 탈중국 프리미엄으로 부품사 ASP 상승.',
-      cm:{sdi:{essUtil_y26:0.75,essUtil_y27:0.9}, lges:{essUtil_y26:0.6,essUtil_y27:0.75}, skon:{essGwh_y26:8,essGwh_y27:15,essUtil_y26:0.65,essUtil_y27:0.75}},
-      catAdj:{enclosure:{perGwh:400}, thermal:{perGwh:210}, cathode:{perGwh:600}, electrolyte:{perGwh:160}, alfoil:{perGwh:45}, separator:{perGwh:40}},
-      evAdj:{},  // EV는 변동 없음 — ESS 전용 시나리오
-      evCatAdj:{},
-      notes:['CHARGE Act: 중국산 FEOC 배터리 ESS 설치 금지(ITC 수급 요건 강화)','중국산 퇴출 → K3 3사 북미 ESS 수주 급증. CATL·BYD 미국 ESS 사실상 차단','서진시스템 탈중국 프리미엄: 350→400억/GWh. SDI SBB 독점 + LGES Fluence 진입 가능','한중엔시에스 SDI 가동률 급등 시 사실상 독점 수혜. 인디애나 공장 27년 풀가동','엘앤에프 LFP 양극재 소요 비례 증가. 6만톤 CAPA 풀가동 시나리오','SKON 테네시 ESS 전환 + Flatiron 후속 수주 가속'],
-    },
-    {
-      id:'ai_dc', name:'AI DC BTM (데이터센터)',
-      desc:'AI 데이터센터 BTM(Behind-The-Meter) ESS 수요 10~15GWh 추가. Hyperscaler 전력 자급 + 피크 셰이빙 + UPS 대체. SDI DC ESS CAGR 30%+.',
-      cm:{sdi:{essGwh_y26:35,essUtil_y26:0.65,essGwh_y27:40,essUtil_y27:0.8}, lges:{essGwh_y26:65,essUtil_y26:0.5,essUtil_y27:0.65}, skon:{essGwh_y26:6,essUtil_y26:0.55,essUtil_y27:0.65}},
-      catAdj:{enclosure:{perGwh:380}, thermal:{perGwh:200}, cathode:{perGwh:570}},
-      evAdj:{},  // EV 무관
-      evCatAdj:{},
-      notes:['AI DC 전력 수요 폭증 → BTM ESS 신규 시장 10~15GWh(26~27E)','SDI 1Q26 CC: DC ESS CAGR 30%+, 마이크로그리드 60%+. BBU $8억(+70%Y)','Hyperscaler(AWS·MS·Google) BTM ESS RFP 급증. 4시간+ 장주기 수요','서진시스템: DC ESS 인클로저 → 기존 Grid-scale 대비 고사양·고ASP. 랙마운트형 추가','한중엔시에스: DC 냉각 기술 기보유(서버 수냉). ESS+서버 통합 냉각 가능','LGES CAPA 56.5→65GWh: 온타리오·랜싱 증설분 DC ESS 할당'],
-    },
     // ═══════════════════════════════════════════════════════
-    // EU 정책 시나리오 (T&E "High Stakes" 보고서, 2026.05.12)
-    // REF=현행 CO2 규제, COM=집행위 신안, LOW=산업계 요구안
-    // 주요 영향: 유럽 BEV 수요 → K3 유럽 거점 가동률 → 부품사 TAM
+    // US 정책 통합 시나리오 (CHARGE Act + AI DC BTM)
+    // 서브 토글로 개별 ON/OFF 가능
     // ═══════════════════════════════════════════════════════
     {
-      id:'eu_ref', name:'🇪🇺 EU REF (현행 유지)',
-      desc:'T&E 2026.05 REF 시나리오. EU CO2 규제 현행 유지(2030 -55%, 2035 -100%). 2035 BEV 14.6M대, EU 배터리 1,445GWh. K3 유럽 거점 가동률 95~100%. 가장 낙관적 EU EV 전망.',
-      cm:{sdi:{essUtil_y26:0.6,essUtil_y27:0.8}, lges:{essUtil_y26:0.5,essUtil_y27:0.65}},
-      catAdj:{cathode:{perGwh:580}, electrolyte:{perGwh:155}, enclosure:{perGwh:370}},
-      evAdj:{sdi:{evGwh_y26:42,evGwh_y27:58}, lges:{evGwh_y26:175,evGwh_y27:195}, skon:{evGwh_y26:130,evGwh_y27:165}},
-      evCatAdj:{cathode:{sdi:120,lges:170}},
-      notes:[
-        '📊 T&E REF: 2035 EU BEV 14.6M대 · 배터리 1,445GWh(네임플레이트)',
-        'LGES Wroclaw 115GWh — 가동률 98%. 폴란드 EU 양극재 45% 집중',
-        'SDI 헝가리 ~40GWh [추정] — 보고서 직접 미언급. EU 합산에 포함',
-        'SK온 헝가리 2거점 — 가동률 85%. 현대기아 유럽 EV3·EV2 물량 반영',
-        '엘앤에프·에코프로비엠: 폴란드 양극재 진출 압력 ↑ (45% EU 점유)',
-        '솔브레인HD: SDI 헝가리 의존. REF 시 가동률 상승 → TAM +5%',
-        '🔑 EU 에너지 안보 논리 + 석유 의존도 96% → REF 정치적 동력 강화 [개인 의견]',
-      ],
+      id:'us_policy', name:'🇺🇸 US 정책 (ESS·DC)',
+      desc:'CHARGE Act + AI DC BTM 통합 시나리오. 중국산 ESS 차단 + 데이터센터 BTM 수요 10~15GWh 추가.',
+      isComposite:true,
+      subToggles:['charge_act','ai_dc'],
+      subLabels:{charge_act:'CHARGE Act', ai_dc:'AI DC BTM'},
+      subDefaults:{charge_act:true, ai_dc:true},
+      subScenarios:{
+        charge_act:{
+          cm:{sdi:{essUtil_y26:0.75,essUtil_y27:0.9}, lges:{essUtil_y26:0.6,essUtil_y27:0.75}, skon:{essGwh_y26:8,essGwh_y27:15,essUtil_y26:0.65,essUtil_y27:0.75}},
+          catAdj:{enclosure:{perGwh:400}, thermal:{perGwh:210}, cathode:{perGwh:600}, electrolyte:{perGwh:160}, alfoil:{perGwh:45}, separator:{perGwh:40}},
+          evAdj:{}, evCatAdj:{},
+          notes:['CHARGE Act: 중국산 FEOC 배터리 ESS 설치 금지(ITC 수급 요건 강화)','중국산 퇴출 → K3 3사 북미 ESS 수주 급증. CATL·BYD 미국 ESS 사실상 차단','서진시스템 탈중국 프리미엄: 350→400억/GWh. SDI SBB 독점 + LGES Fluence 진입 가능','한중엔시에스 SDI 가동률 급등 시 사실상 독점 수혜. 인디애나 공장 27년 풀가동','엘앤에프 LFP 양극재 소요 비례 증가. 6만톤 CAPA 풀가동 시나리오','SKON 테네시 ESS 전환 + Flatiron 후속 수주 가속'],
+        },
+        ai_dc:{
+          cm:{sdi:{essGwh_y26:35,essUtil_y26:0.65,essGwh_y27:40,essUtil_y27:0.8}, lges:{essGwh_y26:65,essUtil_y26:0.5,essUtil_y27:0.65}, skon:{essGwh_y26:6,essUtil_y26:0.55,essUtil_y27:0.65}},
+          catAdj:{enclosure:{perGwh:380}, thermal:{perGwh:200}, cathode:{perGwh:570}},
+          evAdj:{}, evCatAdj:{},
+          notes:['AI DC 전력 수요 폭증 → BTM ESS 신규 시장 10~15GWh(26~27E)','SDI 1Q26 CC: DC ESS CAGR 30%+, 마이크로그리드 60%+. BBU $8억(+70%Y)','Hyperscaler(AWS·MS·Google) BTM ESS RFP 급증. 4시간+ 장주기 수요','서진시스템: DC ESS 인클로저 → 기존 Grid-scale 대비 고사양·고ASP. 랙마운트형 추가','한중엔시에스: DC 냉각 기술 기보유(서버 수냉). ESS+서버 통합 냉각 가능','LGES CAPA 56.5→65GWh: 온타리오·랜싱 증설분 DC ESS 할당'],
+        },
+      },
+      // 합산 시나리오 — resolveComposite()에서 동적 생성
+      cm:{}, catAdj:{}, evAdj:{}, evCatAdj:{}, notes:[],
     },
+    // ═══════════════════════════════════════════════════════
+    // EU 정책 통합 시나리오 (T&E "High Stakes" 보고서, 2026.05.12)
+    // 슬라이더 3단계: REF ↔ COM ↔ LOW
+    // ═══════════════════════════════════════════════════════
     {
-      id:'eu_com', name:'🇪🇺 EU COM (집행위 신안)',
-      desc:'T&E 2026.05 COM 시나리오. 2030 3년 평균제 도입 + 2035 -90%로 완화. 2035 BEV 10.1M대, EU 배터리 632GWh. K3 가동률 65~75%. Northvolt급 공장 21개 무산. 가장 유력한 정치적 결과 [개인 의견].',
-      cm:{sdi:{essUtil_y26:0.45,essUtil_y27:0.6}, lges:{essUtil_y26:0.38,essUtil_y27:0.5}, skon:{essUtil_y26:0.3,essUtil_y27:0.45}},
-      catAdj:{cathode:{perGwh:500}, electrolyte:{perGwh:130}},
-      evAdj:{sdi:{evGwh_y26:33,evGwh_y27:42}, lges:{evGwh_y26:150,evGwh_y27:160}, skon:{evGwh_y26:110,evGwh_y27:135}},
-      evCatAdj:{},
-      notes:[
-        '📊 T&E COM: 2035 BEV 10.1M대(-31% vs REF) · 배터리 632GWh(-56%)',
-        'Northvolt급 공장 21개 무산 — EU 배터리 자립도 심각 훼손',
-        'LGES Wroclaw 가동률 70% — 물량 감소 but 단일 거점 집중 효과',
-        'SDI 헝가리 가동률 70% — VW LFP 수주가 부분 완충 가능',
-        'SK온 헝가리 가동률 65% — 유럽 BEV 축소의 직격. 가장 취약',
-        '솔브레인HD: SDI 헝가리 의존 → TAM -15% (Base 대비)',
-        '삼아알미늄: EU 양극박 수요 -30% 축소 추정',
-        '🔑 3년 평균제 = 2030 타깃 사실상 무력화. 핵심 사업성 훼손 트리거',
+      id:'eu_policy', name:'🇪🇺 EU 정책',
+      desc:'T&E 2026.05 "High Stakes" 기반 EU CO2 규제 시나리오. 슬라이더로 REF(현행) / COM(집행위) / LOW(산업계) 전환.',
+      isSlider:true,
+      sliderOptions:['REF','COM','LOW'],
+      sliderDefault:1, // COM (가장 유력한 정치적 결과)
+      sliderLabels:{0:'REF (현행 유지)',1:'COM (집행위 신안)',2:'LOW (산업계 요구)'},
+      sliderScenarios:[
+        {
+          cm:{sdi:{essUtil_y26:0.6,essUtil_y27:0.8}, lges:{essUtil_y26:0.5,essUtil_y27:0.65}},
+          catAdj:{cathode:{perGwh:580}, electrolyte:{perGwh:155}, enclosure:{perGwh:370}},
+          evAdj:{sdi:{evGwh_y26:42,evGwh_y27:58}, lges:{evGwh_y26:175,evGwh_y27:195}, skon:{evGwh_y26:130,evGwh_y27:165}},
+          evCatAdj:{cathode:{sdi:120,lges:170}},
+          notes:[
+            '📊 T&E REF: 2035 EU BEV 14.6M대 · 배터리 1,445GWh(네임플레이트)',
+            'LGES Wroclaw 115GWh — 가동률 98%. 폴란드 EU 양극재 45% 집중',
+            'SDI 헝가리 ~40GWh [추정] — 보고서 직접 미언급. EU 합산에 포함',
+            'SK온 헝가리 2거점 — 가동률 85%. 현대기아 유럽 EV3·EV2 물량 반영',
+            '엘앤에프·에코프로비엠: 폴란드 양극재 진출 압력 ↑ (45% EU 점유)',
+            '솔브레인HD: SDI 헝가리 의존. REF 시 가동률 상승 → TAM +5%',
+            '🔑 EU 에너지 안보 논리 + 석유 의존도 96% → REF 정치적 동력 강화 [개인 의견]',
+          ],
+        },
+        {
+          cm:{sdi:{essUtil_y26:0.45,essUtil_y27:0.6}, lges:{essUtil_y26:0.38,essUtil_y27:0.5}, skon:{essUtil_y26:0.3,essUtil_y27:0.45}},
+          catAdj:{cathode:{perGwh:500}, electrolyte:{perGwh:130}},
+          evAdj:{sdi:{evGwh_y26:33,evGwh_y27:42}, lges:{evGwh_y26:150,evGwh_y27:160}, skon:{evGwh_y26:110,evGwh_y27:135}},
+          evCatAdj:{},
+          notes:[
+            '📊 T&E COM: 2035 BEV 10.1M대(-31% vs REF) · 배터리 632GWh(-56%)',
+            'Northvolt급 공장 21개 무산 — EU 배터리 자립도 심각 훼손',
+            'LGES Wroclaw 가동률 70% — 물량 감소 but 단일 거점 집중 효과',
+            'SDI 헝가리 가동률 70% — VW LFP 수주가 부분 완충 가능',
+            'SK온 헝가리 가동률 65% — 유럽 BEV 축소의 직격. 가장 취약',
+            '솔브레인HD: SDI 헝가리 의존 → TAM -15% (Base 대비)',
+            '삼아알미늄: EU 양극박 수요 -30% 축소 추정',
+            '🔑 3년 평균제 = 2030 타깃 사실상 무력화. 핵심 사업성 훼손 트리거',
+          ],
+        },
+        {
+          cm:{sdi:{essUtil_y26:0.35,essUtil_y27:0.45}, lges:{essUtil_y26:0.28,essUtil_y27:0.38}, skon:{essUtil_y26:0.2,essUtil_y27:0.3}},
+          catAdj:{cathode:{perGwh:440}, electrolyte:{perGwh:115}, enclosure:{perGwh:310}},
+          evAdj:{sdi:{evGwh_y26:28,evGwh_y27:35}, lges:{evGwh_y26:135,evGwh_y27:145}, skon:{evGwh_y26:95,evGwh_y27:115}},
+          evCatAdj:{},
+          notes:[
+            '📊 T&E LOW: 2035 BEV 7.3M대(-50% vs REF) · 배터리 421GWh(-71%)',
+            '⚠️ Northvolt급 공장 34개 무산. EU 배터리 자립도 사실상 포기',
+            '독일 -€283bn, 영국 -€100bn, 프랑스 -€43bn, 이탈리아 -€24bn 누적손실',
+            '시나리오 민감도 1위: 영국 (REF +85% vs LOW +4% = 81%p 격차)',
+            'LGES Wroclaw 가동률 50% — 역대 최저. 115GWh 절반 유휴',
+            'SDI 헝가리 가동률 50% — VW 물량도 감소 불가피',
+            'SK온 헝가리 가동률 45% — 사실상 구조조정 시나리오',
+            '솔브레인HD TAM -35%, 삼아알미늄 TAM -40%, 엘앤에프 유럽 진출 동력 상실',
+            'CAM/pCAM: REF 1,640kt → LOW 300kt(커버리지 12%). 폴란드 양극재 클러스터 와해',
+            '🔑 EU 석유 수입 €50bn 지속 vs 배터리 의존 63%. 에너지 안보 역행',
+          ],
+        },
       ],
-    },
-    {
-      id:'eu_low', name:'🇪🇺 EU LOW (산업계 요구)',
-      desc:'T&E 2026.05 LOW 시나리오. 2030 5년 평균제 + 2035 -80%로 완화. 2035 BEV 7.3M대, EU 배터리 421GWh. K3 가동률 45~55%. 독일 -€283bn, 영국 -€100bn 누적손실. Northvolt급 34개 무산.',
-      cm:{sdi:{essUtil_y26:0.35,essUtil_y27:0.45}, lges:{essUtil_y26:0.28,essUtil_y27:0.38}, skon:{essUtil_y26:0.2,essUtil_y27:0.3}},
-      catAdj:{cathode:{perGwh:440}, electrolyte:{perGwh:115}, enclosure:{perGwh:310}},
-      evAdj:{sdi:{evGwh_y26:28,evGwh_y27:35}, lges:{evGwh_y26:135,evGwh_y27:145}, skon:{evGwh_y26:95,evGwh_y27:115}},
-      evCatAdj:{},
-      notes:[
-        '📊 T&E LOW: 2035 BEV 7.3M대(-50% vs REF) · 배터리 421GWh(-71%)',
-        '⚠️ Northvolt급 공장 34개 무산. EU 배터리 자립도 사실상 포기',
-        '독일 -€283bn, 영국 -€100bn, 프랑스 -€43bn, 이탈리아 -€24bn 누적손실',
-        '시나리오 민감도 1위: 영국 (REF +85% vs LOW +4% = 81%p 격차)',
-        'LGES Wroclaw 가동률 50% — 역대 최저. 115GWh 절반 유휴',
-        'SDI 헝가리 가동률 50% — VW 물량도 감소 불가피',
-        'SK온 헝가리 가동률 45% — 사실상 구조조정 시나리오',
-        '솔브레인HD TAM -35%, 삼아알미늄 TAM -40%, 엘앤에프 유럽 진출 동력 상실',
-        'CAM/pCAM: REF 1,640kt → LOW 300kt(커버리지 12%). 폴란드 양극재 클러스터 와해',
-        '🔑 EU 석유 수입 €50bn 지속 vs 배터리 의존 63%. 에너지 안보 역행',
-      ],
+      // 활성 슬라이더 위치에 따라 resolveSlider()에서 동적 매핑
+      cm:{}, catAdj:{}, evAdj:{}, evCatAdj:{}, notes:[],
     },
   ],
 
@@ -1413,17 +1428,151 @@ function renderCmTam(scen){
   renderCmTamYear('cmTamGrid27','y27',scen);
 }
 
+// ===== IEA Reference Band Data =====
+// IEA GEO 2026: 글로벌 EV 배터리 deployment (GWh)
+// 2025 실측 1,200 GWh → 2035 CPS 4,000 / STEPS 5,000 / NZE 9,000
+// 2026E 선형 보간: CPS ~1,480 / STEPS ~1,580 / NZE ~1,980
+const IEA_BAND = {
+  label:'IEA GEO 2026',
+  y26:{ cps:1480, steps:1580, nze:1980 },
+  y27:{ cps:1760, steps:1960, nze:2760 },
+  y35:{ cps:4000, steps:5000, nze:9000 },
+};
+let ieaBandOn=false;
+
+// ===== Composite / Slider Scenario Resolution =====
+// US 정책: 서브 토글 상태
+const usSubState={charge_act:true, ai_dc:true};
+// EU 정책: 슬라이더 위치
+let euSliderPos=1; // 0=REF, 1=COM, 2=LOW
+
+function mergeScenObj(target,source){
+  // Deep merge: cm, catAdj, evAdj, evCatAdj — 뒤 source가 같은 키면 덮어쓰기
+  ['cm','catAdj','evAdj','evCatAdj'].forEach(k=>{
+    if(!source[k])return;
+    if(!target[k])target[k]={};
+    Object.keys(source[k]).forEach(sk=>{
+      if(typeof source[k][sk]==='object'&&!Array.isArray(source[k][sk])){
+        if(!target[k][sk])target[k][sk]={};
+        Object.assign(target[k][sk],source[k][sk]);
+      } else {
+        target[k][sk]=source[k][sk];
+      }
+    });
+  });
+}
+function resolveComposite(scen){
+  // US 정책: 활성 서브 시나리오 합산
+  const merged={cm:{},catAdj:{},evAdj:{},evCatAdj:{},notes:[]};
+  let descParts=[];
+  scen.subToggles.forEach(key=>{
+    if(!usSubState[key])return;
+    const sub=scen.subScenarios[key];
+    mergeScenObj(merged,sub);
+    merged.notes=merged.notes.concat(sub.notes||[]);
+    descParts.push(scen.subLabels[key]);
+  });
+  scen.cm=merged.cm; scen.catAdj=merged.catAdj;
+  scen.evAdj=merged.evAdj; scen.evCatAdj=merged.evCatAdj;
+  scen.notes=merged.notes;
+  scen.desc=descParts.length?descParts.join(' + ')+' 시나리오 적용 중':'서브 시나리오를 선택해 주세요.';
+}
+function resolveSlider(scen){
+  // EU 정책: 슬라이더 위치에 따라 매핑
+  const sub=scen.sliderScenarios[euSliderPos];
+  scen.cm=sub.cm; scen.catAdj=sub.catAdj;
+  scen.evAdj=sub.evAdj; scen.evCatAdj=sub.evCatAdj;
+  scen.notes=sub.notes;
+  scen.desc='T&E 2026.05 '+scen.sliderLabels[euSliderPos]+' 시나리오 적용 중.';
+}
+
+// ===== AMPC Indicator =====
+function renderAmpcIndicator(scen){
+  // LGES AMPC 의존도: EBIT $400M, AMPC 제외 시 -$650M (IEA GEO 2026)
+  const lges=DATA.cellMakers.find(c=>c.id==='lges');
+  if(!lges)return '';
+  const essOut26=getCmGwh(lges,'y26',scen).output;
+  const baseEssOut26=getCmGwh(lges,'y26',null).output;
+  const utilDelta=((essOut26-baseEssOut26)/baseEssOut26*100).toFixed(0);
+  const ampcTotal=400; // $M
+  const ampcExcluded=-650; // $M
+  const ampcPer=essOut26>0?Math.round(ampcTotal/essOut26*10)/10:0;
+  return `<div style="margin-top:16px;padding:14px 16px;background:linear-gradient(135deg,rgba(233,30,99,0.06),rgba(91,79,233,0.06));border:1px solid rgba(233,30,99,0.2);border-radius:10px">
+    <div style="font-family:var(--mono);font-size:10px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:8px">⚠️ AMPC 의존도 인디케이터 (LGES · IEA GEO 2026)</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;font-family:var(--mono);font-size:11px">
+      <div style="text-align:center;padding:8px;background:var(--bg-soft);border-radius:6px"><div style="font-size:9px;color:var(--ink-3)">EBIT (AMPC 포함)</div><div style="font-size:18px;font-weight:700;color:#00A878">$${ampcTotal}M</div></div>
+      <div style="text-align:center;padding:8px;background:var(--bg-soft);border-radius:6px"><div style="font-size:9px;color:var(--ink-3)">AMPC 제외 시</div><div style="font-size:18px;font-weight:700;color:#E91E63">$${ampcExcluded}M</div></div>
+      <div style="text-align:center;padding:8px;background:var(--bg-soft);border-radius:6px"><div style="font-size:9px;color:var(--ink-3)">ESS 출하(26E)</div><div style="font-size:18px;font-weight:700;color:var(--ink)">${essOut26.toFixed(1)}G</div><div style="font-size:9px;color:${utilDelta>=0?'#00A878':'#E91E63'}">${utilDelta>=0?'+':''}${utilDelta}% vs Base</div></div>
+      <div style="text-align:center;padding:8px;background:var(--bg-soft);border-radius:6px"><div style="font-size:9px;color:var(--ink-3)">AMPC/GWh</div><div style="font-size:18px;font-weight:700;color:#5B4FE9">$${ampcPer}M</div></div>
+    </div>
+    <div style="font-size:10px;color:var(--ink-3);margin-top:6px">Source: IEA Global EV Outlook 2026 · LGES 2024 EBIT $400M → 크레딧 제외 시 -$650M</div>
+  </div>`;
+}
+
+// ===== IEA Band Overlay =====
+function renderIeaBand(scen,yr){
+  if(!ieaBandOn)return '';
+  const band=IEA_BAND[yr];if(!band)return '';
+  // 현재 시나리오 K3 3사 합산 GWh
+  let k3Total=0;
+  DATA.cellMakers.forEach(cm=>{k3Total+=getCmGwh(cm,yr,scen).output+getEvGwh(cm,yr,scen)});
+  const pctOfSteps=k3Total>0?(k3Total/(band.steps)*100).toFixed(1):'—';
+  return `<div style="margin-top:12px;padding:12px 14px;background:rgba(107,122,153,0.06);border:1px dashed rgba(107,122,153,0.3);border-radius:8px">
+    <div style="font-family:var(--mono);font-size:10px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:8px">📊 IEA 레퍼런스 밴드 (${yr==='y26'?'2026E':'2027E'} 글로벌 배터리 수요)</div>
+    <div style="display:flex;align-items:center;gap:0;height:32px;border-radius:6px;overflow:hidden;font-family:var(--mono);font-size:10px;position:relative">
+      <div style="flex:${band.cps};background:rgba(107,122,153,0.15);display:flex;align-items:center;justify-content:center;font-weight:600;color:var(--ink-3)">CPS ${band.cps}</div>
+      <div style="flex:${band.steps-band.cps};background:rgba(107,122,153,0.25);display:flex;align-items:center;justify-content:center;font-weight:600;color:var(--ink-2)">STEPS ${band.steps}</div>
+      <div style="flex:${band.nze-band.steps};background:rgba(107,122,153,0.35);display:flex;align-items:center;justify-content:center;font-weight:600;color:var(--ink)">NZE ${band.nze}</div>
+    </div>
+    <div style="font-size:10px;color:var(--ink-3);margin-top:6px">K3 3사 합산(ESS+EV): ${k3Total.toFixed(0)} GWh = STEPS 대비 ${pctOfSteps}% · Source: IEA Global EV Outlook 2026</div>
+  </div>`;
+}
+
 // ===== Scenario =====
 let currentScenIdx=0;
 function renderScenTabs(){
   const tabs=document.getElementById('scenTabs');
-  tabs.innerHTML=DATA.scenarios.map((s,i)=>`<button class="st-btn ${i===currentScenIdx?'on':''}" data-i="${i}">${s.name}</button>`).join('');
-  tabs.querySelectorAll('.st-btn').forEach(b=>b.addEventListener('click',()=>{currentScenIdx=+b.dataset.i;renderScenTabs();renderScenario()}));
+  // 시나리오 탭 버튼 + IEA 밴드 토글
+  let html=DATA.scenarios.map((s,i)=>`<button class="st-btn ${i===currentScenIdx?'on':''}" data-i="${i}">${s.name}</button>`).join('');
+  html+=`<button class="st-btn ${ieaBandOn?'on':''}" style="${ieaBandOn?'background:#6b7a99;color:#fff;border-color:#6b7a99':'color:#6b7a99;border-color:#6b7a99'}" id="ieaBandToggle">📊 IEA 밴드</button>`;
+  tabs.innerHTML=html;
+  tabs.querySelectorAll('.st-btn[data-i]').forEach(b=>b.addEventListener('click',()=>{currentScenIdx=+b.dataset.i;renderScenTabs();renderScenario()}));
+  document.getElementById('ieaBandToggle').addEventListener('click',()=>{ieaBandOn=!ieaBandOn;renderScenTabs();renderScenario()});
 }
 function renderScenario(){
   const scen=DATA.scenarios[currentScenIdx];
+  // Resolve composite / slider scenarios
+  if(scen.isComposite) resolveComposite(scen);
+  if(scen.isSlider) resolveSlider(scen);
   const evtNote=activeEvents.size>0?` · ⚡ OEM 이벤트 ${activeEvents.size}개 반영됨 (EV GWh 변동이 TAM에 자동 전파)`:'';
-  document.getElementById('scenDesc').innerHTML=scen.desc+(evtNote?`<span style="color:#E91E63;font-weight:700">${evtNote}</span>`:'');
+  // Sub-controls for composite/slider
+  let subHtml='';
+  if(scen.isComposite){
+    subHtml='<div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">';
+    scen.subToggles.forEach(key=>{
+      const on=usSubState[key];
+      subHtml+=`<button class="st-btn ${on?'on':''}" data-sub="${key}" style="font-size:11px">${on?'✅':'⬜'} ${scen.subLabels[key]}</button>`;
+    });
+    subHtml+='</div>';
+  }
+  if(scen.isSlider){
+    subHtml=`<div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;font-family:var(--mono);font-size:11px">
+      <span style="color:var(--ink-3);font-size:10px">EU 규제 강도:</span>
+      <input type="range" min="0" max="2" step="1" value="${euSliderPos}" id="euSliderInput" style="flex:1;max-width:200px;accent-color:#7c3aed">
+      <span style="font-weight:600;color:var(--ink);min-width:140px" id="euSliderLabel">${scen.sliderLabels[euSliderPos]}</span>
+    </div>`;
+  }
+  document.getElementById('scenDesc').innerHTML=subHtml+scen.desc+(evtNote?`<span style="color:#E91E63;font-weight:700">${evtNote}</span>`:'');
+  // Bind sub-controls
+  if(scen.isComposite){
+    document.querySelectorAll('[data-sub]').forEach(b=>b.addEventListener('click',()=>{
+      const key=b.dataset.sub; usSubState[key]=!usSubState[key]; renderScenario();
+    }));
+  }
+  if(scen.isSlider){
+    const slider=document.getElementById('euSliderInput');
+    if(slider) slider.addEventListener('input',()=>{euSliderPos=+slider.value; renderScenario()});
+  }
   const box=document.getElementById('scenContent');
   let html=`<div style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;letter-spacing:.08em;text-transform:uppercase;font-weight:600">❶ 셀사 CAPA × 가동률 변동 (2026E GWh)</div>
   <div class="scen-grid"><div class="scen-th">셀사</div><div class="scen-th">CAPA(26E)</div><div class="scen-th">가동률</div><div class="scen-th">출하 GWh</div><div class="scen-th">vs Base</div>`;
@@ -1490,6 +1639,11 @@ function renderScenario(){
   let essGT=0,evGT=0;DATA.cats.forEach(cat=>{DATA.cellMakers.forEach(cm=>{essGT+=calcTam(cat,cm,'y26',scen);evGT+=calcEvTam(cat,cm,'y26',scen)})});
   html+=`<div class="scen-td scen-sum">${essGT.toLocaleString()}</div><div class="scen-td scen-sum" style="color:#5B4FE9">${evGT.toLocaleString()}</div>`;
   html+=`<div class="scen-td scen-sum ${grandDelta>0?'scen-delta-up':grandDelta<0?'scen-delta-dn':''}" style="font-size:13px">${(essGT+evGT).toLocaleString()}</div></div>`;
+  // IEA Reference Band (2026E / 2027E)
+  html+=renderIeaBand(scen,'y26');
+  html+=renderIeaBand(scen,'y27');
+  // AMPC Indicator
+  html+=renderAmpcIndicator(scen);
   box.innerHTML=html;renderCmTam(scen);
 }
 
