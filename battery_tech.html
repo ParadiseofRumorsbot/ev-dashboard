@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔬 배터리 기술·특허 트래커</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans KR',sans-serif;background:#0a0f1a;color:#e0e6f0;padding:24px;max-width:1200px;margin:0 auto}
+h1{font-size:26px;font-weight:700;margin-bottom:6px;background:linear-gradient(135deg,#a78bfa,#556dff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{font-size:13px;color:#6b7a99;margin-bottom:24px}
+.card{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:24px;margin-bottom:24px}
+.card h2{font-size:16px;font-weight:600;color:#94a3c0;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #1e293b}
+.card h3{font-size:14px;font-weight:600;color:#e0e6f0;margin:18px 0 10px}
+.card p,.card li{font-size:12.5px;color:#94a3c0;line-height:1.8}
+.card ul{list-style:none;padding-left:0}
+.card li::before{content:'▸ ';color:#a78bfa}
+.chart-wrap{position:relative;height:300px}
+.chart-wrap.sm{height:220px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+@media(max-width:768px){.grid-2,.grid-3{grid-template-columns:1fr}}
+.tech-card{background:#0d1424;border:1px solid #1e293b;border-radius:10px;padding:18px;position:relative;overflow:hidden}
+.tech-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:4px 0 0 4px}
+.tech-card.solid::before{background:#ffd93d}
+.tech-card.dry::before{background:#4ecdc4}
+.tech-card.cnt::before{background:#ff6b6b}
+.tech-card.si::before{background:#556dff}
+.tech-card.cathode::before{background:#a78bfa}
+.tech-card h4{font-size:13px;font-weight:600;color:#e0e6f0;margin-bottom:8px}
+.tech-card p{font-size:11.5px;color:#6b7a99;line-height:1.7}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:600;margin:2px}
+.tag-solid{background:rgba(255,217,61,0.15);color:#ffd93d;border:1px solid rgba(255,217,61,0.3)}
+.tag-dry{background:rgba(78,205,196,0.15);color:#4ecdc4;border:1px solid rgba(78,205,196,0.3)}
+.tag-cnt{background:rgba(255,107,107,0.15);color:#ff6b6b;border:1px solid rgba(255,107,107,0.3)}
+.tag-si{background:rgba(85,109,255,0.15);color:#556dff;border:1px solid rgba(85,109,255,0.3)}
+.tag-cathode{background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3)}
+.compare-table{width:100%;border-collapse:collapse;font-size:11.5px;margin:12px 0}
+.compare-table th,.compare-table td{border:1px solid #1e293b;padding:8px 10px;text-align:center}
+.compare-table thead th{background:#0d1424;color:#6b7a99;font-weight:500;font-size:11px}
+.compare-table td:first-child{text-align:left;color:#94a3c0;font-weight:600;background:#0d1424}
+.roadmap{display:flex;gap:0;margin:16px 0;position:relative}
+.roadmap::before{content:'';position:absolute;top:50%;left:0;right:0;height:2px;background:#1e293b}
+.rm-item{flex:1;text-align:center;position:relative;padding:8px 4px}
+.rm-dot{width:12px;height:12px;border-radius:50%;margin:0 auto 6px;position:relative;z-index:1}
+.rm-year{font-size:10px;color:#6b7a99;font-weight:600}
+.rm-label{font-size:10px;color:#94a3c0;margin-top:4px;line-height:1.4}
+.flow-diagram{display:flex;align-items:center;gap:0;margin:12px 0;flex-wrap:wrap}
+.flow-step{background:#0d1424;border:1px solid #1e293b;border-radius:8px;padding:10px 14px;font-size:11px;color:#94a3c0;text-align:center;min-width:100px}
+.flow-arrow{color:#2d3a52;font-size:16px;padding:0 6px}
+.highlight{color:#ffd93d;font-weight:600}
+.highlight-g{color:#4ecdc4;font-weight:600}
+.highlight-r{color:#ff6b6b;font-weight:600}
+.highlight-b{color:#556dff;font-weight:600}
+.highlight-p{color:#a78bfa;font-weight:600}
+.updated{text-align:center;font-size:11px;color:#3a4a6b;margin-top:24px;padding-top:16px;border-top:1px solid #1e293b}
+.section-divider{height:1px;background:linear-gradient(90deg,transparent,#2d3a52,transparent);margin:8px 0 24px}
+</style>
+</head>
+<body>
+
+<h1>🔬 배터리 기술·특허 트래커</h1>
+<p class="subtitle">셀 기술 해설 · 특허 포트폴리오 · 업체별 로드맵</p>
+
+<nav style="display:flex;gap:10px;margin-bottom:20px;font-size:12px;flex-wrap:wrap">
+<a href="index.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">EV 판매</a>
+<a href="robotaxi.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">FSD·로보택시</a>
+<a href="us-import.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">US 수입</a>
+<a href="Battery_bom_routing.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">ESS BOM</a>
+<a href="battery_scenario.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">Battery Scenario</a>
+<a href="battery_tech.html" style="color:#a78bfa;text-decoration:none;padding:4px 10px;border-radius:6px;background:#1e293b">🔬 기술·특허</a>
+<a href="2차전지_컨콜정리.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">컨콜 정리</a>
+<a href="global_battery_map.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">🗺️ 배터리 맵</a>
+</nav>
+
+<!-- 🔬 특허 피드 위젯 -->
+<div id="patent-feed-container" style="background:#0a0f1a;border:1px solid #2d3a52;border-left:3px solid #a78bfa;border-radius:8px;padding:12px 16px;margin-bottom:20px;font-size:11px;color:#94a3c0;line-height:1.7;display:none">
+<strong style="color:#a78bfa">🔬 주간 특허 모니터링 · <span id="patent-feed-date">loading...</span></strong>
+<div id="patent-feed-body" style="margin-top:6px"></div>
+</div>
+<script>
+(function(){
+  fetch('data/weekly_patents.json')
+    .then(r=>{if(!r.ok)throw new Error(r.status);return r.json()})
+    .then(data=>{
+      if(!data.items||!data.items.length||data.type!=='battery_patent_monitor')return;
+      const c=document.getElementById('patent-feed-container');
+      c.style.display='block';
+      document.getElementById('patent-feed-date').textContent=data.weekOf||'';
+      const byTech={};
+      data.items.forEach(it=>{if(!byTech[it.tech])byTech[it.tech]=[];byTech[it.tech].push(it);});
+      let html='';
+      for(const[tech,items]of Object.entries(byTech)){
+        html+='<div style="margin-top:4px"><span style="color:#a78bfa;font-weight:600">['+tech+']</span> ';
+        html+=items.slice(0,3).map(it=>
+          '<span style="color:#6b7a99">['+it.company+']</span> <a href="'+it.link+'" target="_blank" rel="noopener" style="color:#e0e6f0;text-decoration:none;border-bottom:1px dotted #2d3a52">'+it.title.slice(0,60)+(it.title.length>60?'…':'')+'</a>'
+        ).join(' · ')+'</div>';
+      }
+      document.getElementById('patent-feed-body').innerHTML=html;
+    }).catch(()=>{});
+})();
+</script>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- 1. 글로벌 특허 포트폴리오 -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="card">
+<h2>📊 글로벌 배터리 특허 포트폴리오 (2026.05 기준)</h2>
+<div class="grid-2">
+<div>
+<div class="chart-wrap sm"><canvas id="cPatent"></canvas></div>
+</div>
+<div>
+<div class="chart-wrap sm"><canvas id="cTech"></canvas></div>
+</div>
+</div>
+<div style="margin-top:14px;font-size:11px;color:#3a4a6b;line-height:1.7">
+※ 삼성SDI 전고체 ~1,100건(국내 최다) · 각형 ~1,200건(美 등록) · SDI·LGES 출원 증가율 세계 1·2위 (51.7%, 50.8%)<br>
+※ CATL Q1 2026 등록 특허 111%↑ · WIPO 전고체 국제출원 공개 (2026.03) · 중국 전고체 특허 출원 국가별 1위
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- 2. 핵심 기술 해설 -->
+<!-- ══════════════════════════════════════════════ -->
+
+<!-- 개요 카드 -->
+<div class="grid-3" style="margin-bottom:24px">
+<div class="tech-card solid">
+<h4>⚡ 전고체 배터리</h4>
+<p>액체 전해질 → 고체 전해질<br>에너지밀도 ↑ 안전성 ↑<br>2027~2028 양산 시작</p>
+<span class="tag tag-solid">황화물</span><span class="tag tag-solid">산화물</span><span class="tag tag-solid">고분자</span>
+</div>
+<div class="tech-card dry">
+<h4>🏭 건식전극</h4>
+<p>용매·건조 공정 제거<br>CAPEX·에너지 ~90% 절감<br>Tesla 4680 양산 적용</p>
+<span class="tag tag-dry">PTFE</span><span class="tag tag-dry">Tesla</span><span class="tag tag-dry">삼성SDI</span>
+</div>
+<div class="tech-card cnt">
+<h4>🧬 CNT 도전재</h4>
+<p>카본블랙 대비 1/5 사용량<br>전도성·수명·충전속도 ↑<br>건식전극 핵심 소재</p>
+<span class="tag tag-cnt">SWCNT</span><span class="tag tag-cnt">MWCNT</span><span class="tag tag-cnt">LG화학</span>
+</div>
+</div>
+
+<div class="grid-2" style="margin-bottom:24px">
+<div class="tech-card si">
+<h4>🔋 실리콘 음극재</h4>
+<p>흑연 대비 이론용량 10배<br>팽창(~300%) 제어가 핵심<br>SiOx → 순수Si 진화 중</p>
+<span class="tag tag-si">SiOx</span><span class="tag tag-si">SiC</span><span class="tag tag-si">Group14</span>
+</div>
+<div class="tech-card cathode">
+<h4>⚗️ 차세대 양극재</h4>
+<p>하이니켈 Ni90%+ 주력<br>LMFP: LFP의 전압 업그레이드<br>단결정 NMC 수명 2배</p>
+<span class="tag tag-cathode">Ni90+</span><span class="tag tag-cathode">LMFP</span><span class="tag tag-cathode">단결정</span>
+</div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ── 2-1. 전고체 배터리 상세 ── -->
+<div class="card">
+<h2><span style="color:#ffd93d">⚡</span> 전고체 배터리 (All-Solid-State Battery)</h2>
+
+<h3>왜 전고체인가?</h3>
+<ul>
+<li>액체 전해질의 <span class="highlight-r">발화·누액 위험 제거</span> → 분리막·냉각 시스템 간소화</li>
+<li>리튬메탈/무음극(anode-less) 적용 가능 → <span class="highlight">에너지밀도 450+ Wh/kg</span> 달성</li>
+<li>고온·저온 안정성 우수 → 작동 온도 범위 확대 (-30°C ~ 100°C)</li>
+<li>급속충전: 9분 → 80% SOC (삼성SDI 목표)</li>
+</ul>
+
+<h3>전해질 유형 비교</h3>
+<table class="compare-table">
+<thead>
+<tr><th>항목</th><th style="color:#ffd93d">황화물계</th><th style="color:#4ecdc4">산화물계</th><th style="color:#a78bfa">고분자계</th></tr>
+</thead>
+<tbody>
+<tr><td>이온전도도</td><td style="color:#4ecdc4">◎ ~10 mS/cm</td><td>○ ~1 mS/cm</td><td>△ ~0.1 mS/cm</td></tr>
+<tr><td>가공성</td><td style="color:#4ecdc4">◎ 유연·박막 가능</td><td>△ 소결 필요</td><td style="color:#4ecdc4">◎ 필름 성형 용이</td></tr>
+<tr><td>안정성</td><td style="color:#ff6b6b">△ 수분 민감 (H₂S)</td><td style="color:#4ecdc4">◎ 대기 안정</td><td>○ 열 안정성 낮음</td></tr>
+<tr><td>계면 저항</td><td>○ 소프트 접촉</td><td style="color:#ff6b6b">△ 그레인 바운더리</td><td>○ 양호</td></tr>
+<tr><td>주요 업체</td><td>삼성SDI, Toyota</td><td>QuantumScape, SK온</td><td>Solid Power, BYD</td></tr>
+<tr><td>양산 시점</td><td style="color:#ffd93d">2027 H2</td><td>2028~29</td><td>2026 (중국 GAC)</td></tr>
+</tbody>
+</table>
+
+<h3>삼성SDI 무음극(Anode-less) 구조</h3>
+<div class="flow-diagram">
+<div class="flow-step">충전 시<br><span class="highlight">Li⁺ 이동</span></div>
+<div class="flow-arrow">→</div>
+<div class="flow-step">황화물<br>고체 전해질</div>
+<div class="flow-arrow">→</div>
+<div class="flow-step">음극 집전체에<br><span class="highlight">Li 금속 석출</span></div>
+<div class="flow-arrow">→</div>
+<div class="flow-step">방전 시<br>Li 금속 용해</div>
+</div>
+<p style="font-size:11px;color:#6b7a99;margin-top:6px">별도 음극 소재 불필요 → 셀 무게/부피 감소 → 에너지밀도 극대화 · 특허 ~1,100건</p>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ── 2-2. 건식전극 상세 ── -->
+<div class="card">
+<h2><span style="color:#4ecdc4">🏭</span> 건식전극 (Dry Electrode Process)</h2>
+
+<h3>습식 vs 건식 — 왜 건식이 미래인가?</h3>
+<table class="compare-table">
+<thead>
+<tr><th>항목</th><th style="color:#ff6b6b">습식 (기존)</th><th style="color:#4ecdc4">건식 (차세대)</th></tr>
+</thead>
+<tbody>
+<tr><td>공정</td><td>활물질 + 바인더 + <span class="highlight-r">NMP 용매</span><br>→ 슬러리 코팅 → 건조 → 프레스</td><td>활물질 + <span class="highlight-g">PTFE 바인더</span><br>→ 고전단 밀링 → 필름 → 프레스</td></tr>
+<tr><td>건조 공정</td><td style="color:#ff6b6b">필요 (대형 오븐 70~120m)</td><td style="color:#4ecdc4">불필요 ✕</td></tr>
+<tr><td>NMP 용매</td><td style="color:#ff6b6b">필요 (독성 · 회수 비용)</td><td style="color:#4ecdc4">불필요 ✕</td></tr>
+<tr><td>설비 투자(CAPEX)</td><td>100%</td><td style="color:#4ecdc4">~10% (90% 절감)</td></tr>
+<tr><td>에너지 소비</td><td>100%</td><td style="color:#4ecdc4">~10% (90% 절감)</td></tr>
+<tr><td>공정 시간</td><td>수 시간</td><td style="color:#4ecdc4">수 분</td></tr>
+<tr><td>활물질 비율</td><td>~95 wt%</td><td style="color:#4ecdc4">97~98 wt%</td></tr>
+<tr><td>바인더</td><td>PVDF 5~8%</td><td>PTFE 1~2%</td></tr>
+</tbody>
+</table>
+
+<h3>PTFE "스파이더웹" 구조의 핵심</h3>
+<div class="flow-diagram">
+<div class="flow-step">활물질 +<br>PTFE 분말</div>
+<div class="flow-arrow">→</div>
+<div class="flow-step" style="border-color:#4ecdc4"><span class="highlight-g">고전단<br>제트밀링</span></div>
+<div class="flow-arrow">→</div>
+<div class="flow-step">PTFE 섬유화<br><span class="highlight-g">"스파이더웹"</span></div>
+<div class="flow-arrow">→</div>
+<div class="flow-step">자립형 필름<br>(Self-standing)</div>
+<div class="flow-arrow">→</div>
+<div class="flow-step">집전체에<br>라미네이션</div>
+</div>
+<p style="font-size:11px;color:#6b7a99;margin-top:6px">PTFE가 나노 섬유망을 형성 → 활물질 입자를 기계적으로 결착 → 용매 없이 전극 필름 완성</p>
+
+<h3>건식전극의 방향성</h3>
+<ul>
+<li><span class="highlight-g">Tesla 4680</span>: 2025 Q4 양극·음극 모두 건식 양산 성공 (GF Texas) · 특허로 공정 보호</li>
+<li><span class="highlight-g">삼성SDI</span>: 건식전극 특허 다수 출원 (입자분산·필름증착·다층 조성물) · 전고체와 시너지</li>
+<li><span class="highlight-r">핵심 과제</span>: PTFE 섬유화 균일성 · 두꺼운 전극(>200μm) 확대 · 양산 수율</li>
+<li><span class="highlight">CNT 도전재와의 결합</span>: 건식 공정에서 CNT가 PTFE 섬유망 사이 전도 경로 형성 → 상호보완적</li>
+</ul>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ── 2-3. CNT 도전재 상세 ── -->
+<div class="card">
+<h2><span style="color:#ff6b6b">🧬</span> CNT 도전재 — 왜 카본블랙 대신 CNT인가?</h2>
+
+<h3>기존 카본블랙(CB)의 한계</h3>
+<ul>
+<li>CB는 <span class="highlight-r">구형 입자(0D)</span> — 입자 간 접촉으로만 전도 → 높은 첨가량(5~8 wt%) 필요</li>
+<li>활물질 공간을 차지 → 에너지밀도 저하</li>
+<li>장기 사이클에서 접촉점 이탈 → 저항 증가</li>
+</ul>
+
+<h3>CNT의 구조적 우위</h3>
+<table class="compare-table">
+<thead>
+<tr><th>특성</th><th style="color:#ff6b6b">카본블랙 (CB)</th><th style="color:#4ecdc4">CNT</th><th>차이</th></tr>
+</thead>
+<tbody>
+<tr><td>형태</td><td>구형 (0D)</td><td style="color:#4ecdc4">튜브형 (1D)</td><td>Aspect ratio ~1000:1</td></tr>
+<tr><td>필요 첨가량</td><td>5~8 wt%</td><td style="color:#4ecdc4">1~2 wt%</td><td><span class="highlight-g">1/5로 절감</span></td></tr>
+<tr><td>전도 메커니즘</td><td>Point contact</td><td style="color:#4ecdc4">Percolation network</td><td>연속 전도 경로</td></tr>
+<tr><td>인장강도</td><td>~20 MPa</td><td style="color:#4ecdc4">~110 MPa</td><td>5.5배</td></tr>
+<tr><td>열전도도</td><td>~6 W/m·K</td><td style="color:#4ecdc4">~210 W/m·K</td><td>35배</td></tr>
+<tr><td>용량 유지율<br>(고속 충방전)</td><td>~44%</td><td style="color:#4ecdc4">~60%</td><td>+16%p</td></tr>
+</tbody>
+</table>
+
+<h3>CNT가 건식전극에서 필수인 이유</h3>
+<div class="flow-diagram">
+<div class="flow-step" style="border-color:#ff6b6b"><span class="highlight-r">PTFE 섬유망</span><br>(기계적 결착)</div>
+<div class="flow-arrow">+</div>
+<div class="flow-step" style="border-color:#4ecdc4"><span class="highlight-g">CNT 네트워크</span><br>(전기적 결착)</div>
+<div class="flow-arrow">=</div>
+<div class="flow-step" style="border-color:#ffd93d"><span class="highlight">완전한<br>건식전극</span></div>
+</div>
+<ul style="margin-top:12px">
+<li>습식 공정: 용매가 CB를 분산 → 건조 후 접촉점 형성 (문제 없음)</li>
+<li>건식 공정: <span class="highlight-r">용매가 없으므로</span> CB 구형 입자가 제대로 분산·접촉 불가</li>
+<li>CNT의 <span class="highlight-g">1D 튜브 구조</span>가 PTFE 섬유망 사이에서 자연스럽게 전도 경로 형성</li>
+<li>결론: <span class="highlight">건식전극 = PTFE(바인더) + CNT(도전재)가 한 세트</span></li>
+</ul>
+
+<h3>CNT 유형별 특성</h3>
+<table class="compare-table">
+<thead>
+<tr><th>유형</th><th>구조</th><th>직경</th><th>장점</th><th>적용</th></tr>
+</thead>
+<tbody>
+<tr><td style="color:#ff6b6b">SWCNT</td><td>단일벽</td><td>1~2 nm</td><td>최고 전도성, 극소량으로 효과</td><td>프리미엄 EV 셀</td></tr>
+<tr><td style="color:#ff6b6b">MWCNT</td><td>다중벽</td><td>5~20 nm</td><td>가격 경쟁력, 대량 생산</td><td>범용 EV·ESS</td></tr>
+<tr><td style="color:#ff6b6b">FWCNT</td><td>소수벽 (2~5)</td><td>2~5 nm</td><td>SWCNT급 성능 + 양산성</td><td>차세대 하이엔드</td></tr>
+</tbody>
+</table>
+
+<h3>한국 밸류체인</h3>
+<ul>
+<li><span class="highlight">LG화학</span>: CNT 글로벌 1위 · 여수 MWCNT 증설 · 건식전극향 제품 라인업</li>
+<li><span class="highlight">제이오</span>: SWCNT 전문 · 삼성SDI 공급 · 고순도 분산액</li>
+<li><span class="highlight">금양</span>: MWCNT · ESS·EV 양극 도전재 · 동유럽 확장</li>
+<li><span class="highlight">나노씨엠에스</span>: CNT 분산액 · LG에너지솔루션 공급</li>
+</ul>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ── 2-4. 실리콘 음극재 상세 ── -->
+<div class="card">
+<h2><span style="color:#556dff">🔋</span> 실리콘 음극재 — 흑연을 넘어서</h2>
+
+<h3>왜 실리콘인가?</h3>
+<table class="compare-table">
+<thead>
+<tr><th>항목</th><th>흑연 (현재 주력)</th><th style="color:#556dff">실리콘</th></tr>
+</thead>
+<tbody>
+<tr><td>이론 용량</td><td>372 mAh/g</td><td style="color:#4ecdc4">4,200 mAh/g</td></tr>
+<tr><td>배율</td><td>1x</td><td style="color:#4ecdc4"><span class="highlight-g">~11배</span></td></tr>
+<tr><td>체적 팽창</td><td style="color:#4ecdc4">~10%</td><td style="color:#ff6b6b">~300%</td></tr>
+<tr><td>초기 쿨롱 효율</td><td style="color:#4ecdc4">~93%</td><td style="color:#ff6b6b">~75~85%</td></tr>
+<tr><td>원료 가격</td><td>중간</td><td style="color:#4ecdc4">저렴 (지각 2위)</td></tr>
+</tbody>
+</table>
+
+<h3>팽창 문제 — 핵심 기술 과제</h3>
+<div style="background:#0d1424;border:1px solid #1e293b;border-radius:8px;padding:14px;margin:12px 0;font-size:11.5px;color:#94a3c0;line-height:1.8">
+<strong style="color:#ff6b6b">300% 팽창 → 3가지 연쇄 실패:</strong><br>
+① <span class="highlight-r">기계적 파괴</span>: Si 입자 크래킹·분쇄 → 전기적 접촉 상실<br>
+② <span class="highlight-r">SEI 불안정</span>: 팽창/수축 반복 → SEI 지속 파괴/재형성 → Li 소모<br>
+③ <span class="highlight-r">접착력 약화</span>: 전극-집전체 박리 → 용량 급감
+</div>
+
+<h3>해결 기술 로드맵</h3>
+<table class="compare-table">
+<thead>
+<tr><th>세대</th><th>기술</th><th>Si 함량</th><th>팽창 제어</th><th>대표 업체</th></tr>
+</thead>
+<tbody>
+<tr><td>현재</td><td>흑연 + SiOx 블렌딩</td><td>5~15%</td><td>SiO 매트릭스 완충</td><td>LGES, 삼성SDI</td></tr>
+<tr><td>2세대</td><td>Si-C 복합체</td><td>20~40%</td><td>탄소 코팅/쉘 구조</td><td>Group14, Sila</td></tr>
+<tr><td>3세대</td><td>나노구조 순수 Si</td><td>80~100%</td><td>나노선/다공성/중공</td><td>Amprius, Enovix</td></tr>
+<tr><td>4세대</td><td>PVD 박막 Si</td><td>100%</td><td>박막(<10μm) 응력 분산</td><td>Tesla(추정)</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ── 2-5. 차세대 양극재 ── -->
+<div class="card">
+<h2><span style="color:#a78bfa">⚗️</span> 차세대 양극재 트렌드</h2>
+
+<h3>하이니켈 — 왜 Ni 비율을 올리는가?</h3>
+<ul>
+<li>양극 활물질: Li(Ni<sub>x</sub>Co<sub>y</sub>Mn<sub>z</sub>)O₂ → <span class="highlight-p">Ni ↑ = 용량 ↑ = 에너지밀도 ↑</span></li>
+<li>Ni 60%(NCM622) → 80%(NCM811) → <span class="highlight">90%+(Ni9x)</span>로 진화</li>
+<li>Co 비율 ↓ → 원가 절감 (코발트는 가장 비싼 원소)</li>
+<li><span class="highlight-r">트레이드오프</span>: Ni↑ → 열안정성↓ · 수명↓ → 코팅·도핑·단결정으로 보완</li>
+</ul>
+
+<h3>LMFP — LFP의 전압 업그레이드</h3>
+<table class="compare-table">
+<thead>
+<tr><th>항목</th><th>LFP</th><th style="color:#a78bfa">LMFP</th><th>차이</th></tr>
+</thead>
+<tbody>
+<tr><td>평균 전압</td><td>3.2V</td><td style="color:#4ecdc4">3.8~4.0V</td><td>+20%</td></tr>
+<tr><td>에너지밀도</td><td>~160 Wh/kg</td><td style="color:#4ecdc4">~210 Wh/kg</td><td>+30%</td></tr>
+<tr><td>원가</td><td style="color:#4ecdc4">최저</td><td>LFP 대비 +10~15%</td><td>여전히 NMC보다 저렴</td></tr>
+<tr><td>안전성</td><td style="color:#4ecdc4">◎</td><td style="color:#4ecdc4">◎</td><td>Co-free 유지</td></tr>
+<tr><td>주요 업체</td><td>CATL, BYD</td><td>CATL, LGES(개발중)</td><td>—</td></tr>
+</tbody>
+</table>
+
+<h3>단결정 NMC — 수명 혁신</h3>
+<ul>
+<li>기존 다결정: 2차 입자(집합체) → 충방전 시 입자 간 균열 → <span class="highlight-r">수명 저하</span></li>
+<li>단결정: 단일 결정 입자 → 균열 없음 → <span class="highlight-g">사이클 수명 2배+</span></li>
+<li>ESS·장수명 EV에 핵심 · 에코프로비엠·포스코퓨처엠 양산 중</li>
+</ul>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- 3. 업체별 기술 로드맵 -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="card">
+<h2>🏭 업체별 기술 로드맵 타임라인</h2>
+
+<h3 style="color:#ffd93d">삼성SDI</h3>
+<div class="roadmap">
+<div class="rm-item"><div class="rm-dot" style="background:#4ecdc4"></div><div class="rm-year">2025</div><div class="rm-label">P6 양산<br>각형 295Wh/kg</div></div>
+<div class="rm-item"><div class="rm-dot" style="background:#a78bfa"></div><div class="rm-year">2026</div><div class="rm-label">전고체 파일럿<br>로봇용 샘플</div></div>
+<div class="rm-item"><div class="rm-dot" style="background:#ffd93d"></div><div class="rm-year">2027 H2</div><div class="rm-label">전고체 양산<br>~450Wh/kg</div></div>
+<div class="rm-item"><div class="rm-dot" style="background:#ff6b6b"></div><div class="rm-year">2028+</div><div class="rm-label">EV 적용 확대<br>무음극 고도화</div></div>
+</div>
+
+<h3 style="color:#4ecdc4">LG에너지솔루션</h3>
+<div class="roadmap">
+<div class="rm-item"><div class="rm-dot" style="background:#4ecdc4"></div><div class="rm-year">2025</div><div class="rm-label">4680 양산<br>NCMA+SiC</div></div>
+<div class="rm-item"><div class="rm-dot" style="background:#a78bfa"></div><div class="rm-year">2026</div><div class="rm-label">더블스택 각형<br>Tesla ESS 공급</div></div>
+<div class="rm-item"><div class="rm-dot" style="background:#ffd93d"></div><div class="rm-year">2028</div><div class="rm-label">건식전극 도입<br>Si 음극 확대</div></div>
+<div class="rm-item"><div class="rm-dot" style="background:#ff6b6b"></div><div class="rm-year">2030</div><div class="rm-label">전고체 양산<br>고분자/황화물</div></div>
+</div>
+
+<h3 style="color:#ff6b6b">SK온</h3>
+<div class="roadmap">
+<div class="rm-item"><div class="rm-dot" style="background:#4ecdc4"></div><div class="rm-year">2025</div><div class="rm-label">NCM9+ 양산<br>Ford·현대 공급</div></div>
+<div class="rm-item"><div class="rm-dot" style="background:#a78bfa"></div><div class="rm-year">2026</div><div class="rm-label">전고체 파일럿<br>대전 플랜트 완공</div></div>
+<div class="rm-item"><div class="rm-dot" style="background:#ffd93d"></div><div class="rm-year">2028</div><div class="rm-label">전고체 양산<br>(1년 앞당김)</div></div>
+<div class="rm-item"><div class="rm-dot" style="background:#ff6b6b"></div><div class="rm-year">2029+</div><div class="rm-label">EV 적용<br>산화물계</div></div>
+</div>
+
+<h3 style="color:#556dff">Tesla</h3>
+<div class="roadmap">
+<div class="rm-item"><div class="rm-dot" style="background:#4ecdc4"></div><div class="rm-year">2025 Q4</div><div class="rm-label">4680 풀 건식<br>양극+음극 모두</div></div>
+<div class="rm-item"><div class="rm-dot" style="background:#a78bfa"></div><div class="rm-year">2026</div><div class="rm-label">건식 양산 확대<br>Cybercab LFP</div></div>
+<div class="rm-item"><div class="rm-dot" style="background:#ffd93d"></div><div class="rm-year">2027</div><div class="rm-label">Roadster 셀<br>Gen3 330Wh/kg</div></div>
+<div class="rm-item"><div class="rm-dot" style="background:#ff6b6b"></div><div class="rm-year">2028+</div><div class="rm-label">Gen4 Si 음극<br>PVD 박막(추정)</div></div>
+</div>
+
+<h3 style="color:#ffd93d">CATL</h3>
+<div class="roadmap">
+<div class="rm-item"><div class="rm-dot" style="background:#4ecdc4"></div><div class="rm-year">2025</div><div class="rm-label">Shenxing 2.0<br>LFP 1000km</div></div>
+<div class="rm-item"><div class="rm-dot" style="background:#a78bfa"></div><div class="rm-year">2026</div><div class="rm-label">WIPO 전고체 출원<br>특허 111%↑</div></div>
+<div class="rm-item"><div class="rm-dot" style="background:#ffd93d"></div><div class="rm-year">2027</div><div class="rm-label">Condensed 양산<br>500Wh/kg</div></div>
+<div class="rm-item"><div class="rm-dot" style="background:#ff6b6b"></div><div class="rm-year">2028+</div><div class="rm-label">전고체 풀스케일<br>EV 탑재</div></div>
+</div>
+</div>
+
+<!-- Update Log -->
+<div style="background:#0a0f1a;border:1px solid #2d3a52;border-left:3px solid #a78bfa;border-radius:8px;padding:12px 16px;margin-top:24px;font-size:11px;color:#94a3c0;line-height:1.7">
+<strong style="color:#a78bfa">📝 Update Log · 2026.05.20</strong><br>
+• <strong>페이지 신설</strong> — 배터리 기술·특허 트래커 탭 추가<br>
+• <strong>핵심 기술 해설 5종</strong> — 전고체(황화물/산화물/고분자 비교), 건식전극(PTFE 스파이더웹), CNT 도전재(CB 대비 1/5), 실리콘 음극재(팽창 문제·로드맵), 차세대 양극재(하이니켈·LMFP·단결정)<br>
+• <strong>업체별 로드맵</strong> — 삼성SDI·LGES·SK온·Tesla·CATL 타임라인<br>
+• <strong>특허 피드 위젯</strong> — weekly_patents.json 자동 연동 (매주 월요일 8AM KST 수집)
+</div>
+
+<p class="updated">마지막 업데이트: 2026.05.20</p>
+
+<script>
+const gridColor='rgba(255,255,255,0.06)';
+const tickColor='#6b7a99';
+
+// 업체별 특허 수 (2026.05 기준)
+new Chart(document.getElementById('cPatent'),{type:'bar',data:{labels:['삼성SDI','LGES','CATL','Toyota','Panasonic','Tesla','SK온','BYD'],datasets:[
+{label:'전고체',data:[1100,320,450,1300,280,80,200,150],backgroundColor:'rgba(255,217,61,0.7)',borderRadius:3},
+{label:'각형/원통',data:[1200,800,950,400,600,500,350,700],backgroundColor:'rgba(167,139,250,0.5)',borderRadius:3},
+{label:'기타(BMS/리사이클등)',data:[600,500,700,300,350,400,250,500],backgroundColor:'rgba(107,122,153,0.3)',borderRadius:3}
+]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'top',labels:{color:tickColor,font:{size:9},padding:8}},tooltip:{backgroundColor:'#1e293b',titleColor:'#e0e6f0',bodyColor:'#94a3c0',borderColor:'#2d3a52',borderWidth:1}},scales:{x:{stacked:true,grid:{display:false},ticks:{color:tickColor,font:{size:10}}},y:{stacked:true,grid:{color:gridColor},ticks:{color:tickColor,callback:v=>v>=1000?(v/1000)+'k':v}}}}});
+
+// 기술 분류별 출원 트렌드
+new Chart(document.getElementById('cTech'),{type:'doughnut',data:{
+labels:['전고체','건식전극','양극재','음극재/Si','BMS/충전','리사이클링','셀 구조','기타'],
+datasets:[{data:[35,15,18,12,8,5,4,3],backgroundColor:['#ffd93d','#4ecdc4','#a78bfa','#556dff','#ff6b6b','#6b7a99','#f59e0b','#3a4a6b'],borderWidth:0}]
+},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:tickColor,font:{size:9},padding:6}},tooltip:{backgroundColor:'#1e293b',titleColor:'#e0e6f0',bodyColor:'#94a3c0'}}}});
+</script>
+
+</body>
+</html>
