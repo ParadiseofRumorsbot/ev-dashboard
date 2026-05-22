@@ -1,0 +1,157 @@
+{
+  "type": "ev_launch_timeline",
+  "lastUpdated": "2026-05-22T03:38:32.777Z",
+  "date": "2026-05-22",
+  "description": "EV 신차 출시일정 모니터링 — 타임라인 테이블 반영용",
+  "note": "⚠️ 자동 수집 결과입니다. 대시보드 반영 전 사용자 확인 필요.",
+  "totalItems": 15,
+  "oemStats": {
+    "Stellantis": 1,
+    "Tesla": 2,
+    "Nissan": 2,
+    "Toyota/Lexus": 1,
+    "Hyundai": 2,
+    "Skoda": 2,
+    "Mercedes": 2,
+    "VW": 1,
+    "Other": 1,
+    "Ford": 1
+  },
+  "items": [
+    {
+      "title": "Stellantis unveils €60bn plan and 60 new models by 2030 - Euronews",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPV0N6NFZvUkZBNng0bW1lQkMwbU05RnBKdXNSYXF4aEhHQkFxU1Bkb0Y2U1hyWGczWmtQaHdnQkNEUWZuYjVLYllORmxSVjlua0s1Z1hscDktWmFLVlZSU0QzTnJqZmZXOVNpQXNyd0xrRWZMcEcwNzRDWG1QRG9yU3JvRHhYRXVOemJhQXVKcVBRVkoxT05UeV9oeEJWUDloQllEODFIakpMYmhNcG9sbFNhWlBFZGc5azl3?oc=5",
+      "pubDate": "Thu, 21 May 2026 15:30:13 GMT",
+      "source": "Euronews",
+      "oem": "Stellantis",
+      "market": "Global",
+      "score": 2
+    },
+    {
+      "title": "SpaceX reveals reason for Starship v3 stand down, announces next launch date - Teslarati",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQY3pkUWlyRXFURDlXQ01sOGRoTHhrQl9NMXVIT0xoazAwUnBrQlI5cWpTbkxMM3ByT0lzOHBFVzdNLXYzWENpaUplN3ZJMW1LbTBlbzlyemdERmVkWkVxOWtLYnRVYWwwa0RoNGhzLTVlb3lGY2stNHEzYWR3Vl9adUlqamFOVnN4dzFyLXBPOWxfUUdZNlFYTTVZVHBoWFU?oc=5",
+      "pubDate": "Fri, 22 May 2026 01:40:42 GMT",
+      "source": "Teslarati",
+      "oem": "Tesla",
+      "market": "Global",
+      "score": 2
+    },
+    {
+      "title": "Nissan Tekton launch date revealed! Upcoming Duster, Creta rival - The Times of India",
+      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOWnpRNVlaUzZtRVZuUFQ1UkVXQ2RxYVowb254WkVMZXV6c1Z0a1FOek9KeFhTWDV3UWZBaGtXdFN6a08zTUhiZkZsNDhQeHVGMFNQWkNRdndLSUM4VU5CVE8xQ08yYkYyaE8tamJ2R1VlcW92VVB4UTd2TDF4VnBGcW80OGdCRGVNNDFXWmVUa2ZTc3lWOWFMQlJteE5HRmlBcnRHeVpwMExMdkRWNkNZcjNMcjFrMDZtdHlTcERGUzFwQTZRdkt4eDdtY1pybGfSAdQBQVVfeXFMUFRaeUQ3bXJtaE9fbmJzYTViMi0xZHFQajN1VlRUTlhsY09wV2pwVnczWlhnaGJsZXlMU1JiSVVoRUJaX2RacDlZQ2lzX2tFdVRfVEVxZWR4U0ZmYVlSQnNSeHg3d015ZE4tOWpHdjR2cV81NUowdmZzYzdqYmx4bUQ3d3BkZVYzYkhhVENBRHk3SDI1a25TT2FfeGxPanQtOFpTbzBvNFU5eUh4SkVKVmt0aWpWQ1lqdGdoaElROVh3Q3ZqNkJrY0J5NDFHa09FUlBWV1Q?oc=5",
+      "pubDate": "Thu, 21 May 2026 08:55:00 GMT",
+      "source": "The Times of India",
+      "oem": "Nissan",
+      "market": "Global",
+      "score": 2
+    },
+    {
+      "title": "2027 Lexus NX Preview: Model Info & Release Date - CarsDirect",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFA3LUZNLXBGMGswTEZHN3VyTVpOQTJkUVpLYWYySHY1a3ZHRFI5OGZmbVdjcFVsSlhGTGhsZjZ4S3AtQXZEQk81SVduQVNPRk1Ya3c?oc=5",
+      "pubDate": "Wed, 20 May 2026 22:10:08 GMT",
+      "source": "CarsDirect",
+      "oem": "Toyota/Lexus",
+      "market": "NA",
+      "score": 1
+    },
+    {
+      "title": "Hyundai Launches Electric Carsharing in South Korea - Auto Rental News",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQMDBHSlhLdXBWTy1tQmhBaDF4b1Y1dk1CZlhnU180dmlfY0s5OFQwNTRteHlDOHJ0bjRQeDBrb0dmQ3pHWUd0Nk0zNGd0aGJGT1pWNXgxTmIxUkRYV0I5TDBKdnRTWW55bmhjLVItYVdvREgtLVRiNTVqWXJLdzM1LWw0NXAya0tmR1F5akVEaUk?oc=5",
+      "pubDate": "Wed, 20 May 2026 09:49:22 GMT",
+      "source": "Auto Rental News",
+      "oem": "Hyundai",
+      "market": "KR",
+      "score": 1
+    },
+    {
+      "title": "Hyundai Motor Reaffirms China Commitment at Auto China 2026, Unveils IONIQ V as First Step in New Product Offensive - Hyundai Motor Group",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOeEM3MVhRV2VUajJSU08zVUpVOVZhdHlaYzdic3VTRXNrd1pnZnJkOUdXZFozR2dNUHRfbTFmT196UnNsaXdXanFYQXZnZWlZeExUaXloSnp5SG9MWlJoOVhSSG5HVnc3TWlWTlphUmtnNjlKQ0NHZkhrV0xkNjVVODJwdlo5NnpjcDRlSFQwXzByaTJ0dmFTUWlB?oc=5",
+      "pubDate": "Wed, 20 May 2026 16:15:41 GMT",
+      "source": "Hyundai Motor Group",
+      "oem": "Hyundai",
+      "market": "CN",
+      "score": 1
+    },
+    {
+      "title": "Skoda Epiq budget EV confirmed for 2026 Australian launch - MSN",
+      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQZXV5WTJCUHJ5TjlLTUlocWZRTHV2OHR2N3oyTDJGQ3FvaUtFZGZ4aUYxaENsLXZ0ZFc4bEl3Rjg4T3AwdEdnX2hwanRWRmFuTUstWHRmOUJWVjdONkxJVDdwbmV0X1IybERYNm13VE12MnVlU1lVdmlwWHNTVEhEanJPMVNpTDVpQ3dqU0N3bzJkTGxzQ3Q1bGFpZlN3cTk1Y1poUVQzREhndWVYVFpIWEpkekx6NkZ5eGEtUllKZ3huM09wQ3NaUmo1Sm4yQ0RoZDEzTkFXbndWYnZpa2ZjZg?oc=5",
+      "pubDate": "Thu, 21 May 2026 19:28:52 GMT",
+      "source": "MSN",
+      "oem": "Skoda",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "Flight 12 Starship launch: Watch live stream recordings with archived live updates [Scrubbed on May 21] - Tesla Oracle",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNVm5vWThmRXZ6cTM1SFNYUl83R2owZUdNUnFBOG5CS1hqa3p2dlFjZU55aEFqVlpVNTlGZV9zVFItLWxkUnpaajVhSXhqdXlraVJHV1hyc0dpLWRJNDBiLTY2ZVc2NGhRb3JrR0xoMlN6dGNIVTdTVWVub251ZG9oTVQ0LVNhejVSN2k0Q1hNU19wNFVaMjBtdEctelNRYWIxVnlDeA?oc=5",
+      "pubDate": "Fri, 22 May 2026 00:59:21 GMT",
+      "source": "Tesla Oracle",
+      "oem": "Tesla",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "Mercedes-Benz launches aggressive EQS lease deals amid EV market shifts - MSN",
+      "link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxOTHRwS3JLYUw5b3RmaGJkOXphVTRxUi1vXzhocm9uc1pjVU5lUlFTWDY3Yi1peEdXd19jVVVSdjFjdmtweEFUQmFsX0Q3MVFQM2lGeU5CNEVYZHduQjBhOGxvU19Lb25pZ1VmZjdEd0VoREVSRHJwa0w4OVNNTTNuMXRBSTVrazVCMC1iNDdRSVNmdzI2dks1NWpkc3A0MnBmSE1EemhxRllEdmhMYlpVWjhLdy1Zd24yOFNqX3htMzRvdXRvNGNETng1SXFFWkVwR3dmblNxTlRSVEN5STZrRmZ0bHFqZXpGbnhfZmVvWjRyRzJ6SjRoX2lkU2VoaWpnSEpn?oc=5",
+      "pubDate": "Tue, 19 May 2026 11:26:04 GMT",
+      "source": "MSN",
+      "oem": "Mercedes",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "VW coy about ID. Polo and ID.3 Neo EV launches in Australia - CarExpert",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPOVJJanpCLXJUSHFjV19UdUtaRlFRcUtxc1p2NkNVdFNfOUltVjhwYlB5OVNvazczR2pOU0dDZm9qV2t3dFRXRzhpdGZMYzRiTnZJVDFCQ1VFSWhVdFZXOWJid01TWVZfWjRsaEVpVW5JX0k5cHptVERVeVRwQ2Q3aHhJNXBtNUxsenZrTl9ReXRYNUd0b0JvcVdtVQ?oc=5",
+      "pubDate": "Thu, 21 May 2026 23:15:54 GMT",
+      "source": "CarExpert",
+      "oem": "VW",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "Germany launches new electric car subsidy aimed at low-income households - The Driven",
+      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQY01ubzJjNG5RMXlXR0otenhlZDFDZEtCYUZEM01wZGhyU21sRUJpenM4bUdObWhmZXJLTnMwMWZHNC1EOHpnMmVJcVkxNno1VWRHbno0ancxV3lWdnpUY0g3LU1idGxvRm91Q0tnOFVrM2JicE9oZkxSNXRPemR3QzF6RlNHaVlwMTJmbzVzcXJCS3pRTHI1U25uZ3dLYU4yck0zTGJ3VFo?oc=5",
+      "pubDate": "Wed, 20 May 2026 06:06:58 GMT",
+      "source": "The Driven",
+      "oem": "Other",
+      "market": "EU",
+      "score": 1
+    },
+    {
+      "title": "Nissan Tekton India Launch - Premium Look and Hybrid Tech - CarLelo",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNMmxIOWJTSGFWelU2dm15X1VPbGoxY0NVNTM4WTU3YUx3RHZaMEVZTkxRN1EyZWZNVFlUdGVHUldyQ3FoRU8zX2R2dk5aYjMtZnk3eWRDZE5hdU43OEpUY0xlaWZWYzdQTkxsSDduWHRVdzNqc0pmMk9uRlByLWJObQ?oc=5",
+      "pubDate": "Thu, 21 May 2026 07:06:53 GMT",
+      "source": "CarLelo",
+      "oem": "Nissan",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "Skoda Epiq electric SUV matches combustion price, undercuts Ford rival by €10,000 - Automotive News",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9IWldINWo0Vy1qekczSVZTcHYwSjdwdjBIOUV3NWthTGdIMkVRRzc3dU5SSXBLLUdlX3hpUHhYQ21tMzlnMk1mSnJETXU5TmFMaXZMdnMwc2E5R213VjRmZ3cxbGVJZFZvUlBQM0Z6NzhjSjJwZTZCN0N2ZHM1UmM?oc=5",
+      "pubDate": "Tue, 19 May 2026 13:14:00 GMT",
+      "source": "Automotive News",
+      "oem": "Ford",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "Skoda launches Epiq, a £25K electric SUV crossover - Tech Digest",
+      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNdjZzT2NnQlZqbmZ6MnkyX2pFMEl4dWNtUjROX0k3dEpNMEM5ZVEtbFI2RGtienJwUG9UQ1duYjJicENXYTh3VDhwSGZkeFpNXzJLX2RKQzUwN3I2V2FTclRyTmRRVXo1TWFIN29ja1V3VThnbTB0WGZ0V0EzdlRjU0J4cUFtN3NDTG9JMzh3SQ?oc=5",
+      "pubDate": "Tue, 19 May 2026 12:44:43 GMT",
+      "source": "Tech Digest",
+      "oem": "Skoda",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "The 2027 Mercedes-AMG GT 4-Door EV Debuts as the Porsche Taycan's New Nemesis - Car and Driver",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQSkZjS1JNUTRWVkdaMEduSUxFNWxVX2gxWmpEMnhqOTlGV2w5bVJvUFJpOHhVaVliNVhkUWxfbXljd2VtcEN4REdqVFAxeTNEdXBEa0lXaG9ySVRQYXpOdkJyNXFILWxScnU1SGMzNkR6VXAwU2JxX2NqWi03aFdQLWVic19FYzlQMWpNcQ?oc=5",
+      "pubDate": "Wed, 20 May 2026 03:30:31 GMT",
+      "source": "Car and Driver",
+      "oem": "Mercedes",
+      "market": "Global",
+      "score": 1
+    }
+  ]
+}
