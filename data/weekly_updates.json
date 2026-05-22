@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-05-22T08:49:22.562Z",
+  "syncedAt": "2026-05-22T14:17:13.620Z",
   "latestDate": "2026-05-22",
   "count": 21,
   "this_week": [],
@@ -151,7 +151,7 @@
     },
     {
       "title": "중국 4월 NEV 반영",
-      "category": "���국",
+      "category": "중국",
       "icon": "🇨🇳",
       "body": "중국 4월 NEV 판매 84.9만대 데이터 반영 (BEV 57.9만 / PHEV 19.2만) · CPCA",
       "color": "red",
@@ -219,7 +219,7 @@
       "title": "유럽 4월 개별국 반영",
       "category": "유럽",
       "icon": "🇬🇧🇫🇷",
-      "body": "유럽 4월 영국·���랑스 개별국 EV 판매 데이터 반영",
+      "body": "유럽 4월 영국·프랑스 개별국 EV 판매 데이터 반영",
       "color": "blue",
       "section": "update_log",
       "targets": [
