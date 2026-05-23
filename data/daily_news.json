@@ -1,31 +1,29 @@
 {
   "type": "ev_launch_timeline",
-  "lastUpdated": "2026-05-22T22:33:46.430Z",
-  "date": "2026-05-22",
+  "lastUpdated": "2026-05-23T22:25:04.027Z",
+  "date": "2026-05-23",
   "description": "EV 신차 출시일정 모니터링 — 타임라인 테이블 반영용",
   "note": "⚠️ 자동 수집 결과입니다. 대시보드 반영 전 사용자 확인 필요.",
-  "totalItems": 17,
+  "totalItems": 12,
   "oemStats": {
-    "Toyota/Lexus": 1,
+    "Hyundai": 1,
     "Tesla": 1,
+    "Mercedes": 1,
     "Stellantis": 2,
-    "Other": 2,
-    "BYD": 1,
-    "Hyundai": 2,
-    "Kia": 1,
-    "BMW": 3,
-    "Honda": 2,
-    "Skoda": 1,
-    "Mercedes": 1
+    "Toyota/Lexus": 1,
+    "Other": 3,
+    "BMW": 1,
+    "Rivian": 1,
+    "Skoda": 1
   },
   "items": [
     {
-      "title": "2028 Lexus NX Preview: Redesign Info & Release Date - CarsDirect",
-      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1PQno3WERsUUJMWWhyVEs0Tms1ZkhyNTgxMEJNQ1djbTFWaEMtZjBkVE4tQzJGR2ZLYW1NREFxNlZvdGVrYzZ1bUM4NVdoMlFibGc?oc=5",
-      "pubDate": "Fri, 22 May 2026 19:54:43 GMT",
-      "source": "CarsDirect",
-      "oem": "Toyota/Lexus",
-      "market": "NA",
+      "title": "New Hyundai Compact EV SUV To Rival Nexon EV – Launch Timeline Revealed - CarLelo",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1ySmxNcXR6V0tZSXA3STcxWVRrTXJtS280eWNqMHk3QUVXLURnbmFZNU9VMVowNWJIbmpRZjQxaHp1cm02MEYtUzVMNTlfZTJJSlpWUldfcExMXy1RRlNvbm1JSWlHRjM5Y0NGVS1pTGZHaFYtbkVLSTY4UWs0dw?oc=5",
+      "pubDate": "Sat, 23 May 2026 09:53:25 GMT",
+      "source": "CarLelo",
+      "oem": "Hyundai",
+      "market": "Global",
       "score": 2
     },
     {
@@ -34,6 +32,15 @@
       "pubDate": "Fri, 22 May 2026 08:16:38 GMT",
       "source": "Not a Tesla App",
       "oem": "Tesla",
+      "market": "Global",
+      "score": 2
+    },
+    {
+      "title": "Mercedes-Benz GLE And GLS Night Edition SUVs Launched: Prices Start At Rs 1.05 Crore - Car and Bike",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQUUw5aS1na0RJX2xiRjhZSmdKQjFva1ZOYWJNUVdybm1kU0hEQjJ3VHppanFRbjZVSE9rQ090UVpsN3F1TURja2ZxdVFBU183NGc0YThHYS01SXY4NzByblJMNXVwYk1TSDVUNm1MM0xhV3JCcmVjRjJ1T0FJLW83OFEzcmdUWEczS1M3TTNjOUlmdzJJdHVIQTVVbWdpUXpBLUx1QVk5ZmN1MWJfUm95QlR1TEVDd2V0aEYxN3VR?oc=5",
+      "pubDate": "Thu, 21 May 2026 11:44:40 GMT",
+      "source": "Car and Bike",
+      "oem": "Mercedes",
       "market": "Global",
       "score": 2
     },
@@ -47,6 +54,15 @@
       "score": 2
     },
     {
+      "title": "2027 Lexus RX Preview: Model Info & Release Date - CarsDirect",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1zZS13bzJnM0xFWHF2MHlBUkFkSkNnU0VYWUkxUUNvbXRvZVNBSjA0bmgzOGJiZWlGVnhXY2dIVGhwdFNmN2phNm9KQTM1eVpiUUE?oc=5",
+      "pubDate": "Fri, 22 May 2026 16:54:54 GMT",
+      "source": "CarsDirect",
+      "oem": "Toyota/Lexus",
+      "market": "NA",
+      "score": 1
+    },
+    {
       "title": "JLR to show Range Rover EV ahead of 2026 orders - Automotive World",
       "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPTDN4alZ1cnFrbEZoWHBBY2VGYjBsNXE2dTFhY2pCUVBxQ01JWFozb2R1c0hOR1ZBYzRRM0l0MmFWMHJOMkRyeDdJQTBIbHQzX25fLXJ1em1MbmZiZU12TU1RcHZ3aDByTmNiWkw1T29mRHVsZGp6SHE1WVhGMWg5c21RekhkOXZ3X1p0SVpB?oc=5",
       "pubDate": "Fri, 22 May 2026 04:40:59 GMT",
@@ -56,56 +72,20 @@
       "score": 1
     },
     {
-      "title": "BYD’s flagship electric sedan spotted with a familiar look ahead of its debut [Images] - Electrek",
-      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOeVBzMVpoTTdqRTJfc3hXWDJaZWJGMmZtbW5GNGFQZF9NNDNBcWx1bE1lQ2RTQkdtbnVNUnhreEdVTWpZcFFXZnFoMWpTSThZVUJMNnZoZGFWNUhNR1VyMkR1UjVtU3BuMTVfYVhfWWQzc2N6YVQzOEJJclRuZW9nOVl4UFFnM0swbGRvNW1nWEVHcFZ2?oc=5",
-      "pubDate": "Fri, 22 May 2026 15:55:00 GMT",
-      "source": "Electrek",
-      "oem": "BYD",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "Hyundai Launches Electric Carsharing in South Korea - Auto Rental News",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQMDBHSlhLdXBWTy1tQmhBaDF4b1Y1dk1CZlhnU180dmlfY0s5OFQwNTRteHlDOHJ0bjRQeDBrb0dmQ3pHWUd0Nk0zNGd0aGJGT1pWNXgxTmIxUkRYV0I5TDBKdnRTWW55bmhjLVItYVdvREgtLVRiNTVqWXJLdzM1LWw0NXAya0tmR1F5akVEaUk?oc=5",
-      "pubDate": "Wed, 20 May 2026 09:49:22 GMT",
-      "source": "Auto Rental News",
-      "oem": "Hyundai",
-      "market": "KR",
-      "score": 1
-    },
-    {
-      "title": "Over 10 new midsize SUVs set to launch by 2027 - MSN",
-      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQNVVOTXR2TXJ6cXI5dmJxMjhnMDlhNDBfRXVMOGdqclJLVEpHdkJRekFNYks5aXpieGV4NlFjaTVMbWFkc2NGZXBEZjAtUTZPMTJHWTJvcWkzS3h0eVB0cEtaQmptOGlzTk9vMllXejVRV3NlV1JPdGNYVjFYN0xHLTlMTGE3RVVHbDhFb19GU292aTFKWmY4TGVjdVpUXzNVNGJRYnc0NlZSZElNVjZwQUVseFp6R3J4blZmcTVJVW5lc2lQNUJjdE40dVpGVTQxQ2hjMjRHRTVSai1kbV9NSG5tR0UyRm1wQjQ0UFgwaUU0UQ?oc=5",
-      "pubDate": "Wed, 20 May 2026 07:04:05 GMT",
-      "source": "MSN",
+      "title": "300 Miles Of EV Range Is The New Normal. Is 400 Next? - InsideEVs",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1UdmZSQTZmNFMxV3BDU2NfOFV0aUQ5TmxlTU1ocmdqY1hkWEhUX01VTC1MeVZNQzJXNG9oU2R6MDc0NHVaUGdtSlMyd2Z5bnBYRjRXcnJsU0ktRFJ6dmx2aEtMdDk4WmFuZ1ZINGNjakVjZ0Nz?oc=5",
+      "pubDate": "Sat, 23 May 2026 07:35:40 GMT",
+      "source": "InsideEVs",
       "oem": "Other",
       "market": "Global",
       "score": 1
     },
     {
-      "title": "The New Kia Niro Unveiled for Europe with Hybrid Only and New Design - Korean Car Blog",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNWEF2NFJoaGxid1hKX3dWSHlvYTdVNm1pZ1JYTF8wRmsyUUdUX21MZTliTDBfWEt5cUpXWVpIdVQyVVlCZTF2LUtxVFAyUFU1NGlHSEtyS2hXalRlaF9QWGdKaVZnWmo2TjFXTzhORVQyQlMzNHJHemxTODg3S0dtbmFaUXJkbWtDTXNkLTZ0NFZFdkhfTXg4NVFXaUQ1Ujg?oc=5",
-      "pubDate": "Thu, 21 May 2026 05:11:00 GMT",
-      "source": "Korean Car Blog",
-      "oem": "Kia",
-      "market": "EU",
-      "score": 1
-    },
-    {
-      "title": "BMW Summer Service Campaign 2025 Launched With Exclusive Offers - CarLelo",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPWTBkdVU2VU1VbzJaXzdGajBHQmpmYXJYa3FWWVJHSlRWbXo2WHlDbzB2VHB6cnZsZHhKejFoVjBNZ2RfWVppUlRrVzVSb3lPejZrS1VDbTF5c3Jvb3dRbEFxbkZ5LWJLWFlWOFB3d3ZwOFptYzlRR2ljZU45c3pRZE1qZDdnYjZBb1ZKRWpmYllEOGx4LU1N?oc=5",
-      "pubDate": "Fri, 22 May 2026 11:24:51 GMT",
-      "source": "CarLelo",
-      "oem": "BMW",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "BMW launches nationwide summer service campaign with free vehicle checks - ET Auto",
-      "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNTHhVN25vUTdZcWtDMkJVeGRUcTBqYmo4MkNmSW5pNzdmVG56UWZaVDJPcUxVV1laLVdzN3hXSkFNa0pjNXdzbjc2eHJuakNQNnRwN1pRX013NkpPaXFxenU1aXFIU3Q0YzlTdkVXQkszc1FPTW9tZzRrS0QwQk5yajhIdnpvNEJTRlI4RHY0TEs0R3RlLTFpa25sZ2c1Q25qS2NRNHlFYlQ0N3JPbnJ0a1NtS0hQNlJEeWM4SkNMYTg1S3I4R0xDMHpzbTVqclB6XzFJR21LdVpfUk5ucWkwU1Y3OXdtQdIB5gFBVV95cUxNTHhVN25vUTdZcWtDMkJVeGRUcTBqYmo4MkNmSW5pNzdmVG56UWZaVDJPcUxVV1laLVdzN3hXSkFNa0pjNXdzbjc2eHJuakNQNnRwN1pRX013NkpPaXFxenU1aXFIU3Q0YzlTdkVXQkszc1FPTW9tZzRrS0QwQk5yajhIdnpvNEJTRlI4RHY0TEs0R3RlLTFpa25sZ2c1Q25qS2NRNHlFYlQ0N3JPbnJ0a1NtS0hQNlJEeWM4SkNMYTg1S3I4R0xDMHpzbTVqclB6XzFJR21LdVpfUk5ucWkwU1Y3OXdtQQ?oc=5",
-      "pubDate": "Fri, 22 May 2026 12:29:06 GMT",
-      "source": "ET Auto",
-      "oem": "BMW",
+      "title": "These Two V8 Engines Launched Luxury Brands, Here's How They Compare - AOL.com",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxONnNZNUszUy1MWi1TN19aUHVLenZrRDJKNUNBaHhkYmRPd0tuZ0Nhd2JyTG03cGVSMXlDd2FNV2x3QlBkeU5Cc0pmOWJOSml4eWttbm0wRE14Q2xoMElMdWJqQndkdkNudjZZdUp6dC1CNzAzaVd1WFpXempldGVJNA?oc=5",
+      "pubDate": "Sat, 23 May 2026 08:16:55 GMT",
+      "source": "AOL.com",
+      "oem": "Other",
       "market": "Global",
       "score": 1
     },
@@ -119,29 +99,11 @@
       "score": 1
     },
     {
-      "title": "Hyundai Bayon and Nissan Tekton Set for 2026 Launch - CarLelo",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOZG5vdlNCc3NDTjVYNHY2ZHpDRmNWZlJPRksxQWtJLVdxb19lYllNMTdQbnIzd3c1RXdwMFUwZDJRUk16RDFhSDRjdTg4R3p6cFRvYWppbEJ0U21hX1p6TU5oQjBWREVERmRweTRTRldTM3lSdHNzNi15dVNaNlNtZk5qb1F5RWc?oc=5",
-      "pubDate": "Fri, 22 May 2026 06:52:50 GMT",
-      "source": "CarLelo",
-      "oem": "Hyundai",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "With 6 launches this year, Honda Cars sets its India revival plan in motion - The New Indian Express",
-      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQZ2JaSHRpbjhic2tPekVpY0wtcV9lNjQtZzAzVWVpVmFqOUNRVk96c1k4MWZKemRQbzlHMWhxZlZ6SHBraTliUWNmd2s3XzExS1JWMHhiT0h0UHg0X0ZGWkFqaDVPZUZGYl9xUTlHUEVZMWptWEtLT3EteVEzbUhZZ085bm9udU1uM3kwM0NTUXNjYjEwMDlIM21PaXhNNTNtangzWUcxdjlrT0lHNzR3S3VKdkJwazJHRVhhXzFoQkJIS3B3SVFj0gHUAUFVX3lxTE1FM1NvRG9UV01UaGduTF9mNlZ3SDAxZ2k0MTVpVjBFZHAzQTJGNW5UOGNkN3RYcWQzV2NuSjhFZ0pRb3V2bW9JWTJYWDMyeWZ4amdia21kZEpYTmNwVmxzb3VNVzVlRUNwZzhxOTd3QV9CYWJ1bDM5OTFwNm5na2FwbkF6MWZUWmxiekQxVmtvdzc2aTQ1aDljVWR5N283N2tvQUJqVUZFem9wOHBpRHc1Q1hPdTdYRnhyWmlsekY0VFZ1RlBZb0EzZ1pvVlAxTzVXX09R?oc=5",
-      "pubDate": "Fri, 22 May 2026 14:35:20 GMT",
-      "source": "The New Indian Express",
-      "oem": "Honda",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "2026 Honda City Walkaround | Launched @ Rs 11.99 lakh | Is It Now Sportier Than The Verna - Car and Bike",
-      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOSmlKNGpIdUpyMWN5dzJrcXJCOXBsMjhQV2NNdGhqUjN5MWZnYmR0bU1yZ09iVGdSMlI2Y1daWHktdmRubWI0dTFVZi04VXdsTFc2VmZlU0p6MHNLY0NtSTREaDlWdXdVME0yQW9MdXlvZ3JqM2ZvaFlPWmE5TlZLdDdFS080TFdLWnFRY2dsYmlrMm5qZmcyWmZNSnUtZk1aWUgwUjdReDB4a1JVYXN2dlJITVVXYXVyUFpCcXBUeFg?oc=5",
-      "pubDate": "Fri, 22 May 2026 18:53:53 GMT",
-      "source": "Car and Bike",
-      "oem": "Honda",
+      "title": "Rivian’s biggest launch of the year might just make you completely forget about Slate’s and Scout’s trucks - MSN",
+      "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNTVNqekdIVk9abW5mQlBMZGRGUlQxMzBfd2lHRHY0ZkdCZFlsbXdrcVhwWWE1VDdtbFVLZ0tTMEF0NXNXemNmbm9mc0FqNTR1bDQwUHJNTDNkMi1IN1RlVE01dE9RalhoQWQyYXZ3c2t0UEsyaEYzSDFycTZBV2w3RG1aUFgzdjcyVDNYWWV3MVl5TEJJeTVzZzNiakczdmx5NXVlY0gwSzFHZVlrNmxyX1JiVkdTelVWcWcyZmMwN3VQaVNSNHlwQUpyZWJIRGk0T3JsWmc1dVhIZk1YbVVkZFRyMm1WdXk0Q0JV?oc=5",
+      "pubDate": "Fri, 22 May 2026 03:58:47 GMT",
+      "source": "MSN",
+      "oem": "Rivian",
       "market": "Global",
       "score": 1
     },
@@ -155,20 +117,11 @@
       "score": 1
     },
     {
-      "title": "Skoda launches £24,950 Epiq as its cheapest electric SUV - MSN",
-      "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPXzY1YnVsRHcxWEMwZ1R6NG4zcEpCQnprN3R5M2ZCNDNhVGdKTTVCWDgtRkctTlJrczhKcUxwSlJZTDUzRHRwc0pXenVhYkV1Q1IwVy1leE85RkdoQkwyaWsxX3c3aFI4aHhjSXJtZThSdU5LZjFsWmV6ckNQRGN6bTZzSW94RlREY0RtREsxQWVIZUs0eUdzNDByNWI1VXlaX2hzdFY4cU5QVkdPT2wycTJQRmx1MllyVDUydmwzdm45Nm1lU3ktQk9PSk1FSUFxVXk1ejdrc1lUV3k0V053Rk5sdWctOTR1emkyc3JB?oc=5",
-      "pubDate": "Wed, 20 May 2026 08:04:45 GMT",
-      "source": "MSN",
+      "title": "New £24,950 Skoda Epiq revealed as small electric SUV battle heats up - AOL.com",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE95NFVzSldBSDY4WmhQMVRKR1kxZFpVZ1pKZWg4VGFVSEc4LTRHZ053aEVnNE9teW9RYndNRTFUNkEtWEFsOTlKbktEcjNEV3hrV3lzeXN2b0NsRHJ3SXltLVY3bUpyMDF3cG8zNzRYR0FINVFSWlhSek1R?oc=5",
+      "pubDate": "Sat, 23 May 2026 02:38:54 GMT",
+      "source": "AOL.com",
       "oem": "Skoda",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "The 2027 Mercedes-AMG GT 4-Door EV Debuts as the Porsche Taycan's New Nemesis - Car and Driver",
-      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQSkZjS1JNUTRWVkdaMEduSUxFNWxVX2gxWmpEMnhqOTlGV2w5bVJvUFJpOHhVaVliNVhkUWxfbXljd2VtcEN4REdqVFAxeTNEdXBEa0lXaG9ySVRQYXpOdkJyNXFILWxScnU1SGMzNkR6VXAwU2JxX2NqWi03aFdQLWVic19FYzlQMWpNcQ?oc=5",
-      "pubDate": "Wed, 20 May 2026 03:30:31 GMT",
-      "source": "Car and Driver",
-      "oem": "Mercedes",
       "market": "Global",
       "score": 1
     }
