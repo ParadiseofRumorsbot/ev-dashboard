@@ -1,55 +1,38 @@
 {
   "type": "ev_launch_timeline",
-  "lastUpdated": "2026-05-23T22:25:04.027Z",
-  "date": "2026-05-23",
+  "lastUpdated": "2026-05-24T22:29:14.717Z",
+  "date": "2026-05-24",
   "description": "EV 신차 출시일정 모니터링 — 타임라인 테이블 반영용",
   "note": "⚠️ 자동 수집 결과입니다. 대시보드 반영 전 사용자 확인 필요.",
-  "totalItems": 12,
+  "totalItems": 15,
   "oemStats": {
+    "Honda": 1,
+    "Other": 5,
+    "Toyota/Lexus": 1,
+    "BYD": 1,
     "Hyundai": 1,
     "Tesla": 1,
-    "Mercedes": 1,
-    "Stellantis": 2,
-    "Toyota/Lexus": 1,
-    "Other": 3,
     "BMW": 1,
+    "VW": 1,
     "Rivian": 1,
-    "Skoda": 1
+    "Skoda": 2
   },
   "items": [
     {
-      "title": "New Hyundai Compact EV SUV To Rival Nexon EV – Launch Timeline Revealed - CarLelo",
-      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1ySmxNcXR6V0tZSXA3STcxWVRrTXJtS280eWNqMHk3QUVXLURnbmFZNU9VMVowNWJIbmpRZjQxaHp1cm02MEYtUzVMNTlfZTJJSlpWUldfcExMXy1RRlNvbm1JSWlHRjM5Y0NGVS1pTGZHaFYtbkVLSTY4UWs0dw?oc=5",
-      "pubDate": "Sat, 23 May 2026 09:53:25 GMT",
-      "source": "CarLelo",
-      "oem": "Hyundai",
+      "title": "Honda Super-ONE Goes On Sale In Japan With Boost Mode And 170-Mile Range - Electric Cars Report",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPTG5XNjFGbnM2cFZFV1IycklGMlktdnl5UVJUNzRiakF0djNhQnFHVm1DOXdrOGVYWW8xdHhIZFVnREcwa0lIYUJpenpUR2ItaVJzSlVLOURweDFTbmNVTkRJSU9ITDljUWE0M2JJYnNBa3EteUdCbHVBWFo5dGdHbXpZZW01ajdrSGdnQjFhb2t2Q2MtSTZGRmtwZTlHZUc4ZG1HRzJnLWtPNmtLMDgxZ0JB?oc=5",
+      "pubDate": "Sun, 24 May 2026 09:56:09 GMT",
+      "source": "Electric Cars Report",
+      "oem": "Honda",
       "market": "Global",
       "score": 2
     },
     {
-      "title": "Tesla FSD Subscription: Price and Release Date Expectations - Not a Tesla App",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPbFM3VUpxNlVIN25oQ3BBWXk3VHQ2OEFteTY2cjVEa1BTMmF6SWZ3MWk2dnM4WHBmWXJOUkpjMm5wdThYRHAtalQwLTdOWGE2eWxabnNsMGtWRURDOEYzNmU0WURfcDg0TmJtRlJfMy1MY1QzdDZUSzFVdmFna2lqMEM4eUtDTWgxYzUzS0UwanJWTnRfc1FPdHVzNDA?oc=5",
-      "pubDate": "Fri, 22 May 2026 08:16:38 GMT",
-      "source": "Not a Tesla App",
-      "oem": "Tesla",
-      "market": "Global",
-      "score": 2
-    },
-    {
-      "title": "Mercedes-Benz GLE And GLS Night Edition SUVs Launched: Prices Start At Rs 1.05 Crore - Car and Bike",
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQUUw5aS1na0RJX2xiRjhZSmdKQjFva1ZOYWJNUVdybm1kU0hEQjJ3VHppanFRbjZVSE9rQ090UVpsN3F1TURja2ZxdVFBU183NGc0YThHYS01SXY4NzByblJMNXVwYk1TSDVUNm1MM0xhV3JCcmVjRjJ1T0FJLW83OFEzcmdUWEczS1M3TTNjOUlmdzJJdHVIQTVVbWdpUXpBLUx1QVk5ZmN1MWJfUm95QlR1TEVDd2V0aEYxN3VR?oc=5",
-      "pubDate": "Thu, 21 May 2026 11:44:40 GMT",
+      "title": "2026 Tata Tiago EV Facelift Interior Revealed; Gets New Dash, 360 Deg Cameras, Rear AC Vents - Car and Bike",
+      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxObW1sU1VTb3dNZ3MtN2p2Y3Jsb0ZUNnJ1VF9MWGNVd2hsQXQwUGd5ckN4Z2FUZ0JtX0NRcXRaaVBRcWFHajlYaUVmWWVjVmlKbFF1d2JScEZfSGZFaFdHTWcxbVpLNURzUGJfRnFmNVJmUDgzMjdFdl9Ha0x1cWhJTDd4MFc0MS1Jb2FfSWJEdV9BXzh2TFlHenQxQjdHMUFwTWl5WjB4eXEyUVM1SEVDTGtVR0kwV180cXROcXRnTDh0X0RJcmVTbA?oc=5",
+      "pubDate": "Sun, 24 May 2026 09:26:09 GMT",
       "source": "Car and Bike",
-      "oem": "Mercedes",
-      "market": "Global",
-      "score": 2
-    },
-    {
-      "title": "Stellantis unveils €60bn plan and 60 new models by 2030 - Euronews.com",
-      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPV0N6NFZvUkZBNng0bW1lQkMwbU05RnBKdXNSYXF4aEhHQkFxU1Bkb0Y2U1hyWGczWmtQaHdnQkNEUWZuYjVLYllORmxSVjlua0s1Z1hscDktWmFLVlZSU0QzTnJqZmZXOVNpQXNyd0xrRWZMcEcwNzRDWG1QRG9yU3JvRHhYRXVOemJhQXVKcVBRVkoxT05UeV9oeEJWUDloQllEODFIakpMYmhNcG9sbFNhWlBFZGc5azl3?oc=5",
-      "pubDate": "Thu, 21 May 2026 15:30:13 GMT",
-      "source": "Euronews.com",
-      "oem": "Stellantis",
+      "oem": "Other",
       "market": "Global",
       "score": 2
     },
@@ -72,6 +55,33 @@
       "score": 1
     },
     {
+      "title": "BYD’s flagship electric sedan spotted with a familiar look ahead of its debut [Images] - Electrek",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOeVBzMVpoTTdqRTJfc3hXWDJaZWJGMmZtbW5GNGFQZF9NNDNBcWx1bE1lQ2RTQkdtbnVNUnhreEdVTWpZcFFXZnFoMWpTSThZVUJMNnZoZGFWNUhNR1VyMkR1UjVtU3BuMTVfYVhfWWQzc2N6YVQzOEJJclRuZW9nOVl4UFFnM0swbGRvNW1nWEVHcFZ2?oc=5",
+      "pubDate": "Fri, 22 May 2026 15:55:00 GMT",
+      "source": "Electrek",
+      "oem": "BYD",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "Hyundai Ioniq 3 'Aero Hatch' Looks Sensationally Funky And Debuts Hyundai's Major Infotainment Overhaul - AOL.com",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9vNmF6MUt5OGpoTTJFM0N3MnE2YThjdmVxRGdsN1k0Z3JzWFE3amUxQVBSQnU1SkdsNlB2QWt6QzFzejFFVzdzdTBUVmJXNEZBZHJhQkE3a2V2VEtiWFdnTnFmeVBabm0teUVTTzBvSjZGTVQxVzVtVzZB?oc=5",
+      "pubDate": "Sun, 24 May 2026 19:15:20 GMT",
+      "source": "AOL.com",
+      "oem": "Hyundai",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "Tesla Launches Full Self-Driving in World's Largest EV Market - 조선일보",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNeTRPQXUyRFVEMDktZ2Q3Q3l5Z2dBSzF2STlzVDRld2hrM1NfRU8xVmsxRFFGbkZVb1pwbjV1THVxSjBfYkRPNVBKNmlYRU83V196TFJXZDFCUFdjQzhiVWkxRVcwU2E1TUU3X3luTXpqc2o5cmFScE1iMjE2ejE0MkFsSFdSekF4?oc=5",
+      "pubDate": "Fri, 22 May 2026 15:47:18 GMT",
+      "source": "조선일보",
+      "oem": "Tesla",
+      "market": "Global",
+      "score": 1
+    },
+    {
       "title": "300 Miles Of EV Range Is The New Normal. Is 400 Next? - InsideEVs",
       "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1UdmZSQTZmNFMxV3BDU2NfOFV0aUQ5TmxlTU1ocmdqY1hkWEhUX01VTC1MeVZNQzJXNG9oU2R6MDc0NHVaUGdtSlMyd2Z5bnBYRjRXcnJsU0ktRFJ6dmx2aEtMdDk4WmFuZ1ZINGNjakVjZ0Nz?oc=5",
       "pubDate": "Sat, 23 May 2026 07:35:40 GMT",
@@ -81,46 +91,64 @@
       "score": 1
     },
     {
-      "title": "These Two V8 Engines Launched Luxury Brands, Here's How They Compare - AOL.com",
-      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxONnNZNUszUy1MWi1TN19aUHVLenZrRDJKNUNBaHhkYmRPd0tuZ0Nhd2JyTG03cGVSMXlDd2FNV2x3QlBkeU5Cc0pmOWJOSml4eWttbm0wRE14Q2xoMElMdWJqQndkdkNudjZZdUp6dC1CNzAzaVd1WFpXempldGVJNA?oc=5",
-      "pubDate": "Sat, 23 May 2026 08:16:55 GMT",
-      "source": "AOL.com",
-      "oem": "Other",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "BMW X6 M60i xDrive Coupe SUV Bookings Open Ahead Of Launch - Car and Bike",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOQWo5c0ZXak43SFlqcW94Tk4xZzBzTEQ3UWNkdTNoRThBcEd4RTVnZHFxelA5LXlmNTBEbFVPTzFYMUJtYTkteWNJc3dTckFWUUsza3ozcWo5MFktTjJtZlRaMFU2elh5a3Z0bWZGTWpLVEREWlI1czhsZUNlZUd3NmtOQkljSWtPMkpsRVpXNjkwWUE5TGw2R1ktTXhFRU0?oc=5",
-      "pubDate": "Fri, 22 May 2026 16:01:57 GMT",
-      "source": "Car and Bike",
+      "title": "BMW launches pre-series production for central control unit of iX5 Hydrogen - electrive.com",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOamJMZzN2bnItLU5sVjRORGtNNTVxVUhTT2NyYnBNUlVVSU9NdmlXSHdLZVNhaWh3V01zcUVDRXNjOHQzZC1KakJqcFZiU3ZmZkFPR1ByV1ZWdm5jOVFVTWlXMTFIc2M1Tk1SbF92d3JEMDBicmxFbFZkb3JXMjRreXBRMFBLUXpEbmt2Q3EtRzdkeUdMMTkwM0N4VnJ6OW1MTjFTdmZYYTFya25CUm5SUXZDcw?oc=5",
+      "pubDate": "Fri, 22 May 2026 15:01:03 GMT",
+      "source": "electrive.com",
       "oem": "BMW",
       "market": "Global",
       "score": 1
     },
     {
-      "title": "Rivian’s biggest launch of the year might just make you completely forget about Slate’s and Scout’s trucks - MSN",
-      "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNTVNqekdIVk9abW5mQlBMZGRGUlQxMzBfd2lHRHY0ZkdCZFlsbXdrcVhwWWE1VDdtbFVLZ0tTMEF0NXNXemNmbm9mc0FqNTR1bDQwUHJNTDNkMi1IN1RlVE01dE9RalhoQWQyYXZ3c2t0UEsyaEYzSDFycTZBV2w3RG1aUFgzdjcyVDNYWWV3MVl5TEJJeTVzZzNiakczdmx5NXVlY0gwSzFHZVlrNmxyX1JiVkdTelVWcWcyZmMwN3VQaVNSNHlwQUpyZWJIRGk0T3JsWmc1dVhIZk1YbVVkZFRyMm1WdXk0Q0JV?oc=5",
-      "pubDate": "Fri, 22 May 2026 03:58:47 GMT",
-      "source": "MSN",
+      "title": "VW to launch carsharing with electric vehicles in 2019 - AOL.com",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOb1ZnT1Zra1YyLVZRWW9pOHB6bzdjVlBUeXhBMWVEcGU0QjNIQ2RiZzQ4U2VTT1JxOVZqSlhKWW10ZTZCMmR2NjRpQ2h6V3Vwd3lJeWE4eFFtZjhhWUFKR3hyZ1lsQ044WHdwNXBCY1dreXNvemc4OXVVS293aWw0QzZjak5Rc012dVkxMTdTc3Q?oc=5",
+      "pubDate": "Sun, 24 May 2026 00:07:43 GMT",
+      "source": "AOL.com",
+      "oem": "VW",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "Assessing Rivian Automotive (RIVN) Valuation As R2 Launch Plans And Margin Concerns Draw Investor Scrutiny - Yahoo Finance",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPNnZHSWV1WjlRaWJOTmJSNExtN0Q4eFZ2R0J4c00xNUdsTHJoQ2Z4Q1J3UHBzMWo3aGk2ZDRwQ1V3bTB0VnE1NmZTYllDNzBVZlZ0VDUxV0x5bHBHb29pUmN5RjJ1R2YzSUxndTRydjFDTS1ldUpfSUk5eElQYXU5bFdTSEswYTJNWDdlSnY3OGJscnlPMUdTSlk4YjlIX3pRVzFBSjh1Y3dhQlk?oc=5",
+      "pubDate": "Sun, 24 May 2026 02:07:00 GMT",
+      "source": "Yahoo Finance",
       "oem": "Rivian",
       "market": "Global",
       "score": 1
     },
     {
-      "title": "Stellantis plans 11 new models in North America by 2030, most starting under $40,000 - Automotive News",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9Sd3EwSnJNZm03Z1UzWjl6SXlRR3RvSFFXOVJDWG13NWItc1pOX3kzNldSLW9YWnRzX0NRMjdNZnFZLWJiTTA2REk4LWVYRWZEbmNVMWJxWjgtYU8yblN0aTRNSEFudVZiRWgxRjVyMzktUllLcWRj?oc=5",
-      "pubDate": "Thu, 21 May 2026 19:08:00 GMT",
-      "source": "Automotive News",
-      "oem": "Stellantis",
+      "title": "2027 Chevy Bolt EV 75 MPH Highway Range Test. Here’s How America's Cheapest EV Performs. - InsideEVs",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9RTnBzRGxuc1JTM2NBcTZKVXZXUG1pYmxuQkRrM2VVUGpob29FNzZxU2lwdnhrRkVPeFVPODY2ZkxFVWFuUlRLWkNlaWVtLTV0VEZwR1M0ZjhWendaaGU4R0dZM2daT1R0SmZ1Ny1GUWVCdmRaZHpCTk1Qaw?oc=5",
+      "pubDate": "Sun, 24 May 2026 03:28:01 GMT",
+      "source": "InsideEVs",
+      "oem": "Other",
       "market": "NA",
       "score": 1
     },
     {
-      "title": "New £24,950 Skoda Epiq revealed as small electric SUV battle heats up - AOL.com",
-      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE95NFVzSldBSDY4WmhQMVRKR1kxZFpVZ1pKZWg4VGFVSEc4LTRHZ053aEVnNE9teW9RYndNRTFUNkEtWEFsOTlKbktEcjNEV3hrV3lzeXN2b0NsRHJ3SXltLVY3bUpyMDF3cG8zNzRYR0FINVFSWlhSek1R?oc=5",
-      "pubDate": "Sat, 23 May 2026 02:38:54 GMT",
-      "source": "AOL.com",
+      "title": "Europe’s EV market extends growth streak as new models gain - Automotive News",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPM2FtR1ZOYTc5TTkxbzMwMkM4eUxwNXVtMkVvN1ZQT196MVFDanpITU5xWEU3ZDZRYzFseVVKWUlSU2tBaTlUeHRIbU9ESUxDV1A3VDRpeEw3S1ZmcEg5Z2ZuNGtrSmphVGNFbDRyWHNza0FwOHdBZFJnUHRUQXVkRjJYaWJJcy1q?oc=5",
+      "pubDate": "Fri, 22 May 2026 14:56:00 GMT",
+      "source": "Automotive News",
+      "oem": "Other",
+      "market": "EU",
+      "score": 1
+    },
+    {
+      "title": "Skoda claims EV-ICE price parity with Epiq electric SUV - t2ONLINE",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxORWZaTmRweWtYaFNyTzdSbDBBU05DdFEyc1JOVFoxUkd6b1lRRWxhc1UzSmtORFQ4aml2NjZpSVFQRGpVV3dvN1BxTWFPemVwUG9lNVdtTXdfX3IxMlBPWGJrY0ZpdEFfRXpOeFdxSXVqU1lzeVZpa3ZrZjM1Q05WUGZiVzd6Y2JQZFJHWTMtUVQ3SUpESThoQ3ZLSGxzRGhaX1k5Uw?oc=5",
+      "pubDate": "Sun, 24 May 2026 08:10:00 GMT",
+      "source": "t2ONLINE",
+      "oem": "Skoda",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "Skoda shows off Epiq small electric SUV and confirms £24,950 starting price - MSN",
+      "link": "https://news.google.com/rss/articles/CBMi3gJBVV95cUxNc1dwamhwS0lqYXE4b1dkekxMbWxxTU5FdUt6cXZJZDhqZ3pQVVRJd2ZlSldPN0JyVkFCNkp1T2RRWDFmWXNyaXBVQmQ0SUJtenRYOWxISF95dVc0UTlkbkZ2OWV1VnA2QzR5MWxFamxQMUVsR0M0WmhLRHAwMmdoVEtfcHNlZXdmWHlJZ1VPdkRMUk0xRldZTWNjX3BNWnp0SHBqVUJEcVprRzlSM2YtX1QyTDVTWFVtSWV6SUtBcVR5YXF0MHQyTDdnMUR2cXo2b2tkX3RVeHpfNGIzdjZxVUdkd2dxMzRvRmZIenFCZXR4dGxfaHlsc1RrejVyNE94Q0JieS1KUUFHT2xxbVNJY0N6b1VHRC1SLUpQVWZGRGl3U3o5QlB5S0lwNGNzQzJfd1lETUR5dUlpcVNQN3lpLXhLWjNZdUJvTzVLVmZzTmdSeWVIakptNm0ydVBPZw?oc=5",
+      "pubDate": "Sat, 23 May 2026 14:13:54 GMT",
+      "source": "MSN",
       "oem": "Skoda",
       "market": "Global",
       "score": 1
