@@ -166,14 +166,14 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 <div class="delta up" id="m-daily-note">마일/일 (333/초) · 구독 1.28M</div>
 </div>
 <div class="metric">
-<div class="label">Austin 무감독</div>
-<div class="value" id="m-austin">27대</div>
-<div class="delta up" id="m-austin-note">▲ 5/13 기준 · 야간 운행 개시 (5/4)</div>
+<div class="label">Active 무감독</div>
+<div class="value" id="m-austin">22대</div>
+<div class="delta neutral" id="m-austin-note">5/25 tracker · Peak 39 (5/13) · 27 라이더</div>
 </div>
 <div class="metric">
-<div class="label">3개 도시 합산</div>
-<div class="value" id="m-total-unsup">39대</div>
-<div class="delta up" id="m-total-note">Dallas 5 + Houston 6 + Austin 27 · 무감독</div>
+<div class="label">Cybercab 테스트</div>
+<div class="value" id="m-total-unsup">42대</div>
+<div class="delta up" id="m-total-note">▲ +4 (5/13: 38) · 무감독 라이드 86.1%</div>
 </div>
 </div>
 
@@ -225,7 +225,7 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 <div style="display:flex;flex-direction:column;gap:10px;font-size:13px">
 <div style="background:#0a0f1a;padding:12px;border-radius:8px;border-left:3px solid #4ecdc4">
 <div style="display:flex;justify-content:space-between;margin-bottom:4px"><strong style="color:#f0f4ff">Austin, TX</strong><span style="color:#4ecdc4;font-size:11px">MATURE</span></div>
-<div style="color:#94a3c0;font-size:12px">Day 1 (25.6.22): 13대 → 현재 ~53대 · Unsupervised 27대 · 야간 무감독 5/4~ · Geofence 245 sq mi</div>
+<div style="color:#94a3c0;font-size:12px">Day 1 (25.6.22): 13대 → 현재 ~53대 · Unsupervised 27대 · 야간 무감독 5/4~ · Geofence 245 sq mi · Cybercab 42대 테스트</div>
 </div>
 <div style="background:#0a0f1a;padding:12px;border-radius:8px;border-left:3px solid #ffd93d">
 <div style="display:flex;justify-content:space-between;margin-bottom:4px"><strong style="color:#f0f4ff">Dallas, TX</strong><span style="color:#ffd93d;font-size:11px">RAMP</span></div>
@@ -296,7 +296,7 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 </div>
 </div>
 
-<p class="updated" id="rt-last-updated">마지막 업데이트: 2026.05.19</p>
+<p class="updated" id="rt-last-updated">마지막 업데이트: 2026.05.26</p>
 
 <script>
 // ═══ Notion 동기화: Update Log + This Week + 메트릭 + 타임라인 ═══
@@ -305,28 +305,27 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 
   // ── Fallback 데이터 ──
   const FB_LOG = [
+    '🚕 Active 무감독 22대 반영 (5/25 robotaxitracker.com): Peak 39 → 22 active',
+    '🤖 Cybercab 테스트 플릿 38 → 42대 (+4) 반영',
+    '📊 무감독 라이드 비율 86.1% (31/36, 7일) 반영',
+    '🔋 SVOLT 반고체 2026.09 · Ganfeng 500Wh/kg 전고체 · 포스코퓨처엠 실리콘 음극재 2028',
+    '⚡ ESS 4월 글로벌 17.7GWh (+18%) · 미국 1.1GWh (-67%) · 유럽 1.6GWh (+39%)',
+  ];
+  const FB_LOG_PREV = [
     '🇪🇺 T&E "High Stakes" 보고서 통합 — EU_REF/COM/LOW 시나리오 전 대시보드 반영',
     '🔋 Battery Scenario EU 정책 시나리오 3종 추가 (총 10개)',
     '📊 index.html 시나리오 민감도 버블차트 + BEV/CAPA 미스매치 차트 신규',
     '🔀 US 수입 "EU vs US 전동화 디버전스" 탭 신규',
     '📰 매일 7AM KST EV 뉴스 자동 모니터링 워크플로우 (GitHub Actions)',
   ];
-  const FB_LOG_PREV = [
-    '무감독 39대 반영 (5/13): Austin 27 + Dallas 5 + Houston 6+1',
-    '야간 무감독 운행 개시 (5/4, Austin) 반영',
-    '플릿 차트에 5/13 데이터포인트 추가 (총 53대 → 무감독 39대)',
-    '타임라인 5건: Ford Energy · SDI-GM JV 중단 · Tesla 독일 셀 · LG화학 LMR · Morrow 파산',
-    'THIS WEEK 6건 (FSD 10B+, 무감독 39대, 야간 운행, SDI-GM, Ford Energy, Tesla 독일)',
-  ];
   const FB_WEEK = [
-    {icon:'🇪🇺',title:'EU 정책',body:'T&E "High Stakes" — REF/COM/LOW 시나리오 · K3 가동률 95%→45% 분기',color:'blue'},
-    {icon:'🏁',title:'FSD 10B+ 마일',body:'일일 28.8M · 도시 3.76B · 구독 1.28M',color:'purple'},
-    {icon:'🚕',title:'무감독 39대 (5/13)',body:'Austin 27 + Dallas 5 + Houston 6 · 야간 운행 개시',color:'teal'},
-    {icon:'🏭',title:'SDI-GM JV 5.2조 중단',body:'LFP 전환 또는 GM 철수 가능성',color:'red'},
-    {icon:'⚡',title:'Ford Energy',body:'자회사 설립 · 켄터키 ESS 20GWh · 2027H2 첫 출하',color:'yellow'},
-    {icon:'🤖',title:'v15 FSD 대기 중',body:'하반기: Phoenix · Miami · Orlando · Tampa · Las Vegas',color:'purple'},
+    {icon:'🚕',title:'Active 무감독 22대',body:'27 라이더 중 22 무감독 (5/25) · Peak 39 (5/13)',color:'teal'},
+    {icon:'🤖',title:'Cybercab 42대',body:'테스트 플릿 42 (+4) · 무감독 라이드 86.1%',color:'purple'},
+    {icon:'🏁',title:'FSD 10B+ 누적',body:'일일 ~29M · 5.3M mi/주요충돌 · 구독 1.28M',color:'blue'},
+    {icon:'🚗',title:'v15 FSD 대기',body:'하반기 도시 확장: Phoenix · Miami · Orlando · Tampa · Las Vegas',color:'yellow'},
+    {icon:'⚡',title:'ESS 4월',body:'글로벌 17.7GWh (+18%) · 미국 -67% · 유럽 +39% · 중국 +55%',color:'purple'},
   ];
-  const FB_DATE = '2026.05.19';
+  const FB_DATE = '2026.05.26';
   const FB_TIMELINE = [
     {date:'25.06',desc:'Austin 런칭 · Day 1 Active 13대 (Safety Monitor)'},
     {date:'25.12',desc:'무감독 테스트 시작 · Bay Area 1,655대 CPUC 등록'},
@@ -343,6 +342,8 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
     {date:'26.05.13',desc:'Ford Energy ESS 20GWh · SDI-GM JV 5.2조 중단'},
     {date:'26.05.14',desc:'Tesla 독일 셀 8→18GWh · Morrow 파산'},
     {date:'26.05.15',desc:'LG화학 LMR 양산 · Albemarle EBITDA 마진 61.9%'},
+    {date:'26.05.25',desc:'🚕 Active 무감독 22대 (Peak 39→22) · Cybercab 테스트 42대 (+4) · 무감독 라이드 86.1%'},
+    {date:'26.05.26',desc:'⚡ ESS 4월 17.7GWh (+18%) · SVOLT 반고체 · Ganfeng 전고체 · 포퓨엠 Si 음극재'},
     {date:'26.1H',desc:'계획: Las Vegas · Miami · Orlando · Phoenix · Tampa'},
   ];
 
@@ -357,7 +358,7 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
     var html = items
       .map(function(i){ return '• ' + (typeof i==='string' ? i : (i.icon||'')+' '+i.body) + '<br>'; }).join('');
     if(typeof FB_LOG_PREV!=='undefined'&&FB_LOG_PREV.length){
-      html+='<br><strong style="color:#3a4a6b">📝 Update Log · 2026.05.17</strong><br>';
+      html+='<br><strong style="color:#3a4a6b">📝 Update Log · 2026.05.19</strong><br>';
       html+=FB_LOG_PREV.map(function(s){return '• '+s+'<br>';}).join('');
     }
     document.getElementById('rt-log-body').innerHTML = html;
@@ -443,14 +444,14 @@ data:[5300676,2175763,485133,397274],
 backgroundColor:['#4ecdc4','#556dff','#ffd93d','#ff6b6b'],borderRadius:6
 }]},options:{...defOpt,indexAxis:'y',scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,callback:v=>(v/1000000).toFixed(1)+'M'}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:10}}}}}});
 
-new Chart(document.getElementById('c4'),{type:'line',data:{labels:['25.06','25.12','26.01','26.03','26.04.16','26.04.18','26.04.30','26.05.06','26.05.13'],datasets:[
-{label:'총 차량',data:[13,135,200,37,46,46,46,53,53],borderColor:'#556dff',borderWidth:2,tension:.3,pointRadius:4},
-{label:'무감독',data:[0,0,8,4,12,12,25,27,39],borderColor:'#ff6b6b',borderWidth:2,tension:.3,pointRadius:4,borderDash:[5,3]}
+new Chart(document.getElementById('c4'),{type:'line',data:{labels:['25.06','25.12','26.01','26.03','26.04.16','26.04.18','26.04.30','26.05.06','26.05.13','26.05.25'],datasets:[
+{label:'총 차량',data:[13,135,200,37,46,46,46,53,53,27],borderColor:'#556dff',borderWidth:2,tension:.3,pointRadius:4},
+{label:'무감독',data:[0,0,8,4,12,12,25,27,39,22],borderColor:'#ff6b6b',borderWidth:2,tension:.3,pointRadius:4,borderDash:[5,3]}
 ]},options:defOpt});
 
-new Chart(document.getElementById('c5'),{type:'bar',data:{labels:['26.02','26.03','26.04'],datasets:[{
-data:[1,25,60],backgroundColor:['#2d3a52','#556dff','#a78bfa'],borderRadius:4
-}]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'누적 대수',color:tickColor}}}}});
+new Chart(document.getElementById('c5'),{type:'bar',data:{labels:['26.02','26.03','26.04','26.05'],datasets:[{
+data:[1,25,60,42],backgroundColor:['#2d3a52','#556dff','#a78bfa','#4ecdc4'],borderRadius:4
+}]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'테스트 플릿 (대)',color:tickColor}}}}});
 
 // 도시별 Day 1 Fleet Size vs 현재 무감독 비교
 new Chart(document.getElementById('c6'),{type:'bar',data:{labels:['Austin\n(25.6.22)','Dallas\n(26.4.18)','Houston\n(26.4.18)','Bay Area\n(Supervised)'],datasets:[{
@@ -458,10 +459,10 @@ label:'Day 1',
 data:[13,1,1,130],
 backgroundColor:['#4ecdc4','#ffd93d','#ff6b6b','#6b7a99'],borderRadius:6
 },{
-label:'현재 (5/13)',
+label:'현재 (5/25)',
 data:[27,5,6,0],
 backgroundColor:['rgba(78,205,196,0.4)','rgba(255,217,61,0.4)','rgba(255,107,107,0.4)','rgba(107,122,153,0.2)'],borderRadius:6,borderWidth:2,borderColor:['#4ecdc4','#ffd93d','#ff6b6b','#6b7a99']
-}]},options:{...defOpt,scales:{x:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}},y:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:11}}}},plugins:{...defOpt.plugins,legend:{display:true,position:'top',labels:{color:tickColor,font:{size:10}}},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>{const labels=[['13대 Active Day 1','1대 Unsupervised Day 1','1대 Unsupervised Day 1','~130대 Supervised'],['27대 Unsupervised (5/13)','5대 Unsupervised (5/13)','6대 Unsupervised (5/13)','CA 퍼밋 미취득']];return labels[ctx.datasetIndex][ctx.dataIndex]}}}}}});
+}]},options:{...defOpt,scales:{x:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}},y:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:11}}}},plugins:{...defOpt.plugins,legend:{display:true,position:'top',labels:{color:tickColor,font:{size:10}}},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>{const labels=[['13대 Active Day 1','1대 Unsupervised Day 1','1대 Unsupervised Day 1','~130대 Supervised'],['27대 Unsupervised (5/25)','5대 Unsupervised (5/25)','6대 Unsupervised (5/25)','CA 퍼밋 미취득']];return labels[ctx.datasetIndex][ctx.dataIndex]}}}}}});
 </script>
 </body>
 </html>
