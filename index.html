@@ -103,32 +103,29 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 
   // Fallback 데이터 (JSON fetch 실패 시)
   const FALLBACK_LOG = [
+    '⚡ ESS 4월 글로벌 17.7GWh (+18% YoY) · 미국 1.1GWh (-67%) · 유럽 1.6GWh (+39%) · 중국 9.4GWh (+55%)',
+    '💰 광물가격 5월3주: 리튬 -6.7% WoW (+18.2% QoQ) · LiPF6 +6.1% · 구리 -3.0%',
+    '⚡ 유럽 전력가격 5월3주 85.7€/MWh (WoW +5.8%) · 5월 평균 83.4€/MWh (MoM +3.1%)',
+    '🚗 EV 타임라인: Mazda 자체 EV 2029 재연기 · Subaru 자체 EV 연기(일정 미공개)',
+    '🔋 SVOLT 반고체 2026.09 양산 · Ganfeng 500Wh/kg 전고체 · 포스코퓨처엠 실리콘 음극재 2028',
+    '🇮🇹 Stellantis-Leapmotor 이탈리아 초저가 소형 EV · Stellantis-Dongfeng 프랑스 Voyah 생산',
+  ];
+  const FALLBACK_LOG_PREV = [
     '🇪🇺 T&E "High Stakes" 보고서 통합 — EU_REF/COM/LOW 3종 시나리오 전 페이지 반영',
     '📊 시나리오 민감도 버블차트 + BEV/CAPA 미스매치 차트 신규 (index.html)',
     '🔋 Battery Scenario: EU 정책 시나리오 3종 추가 (총 10개 시나리오)',
     '🔀 US 수입 탭 9 "EU vs US 전동화 디버전스" 신규 — T&E + S&P Global 좌우 분할',
-    '⚙️ ESS BOM: CAM/pCAM 시나리오별 분기 추가 (REF 1,640 / COM 1,000 / LOW 300 kt)',
     '🚗 EV 타임라인 🇺🇸 북미 / 🇪🇺 유럽 탭 전환 + Ford EU 포함 10건 뉴스 반영',
     '📰 매일 7AM KST EV 뉴스 자동 모니터링 워크플로우 신규 (GitHub Actions)',
-    '📝 Notion 동시 업데이트: 사용 가이드 + 주간배터리 + 주간 업데이트 DB',
-  ];
-  const FALLBACK_LOG_PREV = [
-    '🇺🇸 미국 BEV 모델별 판매량 추이 테이블 신규 (WardsAuto, 2025.5~2026.4)',
-    '🇨🇳 중국 4월 NEV 판매 84.9만대 데이터 반영 (BEV 57.9만 / PHEV 19.2만) · CPCA',
-    '🇬🇧🇫🇷 유럽 4월 영국·프랑스 개별국 EV 판매 데이터 반영',
-    '🗺️ Battery Value-Chain Map v5 신규',
-    '🔋 ESS: 3월 글로벌 24.2GWh (+33% YoY), 유럽 4.3GWh (+100%)',
-    'SDI-GM JV 중단 · Tesla 독일 셀 확장 · Ford Energy ESS · Morrow 파산',
-    '로보택시: 무감독 39대(5/13), FSD 10B+ 돌파(5/4), 야간 운행 개시',
   ];
   const FALLBACK_WEEK = [
-    {icon:'🇪🇺',title:'EU 정책',body:'T&E "High Stakes" — REF/COM/LOW 3종 시나리오 · CAPA -56%~-71% 위험',color:'blue'},
-    {icon:'🇺🇸',title:'미국 4월',body:'BEV 64,517대 (YoY -33.0%) · Tesla 2.3만대 (-42%) · HEV 회귀 가속',color:'teal'},
-    {icon:'🇨🇳',title:'중국 4월',body:'NEV 84.9만대 (YoY -7%, 침투율 61.4%)',color:'red'},
-    {icon:'🔋',title:'Cell',body:'K3 유럽 가동률 시나리오 95%→45% 분기 · SDI-GM JV 중단',color:'yellow'},
-    {icon:'⚡',title:'ESS',body:'3월 글로벌 24.2GWh (+33% YoY)',color:'purple'},
+    {icon:'⚡',title:'ESS 4월',body:'글로벌 17.7GWh (+18%) · 미국 1.1GWh (-67%) · 유럽 1.6GWh (+39%) · 중국 9.4GWh (+55%)',color:'purple'},
+    {icon:'🔋',title:'Cell',body:'대형 3사 -1.0% (LGES -4.4%, SDI +5.4%, SK이노 +0.2%) · CATL DC 전력장비 진출',color:'yellow'},
+    {icon:'⚙️',title:'소재',body:'소재 +5.7% · SQM 호주 리튬 광산 2배 증설 · 포퓨엠 실리콘 음극재 2028',color:'teal'},
+    {icon:'💰',title:'메탈',body:'리튬 -6.7% WoW (+18.2% QoQ) · LiPF6 +6.1% · 유럽 전력 85.7€/MWh',color:'blue'},
+    {icon:'🚗',title:'EV',body:'Stellantis-Leapmotor 이탈리아 · Mazda/Subaru EV 연기 · Sungrow 중동 15.3GWh',color:'red'},
   ];
-  const FALLBACK_DATE = '2026.05.19';
+  const FALLBACK_DATE = '2026.05.26';
 
   function renderUpdateLog(items, date) {
     document.getElementById('update-log-date').textContent = date;
@@ -764,6 +761,8 @@ SDI 출하량 추이 = <span style="color:#a78bfa">에코프로비엠</span> · 
 ※ <strong style="color:#a78bfa">Ford NA</strong>: EV픽업 ~$30K LFP 미시간 생산 2027 · Explorer EV 온타리오 3열 · F-150 EREV 2028<br>
 ※ <strong style="color:#a78bfa">Scout</strong>: Traveler SUV 2028 판매 · Terra 픽업 2030 연기 보도 · 16만 예약 (87% EREV)<br>
 ※ <strong style="color:#a78bfa">Honda 캐나다 EV공장 무기한 보류</strong> (2026.05.06) · 24만대 규모 · 北미 EV 캐즘 + 관세 불확실성<br>
+※ <strong style="color:#6b7a99">Mazda</strong>: 자체 EV 플랫폼 기반 차량 출시 2025→2028→2029 재연기<br>
+※ <strong style="color:#6b7a99">Subaru</strong>: 2028년 출시 예정 자체 개발 EV 연기 · HEV/ICE 자원 재배치 · 신규 일정 미공개<br>
 ※ <strong style="color:#ff6b6b">Tesla Cybertruck</strong>: RWD 단종 → 듀얼모터 AWD $59,990 교체 · 26년 매진 · 25년 ~2만대<br>
 ※ BMW NK: 4695 원통형 NMC, CTP, 400kW 충전 · <strong style="color:#4ecdc4">iX5 Electric</strong> 스파르탄버그 생산 2026 Q4<br>
 ※ <strong style="color:#4ecdc4">Mercedes EQG</strong>: 전기 G클래스 2026 중반 출시 · <strong style="color:#ff6b6b">Ferrari 첫 EV</strong>: 2026 하반기 출시<br>
@@ -899,7 +898,8 @@ SDI 출하량 추이 = <span style="color:#a78bfa">에코프로비엠</span> · 
 ※ <strong style="color:#4ecdc4">VW ID.Buzz</strong>: 2026 MY 없음 → 2027 MY 복귀 (8월~ Tourer 캠핑 모델 추가, NACS 포트)<br>
 ※ <strong style="color:#556dff">Ford EU 'Ready-Set-Ford'</strong>: 2029년까지 7종 신차 · EV 해치백(르노 Ampr 플랫폼, 두에 공장) · 브롱코 컴팩트(발렌시아 2028~) · Transit City 5 전기밴(2026말)<br>
 ※ BMW NK: 4695 원통형 NMC, CTP, 400kW 충전 · VW ID.Polo: Group unified cell · <span style="color:#f87171">LFP 37kWh</span> (베이스) / <span style="color:#4ade80">NMC 52kWh</span> (상위)<br>
-※ <strong style="color:#6b7a99">Stellantis Opel-Leapmotor</strong>: 전기 SUV 2028 스페인 발렌시아 생산 · Geely 바디3 라인 인수 합의<br>
+※ <strong style="color:#6b7a99">Stellantis Opel-Leapmotor</strong>: 전기 SUV 2028 스페인 발렌시아 생산 · Geely 바디3 라인 인수 합의 · 이탈리아 초저가 소형 EV 생산 예정<br>
+※ <strong style="color:#6b7a99">Stellantis-Dongfeng</strong>: Voyah 프리미엄 EV 프랑스 렌 공장 생산 (지분 Stellantis 51%, Dongfeng 49%)<br>
 ※ <strong style="color:#6b7a99">Jeep Wagoneer S</strong>: 2026 MY 중단 → 2027 MY 복귀 (NACS 포트, 배터리·SW 개선)<br>
 ※ <strong style="color:#ff6b6b">Mercedes EQG</strong>: 전기 G클래스 2026 중반 EU 출시 · <strong style="color:#ff6b6b">Ferrari 첫 EV</strong>: 2026 하반기<br>
 ※ <strong style="color:#4ecdc4">BMW i3 차세대</strong>: 전기 세단 2027 출시 · <strong style="color:#4ecdc4">Kia EV4 EU</strong>: 보급형 해치백 2027 Q1
@@ -915,7 +915,7 @@ document.getElementById('panel-'+market).classList.add('active');
 </script>
 </div>
 
-<p class="updated">마지막 업데이트: 2026.05.20
+<p class="updated">마지막 업데이트: 2026.05.26
 
 <script>
 const gridColor='rgba(255,255,255,0.06)';
