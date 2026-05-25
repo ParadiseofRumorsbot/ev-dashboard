@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-05-25T02:32:30.185Z",
+  "syncedAt": "2026-05-25T09:49:28.846Z",
   "dbId": "659a8d5a89c344a5b68960fead1cf889",
   "count": 33,
   "variables": [
@@ -112,7 +112,7 @@
       "updatedAt": "2026-05-02"
     },
     {
-      "name": "ESS 가동��",
+      "name": "ESS 가동률",
       "category": "cellMakers",
       "target": "SKON",
       "region": "us",
@@ -150,7 +150,7 @@
     {
       "name": "perGwh (ESS)",
       "category": "cats",
-      "target": "한중엔��에스",
+      "target": "한중엔시에스",
       "region": "us",
       "year": "",
       "value": 180,
