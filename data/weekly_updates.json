@@ -1,103 +1,21 @@
 {
-  "syncedAt": "2026-05-26T10:00:00.000Z",
-  "latestDate": "2026-05-26",
-  "count": 27,
-  "this_week": [
-    {
-      "icon": "⚡",
-      "title": "ESS 4월",
-      "body": "글로벌 17.7GWh (+18% YoY) · 미국 1.1GWh (-67%) · 유럽 1.6GWh (+39%) · 중국 9.4GWh (+55%)",
-      "color": "purple",
-      "section": "this_week",
-      "targets": ["index"],
-      "date": "2026-05-26",
-      "order": 1
-    },
-    {
-      "icon": "🔋",
-      "title": "Cell",
-      "body": "대형 3사 -1.0% (LGES -4.4%, SDI +5.4%, SK이노 +0.2%) · SVOLT 반고체 2026.09 양산 · Ganfeng 500Wh/kg 전고체",
-      "color": "yellow",
-      "section": "this_week",
-      "targets": ["index"],
-      "date": "2026-05-26",
-      "order": 2
-    },
-    {
-      "icon": "💰",
-      "title": "메탈·전력",
-      "body": "리튬 -6.7% WoW (+18.2% QoQ) · LiPF6 +6.1% · 유럽 전력 85.7€/MWh (+5.8%)",
-      "color": "blue",
-      "section": "this_week",
-      "targets": ["index"],
-      "date": "2026-05-26",
-      "order": 3
-    },
-    {
-      "icon": "⚙️",
-      "title": "소재",
-      "body": "소재 +5.7% · SQM 호주 리튬 광산 2배 증설 · 포스코퓨처엠 실리콘 음극재 2028 · 중국 광산규제 6/15 시행",
-      "color": "teal",
-      "section": "this_week",
-      "targets": ["index"],
-      "date": "2026-05-26",
-      "order": 4
-    },
-    {
-      "icon": "🚗",
-      "title": "EV",
-      "body": "Stellantis-Leapmotor 이탈리아 초저가 EV · Mazda 자체 EV 2029 재연기 · Subaru EV 연기 · Sungrow 중동 ESS 15.3GWh",
-      "color": "red",
-      "section": "this_week",
-      "targets": ["index"],
-      "date": "2026-05-26",
-      "order": 5
-    }
-  ],
+  "syncedAt": "2026-05-25T14:34:55.325Z",
+  "latestDate": "2026-05-22",
+  "count": 21,
+  "this_week": [],
   "update_log": [
     {
-      "title": "⚡ ESS 4월 글로벌 17.7GWh (+18%) 반영",
-      "category": "ESS",
-      "icon": "⚡",
-      "body": "4월 글로벌 ESS 17.7GWh(+18% YoY). Grid 12.8GWh(+27%), BTM 4.9GWh(Flat). 미국 1.1GWh(-67%), 유럽 1.6GWh(+39%), 중국 9.4GWh(+55%)",
-      "color": "purple",
-      "section": "update_log",
-      "targets": ["index"],
-      "date": "2026-05-26",
-      "order": 1
-    },
-    {
-      "title": "💰 광물가격·전력가격 5월3주 반영",
-      "category": "Cell",
-      "icon": "💰",
-      "body": "리튬 -6.7% WoW(+18.2% QoQ) · 니켈 -1.4% · LiPF6 +6.1% · 유럽 전력 85.7€/MWh(+5.8%)",
-      "color": "blue",
-      "section": "update_log",
-      "targets": ["index"],
-      "date": "2026-05-26",
-      "order": 2
-    },
-    {
-      "title": "🚗 EV 타임라인 업데이트 3건",
-      "category": "미국",
-      "icon": "🚗",
-      "body": "Mazda 자체 EV 2029 재연기 · Subaru 자체 EV 연기(일정 미공개) · Stellantis-Leapmotor 이탈리아·Dongfeng 프랑스",
-      "color": "teal",
-      "section": "update_log",
-      "targets": ["index"],
-      "date": "2026-05-26",
-      "order": 3
-    },
-    {
-      "title": "🔋 배터리 기술 업데이트 3건",
+      "title": "🔋 LGES 북미 CAPA 정정 — UC2 과대·MIH/MIL 혼동 수정",
       "category": "Cell",
       "icon": "🔋",
-      "body": "SVOLT 반고체 2026.09 양산 · Ganfeng 500Wh/kg 전고체 · 포스코퓨처엠 실리콘 음극재 2028",
-      "color": "yellow",
+      "body": "UC1 오하이오 가용CAPA 40GWh 반영 · UC2 테네시 45→20GWh(라인 절반 미설치) · MIH(Holland) ESS Only 17GWh · MIL(Lansing) ESS+EV 25GWh(Tesla,Toyota) · 북미 소계·가동률 재계산",
+      "color": "purple",
       "section": "update_log",
-      "targets": ["index"],
-      "date": "2026-05-26",
-      "order": 4
+      "targets": [
+        "index"
+      ],
+      "date": "2026-05-22",
+      "order": 1
     }
   ],
   "archive": [
