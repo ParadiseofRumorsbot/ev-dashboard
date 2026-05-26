@@ -1,118 +1,161 @@
 {
   "type": "ev_launch_timeline",
-  "lastUpdated": "2026-05-25T22:34:14.922Z",
-  "date": "2026-05-25",
+  "lastUpdated": "2026-05-26T22:47:26.377Z",
+  "date": "2026-05-26",
   "description": "EV 신차 출시일정 모니터링 — 타임라인 테이블 반영용",
   "note": "⚠️ 자동 수집 결과입니다. 대시보드 반영 전 사용자 확인 필요.",
-  "totalItems": 19,
+  "totalItems": 20,
   "oemStats": {
+    "Other": 10,
+    "Skoda": 2,
+    "Kia": 2,
     "Mercedes": 1,
-    "Other": 7,
-    "VW": 2,
-    "Kia": 1,
-    "Genesis": 1,
+    "Tesla": 1,
     "BMW": 1,
+    "VW": 1,
     "Rivian": 1,
-    "Ford": 1,
-    "GM": 1,
-    "Honda": 1,
-    "Skoda": 2
+    "Honda": 1
   },
   "items": [
     {
-      "title": "2026 Mercedes-Benz S-Class Facelift India Launch On June 15; Will Get PHEV Option - Car and Bike",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOY1E4Mk55cjM4WHNSX09mak1MMnF1Nkd0WDJmWXdrdU9CbVZKRkNCMElNb1JXbV9lbDhKWmVmRjNhd2pqRm5IX1VZdzZ4ZmN0ZnY2VURBaGVxU1BVcmpLV1dVNHgyWHJHc1BUWlB5NXNDWGRpakFkODVqSWduQ3NnSmUtRldvWVNKM0Rka0U1OWRBOFlTS2N0c3dIa3VCTFV4MkRiOGc5TXR0Y1p0TXhUUUhlS2VnZHZCUVE?oc=5",
-      "pubDate": "Mon, 25 May 2026 13:16:17 GMT",
-      "source": "Car and Bike",
-      "oem": "Mercedes",
+      "title": "Ferrari unveils new four-door Luce, brand's first fully electric car with $640,000 price tag - ABC7 Los Angeles",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOTkR2VkJLMzl4V1M4Wnp1Si1FT0gybG5mZGNRWHR3RkRpRVkwQnZsVEVaWmViMkxGNzBETkoxQ2xqdHNPcjNEVEF6Rl9XNE45eElsMnl6aFdqY2p2di00bFAwR0ZVVVV3Vm5INDdmQWxkaDQ0aTBNN0RIU1ZTWFY3Ny1HQ3VHa0hHaFdaaTJsb3R6R1VlaWV4OVBOWnZHOWdoX0p6VjNqRTg1elZUb2tDcTEwQWTSAbQBQVVfeXFMTk5EdlZCSzM5eFdTOFp6dUotRU9IMmxuZmRjUVh0d0ZEaUVZMEJ2bFRFWlplYjJMRjcwRE5KMUNsanRzT3IzRFRBekZfVzROOXhJbDJ5emhXamNqdnYtNGxQMEdGVVVVd1ZuSDQ3ZkFsZGg0NGkwTTdESFNWU1hWNzctR0N1R2tIR2hXWmkybG90ekdVZWlleDlQTlp2RzlnaF9KelYzakU4NXpWVG9rQ3ExMEFk?oc=5",
+      "pubDate": "Tue, 26 May 2026 17:03:39 GMT",
+      "source": "ABC7 Los Angeles",
+      "oem": "Other",
       "market": "Global",
       "score": 2
     },
     {
-      "title": "Renault Bridger Design Patented in India: Launch in 2027 - CarLelo",
-      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNcE5iRDlBTGdJX0FoeUZNVERlU3NsVl9rbWN1c3gyTGltOERLSlhfZmxUS1UyUzh6NGxwdlNyUnQ3NnluVkNrUTZldE8tdVotQ2lZbFU3Q2pqRVE5d3IyY082Rm53b2JlU0E4SzNrek5OT2FUVkFKS3RaeUpDczhxSnZNYlVNVC1xbVVHdw?oc=5",
-      "pubDate": "Mon, 25 May 2026 08:58:11 GMT",
-      "source": "CarLelo",
+      "title": "Skoda prices new Epiq EV from £24,950 in UK launch - MSN",
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQaEZGX0NFZnlFQlhEX1lwcFpnSlBja2FnV0o2aGhPMVAxTkg1REtTLU5qYlNfZFNFYzFjblN2S2czdW01bVpnY1c4UnNJVzA1eXc3NXM5d0Z6X0JWSXhJOW9YcFZweEgyT3ZDbmNkazNKLWwxZ1RsSTBEek5qUzFhOHcza1pnMU9NMFJVX1RLTmowVTYwRXFNbEJUM2hkRVJwbDhmSGNqZ0hQdmlpS0NvY2FuUFJnZzRkSVBZZVJRdnBUUTJZV1U1VEpBUGJIeWNueTdKOFJkaw?oc=5",
+      "pubDate": "Mon, 25 May 2026 21:46:17 GMT",
+      "source": "MSN",
+      "oem": "Skoda",
+      "market": "EU",
+      "score": 2
+    },
+    {
+      "title": "Skoda reveals prices for Epiq baby SUV - eurekar.co.uk",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPTGNOT2hyNVBoTVVMWXpvZXBvT1l6WVNQWjVMcUhJWlkwelBqM2xzZGxzWWZXa2JLMVJhN2wyblh5QmZLV2lRd3NoUHA5TGNnUEZic09BYVdmaEpSM0ZmYWdna05DU3A1NkhFeEhrWXYxZzRWSXo3T053MHRnTmNvcVJseGZ4aWJobWdNZA?oc=5",
+      "pubDate": "Tue, 26 May 2026 20:00:38 GMT",
+      "source": "eurekar.co.uk",
+      "oem": "Skoda",
+      "market": "Global",
+      "score": 2
+    },
+    {
+      "title": "Ferrari unveils first fully electric car. The internet has thoughts - Florida Today",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOMEprZW9kUlBNR3FOOGdVMG9peTJkaS1GRzN0V21QeTRoT0JRUHc5dnJlYjU1bjNoWU13LUZ0aVo3dmpFNnFzRHhvUXF3VjUtZkNRNnBaVFdoemtFNDQ3WHV3Y1NHWFQzbkVRSzN5WmJIQ1lwcUwyUUNiSEdmemhnZ05OYXZmaGJTdDUxUzVIVklRRUFVSWQ3cktSdWdFLVNQUXVEa0FSa3VEU3d6eTRyRG9ITGF0YU5UbGI2RQ?oc=5",
+      "pubDate": "Tue, 26 May 2026 18:27:00 GMT",
+      "source": "Florida Today",
       "oem": "Other",
       "market": "Global",
       "score": 1
     },
     {
-      "title": "Ferrari to unveil $586,000 electric car Luce as rivals tap brakes on EVs - New York Post",
-      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOcVVUdE45MGFQRkVaemNGZ1BtMEpHTmlaOHVsRFpDd2dNS1NVVEZTMF9OMXJRUnBCbFE3Ulc2V3dJQU5GMkJiSTZuSGxWZVZXZEV5MnZ2a2xiWm1vanpOOF9ibkViczJCUjhiQmY3N0x6OGhxZFJ3Mks0ejdjeDhDcWMtaXpWVWx2em1nVE9NSjBzOGJla3hRVVJnSVEyd2s5enVQdWp1S2YxX1JuNklOMVRGWHV5bXc2SXhwdXNwdnBWWHRPT1JTYg?oc=5",
-      "pubDate": "Mon, 25 May 2026 17:55:00 GMT",
-      "source": "New York Post",
+      "title": "Official Ferrari Luce Reveal | First Ferrari EV With Apple Design Interior | 2026 Future Supercar Copa Do Brasil (s1bDWlu9Oc) - Mshale",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1tbW5ISHZfa3pwcWR4YndaQlFqYzNPRk1Zczg5aUZ6WlBaOEpUR2FFM1V4Mk9NZ3hYNUwtcGZxOXpGOTZSNExvcjJvNzh2dEFCRnVwZ2FGX1lCeFk?oc=5",
+      "pubDate": "Tue, 26 May 2026 14:31:26 GMT",
+      "source": "Mshale",
       "oem": "Other",
       "market": "Global",
       "score": 1
     },
     {
-      "title": "Volkswagen Launches ID. UNYX 07 Sedan and Updated ID. UNYX 06 SUV in China - Electric Cars Report",
-      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQUkN2VFRzclFRRmJsNUsyb01ETmVhTUV4UXBuSzFzR2ZwRk82UE5DSGxtemJZTnRxSWtzRThwYUtiYjF6YkxmazBXQ09LV1RTaElYOVhLRk1rc1dSX3ZGNEV4UHNoNjJsalFhTUlDSUxMYV9aR2FvVHJ4TjJCNGU4ZS1YZVladzAzLTRDVUd0RVZ0a0pxTllIVnlJekhrQm5rOHRnUmVtZkx3UUc5ODdqVEhB?oc=5",
-      "pubDate": "Mon, 25 May 2026 11:51:09 GMT",
-      "source": "Electric Cars Report",
-      "oem": "VW",
-      "market": "CN",
+      "title": "Ferrari unveils new EV model - Semafor",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE95Um51alpiYTk4OVBnMHU5QmtUUGdYSl9OZEc0dDNHVjJxRzQyV3ZMZlA0MFdJMWlnMUpEak5Hc2F6WG1XSEJPQjIzcUd4ZjhVQkRvRFRNd2FlbGVFMHB0WlRZckVRX01NX01DblZoTXlmQ1NkaHliWEJYbw?oc=5",
+      "pubDate": "Tue, 26 May 2026 11:50:00 GMT",
+      "source": "Semafor",
+      "oem": "Other",
+      "market": "Global",
       "score": 1
     },
     {
-      "title": "Kia Sorento 7-Seater Hybrid Body-shell Spotted in India; Launch Soon - CarLelo",
-      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNTHpGVGtMTGk4WVNlZktiRklmWWRFYnRlUTVJNmRPTXZ3M1JEbzRmamtpei1SMGp1Y3dXajA0WE12VWV3OTg5enNKMi10Z0JxU1hzZ1I2ODJWWXViVXBrNW5QaUxpUG9aZWJkVS0yczVTYWp0OXVwcUFiV0tiYmpMMmtUMVpwVHFrNjRaWA?oc=5",
-      "pubDate": "Mon, 25 May 2026 05:40:31 GMT",
-      "source": "CarLelo",
+      "title": "Ferrari Is Getting Ripped Apart By Fans After Revealing Its First EV - HotCars",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBQNzJMbTdvQkFObC01d0ViSGV5dE5xNnRRM29PUHRVX1ZQeWtFaTE4TUFWVlRweFRfU0h5YnlUZWlSbEhMbzdIQjdFMDBOYXkxTVdYSXpULTBuNEhpblB1b1dqYmg1Zw?oc=5",
+      "pubDate": "Tue, 26 May 2026 16:14:00 GMT",
+      "source": "HotCars",
+      "oem": "Other",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "2027 Kia Seltos Mass Production Begins at AutoLand Gwangju for North American Launch - Korean Car Blog",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPeFhYTjFuV3cwUE1DeW9MMGlrY3dGdHlzaWxmbFQ1UjBlXzJyUENwQ3ZzRmd6NDdTQXVpTzdNZm9NMXZld1dmcGlMYXNCRlJPRDdNaHJWc3RIVHVRUGI2N2NMa2pWTDJZSnBsVnFBa0FDbEJJcm9xSVhKbTlwd1poaDZwV2dCeU9ERnU4Wm5aSUtTelBINndOX0MwdVE0QzRjVUl3cGdiSDVfVHVDY2tB?oc=5",
+      "pubDate": "Tue, 26 May 2026 16:32:00 GMT",
+      "source": "Korean Car Blog",
+      "oem": "Kia",
+      "market": "NA",
+      "score": 1
+    },
+    {
+      "title": "Mercedes to launch urban assisted driving system in Germany this year after China, U.S. rollouts - Automotive News",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQMTlFa19wVTdiYVpYMWw0c1ZuU3htY1NENXRyVGVhcFNBU2VaQmxnbzZJYWhXMEU3andQME9kcU43RG9DcnpXbmx6N1l2a1JidURwLU9HMlV6SWNYeEZqZ0hUVUVzdmVpTWJGcGZRb21xU1JKNFQ3ajFlc1d0VjB6SHZyVVNDQUdjYVdKS2c3aDN4aXc?oc=5",
+      "pubDate": "Tue, 26 May 2026 09:41:00 GMT",
+      "source": "Automotive News",
+      "oem": "Mercedes",
+      "market": "EU",
+      "score": 1
+    },
+    {
+      "title": "Kia Sorento bodyshell sighting hints at CKD India launch - MSN",
+      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQWE9QZjBmVDRLalNZeE12QUNWalRzOFpvdzRKOW1sWThab0V5cEpkdTVjQ3FVd01jNWpodzRlVk12Y1dHcUlUSUxYOEhFQjNPQXY2b0RBVmFGOUYxQXZDelR1OGhBYjFreG1nWXY1YmRUM256OTNSYTBlM0V1UGtycWM0ZHNjVlhnbUhzWVVGU3p0MjRkMDZneW04RGlId0ZzdDlXLUp4alpMcm1UcGFBTWhSMExvejRaVFZkSk1KdTQ1OHdYaTJYSmV6SERPTGFnUFRmZnVmMlJZZXlfMUxfSlJ2Ul9lSUZJWFZGenczZw?oc=5",
+      "pubDate": "Tue, 26 May 2026 06:43:41 GMT",
+      "source": "MSN",
       "oem": "Kia",
       "market": "Global",
       "score": 1
     },
     {
-      "title": "The Genesis Luxury SUV That's Going After Bentley For A Fraction Of The Price - AOL.com",
-      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNbURXOTF3ck5Gc0dDcC14T0RfYXlpaWNYMTliWmZiUGowcnpSS3lhNFYxeUFhRF9vVzVkREVra2RJX20tQTFZZmVWZ3lTSkNBTmZfZlBZXzhLRnNabnBJR2RQanVzVzdwc2ZmNXozYkNjWWNEcGZkeHNNZm9LUmpEYQ?oc=5",
-      "pubDate": "Mon, 25 May 2026 19:07:04 GMT",
-      "source": "AOL.com",
-      "oem": "Genesis",
+      "title": "Ferrari unveils first fully electric vehicle - Tampa Bay Business & Wealth",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9NRUFSZ3NjNVZRM21DYVRRZDYxdE9uSnNob18zV0I1bmdLZk5CMDItZkhHdHRUbzIwUllycVV0R2xqNUdRSVBXdWVvMU5RNFAtSXlESlcwTUc4eDhxR19va2JobTNCWWQ5NXVYUV9B?oc=5",
+      "pubDate": "Tue, 26 May 2026 15:36:56 GMT",
+      "source": "Tampa Bay Business & Wealth",
+      "oem": "Other",
       "market": "Global",
       "score": 1
     },
     {
-      "title": "BMW Prepares iX5 Hydrogen for 2028 Launch - Electric Cars Report",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPd1o1OXlJZVB1a3gweHpROGl6V0thME84QUFlRm1MYTdobGFYT3hFRWQ5bjUwbU1Kak56bEk1MFJkclowLVhnbl85bW1vTDlzY1pBZE5pLUs1djZGb0dzU0Z4Vy1XQ0tueVhOSlZGTWUyQ21IR1I4b3AwVGc4NF9LWks0VWd1NTFXTVNWQjZ2S0NXNy1rdzNybHg2ZHpuUQ?oc=5",
-      "pubDate": "Mon, 25 May 2026 11:51:09 GMT",
-      "source": "Electric Cars Report",
+      "title": "Tesla Roadster Finally Has A Factory, But Still No Real Launch Date - Autoblog",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOVkNSRnlIR3V5dnF3anRJRHNsajQ4bktadDNoa1podnZMenhnZXFhcUtrOGZuTHZOV3FvM092Qkl4c3lSSi1vUGFGSnA1T2w2cUtYWFRqQS05SS1zbU03bnJRdDNYaEpiUTRNazRXVjJ1VHlUTktxZWdXZ1ZqLUlmdHpIMnR5MXBJSmlpZ2hwY1d0cTd2SHo5X195dko?oc=5",
+      "pubDate": "Tue, 26 May 2026 21:15:00 GMT",
+      "source": "Autoblog",
+      "oem": "Tesla",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "300 Miles Of EV Range Is The New Normal. Is 400 Next? - InsideEVs",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1UdmZSQTZmNFMxV3BDU2NfOFV0aUQ5TmxlTU1ocmdqY1hkWEhUX01VTC1MeVZNQzJXNG9oU2R6MDc0NHVaUGdtSlMyd2Z5bnBYRjRXcnJsU0ktRFJ6dmx2aEtMdDk4WmFuZ1ZINGNjakVjZ0Nz?oc=5",
+      "pubDate": "Tue, 26 May 2026 05:13:24 GMT",
+      "source": "InsideEVs",
+      "oem": "Other",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "BMW Color-Changing Car Clears Production Test: E Ink Hood Debuts at Computex 2026 - Tech Times",
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQenVCTjBoWjBZUWNwWnRaem9rSXIyYUtQVXBobXFXcWN6OTIwV1lGZ0Ewdm12UEhQNmtYVDNESFl6Qk5lVHFnQ3FMVVVaYnQ2N19MVGNPQkg0YWZfbXRWb0N4TlFfdzdidGhVcnJ6SmNlNHRzSVRaRW54T24yY1NMUVV1ZVMycVdrb3J0LXFxaWdCVkw4Z2ZPNU5DLURwblFrNE9LNFRhaVNFa3lIWkdSWEdNd05qWkQwR1B3QUpiMHladnA3UEg2X0ExT1Y?oc=5",
+      "pubDate": "Tue, 26 May 2026 16:02:49 GMT",
+      "source": "Tech Times",
       "oem": "BMW",
       "market": "Global",
       "score": 1
     },
     {
-      "title": "First electric Ferrari launches with aerodynamic shell wrapped around sweeping glasshouse - Dezeen",
-      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPQ2Y1em5xYnM5YmdYSmtBU0Q4aGZPSy1McTl1bWtkNGYtRlVMbHVzc1drUVV2cmNWczVtRDlNbnRvNHY4UFY2R0NVTGZkb1pOSDdqVGdXbkpIcUptYUJoN3I3UzNKMXlWMEF0WDdIOVRYU29nUlJiTjF4bVJJZWhQY1l3RXBWV19mRXFkMGdFbw?oc=5",
-      "pubDate": "Mon, 25 May 2026 20:10:00 GMT",
-      "source": "Dezeen",
-      "oem": "Other",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "XPeng-powered Volkswagen ID. Unyx 07 goes on sale in China - ArenaEV - ArenaEV",
-      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPVWU4WWxSZGxqZjI1bW5qX2ZFYlJVSG5tckp1XzB3cUdhYVhULXdPZzltdm5SdHp6SFNEVzNRTDh2RTYySW9iVHpnVDBKdnVTUldOdkFEMnFvdUZTNmZGckpmMDM1S1ZNd1ZLUkVBeDRKZEhlZmpkWHVsc3hTTmEySVhZRkFNSDFSeERVbDR1Ylhqams3TU05dWRn0gGWAUFVX3lxTE82TEtiODd3b1NQQ1Y4Y3VqNzRkU2JZLUlYWUxSeFNDX2VUS05QY3R2d3pQYlBXTnNjODh4YXBRcmFrZ2ZrQjgzbGRXSmtPYTI0aFVEX21nVEIxS3ZPaEdqLVNHRHFpYURCYjdTX3ppbURNeUNFTkw4QW9GR0JUT3htdkFzMUhHSTFuZ3d0aE9IZjhiV2E0Zw?oc=5",
-      "pubDate": "Mon, 25 May 2026 17:17:01 GMT",
-      "source": "ArenaEV",
+      "title": "VW launches the ID. Unyx 07 in China - electrive.com",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5xVXRidTZ1VkRQNFF3X2tILUd0Vm5DS1lVdkxidDZwcllFY2FiOVlUOUdKZmc3SU5GYTd2S3JnRlZLUG8wakxjR01YVnZ5QXItYzA1M0xlYXZMQkRPZ0NuSlNabDk4eENQMDhKZUhVbjB3UkxDQ0xNNlk2ai1wdw?oc=5",
+      "pubDate": "Tue, 26 May 2026 08:00:00 GMT",
+      "source": "electrive.com",
       "oem": "VW",
       "market": "CN",
       "score": 1
     },
     {
-      "title": "MG Majestor Production Commences Ahead Of Launch - Car and Bike",
-      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPVlNsYWRDUHl0emF6UTlpVl9mZ0g2bHZ4VFlLQVhzeG1FSV9MMU55NHl0Q1ktT1ZyaEVzYzdXMGo0bldkMHhxRVZBdGZXSUJTdmxqUkpTX1I4XzNqYjZaSHJzUnpMaF9QTmw5d1V1WERJVDZVZzBaRXljQWFUU0hzR2FvMWVqS1lxYWFHWHM2Zko5UQ?oc=5",
-      "pubDate": "Mon, 25 May 2026 11:33:48 GMT",
-      "source": "Car and Bike",
-      "oem": "Other",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "Triumph Street Triple 765 RX Launched At Rs. 13.91 Lakh - Car and Bike",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQMEtYbVl5WGdqOUhmZURoN2ZmS0FDNFRfNUdnbFUxUnprTnVsMWpKdTFPcnFzZEpOYmxIQ0hLTDRsOWVSTHhrYW5ERUlfbnhENkRQTnVfdlBuY0xOMlIyZnYyZjB6ekFsWW1EQ2FzY1F1NlFVLTMzY3llZmc2VTRCd2g3V3BVRFczbm8xV1BXWThiSFJCYU9ldg?oc=5",
-      "pubDate": "Mon, 25 May 2026 13:34:43 GMT",
+      "title": "2026 Triumph Bonneville T120, Bobber and Speedmaster Launched In India - Car and Bike",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQQ1BQQmtaWFk0LXUtNEtjRXpoYlJGRnFrTXBkSVF6NU5lX245ZWk5dFM4cWZGVmprblN5YUlWenNEcWdaN240QlVRUXVXUXc0NC16bEdhZWpaenpVY1ZGOVVzMXNHTFpwdWVqVzhxUVh5UVB3cmduMmF2Z0M5X2VnLXRIbXl2S0dDX2FKeXh6V1gwYklBZ3pYSU1WSkF4ZHh6N2kzQTE4WThUQ2tPbkE?oc=5",
+      "pubDate": "Tue, 26 May 2026 08:59:16 GMT",
       "source": "Car and Bike",
       "oem": "Other",
       "market": "Global",
@@ -128,30 +171,12 @@
       "score": 1
     },
     {
-      "title": "Ford, Ram accelerate truck strategies with new packages and vehicle launches - CBT News",
-      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBEanh6TnpnZFQ4UktvZEZ1a0dTbFFxTjhoVUJ1WERCVkVHbkoyZGt3T095b0NKYXM2dm90VzJkOW1uY0Y5eFhIY1J1UjNGbG93TXRQQ2xVb2hPazlJM0NnM3hUODJEU3hBelpEOTlfdXI?oc=5",
-      "pubDate": "Mon, 25 May 2026 11:04:14 GMT",
-      "source": "CBT News",
-      "oem": "Ford",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "Ferrari unveils €550,000 Luce, its first EV and a design unicorn - Automotive News",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPRG5tbzBsLWNnTjE2ZExTdmJYaWVIUEt4TEQwT0lZcFplU011ZW80VVlETk9NYnprenNWaE9jcmUySGRSNGM0Sk1ZVHNpMlc1TkMwak1GZklqdll6RUVyLVI5c1oyaTI3RmFwYW9HakJkeUhqZTAtZzBmUF9PVUdpZUtsNUgyUQ?oc=5",
-      "pubDate": "Mon, 25 May 2026 20:10:00 GMT",
-      "source": "Automotive News",
+      "title": "Ferrari unveils first fully electric car - BBC",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBFX3lZM2NTaFVsdGhMdXJrY2VSdk5uUFBlXzlVaHRKZG9nSWhzVFU0cjQ1endsbTBlRGdiWUNkakFTWDBPeWtNZldnVTYzNElIdjVyNWg3S1lRZw?oc=5",
+      "pubDate": "Tue, 26 May 2026 02:48:58 GMT",
+      "source": "BBC",
       "oem": "Other",
       "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "2026 Cadillac Escalade IQL Launched In South Korea - GM Authority",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQSnozRmJPUFJRUWlpRGFxWXFQSWNneFp6c3RmOXNSSzhDYXlnWGtONHFPeUxXdEVFTzBNVjdaNDNsenRRTUxiYXZYN0lqeUtfV0JrSENZdTdxZFlXNlktNGRXWk5HQmpZODZQVzEteTVlZDFvMXU2Wk83QUNkZkc3ckl1X29LcENkZkJxYUZObDVCWElkOTE00gGXAUFVX3lxTFBKejNGYk9QUlFRaWlEYXFZcVBJY2d4WnpzdGY5c1JLOENheWdYa040cU95TFd0RUVPME1WN1o0M2x6dFFNTGJhdlg3SWp5S19XQmtIQ1l1N3FkWVc2WS00ZFdaTkdCalk4NlBXMS15NWVkMW8xdTZaTzdBQ2RmRzdySXVfb0twQ2RmQnFhRk5sNUJYSWQ5MTQ?oc=5",
-      "pubDate": "Mon, 25 May 2026 08:05:31 GMT",
-      "source": "GM Authority",
-      "oem": "GM",
-      "market": "KR",
       "score": 1
     },
     {
@@ -164,29 +189,11 @@
       "score": 1
     },
     {
-      "title": "Ferrari Launches $640,000, Jony Ive-Designed, Glass-Clad Electric Speedster - WSJ",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNc3B3T0ZHdjhlcEJiUGFPOGMtVHVzWkViNk9YeU1hWExSRXJ4TVd6NE9ueWZkZ3ZBN3ZkX1BacEFqLUlxU2JOTTFIMlhyQmVmSENDdllkZjk5N3Y4ZHVSY0lJOEQ1MDdObUxHZkZzMVVIOGkzanVrNlhjOGNFX0lTN2E4WFRzVlRjc0twOVhoc250RmczYVlRVHJmbHlQbTE1a1BfSV85TUlFMFJaMFR6VlcwTnZ2M1k?oc=5",
-      "pubDate": "Mon, 25 May 2026 20:10:00 GMT",
-      "source": "WSJ",
+      "title": "Ferrari enters EV era with Luce, unveils 1,035 hp electric grand tourer - ET Auto",
+      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPTklFRk4yN1QyUXp4WnQ5d0pySWZnU0RCMHlvS2Z6ZTlOcExQaU5laW42RHBlWVB5TGhJb1hteWZSeFlBcEFBTDF2TFA2YWd0QUU0aGNvZkpEc3dnTlExa3UxNlFMVXVPbGpxNGx5dmFoZkVmcS1ZVHNXNTNMejI2eDdVOE1LSDVOSXdTWG9fSkZyaVN1VUtEOVpwUTEwbEYwZGtfcHNWNE02TGM0NUNRSmRsaHZuQ3BWRXBuMkRXUHpGcXRsaEtNQUk0My1LMFY5MWUwOE1Td1JabkdBVFJ3RVZLMHR6LXh0U2RONtIB7AFBVV95cUxPTklFRk4yN1QyUXp4WnQ5d0pySWZnU0RCMHlvS2Z6ZTlOcExQaU5laW42RHBlWVB5TGhJb1hteWZSeFlBcEFBTDF2TFA2YWd0QUU0aGNvZkpEc3dnTlExa3UxNlFMVXVPbGpxNGx5dmFoZkVmcS1ZVHNXNTNMejI2eDdVOE1LSDVOSXdTWG9fSkZyaVN1VUtEOVpwUTEwbEYwZGtfcHNWNE02TGM0NUNRSmRsaHZuQ3BWRXBuMkRXUHpGcXRsaEtNQUk0My1LMFY5MWUwOE1Td1JabkdBVFJ3RVZLMHR6LXh0U2RONg?oc=5",
+      "pubDate": "Tue, 26 May 2026 05:56:23 GMT",
+      "source": "ET Auto",
       "oem": "Other",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "Skoda Epiq EV to launch in UK from £24,950 - MSN",
-      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQYmU0MkZRRGk4RHM1Vl9iY2xXOWo5XzB5UGNpeVBteE56SU0wdmVvU21DMXo0T1FrdnBLRHVCN0dOQ2lKTzBoaFZmTmRaWDFmMlNHdkdrNjk2Z1JwRklobHV5OGl3elBpNXZsNTd1MlZlMHF4ODUxbGFyUDB2UUotSl9LSklPUmtvN2wwbXpwVVRTdEFIQnI3Q19pRTRmaDctQUFpTURpVEVveXRwZnZZQ3RNYXVyYmpGVkZnRHVPcU03TGQxVGlUbUkxTQ?oc=5",
-      "pubDate": "Mon, 25 May 2026 10:08:51 GMT",
-      "source": "MSN",
-      "oem": "Skoda",
-      "market": "EU",
-      "score": 1
-    },
-    {
-      "title": "Skoda enters the budget EV fray with new launch - RTE.ie",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOZW5PZWduVDA4ZnNwZlFnajRHSU5JcVppRUJnSFc4Tm1iR2t1RV9pSWJreXd1UnhlNUNVVmdGUWlOdHpmSFVLV1lUTXFVYlFqeGREaVRyXzlQdTBqSVo2Y2lFaFZRWkV0MmhIcjNzR2dheXZkUEwwR2kyaG1ZOUNnakJ6UDUtZWp5TmxXS2dLanR0X0FIWmp5MWhfdU1lallZbjQ0WQ?oc=5",
-      "pubDate": "Mon, 25 May 2026 20:00:27 GMT",
-      "source": "RTE.ie",
-      "oem": "Skoda",
       "market": "Global",
       "score": 1
     }
