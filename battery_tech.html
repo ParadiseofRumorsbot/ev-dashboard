@@ -36,7 +36,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 .card li::before{content:'▸ ';color:var(--accent)}
 
 /* SECTION NAV CARDS */
-.sec-nav{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:24px}
+.sec-nav{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:24px}
 .sec-link{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px 14px;text-decoration:none;color:var(--text);transition:all .2s;cursor:pointer;text-align:center;position:relative;overflow:hidden}
 .sec-link:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.06)}
 .sec-link .ico{font-size:24px;margin-bottom:6px}
@@ -48,7 +48,27 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 .sec-link.s-cnt::after{background:var(--red)}
 .sec-link.s-si::after{background:var(--blue)}
 .sec-link.s-cathode::after{background:var(--purple)}
-@media(max-width:768px){.sec-nav{grid-template-columns:repeat(2,1fr)}}
+.sec-link.s-sodium::after{background:#e97a00}
+@media(max-width:768px){.sec-nav{grid-template-columns:repeat(3,1fr)}}
+
+/* FIGURES */
+.fig-wrap{margin:16px 0;text-align:center}
+.fig-wrap img,.fig-wrap video{max-width:700px;width:100%;border-radius:8px;border:1px solid var(--border)}
+.fig-cap{font-size:10px;color:var(--sub);margin-top:6px;line-height:1.5;font-style:italic}
+.fig-cap a{color:var(--blue);text-decoration:none;border-bottom:1px dotted var(--blue)}
+.fig-terms{margin-top:10px;background:#f0f7ff;border:1px solid #c6ddf7;border-radius:6px;padding:0;text-align:left}
+.fig-terms summary{font-size:11px;color:var(--blue);cursor:pointer;font-weight:600;padding:8px 14px;list-style:none;user-select:none}
+.fig-terms summary::-webkit-details-marker{display:none}
+.fig-terms[open] summary{border-bottom:1px solid #c6ddf7}
+.fig-terms .term-list{font-size:11px;color:var(--sub);line-height:2;padding:10px 14px}
+.fig-terms .term-list b{color:var(--text);min-width:140px;display:inline-block}
+
+/* NA-ION COLORS */
+.cann-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:12px 0}
+.cann-card{background:#faf8f5;border:1px solid var(--border);border-radius:6px;padding:12px;text-align:center;font-size:11px}
+.cann-card .seg{font-weight:700;margin-bottom:4px}
+.cann-card .risk{font-size:18px;margin:6px 0}
+.cann-card .desc{font-size:9px;color:var(--sub);line-height:1.4}
 
 /* CHART */
 .chart-wrap{position:relative;height:280px}
@@ -131,7 +151,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 <!-- HEADER -->
 <div class="hd">
 <div class="hd-left">
-<div class="hd-meta">BATTERY TECHNOLOGY · PATENT PORTFOLIO · 2026.05</div>
+<div class="hd-meta">BATTERY TECHNOLOGY · PATENT PORTFOLIO · 2026.05.27</div>
 <div class="hd-title">🔬 <i>Battery Tech</i> & Patent Tracker</div>
 <div class="hd-sub">셀 기술 해설 · 특허 포트폴리오 · 업체별 로드맵 · <b>매주 월요일 8AM KST 자동 수집</b></div>
 </div>
@@ -188,7 +208,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 </div>
 <div style="margin-top:12px;font-size:10px;color:var(--sub);line-height:1.6">
 ※ Toyota 전고체 ~1,300건 글로벌 최다 · 삼성SDI 전고체 ~1,100건+각형 ~1,200건 · SDI·LGES 출원 증가율 세계 1·2위 (51.7%, 50.8%)<br>
-※ CATL Q1 2026 등록 특허 111%↑ · WIPO 전고체 국제출원 공개 (2026.03) · 중국 국가별 전고체 특허 출원 1위
+※ CATL Q1 2026 등록 특허 111%↑ · WIPO 전고체 국제출원 공개 (2026.03) · 중국 국가별 전고체 특허 출원 1위<br>
+※ <b style="color:#e97a00">Na-ion 특허</b>: CATL 4,804건(87% 독점) · BYD 260건 · HiNa 249건 — 한국 3사 Na-ion 특허 거의 부재
 </div>
 </div>
 
@@ -201,6 +222,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 <a href="#sec-cnt" class="sec-link s-cnt"><div class="ico">🧬</div><div class="lbl">CNT 도전재</div><div class="sub">Carbon Nanotube<br>CB 대비 1/5 사용량</div></a>
 <a href="#sec-si" class="sec-link s-si"><div class="ico">🔋</div><div class="lbl">실리콘 음극재</div><div class="sub">Silicon Anode<br>이론용량 11배</div></a>
 <a href="#sec-cathode" class="sec-link s-cathode"><div class="ico">⚗️</div><div class="lbl">차세대 양극재</div><div class="sub">Hi-Nickel · LMFP<br>단결정 NMC</div></a>
+<a href="#sec-sodium" class="sec-link s-sodium"><div class="ico">🧂</div><div class="lbl">나트륨이온</div><div class="sub">Sodium-ion Battery<br>LFP 대체·ESS</div></a>
 </div>
 
 <!-- ══════════════════════════════════════════════ -->
@@ -208,6 +230,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 <!-- ══════════════════════════════════════════════ -->
 <div class="card" id="sec-solid">
 <h2>⚡ <em>All-Solid-State Battery</em> — 전고체 배터리</h2>
+
+<div class="fig-wrap">
+<img loading="lazy" onerror="this.style.display='none'" src="https://arxiv.org/html/2407.04126v1/x1.png" alt="All-solid-state battery schematic">
+<div class="fig-cap">Fig — All-solid-state battery architecture: sulfide vs oxide vs polymer electrolyte pathways<br><a href="https://arxiv.org/abs/2407.04126" target="_blank" rel="noopener">Source: arXiv 2407.04126</a></div>
+<details class="fig-terms"><summary>🔵 이미지 용어 해설 ▼</summary><div class="term-list">
+▸ <b>SE (Solid Electrolyte)</b>: 고체 전해질 — 액체 대신 이온 전도 담당<br>
+▸ <b>Sulfide</b>: 황화물계 — 높은 이온전도도(~10 mS/cm), 수분에 민감<br>
+▸ <b>Garnet / LLZO</b>: 산화물 세라믹 전해질 — 대기 안정, 소결 필요<br>
+▸ <b>Anode-less</b>: 무음극 — Cu 집전체 위에 충전 시 Li 석출
+</div></details>
+</div>
 
 <h3>왜 전고체인가?</h3>
 <ul>
@@ -293,6 +326,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 <!-- ══════════════════════════════════════════════ -->
 <div class="card" id="sec-dry">
 <h2>🏭 <em>Dry Electrode Process</em> — 건식전극</h2>
+
+<div class="fig-wrap">
+<img loading="lazy" onerror="this.style.display='none'" src="https://arxiv.org/html/2506.17048v1/x2.png" alt="Dry electrode manufacturing process">
+<div class="fig-cap">Fig — Dry electrode process: PTFE fibrillization mechanism vs conventional wet slurry coating<br><a href="https://arxiv.org/abs/2506.17048" target="_blank" rel="noopener">Source: arXiv 2506.17048</a></div>
+<details class="fig-terms"><summary>🔵 이미지 용어 해설 ▼</summary><div class="term-list">
+▸ <b>PTFE fibrillization</b>: PTFE 고전단 밀링 → 나노 섬유화 "스파이더웹" 형성<br>
+▸ <b>NMP (N-Methyl-2-pyrrolidone)</b>: 습식 공정 독성 용매, 건식에서 제거<br>
+▸ <b>Self-standing film</b>: 자립형 필름 — 용매 없이 바인더만으로 구조 유지<br>
+▸ <b>Calendering</b>: 롤 프레스로 전극 두께·밀도 균일화
+</div></details>
+</div>
 
 <h3>습식 vs 건식 — 왜 건식이 미래인가?</h3>
 <table class="ct">
@@ -383,6 +427,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 <!-- ══════════════════════════════════════════════ -->
 <div class="card" id="sec-cnt">
 <h2>🧬 <em>CNT Conductive Additive</em> — 왜 카본블랙 대신 CNT인가?</h2>
+
+<div class="fig-wrap">
+<img loading="lazy" onerror="this.style.display='none'" src="https://arxiv.org/html/2501.17087v1/x9.png" alt="CNT percolation network in electrode">
+<div class="fig-cap">Fig — CNT percolation network: 1D tube vs 0D particle conductive pathways in battery electrodes<br><a href="https://arxiv.org/abs/2501.17087" target="_blank" rel="noopener">Source: arXiv 2501.17087</a></div>
+<details class="fig-terms"><summary>🔵 이미지 용어 해설 ▼</summary><div class="term-list">
+▸ <b>Percolation threshold</b>: 퍼콜레이션 임계점 — 전도 네트워크 형성 최소 농도 (CNT ~0.5%, CB ~5%)<br>
+▸ <b>SWCNT / MWCNT</b>: 단일벽 / 다중벽 탄소나노튜브<br>
+▸ <b>Aspect ratio</b>: 길이/직경 비 — CNT ~1000:1로 적은 양으로 네트워크 형성
+</div></details>
+</div>
 
 <h3>CB vs CNT — 구조적 차이</h3>
 <!-- CSS DIAGRAM: CB vs CNT particles -->
@@ -491,6 +545,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 <div class="card" id="sec-si">
 <h2>🔋 <em>Silicon Anode</em> — 흑연을 넘어서</h2>
 
+<div class="fig-wrap">
+<img loading="lazy" onerror="this.style.display='none'" src="https://pub.mdpi-res.com/molecules/molecules-28-02079/article_deploy/html/images/molecules-28-02079-g001.png" alt="Silicon anode mechanisms">
+<div class="fig-cap">Fig — Silicon anode: lithiation/delithiation mechanism and volume expansion challenge<br><a href="https://doi.org/10.3390/molecules28052079" target="_blank" rel="noopener">Source: MDPI Molecules 28(5) 2079 (Open Access)</a></div>
+<details class="fig-terms"><summary>🔵 이미지 용어 해설 ▼</summary><div class="term-list">
+▸ <b>Lithiation</b>: 리튬 삽입 — Si + Li → Li₃.₇₅Si (충전 시 300% 팽창)<br>
+▸ <b>SEI (Solid Electrolyte Interphase)</b>: 고체 전해질 계면 — 팽창/수축마다 재형성 → Li 소모<br>
+▸ <b>SiOx</b>: 실리콘 산화물 — 산소 매트릭스가 팽창 완충, 현재 블렌딩 주류<br>
+▸ <b>Si-C composite</b>: 탄소 코팅/쉘이 Si 입자 팽창을 억제하는 복합 구조
+</div></details>
+</div>
+
 <h3>왜 실리콘인가?</h3>
 <table class="ct">
 <thead><tr><th>항목</th><th>흑연 (현재)</th><th style="color:var(--blue)">실리콘</th></tr></thead>
@@ -567,6 +632,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 <div class="card" id="sec-cathode">
 <h2>⚗️ <em>Next-Gen Cathode</em> — 차세대 양극재 트렌드</h2>
 
+<div class="fig-wrap">
+<img loading="lazy" onerror="this.style.display='none'" src="https://www.ossila.com/cdn/shop/files/LMFP-crystal-structure.svg" alt="LMFP crystal structure" style="max-width:500px">
+<div class="fig-cap">Fig — LMFP (LiMnₓFe₁₋ₓPO₄) olivine crystal structure: Mn substitution raises voltage from 3.2V to 3.8~4.0V<br><a href="https://www.ossila.com/pages/lmfp-batteries" target="_blank" rel="noopener">Source: Ossila Ltd (Open Educational)</a></div>
+<details class="fig-terms"><summary>🔵 이미지 용어 해설 ▼</summary><div class="term-list">
+▸ <b>Olivine</b>: 올리빈 결정 구조 — LFP/LMFP의 기본 구조, 높은 열안정성<br>
+▸ <b>NMC (Nickel Manganese Cobalt)</b>: 층상 산화물 양극재, Ni↑ = 용량↑<br>
+▸ <b>Single crystal</b>: 단결정 — 다결정 대비 입자 균열↓, 사이클 수명 2배+<br>
+▸ <b>Co-free</b>: 코발트 미사용 — 원가 절감 + ESG 이슈 해소
+</div></details>
+</div>
+
 <h3>하이니켈 — Ni 비율 ↑ = 에너지밀도 ↑</h3>
 <ul>
 <li>양극 활물질: Li(Ni<sub>x</sub>Co<sub>y</sub>Mn<sub>z</sub>)O₂ → <span class="hl-a">Ni ↑ = 용량 ↑ = 에너지밀도 ↑</span></li>
@@ -613,6 +689,185 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 <span class="kp-tag material">에코프로머티</span> 전구체 · 인니 니켈 수직계열화<br>
 <span class="kp-tag material">포스코홀딩스</span> 리튬 · 아르헨티나 염호<br>
 <span class="kp-tag material">코스모신소재</span> 양극재 코팅 소재
+</div>
+</div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SEC 6: 나트륨이온 배터리 -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="card" id="sec-sodium">
+<h2>🧂 <em>Sodium-ion Battery</em> — LFP 대체자인가, 공존인가?</h2>
+
+<div class="fig-wrap">
+<img loading="lazy" onerror="this.style.display='none'" src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Sodium-ion_battery_systems.png" alt="Sodium-ion battery systems overview">
+<div class="fig-cap">Fig — Sodium-ion battery system overview: cathode (layered oxide / Prussian blue / polyanionic) + hard carbon anode<br><a href="https://commons.wikimedia.org/wiki/File:Sodium-ion_battery_systems.png" target="_blank" rel="noopener">Source: Wikimedia Commons (CC BY-SA 4.0)</a></div>
+<details class="fig-terms"><summary>🔵 이미지 용어 해설 ▼</summary><div class="term-list">
+▸ <b>Hard carbon</b>: 하드카본 — Na-ion 음극 주류, 비결정질 탄소 구조<br>
+▸ <b>Prussian blue (PBA)</b>: 프러시안 블루 유사체 — 개방형 격자, Na⁺ 빠른 확산<br>
+▸ <b>Layered oxide</b>: 층상 산화물 — NMC와 유사 구조, Na 기반<br>
+▸ <b>Polyanionic</b>: 다음이온계 — NASICON 구조, 높은 열안정성
+</div></details>
+</div>
+
+<h3>왜 나트륨이온인가?</h3>
+<ul>
+<li><span class="hl-a">원료 무제한</span>: Na 지각 풍도 2.3% (Li 0.002%의 1,000배+) — 해수에서도 추출 가능</li>
+<li><span class="hl-g">공급망 탈중국</span>: Li·Co·Ni 중국 정련 의존 구조 탈피 — Al 집전체(Cu 대체)로 원가 추가 절감</li>
+<li><span class="hl-g">저온 성능</span>: -20°C에서 용량 유지율 ~90% (LFP ~70%) — 한냉지 ESS·EV 핵심 우위</li>
+<li><span class="hl-a">안전성</span>: 0V 완전 방전 가능 → 운송·보관 안전 (Li-ion은 잔압 유지 필요)</li>
+<li><span class="hl-r">한계</span>: 에너지밀도 120~175 Wh/kg (LFP 160~200 대비 열위) · 사이클 수명 아직 검증 중</li>
+</ul>
+
+<h3>Na-ion vs LFP — 핵심 비교</h3>
+<table class="ct">
+<thead><tr><th>항목</th><th style="color:#e97a00">나트륨이온 (NIB)</th><th style="color:var(--green)">LFP</th><th>비고</th></tr></thead>
+<tbody>
+<tr><td>에너지밀도</td><td>120~175 Wh/kg</td><td class="hl-g">160~200 Wh/kg</td><td>LFP 우위, 격차 축소 중</td></tr>
+<tr><td>셀 원가 (2026E)</td><td class="hl-g">$55~70/kWh</td><td>$40~55/kWh</td><td>LFP 스케일 이점, NIB 2028 역전 전망</td></tr>
+<tr><td>장기 원가 (2030E)</td><td class="hl-g">$30~40/kWh</td><td>$35~45/kWh</td><td>Na 원료비 구조적 우위</td></tr>
+<tr><td>저온 (-20°C)</td><td class="hl-g">◎ ~90% 유지</td><td class="hl-r">△ ~70% 유지</td><td>NIB 최대 차별점</td></tr>
+<tr><td>급속충전</td><td class="hl-g">◎ 15분 80%</td><td>○ 20~25분 80%</td><td>하드카본 층간 넓어 Na⁺ 확산 빠름</td></tr>
+<tr><td>사이클 수명</td><td>3,000~5,000회</td><td class="hl-g">6,000~10,000회</td><td>LFP 검증된 장수명</td></tr>
+<tr><td>안전성</td><td class="hl-g">◎ 0V 방전 가능</td><td class="hl-g">◎ 열안정</td><td>둘 다 우수</td></tr>
+<tr><td>음극 집전체</td><td class="hl-g">Al foil (저렴)</td><td>Cu foil</td><td>Cu 대비 Al 1/3 원가</td></tr>
+<tr><td>성숙도</td><td class="hl-r">초기 양산</td><td class="hl-g">대량 양산 중</td><td>LFP 10년+ 양산 이력</td></tr>
+</tbody>
+</table>
+
+<h3>Al Foil 소요량 — Na-ion의 숨겨진 밸류체인 수혜</h3>
+<table class="ct">
+<thead><tr><th>배터리 유형</th><th>GWh당 Al Foil (t)</th><th>대비</th><th>이유</th></tr></thead>
+<tbody>
+<tr><td>삼원계 (NMC)</td><td>300~400t</td><td>1.0x</td><td>양극 집전체만 Al</td></tr>
+<tr><td>LFP</td><td>400~600t</td><td>1.3~1.5x</td><td>양극 집전체 + 두꺼운 전극</td></tr>
+<tr><td style="color:#e97a00;font-weight:700">소디움이온 (NIB)</td><td class="hl-a">700~1,000t</td><td class="hl-a">2.0~2.5x</td><td>양극 + <b>음극</b> 집전체 모두 Al (Cu 대체)</td></tr>
+<tr><td>전고체</td><td>600~800t</td><td>1.7~2.0x</td><td>양극박 비중 증가 (전해액 제거)</td></tr>
+</tbody>
+</table>
+<div style="font-size:10px;color:var(--sub);line-height:1.6;margin-top:6px">
+※ <b style="color:#e97a00">Na-ion 핵심 차이점</b>: 음극 집전체가 Cu → Al로 전환 → GWh당 Al foil 사용량 NMC 대비 2배+ → <b>삼아알미늄·동일알미늄 등 알박 업체 직접 수혜</b><br>
+※ 삼아알미늄 기준 파우치형 배터리 1GWh당 매출 ~54억원 · Na-ion 전환 시 GWh당 매출 ~90억원+ 추정<br>
+※ Na-ion 600GWh(2030E) 달성 시 알박 수요만 42~60만톤 (현 글로벌 배터리 알박 시장의 ~40%)
+</div>
+
+<h3>카니발리제이션 구조 — 어디서 LFP를 대체하나?</h3>
+<div class="cann-grid">
+<div class="cann-card" style="border-left:3px solid var(--red)">
+<div class="seg" style="color:var(--red)">ESS (정치형)</div>
+<div class="risk">🔴</div>
+<div style="font-size:11px;font-weight:600;color:var(--red)">대체 위험 — 최고</div>
+<div class="desc">원가 > 밀도 중시<br>저온·안전 프리미엄<br>CATL HyperStrong 60GWh</div>
+</div>
+<div class="cann-card" style="border-left:3px solid var(--red)">
+<div class="seg" style="color:var(--red)">AI 데이터센터 (AIDC)</div>
+<div class="risk">🔴</div>
+<div style="font-size:11px;font-weight:600;color:var(--red)">대체 위험 — 높음</div>
+<div class="desc">UPS·피크셰이빙<br>저원가 대용량 수요<br>공간 제약 낮음</div>
+</div>
+<div class="cann-card" style="border-left:3px solid #e97a00">
+<div class="seg" style="color:#e97a00">2·3륜차 / 마이크로 EV</div>
+<div class="risk">🟠</div>
+<div style="font-size:11px;font-weight:600;color:#e97a00">대체 위험 — 높음</div>
+<div class="desc">인도·동남아 시장<br>주행거리 50~100km<br>원가 최우선</div>
+</div>
+<div class="cann-card" style="border-left:3px solid #e97a00">
+<div class="seg" style="color:#e97a00">저가형 EV (A/B세그먼트)</div>
+<div class="risk">🟠</div>
+<div style="font-size:11px;font-weight:600;color:#e97a00">대체 위험 — 중간~높음</div>
+<div class="desc">$15K 이하 차량<br>주행거리 200~300km<br>중국 시장 선행</div>
+</div>
+<div class="cann-card" style="border-left:3px solid var(--green)">
+<div class="seg" style="color:var(--green)">중급 EV (C세그먼트+)</div>
+<div class="risk">🟢</div>
+<div style="font-size:11px;font-weight:600;color:var(--green)">LFP 유지</div>
+<div class="desc">주행거리 400km+ 필요<br>에너지밀도 열위가 치명적<br>LFP/LMFP 영역 유지</div>
+</div>
+</div>
+<div style="font-size:10px;color:var(--sub);line-height:1.6;margin-top:8px">
+※ 카니발리제이션 핵심 변수: ① Na-ion 원가가 LFP 이하로 내려가는 시점(~2028E), ② 에너지밀도 격차 축소 속도, ③ CATL 양산 스케일 확대 속도<br>
+※ <b style="color:var(--accent)">공존 시나리오</b>: ESS·AIDC에서 Na-ion 급성장하되, EV는 LFP(중급)·NMC(프리미엄) 구조 유지 → LFP TAM 자체는 성장하나 점유율은 하락
+</div>
+
+<h3>LFP ESS 시장 내 Na-ion 침식 시나리오 (GWh)</h3>
+<table class="ct">
+<thead><tr><th>연도</th><th>글로벌 ESS<br>(전체)</th><th>LFP ESS<br>(Na-ion 無)</th><th>Na-ion ESS<br>침투량</th><th>LFP ESS<br>(Na-ion 有)</th><th>LFP 침식률</th></tr></thead>
+<tbody>
+<tr><td>2025</td><td>~200 GWh</td><td>~170 GWh</td><td class="hl-a">~5 GWh</td><td>~165 GWh</td><td>-3%</td></tr>
+<tr><td>2026E</td><td>~280 GWh</td><td>~240 GWh</td><td class="hl-a">~15 GWh</td><td>~225 GWh</td><td class="hl-r">-6%</td></tr>
+<tr><td>2027E</td><td>~380 GWh</td><td>~325 GWh</td><td class="hl-a">~50 GWh</td><td>~275 GWh</td><td class="hl-r">-15%</td></tr>
+<tr><td>2028E</td><td>~500 GWh</td><td>~430 GWh</td><td class="hl-g">~120 GWh</td><td>~310 GWh</td><td class="hl-r">-28%</td></tr>
+<tr><td>2030E</td><td>~800 GWh</td><td>~700 GWh</td><td class="hl-g">~300 GWh</td><td>~400 GWh</td><td class="hl-r">-43%</td></tr>
+</tbody>
+</table>
+<div style="font-size:10px;color:var(--sub);line-height:1.6;margin-top:6px">
+※ Na-ion ESS 침투 시나리오: 2028년 원가 역전 후 가속 — ESS 신규 설치의 30~40%를 Na-ion이 대체<br>
+※ <b style="color:var(--red)">LFP ESS TAM은 성장하지만 성장률이 크게 둔화</b>: Na-ion 無 대비 2030E 기준 약 300GWh(43%)가 전환<br>
+※ LFP는 기존 프로젝트·장수명(10,000사이클) 요구 ESS에서 유지, Na-ion은 저온·저원가·AIDC 신규 수요를 흡수
+</div>
+
+<h3>시장 규모 전망 (GWh)</h3>
+<table class="ct">
+<thead><tr><th>연도</th><th>Na-ion 출하</th><th>YoY</th><th>LFP 내 침투율</th><th>비고</th></tr></thead>
+<tbody>
+<tr><td>2025</td><td>~10 GWh</td><td>—</td><td>~1%</td><td>CATL·BYD 소량 양산</td></tr>
+<tr><td>2026E</td><td class="hl-a">~25 GWh</td><td>+150%</td><td>~2%</td><td>HyperStrong 60GWh CAPA 가동</td></tr>
+<tr><td>2027E</td><td class="hl-a">~92 GWh</td><td>+268%</td><td>~6%</td><td>중국 EV 탑재 본격화</td></tr>
+<tr><td>2028E</td><td class="hl-g">~221 GWh</td><td>+140%</td><td>~12%</td><td>원가 역전 시작</td></tr>
+<tr><td>2030E</td><td class="hl-g">~600 GWh</td><td>—</td><td>~20%</td><td>TAM ~1,000GWh (Morgan Stanley)</td></tr>
+</tbody>
+</table>
+
+<h3>CATL 타임라인 — Na-ion 독주</h3>
+<div class="rm">
+<div class="rm-i"><div class="rm-d" style="background:var(--green)"></div><div class="rm-y">2021.07</div><div class="rm-l">1세대 공개<br>160 Wh/kg</div></div>
+<div class="rm-i"><div class="rm-d" style="background:var(--purple)"></div><div class="rm-y">2024 Q4</div><div class="rm-l">Ride Great Wall<br>첫 EV 탑재</div></div>
+<div class="rm-i"><div class="rm-d" style="background:#e97a00"></div><div class="rm-y">2026.04</div><div class="rm-l">TechDay 나신<br>175 Wh/kg 2세대</div></div>
+<div class="rm-i"><div class="rm-d" style="background:#e97a00"></div><div class="rm-y">2026.04.27</div><div class="rm-l">HyperStrong<br>ESS 60GWh CAPA</div></div>
+<div class="rm-i"><div class="rm-d" style="background:var(--red)"></div><div class="rm-y">2026.05</div><div class="rm-l">푸딩시대<br>40GWh EV 셀</div></div>
+<div class="rm-i"><div class="rm-d" style="background:var(--red)"></div><div class="rm-y">2026 Q4E</div><div class="rm-l">본격 양산<br>규모의 경제 시작</div></div>
+</div>
+
+<h3>특허 현황 — CATL 독점 구조</h3>
+<table class="ct">
+<thead><tr><th>업체</th><th>Na-ion 특허 (건)</th><th>점유율</th><th>비고</th></tr></thead>
+<tbody>
+<tr><td style="color:var(--red)">CATL</td><td class="hl-r">4,804</td><td class="hl-r">~87%</td><td>양극·음극·전해질·셀 전 밸류체인</td></tr>
+<tr><td>BYD</td><td>260</td><td>~4.7%</td><td>Blade Na-ion 추진</td></tr>
+<tr><td>HiNa (中科海钠)</td><td>249</td><td>~4.5%</td><td>중국과학원 스핀오프</td></tr>
+<tr><td>삼성SDI</td><td class="hl-r" style="color:var(--red)">극소수</td><td>—</td><td>Na-ion 투자 미미</td></tr>
+<tr><td>LGES</td><td class="hl-r" style="color:var(--red)">극소수</td><td>—</td><td>LFP 대응에 집중</td></tr>
+<tr><td>SK온</td><td class="hl-r" style="color:var(--red)">극소수</td><td>—</td><td>하이니켈·전고체 집중</td></tr>
+</tbody>
+</table>
+<div style="font-size:10px;color:var(--sub);line-height:1.6;margin-top:8px">
+※ <b style="color:var(--red)">한국 3사 리스크</b>: Na-ion 특허 거의 부재 → ESS 시장에서 CATL 독주 시 대응력 약화<br>
+※ <b style="color:var(--green)">한국 소재 수혜</b>: 애경케미칼(하드카본 음극재), Al foil 업체(음극 집전체 Cu→Al 전환)
+</div>
+
+<div class="kp">
+<div class="kp-title">🏭 Key Players — 나트륨이온</div>
+<div class="kp-row">
+<div class="kp-col">
+<strong>선도 (양산)</strong>
+<span class="kp-tag leader">CATL</span> 175Wh/kg 2세대 · HyperStrong ESS 60GWh · 특허 87%<br>
+<span class="kp-tag leader">BYD</span> Blade Na-ion · 자체 EV 탑재 계획<br>
+<span class="kp-tag leader">HiNa (中科海钠)</span> 중국과학원 스핀오프 · 1GWh 양산라인
+</div>
+<div class="kp-col">
+<strong>추격 · 스타트업</strong>
+<span class="kp-tag chaser">Natron Energy</span> 미국 Prussian blue · 데이터센터 UPS<br>
+<span class="kp-tag chaser">Tiamat</span> 프랑스 · 18650 Na-ion · 산업용<br>
+<span class="kp-tag chaser">Faradion (Reliance)</span> 인도 · 층상산화물 · 2/3륜 시장
+</div>
+<div class="kp-col">
+<strong>소재 밸류체인</strong>
+<span class="kp-tag material">애경케미칼</span> 하드카본 음극재 · 국내 유일<br>
+<span class="kp-tag material">Kuraray</span> 일본 하드카본 · 바이오매스 원료<br>
+<span class="kp-tag material">삼아알미늄</span> Al foil · GWh당 700~1000t (NMC 2배+) · LGES 2대주주<br>
+<span class="kp-tag material">동일알미늄</span> 2차전지 알박 · 3Q26 압연기 3기 추가 증설<br>
+<span class="kp-tag equip">Altris</span> 스웨덴 Prussian white 양극재
 </div>
 </div>
 </div>
@@ -667,6 +922,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 
 <!-- UPDATE LOG -->
 <div class="ulog">
+<strong>📝 Update Log · 2026.05.27</strong><br>
+• <strong>나트륨이온 배터리 신규 섹션</strong> — LFP vs Na-ion 비교, 카니발리제이션 구조(ESS/AIDC/2·3륜/저가EV), LFP ESS 침식 시나리오(2030E 43%), Al Foil GWh당 소요량(삼아알미늄), 시장 전망(25→600GWh), CATL 타임라인, 특허 독점 현황<br>
+• <strong>6개 섹션 Figure 삽입</strong> — arXiv(전고체·건식·CNT), MDPI(실리콘), Ossila(LMFP), Wikimedia(Na-ion) · 용어 해설 토글 포함<br>
+• <strong>특허 차트 업데이트</strong> — Na-ion 카테고리 추가 (CATL 4,804건 87%), 도넛차트 9분류로 확장<br>
+• <strong>sec-nav 6칸 확장</strong> — 나트륨이온 네비게이션 카드 추가<br><br>
 <strong>📝 Update Log · 2026.05.26</strong><br>
 • <strong>SVOLT</strong> — 반고체 배터리 2026.09 양산 개시 예정 · 복수 차량 모델 탑재 · 생산 원가 리튬이온 동등 수준<br>
 • <strong>Ganfeng Lithium</strong> — 500Wh/kg 10Ah 전고체 배터리 생산 시작 (세계 최초)<br>
@@ -680,36 +940,45 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 • <strong>특허 피드 위젯</strong> — weekly_patents.json 자동 연동 (매주 월요일 8AM KST)
 </div>
 
-<div class="updated">마지막 업데이트: 2026.05.26</div>
+<div class="updated">마지막 업데이트: 2026.05.27</div>
 
 </div><!-- .app -->
 
 <script>
 // 업체별 특허 수 — 합계 내림차순 정렬
 const patentData=[
-  {name:'Toyota',solid:1300,cell:400,etc:300},
-  {name:'삼성SDI',solid:1100,cell:1200,etc:600},
-  {name:'CATL',solid:450,cell:950,etc:700},
-  {name:'LGES',solid:320,cell:800,etc:500},
-  {name:'Panasonic',solid:280,cell:600,etc:350},
-  {name:'Tesla',solid:80,cell:500,etc:400},
-  {name:'BYD',solid:150,cell:700,etc:500},
-  {name:'SK온',solid:200,cell:350,etc:250},
-].sort((a,b)=>(b.solid+b.cell+b.etc)-(a.solid+a.cell+a.etc));
+  {name:'Toyota',solid:1300,cell:400,naion:5,etc:300},
+  {name:'삼성SDI',solid:1100,cell:1200,naion:12,etc:600},
+  {name:'CATL',solid:450,cell:950,naion:4804,etc:700},
+  {name:'LGES',solid:320,cell:800,naion:8,etc:500},
+  {name:'Panasonic',solid:280,cell:600,naion:15,etc:350},
+  {name:'Tesla',solid:80,cell:500,naion:3,etc:400},
+  {name:'BYD',solid:150,cell:700,naion:260,etc:500},
+  {name:'SK온',solid:200,cell:350,naion:5,etc:250},
+].sort((a,b)=>(b.solid+b.cell+b.naion+b.etc)-(a.solid+a.cell+a.naion+a.etc));
 
 new Chart(document.getElementById('cPatent'),{type:'bar',data:{
   labels:patentData.map(d=>d.name),
   datasets:[
     {label:'전고체',data:patentData.map(d=>d.solid),backgroundColor:'rgba(212,160,23,0.7)',borderRadius:2},
     {label:'각형/원통',data:patentData.map(d=>d.cell),backgroundColor:'rgba(109,40,217,0.4)',borderRadius:2},
+    {label:'Na-ion',data:patentData.map(d=>d.naion),backgroundColor:'rgba(233,122,0,0.6)',borderRadius:2},
     {label:'기타(BMS/리사이클)',data:patentData.map(d=>d.etc),backgroundColor:'rgba(138,126,110,0.25)',borderRadius:2}
   ]
 },options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'top',labels:{color:'#8a7e6e',font:{size:9},padding:8}},tooltip:{backgroundColor:'#2c2418',titleColor:'#f8f5f0',bodyColor:'#e8e0d4'}},scales:{x:{stacked:true,grid:{display:false},ticks:{color:'#8a7e6e',font:{size:10}}},y:{stacked:true,grid:{color:'#e8e0d4'},ticks:{color:'#8a7e6e',callback:v=>v>=1000?(v/1000)+'k':v}}}}});
 
 new Chart(document.getElementById('cTech'),{type:'doughnut',data:{
-  labels:['전고체','양극재','건식전극','음극재/Si','BMS/충전','리사이클링','셀 구조','기타'],
-  datasets:[{data:[35,18,15,12,8,5,4,3],backgroundColor:['#d4a017','#6d28d9','#0d9488','#2b6cb0','#e53e3e','#8a7e6e','#c4721a','#ccc'],borderWidth:0}]
+  labels:['전고체','양극재','건식전극','음극재/Si','Na-ion','BMS/충전','리사이클링','셀 구조','기타'],
+  datasets:[{data:[30,16,13,11,10,8,5,4,3],backgroundColor:['#d4a017','#6d28d9','#0d9488','#2b6cb0','#e97a00','#e53e3e','#8a7e6e','#c4721a','#ccc'],borderWidth:0}]
 },options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:'#8a7e6e',font:{size:9},padding:6}},tooltip:{backgroundColor:'#2c2418',titleColor:'#f8f5f0',bodyColor:'#e8e0d4'}}}});
+
+// Toggle arrow on fig-terms
+document.querySelectorAll('.fig-terms').forEach(d=>{
+  d.addEventListener('toggle',()=>{
+    const s=d.querySelector('summary');
+    s.textContent=d.open?s.textContent.replace('▼','▲'):s.textContent.replace('▲','▼');
+  });
+});
 
 // Smooth scroll for section links
 document.querySelectorAll('.sec-link').forEach(el=>{
