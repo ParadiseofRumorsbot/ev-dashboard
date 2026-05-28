@@ -1,21 +1,42 @@
 {
   "type": "ev_launch_timeline",
-  "lastUpdated": "2026-05-27T22:56:06.103Z",
-  "date": "2026-05-27",
+  "lastUpdated": "2026-05-28T22:52:19.564Z",
+  "date": "2026-05-28",
   "description": "EV 신차 출시일정 모니터링 — 타임라인 테이블 반영용",
   "note": "⚠️ 자동 수집 결과입니다. 대시보드 반영 전 사용자 확인 필요.",
-  "totalItems": 14,
+  "totalItems": 19,
   "oemStats": {
-    "Other": 4,
-    "VW": 2,
-    "Skoda": 2,
-    "Stellantis": 2,
+    "Tesla": 2,
+    "Genesis": 1,
+    "Other": 6,
+    "BYD": 1,
     "Hyundai": 1,
     "Kia": 1,
-    "Tesla": 1,
-    "Ford": 1
+    "BMW": 1,
+    "Mercedes": 1,
+    "VW": 1,
+    "Rivian": 3,
+    "Honda": 1
   },
   "items": [
+    {
+      "title": "2027 Tesla Model 3 Preview: Specs, Price, Release Date - CarsDirect",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5lVVlEU2JOaHIwSllXQnVSZndVb1ZXNFpTSl9udGszU2N5VEt5TVVqVTI4X1VCdmNFbzZ5VEVPWHZSTUQ5UVpmRHFYVUlQVDFpcUl2LUxZcFc?oc=5",
+      "pubDate": "Thu, 28 May 2026 01:52:12 GMT",
+      "source": "CarsDirect",
+      "oem": "Tesla",
+      "market": "Global",
+      "score": 3
+    },
+    {
+      "title": "South Korea's luxury car brand Genesis launches 'Magma' sports range - Yahoo Autos",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQYUdwcUg5WERZNXk1REhhZGw2SU5qMFVLQjlobnZaVXhnU1BRUzg1UXNpOHBmNVgxbVpsaVl4UkZGTG9nOEd1TjA5S251UmtLOU9UaUhES1BpdjRJYXpSY1lsQ0FtSzZoRXBuelR4YVZqM0sySllMUFhZbWFlYVpqUUxCbVNOSVlqSm4wTnpsY1BHX00zLTZ5UGhMX2lGMjhONHpIdQ?oc=5",
+      "pubDate": "Thu, 28 May 2026 10:55:28 GMT",
+      "source": "Yahoo Autos",
+      "oem": "Genesis",
+      "market": "KR",
+      "score": 2
+    },
     {
       "title": "NIO launches ES9 flagship SUV: China’s largest EV, starting at $54K with BaaS - Electrek",
       "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBYT1V0dkEzLWpUTmQ2NTNsQXBCa3Z0Z3cxUDJUSENYVXhzaVRaTE5Fb2JnWXlWWnJ1ZVB1cE02TDZkYVFWbWlfeTVudU1aeS0wRUpOOVpZR0ItUlFKZ1o3VmQ1UGlUbWVXXy1kcnVtV0VUTWp3VVN1Uk5ERQ?oc=5",
@@ -26,12 +47,21 @@
       "score": 2
     },
     {
-      "title": "Volkswagen Anhui Unveils Two New Models in Hefei - Gasgoo",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOdkpkSjVOVmJGWlVfcFp2d290bW1ibkZNRmxkanZNclV1b0FZZGdpejlOZWdweDk4bklna0xfUlhxYmR4SWFmangwdGdXeXZhejRNRXphLWVNaGtkbkFPTVZFUHpiMlVLSEpLcVA2bUE3djJhbmtkMWVJZW1hSW1Tb2JNVzMyTnhORTg0Y21vTTZHYzJJangwdWlDeXpWWm9wdXJPcVRCZ1EtQmk5?oc=5",
-      "pubDate": "Wed, 27 May 2026 15:43:14 GMT",
-      "source": "Gasgoo",
-      "oem": "VW",
+      "title": "2026 Tata Tiago EV facelift vs old model: Price and specifications comparison | Hindustan Times - Hindustan Times",
+      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNN3pYb0tBRTFGbWs3NktuRDk3X3F3eTVTblhrT2VlMVdkbUIwUkdVaTBzZlRtUHdXYVJBb2xsWlJDcW00LWEzakdZaHdTSFNxbHBjUTIzU0E3alUtNlpuQ1F2V2kxYXpGOWxvMlhBRFRWd0pLMTAwS2V6TEV4U3I5UnlaOXNWZG1Mb2o2eGk0NGRlZEtSUk1UZ3ZBb3dNVUFyaTZXdUxNR1MxVUJ1SGVEUVl5UWtlM05sdVFud29pYnNIbjV0NnloLWhjQXZLanBwaFV5ZXR2NULSAdgBQVVfeXFMTTd6WG9LQUUxRm1rNzZLbkQ5N19xd3k1U25Ya09lZTFXZG1CMFJHVWkwc2ZUbVB3V2FSQW9sbFpSQ3FtNC1hM2pHWWh3U0hTcWxwY1EyM1NBN2pVLTZabkNRdldpMWF6RjlsbzJYQURUVndKSzEwMEtlekxFeFNyOVJ5WjlzVmRtTG9qNnhpNDRkZWRLUlJNVGd2QW93TVVBcmk2V3VMTUdTMVVCdUhlRFFZeVFrZTNObHVRbndvaWJzSG41dDZ5aC1oY0F2S2pwcGhVeWV0djVC?oc=5",
+      "pubDate": "Thu, 28 May 2026 09:13:04 GMT",
+      "source": "Hindustan Times",
+      "oem": "Other",
       "market": "Global",
+      "score": 2
+    },
+    {
+      "title": "Japan-China firm unveils EV brand, ‘kei’ car to debut in 2027 - 朝日新聞",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBGakYza1pad3JicmVaR1B3c0FwTUlHZmF4d0syc05iNGprc21kZU5BV01NNkE5WEFDOFA1NGZsWUd0a1ZjMnl6QUkzSFVuWmF5alVlOTFR?oc=5",
+      "pubDate": "Thu, 28 May 2026 06:49:00 GMT",
+      "source": "朝日新聞",
+      "oem": "Other",
+      "market": "CN",
       "score": 2
     },
     {
@@ -44,57 +74,39 @@
       "score": 2
     },
     {
-      "title": "Skoda launches Epiq EV in UK from £24,950 with up to 272-mile range - MSN",
-      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNc3VuVk8xc2ZQNk9NTEdZclhYdGpUc2RCUnN0Y0RTeTNjdTJZQ19STWRONHMxU01qV18yMDNPMkpVRVIwUUJHQTFhMGtxYm5VUllhWUMtNWE0QWZfdDZka0pDaWRFam9UYkZYMm53Z0ktYkNON0lIR2NFOTdrTkN1bTYwaVZha3lzUTFtYlYzSWN6bldYWjgxZ0t2OHlBZi1ZNk9pQklxZ1phRUJiRWtBRjdLR1RLZGtuR0FZaXZPOXg5SjlUSHFlYV9VNXRLbEx2X1VJeHBPOGs3d0p4ZmNYMkhfMkVuT21FaXF6TA?oc=5",
-      "pubDate": "Mon, 25 May 2026 13:12:22 GMT",
-      "source": "MSN",
-      "oem": "Skoda",
-      "market": "EU",
-      "score": 2
-    },
-    {
-      "title": "16 Range-Extender (EREV) vehicles expected in the U.S. (2026-2029) - TopElectricSUV",
-      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9yc2ZabjVlNndhOUpmR0NxSm5DWmxyRlpBS2lEVXFrZTdPSy0zZlJxOFpVMm5LVDhvbU9DQVhYcXpvR2FqOEVUZEpUYmpRWUJTMHVGQUFVRDVOTWd3R1JteThVa1hZX0JZUWNpQmpPVDV3V1VUZXE4WDhhTVU?oc=5",
-      "pubDate": "Mon, 25 May 2026 14:01:15 GMT",
-      "source": "TopElectricSUV",
-      "oem": "Stellantis",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "Ferrari Reveals Its First Fully Electric Car - 94.5 The Buzz",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQTkcyQVZFTzF0TEdfWXRYV2ZuSTNrdjBwdE5jZDVHdTEteE9UMDZIQVp4WEc3cThTMUNsdDY0M25QMS1fVXdyUmQ4UWVRbW1fMVRTbXdMdGppZ1FfRFQ3Y0JPNm10UkZubGJDMXF1V3Nya2dMOWxaUWRjZ1FSWkJpWVR0aTFibVJGTXJIUjQzZGFMbTJpLTJTR0lrZHVPdkc4dnlvWUtSMzg4SUNmOXJQeFhYc3IzakxSbkHSAZ4BQVVfeXFMTmZVWHpSZHZvUER2UmRuT21MbkZ1NWNVYmlFY1dZTmFSSmd4bVlZYmRHZnBTOGxmckVXUFd3NFBfMzVIVHdVNWRZMGtGZF9JSC0tT2V2OTNScnVobzMyclNlYmJpbnlTZ2pTSFNKVl85V1JGU1BNMUl0dzBGUTJ5b0xVaDY2Q0t2TEVmcU8tdnU5ckpzYWNrOThUMnBiZEE?oc=5",
-      "pubDate": "Wed, 27 May 2026 11:21:00 GMT",
-      "source": "94.5 The Buzz",
+      "title": "2027 Acura RDX Preview: Model Info & Release Date - CarsDirect",
+      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1zV1pqa2Q2RWFDSzFSQWNQQUNINENuNVBSbDk4cmo5a0JnTW54TlZnUnEtTWswekJHaHI2WnF0U041d3gwQ3FpTkFidkp0SjVzTG5r?oc=5",
+      "pubDate": "Thu, 28 May 2026 20:27:02 GMT",
+      "source": "CarsDirect",
       "oem": "Other",
       "market": "Global",
       "score": 1
     },
     {
+      "title": "BYD reveals China’s first in-house 4nm smart driving chip with massive computing power - Electrek",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOVlhPVU5jczg1Z0htUnNKbWRMRzlLcHRCM2c3aWk0RURLZ28xZHJEQy1ZSHV2bEJYLXNuQnlQa29ZMVR3X2c3b3F6d3RMR3EydUtMYXY1OWRfNk5wMDhyOGt0QWtrbTFoZTVOTk1HU19sdlJJN0lucEh2QUNJVTJMWjc3RXBnam82Sm8xSkNsc1Y5Zw?oc=5",
+      "pubDate": "Thu, 28 May 2026 14:24:00 GMT",
+      "source": "Electrek",
+      "oem": "BYD",
+      "market": "CN",
+      "score": 1
+    },
+    {
       "title": "2026 Hyundai IONIQ 4 Preview: Model Info & Release Date - CarsDirect",
       "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5mNjZ6ellqTzJmcnlKOHNNM0V6dXdySlZpOWNVTW1rMEFXazlPNTVlb0hfTVBtbjl1LWtzTFNhOHhOWE83b2h4THpEWloxRTFaS0syaUxfcHAzZGM?oc=5",
-      "pubDate": "Wed, 27 May 2026 20:32:10 GMT",
+      "pubDate": "Thu, 28 May 2026 08:32:12 GMT",
       "source": "CarsDirect",
       "oem": "Hyundai",
       "market": "Global",
       "score": 1
     },
     {
-      "title": "Kia Sorento bodyshell sighting hints at CKD India launch - MSN",
-      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNRWYzYkZOZjc2YnlUSHpId0FUUUxvc3lObElXdGVuTnJEUVJyV3A4cDFCWnNRZEtBWEtLSExVMUNXMExYVlRnZFN5cU5PRno5SEtZSlJsdEppUF8za1RjQUhKQU5Xc09UVTEzbl9GRXhRTW1rTGxOLVYtN1lBMWtEQTFBeUpGbjhKZEdLVDhIRVRSRnJqUkdoMWZzUXJoU2xkamFncGs2bzhpWTktS003OWRjVVBwTy1hOWpBS0RZODFtbUhhbEkzWTNnRDFaUG9ZS1dWRW1pNmlIeV9wUFFn?oc=5",
-      "pubDate": "Wed, 27 May 2026 16:57:59 GMT",
-      "source": "MSN",
+      "title": "2027 Kia Seltos Mass Production Begins at AutoLand Gwangju for North American Launch - Korean Car Blog",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPeFhYTjFuV3cwUE1DeW9MMGlrY3dGdHlzaWxmbFQ1UjBlXzJyUENwQ3ZzRmd6NDdTQXVpTzdNZm9NMXZld1dmcGlMYXNCRlJPRDdNaHJWc3RIVHVRUGI2N2NMa2pWTDJZSnBsVnFBa0FDbEJJcm9xSVhKbTlwd1poaDZwV2dCeU9ERnU4Wm5aSUtTelBINndOX0MwdVE0QzRjVUl3cGdiSDVfVHVDY2tB?oc=5",
+      "pubDate": "Tue, 26 May 2026 16:32:00 GMT",
+      "source": "Korean Car Blog",
       "oem": "Kia",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "2026 Electric Cars List: 40 new models to watch out for in the U.S. - TopElectricSUV",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1hVXp2b05SQ2dvWHQ3dHMwc2V4S21VOUU1TzVwQUpiVFFaUVNFMGFJX2FZWXhSbDF3OUFvOS1mdHp2T2tZMEtSRXlGTkVkU3doM1lLRUE3WnJwQi1IWHdnNU5nUWowNEZUMi15dlZFUm5Vck04VG1ITVFqNTVuZTA?oc=5",
-      "pubDate": "Mon, 25 May 2026 14:50:52 GMT",
-      "source": "TopElectricSUV",
-      "oem": "Stellantis",
-      "market": "Global",
+      "market": "NA",
       "score": 1
     },
     {
@@ -107,9 +119,27 @@
       "score": 1
     },
     {
+      "title": "New models and AI upgrades boost BMW's electric lineup - ArenaEV - ArenaEV",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOTFNFSlVrOW4wMmFSbHV2d3lIdXFxVV9wZF95RTBNQkJqY0N0V2ZJeDBZTWRyakhwRnVuRVZQRV81SFBjMGdxNnVIY2pZTWk0TDB6eURyZW85aUloQzRVMzF1YUJDREttQXpKNFRJSTRPdGJLLXBUc1ZOU0phNThjRlg3cHZFenl2bGY3NVBwZ2k3UdIBkgFBVV95cUxOTFNFSlVrOW4wMmFSbHV2d3lIdXFxVV9wZF95RTBNQkJqY0N0V2ZJeDBZTWRyakhwRnVuRVZQRV81SFBjMGdxNnVIY2pZTWk0TDB6eURyZW85aUloQzRVMzF1YUJDREttQXpKNFRJSTRPdGJLLXBUc1ZOU0phNThjRlg3cHZFenl2bGY3NVBwZ2k3UQ?oc=5",
+      "pubDate": "Thu, 28 May 2026 15:51:01 GMT",
+      "source": "ArenaEV",
+      "oem": "BMW",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "2027 Mercedes-Benz GLC Prices, Reviews, and Pictures - Edmunds",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9TTFhzQjduREM2MU1BSFBYYmlzT3lxRm9tMTNQZlZZdmhrNXVkVm56QWxoc1J0MnJGLTBOS215U04yZHNpeXVRNkNOSjdTeDVpd0JPb1pEOUstb00?oc=5",
+      "pubDate": "Tue, 26 May 2026 07:00:00 GMT",
+      "source": "Edmunds",
+      "oem": "Mercedes",
+      "market": "Global",
+      "score": 1
+    },
+    {
       "title": "VW to launch carsharing with electric vehicles in 2019 - AOL.com",
       "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOb1ZnT1Zra1YyLVZRWW9pOHB6bzdjVlBUeXhBMWVEcGU0QjNIQ2RiZzQ4U2VTT1JxOVZqSlhKWW10ZTZCMmR2NjRpQ2h6V3Vwd3lJeWE4eFFtZjhhWUFKR3hyZ1lsQ044WHdwNXBCY1dreXNvemc4OXVVS293aWw0QzZjak5Rc012dVkxMTdTc3Q?oc=5",
-      "pubDate": "Wed, 27 May 2026 09:37:22 GMT",
+      "pubDate": "Thu, 28 May 2026 03:13:36 GMT",
       "source": "AOL.com",
       "oem": "VW",
       "market": "Global",
@@ -125,20 +155,38 @@
       "score": 1
     },
     {
-      "title": "Ford Just Launched a $2 Billion Energy Business to Power AI Data Centers. Is F Stock a Buy? - The Motley Fool",
-      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOVGlTUWpLUkFfMERmMWNlRmRkMlc4enlFdVlWaVhYV2plVnF4cHQxdFRXcUdrQ2JydlZJSThBeUdzblJiM1lfTnByQVNpc0E1ZmxXZ3RaZ2xxRmRsNXFuVDAtVU9aWEdIZzVpaHJ2QUJhbEFUZHd5cWRSMHd5QXZJaDh3NklQdDFJOG1EQUk3ZEpoaER3eDQyUWU4RVZpdmZsRUxUUld2LTAya2FMYkFpYlZLZXpmVHk3cmRCazB3REFIbXBtWWI1WEFqbw?oc=5",
-      "pubDate": "Wed, 27 May 2026 18:41:00 GMT",
-      "source": "The Motley Fool",
-      "oem": "Ford",
+      "title": "Rivian is setting June 9 as the first delivery date for its R2 electric SUV - qz.com",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE4xT1Zob0hCT2JMbk12NWJJLVBnN3NYMU1lblFyNDFaT0w3czg2akh3VlBGTjl1V0RWS3VjVGp1Tkl6eHBzb2NFSk5lXy15azEySzRpSmhlV2I5YnlzWTQ5dmZkOENQOERmRTJ2OUNHSWczLUJ4UjdR?oc=5",
+      "pubDate": "Thu, 28 May 2026 18:52:29 GMT",
+      "source": "qz.com",
+      "oem": "Rivian",
       "market": "Global",
       "score": 1
     },
     {
-      "title": "Skoda enters the budget EV fray with new launch - RTE.ie",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOZW5PZWduVDA4ZnNwZlFnajRHSU5JcVppRUJnSFc4Tm1iR2t1RV9pSWJreXd1UnhlNUNVVmdGUWlOdHpmSFVLV1lUTXFVYlFqeGREaVRyXzlQdTBqSVo2Y2lFaFZRWkV0MmhIcjNzR2dheXZkUEwwR2kyaG1ZOUNnakJ6UDUtZWp5TmxXS2dLanR0X0FIWmp5MWhfdU1lallZbjQ0WQ?oc=5",
-      "pubDate": "Mon, 25 May 2026 07:00:00 GMT",
-      "source": "RTE.ie",
-      "oem": "Skoda",
+      "title": "Rivian Announces R2 First Delivery, Test-Drive Dates - Cars.com",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPSFVycVVXNTJUcEhqVF9nWlhuLXpaX29jS2xidU5FLWZZRlJRUFZQaHVLN0RIOXl1a2R4eHoxNTVTWk5CSF9wU3paVEFnNzVkcHFzcjhqUzZTYk1scHlJY0RCYVVZMFhpUFUxV25jNGN5bnAyQlZVbGpBX1pvdzBwTnJJY19KVVFseHZhQjBKOG4wdkE?oc=5",
+      "pubDate": "Thu, 28 May 2026 18:17:53 GMT",
+      "source": "Cars.com",
+      "oem": "Rivian",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "Rivian R2 Order Invitations and First Deliveries Begin June 9 - The EV Report",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOS1g3ZkplQmhKd0RXZ0lweGRTdkpNcVlzR216d0plazU4U1pLNDIzR0xWcVZveWlDYTJTWEJIdW1BUHdfalJ4R3d0eHNzdWczMVA5clhlQTJQRTJvem02Y191a1ZSdXNZSG84NXphNWdGa0pBWWtySGdtSmJuUUJWYVd3?oc=5",
+      "pubDate": "Thu, 28 May 2026 13:52:14 GMT",
+      "source": "The EV Report",
+      "oem": "Rivian",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "Honda to launch six new cars in India by FY2026-27 - MSN",
+      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPMEtRdDBieGtGOVJNTm1VSzBDSTRQYmhFTWw3QW1CcE80Z0E1bFIwRGJIMDYzMnd6VDFZQ2VXclU4Z3dtd1h1X2lrb0VNZ3IybHR1WWpRNk1rT1ZXd3ZDaUl3M0hzRjUxckJZbU5hTXNNYkJSUS1VNHF4VDVXaVRtcFFPcnIzOE5MVEUwUHkwTG5jaFBSc0FQSDR5NW1fRXRfMUtCNUxsZnJESXR1UE16SVc0RmJ1b2UwWjBuRTBVV003NGxtXzFTb0tJV21hOUlqNGhRaU9fc05jMzdrWVBBZG52c0xfZW8?oc=5",
+      "pubDate": "Tue, 26 May 2026 10:14:13 GMT",
+      "source": "MSN",
+      "oem": "Honda",
       "market": "Global",
       "score": 1
     }
