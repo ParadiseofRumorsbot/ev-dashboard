@@ -1,7 +1,7 @@
 {
-  "syncedAt": "2026-05-28T09:45:39.605Z",
+  "syncedAt": "2026-05-28T15:28:03.567Z",
   "dbId": "659a8d5a89c344a5b68960fead1cf889",
-  "count": 32,
+  "count": 33,
   "variables": [
     {
       "name": "ESS CAPA",
@@ -37,6 +37,18 @@
       "unit": "대/월",
       "path": "oemSales.eu.oems[0].bev",
       "source": "ACEA 1Q26÷3",
+      "updatedAt": "2026-05-02"
+    },
+    {
+      "name": "ESS 가동률",
+      "category": "cellMakers",
+      "target": "LGES",
+      "region": "us",
+      "year": "y26",
+      "value": 0.45,
+      "unit": "%",
+      "path": "cellMakers[1].essUtil.y26",
+      "source": "1Q26 CC",
       "updatedAt": "2026-05-02"
     },
     {
