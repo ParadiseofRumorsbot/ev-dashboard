@@ -1,22 +1,20 @@
 {
   "type": "ev_launch_timeline",
-  "lastUpdated": "2026-05-28T22:52:19.564Z",
-  "date": "2026-05-28",
+  "lastUpdated": "2026-05-29T22:50:10.680Z",
+  "date": "2026-05-29",
   "description": "EV 신차 출시일정 모니터링 — 타임라인 테이블 반영용",
   "note": "⚠️ 자동 수집 결과입니다. 대시보드 반영 전 사용자 확인 필요.",
   "totalItems": 19,
   "oemStats": {
-    "Tesla": 2,
-    "Genesis": 1,
-    "Other": 6,
-    "BYD": 1,
-    "Hyundai": 1,
+    "Tesla": 4,
     "Kia": 1,
-    "BMW": 1,
-    "Mercedes": 1,
-    "VW": 1,
+    "Genesis": 1,
+    "Other": 5,
+    "Stellantis": 1,
+    "Hyundai": 1,
+    "Toyota/Lexus": 2,
     "Rivian": 3,
-    "Honda": 1
+    "BMW": 1
   },
   "items": [
     {
@@ -27,6 +25,15 @@
       "oem": "Tesla",
       "market": "Global",
       "score": 3
+    },
+    {
+      "title": "2027 Kia Seltos: Reviews, Prices, Ratings and Specs - CarsDirect",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBtWTlwd0c2c2dmYlNaSEM1VUVuaDc2X2FMdWkyMTFvaWNQai1ETXNxdFBfWTJYRVZycm5zaHJic3A0YVEtQ1VnU2VMQzNMVUJRdkdCWA?oc=5",
+      "pubDate": "Wed, 27 May 2026 07:00:00 GMT",
+      "source": "CarsDirect",
+      "oem": "Kia",
+      "market": "Global",
+      "score": 2
     },
     {
       "title": "South Korea's luxury car brand Genesis launches 'Magma' sports range - Yahoo Autos",
@@ -47,15 +54,6 @@
       "score": 2
     },
     {
-      "title": "2026 Tata Tiago EV facelift vs old model: Price and specifications comparison | Hindustan Times - Hindustan Times",
-      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNN3pYb0tBRTFGbWs3NktuRDk3X3F3eTVTblhrT2VlMVdkbUIwUkdVaTBzZlRtUHdXYVJBb2xsWlJDcW00LWEzakdZaHdTSFNxbHBjUTIzU0E3alUtNlpuQ1F2V2kxYXpGOWxvMlhBRFRWd0pLMTAwS2V6TEV4U3I5UnlaOXNWZG1Mb2o2eGk0NGRlZEtSUk1UZ3ZBb3dNVUFyaTZXdUxNR1MxVUJ1SGVEUVl5UWtlM05sdVFud29pYnNIbjV0NnloLWhjQXZLanBwaFV5ZXR2NULSAdgBQVVfeXFMTTd6WG9LQUUxRm1rNzZLbkQ5N19xd3k1U25Ya09lZTFXZG1CMFJHVWkwc2ZUbVB3V2FSQW9sbFpSQ3FtNC1hM2pHWWh3U0hTcWxwY1EyM1NBN2pVLTZabkNRdldpMWF6RjlsbzJYQURUVndKSzEwMEtlekxFeFNyOVJ5WjlzVmRtTG9qNnhpNDRkZWRLUlJNVGd2QW93TVVBcmk2V3VMTUdTMVVCdUhlRFFZeVFrZTNObHVRbndvaWJzSG41dDZ5aC1oY0F2S2pwcGhVeWV0djVC?oc=5",
-      "pubDate": "Thu, 28 May 2026 09:13:04 GMT",
-      "source": "Hindustan Times",
-      "oem": "Other",
-      "market": "Global",
-      "score": 2
-    },
-    {
       "title": "Japan-China firm unveils EV brand, ‘kei’ car to debut in 2027 - 朝日新聞",
       "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBGakYza1pad3JicmVaR1B3c0FwTUlHZmF4d0syc05iNGprc21kZU5BV01NNkE5WEFDOFA1NGZsWUd0a1ZjMnl6QUkzSFVuWmF5alVlOTFR?oc=5",
       "pubDate": "Thu, 28 May 2026 06:49:00 GMT",
@@ -65,30 +63,21 @@
       "score": 2
     },
     {
-      "title": "Ferrari unveils new four-door Luce, brand's first fully electric car with $640,000 price tag - ABC7 Los Angeles",
-      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOTkR2VkJLMzl4V1M4Wnp1Si1FT0gybG5mZGNRWHR3RkRpRVkwQnZsVEVaWmViMkxGNzBETkoxQ2xqdHNPcjNEVEF6Rl9XNE45eElsMnl6aFdqY2p2di00bFAwR0ZVVVV3Vm5INDdmQWxkaDQ0aTBNN0RIU1ZTWFY3Ny1HQ3VHa0hHaFdaaTJsb3R6R1VlaWV4OVBOWnZHOWdoX0p6VjNqRTg1elZUb2tDcTEwQWTSAbQBQVVfeXFMTk5EdlZCSzM5eFdTOFp6dUotRU9IMmxuZmRjUVh0d0ZEaUVZMEJ2bFRFWlplYjJMRjcwRE5KMUNsanRzT3IzRFRBekZfVzROOXhJbDJ5emhXamNqdnYtNGxQMEdGVVVVd1ZuSDQ3ZkFsZGg0NGkwTTdESFNWU1hWNzctR0N1R2tIR2hXWmkybG90ekdVZWlleDlQTlp2RzlnaF9KelYzakU4NXpWVG9rQ3ExMEFk?oc=5",
-      "pubDate": "Tue, 26 May 2026 17:03:39 GMT",
-      "source": "ABC7 Los Angeles",
-      "oem": "Other",
-      "market": "Global",
-      "score": 2
-    },
-    {
-      "title": "2027 Acura RDX Preview: Model Info & Release Date - CarsDirect",
-      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1zV1pqa2Q2RWFDSzFSQWNQQUNINENuNVBSbDk4cmo5a0JnTW54TlZnUnEtTWswekJHaHI2WnF0U041d3gwQ3FpTkFidkp0SjVzTG5r?oc=5",
-      "pubDate": "Thu, 28 May 2026 20:27:02 GMT",
-      "source": "CarsDirect",
+      "title": "BofA Hikes XPeng’s Price Target, JPMorgan and Citi Trim - eletric-vehicles.com",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNVzlKeHhqV2NKeG9FbFpLbDBfWDhmR0M0dDFyUGRScVRZOUNDUUcyZ28yNy05dnllYjBuYk1LbjJjUkY5bUdOR3pxdl9Nb19BdlB4R3c4TnJDMnJnWGVmSkozSnlITWtPdnFNQkVGSk92al9nQnVmcmJIUXowclRndFd3SUxYNmFzbzlNMThMVVFRNTg?oc=5",
+      "pubDate": "Fri, 29 May 2026 08:56:35 GMT",
+      "source": "eletric-vehicles.com",
       "oem": "Other",
       "market": "Global",
       "score": 1
     },
     {
-      "title": "BYD reveals China’s first in-house 4nm smart driving chip with massive computing power - Electrek",
-      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOVlhPVU5jczg1Z0htUnNKbWRMRzlLcHRCM2c3aWk0RURLZ28xZHJEQy1ZSHV2bEJYLXNuQnlQa29ZMVR3X2c3b3F6d3RMR3EydUtMYXY1OWRfNk5wMDhyOGt0QWtrbTFoZTVOTk1HU19sdlJJN0lucEh2QUNJVTJMWjc3RXBnam82Sm8xSkNsc1Y5Zw?oc=5",
-      "pubDate": "Thu, 28 May 2026 14:24:00 GMT",
-      "source": "Electrek",
-      "oem": "BYD",
-      "market": "CN",
+      "title": "Alfa Romeo to launch compact hatchback as Stellantis brand aims for growth - Automotive News",
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1vdnh0WHV6QjA0NXJsTE9FYzZkaGtEZ1k2YVN1QTNxZGp2Z2lkVlI2bkRTUUQ5dmRSQzZxMkZmMTdMUjM0UDZUd0xZdGd4aVRfLWVrYjF6eGsyZ1lyTzByeGhIYVRkMWtabWF1SEJVQmV4YXY5UnFjRXZGZW13ZGc?oc=5",
+      "pubDate": "Fri, 29 May 2026 10:30:00 GMT",
+      "source": "Automotive News",
+      "oem": "Stellantis",
+      "market": "Global",
       "score": 1
     },
     {
@@ -101,63 +90,63 @@
       "score": 1
     },
     {
-      "title": "2027 Kia Seltos Mass Production Begins at AutoLand Gwangju for North American Launch - Korean Car Blog",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPeFhYTjFuV3cwUE1DeW9MMGlrY3dGdHlzaWxmbFQ1UjBlXzJyUENwQ3ZzRmd6NDdTQXVpTzdNZm9NMXZld1dmcGlMYXNCRlJPRDdNaHJWc3RIVHVRUGI2N2NMa2pWTDJZSnBsVnFBa0FDbEJJcm9xSVhKbTlwd1poaDZwV2dCeU9ERnU4Wm5aSUtTelBINndOX0MwdVE0QzRjVUl3cGdiSDVfVHVDY2tB?oc=5",
-      "pubDate": "Tue, 26 May 2026 16:32:00 GMT",
-      "source": "Korean Car Blog",
-      "oem": "Kia",
+      "title": "Renault Bridger to Fronx Facelift - 3 Upcoming Compact SUVs with Hybrid Engine - CarLelo",
+      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNdFBza0RKQWhDRS02d2RMSGEzeDYwWU01TjlBekNuT2FDQTZXTzlaakpsNjI2YUtHM1pCMHNoMWhJQVVzODh6NUItaWktd2xsTVNhaGFxblR3ay1aeTBxeUVrZS1TbFdxNXNJazk3YzNMSmNuUllMWnFlYjNMV05FN2I1UmhBQ0N6eU5aOU5CRjgyVG1sZDN2U09jLWtPT2tvZWRDczVLVzU?oc=5",
+      "pubDate": "Fri, 29 May 2026 05:15:33 GMT",
+      "source": "CarLelo",
+      "oem": "Other",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "Tesla Model Y L Spotted Testing at Fremont — US Launch Incoming - BASENOR - Tesla Accessories",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPazNYcXQ0NWRlRmc1MVVlWEdnYzdSb19XS01iWE5PNEtxM1NMdjRsR2xYOUR2UlVYYzZ5dE5xNFBzSVFMb0V2aXNRLXpuTjA2N3dIZGE0VUdUMmVJeEVGdjMtTDluZXV5cUNucGc5MXV5bkJ1SzR3Q1NKRURqSkpfcmNLaWhvbEdUTm9ldzAyNFpUcVlMQVpGS3BuU20?oc=5",
+      "pubDate": "Fri, 29 May 2026 20:14:10 GMT",
+      "source": "BASENOR - Tesla Accessories",
+      "oem": "Tesla",
       "market": "NA",
       "score": 1
     },
     {
-      "title": "Tesla Claims The Roadster Will Be Built In Texas, But There's Still No Launch Date - Yahoo Autos",
-      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOcjlhYl9kMnAwTjdZZWFXdXFBeVRyRmtqVnFucTc4TFNwTzI1Tm9kQUo4QUVMaEJ4aXMwMzdZM3VLNFdscFJSYURyYzQzRjByZzdtVUU5S29nV1RWVGpibTB1ZUYxdzRvWnh0cVRmYlRRX3JBYWxZQmZQeF9nbDFFX3NKWng0elVCblNyMVVOdkgyUnY3R1BCNjlsUGd6T0ZKY0E?oc=5",
-      "pubDate": "Wed, 27 May 2026 18:00:52 GMT",
-      "source": "Yahoo Autos",
+      "title": "Rivian's $45,000 Tesla Model Y Killer Finally Has a Launch Date. But the Only Version You Can Buy on June 9th Costs a Lot More — and the Affordable One Is Still Two Years Away - Autonocion.com",
+      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1Wc3QtTHZrZlU4QVNOVnJNanp0SzBMSWFnZjY5SXhrY2h2LU9FSmVPSXUtbGdOSFpFaUVRVEkyTUVPQWRNQW1tWUVpQ1dfeTF0a1NVT05rZ3ZETDJ2MW90YVBuZ2k3ZTM3eTg0Rzd2bw?oc=5",
+      "pubDate": "Fri, 29 May 2026 11:30:49 GMT",
+      "source": "Autonocion.com",
       "oem": "Tesla",
       "market": "Global",
       "score": 1
     },
     {
-      "title": "New models and AI upgrades boost BMW's electric lineup - ArenaEV - ArenaEV",
-      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOTFNFSlVrOW4wMmFSbHV2d3lIdXFxVV9wZF95RTBNQkJqY0N0V2ZJeDBZTWRyakhwRnVuRVZQRV81SFBjMGdxNnVIY2pZTWk0TDB6eURyZW85aUloQzRVMzF1YUJDREttQXpKNFRJSTRPdGJLLXBUc1ZOU0phNThjRlg3cHZFenl2bGY3NVBwZ2k3UdIBkgFBVV95cUxOTFNFSlVrOW4wMmFSbHV2d3lIdXFxVV9wZF95RTBNQkJqY0N0V2ZJeDBZTWRyakhwRnVuRVZQRV81SFBjMGdxNnVIY2pZTWk0TDB6eURyZW85aUloQzRVMzF1YUJDREttQXpKNFRJSTRPdGJLLXBUc1ZOU0phNThjRlg3cHZFenl2bGY3NVBwZ2k3UQ?oc=5",
-      "pubDate": "Thu, 28 May 2026 15:51:01 GMT",
-      "source": "ArenaEV",
-      "oem": "BMW",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "2027 Mercedes-Benz GLC Prices, Reviews, and Pictures - Edmunds",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9TTFhzQjduREM2MU1BSFBYYmlzT3lxRm9tMTNQZlZZdmhrNXVkVm56QWxoc1J0MnJGLTBOS215U04yZHNpeXVRNkNOSjdTeDVpd0JPb1pEOUstb00?oc=5",
-      "pubDate": "Tue, 26 May 2026 07:00:00 GMT",
-      "source": "Edmunds",
-      "oem": "Mercedes",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "VW to launch carsharing with electric vehicles in 2019 - AOL.com",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOb1ZnT1Zra1YyLVZRWW9pOHB6bzdjVlBUeXhBMWVEcGU0QjNIQ2RiZzQ4U2VTT1JxOVZqSlhKWW10ZTZCMmR2NjRpQ2h6V3Vwd3lJeWE4eFFtZjhhWUFKR3hyZ1lsQ044WHdwNXBCY1dreXNvemc4OXVVS293aWw0QzZjak5Rc012dVkxMTdTc3Q?oc=5",
-      "pubDate": "Thu, 28 May 2026 03:13:36 GMT",
-      "source": "AOL.com",
-      "oem": "VW",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "Ultraviolette Tesseract Launch Delayed to January 2027; Significant Tech Upgrades Behind the Hold-Up - Car and Bike",
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOYkNKazFIdjBEN1VEMTlINDRzWE1mNkw4bHJCSE5Tbk5IWU5DLTV2dTNYU3ZmVHFKRE81M2hVQWlMTFVkWmp2UUZKTVR0ZmRHZnpmLUFWNDJRdUVJVnpRd2xUMjRHNUROcTFwVldrc1Y4cHZLUnhrbHVwc3dKbThTcUh2clY5RzBtZDg0QlBXTFF4dGRkQl9SY3RLZndnYVBPV21YVU1MZUFyeXRoVXNEcnZxMFgtUldvT3JWXzBBb0RGR1ZQYzN6RGt6WGl4b0Uwa0RYNw?oc=5",
-      "pubDate": "Wed, 27 May 2026 09:33:30 GMT",
+      "title": "All-Electric Toyota Urban Cruiser EBella E3 Variant Launched At Rs. 23.60 Lakh - Car and Bike",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOQzhxQXlOYjZRY2hiRlVXODZBdkM4M1c3cS0wMzNzZ2ppZkxjWWROcDQ0dnY2TlppZUJRSTNKT3pKX1MyY0RaZEh4SS0xaEs2cDAydk1pTXZMV1hJaG5mcllEN1R1cXZ6VUVueE5NeWhTVmFJRW9NRUZsQWthTzZ3MmNNS1U0LURycnNKempyc19hZWR1RXMzRUFVMWZjZGNnaEtWZzlxVGNTaHBwd04yTjhDVEExUQ?oc=5",
+      "pubDate": "Fri, 29 May 2026 06:55:51 GMT",
       "source": "Car and Bike",
-      "oem": "Other",
+      "oem": "Toyota/Lexus",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "Toyota Urban Cruiser Ebella launched at ₹23.60 lakh - HT Auto",
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNX2pfcVlrQXg0ekJzUWduUGxuXy1zV0FJelpCWkdiakx1eldPU0JqaG8tZHMtT2VTajdWbTloNzM5Z3dRbjRTWmNmV1RCVV9qRDBydDJtY1JqbWhhZGJUQUR2Q2ttNHpkRlZqdnVIZ0VXVURMbUE5VUNsTDVkZmJkaTFTN3JjdzZpNVlRc3hXRkozb0MzdkJWNkNoay1VdGJraVc0dkFwc0plbzNyZ2NvV1RPamZWa2EzQl9iTlRNNnZfZzg4MG1PemRGZljSAcwBQVVfeXFMTV9qX3FZa0F4NHpCc1FnblBsbl8tc1dBSXpaQlpHYmpMdXpXT1NCamhvLWRzLU9lU2o3Vm05aDczOWd3UW40U1pjZldUQlVfakQwcnQybWNSam1oYWRiVEFEdkNrbTR6ZEZWanZ1SGdFV1VETG1BOVVDbEw1ZGZiZGkxUzdyY3c2aTVZUXN4V0ZKM29DM3ZCVjZDaGstVXRia2lXNHZBcHNKZW8zcmdjb1dUT2pmVmthM0JfYk5UTTZ2X2c4ODBtT3pkRmZY?oc=5",
+      "pubDate": "Fri, 29 May 2026 06:41:13 GMT",
+      "source": "HT Auto",
+      "oem": "Toyota/Lexus",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "2026 Tesla Model Y Premium RWD Launched At Rs 50.89 Lakh - Car and Bike",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQeTF3RGp5UVRIX2Rjd29lSkFqbFZPZTBPNGRXOHI0YW5sZGFadlZ4MEU2VU9VVkpnbWI4Y3MxLXY3ZlBFSWJHRHJwQmV6VlAxX2c3X0lLU1Z0QnYzNmlkM1FxT1dYdXhlMjlhSTBlemIwcVlaelBGSkFZR2JLSGt4bE90UnREbklWRHlEZ29FOWhBdFVRYmZUT3gybw?oc=5",
+      "pubDate": "Fri, 29 May 2026 07:16:25 GMT",
+      "source": "Car and Bike",
+      "oem": "Tesla",
       "market": "Global",
       "score": 1
     },
     {
       "title": "Rivian is setting June 9 as the first delivery date for its R2 electric SUV - qz.com",
       "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE4xT1Zob0hCT2JMbk12NWJJLVBnN3NYMU1lblFyNDFaT0w3czg2akh3VlBGTjl1V0RWS3VjVGp1Tkl6eHBzb2NFSk5lXy15azEySzRpSmhlV2I5YnlzWTQ5dmZkOENQOERmRTJ2OUNHSWczLUJ4UjdR?oc=5",
-      "pubDate": "Thu, 28 May 2026 18:52:29 GMT",
+      "pubDate": "Thu, 28 May 2026 17:22:10 GMT",
       "source": "qz.com",
       "oem": "Rivian",
       "market": "Global",
@@ -182,11 +171,20 @@
       "score": 1
     },
     {
-      "title": "Honda to launch six new cars in India by FY2026-27 - MSN",
-      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPMEtRdDBieGtGOVJNTm1VSzBDSTRQYmhFTWw3QW1CcE80Z0E1bFIwRGJIMDYzMnd6VDFZQ2VXclU4Z3dtd1h1X2lrb0VNZ3IybHR1WWpRNk1rT1ZXd3ZDaUl3M0hzRjUxckJZbU5hTXNNYkJSUS1VNHF4VDVXaVRtcFFPcnIzOE5MVEUwUHkwTG5jaFBSc0FQSDR5NW1fRXRfMUtCNUxsZnJESXR1UE16SVc0RmJ1b2UwWjBuRTBVV003NGxtXzFTb0tJV21hOUlqNGhRaU9fc05jMzdrWVBBZG52c0xfZW8?oc=5",
-      "pubDate": "Tue, 26 May 2026 10:14:13 GMT",
-      "source": "MSN",
-      "oem": "Honda",
+      "title": "New models and AI upgrades boost BMW's electric lineup - ArenaEV - ArenaEV",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOTFNFSlVrOW4wMmFSbHV2d3lIdXFxVV9wZF95RTBNQkJqY0N0V2ZJeDBZTWRyakhwRnVuRVZQRV81SFBjMGdxNnVIY2pZTWk0TDB6eURyZW85aUloQzRVMzF1YUJDREttQXpKNFRJSTRPdGJLLXBUc1ZOU0phNThjRlg3cHZFenl2bGY3NVBwZ2k3UdIBkgFBVV95cUxOTFNFSlVrOW4wMmFSbHV2d3lIdXFxVV9wZF95RTBNQkJqY0N0V2ZJeDBZTWRyakhwRnVuRVZQRV81SFBjMGdxNnVIY2pZTWk0TDB6eURyZW85aUloQzRVMzF1YUJDREttQXpKNFRJSTRPdGJLLXBUc1ZOU0phNThjRlg3cHZFenl2bGY3NVBwZ2k3UQ?oc=5",
+      "pubDate": "Thu, 28 May 2026 15:51:01 GMT",
+      "source": "ArenaEV",
+      "oem": "BMW",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "Scania’s New Under-Cab Battery Module Pushes Electric Truck Range Beyond 800 km - Electric Cars Report",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPRF91amxOZkQxZFR5elhLSUZSNVNjMGhSZDdDc29tdGNBOGpUcDRFNm1NRS1XXzNiRFhuUWpEU1g1Yng2U0paRzNpWnQ3TzE3cmVkTU1IOVdNWmdBc1diakNYdVBIMzF2ejNOZ1Jxb0VwbW1ZZFhDYmZGSVhndHZoN19zTXZlRklqNG9RekRaVFFweE5aaXZJZ0tkM1FSOS0zbWVEOS00dmxYUjRZdTMtX0dKd2JDdm1lM0E?oc=5",
+      "pubDate": "Thu, 28 May 2026 06:43:28 GMT",
+      "source": "Electric Cars Report",
+      "oem": "Other",
       "market": "Global",
       "score": 1
     }
