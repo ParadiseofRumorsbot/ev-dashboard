@@ -1,8 +1,64 @@
 {
   "syncedAt": "2026-05-31T08:34:33.218Z",
-  "latestDate": "2026-05-22",
-  "count": 21,
-  "this_week": [],
+  "latestDate": "2026-05-31",
+  "count": 26,
+  "this_week": [
+    {
+      "title": "🚗 4월 글로벌 EV 171.6만대 (+10% YoY)",
+      "category": "미국",
+      "icon": "🚗",
+      "body": "미국 8.6만(-35%) · 중국 98.9만(Flat) · 유럽 40.3만(+27%) · 한국 4.0만(+123%) · BEV 125.7만(+20%)",
+      "color": "teal",
+      "section": "this_week",
+      "targets": ["index"],
+      "date": "2026-05-31",
+      "order": 1
+    },
+    {
+      "title": "🔋 4월 배터리 출하 105.7GWh (+24% YoY)",
+      "category": "Cell",
+      "icon": "🔋",
+      "body": "CATL 41.9(+29%) · BYD 15.9 · LGES 7.7(+6%) · SK on 3.3 · 삼성SDI 1.6(-34%) · LFP 침투율 59.1%",
+      "color": "purple",
+      "section": "this_week",
+      "targets": ["index", "both"],
+      "date": "2026-05-31",
+      "order": 2
+    },
+    {
+      "title": "⚡ LGES–DTE ESS 6GWh 2.4조원 수주",
+      "category": "ESS",
+      "icon": "⚡",
+      "body": "오라클 AI 데이터센터향 (미시간) · 2026말~2년 공급 · Grid→On-site 하이퍼스케일러 고객 확장",
+      "color": "purple",
+      "section": "this_week",
+      "targets": ["index", "both"],
+      "date": "2026-05-31",
+      "order": 3
+    },
+    {
+      "title": "⛏️ 리튬 현물가 $25,643/톤 · 니켈 $18,955",
+      "category": "Cell",
+      "icon": "⛏️",
+      "body": "중국 탄산리튬 현물 $25,643/톤 (5/31, 월평균 4월 $25,222→5월 $25,643) · LME 수산화리튬 $22,090 · LME 니켈 $18,955",
+      "color": "red",
+      "section": "this_week",
+      "targets": ["index"],
+      "date": "2026-05-31",
+      "order": 4
+    },
+    {
+      "title": "🚕 Tesla 무감독 로보택시 19대 (5/31)",
+      "category": "FSD",
+      "icon": "🚕",
+      "body": "Active 무감독 19대 · 라이더 25대 · 30일 활성 30대 · 무감독 라이드 73.3%(33/45) · FSD 누적 10.01B mi",
+      "color": "teal",
+      "section": "this_week",
+      "targets": ["robotaxi"],
+      "date": "2026-05-31",
+      "order": 5
+    }
+  ],
   "update_log": [
     {
       "title": "🔋 LGES 북미 CAPA 정정 — UC2 과대·MIH/MIL 혼동 수정",
