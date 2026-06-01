@@ -824,13 +824,33 @@ main{max-width:1080px;margin:0 auto;padding:20px 16px 60px}
       <div style="background:var(--bg-soft);border-radius:8px;padding:10px 14px;min-width:120px"><div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase">최종 고객</div><div style="font-family:var(--mono);font-size:20px;font-weight:700">오라클</div><div style="font-size:10px;color:var(--ink-3)">AI DC 피크대응(4h FTM)</div></div>
     </div>
     <div style="font-size:11px;color:var(--ink-2);line-height:1.7">
-      <strong style="color:#0984E3">인사이트:</strong> EV 수요 둔화 국면에서 <strong>AI 데이터센터용 ESS가 배터리 신규 수요축</strong>으로 부상. 빅테크는 신규 발전소 건설 대비 시간·효율 우위 때문에 ESS 가격 수용력이 타 고객군 대비 높음 — 논의 기간 중 물량 2배·판가 +25% 상향(자체추정).<br>
-      <span style="color:var(--ink-3);font-size:10px">출처: LG에너지솔루션·DTE 공시 / 판가·물량 변동은 자체추정</span>
+      <strong style="color:#0984E3">인사이트:</strong> EV 수요 둔화 국면에서 <strong>AI 데이터센터용 ESS가 배터리 신규 수요축</strong>으로 부상. <strong>자회사 Vertech 턴키(인클로저+SW+유지보수)</strong> 수주로 셀 단독 대비 고마진. <strong>On-site뿐 아니라 Off-site ESS도 가격 수용력 높음</strong> → '판가가 낮아야 수요가 올라오는' 구간에서 일부 탈피하는 것으로 판단(자체추정). 빅테크는 신규 발전소 대비 시간·효율 우위로 ESS 가격 수용력 높음 — 논의 기간 중 물량 2배·판가 +25%(자체추정).<br>
+      <span style="color:var(--ink-3);font-size:10px">출처: LG에너지솔루션·DTE 공시 / 판가($260+/kWh)·물량·마진 해석은 자체추정</span>
+    </div>
+  </section>
+
+  <!-- ⚡ AI 데이터센터 전력 → BESS 신규 수요축 -->
+  <section class="guide-card" style="border-left:3px solid #F8B739;padding:14px 18px;margin-bottom:16px">
+    <div style="font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:10px">⚡ AI 데이터센터 전력 → BESS · 구조적 신규 수요</div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:10px">
+      <div style="background:var(--bg-soft);border-radius:8px;padding:10px 14px;min-width:140px"><div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase">DC 전력 (IEA)</div><div style="font-family:var(--mono);font-size:18px;font-weight:700">415→945 TWh</div><div style="font-size:10px;color:var(--ink-3)">2024→2030E · high 1,050</div></div>
+      <div style="background:var(--bg-soft);border-radius:8px;padding:10px 14px;min-width:140px;border:2px solid #F8B739"><div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase">Fluence 파이프라인</div><div style="font-family:var(--mono);font-size:18px;font-weight:700;color:#F8B739">12GW</div><div style="font-size:10px;color:var(--ink-3)">데이터센터향 잔고(FY2Q26)</div></div>
+      <div style="background:var(--bg-soft);border-radius:8px;padding:10px 14px;min-width:140px"><div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase">SK온 ESS 목표</div><div style="font-family:var(--mono);font-size:18px;font-weight:700">20GWh</div><div style="font-size:10px;color:var(--ink-3)">글로벌 수주 목표</div></div>
+    </div>
+    <div style="font-size:11px;color:var(--ink-2);line-height:1.7">
+      <strong style="color:#F8B739">Siemens·Fluence·nVent = NVIDIA NVL72(136MW) 레퍼런스 아키텍처:</strong> Siemens(34.5kV→랙 중저압 배전) + <strong>Fluence SmartStack BESS</strong>(전압·주파수 유지·블랙스타트·AI 부하 평탄화) + nVent(수랭식). GPU 학습의 스파이크성 전력 draw 때문에 <strong>'Quality of Power'가 데이터센터 계약 핵심변수</strong>가 됐고, 이를 BESS가 푸는 표준으로 공식 채택됨.<br>
+      <strong style="color:#F8B739">SK온:</strong> 글로벌 ESS 수주 20GWh 목표 — 조지아 공장 EV 라인 일부를 ESS LFP로 전환, 블루오벌SK 테네시 2028 ESS 가동 목표.<br>
+      <span style="color:var(--ink-3);font-size:10px">출처: IEA Energy and AI 2026 · Siemens 보도자료 · Fluence IR · SK온 공시</span>
     </div>
   </section>
 
   <section class="guide-card" style="border-left:3px solid #00A878;padding:14px 18px">
     <div style="font-family:var(--mono);font-size:11px;color:var(--ink-2);letter-spacing:.04em;line-height:1.8">
+      <strong style="color:#00A878">📝 Update Log · 2026.06.02</strong><br>
+      • <strong>AI 데이터센터 전력→BESS 카드 신설</strong> — IEA 415→945 TWh, Siemens·Fluence·nVent NVL72(136MW) 레퍼런스, Fluence 12GW, SK온 ESS 20GWh 목표<br>
+      • <strong>DTE 카드 보강</strong> — Vertech 턴키 고마진, On/Off-site 가격 수용력, '판가 낮아야 수요' 구간 탈피(자체추정)<br>
+      &nbsp;&nbsp;— 출처: IEA Energy and AI 2026 · Siemens 보도자료 · Fluence IR · SK온 공시<br>
+      <br>
       <strong style="color:#00A878">📝 Update Log · 2026.05.29</strong><br>
       • <strong>데이터센터 ESS 실제 수주 사례 카드 신설</strong> — LGES→DTE 2.4조원/6GWh+, 최종고객 오라클(AI DC)<br>
       &nbsp;&nbsp;— 출처: LG에너지솔루션·DTE 공시 / 판가 ~$260/kWh·물량2배·판가+25%는 자체추정<br>
