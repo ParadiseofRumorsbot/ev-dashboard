@@ -103,6 +103,9 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 
   // Fallback 데이터 (JSON fetch 실패 시)
   const FALLBACK_LOG = [
+    '🔋 Tesla 유럽 5월 부활 — 프랑스 5,446(+655%, 역대최고) · 덴마크 1,750(+136%, Model Y 1위) · 포르투갈 +350% · 노르웨이 MS 21.5% · 타임라인 2025 -28%→1Q26 +45%→4월 +46%→5월 폭증',
+    '🌐 주요국 4월 EV 판매(SNE) — 글로벌 171.6만(+10%, BEV 125.7만 +20%) · 영국 +54.5% · 독일 +31.6% · 프랑스 +28% · 미국 -34.9% · 중국 -6.3%',
+    '⚡ ESS 4월 Grid 12.8GWh(+27%) vs BTM 4.9 Flat — Grid가 성장 주도 · 유럽 Grid +104% · 중국 Grid +86%',
     '🌍 글로벌 EV 4월 160만대 (중85·유40·북12·기타24) · YTD 560만대 (-0.2% YoY) — 출처 Rho Motion·Benchmark',
     '⚡ ESS 4월 글로벌 17.7GWh (+18% YoY) · 미국 1.1GWh (-67%) · 유럽 1.6GWh (+39%) · 중국 9.4GWh (+55%)',
     '💰 광물가격 5월3주: 리튬 -6.7% WoW (+18.2% QoQ) · LiPF6 +6.1% · 구리 -3.0%',
@@ -126,7 +129,7 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
     {icon:'💰',title:'메탈',body:'리튬 -6.7% WoW (+18.2% QoQ) · LiPF6 +6.1% · 유럽 전력 85.7€/MWh',color:'blue'},
     {icon:'🚗',title:'EV',body:'Stellantis-Leapmotor 이탈리아 · Mazda/Subaru EV 연기 · Sungrow 중동 15.3GWh',color:'red'},
   ];
-  const FALLBACK_DATE = '2026.05.31';
+  const FALLBACK_DATE = '2026.06.02';
 
   function renderUpdateLog(items, date) {
     document.getElementById('update-log-date').textContent = date;
@@ -242,6 +245,43 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 <div style="background:#111827;border-radius:8px;padding:10px 14px;min-width:90px"><div style="font-size:9px;color:#6b7a99;text-transform:uppercase">기타</div><div style="font-family:monospace;font-size:18px;font-weight:700;color:#e0e6f0">24만</div><div style="font-size:10px;color:#22c55e">+110%</div></div>
 </div>
 <div style="font-size:10px;color:#6b7a99;margin-top:10px">출처: Rho Motion · Benchmark Mineral Intelligence (유럽 ACEA / 미국 Cox Automotive)</div>
+</div>
+
+<!-- 🌐 주요국 4월 EV 판매 상세 (SNE Research) -->
+<div style="background:#0a0f1a;border:1px solid #2d3a52;border-left:3px solid #4ecdc4;border-radius:8px;padding:14px 18px;margin-bottom:20px">
+<div style="font-size:11px;color:#4ecdc4;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px">🌐 주요국 4월 EV 판매 상세</div>
+<div style="font-size:10px;color:#94a3c0;margin-bottom:10px">글로벌 <b style="color:#e0e6f0">171.6만대 (+10% YoY)</b> — BEV 125.7만(+20%) · PHEV 45.9만(−10%) <span style="color:#6b7a99">(SNE 기준, Rho Motion 160만과 집계차)</span></div>
+<div style="overflow-x:auto">
+<table style="width:100%;border-collapse:collapse;font-size:11px;min-width:520px;color:#94a3c0">
+<thead><tr style="border-bottom:1px solid #2d3a52;color:#6b7a99"><th style="text-align:left;padding:6px 8px">국가</th><th style="text-align:right;padding:6px 8px">4월 판매</th><th style="text-align:right;padding:6px 8px">YoY</th><th style="text-align:right;padding:6px 8px">EV 점유율</th><th style="text-align:right;padding:6px 8px">누계 M/S</th></tr></thead>
+<tbody>
+<tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 8px;color:#e0e6f0">🇺🇸 미국</td><td style="text-align:right;padding:6px 8px">82,826</td><td style="text-align:right;padding:6px 8px;color:#ef4444">−34.9%</td><td style="text-align:right;padding:6px 8px">6.0%</td><td style="text-align:right;padding:6px 8px">6.7%</td></tr>
+<tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 8px;color:#e0e6f0">🇨🇳 중국</td><td style="text-align:right;padding:6px 8px">771,000</td><td style="text-align:right;padding:6px 8px;color:#ef4444">−6.3%</td><td style="text-align:right;padding:6px 8px">55.0%</td><td style="text-align:right;padding:6px 8px">43.7%</td></tr>
+<tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 8px;color:#e0e6f0">🇬🇧 영국</td><td style="text-align:right;padding:6px 8px">59,681</td><td style="text-align:right;padding:6px 8px;color:#22c55e">+54.5%</td><td style="text-align:right;padding:6px 8px">40.0%</td><td style="text-align:right;padding:6px 8px">34.9%</td></tr>
+<tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 8px;color:#e0e6f0">🇩🇪 독일</td><td style="text-align:right;padding:6px 8px">91,896</td><td style="text-align:right;padding:6px 8px;color:#22c55e">+31.6%</td><td style="text-align:right;padding:6px 8px">36.8%</td><td style="text-align:right;padding:6px 8px">34.5%</td></tr>
+<tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 8px;color:#e0e6f0">🇫🇷 프랑스</td><td style="text-align:right;padding:6px 8px">44,962</td><td style="text-align:right;padding:6px 8px;color:#22c55e">+28.0%</td><td style="text-align:right;padding:6px 8px">32.2%</td><td style="text-align:right;padding:6px 8px">32.4%</td></tr>
+<tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 8px;color:#e0e6f0">🇸🇪 스웨덴</td><td style="text-align:right;padding:6px 8px">15,729</td><td style="text-align:right;padding:6px 8px;color:#22c55e">+2.2%</td><td style="text-align:right;padding:6px 8px">62.5%</td><td style="text-align:right;padding:6px 8px">62.9%</td></tr>
+<tr><td style="padding:6px 8px;color:#e0e6f0">🇳🇴 노르웨이</td><td style="text-align:right;padding:6px 8px">11,103</td><td style="text-align:right;padding:6px 8px;color:#ef4444">−1.3%</td><td style="text-align:right;padding:6px 8px">98.9%</td><td style="text-align:right;padding:6px 8px">98.7%</td></tr>
+</tbody>
+</table>
+</div>
+<div style="font-size:10px;color:#6b7a99;margin-top:8px">출처: SNE Research · WardsAuto(미) · CPCA(중) · Cleantechnica(유럽)</div>
+</div>
+
+<!-- 🔋 Tesla 유럽 부활 (5월) -->
+<div style="background:#0a0f1a;border:1px solid #2d3a52;border-left:3px solid #e53e3e;border-radius:8px;padding:14px 18px;margin-bottom:20px">
+<div style="font-size:11px;color:#e53e3e;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px">🔋 Tesla 유럽 부활 · 2026년 5월</div>
+<div style="font-size:10px;color:#94a3c0;margin-bottom:10px">턴어라운드 타임라인: <span style="background:rgba(229,62,62,0.18);color:#f87171;padding:1px 5px;border-radius:3px;font-weight:600">2025 −28% → 1Q26 +45% → 4월 +46% → 5월 국가별 폭증</span></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">
+<div style="background:#111827;border-radius:8px;padding:9px 12px;min-width:115px;border:1px solid #e53e3e"><div style="font-size:9px;color:#6b7a99;text-transform:uppercase">🇫🇷 프랑스</div><div style="font-family:monospace;font-size:16px;font-weight:700;color:#e0e6f0">5,446</div><div style="font-size:10px;color:#22c55e">+655% · 역대 5월 최고</div></div>
+<div style="background:#111827;border-radius:8px;padding:9px 12px;min-width:105px"><div style="font-size:9px;color:#6b7a99;text-transform:uppercase">🇩🇰 덴마크</div><div style="font-family:monospace;font-size:16px;font-weight:700;color:#e0e6f0">1,750</div><div style="font-size:10px;color:#22c55e">+136% · Model Y 1위</div></div>
+<div style="background:#111827;border-radius:8px;padding:9px 12px;min-width:100px"><div style="font-size:9px;color:#6b7a99;text-transform:uppercase">🇵🇹 포르투갈</div><div style="font-family:monospace;font-size:16px;font-weight:700;color:#e0e6f0">1,463</div><div style="font-size:10px;color:#22c55e">+350%</div></div>
+<div style="background:#111827;border-radius:8px;padding:9px 12px;min-width:100px"><div style="font-size:9px;color:#6b7a99;text-transform:uppercase">🇪🇸 스페인</div><div style="font-family:monospace;font-size:16px;font-weight:700;color:#e0e6f0">1,690</div><div style="font-size:10px;color:#22c55e">+113%</div></div>
+<div style="background:#111827;border-radius:8px;padding:9px 12px;min-width:110px"><div style="font-size:9px;color:#6b7a99;text-transform:uppercase">🇳🇴 노르웨이</div><div style="font-family:monospace;font-size:16px;font-weight:700;color:#e0e6f0">3,345</div><div style="font-size:10px;color:#22c55e">+29% · M/S 21.5%</div></div>
+<div style="background:#111827;border-radius:8px;padding:9px 12px;min-width:95px"><div style="font-size:9px;color:#6b7a99;text-transform:uppercase">🇸🇪 스웨덴</div><div style="font-family:monospace;font-size:16px;font-weight:700;color:#e0e6f0">858</div><div style="font-size:10px;color:#22c55e">+71%</div></div>
+</div>
+<div style="font-size:11px;color:#94a3c0;line-height:1.6">동력: <b style="color:#e0e6f0">리프레시 Model Y 양산</b> · 정부 인센티브 · 고유가 → EV 선호 회복. <span style="background:rgba(229,62,62,0.18);color:#f87171;padding:1px 5px;border-radius:3px;font-weight:600">미국 캐즘 ↔ 유럽 부활</span> 양극화 → 한국 셀 3사 유럽 노출(LGES·삼성SDI) 수혜 연결.</div>
+<div style="font-size:10px;color:#6b7a99;margin-top:8px">출처: ACEA·각국 등록청·EV Volumes (Teslarati 보도) / 해석은 자체추정</div>
 </div>
 
 <div class="chart-section">

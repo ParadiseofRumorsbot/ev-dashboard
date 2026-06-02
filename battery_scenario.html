@@ -837,16 +837,39 @@ main{max-width:1080px;margin:0 auto;padding:20px 16px 60px}
       <div style="background:var(--bg-soft);border-radius:8px;padding:10px 14px;min-width:140px;border:2px solid #F8B739"><div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase">Fluence 파이프라인</div><div style="font-family:var(--mono);font-size:18px;font-weight:700;color:#F8B739">12GW</div><div style="font-size:10px;color:var(--ink-3)">데이터센터향 잔고(FY2Q26)</div></div>
       <div style="background:var(--bg-soft);border-radius:8px;padding:10px 14px;min-width:140px"><div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase">SK온 ESS 목표</div><div style="font-family:var(--mono);font-size:18px;font-weight:700">20GWh</div><div style="font-size:10px;color:var(--ink-3)">글로벌 수주 목표</div></div>
     </div>
+    <!-- Grid / On-site 2축 프레임워크 -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
+      <div style="background:var(--bg-soft);border-radius:8px;padding:10px 12px;border-left:3px solid #0984E3">
+        <div style="font-family:var(--mono);font-size:10px;font-weight:700;color:#0984E3;margin-bottom:4px">① Grid 축 (전력망 효율)</div>
+        <div style="font-size:10.5px;color:var(--ink-2);line-height:1.55">미국 송배전 병목 → <span style="background:rgba(229,62,62,0.1);padding:1px 4px;border-radius:3px;font-weight:600">실효 가동률 46%</span>. ESS가 송전망 증설 전 효율 제고 → 유틸리티 설치 확대. <b>LGES 수주잔고 中 Grid 비중 95%</b>.</div>
+      </div>
+      <div style="background:var(--bg-soft);border-radius:8px;padding:10px 12px;border-left:3px solid #F8B739">
+        <div style="font-family:var(--mono);font-size:10px;font-weight:700;color:#d39e00;margin-bottom:4px">② On-site 축 (직접 발전)</div>
+        <div style="font-size:10.5px;color:var(--ink-2);line-height:1.55">AI DC 전력 폭증 → 하이퍼스케일러가 Grid 연결 안 기다리고 <b>직접 발전+ESS 확보</b>. <span style="background:rgba(229,62,62,0.1);padding:1px 4px;border-radius:3px;font-weight:600">고객군 전환: 전력회사·IPP·재생E → Oracle·MS·Amazon·Google</span>.</div>
+      </div>
+    </div>
     <div style="font-size:11px;color:var(--ink-2);line-height:1.7">
-      <strong style="color:#F8B739">Siemens·Fluence·nVent = NVIDIA NVL72(136MW) 레퍼런스 아키텍처:</strong> Siemens(34.5kV→랙 중저압 배전) + <strong>Fluence SmartStack BESS</strong>(전압·주파수 유지·블랙스타트·AI 부하 평탄화) + nVent(수랭식). GPU 학습의 스파이크성 전력 draw 때문에 <strong>'Quality of Power'가 데이터센터 계약 핵심변수</strong>가 됐고, 이를 BESS가 푸는 표준으로 공식 채택됨.<br>
-      <strong style="color:#F8B739">SK온:</strong> 글로벌 ESS 수주 20GWh 목표 — 조지아 공장 EV 라인 일부를 ESS LFP로 전환, 블루오벌SK 테네시 2028 ESS 가동 목표.<br>
-      <span style="color:var(--ink-3);font-size:10px">출처: IEA Energy and AI 2026 · Siemens 보도자료 · Fluence IR · SK온 공시</span>
+      <strong style="color:#F8B739">Siemens·Fluence·nVent = NVIDIA NVL72(136MW) 레퍼런스:</strong> Siemens(34.5kV→랙 배전) + <strong>Fluence SmartStack BESS</strong>(전압·주파수·블랙스타트·AI 부하 평탄화) + nVent(수랭식). GPU 스파이크 전력 때문에 <strong>'Quality of Power'</strong>가 계약 핵심변수 → BESS가 표준 채택.<br>
+      <strong style="color:#F8B739">Fluence FY2Q26:</strong> 하이퍼스케일러 2곳 MSA · DC 파이프라인 12GWh · <b>연초 수주 20억$(+100% YoY) · 수주잔고 사상최대 56억$</b> · 최소 1건 3Q 내 실발주.<br>
+      <strong style="color:#F8B739">한국:</strong> LGES(DTE 턴키·Vertech 2022설립) + SK온 ESS 20GWh 목표 → <span style="background:rgba(229,62,62,0.1);padding:1px 4px;border-radius:3px;font-weight:600">하이퍼스케일러 고객층 확대 = ESS Re-rating 초입(자체추정)</span>.<br>
+      <span style="color:var(--ink-3);font-size:10px">출처: IEA Energy and AI 2026 · Fluence IR · LGES 공시·IR · SK온 공시 · Siemens 보도자료 / 2축 해석·46%는 자체추정</span>
+    </div>
+    <!-- ESS 신규 설치 Grid vs BTM (Rho Motion 4월) -->
+    <div style="margin-top:12px;padding-top:10px;border-top:1px dashed var(--line)">
+      <div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">ESS 신규 설치 · 2026.4 — Grid가 성장 주도 (Rho Motion)</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;font-size:10.5px;color:var(--ink-2)">
+        <div style="background:var(--bg-soft);border-radius:6px;padding:8px 12px"><b style="color:#0984E3">글로벌 Grid</b> 12.8GWh <span style="color:#00A878">+27%</span> vs BTM 4.9 Flat</div>
+        <div style="background:var(--bg-soft);border-radius:6px;padding:8px 12px"><b>유럽 Grid</b> 0.9 <span style="color:#00A878">+104%</span></div>
+        <div style="background:var(--bg-soft);border-radius:6px;padding:8px 12px"><b>중국 Grid</b> 7.2 <span style="color:#00A878">+86%</span></div>
+        <div style="background:var(--bg-soft);border-radius:6px;padding:8px 12px"><b>미국 Grid</b> 0.4 <span style="color:#c00000">−86%</span></div>
+      </div>
     </div>
   </section>
 
   <section class="guide-card" style="border-left:3px solid #00A878;padding:14px 18px">
     <div style="font-family:var(--mono);font-size:11px;color:var(--ink-2);letter-spacing:.04em;line-height:1.8">
       <strong style="color:#00A878">📝 Update Log · 2026.06.02</strong><br>
+      • <strong>BESS 카드 Grid/On-site 2축 업그레이드</strong> — 실효가동률 46%·LGES Grid 95%·고객군 전환(→하이퍼스케일러)·Fluence 수주 20억$·잔고 56억$·ESS Grid/BTM 분리(Grid +27% 주도)<br>
       • <strong>AI 데이터센터 전력→BESS 카드 신설</strong> — IEA 415→945 TWh, Siemens·Fluence·nVent NVL72(136MW) 레퍼런스, Fluence 12GW, SK온 ESS 20GWh 목표<br>
       • <strong>DTE 카드 보강</strong> — Vertech 턴키 고마진, On/Off-site 가격 수용력, '판가 낮아야 수요' 구간 탈피(자체추정)<br>
       &nbsp;&nbsp;— 출처: IEA Energy and AI 2026 · Siemens 보도자료 · Fluence IR · SK온 공시<br>
