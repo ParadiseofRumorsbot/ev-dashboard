@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
@@ -30,6 +30,15 @@
 <a href="2차전지_컨콜정리.html" class="sidebar-link">컨콜 정리</a>
 <a href="battery_tech.html" class="sidebar-link">기술 / 특허</a>
 <a href="global_battery_map.html" class="sidebar-link">배터리 맵</a>
+<div class="sidebar-group">Sections</div>
+<a href="#sec-matrix" class="sidebar-link" data-target="sec-matrix">배터리 매트릭스</a>
+<a href="#sec-fsd-miles" class="sidebar-link" data-target="sec-fsd-miles">FSD 마일리지</a>
+<a href="#sec-fsd-safety" class="sidebar-link" data-target="sec-fsd-safety">FSD 안전</a>
+<a href="#sec-austin" class="sidebar-link" data-target="sec-austin">Austin 플릿</a>
+<a href="#sec-cybercab" class="sidebar-link" data-target="sec-cybercab">Cybercab 생산</a>
+<a href="#sec-cities" class="sidebar-link" data-target="sec-cities">도시별 비교</a>
+<a href="#sec-global" class="sidebar-link" data-target="sec-global">글로벌 도시</a>
+<a href="#sec-timeline" class="sidebar-link" data-target="sec-timeline">확장 타임라인</a>
 </aside>
 <main>
 <div class="hdr">
@@ -50,7 +59,7 @@
 <div id="rt-week-body" style="font-size:12px;color:var(--ink-2);line-height:1.7">로딩 중...</div>
 </details>
 
-<div class="chart-section">
+<div class="chart-section" id="sec-matrix">
 <h2>🔋 배터리 성능 우위 매트릭스</h2>
 <div style="overflow-x:auto;margin-bottom:16px">
 <table style="width:100%;border-collapse:collapse;font-size:10.5px;color:var(--ink);min-width:1100px">
@@ -177,7 +186,7 @@
 </div>
 </div>
 
-<div class="chart-section">
+<div class="chart-section" id="sec-fsd-miles">
 <h2>FSD 누적 주행거리 추이 (Billion miles)</h2>
 <div class="legend">
 <span><i style="background:#a78bfa"></i>누적 마일 (B)</span>
@@ -187,18 +196,18 @@
 </div>
 
 <div class="grid-2">
-<div class="chart-section">
+<div class="chart-section" id="sec-fsd-speed">
 <h2>FSD 연간 축적 속도 (Billion miles)</h2>
 <div class="chart-wrap sm"><canvas id="c2"></canvas></div>
 </div>
-<div class="chart-section">
+<div class="chart-section" id="sec-fsd-safety">
 <h2>FSD 안전 비교 (마일/주요충돌)</h2>
 <div class="chart-wrap sm"><canvas id="c3"></canvas></div>
 </div>
 </div>
 
 <div class="grid-2">
-<div class="chart-section">
+<div class="chart-section" id="sec-austin">
 <h2>Austin 로보택시 플릿 추이</h2>
 <div class="legend">
 <span><i style="background:#556dff"></i>총 차량</span>
@@ -206,13 +215,13 @@
 </div>
 <div class="chart-wrap sm"><canvas id="c4"></canvas></div>
 </div>
-<div class="chart-section">
+<div class="chart-section" id="sec-cybercab">
 <h2>Cybercab 누적 생산</h2>
 <div class="chart-wrap sm"><canvas id="c5"></canvas></div>
 </div>
 </div>
 
-<div class="chart-section">
+<div class="chart-section" id="sec-cities">
 <h2>🏙️ 도시별 Day 1 Opening Fleet 비교</h2>
 <p class="subtitle" style="margin:-8px 0 16px;">Austin에서 playbook 검증 후 후속 도시는 Supervised ramp phase 생략 · Day 1부터 Unsupervised 오픈</p>
 <div class="grid-2">
@@ -245,7 +254,7 @@
 </div>
 
 <!-- 글로벌 자율주행 택시 운영 현황 (IEA GEO 2026 cross-check) -->
-<div class="chart-section">
+<div class="chart-section" id="sec-global">
 <h2>🌐 글로벌 자율주행 택시 운영 도시 (IEA: 20+ cities)</h2>
 <p class="subtitle" style="margin:-8px 0 16px;">IEA Global EV Outlook 2026 기준 20개+ 도시에서 상업적 자율주행 택시 운영 중. 아래는 주요 운영사별 도시 리스트.</p>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px">
@@ -288,7 +297,7 @@
 <div style="font-size:11px;color:#3a4a6b">Source: IEA Global EV Outlook 2026 · 각사 IR · 언론 보도. [개인 의견] 포함.</div>
 </div>
 
-<div class="chart-section">
+<div class="chart-section" id="sec-timeline">
 <h2>도시 확장 타임라인</h2>
 <div class="timeline" id="rt-timeline">
 <!-- Notion에서 동적 로딩, fallback은 스크립트에서 처리 -->
@@ -464,6 +473,17 @@ label:'현재 (5/25)',
 data:[27,5,6,0],
 backgroundColor:['rgba(78,205,196,0.4)','rgba(255,217,61,0.4)','rgba(255,107,107,0.4)','rgba(107,122,153,0.2)'],borderRadius:6,borderWidth:2,borderColor:['#4ecdc4','#ffd93d','#ff6b6b','#6b7a99']
 }]},options:{...defOpt,scales:{x:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}},y:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:11}}}},plugins:{...defOpt.plugins,legend:{display:true,position:'top',labels:{color:tickColor,font:{size:10}}},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>{const labels=[['13대 Active Day 1','1대 Unsupervised Day 1','1대 Unsupervised Day 1','~130대 Supervised'],['27대 Unsupervised (5/25)','5대 Unsupervised (5/25)','6대 Unsupervised (5/25)','CA 퍼밋 미취득']];return labels[ctx.datasetIndex][ctx.dataIndex]}}}}}});
+</script>
+<script>
+(function(){
+  const links=document.querySelectorAll('.sidebar-link[data-target]');
+  const sections=[];
+  links.forEach(link=>{const el=document.getElementById(link.dataset.target);if(el)sections.push({el,link});});
+  if(!sections.length)return;
+  const obs=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){links.forEach(l=>l.classList.remove('active'));const m=sections.find(s=>s.el===entry.target);if(m){m.link.classList.add('active');m.link.scrollIntoView({block:'nearest',behavior:'smooth'});}}});},{rootMargin:'-10% 0px -70% 0px'});
+  sections.forEach(s=>obs.observe(s.el));
+  links.forEach(link=>{link.addEventListener('click',e=>{e.preventDefault();const t=document.getElementById(link.dataset.target);if(t)t.scrollIntoView({behavior:'smooth',block:'start'});});});
+})();
 </script>
 </main>
 </div>
