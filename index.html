@@ -5,67 +5,54 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>글로벌 EV 판매 트래킹</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Noto Sans KR',sans-serif;background:#0a0f1a;color:#e0e6f0;padding:24px;max-width:1200px;margin:0 auto}
-h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(135deg,#4ecdc4,#556dff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.subtitle{font-size:13px;color:#6b7a99;margin-bottom:32px}
-.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:36px}
-.metric{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:20px}
-.metric .label{font-size:12px;color:#6b7a99;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px}
-.metric .value{font-size:26px;font-weight:700;color:#f0f4ff}
-.metric .delta{font-size:13px;margin-top:4px}
-.up{color:#4ecdc4}.down{color:#ff6b6b}
-.chart-section{background:#111827;border:1px solid #1e293b;border-radius:12px;padding:24px;margin-bottom:24px}
-.chart-section h2{font-size:16px;font-weight:500;color:#94a3c0;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #1e293b}
-.chart-wrap{position:relative;height:320px}
-.chart-wrap.sm{height:260px}
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.legend{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px;font-size:12px;color:#6b7a99}
-.legend span{display:flex;align-items:center;gap:5px}
-.legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
-.updated{text-align:center;font-size:11px;color:#3a4a6b;margin-top:24px;padding-top:16px;border-top:1px solid #1e293b}
-@media(max-width:768px){.metrics{grid-template-columns:repeat(2,1fr)}.grid-2{grid-template-columns:1fr}}
-/* ── EV 신차 타임라인 테이블 ── */
-.chem-legend{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:16px;font-size:11px;color:#94a3c0}
-.chem-legend span{display:flex;align-items:center;gap:5px}
-.chem-legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
-.launch-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.launch-table{width:100%;border-collapse:collapse;font-size:11.5px;min-width:920px}
-.launch-table th,.launch-table td{border:1px solid #1e293b;padding:7px 8px;text-align:center;vertical-align:middle}
-.launch-table thead th{background:#0d1424;color:#6b7a99;font-weight:500;letter-spacing:.3px;font-size:11px;position:sticky;top:0;z-index:2}
-.launch-table thead th.year-header{background:#0a0f1a;color:#94a3c0;font-weight:600;font-size:12px;border-bottom:2px solid #2d3a52}
-.launch-table td.brand{background:#0d1424;color:#94a3c0;font-weight:600;text-align:left;white-space:nowrap;min-width:90px;position:sticky;left:0;z-index:1;border-right:2px solid #1e293b}
-.launch-table td.brand .flag{margin-right:4px}
-.model-chip{display:inline-block;padding:3px 7px;margin:2px;border-radius:4px;font-size:10.5px;font-weight:500;line-height:1.4;white-space:nowrap}
-.chip-kwh{font-size:9px;opacity:.7;margin-left:1px}
-.chip-800v{font-size:9px;color:#ffd93d;margin-left:2px}
-.chip-nmc{background:rgba(34,197,94,0.18);color:#4ade80;border:1px solid rgba(34,197,94,0.35)}
-.chip-lfp{background:rgba(239,68,68,0.18);color:#f87171;border:1px solid rgba(239,68,68,0.35)}
-.chip-nmc-lfp{background:linear-gradient(135deg,rgba(34,197,94,0.18),rgba(239,68,68,0.18));color:#fbbf24;border:1px solid rgba(200,160,60,0.35)}
-.chip-unknown{background:rgba(107,122,153,0.15);color:#6b7a99;border:1px solid rgba(107,122,153,0.25)}
-.launch-table td.empty{color:#2d3a52}
-.launch-table td.year-border,.launch-table th.year-border{border-left:2px solid #2d3a52}
-.launch-table th.now{background:rgba(167,139,250,0.12);color:#a78bfa;font-weight:600}
-.chip-launched{background:rgba(167,139,250,0.18);color:#c4b5fd;border:1px solid rgba(167,139,250,0.35);text-decoration:line-through;opacity:.7}
-/* ── 시장 탭 전환 ── */
-.market-tabs{display:flex;gap:6px;margin-bottom:14px}
-.market-tab{padding:7px 18px;border-radius:6px;border:1px solid #2d3a52;background:transparent;color:#6b7a99;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s}
-.market-tab.active{background:#556dff;color:#fff;border-color:#556dff}
-.market-tab:hover:not(.active){background:rgba(85,109,255,0.1);color:#94a3c0}
-.launch-panel{display:none}
-.launch-panel.active{display:block}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>글로벌 EV 판매 트래킹</h1>
-<p class="subtitle">출처: IEA · SNE Research · WardsAuto · CPCA · Cleantechnica · Benchmark</p>
-<nav style="display:flex;gap:10px;margin-bottom:20px;font-size:12px"><a href="index.html" style="color:#4ecdc4;text-decoration:none;padding:4px 10px;border-radius:6px;background:#1e293b">EV 판매</a><a href="robotaxi.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">FSD·로보택시</a><a href="us-import.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">US 수입</a><a href="Battery_bom_routing.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">ESS BOM</a><a href="battery_scenario.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">Battery Scenario</a><a href="2차전지_컨콜정리.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">컨콜 정리</a><a href="battery_tech.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">🔬 기술·특허</a><a href="global_battery_map.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">🗺️ 배터리 맵</a></nav>
+<div class="page-wrap">
 
-<!-- EV 신차 출시일정 피드: GitHub Actions 매일 8AM KST 자동 수집 -->
-<div id="news-feed-container" style="background:#0a0f1a;border:1px solid #2d3a52;border-left:3px solid #ffd93d;border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:11px;color:#94a3c0;line-height:1.7;display:none">
-<strong style="color:#ffd93d">🚗 신차 출시일정 모니터링 · <span id="news-feed-date">loading...</span></strong>
+<!-- ── Sidebar ── -->
+<aside class="sidebar">
+<div class="sidebar-hdr">EV Dashboard</div>
+<div class="sidebar-group">Pages</div>
+<a href="index.html" class="sidebar-link active">EV 판매</a>
+<a href="robotaxi.html" class="sidebar-link">FSD / 로보택시</a>
+<a href="us-import.html" class="sidebar-link">US 수입</a>
+<a href="Battery_bom_routing.html" class="sidebar-link">ESS BOM</a>
+<a href="battery_scenario.html" class="sidebar-link">Battery Scenario</a>
+<a href="2차전지_컨콜정리.html" class="sidebar-link">컨콜 정리</a>
+<a href="battery_tech.html" class="sidebar-link">기술 / 특허</a>
+<a href="global_battery_map.html" class="sidebar-link">배터리 맵</a>
+<div class="sidebar-group">Sections</div>
+<a href="#sec-kpi" class="sidebar-link" data-target="sec-kpi">KPI 요약</a>
+<a href="#sec-regional" class="sidebar-link" data-target="sec-regional">지역별 판매</a>
+<a href="#sec-monthly" class="sidebar-link" data-target="sec-monthly">월별 추이</a>
+<a href="#sec-eu-co2" class="sidebar-link" data-target="sec-eu-co2">EU CO2 시나리오</a>
+<a href="#sec-battery" class="sidebar-link" data-target="sec-battery">배터리 출하량</a>
+<a href="#sec-us-model" class="sidebar-link" data-target="sec-us-model">미국 모델별</a>
+<a href="#sec-kr" class="sidebar-link" data-target="sec-kr">한국 EV</a>
+<a href="#sec-timeline" class="sidebar-link" data-target="sec-timeline">신차 타임라인</a>
+</aside>
+
+<!-- ── Main ── -->
+<main>
+<div class="hdr">
+<div class="hdr-tag">Global EV Tracking</div>
+<h1><b>EV</b> 글로벌 판매 트래킹</h1>
+<p class="hdr-sub">출처: IEA / SNE Research / WardsAuto / CPCA / Cleantechnica / Benchmark</p>
+</div>
+
+<!-- Mobile nav -->
+<div class="toc-nav-mobile" id="tocMobile">
+<a href="index.html">EV 판매</a><a href="robotaxi.html">FSD</a><a href="us-import.html">US 수입</a><a href="Battery_bom_routing.html">ESS</a><a href="battery_scenario.html">Scenario</a><a href="battery_tech.html">기술</a><a href="global_battery_map.html">맵</a>
+</div>
+
+<!-- News feed -->
+<div id="news-feed-container" class="news-box" style="display:none">
+<strong style="color:#d97706">신차 출시일정 모니터링 · <span id="news-feed-date">loading...</span></strong>
 <div id="news-feed-body" style="margin-top:6px"></div>
 </div>
 <script>
@@ -78,36 +65,34 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
       container.style.display='block';
       document.getElementById('news-feed-date').textContent=data.date||'';
       document.getElementById('news-feed-body').innerHTML=data.items.slice(0,8).map(it=>{
-        return '<span style="color:#ffd93d">['+(it.oem||'')+']</span> <a href="'+it.link+'" target="_blank" rel="noopener" style="color:#e0e6f0;text-decoration:none;border-bottom:1px dotted #2d3a52">'+it.title.slice(0,70)+(it.title.length>70?'…':'')+'</a> <span style="color:#3a4a6b;font-size:10px">'+it.market+'</span><br>';
+        return '<span style="color:#d97706">['+(it.oem||'')+']</span> <a href="'+it.link+'" target="_blank" rel="noopener" style="color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--line-s)">'+it.title.slice(0,70)+(it.title.length>70?'…':'')+'</a> <span style="color:var(--ink-3);font-size:10px">'+it.market+'</span><br>';
       }).join('');
     })
     .catch(()=>{});
 })();
 </script>
 
-<!-- Update Log: Notion 자동 동기화 (fallback: 하드코딩) -->
-<div id="update-log-container" style="background:#0a0f1a;border:1px solid #2d3a52;border-left:3px solid #4ecdc4;border-radius:8px;padding:12px 16px;margin-bottom:20px;font-size:11px;color:#94a3c0;line-height:1.7">
-<strong style="color:#4ecdc4">📝 Update Log · <span id="update-log-date">loading...</span></strong><br>
+<!-- Update Log -->
+<div id="update-log-container" class="update-box">
+<div class="box-title">Update Log · <span id="update-log-date">loading...</span></div>
 <div id="update-log-body">로딩 중...</div>
 </div>
 
-<!-- This Week: Notion 자동 동기화 (fallback: 하드코딩) -->
-<div id="this-week-container" style="background:linear-gradient(135deg,#111827,#0a0f1a);border-left:4px solid #4ecdc4;border-radius:12px;padding:20px 24px;margin-bottom:24px;font-size:13px;line-height:1.7">
-<div style="font-size:12px;color:#4ecdc4;font-weight:600;letter-spacing:1px;margin-bottom:10px">⚡ THIS WEEK · <span id="this-week-date">loading...</span></div>
-<div id="this-week-body" style="color:#e0e6f0">로딩 중...</div>
+<!-- This Week -->
+<div id="this-week-container" class="card" style="border-left:4px solid var(--teal)">
+<div class="card-title">This Week · <span id="this-week-date" style="font-weight:400">loading...</span></div>
+<div id="this-week-body" style="font-size:12px;color:var(--ink-2);line-height:1.7">로딩 중...</div>
 </div>
 
 <script>
 (function(){
-  const COLOR_MAP = {teal:'#4ecdc4',red:'#ff6b6b',blue:'#556dff',yellow:'#ffd93d',purple:'#a78bfa',green:'#4ecdc4'};
-
-  // Fallback 데이터 (JSON fetch 실패 시)
+  const COLOR_MAP = {teal:'#4ecdc4',red:'#ef4444',blue:'#556dff',yellow:'#d97706',purple:'#a78bfa',green:'#22c55e'};
   const FALLBACK_LOG = [
     '🔋 Tesla 유럽 5월 부활 — 프랑스 5,446(+655%, 역대최고) · 덴마크 1,750(+136%, Model Y 1위) · 포르투갈 +350% · 노르웨이 MS 21.5% · 타임라인 2025 -28%→1Q26 +45%→4월 +46%→5월 폭증',
     '🌐 주요국 4월 EV 판매(SNE) — 글로벌 171.6만(+10%, BEV 125.7만 +20%) · 영국 +54.5% · 독일 +31.6% · 프랑스 +28% · 미국 -34.9% · 중국 -6.3%',
     '⚡ ESS 4월 Grid 12.8GWh(+27%) vs BTM 4.9 Flat — Grid가 성장 주도 · 유럽 Grid +104% · 중국 Grid +86%',
     '🌍 글로벌 EV 4월 160만대 (중85·유40·북12·기타24) · YTD 560만대 (-0.2% YoY) — 출처 Rho Motion·Benchmark',
-    '⚡ ESS 4월 글로벌 17.7GWh (+18% YoY) · 미국 1.1GWh (-67%) · 유럽 1.6GWh (+39%) · 중국 9.4GWh (+55%)',
+    '⚡ ESS 4월 글로벌 17.7GWh (+18% YoY) · 미국 1.1GWh (-67%) · 유럽 1.6GWh (+39%) �� 중국 9.4GWh (+55%)',
     '💰 광물가격 5월3주: 리튬 -6.7% WoW (+18.2% QoQ) · LiPF6 +6.1% · 구리 -3.0%',
     '⚡ 유럽 전력가격 5월3주 85.7€/MWh (WoW +5.8%) · 5월 평균 83.4€/MWh (MoM +3.1%)',
     '🚗 EV 타임라인: Mazda 자체 EV 2029 재연기 · Subaru 자체 EV 연기(일정 미공개)',
@@ -119,7 +104,7 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
     '📊 시나리오 민감도 버블차트 + BEV/CAPA 미스매치 차트 신규 (index.html)',
     '🔋 Battery Scenario: EU 정책 시나리오 3종 추가 (총 10개 시나리오)',
     '🔀 US 수입 탭 9 "EU vs US 전동화 디버전스" 신규 — T&E + S&P Global 좌우 분할',
-    '🚗 EV 타임라인 🇺🇸 북미 / 🇪🇺 유럽 탭 전환 + Ford EU 포함 10건 뉴스 반영',
+    '🚗 EV 타임라인 🇺🇸 북미 / 🇪🇺 ���럽 탭 전환 + Ford EU 포함 10건 뉴스 반영',
     '📰 매일 7AM KST EV 뉴스 자동 모니터링 워크플로우 신규 (GitHub Actions)',
   ];
   const FALLBACK_WEEK = [
@@ -138,9 +123,8 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
         ? '• ' + item + '<br>'
         : '• ' + (item.icon||'') + ' ' + item.body + '<br>'
       ).join('');
-    // 이전 로그 추가
     if(typeof FALLBACK_LOG_PREV!=='undefined'&&FALLBACK_LOG_PREV.length){
-      html+='<br><strong style="color:#3a4a6b">📝 Update Log · 2026.05.17</strong><br>';
+      html+='<br><strong style="color:var(--ink-3)">Update Log · 2026.05.17</strong><br>';
       html+=FALLBACK_LOG_PREV.map(s=>'• '+s+'<br>').join('');
     }
     document.getElementById('update-log-body').innerHTML = html;
@@ -150,7 +134,7 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
     document.getElementById('this-week-date').textContent = date;
     document.getElementById('this-week-body').innerHTML = items
       .map(item => {
-        const c = COLOR_MAP[item.color] || '#94a3c0';
+        const c = COLOR_MAP[item.color] || 'var(--ink-3)';
         return '<strong style="color:'+c+'">'+(item.icon||'')+' '+(item.title||'')+'</strong> · '+item.body+'<br>';
       }).join('');
   }
@@ -171,10 +155,8 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
       const weekItems = data.this_week
         .filter(u => u.targets.includes('index') || u.targets.includes('both'))
         .map(u => ({icon:u.icon, title:u.title, body:u.body, color:u.color}));
-
       if (logItems.length > 0) renderUpdateLog(logItems, date);
       else renderUpdateLog(FALLBACK_LOG, FALLBACK_DATE);
-
       if (weekItems.length > 0) renderThisWeek(weekItems, date);
       else renderThisWeek(FALLBACK_WEEK, FALLBACK_DATE);
     })
@@ -185,113 +167,110 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 })();
 </script>
 
+<!-- ══════════════════════════════════════════ -->
+<!-- KPI Section -->
+<!-- ══════════════════════════════════════════ -->
+<section id="sec-kpi">
+<div class="metrics" id="kpi-metrics">
+<div class="metric"><div class="label">2025 글로벌</div><div class="value" data-kpi="global_2025">2,070만</div><div class="delta up">▲ YoY +21%</div></div>
+<div class="metric"><div class="label">중국 점유율 (2025)</div><div class="value" data-kpi="cn_share">62.3%</div><div class="delta down">▼ 24→25 -2.3%p</div></div>
+<div class="metric"><div class="label">미국 26.04</div><div class="value" data-kpi="us_apr">8.3만</div><div class="delta down">▼ YoY -34.9%</div></div>
+<div class="metric"><div class="label">중국 26.04</div><div class="value" data-kpi="cn_apr">84.9만</div><div class="delta down">▼ YoY -7% · 침투율 61.4%</div></div>
+</div>
+
+<!-- IEA GEO 2026 -->
+<div style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;letter-spacing:.1em;text-transform:uppercase;font-weight:600">IEA Global EV Outlook 2026</div>
 <div class="metrics">
-<div class="metric">
-<div class="label">2025 글로벌</div>
-<div class="value">2,070만</div>
-<div class="delta up">▲ YoY +21%</div>
-</div>
-<div class="metric">
-<div class="label">중국 점유율 (2025)</div>
-<div class="value">62.3%</div>
-<div class="delta down">▼ 24→25 -2.3%p</div>
-</div>
-<div class="metric">
-<div class="label">미국 26.04</div>
-<div class="value">8.3만</div>
-<div class="delta down">▼ YoY -34.9%</div>
-</div>
-<div class="metric">
-<div class="label">중국 26.04</div>
-<div class="value">84.9만</div>
-<div class="delta down">▼ YoY -7% · 침투율 61.4%</div>
-</div>
+<div class="metric" style="border-top:2px solid var(--teal)"><div class="label">2025 배터리 Deployment</div><div class="value">1.2 TWh</div><div class="delta up">▲ 가격 YoY -8%</div></div>
+<div class="metric" style="border-top:2px solid var(--red)"><div class="label">2025 글로벌 LFP 점유율</div><div class="value">55%+</div><div class="delta" style="color:var(--ink-3);font-size:10px">US 절반 · EU 10%+ · 中 주도</div></div>
+<div class="metric" style="border-top:2px solid var(--accent)"><div class="label">2026E 글로벌 EV 판매</div><div class="value">2,300만</div><div class="delta up">▲ share 28% · YoY +15%</div></div>
+<div class="metric" style="border-top:2px solid var(--yellow)"><div class="label">2035 배터리 (CPS/STEPS/NZE)</div><div class="value">4/5/9 TWh</div><div class="delta" style="color:var(--ink-3);font-size:10px">K3 AMPC 의존 노출</div></div>
 </div>
 
-<!-- IEA GEO 2026 핵심 지표 -->
-<div style="font-size:11px;color:#6b7a99;margin-bottom:8px;letter-spacing:.5px;text-transform:uppercase;font-weight:600">📊 IEA Global EV Outlook 2026 핵심 지표</div>
-<div class="metrics">
-<div class="metric" style="border-top:2px solid #4ecdc4">
-<div class="label">2025 배터리 Deployment</div>
-<div class="value">1.2 TWh</div>
-<div class="delta up">▲ 가격 YoY -8%</div>
+<!-- Notion KPI auto-bind -->
+<script>
+(function(){
+  fetch('data/notion_variables.json')
+    .then(r=>{if(!r.ok)throw new Error(r.status);return r.json()})
+    .then(data=>{
+      if(!data.variables)return;
+      const kpiMap={};
+      data.variables.forEach(v=>{
+        if(v.category==='oemSales'&&v.target==='Tesla'&&v.region==='us'){kpiMap.us_tesla_bev=v.value;}
+        if(v.category==='oemSales'&&v.target==='현대기아'&&v.region==='us'){kpiMap.us_hk_bev=v.value;}
+      });
+      const syncEl=document.getElementById('notion-sync-date');
+      if(syncEl)syncEl.textContent='Notion 동기화: '+data.syncedAt.split('T')[0];
+    })
+    .catch(()=>{});
+})();
+</script>
+</section>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- Regional Sales -->
+<!-- ══════════════════════════════════════════ -->
+<section id="sec-regional">
+<!-- 글로벌 EV 4월/누계 -->
+<div class="card" style="border-left:4px solid var(--accent)">
+<div class="card-title">글로벌 EV 판매 · 2026년 4월 / 누계</div>
+<div class="num-row">
+<div class="num-box"><div class="num-label">YTD 누계</div><div class="num-value">560만대</div><div class="num-sub" style="color:var(--red)">-0.2% YoY</div></div>
+<div class="num-box" style="border-color:var(--accent)"><div class="num-label">4월 글로벌</div><div class="num-value">160만대</div><div class="num-sub">월간</div></div>
+<div class="num-box"><div class="num-label">🇨🇳 중국</div><div class="num-value">85만</div></div>
+<div class="num-box"><div class="num-label">🇪🇺 유럽</div><div class="num-value">40만</div><div class="num-sub" style="color:var(--green)">+27%</div></div>
+<div class="num-box"><div class="num-label">🇺🇸 북미</div><div class="num-value">12만</div><div class="num-sub" style="color:var(--red)">-28%</div></div>
+<div class="num-box"><div class="num-label">기타</div><div class="num-value">24만</div><div class="num-sub" style="color:var(--green)">+110%</div></div>
 </div>
-<div class="metric" style="border-top:2px solid #ff6b6b">
-<div class="label">2025 글로벌 LFP 점유율</div>
-<div class="value">55%+</div>
-<div class="delta down" style="font-size:11px">US 절반 · EU 10%+ · 中 주도</div>
-</div>
-<div class="metric" style="border-top:2px solid #556dff">
-<div class="label">2026E 글로벌 EV 판매</div>
-<div class="value">2,300만</div>
-<div class="delta up">▲ share 28% · YoY +15%</div>
-</div>
-<div class="metric" style="border-top:2px solid #ffd93d">
-<div class="label">2035 배터리 (CPS/STEPS/NZE)</div>
-<div class="value">4/5/9 TWh</div>
-<div class="delta" style="color:#94a3c0;font-size:11px">K3 AMPC 의존 노출 ⚠️</div>
-</div>
+<div style="font-size:10px;color:var(--ink-3);margin-top:8px">출처: Rho Motion · Benchmark Mineral Intelligence (유럽 ACEA / 미국 Cox Automotive)</div>
 </div>
 
-<!-- 🌍 글로벌 EV 4월/누계 요약 (Rho Motion) -->
-<div style="background:#0a0f1a;border:1px solid #2d3a52;border-left:3px solid #556dff;border-radius:8px;padding:14px 18px;margin-bottom:20px">
-<div style="font-size:11px;color:#556dff;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px">🌍 글로벌 EV 판매 · 2026년 4월 / 누계</div>
-<div style="display:flex;gap:10px;flex-wrap:wrap">
-<div style="background:#111827;border-radius:8px;padding:10px 14px;min-width:110px"><div style="font-size:9px;color:#6b7a99;text-transform:uppercase">YTD 누계</div><div style="font-family:monospace;font-size:20px;font-weight:700;color:#e0e6f0">560만대</div><div style="font-size:10px;color:#ef4444">-0.2% YoY</div></div>
-<div style="background:#111827;border-radius:8px;padding:10px 14px;min-width:110px;border:1px solid #556dff"><div style="font-size:9px;color:#6b7a99;text-transform:uppercase">4월 글로벌</div><div style="font-family:monospace;font-size:20px;font-weight:700;color:#e0e6f0">160만대</div><div style="font-size:10px;color:#94a3c0">월간</div></div>
-<div style="background:#111827;border-radius:8px;padding:10px 14px;min-width:90px"><div style="font-size:9px;color:#6b7a99;text-transform:uppercase">🇨🇳 중국</div><div style="font-family:monospace;font-size:18px;font-weight:700;color:#e0e6f0">85만</div></div>
-<div style="background:#111827;border-radius:8px;padding:10px 14px;min-width:90px"><div style="font-size:9px;color:#6b7a99;text-transform:uppercase">🇪🇺 유럽</div><div style="font-family:monospace;font-size:18px;font-weight:700;color:#e0e6f0">40만</div><div style="font-size:10px;color:#22c55e">+27%</div></div>
-<div style="background:#111827;border-radius:8px;padding:10px 14px;min-width:90px"><div style="font-size:9px;color:#6b7a99;text-transform:uppercase">🇺🇸 북미</div><div style="font-family:monospace;font-size:18px;font-weight:700;color:#e0e6f0">12만</div><div style="font-size:10px;color:#ef4444">-28%</div></div>
-<div style="background:#111827;border-radius:8px;padding:10px 14px;min-width:90px"><div style="font-size:9px;color:#6b7a99;text-transform:uppercase">기타</div><div style="font-family:monospace;font-size:18px;font-weight:700;color:#e0e6f0">24만</div><div style="font-size:10px;color:#22c55e">+110%</div></div>
-</div>
-<div style="font-size:10px;color:#6b7a99;margin-top:10px">출처: Rho Motion · Benchmark Mineral Intelligence (유럽 ACEA / 미국 Cox Automotive)</div>
-</div>
-
-<!-- 🌐 주요국 4월 EV 판매 상세 (SNE Research) -->
-<div style="background:#0a0f1a;border:1px solid #2d3a52;border-left:3px solid #4ecdc4;border-radius:8px;padding:14px 18px;margin-bottom:20px">
-<div style="font-size:11px;color:#4ecdc4;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px">🌐 주요국 4월 EV 판매 상세</div>
-<div style="font-size:10px;color:#94a3c0;margin-bottom:10px">글로벌 <b style="color:#e0e6f0">171.6만대 (+10% YoY)</b> — BEV 125.7만(+20%) · PHEV 45.9만(−10%) <span style="color:#6b7a99">(SNE 기준, Rho Motion 160만과 집계차)</span></div>
-<div style="overflow-x:auto">
-<table style="width:100%;border-collapse:collapse;font-size:11px;min-width:520px;color:#94a3c0">
-<thead><tr style="border-bottom:1px solid #2d3a52;color:#6b7a99"><th style="text-align:left;padding:6px 8px">국가</th><th style="text-align:right;padding:6px 8px">4월 판매</th><th style="text-align:right;padding:6px 8px">YoY</th><th style="text-align:right;padding:6px 8px">EV 점유율</th><th style="text-align:right;padding:6px 8px">누계 M/S</th></tr></thead>
+<!-- 주요국 4월 상세 -->
+<div class="card" style="border-left:4px solid var(--teal)">
+<div class="card-title">주요국 4월 EV 판매 상세</div>
+<div style="font-size:11px;color:var(--ink-2);margin-bottom:10px">글로벌 <b style="color:var(--ink)">171.6만대 (+10% YoY)</b> — BEV 125.7만(+20%) · PHEV 45.9만(-10%) <span style="color:var(--ink-3)">(SNE 기준)</span></div>
+<div class="scroll-x">
+<table class="data-table" style="min-width:520px">
+<thead><tr><th style="text-align:left">국가</th><th style="text-align:right">4월 판매</th><th style="text-align:right">YoY</th><th style="text-align:right">EV 점유율</th><th style="text-align:right">누계 M/S</th></tr></thead>
 <tbody>
-<tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 8px;color:#e0e6f0">🇺🇸 미국</td><td style="text-align:right;padding:6px 8px">82,826</td><td style="text-align:right;padding:6px 8px;color:#ef4444">−34.9%</td><td style="text-align:right;padding:6px 8px">6.0%</td><td style="text-align:right;padding:6px 8px">6.7%</td></tr>
-<tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 8px;color:#e0e6f0">🇨🇳 중국</td><td style="text-align:right;padding:6px 8px">771,000</td><td style="text-align:right;padding:6px 8px;color:#ef4444">−6.3%</td><td style="text-align:right;padding:6px 8px">55.0%</td><td style="text-align:right;padding:6px 8px">43.7%</td></tr>
-<tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 8px;color:#e0e6f0">🇬🇧 영국</td><td style="text-align:right;padding:6px 8px">59,681</td><td style="text-align:right;padding:6px 8px;color:#22c55e">+54.5%</td><td style="text-align:right;padding:6px 8px">40.0%</td><td style="text-align:right;padding:6px 8px">34.9%</td></tr>
-<tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 8px;color:#e0e6f0">🇩🇪 독일</td><td style="text-align:right;padding:6px 8px">91,896</td><td style="text-align:right;padding:6px 8px;color:#22c55e">+31.6%</td><td style="text-align:right;padding:6px 8px">36.8%</td><td style="text-align:right;padding:6px 8px">34.5%</td></tr>
-<tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 8px;color:#e0e6f0">🇫🇷 프랑스</td><td style="text-align:right;padding:6px 8px">44,962</td><td style="text-align:right;padding:6px 8px;color:#22c55e">+28.0%</td><td style="text-align:right;padding:6px 8px">32.2%</td><td style="text-align:right;padding:6px 8px">32.4%</td></tr>
-<tr style="border-bottom:1px solid #1a2233"><td style="padding:6px 8px;color:#e0e6f0">🇸🇪 스웨덴</td><td style="text-align:right;padding:6px 8px">15,729</td><td style="text-align:right;padding:6px 8px;color:#22c55e">+2.2%</td><td style="text-align:right;padding:6px 8px">62.5%</td><td style="text-align:right;padding:6px 8px">62.9%</td></tr>
-<tr><td style="padding:6px 8px;color:#e0e6f0">🇳🇴 노르웨이</td><td style="text-align:right;padding:6px 8px">11,103</td><td style="text-align:right;padding:6px 8px;color:#ef4444">−1.3%</td><td style="text-align:right;padding:6px 8px">98.9%</td><td style="text-align:right;padding:6px 8px">98.7%</td></tr>
+<tr><td>🇺🇸 미국</td><td style="text-align:right">82,826</td><td style="text-align:right;color:var(--red)">-34.9%</td><td style="text-align:right">6.0%</td><td style="text-align:right">6.7%</td></tr>
+<tr><td>🇨🇳 중국</td><td style="text-align:right">771,000</td><td style="text-align:right;color:var(--red)">-6.3%</td><td style="text-align:right">55.0%</td><td style="text-align:right">43.7%</td></tr>
+<tr><td>🇬🇧 영국</td><td style="text-align:right">59,681</td><td style="text-align:right;color:var(--green)">+54.5%</td><td style="text-align:right">40.0%</td><td style="text-align:right">34.9%</td></tr>
+<tr><td>🇩🇪 독일</td><td style="text-align:right">91,896</td><td style="text-align:right;color:var(--green)">+31.6%</td><td style="text-align:right">36.8%</td><td style="text-align:right">34.5%</td></tr>
+<tr><td>🇫🇷 프랑스</td><td style="text-align:right">44,962</td><td style="text-align:right;color:var(--green)">+28.0%</td><td style="text-align:right">32.2%</td><td style="text-align:right">32.4%</td></tr>
+<tr><td>🇸🇪 스웨덴</td><td style="text-align:right">15,729</td><td style="text-align:right;color:var(--green)">+2.2%</td><td style="text-align:right">62.5%</td><td style="text-align:right">62.9%</td></tr>
+<tr><td>🇳🇴 노르웨이</td><td style="text-align:right">11,103</td><td style="text-align:right;color:var(--red)">-1.3%</td><td style="text-align:right">98.9%</td><td style="text-align:right">98.7%</td></tr>
 </tbody>
 </table>
 </div>
-<div style="font-size:10px;color:#6b7a99;margin-top:8px">출처: SNE Research · WardsAuto(미) · CPCA(중) · Cleantechnica(유럽)</div>
+<div style="font-size:10px;color:var(--ink-3);margin-top:8px">출처: SNE Research · WardsAuto(미) · CPCA(중) · Cleantechnica(유럽)</div>
 </div>
 
-<!-- 🔋 Tesla 유럽 부활 (5월) -->
-<div style="background:#0a0f1a;border:1px solid #2d3a52;border-left:3px solid #e53e3e;border-radius:8px;padding:14px 18px;margin-bottom:20px">
-<div style="font-size:11px;color:#e53e3e;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px">🔋 Tesla 유럽 부활 · 2026년 5월</div>
-<div style="font-size:10px;color:#94a3c0;margin-bottom:10px">턴어라운드 타임라인: <span style="background:rgba(229,62,62,0.18);color:#f87171;padding:1px 5px;border-radius:3px;font-weight:600">2025 −28% → 1Q26 +45% → 4월 +46% → 5월 국가별 폭증</span></div>
-<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">
-<div style="background:#111827;border-radius:8px;padding:9px 12px;min-width:115px;border:1px solid #e53e3e"><div style="font-size:9px;color:#6b7a99;text-transform:uppercase">🇫🇷 프랑스</div><div style="font-family:monospace;font-size:16px;font-weight:700;color:#e0e6f0">5,446</div><div style="font-size:10px;color:#22c55e">+655% · 역대 5월 최고</div></div>
-<div style="background:#111827;border-radius:8px;padding:9px 12px;min-width:105px"><div style="font-size:9px;color:#6b7a99;text-transform:uppercase">🇩🇰 덴마크</div><div style="font-family:monospace;font-size:16px;font-weight:700;color:#e0e6f0">1,750</div><div style="font-size:10px;color:#22c55e">+136% · Model Y 1위</div></div>
-<div style="background:#111827;border-radius:8px;padding:9px 12px;min-width:100px"><div style="font-size:9px;color:#6b7a99;text-transform:uppercase">🇵🇹 포르투갈</div><div style="font-family:monospace;font-size:16px;font-weight:700;color:#e0e6f0">1,463</div><div style="font-size:10px;color:#22c55e">+350%</div></div>
-<div style="background:#111827;border-radius:8px;padding:9px 12px;min-width:100px"><div style="font-size:9px;color:#6b7a99;text-transform:uppercase">🇪🇸 스페인</div><div style="font-family:monospace;font-size:16px;font-weight:700;color:#e0e6f0">1,690</div><div style="font-size:10px;color:#22c55e">+113%</div></div>
-<div style="background:#111827;border-radius:8px;padding:9px 12px;min-width:110px"><div style="font-size:9px;color:#6b7a99;text-transform:uppercase">🇳🇴 노르웨이</div><div style="font-family:monospace;font-size:16px;font-weight:700;color:#e0e6f0">3,345</div><div style="font-size:10px;color:#22c55e">+29% · M/S 21.5%</div></div>
-<div style="background:#111827;border-radius:8px;padding:9px 12px;min-width:95px"><div style="font-size:9px;color:#6b7a99;text-transform:uppercase">🇸🇪 스웨덴</div><div style="font-family:monospace;font-size:16px;font-weight:700;color:#e0e6f0">858</div><div style="font-size:10px;color:#22c55e">+71%</div></div>
+<!-- Tesla 유럽 부활 -->
+<div class="card" style="border-left:4px solid var(--red)">
+<div class="card-title">Tesla 유럽 부활 · 2026년 5월</div>
+<div style="font-size:11px;color:var(--ink-2);margin-bottom:10px">턴어라운드: <span style="background:rgba(239,68,68,0.1);color:var(--red);padding:1px 6px;border-radius:3px;font-weight:600">2025 -28% → 1Q26 +45% → 4월 +46% → 5월 폭증</span></div>
+<div class="num-row">
+<div class="num-box" style="border-color:var(--red)"><div class="num-label">🇫🇷 프랑스</div><div class="num-value">5,446</div><div class="num-sub" style="color:var(--green)">+655% · 역대 최고</div></div>
+<div class="num-box"><div class="num-label">🇩🇰 덴마크</div><div class="num-value">1,750</div><div class="num-sub" style="color:var(--green)">+136%</div></div>
+<div class="num-box"><div class="num-label">🇵🇹 포르투갈</div><div class="num-value">1,463</div><div class="num-sub" style="color:var(--green)">+350%</div></div>
+<div class="num-box"><div class="num-label">🇪🇸 스페인</div><div class="num-value">1,690</div><div class="num-sub" style="color:var(--green)">+113%</div></div>
+<div class="num-box"><div class="num-label">🇳🇴 노르웨이</div><div class="num-value">3,345</div><div class="num-sub" style="color:var(--green)">+29% · M/S 21.5%</div></div>
+<div class="num-box"><div class="num-label">🇸🇪 스웨덴</div><div class="num-value">858</div><div class="num-sub" style="color:var(--green)">+71%</div></div>
 </div>
-<div style="font-size:11px;color:#94a3c0;line-height:1.6">동력: <b style="color:#e0e6f0">리프레시 Model Y 양산</b> · 정부 인센티브 · 고유가 → EV 선호 회복. <span style="background:rgba(229,62,62,0.18);color:#f87171;padding:1px 5px;border-radius:3px;font-weight:600">미국 캐즘 ↔ 유럽 부활</span> 양극화 → 한국 셀 3사 유럽 노출(LGES·삼성SDI) 수혜 연결.</div>
-<div style="font-size:10px;color:#6b7a99;margin-top:8px">출처: ACEA·각국 등록청·EV Volumes (Teslarati 보도) / 해석은 자체추정</div>
+<div style="font-size:11px;color:var(--ink-2);line-height:1.6;margin-top:8px">동력: <b>리프레시 Model Y 양산</b> · 정부 인센티브 · 고유가 → EV 선호 회복. <span style="background:rgba(239,68,68,0.08);color:var(--red);padding:1px 5px;border-radius:3px;font-weight:600">미국 캐즘 ↔ 유럽 부활</span> 양극화 → 한국 셀 3사 유럽 노출 수혜.</div>
+<div style="font-size:10px;color:var(--ink-3);margin-top:8px">출처: ACEA · 각국 등록청 · EV Volumes</div>
 </div>
 
+<!-- Charts: Annual -->
 <div class="chart-section">
 <h2>연간 지역별 EV 판매 추이 (만대)</h2>
 <div class="legend">
-<span><i style="background:#ff6b6b"></i>중국</span>
+<span><i style="background:#ef4444"></i>중국</span>
 <span><i style="background:#556dff"></i>유럽</span>
 <span><i style="background:#4ecdc4"></i>미국</span>
-<span><i style="background:#ffd93d"></i>한국</span>
-<span><i style="background:#6b7a99"></i>기타(ROW)</span>
+<span><i style="background:#d97706"></i>한국</span>
+<span><i style="background:#8B8B82"></i>기타(ROW)</span>
 </div>
 <div class="chart-wrap"><canvas id="c1"></canvas></div>
 </div>
@@ -301,7 +280,7 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 <h2>YoY 성장률 추이 (%)</h2>
 <div class="legend">
 <span><i style="background:#a78bfa"></i>글로벌</span>
-<span><i style="background:#ff6b6b"></i>중국</span>
+<span><i style="background:#ef4444"></i>중국</span>
 <span><i style="background:#4ecdc4"></i>미국</span>
 <span><i style="background:#556dff"></i>유럽</span>
 </div>
@@ -310,7 +289,7 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 <div class="chart-section">
 <h2>지역별 글로벌 점유율 (%)</h2>
 <div class="legend">
-<span><i style="background:#ff6b6b"></i>중국</span>
+<span><i style="background:#ef4444"></i>중국</span>
 <span><i style="background:#556dff"></i>유럽</span>
 <span><i style="background:#4ecdc4"></i>미국</span>
 </div>
@@ -323,8 +302,14 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 <h2>2026.04 미국 OEM별 BEV 판매</h2>
 <div class="chart-wrap sm"><canvas id="c4"></canvas></div>
 </div>
+<div></div>
 </div>
+</section>
 
+<!-- ══════════════════════════════════════════ -->
+<!-- Monthly -->
+<!-- ══════════════════════════════════════════ -->
+<section id="sec-monthly">
 <div class="chart-section">
 <h2>2026 월별 BEV+PHEV 판매 추이 (지역별)</h2>
 <div class="legend">
@@ -332,634 +317,214 @@ h1{font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(1
 <span><i style="background:#a78bfa"></i>PHEV</span>
 </div>
 <div class="grid-2">
-<div>
-<h3 style="font-size:13px;color:#6b7a99;margin-bottom:8px;font-weight:400">🌍 글로벌 (만대)</h3>
-<div class="chart-wrap sm"><canvas id="cG"></canvas></div>
-</div>
-<div>
-<h3 style="font-size:13px;color:#6b7a99;margin-bottom:8px;font-weight:400">🇺🇸 미국 (대)</h3>
-<div class="chart-wrap sm"><canvas id="cU"></canvas></div>
-</div>
-<div>
-<h3 style="font-size:13px;color:#6b7a99;margin-bottom:8px;font-weight:400">🇨🇳 중국 (만대)</h3>
-<div class="chart-wrap sm"><canvas id="cC"></canvas></div>
-</div>
-<div>
-<h3 style="font-size:13px;color:#6b7a99;margin-bottom:8px;font-weight:400">🇪🇺 유럽 (만대)</h3>
-<div class="chart-wrap sm"><canvas id="cE"></canvas></div>
+<div><h3 style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;font-weight:600">GLOBAL (만대)</h3><div class="chart-wrap sm"><canvas id="cG"></canvas></div></div>
+<div><h3 style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;font-weight:600">US (대)</h3><div class="chart-wrap sm"><canvas id="cU"></canvas></div></div>
+<div><h3 style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;font-weight:600">CHINA (만대)</h3><div class="chart-wrap sm"><canvas id="cC"></canvas></div></div>
+<div><h3 style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;font-weight:600">EUROPE (만대)</h3><div class="chart-wrap sm"><canvas id="cE"></canvas></div></div>
 </div>
 </div>
-</div>
+</section>
 
-<!-- ── EU CO2 규제 시나리오 임팩트 (T&E 2026.05) ── -->
+<!-- ══════════════════════════════════════════ -->
+<!-- EU CO2 -->
+<!-- ══════════════════════════════════════════ -->
+<section id="sec-eu-co2">
 <div class="chart-section">
-<h2>🇪🇺 EU CO2 규제 시나리오 임팩트 — T&E "High Stakes" (2026.05)</h2>
-<p class="subtitle" style="margin:-8px 0 16px;">출처: T&E (Transport & Environment) 2026.05 · REF(현행 유지) / COM(집행위 신안) / LOW(산업계 요구) 3종 시나리오 · 한국 셀 3사 유럽 거점 직접 영향</p>
+<h2>EU CO2 규제 시나리오 — T&E "High Stakes" (2026.05)</h2>
+<p style="font-size:11px;color:var(--ink-2);margin:-4px 0 16px">출처: T&E (Transport & Environment) · REF/COM/LOW 3종 시나리오 · 한국 셀 3사 유럽 거점 직접 영향</p>
 
-<!-- 시나리오 요약 카드 3장 -->
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px">
-<div style="background:#0a0f1a;border:1px solid #22c55e;border-radius:10px;padding:16px;text-align:center">
-<div style="font-size:10px;color:#22c55e;letter-spacing:1px;font-weight:600;margin-bottom:6px">REF — 현행 규제 유지</div>
-<div style="font-size:11px;color:#6b7a99;margin-bottom:8px">2030 -55% · 2035 -100%</div>
-<div style="display:flex;justify-content:center;gap:20px">
-<div><div style="font-size:20px;font-weight:700;color:#22c55e">14.6<span style="font-size:10px;color:#6b7a99">M</span></div><div style="font-size:9px;color:#6b7a99">2035 BEV</div></div>
-<div><div style="font-size:20px;font-weight:700;color:#22c55e">1,445<span style="font-size:10px;color:#6b7a99">GWh</span></div><div style="font-size:9px;color:#6b7a99">2030 CAPA</div></div>
-</div>
-<div style="font-size:10px;color:#22c55e;margin-top:8px">K3 가동률 95~100%</div>
-</div>
-<div style="background:#0a0f1a;border:1px solid #ffd93d;border-radius:10px;padding:16px;text-align:center">
-<div style="font-size:10px;color:#ffd93d;letter-spacing:1px;font-weight:600;margin-bottom:6px">COM — 집행위 신안</div>
-<div style="font-size:11px;color:#6b7a99;margin-bottom:8px">3년 평균제 · 2035 -90%</div>
-<div style="display:flex;justify-content:center;gap:20px">
-<div><div style="font-size:20px;font-weight:700;color:#ffd93d">10.1<span style="font-size:10px;color:#6b7a99">M</span></div><div style="font-size:9px;color:#6b7a99">2035 BEV</div></div>
-<div><div style="font-size:20px;font-weight:700;color:#ffd93d">632<span style="font-size:10px;color:#6b7a99">GWh</span></div><div style="font-size:9px;color:#6b7a99">2030 CAPA</div></div>
-</div>
-<div style="font-size:10px;color:#ffd93d;margin-top:8px">K3 가동률 65~75% · Northvolt급 21개 무산</div>
-</div>
-<div style="background:#0a0f1a;border:1px solid #ef4444;border-radius:10px;padding:16px;text-align:center">
-<div style="font-size:10px;color:#ef4444;letter-spacing:1px;font-weight:600;margin-bottom:6px">LOW — 산업계 요구안</div>
-<div style="font-size:11px;color:#6b7a99;margin-bottom:8px">5년 평균제 · 2035 -80%</div>
-<div style="display:flex;justify-content:center;gap:20px">
-<div><div style="font-size:20px;font-weight:700;color:#ef4444">7.3<span style="font-size:10px;color:#6b7a99">M</span></div><div style="font-size:9px;color:#6b7a99">2035 BEV</div></div>
-<div><div style="font-size:20px;font-weight:700;color:#ef4444">421<span style="font-size:10px;color:#6b7a99">GWh</span></div><div style="font-size:9px;color:#6b7a99">2030 CAPA</div></div>
-</div>
-<div style="font-size:10px;color:#ef4444;margin-top:8px">K3 가동률 45~55% · 34개 무산 · 독일 -€283bn</div>
-</div>
+<div class="scenario-grid">
+<div class="scenario-card" style="border-color:var(--green)"><div class="sc-label" style="color:var(--green)">REF — 현행 규제 유지</div><div class="sc-desc">2030 -55% · 2035 -100%</div><div class="sc-nums"><div><div class="sc-big" style="color:var(--green)">14.6<span class="sc-unit">M</span></div><div class="sc-unit">2035 BEV</div></div><div><div class="sc-big" style="color:var(--green)">1,445<span class="sc-unit">GWh</span></div><div class="sc-unit">2030 CAPA</div></div></div><div class="sc-note" style="color:var(--green)">K3 가동률 95~100%</div></div>
+<div class="scenario-card" style="border-color:var(--yellow)"><div class="sc-label" style="color:var(--yellow)">COM — 집행위 신안</div><div class="sc-desc">3년 평균제 · 2035 -90%</div><div class="sc-nums"><div><div class="sc-big" style="color:var(--yellow)">10.1<span class="sc-unit">M</span></div><div class="sc-unit">2035 BEV</div></div><div><div class="sc-big" style="color:var(--yellow)">632<span class="sc-unit">GWh</span></div><div class="sc-unit">2030 CAPA</div></div></div><div class="sc-note" style="color:var(--yellow)">K3 가동률 65~75%</div></div>
+<div class="scenario-card" style="border-color:var(--red)"><div class="sc-label" style="color:var(--red)">LOW — 산업계 요구안</div><div class="sc-desc">5년 평균제 · 2035 -80%</div><div class="sc-nums"><div><div class="sc-big" style="color:var(--red)">7.3<span class="sc-unit">M</span></div><div class="sc-unit">2035 BEV</div></div><div><div class="sc-big" style="color:var(--red)">421<span class="sc-unit">GWh</span></div><div class="sc-unit">2030 CAPA</div></div></div><div class="sc-note" style="color:var(--red)">K3 가동률 45~55%</div></div>
 </div>
 
 <div class="grid-2">
-<!-- ① 시나리오 민감도 매트릭스 (버블 차트) -->
-<div>
-<h3 style="font-size:13px;color:#6b7a99;margin-bottom:4px;font-weight:400">시나리오 민감도 매트릭스</h3>
-<p style="font-size:10px;color:#3a4a6b;margin-bottom:10px">X: REF-LOW 격차(%p) · Y: LOW 절대 손실(€bn) · 크기: 2030 CAPA(GWh)</p>
-<div class="chart-wrap sm"><canvas id="cBubble"></canvas></div>
-</div>
-<!-- ② BEV/CAPA 미스매치 (양방향 막대그래프) -->
-<div>
-<h3 style="font-size:13px;color:#6b7a99;margin-bottom:4px;font-weight:400">BEV 생산 vs 배터리 CAPA (2025)</h3>
-<p style="font-size:10px;color:#3a4a6b;margin-bottom:10px">좌: BEV 생산(M) · 우: 배터리 CAPA(GWh) · 국가별 역할 분화</p>
-<div class="chart-wrap sm"><canvas id="cMismatch"></canvas></div>
-</div>
+<div><h3 style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:4px;font-weight:600">시나리오 민감도 매트릭스</h3><p style="font-size:10px;color:var(--ink-3);margin-bottom:10px">X: REF-LOW 격차(%p) · Y: LOW 절대 손실(€bn) · 크기: 2030 CAPA(GWh)</p><div class="chart-wrap sm"><canvas id="cBubble"></canvas></div></div>
+<div><h3 style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:4px;font-weight:600">BEV 생산 vs 배터리 CAPA (2025)</h3><p style="font-size:10px;color:var(--ink-3);margin-bottom:10px">좌: BEV 생산(M) · 우: 배터리 CAPA(GWh)</p><div class="chart-wrap sm"><canvas id="cMismatch"></canvas></div></div>
 </div>
 
-<!-- ③ EU 의회 표결 타임라인 -->
-<div style="margin-top:20px;padding:16px 20px;background:#0a0f1a;border:1px solid #1e293b;border-radius:10px">
-<h3 style="font-size:13px;color:#6b7a99;margin-bottom:14px;font-weight:500">📅 EU CO2 규제 개정 타임라인</h3>
-<div style="position:relative;padding-left:24px">
-<div style="position:absolute;left:8px;top:0;bottom:0;width:2px;background:#1e293b"></div>
-
-<div style="position:relative;margin-bottom:16px">
-<div style="position:absolute;left:-20px;top:4px;width:10px;height:10px;border-radius:50%;background:#22c55e;border:2px solid #0a0f1a"></div>
-<div style="font-size:11px;color:#22c55e;font-weight:600">2026.05.12 — T&E "High Stakes" 보고서 발간</div>
-<div style="font-size:10px;color:#6b7a99;margin-top:2px">REF/COM/LOW 3종 시나리오 정량화 · EU 배터리 CAPA -56%~-71% 위험 경고</div>
+<!-- EU 타임라인 -->
+<div class="timeline" style="margin-top:20px">
+<div class="tl-item"><div class="tl-dot" style="background:var(--green)"></div><div class="tl-date" style="color:var(--green)">2026.05.12 — T&E "High Stakes" 보고서</div><div class="tl-desc">REF/COM/LOW 3종 시나리오 정량화 · EU 배터리 CAPA -56%~-71% 위험 경고</div></div>
+<div class="tl-item"><div class="tl-dot" style="background:var(--yellow)"></div><div class="tl-date" style="color:var(--yellow)">2026 Q2 — 한국 셀사 어닝콜</div><div class="tl-desc">LGES·SDI·SK on EU 가이던스 변경 여부 확인</div></div>
+<div class="tl-item"><div class="tl-dot" style="background:var(--purple)"></div><div class="tl-date" style="color:var(--purple)">2026 H2 — EU 의회 표결 예상</div><div class="tl-desc">집행위 신안(COM) 채택 여부 · REF↔LOW 사이 정치적 착지점 결정</div></div>
+<div class="tl-item"><div class="tl-dot" style="background:var(--ink-3)"></div><div class="tl-date">TBD — IAA 본문 공개</div><div class="tl-desc">Made in EU 정의 · 중국 셀 활용 배제 여부 → 한국 셀사 수혜/피해 분기점</div></div>
 </div>
 
-<div style="position:relative;margin-bottom:16px">
-<div style="position:absolute;left:-20px;top:4px;width:10px;height:10px;border-radius:50%;background:#ffd93d;border:2px solid #0a0f1a"></div>
-<div style="font-size:11px;color:#ffd93d;font-weight:600">2026 Q2 — 한국 셀사 어닝콜</div>
-<div style="font-size:10px;color:#6b7a99;margin-top:2px">LGES·SDI·SK on EU 가이던스 변경 여부 확인 · 가동률 전망치 핵심</div>
+<!-- 한국 종목 임팩트 -->
+<div class="info-box purple" style="margin-top:16px;line-height:1.8">
+<strong style="color:var(--purple)">한국 종목별 EU 시나리오 영향</strong><br>
+<strong style="color:var(--teal)">LGES</strong> — 폴란드 115GWh 단일 거점 의존, REF 시 최대 수혜<br>
+<strong style="color:var(--teal)">삼성SDI</strong> — 헝가리 거점, VW LFP 시나리오 별도 영향<br>
+<strong style="color:var(--teal)">SK온</strong> — 헝가리 2개 거점 가동률 직격 · COM/LOW 시 가장 취약<br>
+<strong style="color:var(--purple)">엘앤에프·에코프로비엠</strong> — 폴란드 양극재 45% 점유 → 핵심 변수<br>
+→ <a href="battery_scenario.html" style="color:var(--accent);font-weight:500">Battery Scenario 시뮬레이션</a>에서 상세 시나리오별 시뮬레이션 가능
 </div>
+</div>
+</section>
 
-<div style="position:relative;margin-bottom:16px">
-<div style="position:absolute;left:-20px;top:4px;width:10px;height:10px;border-radius:50%;background:#a78bfa;border:2px solid #0a0f1a"></div>
-<div style="font-size:11px;color:#a78bfa;font-weight:600">2026 H2 — EU 의회 표결 예상 <span style="font-size:9px;color:#ef4444">[미확인]</span></div>
-<div style="font-size:10px;color:#6b7a99;margin-top:2px">집행위 신안(COM) 채택 여부 · REF↔LOW 사이 정치적 착지점 결정</div>
-</div>
-
-<div style="position:relative;margin-bottom:16px">
-<div style="position:absolute;left:-20px;top:4px;width:10px;height:10px;border-radius:50%;background:#6b7a99;border:2px solid #0a0f1a"></div>
-<div style="font-size:11px;color:#6b7a99;font-weight:600">TBD — IAA 본문 공개 <span style="font-size:9px;color:#ef4444">[미확인]</span></div>
-<div style="font-size:10px;color:#6b7a99;margin-top:2px">Made in EU 정의 · 중국 셀 활용 배제 여부 확인 → 한국 셀사 수혜/피해 분기점</div>
-</div>
-</div>
-</div>
-
-<!-- 한국 종목 임팩트 요약 -->
-<div style="margin-top:16px;padding:14px 18px;background:#0a0f1a;border-left:3px solid #a78bfa;border-radius:4px;font-size:11.5px;color:#94a3c0;line-height:1.8">
-<strong style="color:#a78bfa">🇰🇷 한국 종목별 EU 시나리오 영향 [개인 의견]</strong><br>
-<strong style="color:#4ecdc4">LGES</strong> — 폴란드 115GWh 단일 거점 의존, REF 시 최대 수혜 · EU 총 CAPA의 ~38%<br>
-<strong style="color:#4ecdc4">삼성SDI</strong> — 헝가리 거점, T&E 보고서 직접 언급 없음 [미확인] · VW LFP 시나리오 별도 영향<br>
-<strong style="color:#4ecdc4">SK온</strong> — 헝가리 2개 거점 가동률 직격 · COM/LOW 시 가장 취약<br>
-<strong style="color:#a78bfa">엘앤에프·에코프로비엠</strong> — 폴란드 양극재 45% 점유 → EU 시나리오 핵심 변수<br>
-<strong style="color:#a78bfa">솔브레인HD</strong> — SDI 헝가리 의존도 ↑, COM/LOW 시 TAM 하방 -15%~-35% [추정]<br>
-→ <a href="battery_scenario.html" style="color:#556dff;text-decoration:none">Battery Scenario 시뮬레이션</a>에서 EU_REF / EU_COM / EU_LOW 시나리오별 상세 시뮬레이션 가능
-</div>
-</div>
-
+<!-- ══════════════════════════════════════════ -->
+<!-- Battery Shipment -->
+<!-- ══════════════════════════════════════════ -->
+<section id="sec-battery">
 <div class="chart-section">
-<h2>🔋 글로벌 배터리 출하량 트래커 (2026.04)</h2>
-<p class="subtitle" style="margin:-8px 0 16px;">글로벌 105.7GWh (+24% YoY) · 누적 352.7GWh (+14%) · 한국 3사 합산 점유율 11.9% · <span style="color:#ffd93d">EV 배터리 (전기차용 traction battery, ESS 별도)</span> · 출하 = 그 지역에서 판매된 EV에 탑재된 배터리 (수요지 기준)</p>
+<h2>���로벌 배터리 출하량 트래커 (2026.04)</h2>
+<p style="font-size:11px;color:var(--ink-2);margin:-4px 0 14px">글로벌 105.7GWh (+24% YoY) · 누적 352.7GWh (+14%) · 한국 3사 합산 점유율 11.9% · <span style="color:var(--yellow)">EV 배터리 (ESS 별도)</span></p>
 
-<div class="grid-3" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:20px">
-<div style="background:#0a0f1a;border:1px solid #1e293b;border-radius:8px;padding:14px;text-align:center">
-<div style="font-size:11px;color:#6b7a99;letter-spacing:.5px">CATL</div>
-<div style="font-size:22px;font-weight:600;color:#4ecdc4;margin:4px 0">42.7<span style="font-size:11px;color:#6b7a99;font-weight:400"> GWh</span></div>
-<div style="font-size:11px;color:#22c55e">▲ +17% YoY · MS 39.1%</div>
-</div>
-<div style="background:#0a0f1a;border:1px solid #1e293b;border-radius:8px;padding:14px;text-align:center">
-<div style="font-size:11px;color:#6b7a99;letter-spacing:.5px">BYD</div>
-<div style="font-size:22px;font-weight:600;color:#e0e6f0;margin:4px 0">15.2<span style="font-size:11px;color:#6b7a99;font-weight:400"> GWh</span></div>
-<div style="font-size:11px;color:#ef4444">▼ -3% YoY · MS 13.9%</div>
-</div>
-<div style="background:#0a0f1a;border:1px solid #1e293b;border-radius:8px;padding:14px;text-align:center">
-<div style="font-size:11px;color:#6b7a99;letter-spacing:.5px">LGES 🇰🇷</div>
-<div style="font-size:22px;font-weight:600;color:#a78bfa;margin:4px 0">11.8<span style="font-size:11px;color:#6b7a99;font-weight:400"> GWh</span></div>
-<div style="font-size:11px;color:#22c55e">▲ +16% YoY · MS 10.8%</div>
-</div>
-<div style="background:#0a0f1a;border:1px solid #1e293b;border-radius:8px;padding:14px;text-align:center">
-<div style="font-size:11px;color:#6b7a99;letter-spacing:.5px">CALB</div>
-<div style="font-size:22px;font-weight:600;color:#e0e6f0;margin:4px 0">5.3<span style="font-size:11px;color:#6b7a99;font-weight:400"> GWh</span></div>
-<div style="font-size:11px;color:#22c55e">▲ +43% YoY · MS 4.9%</div>
-</div>
-<div style="background:#0a0f1a;border:1px solid #1e293b;border-radius:8px;padding:14px;text-align:center">
-<div style="font-size:11px;color:#6b7a99;letter-spacing:.5px">SK on 🇰🇷</div>
-<div style="font-size:22px;font-weight:600;color:#a78bfa;margin:4px 0">3.9<span style="font-size:11px;color:#6b7a99;font-weight:400"> GWh</span></div>
-<div style="font-size:11px;color:#ef4444">▼ -6% YoY · MS 3.6%</div>
-</div>
-<div style="background:#0a0f1a;border:1px solid #1e293b;border-radius:8px;padding:14px;text-align:center">
-<div style="font-size:11px;color:#6b7a99;letter-spacing:.5px">Panasonic</div>
-<div style="font-size:22px;font-weight:600;color:#e0e6f0;margin:4px 0">3.3<span style="font-size:11px;color:#6b7a99;font-weight:400"> GWh</span></div>
-<div style="font-size:11px;color:#ef4444">▼ -5% YoY · MS 3.0%</div>
-</div>
-<div style="background:#0a0f1a;border:1px solid #1e293b;border-radius:8px;padding:14px;text-align:center">
-<div style="font-size:11px;color:#6b7a99;letter-spacing:.5px">삼성SDI 🇰🇷</div>
-<div style="font-size:22px;font-weight:600;color:#a78bfa;margin:4px 0">2.2<span style="font-size:11px;color:#6b7a99;font-weight:400"> GWh</span></div>
-<div style="font-size:11px;color:#ef4444">▼ -28% YoY · MS 2.0%</div>
-</div>
+<div class="batt-grid">
+<div class="batt-card"><div class="bc-name">CATL</div><div class="bc-value">42.7 <span class="bc-unit">GWh</span></div><div class="bc-delta" style="color:var(--green)">▲ +17% · MS 39.1%</div></div>
+<div class="batt-card"><div class="bc-name">BYD</div><div class="bc-value">15.2 <span class="bc-unit">GWh</span></div><div class="bc-delta" style="color:var(--red)">▼ -3% · MS 13.9%</div></div>
+<div class="batt-card kr"><div class="bc-name">LGES 🇰🇷</div><div class="bc-value">11.8 <span class="bc-unit">GWh</span></div><div class="bc-delta" style="color:var(--green)">▲ +16% · MS 10.8%</div></div>
+<div class="batt-card"><div class="bc-name">CALB</div><div class="bc-value">5.3 <span class="bc-unit">GWh</span></div><div class="bc-delta" style="color:var(--green)">▲ +43% · MS 4.9%</div></div>
+<div class="batt-card kr"><div class="bc-name">SK on 🇰🇷</div><div class="bc-value">3.9 <span class="bc-unit">GWh</span></div><div class="bc-delta" style="color:var(--red)">▼ -6% · MS 3.6%</div></div>
+<div class="batt-card"><div class="bc-name">Panasonic</div><div class="bc-value">3.3 <span class="bc-unit">GWh</span></div><div class="bc-delta" style="color:var(--red)">▼ -5% · MS 3.0%</div></div>
+<div class="batt-card kr"><div class="bc-name">삼성SDI 🇰🇷</div><div class="bc-value">2.2 <span class="bc-unit">GWh</span></div><div class="bc-delta" style="color:var(--red)">▼ -28% · MS 2.0%</div></div>
 </div>
 
 <div class="grid-2">
-<div>
-<h3 style="font-size:13px;color:#6b7a99;margin-bottom:8px;font-weight:400">셀사별 3월 출하량 (GWh)</h3>
-<div class="chart-wrap sm"><canvas id="bShip"></canvas></div>
-</div>
-<div>
-<h3 style="font-size:13px;color:#6b7a99;margin-bottom:8px;font-weight:400">1Q26 누적 출하량 YoY (%)</h3>
-<div class="chart-wrap sm"><canvas id="bYoY"></canvas></div>
-</div>
+<div><h3 style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;font-weight:600">셀사별 4월 출하량 (GWh)</h3><div class="chart-wrap sm"><canvas id="bShip"></canvas></div></div>
+<div><h3 style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;font-weight:600">1Q26 누적 YoY (%)</h3><div class="chart-wrap sm"><canvas id="bYoY"></canvas></div></div>
 </div>
 
-<div class="grid-2" style="margin-top:20px">
-<div>
-<h3 style="font-size:13px;color:#6b7a99;margin-bottom:8px;font-weight:400">🇺🇸 미국 3월 EV 배터리 출하 점유율 (%) · 8.0GWh (-29% YoY)</h3>
-<div class="chart-wrap sm"><canvas id="bUS"></canvas></div>
-</div>
-<div>
-<h3 style="font-size:13px;color:#6b7a99;margin-bottom:8px;font-weight:400">🇪🇺 유럽 3월 EV 배터리 출하 점유율 (%) · 29.3GWh (+33% YoY)</h3>
-<div class="chart-wrap sm"><canvas id="bEU"></canvas></div>
-</div>
+<div class="grid-2" style="margin-top:16px">
+<div><h3 style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;font-weight:600">US 3월 EV 배터리 점유율 · 8.0GWh (-29%)</h3><div class="chart-wrap sm"><canvas id="bUS"></canvas></div></div>
+<div><h3 style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;font-weight:600">EU 3월 EV 배터리 점유율 · 29.3GWh (+33%)</h3><div class="chart-wrap sm"><canvas id="bEU"></canvas></div></div>
 </div>
 
-<div style="margin-top:20px;padding:14px 16px;background:#0a0f1a;border-left:3px solid #4ecdc4;border-radius:4px;font-size:12px;color:#94a3c0;line-height:1.7">
-<strong style="color:#4ecdc4">한국 3사 정리</strong> ·
-<span style="color:#a78bfa">LGES</span>: 글로벌 3위 견조(+16%), 유럽 21% 2위 ·
-<span style="color:#a78bfa">SK on</span>: 미국 11% 3위 유지, 닛산 캔턴향 SDI 전환 영향 ·
-<span style="color:#a78bfa">삼성SDI</span>: -28% 부진, 누적 -27% · 미국 7% 5위 · ESS·전고체 전환 본격화 시점
+<div class="info-box" style="margin-top:16px;line-height:1.8">
+<strong>한국 3사 정리</strong> ·
+<span style="color:var(--purple)">LGES</span>: 글로벌 3위 견조(+16%), 유럽 21% 2위 ·
+<span style="color:var(--purple)">SK on</span>: 미국 11% 3위, 닛산 캔턴 SDI 전환 영향 ·
+<span style="color:var(--purple)">삼성SDI</span>: -28% 부진, ESS·전고체 전환 본격화 시점
 </div>
+</div>
+</section>
 
-<div style="margin-top:10px;padding:12px 16px;background:#0a0f1a;border-left:3px solid #6b7a99;border-radius:4px;font-size:11px;color:#6b7a99;line-height:1.7">
-<strong style="color:#94a3c0">셀사별 미국向 공장 위치</strong> (참고) ·
-<strong>Panasonic</strong> 네바다 Reno (Tesla Giga) + 캔자스 De Soto(2025~) ·
-<strong>LGES</strong> 미시간 Holland·Lansing(GM Ultium) + 오하이오·테네시(GM) + 애리조나(46시리즈, 2026~) ·
-<strong>SK on</strong> 조지아 Commerce + 켄터키·테네시(Ford BlueOval) + 오하이오(2026~) ·
-<strong>CATL</strong> 미국 직접공장 X (중국 직수출 + 멕시코 우회 검토) ·
-<strong>SDI</strong> 인디애나 코코모(Stellantis StarPlus) + 미시간 캔턴(닛산향, 2028~)
-</div>
-
-<div style="margin-top:10px;padding:14px 18px;background:#0a0f1a;border-left:3px solid #ffd93d;border-radius:4px;font-size:11.5px;color:#94a3c0;line-height:1.8">
-<strong style="color:#ffd93d">📖 트래커 어떻게 봐야 하는가 — 4가지 관전 포인트</strong><br>
-<br>
-<strong style="color:#e0e6f0">① 글로벌 점유율 = 셀사 종합 경쟁력</strong><br>
-CATL 39.1% 부동 1위(+17%) · BYD 13.9%(-3%) · LGES 10.8%(+16%) · 한국 3사 합산 16.4%<br>
-한국 양극화: LGES +16% 견조 / SK on -6% 보합 / SDI -28% 부진<br>
-<br>
-<strong style="color:#e0e6f0">② 지역별 점유율 = 시장 진입 성공도</strong><br>
-미국 8.0GWh(-29%): Panasonic 40%(Tesla 독점) · LGES 22% · SK on 11% · CATL 9% · SDI 7% — 한국 3사 합산 <span style="color:#4ecdc4">미국 40%</span> · IRA·AMPC 직접 수혜 노출 최대<br>
-유럽 29.3GWh(+33%): CATL 43%(헝가리 공장) · LGES 21% · BYD 7% · SK on 7% · SDI 5% — 유럽 LFP 침투 + Rho Motion 회복<br>
-미국 -29% vs 유럽 +33%: Tesla·미국 EV 캐즘 vs 유럽 회복 양극화<br>
-<br>
-<strong style="color:#e0e6f0">③ 1Q26 누적 YoY = 추세선</strong><br>
-글로벌 244.6GWh +9% · CATL +15%, BYD -8%, LGES +7%, CALB +31%, Panasonic +4%, SK on -10%, SDI -27%<br>
-한국 3사 안에서도 고객사 다변화·신폼팩터 진입 차이가 격차로 직결되기 시작<br>
-<br>
-<strong style="color:#e0e6f0">④ 투자 함의 (한국 종목별)</strong><br>
-• <strong style="color:#a78bfa">LGES</strong>: 글로벌 3위·유럽 21%·미국 22% 견조 → ESS 매출비중 32%→38% 확대와 결합 시 <strong>Re-rating 트리거</strong><br>
-• <strong style="color:#a78bfa">SK on</strong>: 미국 11% 점유율이 핵심 → Ford BlueOval 가동률 + 닛산 캔턴 SDI 전환 영향 모니터링<br>
-• <strong style="color:#a78bfa">삼성SDI</strong>: -28% 부진은 단기 EV 출하 감소이지 <strong>ESS·전고체 전환 본격화 시점이라 매수 시점 검토 영역</strong><br>
-• <strong>CATL</strong>: 39% 부동 점유율 → 유럽 +33% 시장 회복기 직접 수혜<br>
-• <strong>BYD</strong>: -8% 감소 → 중국 LFP 가격 경쟁 + 해외 진출 둔화<br>
-<br>
-<strong style="color:#e0e6f0">⑤ 한국 양극재·소재 종목 연결</strong><br>
-LGES 출하량 추이 = <span style="color:#a78bfa">엘앤에프</span>(NCMA Ni95% 4680) · <span style="color:#a78bfa">에코프로비엠</span> · <span style="color:#a78bfa">대주전자재료</span>(실리콘) 직접 영향<br>
-SK on 출하량 추이 = <span style="color:#a78bfa">에코프로비엠</span> · <span style="color:#a78bfa">포스코퓨처엠</span> 영향 · 켄터키·테네시 BlueOval 가동률 핵심<br>
-SDI 출하량 추이 = <span style="color:#a78bfa">에코프로비엠</span> · <span style="color:#a78bfa">포스코퓨처엠</span> · <span style="color:#a78bfa">솔브레인홀딩스</span>(전해질) 영향
-</div>
-</div>
-
-<!-- ── 미국 BEV 모델별 판매량 추이 ── -->
+<!-- ══════════════════════════════════════════ -->
+<!-- US Model Breakdown -->
+<!-- ══════════════════════════════════════════ -->
+<section id="sec-us-model">
 <div class="chart-section">
-<h2>🇺🇸 미국 BEV 모델별 판매량 추이</h2>
-<p class="subtitle" style="margin:-8px 0 16px;">출처: WardsAuto · Tesla 4월 23,400대 (M/S 36.3%, YoY -42%) · GM 10,800대 · 현대기아 7,190대 (YoY +8%) · Ford 3,655대</p>
-<div class="grid-2" style="margin-bottom:20px">
-<div>
-<h3 style="font-size:13px;color:#6b7a99;margin-bottom:12px;font-weight:400">OEM별 4월 BEV 판매 (대)</h3>
-<div class="chart-wrap sm"><canvas id="cOEM"></canvas></div>
-</div>
-<div>
-<h3 style="font-size:13px;color:#6b7a99;margin-bottom:12px;font-weight:400">Tesla 모델별 4월 판매 (대)</h3>
-<div class="chart-wrap sm"><canvas id="cTSLA"></canvas></div>
-</div>
+<h2>미국 BEV 모델별 판매량 추이</h2>
+<p style="font-size:11px;color:var(--ink-2);margin:-4px 0 14px">출처: WardsAuto · Tesla 4월 23,400대 (M/S 36.3%, YoY -42%) · GM 10,800대 · 현대기아 7,190대 (+8%) · Ford 3,655대</p>
+<div class="grid-2" style="margin-bottom:16px">
+<div><h3 style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:10px;font-weight:600">OEM별 월간 BEV (대)</h3><div class="chart-wrap sm"><canvas id="cOEM"></canvas></div></div>
+<div><h3 style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:10px;font-weight:600">Tesla 모델별 4월 (대)</h3><div class="chart-wrap sm"><canvas id="cTSLA"></canvas></div></div>
 </div>
 <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:12px">
-<table style="width:100%;border-collapse:collapse;font-size:10.5px;min-width:1100px">
+<table class="data-table" style="min-width:1100px;font-size:10.5px">
 <thead>
-<tr style="background:#0d1424;color:#6b7a99;font-weight:500;font-size:10px">
-<th style="border:1px solid #1e293b;padding:6px;text-align:left;position:sticky;left:0;background:#0d1424;z-index:2;min-width:120px">OEM / Model</th>
-<th style="border:1px solid #1e293b;padding:6px">25.5</th><th style="border:1px solid #1e293b;padding:6px">25.6</th><th style="border:1px solid #1e293b;padding:6px">25.7</th><th style="border:1px solid #1e293b;padding:6px">25.8</th><th style="border:1px solid #1e293b;padding:6px">25.9</th><th style="border:1px solid #1e293b;padding:6px">25.10</th><th style="border:1px solid #1e293b;padding:6px">25.11</th><th style="border:1px solid #1e293b;padding:6px">25.12</th>
-<th style="border:1px solid #1e293b;padding:6px;background:rgba(167,139,250,0.08);color:#a78bfa">26.1</th><th style="border:1px solid #1e293b;padding:6px;background:rgba(167,139,250,0.08);color:#a78bfa">26.2</th><th style="border:1px solid #1e293b;padding:6px;background:rgba(167,139,250,0.08);color:#a78bfa">26.3</th><th style="border:1px solid #1e293b;padding:6px;background:rgba(167,139,250,0.12);color:#a78bfa;font-weight:600">26.4</th>
+<tr>
+<th style="text-align:left;position:sticky;left:0;background:var(--bg-card);z-index:2;min-width:120px">OEM / Model</th>
+<th>25.5</th><th>25.6</th><th>25.7</th><th>25.8</th><th>25.9</th><th>25.10</th><th>25.11</th><th>25.12</th>
+<th style="background:rgba(167,139,250,0.06);color:var(--purple)">26.1</th><th style="background:rgba(167,139,250,0.06);color:var(--purple)">26.2</th><th style="background:rgba(167,139,250,0.06);color:var(--purple)">26.3</th><th style="background:rgba(167,139,250,0.1);color:var(--purple);font-weight:700">26.4</th>
 </tr></thead>
-<tbody style="color:#e0e6f0">
-<tr style="background:#111827;font-weight:600"><td style="border:1px solid #1e293b;padding:5px;position:sticky;left:0;background:#111827;z-index:1">US BEV Total</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">102,170</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">92,514</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">116,995</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">145,249</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">140,579</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">69,733</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">65,280</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">75,134</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">71,287</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">73,896</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">76,058</td><td style="border:1px solid #1e293b;padding:5px;text-align:right;color:#a78bfa;font-weight:700">64,157</td></tr>
-<tr style="font-size:9px;color:#6b7a99"><td style="border:1px solid #1e293b;padding:3px 5px;position:sticky;left:0;background:#0a0f1a;z-index:1">　YoY</td><td style="border:1px solid #1e293b;padding:3px;text-align:right;color:#ef4444">-4.9%</td><td style="border:1px solid #1e293b;padding:3px;text-align:right;color:#ef4444">-4.6%</td><td style="border:1px solid #1e293b;padding:3px;text-align:right;color:#22c55e">+3.2%</td><td style="border:1px solid #1e293b;padding:3px;text-align:right;color:#22c55e">+22.1%</td><td style="border:1px solid #1e293b;padding:3px;text-align:right;color:#22c55e">+33.9%</td><td style="border:1px solid #1e293b;padding:3px;text-align:right;color:#ef4444">-29.1%</td><td style="border:1px solid #1e293b;padding:3px;text-align:right;color:#ef4444">-39.3%</td><td style="border:1px solid #1e293b;padding:3px;text-align:right;color:#ef4444">-43.6%</td><td style="border:1px solid #1e293b;padding:3px;text-align:right;color:#ef4444">-24.2%</td><td style="border:1px solid #1e293b;padding:3px;text-align:right;color:#ef4444">-15.3%</td><td style="border:1px solid #1e293b;padding:3px;text-align:right;color:#ef4444">-37.0%</td><td style="border:1px solid #1e293b;padding:3px;text-align:right;color:#ef4444">-33.0%</td></tr>
-<tr style="background:#0d1424;font-weight:600;color:#ff6b6b"><td style="border:1px solid #1e293b;padding:5px;position:sticky;left:0;background:#0d1424;z-index:1">Tesla</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">42,000</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">40,000</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">40,000</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">50,000</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">54,600</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">40,000</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">42,100</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">39,900</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">43,800</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">36,500</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">35,000</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">23,400</td></tr>
-<tr><td style="border:1px solid #1e293b;padding:4px 5px;position:sticky;left:0;background:#0a0f1a;z-index:1;color:#94a3c0">　Model Y</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">23,719</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">21,851</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">22,400</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">28,100</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">33,000</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">21,300</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">23,000</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">25,800</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">25,100</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">21,200</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">19,500</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">19,000</td></tr>
-<tr><td style="border:1px solid #1e293b;padding:4px 5px;position:sticky;left:0;background:#0a0f1a;z-index:1;color:#94a3c0">　Model 3</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">12,502</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">14,731</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">14,100</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">17,000</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">22,900</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">15,900</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">16,400</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">18,100</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">14,800</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">12,000</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">10,100</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">-</td></tr>
-<tr><td style="border:1px solid #1e293b;padding:4px 5px;position:sticky;left:0;background:#0a0f1a;z-index:1;color:#94a3c0">　Cybertruck</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">4,172</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,781</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">2,000</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">3,200</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">2,000</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,700</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,800</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,800</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">2,200</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">2,000</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,500</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,200</td></tr>
-<tr><td style="border:1px solid #1e293b;padding:4px 5px;position:sticky;left:0;background:#0a0f1a;z-index:1;color:#94a3c0">　Model S/X</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,652</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,637</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,500</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,700</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">2,100</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,100</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">900</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,300</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,700</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,300</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">3,900</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">3,200</td></tr>
-<tr style="background:#0d1424;font-weight:600;color:#556dff"><td style="border:1px solid #1e293b;padding:5px;position:sticky;left:0;background:#0d1424;z-index:1">GM</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">15,800</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">14,566</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">19,237</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">21,958</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">25,306</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">10,707</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">5,708</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">8,804</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">5,438</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">8,792</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">11,621</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">10,800</td></tr>
-<tr><td style="border:1px solid #1e293b;padding:4px 5px;position:sticky;left:0;background:#0a0f1a;z-index:1;color:#94a3c0">　Equinox EV</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">5,736</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">5,945</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">8,537</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">8,573</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">7,675</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">2,477</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,010</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,624</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,330</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">3,677</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">4,582</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">3,704</td></tr>
-<tr><td style="border:1px solid #1e293b;padding:4px 5px;position:sticky;left:0;background:#0a0f1a;z-index:1;color:#94a3c0">　Bolt EUV (신형)</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">43</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">29</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">-</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">-</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">-</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">-</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">-</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">-</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">5</td><td style="border:1px solid #1e293b;padding:4px;text-align:right;color:#22c55e">195</td><td style="border:1px solid #1e293b;padding:4px;text-align:right;color:#22c55e">591</td><td style="border:1px solid #1e293b;padding:4px;text-align:right;color:#22c55e">746</td></tr>
-<tr><td style="border:1px solid #1e293b;padding:4px 5px;position:sticky;left:0;background:#0a0f1a;z-index:1;color:#94a3c0">　Lyriq</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,769</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,588</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,709</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">2,486</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">3,114</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">2,083</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">935</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,327</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">874</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,126</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,370</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,440</td></tr>
-<tr style="background:#0d1424;font-weight:600;color:#4ecdc4"><td style="border:1px solid #1e293b;padding:5px;position:sticky;left:0;background:#0d1424;z-index:1">현대기아</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">7,394</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">7,191</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">12,117</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">16,102</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">17,269</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">3,834</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">4,618</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">5,224</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">4,471</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">5,834</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">8,039</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">7,190</td></tr>
-<tr><td style="border:1px solid #1e293b;padding:4px 5px;position:sticky;left:0;background:#0a0f1a;z-index:1;color:#94a3c0">　IONIQ 5</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">3,898</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">3,172</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">5,818</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">7,773</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">8,408</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,642</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">2,027</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">2,279</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">2,126</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">3,239</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">4,425</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">3,603</td></tr>
-<tr><td style="border:1px solid #1e293b;padding:4px 5px;position:sticky;left:0;background:#0a0f1a;z-index:1;color:#94a3c0">　IONIQ 9</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">302</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">711</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,073</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,016</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,075</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">317</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">315</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">380</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">580</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">505</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">905</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">866</td></tr>
-<tr><td style="border:1px solid #1e293b;padding:4px 5px;position:sticky;left:0;background:#0a0f1a;z-index:1;color:#94a3c0">　EV9</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">37</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">913</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,737</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">2,679</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">3,094</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">666</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">918</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,019</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">674</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">819</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,247</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,349</td></tr>
-<tr style="background:#0d1424;font-weight:600;color:#ffd93d"><td style="border:1px solid #1e293b;padding:5px;position:sticky;left:0;background:#0d1424;z-index:1">Ford</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">6,723</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">4,856</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">8,229</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">10,671</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">11,712</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">4,709</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">4,247</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">5,557</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">1,743</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">2,122</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">2,995</td><td style="border:1px solid #1e293b;padding:5px;text-align:right">3,655</td></tr>
-<tr><td style="border:1px solid #1e293b;padding:4px 5px;position:sticky;left:0;background:#0a0f1a;z-index:1;color:#94a3c0">　Mustang Mach-E</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">4,724</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">2,527</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">5,308</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">7,226</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">7,643</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">2,906</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">3,014</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">3,738</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,040</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,502</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">2,058</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">2,670</td></tr>
-<tr><td style="border:1px solid #1e293b;padding:4px 5px;position:sticky;left:0;background:#0a0f1a;z-index:1;color:#94a3c0">　F-150 Lightning</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,902</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">2,200</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">2,831</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">3,217</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">3,957</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,543</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,006</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">1,724</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">647</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">522</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">891</td><td style="border:1px solid #1e293b;padding:4px;text-align:right">884</td></tr>
+<tbody>
+<tr style="font-weight:600"><td style="position:sticky;left:0;background:var(--bg-card);z-index:1">US BEV Total</td><td style="text-align:right">102,170</td><td style="text-align:right">92,514</td><td style="text-align:right">116,995</td><td style="text-align:right">145,249</td><td style="text-align:right">140,579</td><td style="text-align:right">69,733</td><td style="text-align:right">65,280</td><td style="text-align:right">75,134</td><td style="text-align:right">71,287</td><td style="text-align:right">73,896</td><td style="text-align:right">76,058</td><td style="text-align:right;color:var(--purple);font-weight:700">64,157</td></tr>
+<tr style="font-size:9px;color:var(--ink-3)"><td style="position:sticky;left:0;background:var(--bg-card);z-index:1">　YoY</td><td style="text-align:right;color:var(--red)">-4.9%</td><td style="text-align:right;color:var(--red)">-4.6%</td><td style="text-align:right;color:var(--green)">+3.2%</td><td style="text-align:right;color:var(--green)">+22.1%</td><td style="text-align:right;color:var(--green)">+33.9%</td><td style="text-align:right;color:var(--red)">-29.1%</td><td style="text-align:right;color:var(--red)">-39.3%</td><td style="text-align:right;color:var(--red)">-43.6%</td><td style="text-align:right;color:var(--red)">-24.2%</td><td style="text-align:right;color:var(--red)">-15.3%</td><td style="text-align:right;color:var(--red)">-37.0%</td><td style="text-align:right;color:var(--red)">-33.0%</td></tr>
+<tr style="font-weight:600;color:var(--red)"><td style="position:sticky;left:0;background:var(--bg-soft);z-index:1">Tesla</td><td style="text-align:right">42,000</td><td style="text-align:right">40,000</td><td style="text-align:right">40,000</td><td style="text-align:right">50,000</td><td style="text-align:right">54,600</td><td style="text-align:right">40,000</td><td style="text-align:right">42,100</td><td style="text-align:right">39,900</td><td style="text-align:right">43,800</td><td style="text-align:right">36,500</td><td style="text-align:right">35,000</td><td style="text-align:right">23,400</td></tr>
+<tr><td style="position:sticky;left:0;background:var(--bg-card);z-index:1;color:var(--ink-2)">　Model Y</td><td style="text-align:right">23,719</td><td style="text-align:right">21,851</td><td style="text-align:right">22,400</td><td style="text-align:right">28,100</td><td style="text-align:right">33,000</td><td style="text-align:right">21,300</td><td style="text-align:right">23,000</td><td style="text-align:right">25,800</td><td style="text-align:right">25,100</td><td style="text-align:right">21,200</td><td style="text-align:right">19,500</td><td style="text-align:right">19,000</td></tr>
+<tr><td style="position:sticky;left:0;background:var(--bg-card);z-index:1;color:var(--ink-2)">　Cybertruck</td><td style="text-align:right">4,172</td><td style="text-align:right">1,781</td><td style="text-align:right">2,000</td><td style="text-align:right">3,200</td><td style="text-align:right">2,000</td><td style="text-align:right">1,700</td><td style="text-align:right">1,800</td><td style="text-align:right">1,800</td><td style="text-align:right">2,200</td><td style="text-align:right">2,000</td><td style="text-align:right">1,500</td><td style="text-align:right">1,200</td></tr>
+<tr style="font-weight:600;color:var(--accent)"><td style="position:sticky;left:0;background:var(--bg-soft);z-index:1">GM</td><td style="text-align:right">15,800</td><td style="text-align:right">14,566</td><td style="text-align:right">19,237</td><td style="text-align:right">21,958</td><td style="text-align:right">25,306</td><td style="text-align:right">10,707</td><td style="text-align:right">5,708</td><td style="text-align:right">8,804</td><td style="text-align:right">5,438</td><td style="text-align:right">8,792</td><td style="text-align:right">11,621</td><td style="text-align:right">10,800</td></tr>
+<tr><td style="position:sticky;left:0;background:var(--bg-card);z-index:1;color:var(--ink-2)">　Equinox EV</td><td style="text-align:right">5,736</td><td style="text-align:right">5,945</td><td style="text-align:right">8,537</td><td style="text-align:right">8,573</td><td style="text-align:right">7,675</td><td style="text-align:right">2,477</td><td style="text-align:right">1,010</td><td style="text-align:right">1,624</td><td style="text-align:right">1,330</td><td style="text-align:right">3,677</td><td style="text-align:right">4,582</td><td style="text-align:right">3,704</td></tr>
+<tr style="font-weight:600;color:var(--teal)"><td style="position:sticky;left:0;background:var(--bg-soft);z-index:1">현대기아</td><td style="text-align:right">7,394</td><td style="text-align:right">7,191</td><td style="text-align:right">12,117</td><td style="text-align:right">16,102</td><td style="text-align:right">17,269</td><td style="text-align:right">3,834</td><td style="text-align:right">4,618</td><td style="text-align:right">5,224</td><td style="text-align:right">4,471</td><td style="text-align:right">5,834</td><td style="text-align:right">8,039</td><td style="text-align:right">7,190</td></tr>
+<tr><td style="position:sticky;left:0;background:var(--bg-card);z-index:1;color:var(--ink-2)">　IONIQ 5</td><td style="text-align:right">3,898</td><td style="text-align:right">3,172</td><td style="text-align:right">5,818</td><td style="text-align:right">7,773</td><td style="text-align:right">8,408</td><td style="text-align:right">1,642</td><td style="text-align:right">2,027</td><td style="text-align:right">2,279</td><td style="text-align:right">2,126</td><td style="text-align:right">3,239</td><td style="text-align:right">4,425</td><td style="text-align:right">3,603</td></tr>
+<tr><td style="position:sticky;left:0;background:var(--bg-card);z-index:1;color:var(--ink-2)">　IONIQ 9</td><td style="text-align:right">302</td><td style="text-align:right">711</td><td style="text-align:right">1,073</td><td style="text-align:right">1,016</td><td style="text-align:right">1,075</td><td style="text-align:right">317</td><td style="text-align:right">315</td><td style="text-align:right">380</td><td style="text-align:right">580</td><td style="text-align:right">505</td><td style="text-align:right">905</td><td style="text-align:right">866</td></tr>
+<tr><td style="position:sticky;left:0;background:var(--bg-card);z-index:1;color:var(--ink-2)">　EV9</td><td style="text-align:right">37</td><td style="text-align:right">913</td><td style="text-align:right">1,737</td><td style="text-align:right">2,679</td><td style="text-align:right">3,094</td><td style="text-align:right">666</td><td style="text-align:right">918</td><td style="text-align:right">1,019</td><td style="text-align:right">674</td><td style="text-align:right">819</td><td style="text-align:right">1,247</td><td style="text-align:right">1,349</td></tr>
+<tr style="font-weight:600;color:var(--yellow)"><td style="position:sticky;left:0;background:var(--bg-soft);z-index:1">Ford</td><td style="text-align:right">6,723</td><td style="text-align:right">4,856</td><td style="text-align:right">8,229</td><td style="text-align:right">10,671</td><td style="text-align:right">11,712</td><td style="text-align:right">4,709</td><td style="text-align:right">4,247</td><td style="text-align:right">5,557</td><td style="text-align:right">1,743</td><td style="text-align:right">2,122</td><td style="text-align:right">2,995</td><td style="text-align:right">3,655</td></tr>
+<tr><td style="position:sticky;left:0;background:var(--bg-card);z-index:1;color:var(--ink-2)">　Mustang Mach-E</td><td style="text-align:right">4,724</td><td style="text-align:right">2,527</td><td style="text-align:right">5,308</td><td style="text-align:right">7,226</td><td style="text-align:right">7,643</td><td style="text-align:right">2,906</td><td style="text-align:right">3,014</td><td style="text-align:right">3,738</td><td style="text-align:right">1,040</td><td style="text-align:right">1,502</td><td style="text-align:right">2,058</td><td style="text-align:right">2,670</td></tr>
+<tr><td style="position:sticky;left:0;background:var(--bg-card);z-index:1;color:var(--ink-2)">　F-150 Lightning</td><td style="text-align:right">1,902</td><td style="text-align:right">2,200</td><td style="text-align:right">2,831</td><td style="text-align:right">3,217</td><td style="text-align:right">3,957</td><td style="text-align:right">1,543</td><td style="text-align:right">1,006</td><td style="text-align:right">1,724</td><td style="text-align:right">647</td><td style="text-align:right">522</td><td style="text-align:right">891</td><td style="text-align:right">884</td></tr>
 </tbody></table>
 </div>
 </div>
+</section>
 
+<!-- ══════════════════════════════════════════ -->
+<!-- Korea EV -->
+<!-- ══════════════════════════════════════════ -->
+<section id="sec-kr">
 <div class="chart-section">
-<h2>🇰🇷 2026.04 한국 EV 판매 동향</h2>
-<p class="subtitle" style="margin:-8px 0 16px;">테슬라 4월 13,190대 수입차 점유율 40% · 모델 Y 단일 트림 9,000대+ · 누적 등록 174,680대 수입차 1위</p>
+<h2>한국 EV 판매 동향 (2026.04)</h2>
+<p style="font-size:11px;color:var(--ink-2);margin:-4px 0 14px">테슬라 4월 13,190대 수입차 점유율 40% · Model Y 9,000대+ · 누적 174,680대 수입차 1위</p>
 <div class="grid-2">
-<div>
-<h3 style="font-size:13px;color:#6b7a99;margin-bottom:12px;font-weight:400">수입차 월간 판매 TOP5 (3월, 대)</h3>
-<div class="chart-wrap sm"><canvas id="c7"></canvas></div>
-</div>
-<div>
-<h3 style="font-size:13px;color:#6b7a99;margin-bottom:12px;font-weight:400">국산 EV 분기 누적 (1Q26, 대)</h3>
-<div class="chart-wrap sm"><canvas id="c8"></canvas></div>
+<div><h3 style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:10px;font-weight:600">수입차 TOP5 (3월, 대)</h3><div class="chart-wrap sm"><canvas id="c7"></canvas></div></div>
+<div><h3 style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:10px;font-weight:600">국산 EV 1Q26 누적 (대)</h3><div class="chart-wrap sm"><canvas id="c8"></canvas></div></div>
 </div>
 </div>
-</div>
+</section>
 
+<!-- ══════════════════════════════════════════ -->
+<!-- EV Launch Timeline -->
+<!-- ══════════════════════════════════════════ -->
+<section id="sec-timeline">
 <div class="chart-section">
-<h2>🚗 글로벌 주요 EV 신차 출시 타임라인 (2026~2028)</h2>
-<p class="subtitle" style="margin:-8px 0 16px;">미국·유럽 출시 기준 · 배터리 케미스트리 + 용량 구분 · 출처: OEM IR, Consumer Reports, TopElectricSUV, electrive</p>
+<h2>글로벌 주요 EV 신차 출시 타임라인 (2026~2028)</h2>
+<p style="font-size:11px;color:var(--ink-2);margin:-4px 0 14px">미국·유럽 출시 기준 · 배터리 케미스트리 + 용량 구분 · 출처: OEM IR, Consumer Reports, electrive</p>
 <div class="chem-legend">
 <span><i style="background:#22c55e"></i>NCM (삼원계)</span>
 <span><i style="background:#ef4444"></i>LFP (인산철)</span>
 <span><i style="background:linear-gradient(135deg,#22c55e,#ef4444)"></i>NCM/LFP 혼용</span>
-<span><i style="background:#6b7a99"></i>미확인</span>
-<span style="color:#ffd93d;font-weight:500">⚡ 800V</span>
-<span><i style="background:rgba(167,139,250,0.3);border:1px solid rgba(167,139,250,0.5)"></i><span style="text-decoration:line-through;opacity:.7">출시완료</span></span>
+<span><i style="background:var(--ink-3)"></i>미확인</span>
+<span style="color:#d97706;font-weight:500">⚡ 800V</span>
+<span><i style="background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.4)"></i><span style="text-decoration:line-through;opacity:.7">출시완료</span></span>
 </div>
 <div class="market-tabs">
 <button class="market-tab active" onclick="switchMarket('na',this)">🇺🇸 북미</button>
 <button class="market-tab" onclick="switchMarket('eu',this)">🇪🇺 유럽</button>
 </div>
-<!-- ── 🇺🇸 북미 테이블 ── -->
+
+<!-- NA Table -->
 <div id="panel-na" class="launch-panel active">
 <div class="launch-table-wrap">
 <table class="launch-table">
 <thead>
-<tr>
-<th rowspan="2" style="min-width:90px;border-right:2px solid #1e293b">OEM</th>
-<th colspan="4" class="year-header">2026</th>
-<th colspan="4" class="year-header year-border">2027</th>
-<th colspan="4" class="year-header year-border">2028</th>
-</tr>
-<tr>
-<th>Q1</th><th class="now">Q2</th><th>Q3</th><th>Q4</th>
-<th class="year-border">Q1</th><th>Q2</th><th>Q3</th><th>Q4</th>
-<th class="year-border">Q1</th><th>Q2</th><th>Q3</th><th>Q4</th>
-</tr>
+<tr><th rowspan="2" style="min-width:90px;border-right:2px solid var(--line-s)">OEM</th><th colspan="4" class="year-header">2026</th><th colspan="4" class="year-header year-border">2027</th><th colspan="4" class="year-header year-border">2028</th></tr>
+<tr><th>Q1</th><th class="now">Q2</th><th>Q3</th><th>Q4</th><th class="year-border">Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th class="year-border">Q1</th><th>Q2</th><th>Q3</th><th>Q4</th></tr>
 </thead>
 <tbody>
-<tr>
-<td class="brand"><span class="flag">🇺🇸</span>Tesla</td>
-<td><span class="model-chip chip-lfp">Cybercab<span class="chip-800v">⚡</span></span></td>
-<td><span class="model-chip chip-nmc-lfp">Semi 파일럿<span class="chip-kwh">LR 822 / SR 548 kWh</span></span></td>
-<td><span class="model-chip chip-nmc-lfp">Semi 램프</span></td>
-<td><span class="model-chip chip-nmc">Model Y AWD 인하<span class="chip-kwh">미확인</span></span><span class="model-chip chip-unknown">Roadster<span class="chip-kwh">미확인</span></span></td>
-<td class="empty year-border">-</td>
-<td><span class="model-chip chip-nmc-lfp">Semi 풀램프</span></td>
-<td class="empty">-</td><td class="empty">-</td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-</tr>
-<tr>
-<td class="brand"><span class="flag">🇩🇪</span>BMW</td>
-<td><span class="model-chip chip-nmc">iX3 NK<span class="chip-kwh">108kWh</span><span class="chip-800v">⚡</span></span></td>
-<td class="empty">-</td><td class="empty">-</td>
-<td><span class="model-chip chip-nmc">iX5 Electric<span class="chip-kwh">스파르탄버그</span><span class="chip-800v">⚡</span></span></td>
-<td class="year-border"><span class="model-chip chip-nmc">iX1 NK<span class="chip-kwh">~83kWh</span><span class="chip-800v">⚡</span></span></td>
-<td><span class="model-chip chip-nmc">i7 Gen6<span class="chip-kwh">112kWh</span><span class="chip-800v">⚡</span></span></td>
-<td><span class="model-chip chip-nmc">iX7<span class="chip-kwh">미확인</span><span class="chip-800v">⚡</span></span></td>
-<td class="empty">-</td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-</tr>
-<tr>
-<td class="brand"><span class="flag">🇩🇪</span>Mercedes</td>
-<td><span class="model-chip chip-launched">CLA EV<span class="chip-kwh">~66kWh $47K</span><span class="chip-800v">⚡</span></span></td>
-<td><span class="model-chip chip-nmc">EQG<span class="chip-kwh">전기 G클래스</span><span class="chip-800v">⚡</span></span></td>
-<td><span class="model-chip chip-nmc">GLC EV<span class="chip-kwh">~94kWh</span><span class="chip-800v">⚡</span></span></td>
-<td><span class="model-chip chip-nmc">GLB EV<span class="chip-kwh">미확인</span></span></td>
-<td class="year-border"><span class="model-chip chip-nmc">C400 EV<span class="chip-kwh">미확인</span><span class="chip-800v">⚡</span></span></td>
-<td class="empty">-</td>
-<td><span class="model-chip chip-nmc">EQS F/L<span class="chip-kwh">미확인</span></span></td>
-<td class="empty">-</td>
-<td class="year-border"><span class="model-chip chip-nmc">E-Class EV<span class="chip-kwh">미확인</span></span></td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-</tr>
-<tr>
-<td class="brand"><span class="flag">🇰🇷</span>현대·기아</td>
-<td><span class="model-chip chip-nmc">아이오닉9<span class="chip-kwh">110kWh</span></span></td>
-<td><span class="model-chip chip-lfp">아이오닉3<span class="chip-kwh">~58kWh</span></span></td>
-<td><span class="model-chip chip-nmc">EV3<span class="chip-kwh">81kWh</span></span><span class="model-chip chip-nmc">EV9 GT<span class="chip-kwh">듀얼 500hp+</span><span class="chip-800v">⚡</span></span></td>
-<td><span class="model-chip chip-lfp">EV4<span class="chip-kwh">~58kWh ₩3천만대</span></span></td>
-<td class="year-border"><span class="model-chip chip-unknown">Santa Fe EREV<span class="chip-kwh">600+ mi</span></span></td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-</tr>
-<tr>
-<td class="brand"><span class="flag">🇰🇷</span>Genesis</td>
-<td class="empty">-</td>
-<td class="empty">-</td>
-<td><span class="model-chip chip-nmc">GV60 Magma<span class="chip-kwh">84kWh 601hp</span><span class="chip-800v">⚡</span></span></td>
-<td><span class="model-chip chip-nmc">GV90<span class="chip-kwh">~120kWh</span><span class="chip-800v">⚡</span></span></td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td>
-<td><span class="model-chip chip-unknown">GV70 F/L<span class="chip-kwh">미확인</span></span></td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-</tr>
-<tr>
-<td class="brand"><span class="flag">🇯🇵</span>Toyota·Lexus</td>
-<td><span class="model-chip chip-launched">Lexus ES EV<span class="chip-kwh">74.7kWh</span></span></td>
-<td class="empty">-</td>
-<td class="empty">-</td>
-<td class="empty">-</td>
-<td class="year-border"><span class="model-chip chip-unknown">Highlander EV<span class="chip-kwh">~$50K</span></span></td>
-<td class="empty">-</td>
-<td><span class="model-chip chip-unknown">Lexus TZ<span class="chip-kwh">77~96kWh</span></span></td>
-<td class="empty">-</td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-</tr>
-<tr>
-<td class="brand"><span class="flag">🇯🇵</span>Nissan·Honda</td>
-<td class="empty">-</td><td class="empty">-</td>
-<td><span class="model-chip chip-nmc">Leaf 3<span class="chip-kwh">~60kWh</span></span></td>
-<td class="empty">-</td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td>
-<td><span class="model-chip chip-nmc">Honda 0 RSX<span class="chip-kwh">미확인</span></span></td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-</tr>
-<tr>
-<td class="brand"><span class="flag">🇸🇪</span>Volvo</td>
-<td><span class="model-chip chip-nmc">EX60<span class="chip-kwh">83~117kWh $58K</span><span class="chip-800v">⚡</span></span></td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td class="year-border"><span class="model-chip chip-lfp">EX40<span class="chip-kwh">미확인</span></span></td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-</tr>
-<tr>
-<td class="brand"><span class="flag">🇺🇸</span>Rivian</td>
-<td class="empty">-</td>
-<td><span class="model-chip chip-lfp">R2 Perf<span class="chip-kwh">$58K 656hp 330mi</span></span></td>
-<td class="empty">-</td>
-<td><span class="model-chip chip-lfp">R2 Premium<span class="chip-kwh">$54K 450hp</span></span></td>
-<td class="year-border"><span class="model-chip chip-lfp">R2 Standard<span class="chip-kwh">$48K RWD 345mi</span></span></td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td class="year-border"><span class="model-chip chip-unknown">로보택시 (우버)<span class="chip-kwh">미확인</span></span></td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-</tr>
-<tr>
-<td class="brand"><span class="flag">🇺🇸</span>Lucid</td>
-<td><span class="model-chip chip-nmc">Gravity<span class="chip-kwh">~120kWh</span><span class="chip-800v">⚡</span></span></td>
-<td class="empty">-</td><td class="empty">-</td>
-<td><span class="model-chip chip-nmc">Earth<span class="chip-kwh">~92kWh</span><span class="chip-800v">⚡</span></span></td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td>
-<td><span class="model-chip chip-nmc">Midsize SUV<span class="chip-kwh">~80kWh</span></span></td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-</tr>
-<tr>
-<td class="brand"><span class="flag">🇺🇸</span>GM</td>
-<td><span class="model-chip chip-lfp">Bolt 신형<span class="chip-kwh">미확인</span></span></td>
-<td><span class="model-chip chip-nmc">Optiq-V<span class="chip-kwh">85kWh</span></span></td>
-<td><span class="model-chip chip-nmc">Optiq 27MY<span class="chip-kwh">85kWh</span></span></td>
-<td class="empty">-</td>
-<td class="year-border"><span class="model-chip chip-nmc">Bolt EUV 신형<span class="chip-kwh">~66kWh</span></span></td>
-<td class="empty">-</td>
-<td><span class="model-chip chip-unknown">Equinox EV F/L<span class="chip-kwh">미확인</span></span></td>
-<td class="empty">-</td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-</tr>
-<tr>
-<td class="brand"><span class="flag">🇺🇸</span>Ford</td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td class="empty year-border">-</td>
-<td><span class="model-chip chip-unknown">EV픽업<span class="chip-kwh">~$30K LFP</span></span></td>
-<td><span class="model-chip chip-unknown">Explorer EV<span class="chip-kwh">미확인</span></span></td>
-<td class="empty">-</td>
-<td class="year-border"><span class="model-chip chip-nmc-lfp">F-150 EREV<span class="chip-kwh">미확인</span></span></td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-</tr>
-<tr>
-<td class="brand"><span class="flag">🇺🇸</span>Scout</td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td class="year-border"><span class="model-chip chip-unknown">생산 시작<span class="chip-kwh">미확인</span></span></td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td class="year-border"><span class="model-chip chip-unknown">Traveler 판매<span class="chip-kwh">~350mi</span></span></td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-</tr>
-<tr>
-<td class="brand"><span class="flag">🇩🇪</span>VW NA</td>
-<td class="empty">-</td><td class="empty">-</td>
-<td><span class="model-chip chip-nmc-lfp">ID.Buzz<span class="chip-kwh">NACS 포트</span></span></td>
-<td class="empty">-</td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-</tr>
-<tr>
-<td class="brand"><span class="flag">🇮🇹</span>Ferrari</td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td><span class="model-chip chip-nmc">첫 EV<span class="chip-kwh">미확인</span><span class="chip-800v">⚡</span></span></td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-</tr>
+<tr><td class="brand"><span class="flag">🇺🇸</span>Tesla</td><td><span class="model-chip chip-lfp">Cybercab<span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc-lfp">Semi 파일럿<span class="chip-kwh">LR 822 / SR 548 kWh</span></span></td><td><span class="model-chip chip-nmc-lfp">Semi 램프</span></td><td><span class="model-chip chip-nmc">Model Y AWD 인하</span><span class="model-chip chip-unknown">Roadster</span></td><td class="empty year-border">-</td><td><span class="model-chip chip-nmc-lfp">Semi 풀램프</span></td><td class="empty">-</td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇩🇪</span>BMW</td><td><span class="model-chip chip-nmc">iX3 NK<span class="chip-kwh">108kWh</span><span class="chip-800v">⚡</span></span></td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-nmc">iX5 Electric<span class="chip-800v">⚡</span></span></td><td class="year-border"><span class="model-chip chip-nmc">iX1 NK<span class="chip-kwh">~83kWh</span><span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">i7 Gen6<span class="chip-kwh">112kWh</span><span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">iX7<span class="chip-800v">⚡</span></span></td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇩🇪</span>Mercedes</td><td><span class="model-chip chip-launched">CLA EV<span class="chip-kwh">~66kWh</span><span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">EQG<span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">GLC EV<span class="chip-kwh">~94kWh</span><span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">GLB EV</span></td><td class="year-border"><span class="model-chip chip-nmc">C400 EV<span class="chip-800v">⚡</span></span></td><td class="empty">-</td><td><span class="model-chip chip-nmc">EQS F/L</span></td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-nmc">E-Class EV</span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇰🇷</span>현대·기아</td><td><span class="model-chip chip-nmc">아이오닉9<span class="chip-kwh">110kWh</span></span></td><td><span class="model-chip chip-lfp">아이오닉3<span class="chip-kwh">~58kWh</span></span></td><td><span class="model-chip chip-nmc">EV3<span class="chip-kwh">81kWh</span></span><span class="model-chip chip-nmc">EV9 GT<span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-lfp">EV4<span class="chip-kwh">~58kWh</span></span></td><td class="year-border"><span class="model-chip chip-unknown">Santa Fe EREV</span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇰🇷</span>Genesis</td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-nmc">GV60 Magma<span class="chip-kwh">84kWh</span><span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">GV90<span class="chip-kwh">~120kWh</span><span class="chip-800v">⚡</span></span></td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-unknown">GV70 F/L</span></td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇯🇵</span>Toyota·Lexus</td><td><span class="model-chip chip-launched">Lexus ES EV<span class="chip-kwh">74.7kWh</span></span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-unknown">Highlander EV</span></td><td class="empty">-</td><td><span class="model-chip chip-unknown">Lexus TZ<span class="chip-kwh">77~96kWh</span></span></td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇯🇵</span>Nissan·Honda</td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-nmc">Leaf 3<span class="chip-kwh">~60kWh</span></span></td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-nmc">Honda 0 RSX</span></td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇸🇪</span>Volvo</td><td><span class="model-chip chip-nmc">EX60<span class="chip-kwh">83~117kWh</span><span class="chip-800v">⚡</span></span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-lfp">EX40</span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇺🇸</span>Rivian</td><td class="empty">-</td><td><span class="model-chip chip-lfp">R2 Perf<span class="chip-kwh">$58K 656hp</span></span></td><td class="empty">-</td><td><span class="model-chip chip-lfp">R2 Premium<span class="chip-kwh">$54K</span></span></td><td class="year-border"><span class="model-chip chip-lfp">R2 Standard<span class="chip-kwh">$48K</span></span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-unknown">로보택시 (우버)</span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇺🇸</span>Lucid</td><td><span class="model-chip chip-nmc">Gravity<span class="chip-kwh">~120kWh</span><span class="chip-800v">⚡</span></span></td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-nmc">Earth<span class="chip-kwh">~92kWh</span><span class="chip-800v">⚡</span></span></td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-nmc">Midsize SUV</span></td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇺🇸</span>GM</td><td><span class="model-chip chip-lfp">Bolt 신형</span></td><td><span class="model-chip chip-nmc">Optiq-V<span class="chip-kwh">85kWh</span></span></td><td><span class="model-chip chip-nmc">Optiq 27MY</span></td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-nmc">Bolt EUV 신형</span></td><td class="empty">-</td><td><span class="model-chip chip-unknown">Equinox EV F/L</span></td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇺🇸</span>Ford</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty year-border">-</td><td><span class="model-chip chip-unknown">EV픽업<span class="chip-kwh">~$30K LFP</span></span></td><td><span class="model-chip chip-unknown">Explorer EV</span></td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-nmc-lfp">F-150 EREV</span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇺🇸</span>Scout</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-unknown">생산 시작</span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-unknown">Traveler 판매</span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇮🇹</span>Ferrari</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-nmc">첫 EV<span class="chip-800v">⚡</span></span></td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
 </tbody>
 </table>
 </div>
-<div style="margin-top:14px;font-size:11px;color:#3a4a6b;line-height:1.7">
-※ 일정은 OEM 발표 기준이며 변경 가능 · ~표기는 추정치 · <span style="text-decoration:line-through;opacity:.6">취소선</span> = 출시 완료<br>
-※ <strong style="color:#ff6b6b">Tesla Semi</strong>: 네바다 전용공장 연 5만대·$14B 매출 목표 (Q1 26 컨콜) · <span style="color:#ffd93d">LR 822kWh / SR 548kWh (CARB 공식, 2026.05)</span> · Cybercab: NC05 LFP 4680 추정 · NHTSA 2,500대 제한 면제<br>
-※ <strong style="color:#ff6b6b">Tesla Model Y AWD 가격 인하</strong>: 2026 Q4 출시, "Standard" 라벨 미포함, 라인업 가격 재편<br>
-※ <strong style="color:#4ecdc4">현대 아이오닉3</strong>: B-segment EV 해치백 · 2026 Q2 · LFP 베이스 추정 · 아이오닉9 다음 신차<br>
-※ <strong style="color:#4ecdc4">현대 Santa Fe EREV</strong>: 2027 Q1 출시 확정 · 600+ 마일 주행 · 2.5T 발전기 + 듀얼모터 AWD · 北미·중국 생산<br>
-※ <strong style="color:#4ecdc4">Genesis Magma 시리즈</strong>: GV60 Magma 601hp/84kWh/0-60 3.4초 · Summer 2026 미국 한정 출시 · GV90 eM 플랫폼 3-row<br>
-※ <strong style="color:#a78bfa">Lexus ES EV</strong>: ES 350e (FWD) / ES 500e (AWD) · 74.7kWh · 이미 출시 완료<br>
-※ <strong style="color:#a78bfa">Lexus TZ</strong>: 3열 전기 SUV · 77~96kWh · ~300mi · 2026말 출시 · ~$60K<br>
-※ <strong style="color:#a78bfa">Rivian R2</strong>: 2026.04.22 생산 시작 · 올해 20~25K대 인도 예상 · Q3→Q2 앞당김<br>
-※ <strong style="color:#a78bfa">Lucid Gravity</strong>: 2026 양산 · Q1 공급사 이슈 29일 중단 · Uber·Nuro 로보택시 협력<br>
-※ <strong style="color:#a78bfa">GM Bolt 신형</strong>: 2026 Q1 재출시 · $30k 미만 · 미국 최저가 EV · Cadillac Optiq-V 519hp/85kWh (2026 Q2)<br>
-※ <strong style="color:#a78bfa">Ford NA</strong>: EV픽업 ~$30K LFP 미시간 생산 2027 · Explorer EV 온타리오 3열 · F-150 EREV 2028<br>
-※ <strong style="color:#a78bfa">Scout</strong>: Traveler SUV 2028 판매 · Terra 픽업 2030 연기 보도 · 16만 예약 (87% EREV)<br>
-※ <strong style="color:#a78bfa">Honda 캐나다 EV공장 무기한 보류</strong> (2026.05.06) · 24만대 규모 · 北미 EV 캐즘 + 관세 불확실성<br>
-※ <strong style="color:#6b7a99">Mazda</strong>: 자체 EV 플랫폼 기반 차량 출시 2025→2028→2029 재연기<br>
-※ <strong style="color:#6b7a99">Subaru</strong>: 2028년 출시 예정 자체 개발 EV 연기 · HEV/ICE 자원 재배치 · 신규 일정 미공개<br>
-※ <strong style="color:#ff6b6b">Tesla Cybertruck</strong>: RWD 단종 → 듀얼모터 AWD $59,990 교체 · 26년 매진 · 25년 ~2만대<br>
-※ BMW NK: 4695 원통형 NMC, CTP, 400kW 충전 · <strong style="color:#4ecdc4">iX5 Electric</strong> 스파르탄버그 생산 2026 Q4<br>
-※ <strong style="color:#4ecdc4">Mercedes EQG</strong>: 전기 G클래스 2026 중반 출시 · <strong style="color:#ff6b6b">Ferrari 첫 EV</strong>: 2026 하반기 출시<br>
-※ <strong style="color:#4ecdc4">Kia EV9 GT</strong>: 듀얼모터 500hp+ 고성능 · <strong style="color:#4ecdc4">Kia EV4</strong>: 보급형 해치백 3천만원대 2026 Q4<br>
-※ <strong style="color:#4ecdc4">Rivian R2</strong>: Performance $58K 봄 → Premium $54K 하반기 → Standard $48K 2027 H1 순차 출시 · R2 픽업/R2X 변형 개발 중<br>
-※ <strong style="color:#4ecdc4">Genesis 전용 플랫폼</strong>: 2027 독자 아키텍처 출시 · E-GMP 탈피 · 22대 신차 2030까지 (北미)<br>
-※ <strong style="color:#4ecdc4">VW ID.Buzz NA</strong>: 2026 가을 미국 출시 · NACS 포트 탑재
 </div>
-</div>
-<!-- ── 🇪🇺 유럽 테이블 ── -->
+
+<!-- EU Table -->
 <div id="panel-eu" class="launch-panel">
 <div class="launch-table-wrap">
 <table class="launch-table">
 <thead>
-<tr>
-<th rowspan="2" style="min-width:90px;border-right:2px solid #1e293b">OEM</th>
-<th colspan="4" class="year-header">2026</th>
-<th colspan="4" class="year-header year-border">2027</th>
-<th colspan="4" class="year-header year-border">2028</th>
-</tr>
-<tr>
-<th>Q1</th><th class="now">Q2</th><th>Q3</th><th>Q4</th>
-<th class="year-border">Q1</th><th>Q2</th><th>Q3</th><th>Q4</th>
-<th class="year-border">Q1</th><th>Q2</th><th>Q3</th><th>Q4</th>
-</tr>
+<tr><th rowspan="2" style="min-width:90px;border-right:2px solid var(--line-s)">OEM</th><th colspan="4" class="year-header">2026</th><th colspan="4" class="year-header year-border">2027</th><th colspan="4" class="year-header year-border">2028</th></tr>
+<tr><th>Q1</th><th class="now">Q2</th><th>Q3</th><th>Q4</th><th class="year-border">Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th class="year-border">Q1</th><th>Q2</th><th>Q3</th><th>Q4</th></tr>
 </thead>
 <tbody>
-<tr>
-<td class="brand"><span class="flag">🇩🇪</span>BMW</td>
-<td><span class="model-chip chip-nmc">iX3 NK<span class="chip-kwh">108kWh</span><span class="chip-800v">⚡</span></span></td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td class="year-border"><span class="model-chip chip-nmc">iX1 NK<span class="chip-kwh">~83kWh</span><span class="chip-800v">⚡</span></span></td>
-<td><span class="model-chip chip-nmc">i7 Gen6<span class="chip-kwh">112kWh</span><span class="chip-800v">⚡</span></span><span class="model-chip chip-nmc">i3 차세대<span class="chip-kwh">세단 EV</span><span class="chip-800v">⚡</span></span></td>
-<td><span class="model-chip chip-nmc">iX7<span class="chip-kwh">미확인</span><span class="chip-800v">⚡</span></span></td>
-<td class="empty">-</td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-</tr>
-<tr>
-<td class="brand"><span class="flag">🇩🇪</span>Mercedes</td>
-<td><span class="model-chip chip-launched">CLA EV<span class="chip-kwh">~66kWh</span><span class="chip-800v">⚡</span></span></td>
-<td><span class="model-chip chip-nmc">EQG<span class="chip-kwh">전기 G클래스</span><span class="chip-800v">⚡</span></span></td>
-<td><span class="model-chip chip-nmc">GLC EV<span class="chip-kwh">~94kWh</span><span class="chip-800v">⚡</span></span></td>
-<td><span class="model-chip chip-nmc">GLB EV<span class="chip-kwh">미확인</span></span></td>
-<td class="year-border"><span class="model-chip chip-nmc">C400 EV<span class="chip-kwh">미확인</span><span class="chip-800v">⚡</span></span></td>
-<td class="empty">-</td>
-<td><span class="model-chip chip-nmc">EQS F/L<span class="chip-kwh">미확인</span></span></td>
-<td class="empty">-</td>
-<td class="year-border"><span class="model-chip chip-nmc">E-Class EV<span class="chip-kwh">미확인</span></span></td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-</tr>
-<tr>
-<td class="brand"><span class="flag">🇩🇪</span>VW</td>
-<td class="empty">-</td>
-<td><span class="model-chip chip-nmc-lfp">ID.Polo<span class="chip-kwh">37/52kWh</span></span></td>
-<td class="empty">-</td><td class="empty">-</td>
-<td class="year-border"><span class="model-chip chip-lfp">ID.Every1<span class="chip-kwh">~37kWh</span></span></td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td class="empty year-border">-</td>
-<td><span class="model-chip chip-lfp">ID.Golf EV<span class="chip-kwh">미확인</span></span></td>
-<td class="empty">-</td><td class="empty">-</td>
-</tr>
-<tr>
-<td class="brand"><span class="flag">🇨🇿</span>Skoda</td>
-<td class="empty">-</td>
-<td><span class="model-chip chip-lfp">Epiq<span class="chip-kwh">~37kWh</span></span></td>
-<td class="empty">-</td><td class="empty">-</td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-</tr>
-<tr>
-<td class="brand"><span class="flag">🇩🇪</span>Porsche</td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td class="year-border"><span class="model-chip chip-nmc">718 EV<span class="chip-kwh">~100kWh</span><span class="chip-800v">⚡</span></span></td>
-<td><span class="model-chip chip-nmc">Cayenne EV<span class="chip-kwh">미확인</span><span class="chip-800v">⚡</span></span></td>
-<td class="empty">-</td><td class="empty">-</td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-</tr>
-<tr>
-<td class="brand"><span class="flag">🇰🇷</span>현대·기아</td>
-<td><span class="model-chip chip-launched">EV2<span class="chip-kwh">~58kWh 한국3월</span></span></td>
-<td><span class="model-chip chip-lfp">아이오닉3<span class="chip-kwh">~58kWh</span></span></td>
-<td><span class="model-chip chip-lfp">EV2 (EU)<span class="chip-kwh">~58kWh</span></span></td>
-<td class="empty">-</td>
-<td class="year-border"><span class="model-chip chip-lfp">EV4 (EU)<span class="chip-kwh">~58kWh</span></span></td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-</tr>
-<tr>
-<td class="brand"><span class="flag">🇸🇪</span>Volvo</td>
-<td><span class="model-chip chip-nmc">EX60<span class="chip-kwh">83~117kWh</span><span class="chip-800v">⚡</span></span></td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td class="year-border"><span class="model-chip chip-lfp">EX40<span class="chip-kwh">미확인</span></span></td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-</tr>
-<tr>
-<td class="brand"><span class="flag">🇯🇵</span>Nissan</td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td class="year-border"><span class="model-chip chip-nmc">Juke EV<span class="chip-kwh">미확인</span></span></td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-</tr>
-<tr>
-<td class="brand"><span class="flag">🇺🇸</span>Ford EU</td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td><span class="model-chip chip-lfp">Transit City 5<span class="chip-kwh">전기밴</span></span></td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td class="year-border"><span class="model-chip chip-lfp">EV 해치백<span class="chip-kwh">르노 Ampr</span></span><span class="model-chip chip-lfp">EV SUV<span class="chip-kwh">컴팩트</span></span></td>
-<td><span class="model-chip chip-unknown">브롱코 PHEV<span class="chip-kwh">미확인</span></span></td>
-<td class="empty">-</td><td class="empty">-</td>
-</tr>
-<tr>
-<td class="brand"><span class="flag">🇩🇪</span>Stellantis</td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td class="year-border"><span class="model-chip chip-unknown">Opel-Leapmotor SUV<span class="chip-kwh">발렌시아</span></span></td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-</tr>
-<tr>
-<td class="brand"><span class="flag">🇮🇹</span>Ferrari</td>
-<td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td><span class="model-chip chip-nmc">첫 EV<span class="chip-kwh">미확인</span><span class="chip-800v">⚡</span></span></td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-<td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td>
-</tr>
+<tr><td class="brand"><span class="flag">🇩🇪</span>BMW</td><td><span class="model-chip chip-nmc">iX3 NK<span class="chip-kwh">108kWh</span><span class="chip-800v">⚡</span></span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-nmc">iX1 NK<span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">i7 Gen6<span class="chip-800v">⚡</span></span><span class="model-chip chip-nmc">i3 차세대<span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">iX7<span class="chip-800v">⚡</span></span></td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇩🇪</span>Mercedes</td><td><span class="model-chip chip-launched">CLA EV<span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">EQG<span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">GLC EV<span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">GLB EV</span></td><td class="year-border"><span class="model-chip chip-nmc">C400 EV<span class="chip-800v">⚡</span></span></td><td class="empty">-</td><td><span class="model-chip chip-nmc">EQS F/L</span></td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-nmc">E-Class EV</span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇩🇪</span>VW</td><td class="empty">-</td><td><span class="model-chip chip-nmc-lfp">ID.Polo<span class="chip-kwh">37/52kWh</span></span></td><td class="empty">-</td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-lfp">ID.Every1<span class="chip-kwh">~37kWh</span></span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty year-border">-</td><td><span class="model-chip chip-lfp">ID.Golf EV</span></td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇨🇿</span>Skoda</td><td class="empty">-</td><td><span class="model-chip chip-lfp">Epiq<span class="chip-kwh">~37kWh</span></span></td><td class="empty">-</td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇩🇪</span>Porsche</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-nmc">718 EV<span class="chip-kwh">~100kWh</span><span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">Cayenne EV<span class="chip-800v">⚡</span></span></td><td class="empty">-</td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇰🇷</span>현대·기아</td><td><span class="model-chip chip-launched">EV2<span class="chip-kwh">한국3월</span></span></td><td><span class="model-chip chip-lfp">아이오닉3<span class="chip-kwh">~58kWh</span></span></td><td><span class="model-chip chip-lfp">EV2 (EU)</span></td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-lfp">EV4 (EU)</span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇸🇪</span>Volvo</td><td><span class="model-chip chip-nmc">EX60<span class="chip-800v">⚡</span></span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-lfp">EX40</span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇺🇸</span>Ford EU</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-lfp">Transit City 5</span></td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-lfp">EV 해치백</span><span class="model-chip chip-lfp">EV SUV</span></td><td><span class="model-chip chip-unknown">브롱코 PHEV</span></td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇮���</span>Ferrari</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-nmc">첫 EV<span class="chip-800v">⚡</span></span></td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
 </tbody>
 </table>
 </div>
-<div style="margin-top:14px;font-size:11px;color:#3a4a6b;line-height:1.7">
-※ 일정은 OEM 발표 기준이며 변경 가능 · ~표기는 추정치 · <span style="text-decoration:line-through;opacity:.6">취소선</span> = 출시 완료<br>
-※ <strong style="color:#ff6b6b">Porsche 718 EV</strong>: Q4 2026 → <strong>2027 연기</strong> (Northvolt 파산 → 배터리 공급 차질)<br>
-※ <strong style="color:#4ecdc4">Kia EV2</strong>: 한국 2026.03 출시 완료 · EU H2 2026 출시 예정<br>
-※ <strong style="color:#4ecdc4">VW ID.Buzz</strong>: 2026 MY 없음 → 2027 MY 복귀 (8월~ Tourer 캠핑 모델 추가, NACS 포트)<br>
-※ <strong style="color:#556dff">Ford EU 'Ready-Set-Ford'</strong>: 2029년까지 7종 신차 · EV 해치백(르노 Ampr 플랫폼, 두에 공장) · 브롱코 컴팩트(발렌시아 2028~) · Transit City 5 전기밴(2026말)<br>
-※ BMW NK: 4695 원통형 NMC, CTP, 400kW 충전 · VW ID.Polo: Group unified cell · <span style="color:#f87171">LFP 37kWh</span> (베이스) / <span style="color:#4ade80">NMC 52kWh</span> (상위)<br>
-※ <strong style="color:#6b7a99">Stellantis Opel-Leapmotor</strong>: 전기 SUV 2028 스페인 발렌시아 생산 · Geely 바디3 라인 인수 합의 · 이탈리아 초저가 소형 EV 생산 예정<br>
-※ <strong style="color:#6b7a99">Stellantis-Dongfeng</strong>: Voyah 프리미엄 EV 프랑스 렌 공장 생산 (지분 Stellantis 51%, Dongfeng 49%)<br>
-※ <strong style="color:#6b7a99">Jeep Wagoneer S</strong>: 2026 MY 중단 → 2027 MY 복귀 (NACS 포트, 배터리·SW 개선)<br>
-※ <strong style="color:#ff6b6b">Mercedes EQG</strong>: 전기 G클래스 2026 중반 EU 출시 · <strong style="color:#ff6b6b">Ferrari 첫 EV</strong>: 2026 하반기<br>
-※ <strong style="color:#4ecdc4">BMW i3 차세대</strong>: 전기 세단 2027 출시 · <strong style="color:#4ecdc4">Kia EV4 EU</strong>: 보급형 해치백 2027 Q1
 </div>
-</div>
+
 <script>
 function switchMarket(market,btn){
 document.querySelectorAll('.market-tab').forEach(t=>t.classList.remove('active'));
@@ -969,140 +534,127 @@ document.getElementById('panel-'+market).classList.add('active');
 }
 </script>
 </div>
+</section>
 
-<p class="updated">마지막 업데이트: 2026.05.26
+<p class="updated">마지막 업데이트: 2026.06.02 <span id="notion-sync-date"></span></p>
 
+<!-- ══════════════════════════════════════════ -->
+<!-- Charts JS (light theme) -->
+<!-- ══════════════════════════════════════════ -->
 <script>
-const gridColor='rgba(255,255,255,0.06)';
-const tickColor='#6b7a99';
-const defOpt={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{backgroundColor:'#1e293b',titleColor:'#e0e6f0',bodyColor:'#94a3c0',borderColor:'#2d3a52',borderWidth:1,cornerRadius:8,padding:12}},scales:{x:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}},y:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:11}}}}};
+const gridColor='rgba(0,0,0,0.06)';
+const tickColor='#8B8B82';
+const defOpt={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{backgroundColor:'#fff',titleColor:'#0A0A08',bodyColor:'#4A4A45',borderColor:'#E2E1D8',borderWidth:1,cornerRadius:8,padding:12}},scales:{x:{grid:{display:false},ticks:{color:tickColor,font:{size:10,family:'JetBrains Mono'}}},y:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:10,family:'JetBrains Mono'}}}}};
 
 const yrs=['2018','2019','2020','2021','2022','2023','2024','2025','2026 1Q'];
 
 new Chart(document.getElementById('c1'),{type:'bar',data:{labels:yrs,datasets:[
-{label:'중국',data:[109,106,114,325,590,810,1130,1290,170.4],backgroundColor:'#ff6b6b',borderRadius:3},
+{label:'중국',data:[109,106,114,325,590,810,1130,1290,170.4],backgroundColor:'#ef4444',borderRadius:3},
 {label:'유럽',data:[39,57,138,230,260,320,318,400,110],backgroundColor:'#556dff',borderRadius:3},
 {label:'미국',data:[36,32.5,29.4,63,99,139,152,130,25.6],backgroundColor:'#4ecdc4',borderRadius:3},
-{label:'한국',data:[5.9,3.6,4.0,9.1,13.1,13.2,12.8,14.0,5.5],backgroundColor:'#ffd93d',borderRadius:3},
-{label:'기타',data:[15.1,8.9,11.6,32.9,57.9,87.8,137.2,236.0,93.5],backgroundColor:'#6b7a99',borderRadius:3}
+{label:'한국',data:[5.9,3.6,4.0,9.1,13.1,13.2,12.8,14.0,5.5],backgroundColor:'#d97706',borderRadius:3},
+{label:'기타',data:[15.1,8.9,11.6,32.9,57.9,87.8,137.2,236.0,93.5],backgroundColor:'#8B8B82',borderRadius:3}
 ]},options:{...defOpt,scales:{...defOpt.scales,x:{...defOpt.scales.x,stacked:true},y:{...defOpt.scales.y,stacked:true,title:{display:true,text:'만대',color:tickColor}}}}});
 
 new Chart(document.getElementById('c2'),{type:'line',data:{labels:yrs,datasets:[
 {label:'글로벌',data:[76.5,1.5,42.8,122.2,54.5,34.3,27.7,21.0,null],borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,0.08)',fill:true,borderWidth:2.5,tension:.35,pointRadius:3,pointHoverRadius:6},
-{label:'중국',data:[87.9,-2.8,7.5,185.1,81.5,37.3,39.5,14.2,null],borderColor:'#ff6b6b',borderWidth:2,tension:.35,pointRadius:0,pointHoverRadius:5,borderDash:[6,3]},
+{label:'중국',data:[87.9,-2.8,7.5,185.1,81.5,37.3,39.5,14.2,null],borderColor:'#ef4444',borderWidth:2,tension:.35,pointRadius:0,pointHoverRadius:5,borderDash:[6,3]},
 {label:'미국',data:[85.6,-9.7,-9.5,114.3,57.1,40.4,9.4,-14.5,null],borderColor:'#4ecdc4',borderWidth:2,tension:.35,pointRadius:0,pointHoverRadius:5,borderDash:[6,3]},
 {label:'유럽',data:[21.9,46.2,142.1,66.7,13.0,23.1,-0.6,25.8,null],borderColor:'#556dff',borderWidth:2,tension:.35,pointRadius:0,pointHoverRadius:5,borderDash:[6,3]}
-]},options:{...defOpt,interaction:{mode:'index',intersect:false},plugins:{...defOpt.plugins,datalabels:{display:false},tooltip:{...defOpt.plugins.tooltip,mode:'index',intersect:false}},scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'YoY %',color:tickColor}}}}});
+]},options:{...defOpt,interaction:{mode:'index',intersect:false},scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'YoY %',color:tickColor}}}}});
 
 new Chart(document.getElementById('c3'),{type:'line',data:{labels:yrs,datasets:[
-{label:'중국',data:[53.2,51.0,38.4,49.2,57.8,59.1,64.6,62.3,null],borderColor:'#ff6b6b',backgroundColor:'rgba(255,107,107,0.1)',fill:true,borderWidth:2,tension:.3,pointRadius:3},
-{label:'유럽',data:[19.0,27.4,46.5,34.8,25.5,23.4,18.2,19.3,null],borderColor:'#556dff',backgroundColor:'rgba(85,109,255,0.1)',fill:true,borderWidth:2,tension:.3,pointRadius:3},
-{label:'미국',data:[17.6,15.6,9.9,9.5,9.7,10.1,8.7,6.3,null],borderColor:'#4ecdc4',backgroundColor:'rgba(78,205,196,0.1)',fill:true,borderWidth:2,tension:.3,pointRadius:3}
+{label:'중국',data:[53.2,51.0,38.4,49.2,57.8,59.1,64.6,62.3,null],borderColor:'#ef4444',backgroundColor:'rgba(239,68,68,0.06)',fill:true,borderWidth:2,tension:.3,pointRadius:3},
+{label:'유럽',data:[19.0,27.4,46.5,34.8,25.5,23.4,18.2,19.3,null],borderColor:'#556dff',backgroundColor:'rgba(85,109,255,0.06)',fill:true,borderWidth:2,tension:.3,pointRadius:3},
+{label:'미국',data:[17.6,15.6,9.9,9.5,9.7,10.1,8.7,6.3,null],borderColor:'#4ecdc4',backgroundColor:'rgba(78,205,196,0.06)',fill:true,borderWidth:2,tension:.3,pointRadius:3}
 ]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,max:70,title:{display:true,text:'Share %',color:tickColor}}}}});
 
 new Chart(document.getElementById('c4'),{type:'bar',data:{labels:['Tesla','GM','현대기아','Ford'],datasets:[{
 data:[23400,10800,7190,3655],
-backgroundColor:['#ff6b6b','#556dff','#4ecdc4','#ffd93d'],borderRadius:6
-}]},options:{...defOpt,indexAxis:'y',scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,callback:v=>(v/10000).toFixed(1)+'만'}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:12}}}}}});
+backgroundColor:['#ef4444','#556dff','#4ecdc4','#d97706'],borderRadius:6
+}]},options:{...defOpt,indexAxis:'y',scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:10,family:'JetBrains Mono'},callback:v=>(v/10000).toFixed(1)+'만'}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}}}}});
 
-
-
-
-
-// 한국 3월 수입차 TOP5
 new Chart(document.getElementById('c7'),{type:'bar',data:{labels:['테슬라','BMW','벤츠','BYD','볼보'],datasets:[{
 data:[11130,6785,5419,1664,1496],
-backgroundColor:['#ff6b6b','#556dff','#a78bfa','#ffd93d','#4ecdc4'],borderRadius:6
-}]},options:{...defOpt,indexAxis:'y',scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,callback:v=>(v/1000).toFixed(1)+'k'}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:12}}}},plugins:{...defOpt.plugins,tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.parsed.x.toLocaleString()+'대'}}}}});
+backgroundColor:['#ef4444','#556dff','#a78bfa','#d97706','#4ecdc4'],borderRadius:6
+}]},options:{...defOpt,indexAxis:'y',scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:10,family:'JetBrains Mono'},callback:v=>(v/1000).toFixed(1)+'k'}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}}},plugins:{...defOpt.plugins,tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.parsed.x.toLocaleString()+'대'}}}}});
 
-// 국산 EV 1Q26 누적
 new Chart(document.getElementById('c8'),{type:'bar',data:{labels:['기아 EV3','기아 PV5','기아 EV5'],datasets:[{
 data:[8674,8086,6884],
 backgroundColor:['#4ecdc4','#556dff','#a78bfa'],borderRadius:6
-}]},options:{...defOpt,indexAxis:'y',scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,callback:v=>(v/1000).toFixed(1)+'k'}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:12}}}},plugins:{...defOpt.plugins,tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.parsed.x.toLocaleString()+'대'}}}}});
+}]},options:{...defOpt,indexAxis:'y',scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:10,family:'JetBrains Mono'},callback:v=>(v/1000).toFixed(1)+'k'}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}}},plugins:{...defOpt.plugins,tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.parsed.x.toLocaleString()+'대'}}}}});
 
+// Monthly BEV+PHEV
+const stackOpt=(unit,fmt)=>({...defOpt,scales:{x:{stacked:true,grid:{display:false},ticks:{color:tickColor,font:{size:10,family:'JetBrains Mono'}}},y:{stacked:true,grid:{color:gridColor},ticks:{color:tickColor,font:{size:10,family:'JetBrains Mono'},callback:fmt||defOpt.scales.y.ticks.callback}}},plugins:{legend:{display:false},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.dataset.label+': '+ctx.parsed.y.toLocaleString()+unit}}}});
 
-
-// ── 월별 BEV+PHEV 지역별 (4 charts) ──
-const stackOpt=(unit,fmt)=>({...defOpt,scales:{x:{stacked:true,grid:{display:false},ticks:{color:tickColor,font:{size:10}}},y:{stacked:true,grid:{color:gridColor},ticks:{color:tickColor,callback:fmt||defOpt.scales.y.ticks.callback}}},plugins:{legend:{display:false},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.dataset.label+': '+ctx.parsed.y.toLocaleString()+unit}}}});
-
-// 글로벌 (만대)
 new Chart(document.getElementById('cG'),{type:'bar',data:{labels:['1월','2월','3월'],datasets:[
 {label:'BEV',data:[76.3,72.1,130.8],backgroundColor:'#556dff',borderRadius:3},
 {label:'PHEV',data:[40.3,33.4,51.5],backgroundColor:'#a78bfa',borderRadius:3}
 ]},options:stackOpt('만대',v=>v+'만')});
 
-// 미국 (대)
 new Chart(document.getElementById('cU'),{type:'bar',data:{labels:['1월','2월','3월','4월'],datasets:[
 {label:'BEV',data:[65000,73659,88582,64517],backgroundColor:'#556dff',borderRadius:3},
 {label:'PHEV',data:[12000,14083,16265,18309],backgroundColor:'#a78bfa',borderRadius:3}
 ]},options:stackOpt('대',v=>(v/10000).toFixed(1)+'만')});
 
-// 중국 (만대)
 new Chart(document.getElementById('cC'),{type:'bar',data:{labels:['1월','2월','3월','4월'],datasets:[
 {label:'BEV',data:[34.8,27.8,56.8,57.9],backgroundColor:'#556dff',borderRadius:3},
 {label:'PHEV',data:[24.9,13.4,20.4,19.2],backgroundColor:'#a78bfa',borderRadius:3}
 ]},options:stackOpt('만대',v=>v+'만')});
 
-// 유럽 (만대)
 new Chart(document.getElementById('cE'),{type:'bar',data:{labels:['1월','2월','3월','4월(7국)'],datasets:[
 {label:'BEV',data:[20.3,20.9,36.1,18.8],backgroundColor:'#556dff',borderRadius:3},
 {label:'PHEV',data:[10.4,10.1,16.9,null],backgroundColor:'#a78bfa',borderRadius:3}
 ]},options:stackOpt('만대',v=>v+'만')});
 
-// ── 배터리 출하량 트래커 ──
-// 셀사별 3월 출하량 (한국 3사 강조)
+// Battery tracker
 new Chart(document.getElementById('bShip'),{type:'bar',data:{labels:['CATL','BYD','LGES','CALB','SK on','Panasonic','SDI'],datasets:[{
 data:[42.7,15.2,11.8,5.3,3.9,3.3,2.2],
-backgroundColor:['#4ecdc4','#6b7a99','#a78bfa','#6b7a99','#a78bfa','#6b7a99','#a78bfa'],
+backgroundColor:['#4ecdc4','#8B8B82','#a78bfa','#8B8B82','#a78bfa','#8B8B82','#a78bfa'],
 borderRadius:4
 }]},options:{...defOpt,plugins:{legend:{display:false},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.parsed.y+' GWh'}}},scales:{...defOpt.scales,y:{...defOpt.scales.y,ticks:{...defOpt.scales.y.ticks,callback:v=>v+'GWh'}}}}});
 
-// 1Q26 누적 YoY (한국 3사 강조)
 new Chart(document.getElementById('bYoY'),{type:'bar',data:{labels:['CATL','BYD','LGES','CALB','SK on','Panasonic','SDI'],datasets:[{
 data:[15,-8,7,31,-10,4,-27],
 backgroundColor:ctx=>{const v=ctx.parsed?.y??ctx.raw;return v>=0?'#22c55e':'#ef4444'},
 borderRadius:4
 }]},options:{...defOpt,plugins:{legend:{display:false},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>(ctx.parsed.y>=0?'+':'')+ctx.parsed.y+'%'}}},scales:{...defOpt.scales,y:{...defOpt.scales.y,ticks:{...defOpt.scales.y.ticks,callback:v=>v+'%'}}}}});
 
-// 미국 3월 점유율 (한국 3사 강조)
 new Chart(document.getElementById('bUS'),{type:'doughnut',data:{labels:['Panasonic','LGES','SK on','CATL','SDI','기타'],datasets:[{
 data:[40,22,11,9,7,11],
-backgroundColor:['#6b7a99','#a78bfa','#a78bfa','#4ecdc4','#a78bfa','#2d3a52'],
-borderColor:'#0a0f1a',borderWidth:2
-}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:'#94a3c0',font:{size:10},padding:6}},tooltip:{backgroundColor:'#1e293b',titleColor:'#e0e6f0',bodyColor:'#94a3c0',borderColor:'#2d3a52',borderWidth:1,callbacks:{label:ctx=>ctx.label+': '+ctx.parsed+'%'}}}}});
+backgroundColor:['#8B8B82','#a78bfa','#a78bfa','#4ecdc4','#a78bfa','#E2E1D8'],
+borderColor:'#fff',borderWidth:2
+}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:'#4A4A45',font:{size:10},padding:6}},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.label+': '+ctx.parsed+'%'}}}}});
 
-// 유럽 3월 점유율 (한국 3사 강조)
 new Chart(document.getElementById('bEU'),{type:'doughnut',data:{labels:['CATL','LGES','BYD','SK on','SDI','CALB','기타'],datasets:[{
 data:[43,21,7,7,5,2,15],
-backgroundColor:['#4ecdc4','#a78bfa','#6b7a99','#a78bfa','#a78bfa','#6b7a99','#2d3a52'],
-borderColor:'#0a0f1a',borderWidth:2
-}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:'#94a3c0',font:{size:10},padding:6}},tooltip:{backgroundColor:'#1e293b',titleColor:'#e0e6f0',bodyColor:'#94a3c0',borderColor:'#2d3a52',borderWidth:1,callbacks:{label:ctx=>ctx.label+': '+ctx.parsed+'%'}}}}});
+backgroundColor:['#4ecdc4','#a78bfa','#8B8B82','#a78bfa','#a78bfa','#8B8B82','#E2E1D8'],
+borderColor:'#fff',borderWidth:2
+}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:'#4A4A45',font:{size:10},padding:6}},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.label+': '+ctx.parsed+'%'}}}}});
 
-// ── EU CO2 시나리오 민감도 매트릭스 (버블 차트) ──
+// EU CO2 Bubble
 (function(){
 const bubbleData=[
   {label:'🇬🇧 UK',x:81,y:100,r:18,color:'#ef4444'},
   {label:'🇩🇪 Germany',x:25,y:283,r:16,color:'#ef4444'},
-  {label:'🇵🇱 Poland',x:31,y:16,r:15,color:'#ffd93d'},
-  {label:'🇫🇷 France',x:16,y:43,r:20,color:'#ffd93d'},
+  {label:'🇵🇱 Poland',x:31,y:16,r:15,color:'#d97706'},
+  {label:'🇫🇷 France',x:16,y:43,r:20,color:'#d97706'},
   {label:'🇪🇸 Spain',x:10,y:0,r:22,color:'#22c55e'},
-  {label:'🇮🇹 Italy',x:0,y:24,r:8,color:'#6b7a99'}
+  {label:'🇮🇹 Italy',x:0,y:24,r:8,color:'#8B8B82'}
 ];
 new Chart(document.getElementById('cBubble'),{type:'bubble',data:{datasets:bubbleData.map(d=>({
-  label:d.label,data:[{x:d.x,y:d.y,r:d.r*0.6}],backgroundColor:d.color+'44',borderColor:d.color,borderWidth:1.5,hoverBackgroundColor:d.color+'88'
-}))},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{backgroundColor:'#1e293b',titleColor:'#e0e6f0',bodyColor:'#94a3c0',borderColor:'#2d3a52',borderWidth:1,callbacks:{
+  label:d.label,data:[{x:d.x,y:d.y,r:d.r*0.6}],backgroundColor:d.color+'22',borderColor:d.color,borderWidth:1.5,hoverBackgroundColor:d.color+'55'
+}))},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...defOpt.plugins.tooltip,callbacks:{
   title:ctx=>ctx[0].dataset.label,
-  label:ctx=>{const p=ctx.raw;return ['격차: '+p.x+'%p','손실: €'+p.y+'bn','CAPA: '+(bubbleData.find(d=>d.x===p.x)?.r||'?')+'×8 GWh'];}
+  label:ctx=>{const p=ctx.raw;return ['격차: '+p.x+'%p','손실: €'+p.y+'bn'];}
 }}},scales:{x:{title:{display:true,text:'REF-LOW 격차 (%p)',color:tickColor,font:{size:10}},grid:{color:gridColor},ticks:{color:tickColor,font:{size:10}}},y:{title:{display:true,text:'LOW 절대 손실 (€bn)',color:tickColor,font:{size:10}},grid:{color:gridColor},ticks:{color:tickColor,font:{size:10}}}}}});
 
-// 버블 차트 위에 국가명 라벨 표시
 const bubbleChart=Chart.getChart('cBubble');
-const labelPlugin={id:'bubbleLabels',afterDraw(chart){if(chart.canvas.id!=='cBubble')return;const ctx=chart.ctx;ctx.save();chart.data.datasets.forEach((ds,i)=>{const meta=chart.getDatasetMeta(i);meta.data.forEach(pt=>{ctx.fillStyle='#e0e6f0';ctx.font='10px Noto Sans KR';ctx.textAlign='center';ctx.fillText(ds.label,pt.x,pt.y-pt.options.radius-4);});});ctx.restore();}};
+const labelPlugin={id:'bubbleLabels',afterDraw(chart){if(chart.canvas.id!=='cBubble')return;const ctx=chart.ctx;ctx.save();chart.data.datasets.forEach((ds,i)=>{const meta=chart.getDatasetMeta(i);meta.data.forEach(pt=>{ctx.fillStyle='#0A0A08';ctx.font='10px Pretendard';ctx.textAlign='center';ctx.fillText(ds.label,pt.x,pt.y-pt.options.radius-4);});});ctx.restore();}};
 if(bubbleChart){bubbleChart.options.plugins.bubbleLabels=true;Chart.register(labelPlugin);bubbleChart.update();}
 })();
 
-// ── BEV/CAPA 미스매치 (양방향 막대) ──
+// BEV/CAPA Mismatch
 (function(){
 const countries=['독일','폴란드','프랑스','스페인','영국','이탈리아'];
 const bev=[1.2,0,0.3,0,0,0.23];
@@ -1110,22 +662,55 @@ const capa=[36,115,4,2,15.8,0];
 new Chart(document.getElementById('cMismatch'),{type:'bar',data:{labels:countries,datasets:[
   {label:'BEV 생산 (M)',data:bev.map(v=>-v),backgroundColor:'#556dff',borderRadius:3},
   {label:'배터리 CAPA (GWh)',data:capa,backgroundColor:'#4ecdc4',borderRadius:3}
-]},options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:true,position:'top',labels:{color:tickColor,font:{size:9},padding:8}},tooltip:{backgroundColor:'#1e293b',titleColor:'#e0e6f0',bodyColor:'#94a3c0',borderColor:'#2d3a52',borderWidth:1,callbacks:{label:ctx=>{const v=Math.abs(ctx.parsed.x);return ctx.dataset.label+': '+(ctx.datasetIndex===0?v.toFixed(1)+'M':v+' GWh');}}}},scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:10},callback:v=>{const a=Math.abs(v);return v<0?a.toFixed(1)+'M':a+' GWh';}}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}}}}});
+]},options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:true,position:'top',labels:{color:tickColor,font:{size:9},padding:8}},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>{const v=Math.abs(ctx.parsed.x);return ctx.dataset.label+': '+(ctx.datasetIndex===0?v.toFixed(1)+'M':v+' GWh');}}}},scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:10},callback:v=>{const a=Math.abs(v);return v<0?a.toFixed(1)+'M':a+' GWh';}}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}}}}});
 })();
 
-// ── 미국 BEV OEM별 4월 판매 ──
+// US OEM Monthly
 new Chart(document.getElementById('cOEM'),{type:'bar',data:{labels:['26.1','26.2','26.3','26.4'],datasets:[
-{label:'Tesla',data:[43800,36500,35000,23400],backgroundColor:'#ff6b6b',borderRadius:3},
+{label:'Tesla',data:[43800,36500,35000,23400],backgroundColor:'#ef4444',borderRadius:3},
 {label:'GM',data:[5438,8792,11621,10800],backgroundColor:'#556dff',borderRadius:3},
-{label:'현대기아',data:[4471,5834,8039,7190],backgroundColor:'#4ecdc4',borderRadius:3},
-{label:'Ford',data:[1743,2122,2995,3655],backgroundColor:'#ffd93d',borderRadius:3}
-]},options:{...defOpt,scales:{x:{stacked:false,grid:{display:false},ticks:{color:tickColor,font:{size:10}}},y:{grid:{color:gridColor},ticks:{color:tickColor,callback:v=>(v/10000).toFixed(1)+'만'}}},plugins:{legend:{display:true,position:'top',labels:{color:tickColor,font:{size:9}}},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.dataset.label+': '+ctx.parsed.y.toLocaleString()+'대'}}}}});
+{label:'현��기아',data:[4471,5834,8039,7190],backgroundColor:'#4ecdc4',borderRadius:3},
+{label:'Ford',data:[1743,2122,2995,3655],backgroundColor:'#d97706',borderRadius:3}
+]},options:{...defOpt,scales:{x:{stacked:false,grid:{display:false},ticks:{color:tickColor,font:{size:10}}},y:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:10,family:'JetBrains Mono'},callback:v=>(v/10000).toFixed(1)+'만'}}},plugins:{legend:{display:true,position:'top',labels:{color:tickColor,font:{size:9}}},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.dataset.label+': '+ctx.parsed.y.toLocaleString()+'대'}}}}});
 
-// ── Tesla 모델별 4월 판매 ──
+// Tesla Model
 new Chart(document.getElementById('cTSLA'),{type:'bar',data:{labels:['Model Y','Model S/X','Cybertruck'],datasets:[{
 data:[19000,3200,1200],
-backgroundColor:['#ff6b6b','#a78bfa','#ffd93d'],borderRadius:6
-}]},options:{...defOpt,indexAxis:'y',scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,callback:v=>(v/1000).toFixed(1)+'k'}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:12}}}},plugins:{...defOpt.plugins,tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.parsed.x.toLocaleString()+'대'}}}}});
+backgroundColor:['#ef4444','#a78bfa','#d97706'],borderRadius:6
+}]},options:{...defOpt,indexAxis:'y',scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:10,family:'JetBrains Mono'},callback:v=>(v/1000).toFixed(1)+'k'}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}}},plugins:{...defOpt.plugins,tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.parsed.x.toLocaleString()+'대'}}}}});
 </script>
+
+<!-- Scroll spy -->
+<script>
+(function(){
+  const links=document.querySelectorAll('.sidebar-link[data-target]');
+  const sections=[];
+  links.forEach(link=>{
+    const el=document.getElementById(link.dataset.target);
+    if(el)sections.push({el,link});
+  });
+  if(!sections.length)return;
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        links.forEach(l=>l.classList.remove('active'));
+        const m=sections.find(s=>s.el===entry.target);
+        if(m){m.link.classList.add('active');m.link.scrollIntoView({block:'nearest',behavior:'smooth'});}
+      }
+    });
+  },{rootMargin:'-10% 0px -70% 0px'});
+  sections.forEach(s=>obs.observe(s.el));
+  links.forEach(link=>{
+    link.addEventListener('click',e=>{
+      e.preventDefault();
+      const t=document.getElementById(link.dataset.target);
+      if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+})();
+</script>
+
+</main>
+</div>
 </body>
 </html>

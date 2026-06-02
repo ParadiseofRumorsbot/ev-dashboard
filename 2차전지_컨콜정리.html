@@ -4,62 +4,73 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2차전지 컨콜 정리 20260517</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
 <style>
-:root{--bg:#0a0e17;--sf:#111827;--sf2:#1a2332;--bd:#1e293b;--tx:#e2e8f0;--mu:#94a3b8;--ac:#3b82f6;--ac2:#8b5cf6;--gn:#10b981;--rd:#ef4444;--am:#f59e0b;--cy:#06b6d4}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--tx);line-height:1.7}
-.w{max-width:960px;margin:0 auto;padding:40px 24px 48px}
-.hdr{text-align:center;padding:36px 0 28px;border-bottom:1px solid var(--bd);margin-bottom:36px;position:relative}
-.hdr::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:140px;height:3px;background:linear-gradient(90deg,var(--ac),var(--ac2));border-radius:2px}
-.hdr h1{font-size:26px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#fff,#94a3b8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
-.hdr .sub{font-size:12px;color:var(--mu)}
-.hdr .badge{display:inline-block;margin-top:8px;padding:3px 12px;background:var(--sf);border:1px solid var(--bd);border-radius:14px;font-size:11px;font-family:'JetBrains Mono',monospace;color:var(--cy)}
-.st{font-size:18px;font-weight:700;margin:32px 0 14px;padding-left:14px;border-left:3px solid var(--ac);display:flex;align-items:center;gap:8px}
-.st .n{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ac);background:rgba(59,130,246,.1);padding:2px 7px;border-radius:4px}
-table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:12.5px}
-thead th{background:var(--sf2);padding:9px 10px;text-align:left;font-weight:600;font-size:11px;color:var(--mu);border-bottom:2px solid var(--bd);letter-spacing:.3px}
-tbody td{padding:8px 10px;border-bottom:1px solid var(--bd);vertical-align:top}
-tbody tr:hover{background:rgba(59,130,246,.03)}
-.m{font-family:'JetBrains Mono',monospace;font-size:12px}
+:root{--ac:#3b82f6;--ac2:#8b5cf6;--gn:#10b981;--rd:#ef4444;--am:#f59e0b;--cy:#0d9488}
+.w{max-width:960px;padding:0}
+.st{font-size:16px;font-weight:700;margin:28px 0 12px;padding-left:14px;border-left:3px solid var(--ac);display:flex;align-items:center;gap:8px;color:var(--ink)}
+.st .n{font-family:var(--mono);font-size:11px;color:var(--ac);background:rgba(59,130,246,.08);padding:2px 7px;border-radius:4px}
+table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:12px}
+thead th{background:var(--bg-soft);padding:9px 10px;text-align:left;font-weight:600;font-size:10px;color:var(--ink-3);border-bottom:2px solid var(--line-s);letter-spacing:.3px;font-family:var(--mono)}
+tbody td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink-2)}
+tbody tr:hover{background:var(--bg-soft)}
+.m{font-family:var(--mono);font-size:12px}
 .g{color:var(--gn)}.r{color:var(--rd)}.a{color:var(--am)}
-.t{display:inline-block;padding:1px 6px;border-radius:4px;font-size:10px;font-weight:600;font-family:'JetBrains Mono',monospace}
-.tg{background:rgba(16,185,129,.12);color:var(--gn)}.tr{background:rgba(239,68,68,.12);color:var(--rd)}.tn{background:rgba(139,92,246,.12);color:var(--ac2)}.tk{background:rgba(6,182,212,.12);color:var(--cy)}.tf{background:rgba(148,163,184,.12);color:var(--mu)}
-.ib{background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:18px 20px;margin-bottom:14px}
-.ib p{font-size:13px;margin-bottom:8px}.ib p:last-child{margin-bottom:0}
-.op{background:linear-gradient(135deg,rgba(6,182,212,.06),rgba(139,92,246,.06));border:1px solid rgba(6,182,212,.18);border-radius:10px;padding:16px 18px;font-size:12.5px;color:var(--mu);line-height:1.7;margin-bottom:20px}
-.op-l{display:inline-block;font-size:10px;font-weight:700;color:var(--cy);background:rgba(6,182,212,.12);padding:2px 7px;border-radius:3px;margin-bottom:6px;letter-spacing:.4px}
+.t{display:inline-block;padding:1px 6px;border-radius:4px;font-size:10px;font-weight:600;font-family:var(--mono)}
+.tg{background:rgba(16,185,129,.1);color:var(--gn)}.tr{background:rgba(239,68,68,.1);color:var(--rd)}.tn{background:rgba(139,92,246,.1);color:var(--ac2)}.tk{background:rgba(13,148,136,.1);color:var(--cy)}.tf{background:var(--bg-soft);color:var(--ink-3)}
+.ib{background:var(--bg-card);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin-bottom:14px}
+.ib p{font-size:12.5px;margin-bottom:8px;color:var(--ink-2)}.ib p:last-child{margin-bottom:0}
+.op{background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:16px 18px;font-size:12px;color:var(--ink-2);line-height:1.7;margin-bottom:20px}
+.op-l{display:inline-block;font-size:10px;font-weight:700;color:var(--cy);background:rgba(13,148,136,.08);padding:2px 7px;border-radius:3px;margin-bottom:6px;letter-spacing:.4px}
 .hl{background:rgba(251,191,36,.12);padding:1px 3px;border-radius:2px;color:var(--am)}
 .ih{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px}
-.in{flex-shrink:0;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#fff}
-.n1{background:linear-gradient(135deg,#3b82f6,#2563eb)}.n2{background:linear-gradient(135deg,#8b5cf6,#7c3aed)}.n3{background:linear-gradient(135deg,#06b6d4,#0891b2)}
-.it{font-size:15px;font-weight:700;line-height:1.4;padding-top:3px}
-hr.dv{border:none;border-top:1px solid var(--bd);margin:32px 0}
+.in{flex-shrink:0;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;font-weight:700;color:#fff}
+.n1{background:linear-gradient(135deg,#3b82f6,#2563eb)}.n2{background:linear-gradient(135deg,#8b5cf6,#7c3aed)}.n3{background:linear-gradient(135deg,#0d9488,#0891b2)}
+.it{font-size:14px;font-weight:700;line-height:1.4;padding-top:3px;color:var(--ink)}
+hr.dv{border:none;border-top:1px solid var(--line);margin:28px 0}
 .dg{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;margin-bottom:16px}
-.di{background:var(--sf);border:1px solid var(--bd);border-radius:8px;padding:14px;border-left:3px solid var(--ac)}
+.di{background:var(--bg-card);border:1px solid var(--line);border-radius:8px;padding:14px;border-left:3px solid var(--ac)}
 .di.pos{border-left-color:var(--gn)}.di.neg{border-left-color:var(--rd)}.di.new{border-left-color:var(--ac2)}
-.dl{font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:var(--mu);margin-bottom:3px}
-.dv2{font-size:13px;font-weight:600;color:#fff}
-.dd{font-size:11.5px;color:var(--mu);margin-top:3px}
-.fw{font-weight:600;color:#fff}
-@media(max-width:640px){.w{padding:16px 12px 32px}.hdr h1{font-size:20px}table{font-size:11px}thead th,tbody td{padding:6px 5px}.dg{grid-template-columns:1fr}}
+.dl{font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:var(--ink-3);margin-bottom:3px;font-family:var(--mono)}
+.dv2{font-size:13px;font-weight:600;color:var(--ink)}
+.dd{font-size:11px;color:var(--ink-3);margin-top:3px}
+.fw{font-weight:600;color:var(--ink)}
+@media(max-width:640px){.w{padding:0}table{font-size:11px}thead th,tbody td{padding:6px 5px}.dg{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+<div class="page-wrap">
+<aside class="sidebar">
+<div class="sidebar-hdr">EV Dashboard</div>
+<div class="sidebar-group">Pages</div>
+<a href="index.html" class="sidebar-link">EV 판매</a>
+<a href="robotaxi.html" class="sidebar-link">FSD / 로보택시</a>
+<a href="us-import.html" class="sidebar-link">US 수입</a>
+<a href="Battery_bom_routing.html" class="sidebar-link">ESS BOM</a>
+<a href="battery_scenario.html" class="sidebar-link">Battery Scenario</a>
+<a href="2차전지_컨콜정리.html" class="sidebar-link active">컨콜 정리</a>
+<a href="battery_tech.html" class="sidebar-link">기술 / 특허</a>
+<a href="global_battery_map.html" class="sidebar-link">배터리 맵</a>
+</aside>
+<main>
 <div class="w">
 
-<div class="hdr">
-<h1>2차전지 컨콜 정리</h1>
-<div class="sub">1Q26 실적발표 · 4Q25→1Q26 가이던스 Delta 분석 · 11개사 종합</div>
-<div class="badge">2026.05.02 · 황소자산운용</div>
-<nav style="display:flex;gap:10px;margin-top:16px;font-size:12px;justify-content:center"><a href="index.html" style="color:#64748b;text-decoration:none;padding:4px 10px;border-radius:6px">EV 판매</a><a href="robotaxi.html" style="color:#64748b;text-decoration:none;padding:4px 10px;border-radius:6px">FSD·로보택시</a><a href="us-import.html" style="color:#64748b;text-decoration:none;padding:4px 10px;border-radius:6px">US 수입</a><a href="Battery_bom_routing.html" style="color:#64748b;text-decoration:none;padding:4px 10px;border-radius:6px">ESS BOM</a><a href="battery_scenario.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">Battery Scenario</a><a href="2차전지_컨콜정리.html" style="color:#3b82f6;text-decoration:none;padding:4px 10px;border-radius:6px;background:#1e293b">컨콜 정리</a><a href="battery_tech.html" style="color:#64748b;text-decoration:none;padding:4px 10px;border-radius:6px">🔬 기술·특허</a><a href="global_battery_map.html" style="color:#64748b;text-decoration:none;padding:4px 10px;border-radius:6px">🗺️ 배터리 맵</a></nav>
+<div class="hdr" style="margin-bottom:28px">
+<div class="hdr-tag">Conference Call Notes</div>
+<h1 style="font-size:24px;font-weight:300;letter-spacing:-.02em"><b style="font-family:var(--mono);font-size:.78em;background:var(--ink);color:var(--bg);padding:2px 10px 4px;border-radius:4px;display:inline-block;margin-right:6px">CC</b> 2차전지 컨콜 정리</h1>
+<p class="hdr-sub">1Q26 실적발표 · 4Q25→1Q26 가이던스 Delta 분석 · 11개사 종합</p>
+<div style="display:inline-block;margin-top:8px;padding:3px 12px;background:var(--bg-soft);border:1px solid var(--line);border-radius:14px;font-size:11px;font-family:var(--mono);color:var(--cy)">2026.05.02</div>
 </div>
 
 <!-- ========== 5월 2주 업데이트 LOG ========== -->
-<div style="background:#0f172a;border:1px solid #334155;border-left:4px solid #3b82f6;border-radius:8px;padding:16px 20px;margin-bottom:24px;font-size:11px;color:#94a3b8;line-height:1.8">
+<div style="background:var(--bg-card);border:1px solid var(--line);border-left:4px solid #3b82f6;border-radius:8px;padding:16px 20px;margin-bottom:24px;font-size:11px;color:var(--ink-2);line-height:1.8">
 <div style="font-size:13px;font-weight:700;color:#3b82f6;margin-bottom:10px">📝 5월 2주 업데이트 (2026.05.17)</div>
-<div style="margin-bottom:12px"><strong style="color:#e2e8f0">▶ 추가 기업 4건:</strong> SK이노베이션 · WCP · 롯데에너지머티리얼즈 · Albemarle (1Q26 실적)</div>
-<div style="margin-bottom:12px"><strong style="color:#e2e8f0">▶ 핵심 의제 3가지</strong></div>
+<div style="margin-bottom:12px"><strong style="color:var(--ink)">▶ 추가 기업 4건:</strong> SK이노베이션 · WCP · 롯데에너지머티리얼즈 · Albemarle (1Q26 실적)</div>
+<div style="margin-bottom:12px"><strong style="color:var(--ink)">▶ 핵심 의제 3가지</strong></div>
 <div style="padding-left:12px;margin-bottom:10px">
 <strong style="color:#4ecdc4">① ESS 27년 이익기여 컨센서스 형성</strong><br>
 · SK이노: "ESS 27년 이익 기여" + 플랫아이언 포함 수주 + 라인 전환 추가 검토<br>
@@ -82,16 +93,16 @@ hr.dv{border:none;border-top:1px solid var(--bd);margin:32px 0}
 </div>
 <div style="margin-top:14px;padding:12px 14px;background:#1e293b;border-radius:6px;border-left:3px solid #a78bfa">
 <strong style="color:#a78bfa">▶ [개인의견]</strong><br><br>
-<strong style="color:#e2e8f0">롯데에너지머티리얼즈</strong> — 회로박 HVLP가 이 회사의 본질<br>
+<strong style="color:var(--ink)">롯데에너지머티리얼즈</strong> — 회로박 HVLP가 이 회사의 본질<br>
 · 회로박 HVLP 수요 25E 4.4만톤→30E 14.1만톤 (CAGR 30%+), 공급 제한적 → 구조적 쇼티지<br>
 · 국내 유일 회로박 업체. AI 가속기향 1Q 양산 시작. 3년 내 M/S 30%+ 목표<br>
 · 전고체 니켈도금 동박 국내 최초 + 28년 1GW 고체전해질 → 전고체 시대 선점<br>
 · 단, "27년 독보적 수익성 확보" 강조하며 단기 흑자전환 어렵다 명시. 주가 반영 시점은 27년 실적 가시화 이후<br><br>
-<strong style="color:#e2e8f0">WCP</strong> — 4680 고함침성 + LFP 분리막 비중 확대가 핵심<br>
+<strong style="color:var(--ink)">WCP</strong> — 4680 고함침성 + LFP 분리막 비중 확대가 핵심<br>
 · 4680 고함침성 특허(4년전): 중심부 함침 해결 시 5배 에너지밀도 + 덴드라이트 방지 → 4680 표준 분리막화 목표<br>
 · LFP 전환 시 분리막 원가비중 8~10%→15~20%. LFP가 분리막 TAM을 키우는 역설<br>
 · Tesla Gen1 4680 실측 244Wh/kg 부진 → Gen2/Gen3 전환 일정이 WCP 고함침성 매출 시점 결정<br><br>
-<strong style="color:#e2e8f0">Albemarle</strong> — 리튬 판가 전망<br>
+<strong style="color:var(--ink)">Albemarle</strong> — 리튬 판가 전망<br>
 · 1Q26 판가 $16.9/kg (+42% YoY). 가이던스: $10/kg→EBITDA $7~8억 / $20/kg→$21~23억 / $30/kg→$39~41억<br>
 · 2Q26: pricing lag로 매출·EBITDA 증가 전망. 단, 래깅 정상화 + 중동 $7~9천만 부담으로 마진율 소폭 하락<br>
 · 리튬 재고일수 2023년 이후 최저 → 가격 하방 경직성 확보
@@ -308,6 +319,9 @@ SPE1 라인 1개(8GWh)가 BBU 라인으로 배정된 것으로 파악됨.<br>커
 <p>• Kemerton 정제소 가동 중단 → 2Q26~ 고정비 감소 · 중동 공급망 차질 $7~9천만 부담 → 비용 관리·이자비용 감소로 상쇄</p>
 </div>
 
+</div>
+</div>
+</main>
 </div>
 </body>
 </html>

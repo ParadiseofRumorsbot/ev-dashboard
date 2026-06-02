@@ -1,8 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
 <title>미국 수입 트래커</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -58,6 +62,20 @@ footer{border-top:1px solid var(--bd);padding:16px 0;text-align:center;font-size
 </style>
 </head>
 <body>
+<div class="page-wrap">
+<aside class="sidebar">
+<div class="sidebar-hdr">EV Dashboard</div>
+<div class="sidebar-group">Pages</div>
+<a href="index.html" class="sidebar-link">EV 판매</a>
+<a href="robotaxi.html" class="sidebar-link">FSD / 로보택시</a>
+<a href="us-import.html" class="sidebar-link" active>US 수입</a>
+<a href="Battery_bom_routing.html" class="sidebar-link">ESS BOM</a>
+<a href="battery_scenario.html" class="sidebar-link">Battery Scenario</a>
+<a href="2차전지_컨콜정리.html" class="sidebar-link">컨콜 정리</a>
+<a href="battery_tech.html" class="sidebar-link">기술 / 특허</a>
+<a href="global_battery_map.html" class="sidebar-link">배터리 맵</a>
+</aside>
+<main>
 <div class="ct">
 <header>
   <h1>📊 미국 수입 트래커</h1>
@@ -747,5 +765,7 @@ PHEV 18,309대 (YoY <span class="up">+44.1%</span>) → BEV→PHEV·HEV 전환 �
 
 init();
 </script>
+</main>
+</div>
 </body>
 </html>

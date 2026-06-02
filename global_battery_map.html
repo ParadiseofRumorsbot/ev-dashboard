@@ -1,9 +1,16 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><title>Battery Value-Chain Map v5</title>
+﻿<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><title>Battery Value-Chain Map v5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
 <style>
-:root{--bg:#f8f5f0;--card:#fff;--border:#e8e0d4;--accent:#c4721a;--accent2:#8b6914;--text:#2c2418;--sub:#8a7e6e;--green:#38a169;--red:#e53e3e;--blue:#2b6cb0}
+:root{--bg:#FAFAF6;--bg-grid:#F0EFE8;--card:#FFF;--border:#E2E1D8;--accent:#c4721a;--accent2:#8b6914;--text:#0A0A08;--sub:#8B8B82;--green:#38a169;--red:#e53e3e;--blue:#2b6cb0}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;min-height:100vh}
-.app{max-width:1400px;margin:0 auto;padding:0 20px}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:hidden;min-height:100vh;background-image:none}
+.page-wrap{display:flex;max-width:1600px;margin:0 auto}
+.page-wrap>.sidebar{min-width:200px;width:200px}
+.page-wrap>main{flex:1;min-width:0;padding:0 0 0 20px}
+.app{max-width:100%;padding:0 20px}
 /* HEADER */
 .hd{padding:16px 0 8px;display:flex;justify-content:space-between;align-items:flex-start}
 .hd-left{flex:1}.hd-meta{font-size:10px;color:var(--sub);font-family:monospace;letter-spacing:.5px;margin-bottom:4px}
@@ -117,6 +124,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 .ev-links a:hover{background:#f5f0e8}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
 </style></head><body>
+<div class="page-wrap">
+<aside class="sidebar">
+<div class="sidebar-hdr">EV Dashboard</div>
+<div class="sidebar-group">Pages</div>
+<a href="index.html" class="sidebar-link">EV 판매</a>
+<a href="robotaxi.html" class="sidebar-link">FSD / 로보택시</a>
+<a href="us-import.html" class="sidebar-link">US 수입</a>
+<a href="Battery_bom_routing.html" class="sidebar-link">ESS BOM</a>
+<a href="battery_scenario.html" class="sidebar-link">Battery Scenario</a>
+<a href="2차전지_컨콜정리.html" class="sidebar-link">컨콜 정리</a>
+<a href="battery_tech.html" class="sidebar-link">기술 / 특허</a>
+<a href="global_battery_map.html" class="sidebar-link active">배터리 맵</a>
+</aside>
+<main>
 <div class="app">
 <!-- HEADER -->
 <div class="hd">
@@ -673,4 +694,7 @@ window.addEventListener('load',init);
 window.addEventListener('resize',()=>{if(activeTab==='geo'){initMap();renderFabs();}renderTab();});
 </script>
 <div class="src-footer">Sources: ev-dashboard CELL3_CAPA (황소자산운용 자체 집계) · Tesla SEC 8-K/10-Q · Panasonic Energy IR · AESC/Ford Energy PR · LG화학·에코프로비엠·포스코퓨처엠 IR · 솔브레인 DART · 덕산일렉테라 NDR · 엔켐·동화 IR · IEA WEO · U.S. Census HS 850760 · ESS 프로젝트 취소: 자체추정</div>
+
+</main>
+</div>
 </body></html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
@@ -766,6 +766,20 @@ main{max-width:1080px;margin:0 auto;padding:20px 16px 60px}
 </style>
 </head>
 <body>
+<div class="page-wrap">
+<aside class="sidebar">
+<div class="sidebar-hdr">EV Dashboard</div>
+<div class="sidebar-group">Pages</div>
+<a href="index.html" class="sidebar-link">EV 판매</a>
+<a href="robotaxi.html" class="sidebar-link">FSD / 로보택시</a>
+<a href="us-import.html" class="sidebar-link">US 수입</a>
+<a href="Battery_bom_routing.html" class="sidebar-link">ESS BOM</a>
+<a href="battery_scenario.html" class="sidebar-link" active>Battery Scenario</a>
+<a href="2차전지_컨콜정리.html" class="sidebar-link">컨콜 정리</a>
+<a href="battery_tech.html" class="sidebar-link">기술 / 특허</a>
+<a href="global_battery_map.html" class="sidebar-link">배터리 맵</a>
+</aside>
+<main>
 <main>
   <header class="hdr">
     <div class="hdr-tag">Battery Scenario Simulator <span style="font-weight:400;font-size:11px;opacity:.6;margin-left:6px">by. sangmin woo</span></div>
@@ -2185,5 +2199,7 @@ renderScenTabs();renderScenario();renderCell3Tabs();renderCell3();
 renderLiTabs();renderLiChart();renderMetalCalc();renderLfpCost();buildEditorSections();
 window.addEventListener('resize',()=>renderLiChart());
 </script>
+</main>
+</div>
 </body>
 </html>
