@@ -1,51 +1,32 @@
 {
   "type": "ev_launch_timeline",
-  "lastUpdated": "2026-06-01T23:13:34.291Z",
-  "date": "2026-06-01",
+  "lastUpdated": "2026-06-02T23:15:00.106Z",
+  "date": "2026-06-02",
   "description": "EV 신차 출시일정 모니터링 — 타임라인 테이블 반영용",
   "note": "⚠️ 자동 수집 결과입니다. 대시보드 반영 전 사용자 확인 필요.",
-  "totalItems": 20,
+  "totalItems": 18,
   "oemStats": {
     "BYD": 1,
-    "Hyundai": 2,
-    "Kia": 2,
     "Mercedes": 1,
-    "GM": 1,
-    "Other": 7,
-    "Genesis": 1,
-    "Tesla": 1,
+    "Other": 5,
     "Toyota/Lexus": 1,
-    "BMW": 1,
-    "VW": 1,
-    "Rivian": 1
+    "Hyundai": 1,
+    "Porsche": 2,
+    "Kia": 1,
+    "Tesla": 1,
+    "Volvo": 1,
+    "Stellantis": 3,
+    "GM": 1
   },
   "items": [
     {
-      "title": "BYD Atto 3 facelift launching in Malaysia June 5 – basic updates or full-blown Evo 800V RWD revamp? - Paul Tan",
+      "title": "BYD Atto 3 facelift launching in Malaysia June 5 – basic updates or full-blown Evo 800V RWD revamp? - Paul Tan's Automotive News",
       "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQV0dRalYyd19TdVFybkE2WVM1RXpoalFDY1hhSDhURzB3dV9BYV9zajlGZ29wcHgxUWtQY2t1eXA1bzRqbTY1QWdwX2RYam5qSkljWk9nSlQyUmFOZmRDcEJuRnlsbWU5ZkViUkVBSkluT19KZWg2VDZZb1ZxREQ0eFRCNmtPcnVTYzdTR0hNR0FraHpfX045Y0xHTE45Zm9LRFo5RkJKem41Uy1GUWU2TmdKQThveG1pLXZveXZUQnNYdENjSllr?oc=5",
       "pubDate": "Sun, 31 May 2026 06:41:32 GMT",
-      "source": "Paul Tan",
+      "source": "Paul Tan's Automotive News",
       "oem": "BYD",
       "market": "Global",
       "score": 3
-    },
-    {
-      "title": "Hyundai Ioniq 5 facelift set for India launch soon. Key changes to expect - MSN",
-      "link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNdGgzZHJCMWtNWlRLQVItRHR5RG9Reml3dHdMenliOWNqZjhtODlFUWdNX1pRY3l2RE8zSHNQdmstOGpvVTJzVWhvX3BFR1JXRW9TLUJ3QkRZcVdzLVU2dm1UVjk2Y2RtWjRGSG05SkxJUFd3cVBCaU5xTkZhT1ZPNGp4X2dNcHNXYTN1NmF0LWN5S1d1bjkySUVkRUtpLWluN05jcERibG9kTHN5dGJPZEg3NzhtOGQ5QzRER2lFZ1ZnVV9qbHowSFBqeHJTRHpaS19FQzgwRVF3eHdoa1c2dXJSS1ZJMFN5RHd4a3dSU25sX1U0LUt3UW9jRDh0LWM?oc=5",
-      "pubDate": "Mon, 01 Jun 2026 05:30:11 GMT",
-      "source": "MSN",
-      "oem": "Hyundai",
-      "market": "Global",
-      "score": 2
-    },
-    {
-      "title": "2027 Kia K5 May Skip A Full Redesign For A Cleaner Facelift - AOL.com",
-      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBCQVVFSXd0S2dnVjRTVERzUTJBenRpVjh3MjhScXR5NFhuaW5PRWpZcW9RSTJEOWRCc0xzRFhXYjl2ZUdMUEFTQUppNmFOYU41TFg4YlhLU3c5UEQ5eTRLRFNsOUFVNDhaWER1X09fb3lpbGs?oc=5",
-      "pubDate": "Mon, 01 Jun 2026 19:04:32 GMT",
-      "source": "AOL.com",
-      "oem": "Kia",
-      "market": "Global",
-      "score": 2
     },
     {
       "title": "The Mercedes CLA offers great EV specs for an average price - The Verge",
@@ -57,147 +38,147 @@
       "score": 2
     },
     {
-      "title": "2027 Chevrolet Bolt EV Range: The Make-Or-Break Number Behind America's Cheapest EV - CarBuzz",
-      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1md2ZjUnBMdF93UjloQ2NhcVdUNXphR2V3YmVJUTYwZXhuUVJvTEJJbkVmUVNGczhzc05wT1h5bUJLVzRyZ1B0WDNJMEx3RlFOdFVUZDJmWVA1a3pabmN2a0RUUTVvdw?oc=5",
-      "pubDate": "Mon, 01 Jun 2026 15:23:49 GMT",
-      "source": "CarBuzz",
-      "oem": "GM",
-      "market": "NA",
-      "score": 1
-    },
-    {
-      "title": "BeamNG.Drive Will Launch For PS5 In 2026 - AOL.com",
-      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5FYWRqa0VtVWo2cUpLZERlT2pzeUlMTkRZTGxIWmUtd05hNG5nMlVxNlRfWGxobEhXbXpXWW5nc2NOQXZ3amw2SERDZ1BJaEktTlZPRy05T1lBRk94THUwVU1QV1d0ZnFfS09uN1V4bGpSQy10cGdZcmNMcHM?oc=5",
-      "pubDate": "Mon, 01 Jun 2026 18:33:51 GMT",
-      "source": "AOL.com",
+      "title": "2027 Acura ADX Preview: Model Info & Release Date - CarsDirect",
+      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1XUUE0Zng1RlRmb3V4N19KUTlfaXYzTGw2M3A4TUtyc2NueVZnZG9VRWZXeWlPUHpraHRGRjFIQWZPWThqdFRrR1ExMzhyTi1yTEo4?oc=5",
+      "pubDate": "Tue, 02 Jun 2026 05:21:40 GMT",
+      "source": "CarsDirect",
       "oem": "Other",
       "market": "Global",
       "score": 1
     },
     {
-      "title": "New Hyundai Bayon Fresh Spy Images Reveal Design Details - CarLelo",
-      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQMlhrYU5SY2hlOXJNUFVyZWxiWl9IQVNTWGZoU3MwcnNqUmhtMnVsallsdS1vTjJWSUNZWDdGbEZnVzU0TFNKNlVkT1B6dkVFellEdjczd1k0aE5XdWZ2aS1STWkxVElfU3A1dWhmNWx2cXUzdDd3M2NDRkJHVVdiU29oTGZxSE96QjI5VWRB?oc=5",
-      "pubDate": "Mon, 01 Jun 2026 10:45:26 GMT",
-      "source": "CarLelo",
+      "title": "Third-gen Audi Q7 confirmed, global debut set for mid-2026 - HT Auto",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOb1BLNVBsOHdyU2kxUlRVNURfU2UwdXo0SXVrNnlzX2wtVlM0MWhCV2FYUmc0RzhoeXhLZ2lvOThJMDE5UXpkSl9EYmpKTi14QVVBVEdTR19MX1V6YnlmR1hMX0IxYW1qNlRrVG44a3U1bjNLUk5ZTlNUYXhVc2M4ejUxVl9DRzM2d0o4MEc4b0E5VmRZR25uMXFOSUNLNFQxV09CZWFMNkVnUVhFZnZjZjBqLXUzM09S0gG-AUFVX3lxTE9hbURDaTMzY1hHZ09iUXQ5cFlqTDJHRUZoSDlKVFFnLVpOZlZiX01XR2F3THJ3bndMRUZOLXhhaENPNFVJSXA5b1FFaDBxZ3ItR0RVZ3pBX3FZZWhIR3E0WjNkZzhOU0RnWk1PblJXTk8xZHpLN2x6b3pMTGVRVFk0eEtVOEI3YnlmRGdpLUtHN2lnVHlTQXRMMFNxMEFDbDFYNjA3Zm9fNS1tdHl3bFl0ODMxY0YyU0lpbkg0MXc?oc=5",
+      "pubDate": "Tue, 02 Jun 2026 13:50:56 GMT",
+      "source": "HT Auto",
+      "oem": "Other",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "Toyota launches first EV in India at ₹23.60 lakh amid fierce competition - MSN",
+      "link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxNSmRhMUZ3NXg2LU1wbFdKZ3VNQ0ZlanZWZ0l0LVdCYTZ0dXBmMmNjd2d1UWNVMDhEanJpY192d29sM291V1lMbTFncm5DbGxOUFV0WC1qSWpGaXNHd3NzVWxsak55RnZhRHh2RFlRZEdkQTRqZS1xejZmVUQ5TVFidjRDWFNBdWc0ZzBhSU9jWkVlTXcwLTVmZkd3SEctQkFHUU5rcTZhU2ZpQmF1VjZDYnZvVUdFaEUxbjM3bkpmamU2SXhJeFJzZ1dUUTJPTmV5TmdiNFNTVXVFVTlDcV9GUVRfWEZLd2ZibVN0cFpmUzZCQXNRY1l3S2l5VjVIeHVjLTZ5UQ?oc=5",
+      "pubDate": "Tue, 02 Jun 2026 02:11:24 GMT",
+      "source": "MSN",
+      "oem": "Toyota/Lexus",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "The Hyundai Ioniq 6 Is A Stunning Used EV Deal With 361 Miles Of Range - InsideEVs",
+      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5pQkUweTVad2tQMzF4emdpeS0wRGp2UDFZaFh3eEo4eU5DV1otbmhRN0RqWjBKbGhLaG45YXV2a0VrZGhYSkpUbWVOUU1WOWEzR0VJZVVzejV4NHpsc2tOVzNsb1p5ZzZGOHc?oc=5",
+      "pubDate": "Tue, 02 Jun 2026 11:50:36 GMT",
+      "source": "InsideEVs",
       "oem": "Hyundai",
       "market": "Global",
       "score": 1
     },
     {
-      "title": "Ferrari Stock Falls After Launch of First All-Electric Model Luce - vocal.media",
-      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNcTBmUGRVYmVEN3NqWmtIZlFMSURZVXJlekVIYW1OU09Kb3RqaUNma1l5bHYySUtvOGFva1hrVDdNQ18xb3pSNVJ5TDBGUUlEUUVrQWxGMkk0dEZnVkRnZmZRR2RkNjdueVZXWDJ5YXZZZnc4TGUtbUxkdDJrNm1pc3BPSUR1VUJMY0txUzZjaVFhMTh2Q3c?oc=5",
-      "pubDate": "Mon, 01 Jun 2026 10:13:06 GMT",
-      "source": "vocal.media",
-      "oem": "Other",
+      "title": "Porsche Levels Up Cayenne EV Launch in Fortnite - AOL.com",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNdWl4ZlFGVmwzUUZzQVc1Y2hyMlpvaFc4ZHRxZWpXdHhOM2cxVHUtQjRfTk41SzNjbXJBUHJGckltZEpKM1kxZHgtN0swbTFxeDVTTjdNS1NzandudEZBUFpTbDM4NUI1NVdHekpQVDJ6RFV1UWl4RHdmTlRRVXNWQl9R?oc=5",
+      "pubDate": "Tue, 02 Jun 2026 21:50:14 GMT",
+      "source": "AOL.com",
+      "oem": "Porsche",
       "market": "Global",
       "score": 1
     },
     {
-      "title": "Kia’s Most Affordable EV Launch Soon – Nexon EV Rival - CarLelo",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5MRkVyUzJvU2JJdkcxRjNUTzgxamQtWjVZT001Z0Q2dGw1bWI4SXVHc1V6cFZIaXAwaWVhTVZrUTBOWnQxdlRQemNqRHFOeC1XVWhQemwzNTh1OTdEQkM2M2twSl9vcUs2SHRkenMyRmdnUQ?oc=5",
-      "pubDate": "Mon, 01 Jun 2026 02:02:41 GMT",
+      "title": "Kia’s Most Affordable EV & Hybrid SUVs – Launch Timeline & Details - CarLelo",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQd003MGJuSk9uN3VYc0ZZZ1JfZ0U1QU83VXgxS1RzXzVLTU5lTldScFNIenhRcG9PVlJ1ZnJITkthVDc2YkEtdVl1UWIyQUF4OFZzd3VydGtVU2pSN2FnZVlaUWhLN0JoOUZXVVZwWWIzb1dXTUNKeXA2SkxWckk0czV3RTdkUQ?oc=5",
+      "pubDate": "Tue, 02 Jun 2026 11:29:28 GMT",
       "source": "CarLelo",
       "oem": "Kia",
       "market": "Global",
       "score": 1
     },
     {
-      "title": "Genesis Prices Its First Performance EV, The GV60 Magma - Yahoo! Finance Canada",
-      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNVXREbXVKQlBERThKVGhWc2JQNS1OMWdSbFh1UzhITVk3SDVJa1BJQUgzZHZiamlkZHNjTUlEcGpVdVNETElxWFIyUVNBNk5mTDdsX3AtS3FpaVMwRWsyUXdMUEI3VUxjb3VtR3R5V1ZVT3VDZl85YU0yUDY5WmRESkxVTkhjaFdqc3oyaA?oc=5",
-      "pubDate": "Mon, 01 Jun 2026 10:31:04 GMT",
-      "source": "Yahoo! Finance Canada",
-      "oem": "Genesis",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "Waymo launches cheaper robotaxis in Los Angeles - AOL.com",
-      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOdm55SXpMQkRHQWVkTHFhcUt2UE5BX3AxNEVDVkJTMWxTOV9RbVZiTjRSRlBqVlpLV3Q2cVpyMlQ1TEpSNW93dnE4Ry1ONE5USFE4ck9mWkdkRzBWOUtzMnNuUXNFRk53N2lIVHBTWFJUMUJHVkRNWENKd3ozNFphVVZlb21aaElCWFd0Mw?oc=5",
-      "pubDate": "Mon, 01 Jun 2026 21:13:03 GMT",
-      "source": "AOL.com",
-      "oem": "Other",
-      "market": "Global",
-      "score": 1
-    },
-    {
       "title": "Tesla Claims The Roadster Will Be Built In Texas, But There's Still No Launch Date - AOL.com",
       "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPTjB0Mm94b0xwSjRsX0tfZDJRa1g3bEU1ZVpYMmUwOXpVMGtVS2I3NkNoZnctMmdUQVBPX2t4SDRvdGpUSVZfaDVKTHBmX3NOaXJWOEt5dGhiSzh5ZEZkelQwNUM1MmtlaTh1VmExc3pqdUZiWFhXUnRvX1FKeHNlM3JXaw?oc=5",
-      "pubDate": "Mon, 01 Jun 2026 21:21:49 GMT",
+      "pubDate": "Tue, 02 Jun 2026 15:43:05 GMT",
       "source": "AOL.com",
       "oem": "Tesla",
       "market": "Global",
       "score": 1
     },
     {
-      "title": "Lexus launches 2026 ES EV with comfort, tech, and value focus - MSN",
-      "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOdDM5a2hrOWNWRmd6SGlHc3ZXRWVsRzJCdFZEdzdVaHNrMjJaMk9JYlEzZHd1V094RXkwTjZOMG5GZXBYRGxNZFRTSUh5ekgyOXRSTGxlb21PMEVXSTM3SHJRWnNwdE9kblhGNHdGNS1Lc2plaHpnUndvS2xmcFJWSFNXck56SExIY25od1BNZTRnVzVZYlczT09kSGc4Y3dZWTRFS0pSQW5oSUo1TG9MZkQ1ckFxd0lHb1VCQjk3a003eTlGWGdnMDE5LVBzbHczZ09CbmdyUDZDTkJCQWdfZWctV0l1d0dhSlJvRmh2a0tQcmM?oc=5",
-      "pubDate": "Mon, 01 Jun 2026 17:53:13 GMT",
+      "title": "June 2026 car launches blend luxury, EVs and hybrids - MSN",
+      "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOX3Zha1ZhSjM0YzVxb0hBNC1hcjZRcDRKb2NmQjVnZmc0Z01aQUowVHl3NFJLX2ZJdjlNWEZiTEl2aVcyUGlwNnR0OEViaXJSNDZCOWNZMm96RHljV0dPNkxsWEgyOGF3Z3dvdmtUOVlLaGgxSFJEcmpvci1hWUhBdXpOT0NiV25IMW1DNnM0dzBnRVNzRnEwbk5IN0lZcENNd1dFdmVtS1dwUm12c0VKUjh3a0ZvNkFZSEpYOUtGdk5NTUtPd3pGQzhHSkJzWGwybTBtWlBNNTFtUThOWUw2Zk9acmxveUtsdkE?oc=5",
+      "pubDate": "Mon, 01 Jun 2026 09:33:41 GMT",
       "source": "MSN",
-      "oem": "Toyota/Lexus",
+      "oem": "Other",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "Volvo EX40 discontinued in India, 2 new cars to launch in 2026 - MSN",
+      "link": "https://news.google.com/rss/articles/CBMiiANBVV95cUxNeS04a250UjItUTlfOUYtc3lPMHpiLTdZRm44aU4xTTQtVjl5R2pjUlBHNnU0YUZvQV9mZkc5MDhyTndGbkxrQmFQclVQSmg4emUtaGtvSTlMRlpPZ3o5SVNpQTdSX0h1bXJHbmtTZEU0NDdUUTl5T0ZZWGtYNUNmSkl6cUxPOW5fdERzaGYwNUlVQzM5aWRNRk05b1c0Nkd6MW1teE5IVWJneExxX3VZWkZOcVgwMUlodnVyczhWaXpRXzBvcWtUamk2UzNTNkZOaXZBUkU0c1pHTTIwNVFMSHFoNTRfdlpUc1dFcXQtczNubGc0Mm8wMkNEbmhqeE10TV9RLXVQUzhiejlCa25Sa0JUNWdfUGJJLTR3M0RaOHJKNXEwR3Ywa1dUcjZXb1V6TE9YcHNUb2UxcndWWEVFOWVjSmpjaWFGX205d2lsNHRtMFd3Z1pSNmZMbDVZNkF0TzV1aGQtODV1d3NROVA4bFc4dXpJU0hHRnFjZDZFeVRWcnpUV3Rfcw?oc=5",
+      "pubDate": "Tue, 02 Jun 2026 17:10:59 GMT",
+      "source": "MSN",
+      "oem": "Volvo",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "2026 Citroen eC3 X EV Previewed Ahead Of India Launch - Car and Bike",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPLUh5Y09IMGRkUlcwdERhVDB2Z1JXWUNyRGZSczNrSTBPSUtCZTZ3WUxrWHBLNjNUaXRGdUdkeXBqeHZwQ194WlJKcDV0alRITEtTZjhLSVFSM1BQLUFtWVBHQnFfUVNjOFpfZ0hKTkRHSkh0UkIxMnJtcDE5a1BvTF9oZHp5M29kZ0w3UmY0RDZNaklIRFlXNA?oc=5",
+      "pubDate": "Tue, 02 Jun 2026 14:05:43 GMT",
+      "source": "Car and Bike",
+      "oem": "Stellantis",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "2027 Chevrolet Bolt EV Range: The Make-Or-Break Number Behind America's Cheapest EV - AOL.com",
+      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE01SlVvc0lOZEFuRVh0Q1NfWmp5YmhZaEpjeFE1dUFmbVJMa0NQMFJxbmstY01YWWlOb0hNQk9aeXNMZ3lJa2hzMDJaNFNXaDRkSW1zNDhVaWdqdmVLUkV0QjcyQTZ0X1FwWGtVSDVONEtBRklSZTZ3VVlZNDc?oc=5",
+      "pubDate": "Tue, 02 Jun 2026 13:51:48 GMT",
+      "source": "AOL.com",
+      "oem": "GM",
       "market": "NA",
       "score": 1
     },
     {
-      "title": "New PS5 Accessories Coming in 2026, Prices Confirmed - AOL.com",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOWkU1eHpicVVSX0hmNXo5dXdVS3hyTlpIcmxtNEhDTXVFRGN6ZGU4UGtoTE1ETFlUd2xzaGRfM1p1cVhZS2tQSUw1cmJGd09oRy1jVV9LMGZTSWhPR0thaFlzcDc2ZThSNy1COEhMcHBhX213LWJkS1dGODk0WXMwNTY0YWxpZw?oc=5",
-      "pubDate": "Mon, 01 Jun 2026 19:28:37 GMT",
-      "source": "AOL.com",
+      "title": "2027 Chevy Bolt EV 75 MPH Highway Range Test. Here’s How America's Cheapest EV Performs. - InsideEVs",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9RTnBzRGxuc1JTM2NBcTZKVXZXUG1pYmxuQkRrM2VVUGpob29FNzZxU2lwdnhrRkVPeFVPODY2ZkxFVWFuUlRLWkNlaWVtLTV0VEZwR1M0ZjhWendaaGU4R0dZM2daT1R0SmZ1Ny1GUWVCdmRaZHpCTk1Qaw?oc=5",
+      "pubDate": "Tue, 02 Jun 2026 05:54:54 GMT",
+      "source": "InsideEVs",
       "oem": "Other",
-      "market": "Global",
+      "market": "NA",
       "score": 1
     },
     {
-      "title": "Upcoming car launches in June 2026: New S-Class, BMW X6 & more - The Times of India",
-      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQTkhJODFYM013U3NfQ1JaX21BcUxKZXF4Y0F3ZzVpR2NXY2FkR1BMbXZ1ek5NeUFZbmRKUC1kSnBWbWE5cEQwX1BGejNmUVUyRGJuSXRNdVlqdnNQQ3I3Z0xzaG1YcGE2MTNDeDkxc0FKY25tTklROGRqTWF5bGhyeFAyT3VBeWlGRmh4S0hMMThVS1cxTW50QzNEeEdMRmpBQUFvaTZGWmxTcEFBYk8xNXdfN0EtREhmVE9qNm04SGJOMGd5R1JmeGV30gHPAUFVX3lxTE5pQllFZlBKV09ZMGJaXzU3RUQ2SzRNQUlQZ3dTMEVFQnJYZURIdHJmMHdxS09pdzNCRXhHQzFoZmpTck4xYkNRZ1BTdGZNUzAxLUtWdGx6VWRXNVBtWWhjRFNpVXEzR3JCUkRoUk5MOUllNldaamM0VXBtVXM3MFFjSVgyT2ZnWkFGblg0TDY3aTFVU1ljaEJHaU54S1o0Z0xJdjJZbjVMSmRRb3VOakZHdmd3NEpnbWp6dlBCYThqYldGX000eFZOYmp2R1M1RQ?oc=5",
-      "pubDate": "Mon, 01 Jun 2026 06:29:00 GMT",
-      "source": "The Times of India",
-      "oem": "BMW",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "Our EVs match the Chinese on price, says VW cars boss - The Times",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNZDdxdUJOaXFERjVuRmNCaV9rVV9fOEQ2cWdNVFN0VkhXTHdPbzkwRDFIVXJfWXhvMHNiTkdqSWZRajNrTHpNQ0h5ODd5MUgzbEFLSlpYUVlSTzVEU216UlFOd1dlQjdYTWNvRDAzQmdOM182M25aZmdHakFJMnA1YXZqRE9zT2hUOU9NUExtcGFfSEVlemIwNEQzUjZMNGRaa3V5UGFR?oc=5",
-      "pubDate": "Sat, 30 May 2026 13:00:02 GMT",
-      "source": "The Times",
-      "oem": "VW",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "Bajaj Adventure Motorcycle Spotted Testing in India; Launch Expected by 2027 - Car and Bike",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPZV9JWDl3cFh1cGRheGFzUzYwRXdwRUNpTUo3SDZ3cVFVOXhvcUVhajM0M1lzbnlPRHItOVhEU2x0b2FGVVVZR1U0Mzg2Rjl5aTE0dVh0SS1CNDcyOVh3WF9mRlRGb0lLclRLZ2k4LTFsdEM5dzZiekxmVzM1Q0tKOEhDdENJdTVPeFJaNUwtVGtVSnBCOVdJSDFJd21rZHoza3hmZ3NwWEN5U19QT0d4bmJZdzlDZw?oc=5",
-      "pubDate": "Mon, 01 Jun 2026 12:17:03 GMT",
-      "source": "Car and Bike",
-      "oem": "Other",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "Rivian sets official launch date for Rivian R2 - Mashable",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBoMDlFZnZqSEEzZzRkRUNYa1BsTDJPUFdfUEVFbHd5cnZCdkF2LWZ0bXE1alVhZUVLOXhsbkZNR1BIcnlkWjBhTUdrZl9KUDJOWFFmdnJXdTFTc28?oc=5",
-      "pubDate": "Mon, 01 Jun 2026 18:30:58 GMT",
-      "source": "Mashable",
-      "oem": "Rivian",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "Dearborn police launch traffic crackdown with electric Mustangs - Detroit Free Press",
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQS2VZZGZ5TXc3V0hSQXF6RVVBUHp5NzF1dlh6Q2c5Q1Nva3l4NGZvNHExOFd3U19lT1FwLXpfd1pjbkM4STRYSzRCNVJFbVZVOTRGYnRBWTl0bmlyZ0JiaEMta1NtbVU0eEJENmVjUFhyVUoycl8tVHpubkFDMVF6dmFiQlBwWW1UQjZXRTJVb2tMd2gxV2NGMjVLMU91bkVFTnhXMzhDNjAyRmd4Z25sYk1NOWdzYUNPZXB1b09STUJHanV5MVE?oc=5",
-      "pubDate": "Mon, 01 Jun 2026 21:00:00 GMT",
-      "source": "Detroit Free Press",
-      "oem": "Other",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "Automakers gear up for major EV, hybrid and luxury launches in June - MSN",
-      "link": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQb0JLUDZramw3OWJjWVdMN3RaSktudWJDZU56dG9CQm5FWVQ3dHl2SmJza2ZBUWg2Z1FsdGo1QWxVRDM4WUl2ZHFaczM1ZGVaZkw2ZlZ5Nl8zclNUWFBPNFd5XzRES2g5dTlXZFlBLVo3TmRaaE1lNHFkVUpfNE5YM0lucHZKQjdOZXV2aDM3dTgwY2ZPY1RMTXg0S01VYzZOb19MOExWTDJfWXZhQjJYVTdMejFWMUV3ZnB5ZHZXeW1leHQ0MGJNRnZ1RHZSdlpSOFZNaURjc1ozWGRPbEh4UkRHWlJCUUFfdE9HejMxeThCT3F3U2V4dTBjTno?oc=5",
-      "pubDate": "Mon, 01 Jun 2026 09:33:43 GMT",
+      "title": "Polestar 5 launches to challenge Porsche Taycan dominance - MSN",
+      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNNF96TGJabEE4aUhnUkdYNEFJS3ZhMnptanc1ellBdTNnNk9oc0FmeEEzLXZSVGtCWGZJMXVfUUxKVVRBVzUtQ0cxQk91N0l6UXV3MlduV1lCa0d3QmlYYkUxNkZ0ZkJFYnJEVmhjOWRMSmU3SXNiMnhxYXA1amtaMlhqX3JTcW9lbG94UG5vdGVRTU9mT3BRWFdRalRsNXVKSmViTlo0NF9VSy04X3NiS3dRR2xWN256S2dScmlwSW1yOGJGcFIzeG5ULUJlTUJJVlEzbDhUX29IN3AwRXg4REh0UHBSdXR5VFo1OU9RR2s?oc=5",
+      "pubDate": "Tue, 02 Jun 2026 07:07:57 GMT",
       "source": "MSN",
-      "oem": "Other",
+      "oem": "Porsche",
       "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "Stellantis is launching a new mega platform and expanding partnerships with Chinese firms to stay competitive globally. See link below ⬇️ 📸 Photo provided by Stellantis - facebook.com",
+      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOZUlXQmNvOHNpeDdZMF85d040azFtcjF2N05yVzd6VWpVS3NMM0ZlU2U0SWhJeWJIUTB1UDhkTmVMYVhOQk5ldzJRRURSOEZGX0stOHh3QmxZdmxRLTJwZktSXy1DM0tRbHZzZEVVMnVCQlppMDZwSV8zdTZ6dkRELVFsM2hzUjlpTUppWEt3ZDFpcHRUSFlKZk9BeFpzRXQyLWJrT3dyY2tXZ2daQVRyN3d2TFczWVFwcFQtX09jS2RYcjFObHlzQ1FiNzlOUTV2Y3FnemdaQVRzV1pmYl9Z?oc=5",
+      "pubDate": "Tue, 02 Jun 2026 15:00:46 GMT",
+      "source": "facebook.com",
+      "oem": "Stellantis",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "Stellantis Wants to Unveil 29 EV Models by 2030 - Green Car Stocks",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNTnJsN0Fla1hqNmZDTzlVdkdlc09DcTlRNzdQLThfMkxNem5hcHl0Yk1Od3lsMzh2ZGZ6SjJoS0cyOVZDSld2dndLbm9zY21wSEVGdnZsYTdqSTR3Zm9ia2RKellTMEw4OUNwMDU0WDlpdGtDcC0tZ3RicG80aGZyajN3MlA3UdIBiwFBVV95cUxOcVdKTnJHTHRON0Y2NExfS1pidXRZcFhHcDJUcFFqaUNuOXB1SVBZSVdtcEwzSlphQ0NxcDNMU1ZwZ1NGS2Y1SzFIN1djUzF1aG51bml2UW9SZTViUVZXSnk3RmUxQmwxUkd3TDVaS1dfcTB5Rm0yTm1XVHU0SWNMMElwTmRzSDJpS2c4?oc=5",
+      "pubDate": "Tue, 02 Jun 2026 17:08:03 GMT",
+      "source": "Green Car Stocks",
+      "oem": "Stellantis",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "Indian-built Škoda Kylaq’s European launch ‘very much on the table’, says boss - The Independent",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOdm92TkEzc05xNDZEN0FxTTN1US0wclNINFB4UlFadXE1WW5pbllkZE9SUXd2VjJ4dDVoNUNFX1V4WEVka2hEdlV3aE9TdlRDVEFaU1lNMzUxRzVuaHgzOE5iTWtsMm4wcE50dUFEVlFnVjl0OXdSdXM2WUYyRlBiVzVjWUlFeEhQZC1hb2Rn?oc=5",
+      "pubDate": "Tue, 02 Jun 2026 13:48:00 GMT",
+      "source": "The Independent",
+      "oem": "Other",
+      "market": "EU",
       "score": 1
     }
   ]
