@@ -243,8 +243,9 @@ function genInsight(tab){
   const sty='background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:12px 16px;margin-bottom:14px;font-size:10.5px;color:var(--tx2);line-height:1.7';
   const opSty='margin-top:8px;padding:8px 12px;background:rgba(139,92,246,0.08);border-radius:6px;border-left:3px solid #8b5cf6';
 
-  const updateLog=`<div style="${sty};border-left:4px solid #3b82f6">
-<div style="font-size:11px;font-weight:700;color:#3b82f6;margin-bottom:6px">📝 Update Log · 2026.05.19</div>
+  const updateLog=`<details class="toggle-box" style="${sty};border-left:4px solid #3b82f6">
+<summary style="font-size:11px;font-weight:700;color:#3b82f6;cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px"><span style="font-size:11px;color:var(--tm);transition:transform .2s">▸</span> Update Log · 2026.05.19</summary>
+<div style="margin-top:8px">
 🔀 <b>탭 9 "EU vs US 전동화 디버전스" 신규</b> — T&E REF/COM/LOW 시나리오 vs S&P Global 미국 HEV 회귀 좌우 분할 · 한국 밸류체인 영향 분석<br>
 🇪🇺 <b>EU CO2 규제 시나리오 데이터</b> — BEV 14.6M→7.3M, CAPA 1,445→421 GWh, K3 가동률 95%→45% 시나리오 통합<br>
 🇺🇸 <b>미국 HEV 회귀 트렌드</b> — HEV 모델 41→45개, 기아 HEV 4→8개, 팰리세이드 HEV 9.3%, 텔루라이드 HEV 22%<br>
@@ -258,7 +259,7 @@ function genInsight(tab){
 <b style="color:#8b5cf6">[개인의견]</b><br>
 · <b>Cell</b>: 한국 M/S 7.4% 구조적 바닥 근접. 현지 양산 본격화로 한국발 수출 소형배터리·부품 중심 재편. 중국 40% Front-loading 피크 → 48% 관세+FEOC 강화(26년 65%→30년 85%) 시행 시 4~5월 급감. 태국·말레이·인도네시아 3국 13%+ 우회 → Section 301 부과 시 현지생산 셀사 직접 수혜<br>
 · <b>알루미늄</b>: USMCA FTA 면세로 캐나다·멕시코 집중 고착화. LFP 전환 시 양극박 소요 ×1.43 → 삼아알미늄·DI동일 우호적<br>
-· <b>솔라</b>: 미중 회담 스몰딜. 중국 태양광 규제 완화 논의 자체 없음. OBBBA 핵심 규정(AMPC·FEOC/PFE·MACR) 법률사항으로 변경 6~12개월. Sunrun 등 이미 중국산 배제. 폴리실리콘 공급망 최상단 → 완화 가능성 극히 낮음. 이란 전쟁으로 DC 미국 유턴 → 태양광+ESS 급증. 한화솔루션 -15%, OCI홀딩스 -20% 급락은 매수 기회</div></div>`;
+· <b>솔라</b>: 미중 회담 스몰딜. 중국 태양광 규제 완화 논의 자체 없음. OBBBA 핵심 규정(AMPC·FEOC/PFE·MACR) 법률사항으로 변경 6~12개월. Sunrun 등 이미 중국산 배제. 폴리실리콘 공급망 최상단 → 완화 가능성 극히 낮음. 이란 전쟁으로 DC 미국 유턴 → 태양광+ESS 급증. 한화솔루션 -15%, OCI홀딩스 -20% 급락은 매수 기회</div></div></details>`;
 
   const cellInsight=`<div style="${sty};border-left:4px solid #4ecdc4">
 <div style="font-size:11px;font-weight:700;color:#4ecdc4;margin-bottom:6px">📊 Cell 인사이트</div>
