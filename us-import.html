@@ -11,11 +11,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a0e17;--cd:#111827;--cd2:#1a2332;--bd:#1e293b;--tx:#e2e8f0;--td:#94a3b8;--tm:#64748b;
---ac:#3b82f6;--ag:rgba(59,130,246,.15);--gn:#10b981;--rd:#ef4444;--am:#f59e0b;--cy:#22d3ee;--pk:#f472b6;--or:#fb923c;--pp:#a78bfa}
+:root{--bg:var(--bg,#FAFAF6);--cd:var(--bg-card,#FFF);--cd2:var(--bg-soft,#F5F4ED);--bd:var(--line,#E2E1D8);--tx:var(--ink,#0A0A08);--td:var(--ink-2,#4A4A45);--tm:var(--ink-3,#8B8B82);
+--ac:#3b82f6;--ag:rgba(59,130,246,.08);--gn:#10b981;--rd:#ef4444;--am:#d97706;--cy:#0d9488;--pk:#db2777;--or:#ea580c;--pp:#a78bfa}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--tx);line-height:1.6}
-.ct{max-width:1320px;margin:0 auto;padding:0 20px}
+body{font-family:var(--sans);background:var(--bg);color:var(--tx);line-height:1.6}
+.ct{max-width:100%;padding:0}
 header{padding:28px 0 14px;border-bottom:1px solid var(--bd);margin-bottom:18px}
 header h1{font-size:1.45rem;font-weight:900;background:linear-gradient(135deg,var(--ac),var(--cy));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .sub{font-size:.76rem;color:var(--td);margin-top:3px}
@@ -80,7 +80,6 @@ footer{border-top:1px solid var(--bd);padding:16px 0;text-align:center;font-size
 <header>
   <h1>📊 미국 수입 트래커</h1>
   <div class="sub">U.S. Census Bureau · 셀 · 소재 · 원료 · 차량 · 알루미늄 · 솔라 · 로보틱스 · 주간 자동 업데이트</div>
-  <nav class="nv"><a href="index.html">EV 판매</a><a href="robotaxi.html">FSD·로보택시</a><a href="us-import.html" class="on">US 수입</a><a href="Battery_bom_routing.html">ESS BOM</a><a href="battery_scenario.html">Battery Scenario</a><a href="2차전지_컨콜정리.html">컨콜 정리</a><a href="battery_tech.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">🔬 기술·특허</a><a href="global_battery_map.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">🗺️ 배터리 맵</a></nav>
 </header>
 <div class="tabs" id="tabs">
   <button class="on" data-tab="cell">⚡ 셀·완제품</button>

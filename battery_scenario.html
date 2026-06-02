@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
 <script>
 const DATA = {
   // 기준점
@@ -610,7 +611,7 @@ const CELL3_CAPA = {
 :root{--bg:#FAFAF6;--bg-grid:#F0EFE8;--bg-card:#FFF;--bg-soft:#F5F4ED;--ink:#0A0A08;--ink-2:#4A4A45;--ink-3:#8B8B82;--line:#E2E1D8;--line-s:#C5C3B7;--sans:'Pretendard',-apple-system,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;background-image:linear-gradient(var(--bg-grid) .5px,transparent .5px),linear-gradient(90deg,var(--bg-grid) .5px,transparent .5px);background-size:32px 32px}
-main{max-width:1080px;margin:0 auto;padding:20px 16px 60px}
+main{flex:1;min-width:0;max-width:1100px;padding:24px 0 60px 28px}
 .hdr{margin-bottom:24px}
 .hdr-tag{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px;display:flex;align-items:center;gap:10px}.hdr-tag::before{content:'';width:24px;height:1px;background:var(--ink-3)}
 .hdr h1{font-size:28px;font-weight:700;letter-spacing:-.02em;line-height:1.3;margin-bottom:8px}
@@ -785,15 +786,6 @@ main{max-width:1080px;margin:0 auto;padding:20px 16px 60px}
     <div class="hdr-tag">Battery Scenario Simulator <span style="font-weight:400;font-size:11px;opacity:.6;margin-left:6px">by. sangmin woo</span></div>
     <h1><b>Battery</b>Scenario</h1>
     <p class="hdr-sub">셀사별 CAPA × 가동률 × 부품사 $/kWh → TAM 시뮬레이터. 시나리오 프리셋으로 ESS + EV 통합 TAM 변동을 즉시 확인.</p>
-    <nav style="display:flex;gap:10px;margin:12px 0 20px;font-size:12px;flex-wrap:wrap">
-      <a href="index.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">EV 판매</a>
-      <a href="robotaxi.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">FSD·로보택시</a>
-      <a href="us-import.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">US 수입</a>
-      <a href="Battery_bom_routing.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">ESS BOM</a>
-      <a href="battery_scenario.html" style="color:#4ecdc4;text-decoration:none;padding:4px 10px;border-radius:6px;background:#1e293b">Battery Scenario</a>
-      <a href="2차전지_컨콜정리.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">컨콜 정리</a>
-      <a href="battery_tech.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">🔬 기술·특허</a><a href="global_battery_map.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">🗺️ 배터리 맵</a>
-    </nav>
   </header>
 
   <!-- 🔬 배터리 특허 피드: GitHub Actions 매주 월요일 8AM KST 자동 수집 -->

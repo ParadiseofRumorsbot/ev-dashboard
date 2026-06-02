@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
 <script>
 // ╔══════════════════════════════════════════════════════════════╗
 // ║  DATA — 모든 수치가 여기에 집중. 수정 시 이 객체만 변경.      ║
@@ -348,7 +349,7 @@ const DATA = {
 :root{--bg:#FAFAF6;--bg-grid:#F0EFE8;--bg-card:#FFF;--bg-soft:#F5F4ED;--ink:#0A0A08;--ink-2:#4A4A45;--ink-3:#8B8B82;--line:#E2E1D8;--line-s:#C5C3B7;--sans:'Pretendard',-apple-system,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;background-image:linear-gradient(var(--bg-grid) .5px,transparent .5px),linear-gradient(90deg,var(--bg-grid) .5px,transparent .5px);background-size:32px 32px}
-main{max-width:1240px;margin:0 auto;padding:48px 28px 80px}
+main{flex:1;min-width:0;max-width:1100px;padding:32px 0 80px 28px}
 .hdr{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:32px;padding-bottom:20px;border-bottom:1px solid var(--line-s);flex-wrap:wrap}
 .hdr-tag{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px;display:flex;align-items:center;gap:10px}.hdr-tag::before{content:'';width:24px;height:1px;background:var(--ink-3)}
 .hdr h1{font-size:32px;font-weight:700;letter-spacing:-.025em;line-height:1.05;margin-bottom:6px}
@@ -555,7 +556,6 @@ main{max-width:1240px;margin:0 auto;padding:48px 28px 80px}
       <div class="hdr-tag">BESS · IRS Notice 2025-08 · Grid-scale</div>
       <h1><b>ESS BOM</b>Routing Map</h1>
       <p class="hdr-sub">IRS Notice 2025-08 기준 Grid-scale BESS(1MWh 초과) 제조제품 BOM을 한국 부품사에 매핑. 카테고리를 눌러 해당 부품의 계층·비중·스케일업을 확인.</p>
-      <nav style="display:flex;gap:10px;margin:12px 0 20px;font-size:12px"><a href="index.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">EV 판매</a><a href="robotaxi.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">FSD·로보택시</a><a href="us-import.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">US 수입</a><a href="Battery_bom_routing.html" style="color:#4ecdc4;text-decoration:none;padding:4px 10px;border-radius:6px;background:#1e293b">ESS BOM</a><a href="battery_scenario.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">Battery Scenario</a><a href="2차전지_컨콜정리.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">컨콜 정리</a><a href="battery_tech.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">🔬 기술·특허</a><a href="global_battery_map.html" style="color:#6b7a99;text-decoration:none;padding:4px 10px;border-radius:6px">🗺️ 배터리 맵</a></nav>
     </div>
     <div class="hdr-meta">
       <div><span>System</span><strong>Grid-scale LFP BESS</strong></div>
