@@ -73,16 +73,16 @@
 </script>
 
 <!-- Update Log -->
-<div id="update-log-container" class="update-box">
-<div class="box-title">Update Log · <span id="update-log-date">loading...</span></div>
+<details id="update-log-container" class="update-box toggle-box">
+<summary class="box-title">Update Log · <span id="update-log-date">loading...</span></summary>
 <div id="update-log-body">로딩 중...</div>
-</div>
+</details>
 
 <!-- This Week -->
-<div id="this-week-container" class="card" style="border-left:4px solid var(--teal)">
-<div class="card-title">This Week · <span id="this-week-date" style="font-weight:400">loading...</span></div>
+<details id="this-week-container" class="card toggle-box" style="border-left:4px solid var(--teal)" open>
+<summary class="card-title">This Week · <span id="this-week-date" style="font-weight:400">loading...</span></summary>
 <div id="this-week-body" style="font-size:12px;color:var(--ink-2);line-height:1.7">로딩 중...</div>
-</div>
+</details>
 
 <script>
 (function(){

@@ -89,6 +89,15 @@ main{flex:1;min-width:0;max-width:1100px;padding:24px 0 100px 28px}
 .update-box .box-title{font-family:var(--mono);font-size:10px;color:var(--teal);font-weight:600;letter-spacing:.08em;margin-bottom:8px}
 .news-box{background:var(--bg-card);border:1px solid var(--line);border-left:4px solid var(--yellow);border-radius:10px;padding:12px 16px;margin-bottom:14px;font-size:11px;color:var(--ink-2);line-height:1.7}
 
+/* ── Toggle box (details/summary) ── */
+.toggle-box{list-style:none}
+.toggle-box summary{cursor:pointer;user-select:none;list-style:none;display:flex;align-items:center;gap:6px}
+.toggle-box summary::-webkit-details-marker{display:none}
+.toggle-box summary::before{content:'▸';font-size:11px;color:var(--ink-3);transition:transform .2s;flex-shrink:0}
+.toggle-box[open] summary::before{transform:rotate(90deg)}
+.toggle-box summary .box-title,.toggle-box summary .card-title{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.toggle-box[open] summary{margin-bottom:10px;padding-bottom:8px;border-bottom:1px dashed var(--line-s)}
+
 /* ── Scenario cards ── */
 .scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
 .scenario-card{background:var(--bg-card);border-radius:10px;padding:16px;text-align:center;border:1.5px solid var(--line)}
