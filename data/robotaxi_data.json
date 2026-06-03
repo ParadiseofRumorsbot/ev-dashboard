@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-06-02T20:35:19.018Z",
+  "syncedAt": "2026-06-03T02:49:05.184Z",
   "metrics": {
     "austin_total": {
       "key": "austin_total",
@@ -149,7 +149,7 @@
       "date": "26.04.07",
       "desc": "FSD v14.3 롤아웃 (MLIR 재작성 · 반응 20% 개선)",
       "category": "fsd",
-      "priority": ""
+      "priority": "normal"
     },
     {
       "date": "26.04.10",
