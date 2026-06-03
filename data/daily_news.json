@@ -1,102 +1,102 @@
 {
   "type": "ev_launch_timeline",
-  "lastUpdated": "2026-06-02T23:15:00.106Z",
-  "date": "2026-06-02",
+  "lastUpdated": "2026-06-03T23:17:13.402Z",
+  "date": "2026-06-03",
   "description": "EV 신차 출시일정 모니터링 — 타임라인 테이블 반영용",
   "note": "⚠️ 자동 수집 결과입니다. 대시보드 반영 전 사용자 확인 필요.",
-  "totalItems": 18,
+  "totalItems": 20,
   "oemStats": {
-    "BYD": 1,
+    "Other": 6,
+    "BYD": 2,
     "Mercedes": 1,
-    "Other": 5,
-    "Toyota/Lexus": 1,
-    "Hyundai": 1,
-    "Porsche": 2,
-    "Kia": 1,
-    "Tesla": 1,
+    "Stellantis": 2,
+    "Tesla": 2,
+    "BMW": 2,
+    "VW": 1,
     "Volvo": 1,
-    "Stellantis": 3,
-    "GM": 1
+    "Ford": 1,
+    "Nissan": 1,
+    "Porsche": 1
   },
   "items": [
     {
-      "title": "BYD Atto 3 facelift launching in Malaysia June 5 – basic updates or full-blown Evo 800V RWD revamp? - Paul Tan's Automotive News",
-      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQV0dRalYyd19TdVFybkE2WVM1RXpoalFDY1hhSDhURzB3dV9BYV9zajlGZ29wcHgxUWtQY2t1eXA1bzRqbTY1QWdwX2RYam5qSkljWk9nSlQyUmFOZmRDcEJuRnlsbWU5ZkViUkVBSkluT19KZWg2VDZZb1ZxREQ0eFRCNmtPcnVTYzdTR0hNR0FraHpfX045Y0xHTE45Zm9LRFo5RkJKem41Uy1GUWU2TmdKQThveG1pLXZveXZUQnNYdENjSllr?oc=5",
-      "pubDate": "Sun, 31 May 2026 06:41:32 GMT",
-      "source": "Paul Tan's Automotive News",
-      "oem": "BYD",
-      "market": "Global",
-      "score": 3
-    },
-    {
-      "title": "The Mercedes CLA offers great EV specs for an average price - The Verge",
-      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPNGsyYWN1dEpFMWhpTkhvSldpRTZKOWVsNTFLUHRCcm1xMjVLekd6RkR4MkNvRWw5T0xGWjUwU3dQcWtRS3JRTnpWa0ZaS1A0MXhGc2N2bmJZOEluM09SUFhWZWZMSm5RRjRLOXZrdWdBLVRiMTN0cFBHZXBocjFmVW1TUFc1M3ItZ21NaGNR?oc=5",
-      "pubDate": "Sun, 31 May 2026 11:00:00 GMT",
-      "source": "The Verge",
-      "oem": "Mercedes",
+      "title": "Rolls-Royce Spectre Series II Unveiled With More Power And Range - Car and Bike",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxONE5TSllvTmlfSUtZM1Y2clUxMlVMX01yRGp0dE1TZ3BYc3Q5RVA3UUpQRUd1TDByb0tVbzEyYzUySHBzVnVOejBoaW1zUDRPMllaUGxNMlJUTkF6T1Q0SWtlU1JlWWdQeXZETTYxODdzWi1ubW0tUHZFNTA5QmhVc0p5WllRQkJhNkYyNU5wRW5jOVUzSEJrUTdtSF82eDZjZTF4b3ln?oc=5",
+      "pubDate": "Wed, 03 Jun 2026 08:55:44 GMT",
+      "source": "Car and Bike",
+      "oem": "Other",
       "market": "Global",
       "score": 2
     },
     {
-      "title": "2027 Acura ADX Preview: Model Info & Release Date - CarsDirect",
-      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1XUUE0Zng1RlRmb3V4N19KUTlfaXYzTGw2M3A4TUtyc2NueVZnZG9VRWZXeWlPUHpraHRGRjFIQWZPWThqdFRrR1ExMzhyTi1yTEo4?oc=5",
-      "pubDate": "Tue, 02 Jun 2026 05:21:40 GMT",
-      "source": "CarsDirect",
-      "oem": "Other",
+      "title": "2026 BYD Atto 3 facelift update bound for Malaysia, possibly with new 800V RWD powertrain - AutoBuzz.my",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQUm1iSHZkczdna1dOb2w3TTZyT1VVYUM4N1ZJdXlWT3dJYXh2akNqT1NGSHNxaHRjRXJobGY0MXBiNzM4bjA5Z2V5anl2R3dDS3NQcjAwVVJOUUp6NlpGMTd1bWgtRno5LWw0WGxCWHNGRVFJa3BlUVl5X0tnTDVySU5hQW5zdVFVeUs5bV9wUmJZZkR6Ym5xZGw2ZG1yTVBZQ1NITmlqbHVvRms2eldadU9PQU0wcmk0VjRKcA?oc=5",
+      "pubDate": "Wed, 03 Jun 2026 04:28:42 GMT",
+      "source": "AutoBuzz.my",
+      "oem": "BYD",
+      "market": "Global",
+      "score": 2
+    },
+    {
+      "title": "Volvo XC60 PHEV electric range to more than double, surpassing Mercedes GLC - Automotive News",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPUG5ESFBUQ1ZuMzM1VnpRa2g0Vk5keTlsYkNDZEJwLURqbzJLYVptaTA4V0JPMlQ1YWxQVVRtS29UX1pFemxNWWZNTnZNS05wczBkMnZnZWFHRk5XRkIwd0RwN2tTZjNpQnhhMGNsa2p2bkg0NS0xbThoay1jT01wTmtKRy1weEVLdzBneXl5NDlwcE9fTjB0b0dxMkIzc1NKdXQ2eA?oc=5",
+      "pubDate": "Wed, 03 Jun 2026 12:30:00 GMT",
+      "source": "Automotive News",
+      "oem": "Mercedes",
       "market": "Global",
       "score": 1
     },
     {
-      "title": "Third-gen Audi Q7 confirmed, global debut set for mid-2026 - HT Auto",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOb1BLNVBsOHdyU2kxUlRVNURfU2UwdXo0SXVrNnlzX2wtVlM0MWhCV2FYUmc0RzhoeXhLZ2lvOThJMDE5UXpkSl9EYmpKTi14QVVBVEdTR19MX1V6YnlmR1hMX0IxYW1qNlRrVG44a3U1bjNLUk5ZTlNUYXhVc2M4ejUxVl9DRzM2d0o4MEc4b0E5VmRZR25uMXFOSUNLNFQxV09CZWFMNkVnUVhFZnZjZjBqLXUzM09S0gG-AUFVX3lxTE9hbURDaTMzY1hHZ09iUXQ5cFlqTDJHRUZoSDlKVFFnLVpOZlZiX01XR2F3THJ3bndMRUZOLXhhaENPNFVJSXA5b1FFaDBxZ3ItR0RVZ3pBX3FZZWhIR3E0WjNkZzhOU0RnWk1PblJXTk8xZHpLN2x6b3pMTGVRVFk0eEtVOEI3YnlmRGdpLUtHN2lnVHlTQXRMMFNxMEFDbDFYNjA3Zm9fNS1tdHl3bFl0ODMxY0YyU0lpbkg0MXc?oc=5",
-      "pubDate": "Tue, 02 Jun 2026 13:50:56 GMT",
-      "source": "HT Auto",
-      "oem": "Other",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "Toyota launches first EV in India at ₹23.60 lakh amid fierce competition - MSN",
-      "link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxNSmRhMUZ3NXg2LU1wbFdKZ3VNQ0ZlanZWZ0l0LVdCYTZ0dXBmMmNjd2d1UWNVMDhEanJpY192d29sM291V1lMbTFncm5DbGxOUFV0WC1qSWpGaXNHd3NzVWxsak55RnZhRHh2RFlRZEdkQTRqZS1xejZmVUQ5TVFidjRDWFNBdWc0ZzBhSU9jWkVlTXcwLTVmZkd3SEctQkFHUU5rcTZhU2ZpQmF1VjZDYnZvVUdFaEUxbjM3bkpmamU2SXhJeFJzZ1dUUTJPTmV5TmdiNFNTVXVFVTlDcV9GUVRfWEZLd2ZibVN0cFpmUzZCQXNRY1l3S2l5VjVIeHVjLTZ5UQ?oc=5",
-      "pubDate": "Tue, 02 Jun 2026 02:11:24 GMT",
-      "source": "MSN",
-      "oem": "Toyota/Lexus",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "The Hyundai Ioniq 6 Is A Stunning Used EV Deal With 361 Miles Of Range - InsideEVs",
-      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5pQkUweTVad2tQMzF4emdpeS0wRGp2UDFZaFh3eEo4eU5DV1otbmhRN0RqWjBKbGhLaG45YXV2a0VrZGhYSkpUbWVOUU1WOWEzR0VJZVVzejV4NHpsc2tOVzNsb1p5ZzZGOHc?oc=5",
-      "pubDate": "Tue, 02 Jun 2026 11:50:36 GMT",
-      "source": "InsideEVs",
-      "oem": "Hyundai",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "Porsche Levels Up Cayenne EV Launch in Fortnite - AOL.com",
-      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNdWl4ZlFGVmwzUUZzQVc1Y2hyMlpvaFc4ZHRxZWpXdHhOM2cxVHUtQjRfTk41SzNjbXJBUHJGckltZEpKM1kxZHgtN0swbTFxeDVTTjdNS1NzandudEZBUFpTbDM4NUI1NVdHekpQVDJ6RFV1UWl4RHdmTlRRVXNWQl9R?oc=5",
-      "pubDate": "Tue, 02 Jun 2026 21:50:14 GMT",
-      "source": "AOL.com",
-      "oem": "Porsche",
-      "market": "Global",
-      "score": 1
-    },
-    {
-      "title": "Kia’s Most Affordable EV & Hybrid SUVs – Launch Timeline & Details - CarLelo",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQd003MGJuSk9uN3VYc0ZZZ1JfZ0U1QU83VXgxS1RzXzVLTU5lTldScFNIenhRcG9PVlJ1ZnJITkthVDc2YkEtdVl1UWIyQUF4OFZzd3VydGtVU2pSN2FnZVlaUWhLN0JoOUZXVVZwWWIzb1dXTUNKeXA2SkxWckk0czV3RTdkUQ?oc=5",
-      "pubDate": "Tue, 02 Jun 2026 11:29:28 GMT",
+      "title": "Tata Avinya X Set for 2027 Launch With New Platform - CarLelo",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOYk1IUkFFbk5ieDlNZ1MxT091eUxUY0pTUTNRUEZqZmNFNm56US1fTWotRG12bG9oZlg5VEtXVnE3Nl95YmNMT3lXY0xGTm1PSUVqZGtqZ240dWh2d2gtaUh2aExLaWpoZVNCX3NDcE53VnJVYzVpYmRCb09lUGxFaDRNUUFzNFE?oc=5",
+      "pubDate": "Wed, 03 Jun 2026 06:31:59 GMT",
       "source": "CarLelo",
-      "oem": "Kia",
+      "oem": "Other",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "Here’s our first look at BYD’s new low-cost, 1,000 km-range PHEV in real life [Images] - Electrek",
+      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPOVBNTVdmNXZHTzFsNWdva0p6UlowSUMxTnp4VnpManhldEo0T05jTmZpZDlrbk1ZZ1A0Mm0ydzBCbEx5S2lOVGpOcnp0bmdqSTBEaXo3anNUSmdmY0RqcWVfdUVLQlRXUUdCRlc0bXpsNDdLc29VRS1iWS1HYmtTTFR3UzExdXFZMFNSeDh2Zw?oc=5",
+      "pubDate": "Wed, 03 Jun 2026 21:57:00 GMT",
+      "source": "Electrek",
+      "oem": "BYD",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "Show us your growler: Fiat reveals images of upcoming £25k Grizzly EV - EV Powered",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPSUlzTjA2dXYxTDFDZlB1SkZaZjdjMGZTZkJRUVlKS0pJWVlMU3gyMXVuMzdZNXB0SWRVV0QtM3VsSTBmTTVsT0VHYTJWRWZYV19sdTJlSzUwdVE1am85ejRTZFZIWWJFbXphRDZRRk44SlNjNHNOM1pMR1gxWERzTHlvWlB5YWVu0gGIAUFVX3lxTE9JSXNOMDZ1djFMMUNmUHVKRlpmN2MwZlNmQlFRWUpLSklZWUxTeDIxdW4zN1k1cHRJZFVXRC0zdWxJMGZNNWxPRUdhMlZFZlhXX2x1MmVLNTB1UTVqbzl6NFNkVkhZYkVtemFENlFGTjhKU2M0c04zWkxHWDFYRHNMeW9aUHlhZW4?oc=5",
+      "pubDate": "Wed, 03 Jun 2026 13:14:59 GMT",
+      "source": "EV Powered",
+      "oem": "Stellantis",
+      "market": "NA",
+      "score": 1
+    },
+    {
+      "title": "SpaceX targets $135 IPO price at valuation of $1.77 trillion - CNBC",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5CcXV1RmJIWVpjMUdZam81WkNrNEdSLTB3UTNtcm1YM0V1cjZ5MFdLSFdlWnhtR09wMDZNbmVSelgwZGJvY2s1c2daSDRTa2FHbnZ0YVZXa2pYWGMzeWpnd0NWX3Rub0hzOGhRV3h0VjctdjNUSEJKTnEwbE1rUdIBgwFBVV95cUxPTU5ja2gzSVlFWlYwRWJfQUVVX3IzazkxcnpGTmFld2Q0YnpHMmNMc1hkMGtqSVVpa3FhSWNUZDFiNHc1R3ZBVjF1QXpuaEU0S2FZMEpMYnZjd0dCY2ZyelhPSHNBVVZ1cGVqcUdnanhRUlk1c29yV3BZRnhnV2dJQ1ZJQQ?oc=5",
+      "pubDate": "Wed, 03 Jun 2026 14:59:05 GMT",
+      "source": "CNBC",
+      "oem": "Other",
       "market": "Global",
       "score": 1
     },
     {
       "title": "Tesla Claims The Roadster Will Be Built In Texas, But There's Still No Launch Date - AOL.com",
       "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPTjB0Mm94b0xwSjRsX0tfZDJRa1g3bEU1ZVpYMmUwOXpVMGtVS2I3NkNoZnctMmdUQVBPX2t4SDRvdGpUSVZfaDVKTHBmX3NOaXJWOEt5dGhiSzh5ZEZkelQwNUM1MmtlaTh1VmExc3pqdUZiWFhXUnRvX1FKeHNlM3JXaw?oc=5",
-      "pubDate": "Tue, 02 Jun 2026 15:43:05 GMT",
+      "pubDate": "Wed, 03 Jun 2026 15:08:33 GMT",
       "source": "AOL.com",
       "oem": "Tesla",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "Upcoming car launches in June 2026: New S-Class, BMW X6 & more - The Times of India",
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQTkhJODFYM013U3NfQ1JaX21BcUxKZXF4Y0F3ZzVpR2NXY2FkR1BMbXZ1ek5NeUFZbmRKUC1kSnBWbWE5cEQwX1BGejNmUVUyRGJuSXRNdVlqdnNQQ3I3Z0xzaG1YcGE2MTNDeDkxc0FKY25tTklROGRqTWF5bGhyeFAyT3VBeWlGRmh4S0hMMThVS1cxTW50QzNEeEdMRmpBQUFvaTZGWmxTcEFBYk8xNXdfN0EtREhmVE9qNm04SGJOMGd5R1JmeGV30gHPAUFVX3lxTE5pQllFZlBKV09ZMGJaXzU3RUQ2SzRNQUlQZ3dTMEVFQnJYZURIdHJmMHdxS09pdzNCRXhHQzFoZmpTck4xYkNRZ1BTdGZNUzAxLUtWdGx6VWRXNVBtWWhjRFNpVXEzR3JCUkRoUk5MOUllNldaamM0VXBtVXM3MFFjSVgyT2ZnWkFGblg0TDY3aTFVU1ljaEJHaU54S1o0Z0xJdjJZbjVMSmRRb3VOakZHdmd3NEpnbWp6dlBCYThqYldGX000eFZOYmp2R1M1RQ?oc=5",
+      "pubDate": "Mon, 01 Jun 2026 06:29:00 GMT",
+      "source": "The Times of India",
+      "oem": "BMW",
       "market": "Global",
       "score": 1
     },
@@ -110,46 +110,64 @@
       "score": 1
     },
     {
+      "title": "Volkswagen is launching more affordable EVs, starting with these two models - Electrek",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQdXBPZVR5eVRnQjdjQ3dfTU9rWmlKeEhXV1FReFRiOUQ3WFBlZXpWbm80NXVERTUwLTJMVWNYLVF4NTd0OWJhazVrMWVFcWk2M1NGZUpzNHdQNkpyMUJaWUJMUFZtU0p5SW5FTmlsaktIQlI4X2pCWi1xNHJPTWtoR1lHTC1RZXBuSi1RZ0RGTXVGZw?oc=5",
+      "pubDate": "Wed, 03 Jun 2026 18:17:00 GMT",
+      "source": "Electrek",
+      "oem": "VW",
+      "market": "Global",
+      "score": 1
+    },
+    {
       "title": "Volvo EX40 discontinued in India, 2 new cars to launch in 2026 - MSN",
-      "link": "https://news.google.com/rss/articles/CBMiiANBVV95cUxNeS04a250UjItUTlfOUYtc3lPMHpiLTdZRm44aU4xTTQtVjl5R2pjUlBHNnU0YUZvQV9mZkc5MDhyTndGbkxrQmFQclVQSmg4emUtaGtvSTlMRlpPZ3o5SVNpQTdSX0h1bXJHbmtTZEU0NDdUUTl5T0ZZWGtYNUNmSkl6cUxPOW5fdERzaGYwNUlVQzM5aWRNRk05b1c0Nkd6MW1teE5IVWJneExxX3VZWkZOcVgwMUlodnVyczhWaXpRXzBvcWtUamk2UzNTNkZOaXZBUkU0c1pHTTIwNVFMSHFoNTRfdlpUc1dFcXQtczNubGc0Mm8wMkNEbmhqeE10TV9RLXVQUzhiejlCa25Sa0JUNWdfUGJJLTR3M0RaOHJKNXEwR3Ywa1dUcjZXb1V6TE9YcHNUb2UxcndWWEVFOWVjSmpjaWFGX205d2lsNHRtMFd3Z1pSNmZMbDVZNkF0TzV1aGQtODV1d3NROVA4bFc4dXpJU0hHRnFjZDZFeVRWcnpUV3Rfcw?oc=5",
-      "pubDate": "Tue, 02 Jun 2026 17:10:59 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiiANBVV95cUxNRWVDR0RRWUNTcjB6OXE2cElOaGNiRFQyRU5RUkI0SWRHaUdnSjFub3ozbGlBSnk4WHJJV0lMNzBBU1BGTFRESVlmN3hETlE3SkZhblEzaXpTcE04R0E3UGoyd3RjX1ZXa3FqeTdNNnRFZmw4SWo5TVI0ZW1mejFGcXpxWmhTQTlPVnBFaEc5cFN3ZEY0SVBoSTBHVE1RTnFjYWQ5SWdWN19TSUJTN2hoWWhoYUNQQ0FYcUZEVkk1emtaa3YxZWFLRjRRemtnOGwycnhnWklNcjNTdlZ5UVhGV0ZWUk5TaURpQlBra0txNlNibjlVZTRtUHlwV1dleE9yTWMtRzJZcUI4ZEdpOVJwZW5fR0hmOVBCWWFxblRKRi1yd0FZeTZybWhwMHZZUVh0Wm9hZXdzTkY2djJlTTZrQlhfdm9raFNnUkIyOGVHM3A0NkEzWlB2RjBqMWFaRkpQT0Z3QTZnUGdkQ3pHNko2dFNnSm56eXdfeFFNZXVQN3N5bXQwaXU5YQ?oc=5",
+      "pubDate": "Wed, 03 Jun 2026 04:12:22 GMT",
       "source": "MSN",
       "oem": "Volvo",
       "market": "Global",
       "score": 1
     },
     {
-      "title": "2026 Citroen eC3 X EV Previewed Ahead Of India Launch - Car and Bike",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPLUh5Y09IMGRkUlcwdERhVDB2Z1JXWUNyRGZSczNrSTBPSUtCZTZ3WUxrWHBLNjNUaXRGdUdkeXBqeHZwQ194WlJKcDV0alRITEtTZjhLSVFSM1BQLUFtWVBHQnFfUVNjOFpfZ0hKTkRHSkh0UkIxMnJtcDE5a1BvTF9oZHp5M29kZ0w3UmY0RDZNaklIRFlXNA?oc=5",
-      "pubDate": "Tue, 02 Jun 2026 14:05:43 GMT",
+      "title": "All-New Audi Q7 To Be Unveiled Soon; First Teaser Out - Car and Bike",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPMnV5LTItLTVYaWJKMlYxOGN5MW53dWRGRUxGeHJGdEoyWVNmSnpSWk9oRHBkekktbllnLWhFVzRycUZCQm1aWmxMT29UUnlJLWhoUDJNa09qSF8tZVRXV0VWSEE2OW5QRE5jR3IyZlRVaG5DSER1RFhUcVN4SHJJMmloMmVhazRfb002U20wS2NNSmJnakE?oc=5",
+      "pubDate": "Tue, 02 Jun 2026 13:20:37 GMT",
       "source": "Car and Bike",
-      "oem": "Stellantis",
+      "oem": "Other",
       "market": "Global",
       "score": 1
     },
     {
-      "title": "2027 Chevrolet Bolt EV Range: The Make-Or-Break Number Behind America's Cheapest EV - AOL.com",
-      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE01SlVvc0lOZEFuRVh0Q1NfWmp5YmhZaEpjeFE1dUFmbVJMa0NQMFJxbmstY01YWWlOb0hNQk9aeXNMZ3lJa2hzMDJaNFNXaDRkSW1zNDhVaWdqdmVLUkV0QjcyQTZ0X1FwWGtVSDVONEtBRklSZTZ3VVlZNDc?oc=5",
-      "pubDate": "Tue, 02 Jun 2026 13:51:48 GMT",
+      "title": "Rivian Rallies 8% as Tesla, Nio Stall: R2 Launch and Software Growth in Focus - AOL.com",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9adDVXU3hLbVZkRklXZ3lqWmFZSFdiNWxQbnp0SzFhcGc5bkFaM0MtcFNjLS1GbF93czNBYzhxZFJXMXNlbFF3Q0p0SUU1R3hXWjY0S0V0ekNwVUd2YXBoSy1zVlFBYmhNNHlvbnRwSjdoZ2dCNkY5djFB?oc=5",
+      "pubDate": "Wed, 03 Jun 2026 17:14:44 GMT",
       "source": "AOL.com",
-      "oem": "GM",
+      "oem": "Tesla",
       "market": "NA",
       "score": 1
     },
     {
-      "title": "2027 Chevy Bolt EV 75 MPH Highway Range Test. Here’s How America's Cheapest EV Performs. - InsideEVs",
-      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9RTnBzRGxuc1JTM2NBcTZKVXZXUG1pYmxuQkRrM2VVUGpob29FNzZxU2lwdnhrRkVPeFVPODY2ZkxFVWFuUlRLWkNlaWVtLTV0VEZwR1M0ZjhWendaaGU4R0dZM2daT1R0SmZ1Ny1GUWVCdmRaZHpCTk1Qaw?oc=5",
-      "pubDate": "Tue, 02 Jun 2026 05:54:54 GMT",
-      "source": "InsideEVs",
-      "oem": "Other",
+      "title": "Ford's Next EV Truck Will Cost $30,000, Be More Spacious Than Ranger and Maverick - Edmunds",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1Mc0E3amt3bDFzUjRoaXRWUXUwY2xqMkk0WWNyai03ZUE5OUNYcThQRkF6YVpBczA3am9CMmJUdG9sdXNCSFN6TzB5QWRhRnpMSWY4NVc0bDA0Ul9xMWM0ZnRpYzh5VUtVODNzbUtVdWgxWVVHcEVJ?oc=5",
+      "pubDate": "Wed, 03 Jun 2026 19:07:30 GMT",
+      "source": "Edmunds",
+      "oem": "Ford",
       "market": "NA",
       "score": 1
     },
     {
-      "title": "Polestar 5 launches to challenge Porsche Taycan dominance - MSN",
-      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNNF96TGJabEE4aUhnUkdYNEFJS3ZhMnptanc1ellBdTNnNk9oc0FmeEEzLXZSVGtCWGZJMXVfUUxKVVRBVzUtQ0cxQk91N0l6UXV3MlduV1lCa0d3QmlYYkUxNkZ0ZkJFYnJEVmhjOWRMSmU3SXNiMnhxYXA1amtaMlhqX3JTcW9lbG94UG5vdGVRTU9mT3BRWFdRalRsNXVKSmViTlo0NF9VSy04X3NiS3dRR2xWN256S2dScmlwSW1yOGJGcFIzeG5ULUJlTUJJVlEzbDhUX29IN3AwRXg4REh0UHBSdXR5VFo1OU9RR2s?oc=5",
-      "pubDate": "Tue, 02 Jun 2026 07:07:57 GMT",
-      "source": "MSN",
+      "title": "Mitsubishi Motors, Nissan to launch EV-to-grid power trading services - Nikkei Asia",
+      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNTkdpLUdJcEkyV0pKTzlQLUZqeV9mWmFjSm80Q3dtV0N0VFdJVFpoSHNBbDZWZ0ZtX2UxSE03RlRBeUhNalZ2NVNTakk3eW5rb1BMdk9zRkpOWTZZbzdjQnhTRkJSbjR3bFRuTTNRcTVXSEJESC1GWFdPT0F1MWRwUDU4SW5jUFM4VmVJZUNXa1hFczYwSVZBUWZQNXN6WnBVY0s1Qk5mSDc4RE0tbS1hUnBieVhkdF9KRF9sV01LeDluNFNsWnREN1JaUQ?oc=5",
+      "pubDate": "Wed, 03 Jun 2026 20:43:00 GMT",
+      "source": "Nikkei Asia",
+      "oem": "Nissan",
+      "market": "Global",
+      "score": 1
+    },
+    {
+      "title": "Porsche Levels Up Cayenne EV Launch in Fortnite - AOL.com",
+      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNYnJJTDN0MllKNXJtbmczWXo3OXRtclg5UjE1SmJZNDJfNmdaeVB5S2UzdGloYTZGVHpXTkZTR0hYQnVzdDE3WUFwTXhkVHB3NnNYQ28ySmlDbW9RRlE3LWpoRTdGdGtPN0VpV2daZnhKVGM0MTloWHJkWTJGMVdtdHRGNA?oc=5",
+      "pubDate": "Wed, 03 Jun 2026 05:34:02 GMT",
+      "source": "AOL.com",
       "oem": "Porsche",
       "market": "Global",
       "score": 1
@@ -164,21 +182,21 @@
       "score": 1
     },
     {
-      "title": "Stellantis Wants to Unveil 29 EV Models by 2030 - Green Car Stocks",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNTnJsN0Fla1hqNmZDTzlVdkdlc09DcTlRNzdQLThfMkxNem5hcHl0Yk1Od3lsMzh2ZGZ6SjJoS0cyOVZDSld2dndLbm9zY21wSEVGdnZsYTdqSTR3Zm9ia2RKellTMEw4OUNwMDU0WDlpdGtDcC0tZ3RicG80aGZyajN3MlA3UdIBiwFBVV95cUxOcVdKTnJHTHRON0Y2NExfS1pidXRZcFhHcDJUcFFqaUNuOXB1SVBZSVdtcEwzSlphQ0NxcDNMU1ZwZ1NGS2Y1SzFIN1djUzF1aG51bml2UW9SZTViUVZXSnk3RmUxQmwxUkd3TDVaS1dfcTB5Rm0yTm1XVHU0SWNMMElwTmRzSDJpS2c4?oc=5",
-      "pubDate": "Tue, 02 Jun 2026 17:08:03 GMT",
-      "source": "Green Car Stocks",
-      "oem": "Stellantis",
-      "market": "Global",
-      "score": 1
-    },
-    {
       "title": "Indian-built Škoda Kylaq’s European launch ‘very much on the table’, says boss - The Independent",
       "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOdm92TkEzc05xNDZEN0FxTTN1US0wclNINFB4UlFadXE1WW5pbllkZE9SUXd2VjJ4dDVoNUNFX1V4WEVka2hEdlV3aE9TdlRDVEFaU1lNMzUxRzVuaHgzOE5iTWtsMm4wcE50dUFEVlFnVjl0OXdSdXM2WUYyRlBiVzVjWUlFeEhQZC1hb2Rn?oc=5",
       "pubDate": "Tue, 02 Jun 2026 13:48:00 GMT",
       "source": "The Independent",
       "oem": "Other",
       "market": "EU",
+      "score": 1
+    },
+    {
+      "title": "New Car Launches In June 2026: Tata Sierra EV, Honda ZR-V, BYD PHEV, Mercedes S-Class, BMW X6 & More - Autopunditz",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBBdHlBdkdTcU9iamwxUkF1U1RyRVhGcjZMMW9tU1JiTUpYXzJwSGtKSXRwT0JDTlRnZG4yYzhzcnBWeHY4YTZKVnduMHRsdTJvRWs5Sk9Od3gyZm9DTG95VHoyZWFmdDNiTm9sdzVrenNHSnc?oc=5",
+      "pubDate": "Wed, 03 Jun 2026 07:05:08 GMT",
+      "source": "Autopunditz",
+      "oem": "BMW",
+      "market": "Global",
       "score": 1
     }
   ]
