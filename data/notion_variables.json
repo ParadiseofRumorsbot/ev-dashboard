@@ -1,7 +1,7 @@
 {
-  "syncedAt": "2026-06-04T02:44:27.325Z",
+  "syncedAt": "2026-06-04T09:43:31.478Z",
   "dbId": "659a8d5a89c344a5b68960fead1cf889",
-  "count": 33,
+  "count": 32,
   "variables": [
     {
       "name": "ESS CAPA",
@@ -160,18 +160,6 @@
       "updatedAt": "2026-05-02"
     },
     {
-      "name": "perGwh (ESS)",
-      "category": "cats",
-      "target": "엘앤에프",
-      "region": "global",
-      "year": "",
-      "value": 552,
-      "unit": "억원",
-      "path": "cats[3].perGwh",
-      "source": "2,400t × ASP 23만원/kg",
-      "updatedAt": "2026-05-02"
-    },
-    {
       "name": "BEV/월",
       "category": "oemSales",
       "target": "현대기아",
@@ -210,7 +198,7 @@
     {
       "name": "LFP 셀 가격",
       "category": "basis",
-      "target": "",
+      "target": "기준점",
       "region": "global",
       "year": "",
       "value": 85,
