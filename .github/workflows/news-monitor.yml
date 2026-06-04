@@ -25,15 +25,9 @@ jobs:
       - name: Fetch EV launch timeline news
         run: node scripts/news-monitor.js
 
-      - name: Commit and push
-        run: |
-          git config user.name "launch-monitor-bot"
-          git config user.email "launch-bot@users.noreply.github.com"
-          git add data/daily_news.json
-          if git diff --cached --quiet; then
-            echo "✅ 변경 없음 — 커밋 생략"
-          else
-            git commit -m "🚗 EV launch timeline update $(date +%Y-%m-%d)"
-            git pull --rebase origin main
-            git push
-          fi
+      - name: Upload artifact (커밋은 사용자 확인 후 Claude 루틴에서 처리)
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-news
+          path: data/daily_news.json
+          retention-days: 3
