@@ -32,6 +32,7 @@
 <a href="#sec-monthly" class="sidebar-link" data-target="sec-monthly">월별 추이</a>
 <a href="#sec-eu-co2" class="sidebar-link" data-target="sec-eu-co2">EU CO2 시나리오</a>
 <a href="#sec-battery" class="sidebar-link" data-target="sec-battery">배터리 출하량</a>
+<a href="#sec-tesla-regional" class="sidebar-link" data-target="sec-tesla-regional">Tesla 지역별</a>
 <a href="#sec-us-model" class="sidebar-link" data-target="sec-us-model">미국 모델별</a>
 <a href="#sec-kr" class="sidebar-link" data-target="sec-kr">한국 EV</a>
 <a href="#sec-timeline" class="sidebar-link" data-target="sec-timeline">신차 타임라인</a>
@@ -263,6 +264,59 @@
 <div style="font-size:11px;color:var(--ink-2);line-height:1.6;margin-top:8px">동력: <b>리프레시 Model Y 양산</b> · 정부 인센티브 · 고유가 → EV 선호 회복. <span style="background:rgba(239,68,68,0.08);color:var(--red);padding:1px 5px;border-radius:3px;font-weight:600">미국 캐즘 ↔ 유럽 부활</span> 양극화 → 한국 셀 3사 유럽 노출 수혜.<br>🇩🇪 독일 Tesla: 현재 판매 속도 기준 2026F ~6만대 (2025 1.9만대 대비 +200%↑). 역대 최고 2022년 6.9만대.</div>
 <div style="font-size:10px;color:var(--ink-3);margin-top:8px">출처: ACEA · 각국 등록청 · KBA(독일) · EV Volumes</div>
 </div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- Tesla Regional -->
+<!-- ══════════════════════════════════════════ -->
+<section id="sec-tesla-regional">
+<div class="chart-section">
+<h2>Tesla 지역별 연간 배송 추이 (만대)</h2>
+<div class="legend">
+<span><i style="background:#ef4444"></i>미국</span>
+<span><i style="background:#4ecdc4"></i>중국</span>
+<span><i style="background:#556dff"></i>유럽</span>
+<span><i style="background:#d97706"></i>캐나다</span>
+<span><i style="background:#8B8B82"></i>기타(ROW)</span>
+</div>
+<div class="chart-wrap"><canvas id="cTeslaAnn"></canvas></div>
+<div style="font-size:10px;color:var(--ink-3);margin-top:8px">출처: Troy Teslike (Tesla IR 기반 추정) · 2026은 Q1 실적 + Q2~Q4 추정</div>
+</div>
+
+<div class="grid-2">
+<div class="chart-section">
+<h2>2026 중국 월별 도매 (CPCA)</h2>
+<div class="chart-wrap sm"><canvas id="cTeslaCN"></canvas></div>
+</div>
+<div class="chart-section">
+<h2>2026 독일 월별 등록 (KBA)</h2>
+<div class="chart-wrap sm"><canvas id="cTeslaDE"></canvas></div>
+</div>
+</div>
+
+<div class="chart-section">
+<h2>Tesla 분기별 배송 추이 (2025~2026, 만대)</h2>
+<div class="legend">
+<span><i style="background:#ef4444"></i>N. America</span>
+<span><i style="background:#4ecdc4"></i>APAC</span>
+<span><i style="background:#556dff"></i>Europe</span>
+</div>
+<div class="chart-wrap"><canvas id="cTeslaQ"></canvas></div>
+<div style="font-size:10px;color:var(--ink-3);margin-top:8px">출처: Troy Teslike · E = Estimate</div>
+</div>
+
+<!-- 독일 연간 추이 -->
+<div class="card" style="border-left:4px solid var(--red)">
+<div class="card-title">🇩🇪 Tesla 독일 연간 등록 추이</div>
+<div class="num-row">
+<div class="num-box"><div class="num-label">2022</div><div class="num-value">69,000</div><div class="num-sub">역대 최고</div></div>
+<div class="num-box"><div class="num-label">2023</div><div class="num-value">63,682</div><div class="num-sub" style="color:var(--red)">-8%</div></div>
+<div class="num-box"><div class="num-label">2024</div><div class="num-value">37,574</div><div class="num-sub" style="color:var(--red)">-41%</div></div>
+<div class="num-box"><div class="num-label">2025</div><div class="num-value">19,390</div><div class="num-sub" style="color:var(--red)">-48%</div></div>
+<div class="num-box" style="border-color:var(--red)"><div class="num-label">2026F</div><div class="num-value">~60,000</div><div class="num-sub" style="color:var(--green)">+200%↑ run-rate</div></div>
+</div>
+<div style="font-size:10px;color:var(--ink-3);margin-top:8px">출처: KBA · 2026F는 1~5월 run-rate 기준 자체추정</div>
+</div>
+</section>
 
 <!-- Charts: Annual -->
 <div class="chart-section">
@@ -680,6 +734,36 @@ new Chart(document.getElementById('cTSLA'),{type:'bar',data:{labels:['Model Y','
 data:[19000,3200,1200],
 backgroundColor:['#ef4444','#a78bfa','#d97706'],borderRadius:6
 }]},options:{...defOpt,indexAxis:'y',scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:10,family:'JetBrains Mono'},callback:v=>(v/1000).toFixed(1)+'k'}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}}},plugins:{...defOpt.plugins,tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.parsed.x.toLocaleString()+'대'}}}}});
+
+// ── Tesla Regional Charts ──
+
+// 1) 연간 지역별 배송 (Troy Teslike)
+new Chart(document.getElementById('cTeslaAnn'),{type:'bar',data:{labels:['2020','2021','2022','2023','2024','2025','2026E'],datasets:[
+{label:'미국',data:[20.6,35.7,50.3,64.7,61.3,57.0,47.2],backgroundColor:'#ef4444',borderRadius:3},
+{label:'중국',data:[14.6,32.1,44.0,61.1,65.9,62.7,58.2],backgroundColor:'#4ecdc4',borderRadius:3},
+{label:'유럽',data:[9.9,16.9,23.4,36.5,32.6,23.8,31.1],backgroundColor:'#556dff',borderRadius:3},
+{label:'캐나다',data:[2.0,3.0,5.3,5.3,5.3,1.6,3.0],backgroundColor:'#d97706',borderRadius:3},
+{label:'기타',data:[2.7,5.9,8.5,13.3,13.9,18.5,19.9],backgroundColor:'#8B8B82',borderRadius:3}
+]},options:{...defOpt,scales:{x:{stacked:true,grid:{display:false},ticks:{color:tickColor,font:{size:10}}},y:{stacked:true,grid:{color:gridColor},ticks:{color:tickColor,font:{size:10,family:'JetBrains Mono'},callback:v=>v+'만'}}},plugins:{legend:{display:true,position:'top',labels:{color:tickColor,font:{size:9},padding:8}},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.dataset.label+': '+ctx.parsed.y.toFixed(1)+'만대'}}}}});
+
+// 2) 중국 월별 도매 (CPCA 2026)
+new Chart(document.getElementById('cTeslaCN'),{type:'bar',data:{labels:['1월','2월','3월','4월','5월'],datasets:[{
+data:[69129,58599,85670,79478,85982],
+backgroundColor:['#4ecdc4','#4ecdc4','#4ecdc4','#4ecdc4','#ef4444'],borderRadius:6
+}]},options:{...defOpt,scales:{x:{grid:{display:false},ticks:{color:tickColor,font:{size:10}}},y:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:10,family:'JetBrains Mono'},callback:v=>(v/10000).toFixed(1)+'만'}}},plugins:{...defOpt.plugins,tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.parsed.y.toLocaleString()+'대'}}}}});
+
+// 3) 독일 월별 등록 (KBA 2026)
+new Chart(document.getElementById('cTeslaDE'),{type:'bar',data:{labels:['1월','2월','3월','4월','5월'],datasets:[{
+data:[1277,2276,9252,3149,5111],
+backgroundColor:['#8B8B82','#556dff','#ef4444','#556dff','#556dff'],borderRadius:6
+}]},options:{...defOpt,scales:{x:{grid:{display:false},ticks:{color:tickColor,font:{size:10}}},y:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:10,family:'JetBrains Mono'},callback:v=>(v/1000).toFixed(1)+'k'}}},plugins:{...defOpt.plugins,tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.parsed.y.toLocaleString()+'대 (YoY '+['-60%','+59%','+315%','+256%','+322%'][ctx.dataIndex]+')'}}}}});
+
+// 4) 분기별 배송 (Troy Teslike)
+new Chart(document.getElementById('cTeslaQ'),{type:'bar',data:{labels:['25Q1','25Q2','25Q3','25Q4','26Q1','26Q2E','26Q3E','26Q4E'],datasets:[
+{label:'N. America',data:[12.4,15.2,19.7,11.3,11.8,12.7,12.3,13.4],backgroundColor:'#ef4444',borderRadius:3},
+{label:'APAC',data:[15.8,17.6,23.6,24.1,18.1,19.3,19.7,21.0],backgroundColor:'#4ecdc4',borderRadius:3},
+{label:'Europe',data:[5.4,5.6,6.4,6.5,7.6,7.6,7.6,8.2],backgroundColor:'#556dff',borderRadius:3}
+]},options:{...defOpt,scales:{x:{stacked:false,grid:{display:false},ticks:{color:tickColor,font:{size:10}}},y:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:10,family:'JetBrains Mono'},callback:v=>v+'만'}}},plugins:{legend:{display:true,position:'top',labels:{color:tickColor,font:{size:9},padding:8}},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.dataset.label+': '+ctx.parsed.y.toFixed(1)+'만대'}}}}});
 </script>
 
 <!-- Scroll spy -->
