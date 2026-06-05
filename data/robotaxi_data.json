@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-06-05T02:31:02.508Z",
+  "syncedAt": "2026-06-05T09:30:55.060Z",
   "metrics": {
     "austin_total": {
       "key": "austin_total",
@@ -136,7 +136,7 @@
     {
       "date": "26.02",
       "desc": "Cybercab 첫 라인오프 · FSD 8B 마일 돌파 · FSD 구독 전환 ($99/월)",
-      "category": "production",
+      "category": "",
       "priority": "high"
     },
     {
@@ -184,7 +184,7 @@
     {
       "date": "26.04.19",
       "desc": "🔥 Houston home base 30+ Robotaxi pre-positioned 확인 (TeslaTracker)",
-      "category": "",
+      "category": "fleet",
       "priority": "normal"
     },
     {
