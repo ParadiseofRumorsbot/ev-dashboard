@@ -1,7 +1,7 @@
 {
-  "syncedAt": "2026-06-05T14:25:42.306Z",
+  "syncedAt": "2026-06-05T19:41:50.857Z",
   "dbId": "659a8d5a89c344a5b68960fead1cf889",
-  "count": 32,
+  "count": 33,
   "variables": [
     {
       "name": "ESS CAPA",
@@ -157,6 +157,18 @@
       "unit": "억원",
       "path": "cats[1].perGwh",
       "source": "IR 기준 SDI ESS 원가 12%",
+      "updatedAt": "2026-05-02"
+    },
+    {
+      "name": "perGwh (ESS)",
+      "category": "cats",
+      "target": "엘앤에프",
+      "region": "global",
+      "year": "",
+      "value": 552,
+      "unit": "억원",
+      "path": "cats[3].perGwh",
+      "source": "2,400t × ASP 23만원/kg",
       "updatedAt": "2026-05-02"
     },
     {

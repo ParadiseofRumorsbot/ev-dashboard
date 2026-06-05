@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-06-05T14:25:43.194Z",
+  "syncedAt": "2026-06-05T19:41:51.384Z",
   "latestDate": "2026-05-22",
   "count": 21,
   "this_week": [],
@@ -151,7 +151,7 @@
     },
     {
       "title": "중국 4월 NEV 반영",
-      "category": "중국",
+      "category": "��국",
       "icon": "🇨🇳",
       "body": "중국 4월 NEV 판매 84.9만대 데이터 반영 (BEV 57.9만 / PHEV 19.2만) · CPCA",
       "color": "red",
@@ -206,7 +206,7 @@
       "title": "타임라인 5건 추가",
       "category": "FSD",
       "icon": "📅",
-      "body": "타임라인 5건: Ford Energy ESS 20GWh · SDI-GM JV 중단 · Tesla ��일 셀 · LG화학 LMR · Morrow 파산",
+      "body": "타임라인 5건: Ford Energy ESS 20GWh · SDI-GM JV 중단 · Tesla 독일 셀 · LG화학 LMR · Morrow 파산",
       "color": "yellow",
       "section": "update_log",
       "targets": [
@@ -219,7 +219,7 @@
       "title": "유럽 4월 개별국 반영",
       "category": "유럽",
       "icon": "🇬🇧🇫🇷",
-      "body": "유럽 4월 영국·프랑스 개별국 EV 판매 데이터 반영",
+      "body": "���럽 4월 영국·프랑스 개별국 EV 판매 데이터 반영",
       "color": "blue",
       "section": "update_log",
       "targets": [
