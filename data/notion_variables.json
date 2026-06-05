@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-06-04T19:54:19.667Z",
+  "syncedAt": "2026-06-05T02:31:00.677Z",
   "dbId": "659a8d5a89c344a5b68960fead1cf889",
   "count": 33,
   "variables": [
@@ -376,7 +376,7 @@
       "updatedAt": "2026-05-02"
     },
     {
-      "name": "",
+      "name": "EV GWh",
       "category": "cellMakers",
       "target": "SKON",
       "region": "global",
