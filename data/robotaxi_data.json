@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-06-06T13:08:17.739Z",
+  "syncedAt": "2026-06-06T19:05:06.681Z",
   "metrics": {
     "austin_total": {
       "key": "austin_total",
@@ -184,7 +184,7 @@
     {
       "date": "26.04.19",
       "desc": "🔥 Houston home base 30+ Robotaxi pre-positioned 확인 (TeslaTracker)",
-      "category": "",
+      "category": "fleet",
       "priority": "normal"
     },
     {
