@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-06-08T10:17:35.118Z",
+  "syncedAt": "2026-06-08T15:29:26.468Z",
   "dbId": "659a8d5a89c344a5b68960fead1cf889",
   "count": 33,
   "variables": [
@@ -210,7 +210,7 @@
     {
       "name": "LFP 셀 가격",
       "category": "basis",
-      "target": "",
+      "target": "기준점",
       "region": "global",
       "year": "",
       "value": 85,
