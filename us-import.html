@@ -89,7 +89,7 @@ footer{border-top:1px solid var(--bd);padding:16px 0;text-align:center;font-size
 <div class="ct">
 <header>
   <h1>📊 미국 수입 트래커</h1>
-  <div class="sub">U.S. Census Bureau · 셀 · 소재 · 원료 · 차량 · 알루미늄 · 솔라 · 로보틱스 · 주간 자동 업데이트</div>
+  <div class="sub">U.S. Census Bureau · 셀 · 소재 · 원료 · 차량 · 알루미늄 · 솔라 · 로보틱스 · 주간 자동 업데이트 <span style="color:var(--am)">· 데이터 약 2개월 보고 래그(최신월 ≈ 전전월)</span></div>
 </header>
 <div class="tabs" id="tabs">
   <button class="on" data-tab="cell">⚡ 셀·완제품</button>
@@ -172,7 +172,7 @@ async function init(){
   document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>{
     document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('on'));
     b.classList.add('on');SEL=null;CUR_SUB=null;CUR_TAB=b.dataset.tab;renderTab(b.dataset.tab)}));
-  document.getElementById('ft').textContent=`마지막 업데이트: ${D.meta.lastUpdated} · U.S. Census Bureau · 자동 갱신: 매주 일요일`;
+  document.getElementById('ft').textContent=`마지막 갱신: ${D.meta.lastUpdated} · 데이터 범위 ~${D.meta.dataRange.to} (Census 약 2개월 보고 래그) · U.S. Census Bureau · 자동: 매주 일요일`;
 }
 
 function destroyCharts(){Object.values(Chart.instances).forEach(c=>c.destroy())}

@@ -196,10 +196,13 @@
     .then(r=>{if(!r.ok)throw new Error(r.status);return r.json()})
     .then(data=>{
       if(!data.variables)return;
-      const kpiMap={};
-      data.variables.forEach(v=>{
-        if(v.category==='oemSales'&&v.target==='Tesla'&&v.region==='us'){kpiMap.us_tesla_bev=v.value;}
-        if(v.category==='oemSales'&&v.target==='현대기아'&&v.region==='us'){kpiMap.us_hk_bev=v.value;}
+      const byPath={};
+      data.variables.forEach(v=>{if(v.path)byPath[v.path]=v;});
+      document.querySelectorAll('[data-kpi]').forEach(el=>{
+        const v=byPath[el.getAttribute('data-kpi')];
+        if(v&&v.value!==null&&v.value!==undefined){
+          el.textContent=(typeof v.value==='number'?v.value.toLocaleString('en-US'):v.value)+(v.unit||'');
+        }
       });
       const syncEl=document.getElementById('notion-sync-date');
       if(syncEl)syncEl.textContent='Notion 동기화: '+data.syncedAt.split('T')[0];
@@ -217,12 +220,12 @@
 <div class="card" style="border-left:4px solid var(--accent)">
 <div class="card-title">글로벌 EV 판매 · 2026년 4월 / 누계</div>
 <div class="num-row">
-<div class="num-box"><div class="num-label">YTD 누계</div><div class="num-value">560만대</div><div class="num-sub" style="color:var(--red)">-0.2% YoY</div></div>
-<div class="num-box" style="border-color:var(--accent)"><div class="num-label">4월 글로벌</div><div class="num-value">160만대</div><div class="num-sub">월간</div></div>
-<div class="num-box"><div class="num-label">🇨🇳 중국</div><div class="num-value">85만</div></div>
-<div class="num-box"><div class="num-label">🇪🇺 유럽</div><div class="num-value">40만</div><div class="num-sub" style="color:var(--green)">+27%</div></div>
-<div class="num-box"><div class="num-label">🇺🇸 북미</div><div class="num-value">12만</div><div class="num-sub" style="color:var(--red)">-28%</div></div>
-<div class="num-box"><div class="num-label">기타</div><div class="num-value">24만</div><div class="num-sub" style="color:var(--green)">+110%</div></div>
+<div class="num-box"><div class="num-label">YTD 누계</div><div class="num-value" data-kpi="evGlobal.ytd">560만대</div><div class="num-sub" style="color:var(--red)">-0.2% YoY</div></div>
+<div class="num-box" style="border-color:var(--accent)"><div class="num-label">4월 글로벌</div><div class="num-value" data-kpi="evGlobal.monthly">160만대</div><div class="num-sub">월간</div></div>
+<div class="num-box"><div class="num-label">🇨🇳 중국</div><div class="num-value" data-kpi="evGlobal.cn">85만</div></div>
+<div class="num-box"><div class="num-label">🇪🇺 유럽</div><div class="num-value" data-kpi="evGlobal.eu">40만</div><div class="num-sub" style="color:var(--green)">+27%</div></div>
+<div class="num-box"><div class="num-label">🇺🇸 북미</div><div class="num-value" data-kpi="evGlobal.na">12만</div><div class="num-sub" style="color:var(--red)">-28%</div></div>
+<div class="num-box"><div class="num-label">기타</div><div class="num-value" data-kpi="evGlobal.etc">24만</div><div class="num-sub" style="color:var(--green)">+110%</div></div>
 </div>
 <div style="font-size:10px;color:var(--ink-3);margin-top:8px">출처: Rho Motion · Benchmark Mineral Intelligence (유럽 ACEA / 미국 Cox Automotive)</div>
 </div>
