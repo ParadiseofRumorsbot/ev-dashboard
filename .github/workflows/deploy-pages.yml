@@ -3,9 +3,11 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-  workflow_run:
-    workflows: ["Sync Notion (Updates + Robotaxi)", "📊 Census Import Data Update", "🚗 Daily EV Launch Timeline Monitor", "🔬 Weekly Battery Patent Monitor"]
-    types: [completed]
+  schedule:
+    # 봇 sync 푸시는 deploy를 트리거 못하므로 schedule로 자동 재배포
+    # sync-all(매 6h, :00) 직후 + 일일 news 수집(21:30 UTC) 직후
+    - cron: '20 */6 * * *'
+    - cron: '50 21 * * *'
   workflow_dispatch:
 
 permissions:
