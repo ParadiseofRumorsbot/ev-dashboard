@@ -1,9 +1,50 @@
 {
-  "syncedAt": "2026-06-09T00:57:58.358Z",
-  "latestDate": "2026-05-22",
-  "count": 21,
+  "syncedAt": "2026-06-09T01:48:17.489Z",
+  "latestDate": "2026-06-09",
+  "count": 24,
   "this_week": [],
   "update_log": [
+    {
+      "title": "🔄 자동화 정비 — KPI·로보택시·아침브리핑",
+      "category": "",
+      "icon": "🔄",
+      "body": "글로벌 EV 판매 KPI Notion 자동연동 · FSD/로보택시 트래킹 매일 갱신 상시화 · 아침 브리핑 텔레그램 전환 · 정기 업데이트 체크리스트 신설",
+      "color": "teal",
+      "section": "update_log",
+      "targets": [
+        "both"
+      ],
+      "date": "2026-06-09",
+      "order": 1
+    },
+    {
+      "title": "📊 글로벌 EV 판매 카드 Notion 연동",
+      "category": "",
+      "icon": "📊",
+      "body": "글로벌/중·유·북미·기타 월간·누계 카드를 모델변수 DB 연동으로 전환 — 매월 Notion 수정 시 자동 갱신 (4월: 글로벌 160만·누계 560만)",
+      "color": "blue",
+      "section": "update_log",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-06-09",
+      "order": 2
+    },
+    {
+      "title": "🚕 로보택시/FSD 트래킹 갱신",
+      "category": "",
+      "icon": "🚕",
+      "body": "무감독 28대 · 총 등록 719대(+16) · Austin 전역 메트로 245 sq mi(6/3) · Cybercab 애틀랜타 목격 · FSD v14.3.3 (누적 10.01B mi) · 출처 RobotaxiTracker·Tesla 안전보고서",
+      "color": "purple",
+      "section": "update_log",
+      "targets": [
+        "robotaxi"
+      ],
+      "date": "2026-06-09",
+      "order": 3
+    }
+  ],
+  "archive": [
     {
       "title": "🔋 LGES 북미 CAPA 정정 — UC2 과대·MIH/MIL 혼동 수정",
       "category": "Cell",
@@ -16,9 +57,7 @@
       ],
       "date": "2026-05-22",
       "order": 1
-    }
-  ],
-  "archive": [
+    },
     {
       "title": "🇪🇺 T&E High Stakes — EU 시나리오 전 대시보드 반영",
       "category": "유럽",
@@ -34,7 +73,7 @@
       "title": "T&E High Stakes 보고서 — EU CO2 시나리오 3종 통합",
       "category": "유럽",
       "icon": "🇪🇺",
-      "body": "T&E 2026.05.12 'High stakes' 보고서 기반 EU_REF/EU_COM/EU_LOW 3종 시나리오 → 한국 셀 3사 유럽 거점 가동률 및 부품사 TAM 영향 정량화. REF 시나리오 채택 가능성 ↑",
+      "body": "T&E 2026.05.12 'High stakes' 보고서 ���반 EU_REF/EU_COM/EU_LOW 3종 시나리오 → 한국 셀 3사 유럽 거점 가동률 및 부품사 TAM 영향 정량화. REF 시나리오 채택 가능성 ↑",
       "color": "purple",
       "section": "this_week",
       "targets": [],
@@ -206,7 +245,7 @@
       "title": "타임라인 5건 추가",
       "category": "FSD",
       "icon": "📅",
-      "body": "타임라인 5건: Ford Energy ESS 20GWh · SDI-GM JV 중단 · Tesla ��일 셀 · LG화학 LMR · Morrow 파산",
+      "body": "타임라인 5건: Ford Energy ESS 20GWh · SDI-GM JV 중단 · Tesla 독일 셀 · LG화학 LMR · Morrow 파산",
       "color": "yellow",
       "section": "update_log",
       "targets": [
