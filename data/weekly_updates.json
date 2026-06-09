@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-06-09T02:03:12.354Z",
+  "syncedAt": "2026-06-09T02:06:25.185Z",
   "latestDate": "2026-06-09",
   "count": 24,
   "this_week": [],
@@ -20,7 +20,7 @@
     {
       "title": "📊 글로벌 EV 판매 카드 Notion 연동",
       "category": "",
-      "icon": "",
+      "icon": "📊",
       "body": "글로벌/중·유·북미·기타 월간·누계 카드를 모델변수 DB 연동으로 전환 — 매월 Notion 수정 시 자동 갱신 (4월: 글로벌 160만·누계 560만)",
       "color": "blue",
       "section": "update_log",
@@ -73,7 +73,7 @@
       "title": "T&E High Stakes 보고서 — EU CO2 시나리오 3종 통합",
       "category": "유럽",
       "icon": "🇪🇺",
-      "body": "T&E 2026.05.12 'High stakes' 보고서 기반 EU_REF/EU_COM/EU_LOW 3종 시나리오 → 한국 셀 3사 유럽 거점 가동률 및 부품사 TAM 영향 정량화. REF 시나리오 채택 가능성 ↑",
+      "body": "T&E 2026.05.12 'High stakes' 보고서 ��반 EU_REF/EU_COM/EU_LOW 3종 시나리오 → 한국 셀 3사 유럽 거점 가동률 및 부품사 TAM 영향 정량화. REF 시나리오 채택 가능성 ↑",
       "color": "purple",
       "section": "this_week",
       "targets": [],
