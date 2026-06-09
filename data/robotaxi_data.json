@@ -1,6 +1,27 @@
 {
-  "syncedAt": "2026-06-08T20:01:28.013Z",
+  "syncedAt": "2026-06-09T00:57:59.270Z",
   "metrics": {
+    "total_unsupervised": {
+      "key": "total_unsupervised",
+      "value": 39,
+      "unit": "대",
+      "date": "2026-06-08",
+      "note": "RobotaxiTracker 검증 무감독 39대 (Austin 28)"
+    },
+    "total_registered": {
+      "key": "total_registered",
+      "value": 719,
+      "unit": "대",
+      "date": "2026-06-08",
+      "note": "RobotaxiTracker 총 등록 차량 +16 · TxMCCS 무감독 미포함"
+    },
+    "austin_unsupervised": {
+      "key": "austin_unsupervised",
+      "value": 28,
+      "unit": "대",
+      "date": "2026-06-08",
+      "note": "RobotaxiTracker · Austin 무감독 (5/13 27→28)"
+    },
     "austin_total": {
       "key": "austin_total",
       "value": 53,
@@ -29,20 +50,6 @@
       "date": "2026-05-13",
       "note": "Dallas 무감독"
     },
-    "total_unsupervised": {
-      "key": "total_unsupervised",
-      "value": 39,
-      "unit": "대",
-      "date": "2026-05-13",
-      "note": "Dallas 5 + Houston 6 + Austin 27 · 무감독"
-    },
-    "austin_unsupervised": {
-      "key": "austin_unsupervised",
-      "value": 27,
-      "unit": "대",
-      "date": "2026-05-13",
-      "note": "▲ 5/13 기준 · 야간 운행 개시 (5/4)"
-    },
     "cum_miles": {
       "key": "cum_miles",
       "value": 10,
@@ -59,6 +66,32 @@
     }
   },
   "history": {
+    "total_unsupervised": [
+      {
+        "date": "2026-05-13",
+        "value": 39
+      },
+      {
+        "date": "2026-06-08",
+        "value": 39
+      }
+    ],
+    "total_registered": [
+      {
+        "date": "2026-06-08",
+        "value": 719
+      }
+    ],
+    "austin_unsupervised": [
+      {
+        "date": "2026-05-13",
+        "value": 27
+      },
+      {
+        "date": "2026-06-08",
+        "value": 28
+      }
+    ],
     "austin_total": [
       {
         "date": "2026-05-13",
@@ -81,18 +114,6 @@
       {
         "date": "2026-05-13",
         "value": 5
-      }
-    ],
-    "total_unsupervised": [
-      {
-        "date": "2026-05-13",
-        "value": 39
-      }
-    ],
-    "austin_unsupervised": [
-      {
-        "date": "2026-05-13",
-        "value": 27
       }
     ],
     "cum_miles": [
@@ -293,6 +314,24 @@
       "date": "26.05.15",
       "desc": "LG화학 LMR 양극재 파일럿 양산 돌입(청주) · Albemarle EBITDA 마진 61.9%",
       "category": "industry",
+      "priority": "normal"
+    },
+    {
+      "date": "26.06.03",
+      "desc": "Austin 무감독 로보��시 전역 메트로 확대 (245 sq mi)",
+      "category": "fleet",
+      "priority": "high"
+    },
+    {
+      "date": "26.06.08",
+      "desc": "Cybercab 애틀랜타 서비스센터 다수 목격",
+      "category": "production",
+      "priority": "normal"
+    },
+    {
+      "date": "26.06.08",
+      "desc": "FSD v14.3.3 배포 · FSD 누적 10.01B mi (도시 3.76B · 일 28.8M)",
+      "category": "fsd",
       "priority": "normal"
     }
   ]

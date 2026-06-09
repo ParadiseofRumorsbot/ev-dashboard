@@ -1,8 +1,80 @@
 {
-  "syncedAt": "2026-06-08T20:01:26.149Z",
+  "syncedAt": "2026-06-09T00:57:57.780Z",
   "dbId": "659a8d5a89c344a5b68960fead1cf889",
-  "count": 33,
+  "count": 38,
   "variables": [
+    {
+      "name": "글로벌 EV YTD누계",
+      "category": "evGlobal",
+      "target": "글로벌",
+      "region": "global",
+      "year": "",
+      "value": 560,
+      "unit": "만대",
+      "path": "evGlobal.ytd",
+      "source": "Rho Motion·Benchmark",
+      "updatedAt": "2026-06-09"
+    },
+    {
+      "name": "글로벌 EV 월간",
+      "category": "evGlobal",
+      "target": "글로벌",
+      "region": "global",
+      "year": "",
+      "value": 160,
+      "unit": "만대",
+      "path": "evGlobal.monthly",
+      "source": "Rho Motion·Benchmark",
+      "updatedAt": "2026-06-09"
+    },
+    {
+      "name": "유럽 EV 월간",
+      "category": "evGlobal",
+      "target": "유럽",
+      "region": "eu",
+      "year": "",
+      "value": 40,
+      "unit": "만",
+      "path": "evGlobal.eu",
+      "source": "ACEA",
+      "updatedAt": "2026-06-09"
+    },
+    {
+      "name": "북미 EV 월간",
+      "category": "evGlobal",
+      "target": "북미",
+      "region": "global",
+      "year": "",
+      "value": 12,
+      "unit": "만",
+      "path": "evGlobal.na",
+      "source": "Cox Automotive",
+      "updatedAt": "2026-06-09"
+    },
+    {
+      "name": "중국 EV 월간",
+      "category": "evGlobal",
+      "target": "중국",
+      "region": "global",
+      "year": "",
+      "value": 85,
+      "unit": "만",
+      "path": "evGlobal.cn",
+      "source": "Rho Motion",
+      "updatedAt": "2026-06-09"
+    },
+    {
+      "name": "기타 EV 월간",
+      "category": "evGlobal",
+      "target": "기타",
+      "region": "global",
+      "year": "",
+      "value": 24,
+      "unit": "만",
+      "path": "evGlobal.etc",
+      "source": "Rho Motion",
+      "updatedAt": "2026-06-09"
+    },
     {
       "name": "ESS CAPA",
       "category": "cellMakers",
@@ -64,7 +136,7 @@
       "updatedAt": "2026-05-02"
     },
     {
-      "name": "ESS CAPA",
+      "name": "",
       "category": "cellMakers",
       "target": "SKON",
       "region": "us",
@@ -289,18 +361,6 @@
       "unit": "억원",
       "path": "evPerGwh.cathode.lges",
       "source": "LGES NCM 40%×1,400t×23만원",
-      "updatedAt": "2026-05-02"
-    },
-    {
-      "name": "환율",
-      "category": "basis",
-      "target": "기준점",
-      "region": "global",
-      "year": "",
-      "value": 1450,
-      "unit": "만원/톤",
-      "path": "basis.fx",
-      "source": "시장 환율",
       "updatedAt": "2026-05-02"
     },
     {
