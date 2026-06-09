@@ -3,6 +3,9 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  workflow_run:
+    workflows: ["Sync Notion (Updates + Robotaxi)", "📊 Census Import Data Update", "🚗 Daily EV Launch Timeline Monitor", "🔬 Weekly Battery Patent Monitor"]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
