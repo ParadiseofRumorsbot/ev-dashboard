@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-06-09T02:07:21.983Z",
+  "syncedAt": "2026-06-09T02:18:57.430Z",
   "latestDate": "2026-06-09",
   "count": 24,
   "this_week": [],
@@ -8,12 +8,10 @@
       "title": "🔄 자동화 정비 — KPI·로보택시·아침브리핑",
       "category": "",
       "icon": "🔄",
-      "body": "글로벌 EV 판매 KPI Notion 자동연동 · FSD/로보택시 트래킹 매일 갱신 상시화 · 아침 브리핑 텔레그램 전환 · 정기 업데이트 체크리스트 신설",
+      "body": "글로벌 EV 판매 KPI Notion 자동���동 · FSD/로보택시 트래킹 매일 갱신 상시화 · 아침 브리핑 텔레그램 전환 · 정기 업데이트 체크리스트 신설",
       "color": "teal",
       "section": "update_log",
-      "targets": [
-        "both"
-      ],
+      "targets": [],
       "date": "2026-06-09",
       "order": 1
     },
@@ -46,7 +44,7 @@
   ],
   "archive": [
     {
-      "title": "🔋 LGES 북�� CAPA 정정 — UC2 과대·MIH/MIL 혼동 수정",
+      "title": "🔋 LGES 북미 CAPA 정정 — UC2 과대·MIH/MIL 혼동 수정",
       "category": "Cell",
       "icon": "🔋",
       "body": "UC1 오하이오 가용CAPA 40GWh 반영 · UC2 테네시 45→20GWh(라인 절반 미설치) · MIH(Holland) ESS Only 17GWh · MIL(Lansing) ESS+EV 25GWh(Tesla,Toyota) · 북미 소계·가동률 재계산",
@@ -84,7 +82,7 @@
       "title": "📊 민감도 버블차트 + BEV/CAPA 미스매치 차트 신규",
       "category": "유럽",
       "icon": "📊",
-      "body": "index.html — 6개국 민감도 매트릭스(UK 81%p), BEV/CAPA 양방향, EU 타임라인 위젯",
+      "body": "index.html — 6개국 민감도 ��트릭스(UK 81%p), BEV/CAPA 양방향, EU 타임라인 위젯",
       "color": "blue",
       "section": "update_log",
       "targets": [],
@@ -179,7 +177,7 @@
       "title": "FSD 10B+ 마일",
       "category": "FSD",
       "icon": "🏁",
-      "body": "일일 28.8M · 도시 3.76B · 구독 1.28M",
+      "body": "",
       "color": "purple",
       "section": "this_week",
       "targets": [
@@ -285,7 +283,7 @@
       "category": "Cell",
       "icon": "🔋",
       "body": "SDI-GM 인디애나 JV 5.2조(36GWh) 중단 → LFP 전환 또는 GM 철수 가능성 · Tesla 독일 셀 8→18GWh · Ford Energy ESS 20GWh · Morrow 파산",
-      "color": "yellow",
+      "color": "",
       "section": "this_week",
       "targets": [
         "index",
