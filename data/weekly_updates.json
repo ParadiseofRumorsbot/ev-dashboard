@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-06-09T19:56:23.436Z",
+  "syncedAt": "2026-06-10T02:31:25.817Z",
   "latestDate": "2026-06-09",
   "count": 24,
   "this_week": [],
@@ -71,7 +71,7 @@
       "title": "T&E High Stakes 보고서 — EU CO2 시나리오 3종 통합",
       "category": "유럽",
       "icon": "🇪🇺",
-      "body": "T&E 2026.05.12 'High stakes' 보고서 기반 EU_REF/EU_COM/EU_LOW 3종 시나리오 → 한국 셀 3사 유럽 거�� 가동률 및 부품사 TAM 영향 정량화. REF 시나리오 채택 가능성 ↑",
+      "body": "T&E 2026.05.12 'High stakes' 보고서 기반 EU_REF/EU_COM/EU_LOW 3종 시나리오 → 한국 셀 3사 유럽 ��점 가동률 및 부품사 TAM 영향 정량화. REF 시나리오 채택 가능성 ↑",
       "color": "purple",
       "section": "this_week",
       "targets": [],
@@ -157,7 +157,7 @@
         "index"
       ],
       "date": "2026-05-17",
-      "order": null
+      "order": 1
     },
     {
       "title": "미국 4월 BEV",
