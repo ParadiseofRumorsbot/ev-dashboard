@@ -25,6 +25,12 @@ jobs:
       - name: Fetch EV launch timeline news
         run: node scripts/news-monitor.js
 
+      - name: Notify Telegram (아침 브리핑 · 서버측 발송)
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node scripts/notify-telegram.js
+
       - name: Upload artifact (커밋은 사용자 확인 후 Claude 루틴에서 처리)
         uses: actions/upload-artifact@v4
         with:
