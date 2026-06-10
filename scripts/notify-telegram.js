@@ -8,8 +8,8 @@
 const fs = require('fs');
 const https = require('https');
 
-const TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-const CHAT = process.env.TELEGRAM_CHAT_ID;
+const TOKEN = (process.env.TELEGRAM_BOT_TOKEN || '').trim();
+const CHAT = (process.env.TELEGRAM_CHAT_ID || '').trim();
 if (!TOKEN || !CHAT) { console.log('⚠️ TELEGRAM_BOT_TOKEN/CHAT_ID 미설정 — 발송 스킵'); process.exit(0); }
 
 let d = {};
@@ -32,12 +32,14 @@ if (!items.length) {
 }
 
 const payload = JSON.stringify({ chat_id: CHAT, text: msg.slice(0, 4000), disable_web_page_preview: true });
-const req = https.request({
-  hostname: 'api.telegram.org',
-  path: `/bot${TOKEN}/sendMessage`,
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(payload) },
-}, res => { let b = ''; res.on('data', c => b += c); res.on('end', () => console.log('telegram', res.statusCode, b.slice(0, 150))); });
-req.on('error', e => console.log('telegram err', e.message));
-req.write(payload);
-req.end();
+try {
+  const req = https.request({
+    hostname: 'api.telegram.org',
+    path: `/bot${TOKEN}/sendMessage`,
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(payload) },
+  }, res => { let b = ''; res.on('data', c => b += c); res.on('end', () => console.log('telegram', res.statusCode, b.slice(0, 150))); });
+  req.on('error', e => console.log('telegram err', e.message));
+  req.write(payload);
+  req.end();
+} catch (e) { console.log('telegram 예외(무시):', e.message); }
