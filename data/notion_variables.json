@@ -1,7 +1,7 @@
 {
-  "syncedAt": "2026-06-10T02:31:25.179Z",
+  "syncedAt": "2026-06-10T09:40:24.604Z",
   "dbId": "659a8d5a89c344a5b68960fead1cf889",
-  "count": 38,
+  "count": 39,
   "variables": [
     {
       "name": "글로벌 EV YTD누계",
@@ -28,10 +28,10 @@
       "updatedAt": "2026-06-09"
     },
     {
-      "name": "유럽 EV 월간",
+      "name": "유럽 EV 월���",
       "category": "evGlobal",
       "target": "유럽",
-      "region": "eu",
+      "region": "",
       "year": "",
       "value": 40,
       "unit": "만",
@@ -136,7 +136,7 @@
       "updatedAt": "2026-05-02"
     },
     {
-      "name": "",
+      "name": "ESS CAPA",
       "category": "cellMakers",
       "target": "SKON",
       "region": "us",
@@ -361,6 +361,18 @@
       "unit": "억원",
       "path": "evPerGwh.cathode.lges",
       "source": "LGES NCM 40%×1,400t×23만원",
+      "updatedAt": "2026-05-02"
+    },
+    {
+      "name": "환율",
+      "category": "basis",
+      "target": "기준점",
+      "region": "global",
+      "year": "",
+      "value": 1450,
+      "unit": "만원/톤",
+      "path": "basis.fx",
+      "source": "시장 환율",
       "updatedAt": "2026-05-02"
     },
     {
