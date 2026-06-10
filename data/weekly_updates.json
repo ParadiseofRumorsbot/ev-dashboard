@@ -1,9 +1,24 @@
 {
-  "syncedAt": "2026-06-10T20:12:14.126Z",
-  "latestDate": "2026-06-09",
-  "count": 24,
+  "syncedAt": "2026-06-10T23:31:31.868Z",
+  "latestDate": "2026-06-10",
+  "count": 25,
   "this_week": [],
   "update_log": [
+    {
+      "title": "🚗 EV 신차 브리핑 (6/10)",
+      "category": "",
+      "icon": "🚗",
+      "body": "Rivian R2 인도 개시(저가 대중형 87.9kWh·345mi·$45K~) · Mercedes GLC EV(94kWh·800V·2H26 출시) · 현대 아이오닉5 2027 페이스리프트 한국 출시·가격 인하 · BYD U9X 베이징오토쇼 고성능 공개 · Xiaomi EREV(주행거리 연장형) 베이징 공장 승인 · Mitsubishi Eclipse EV 북미 공개. (Rivian R2·GLC EV는 타임라인 기반영, 아이오닉5 F/L 신규 추가)",
+      "color": "blue",
+      "section": "update_log",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-06-10",
+      "order": 1
+    }
+  ],
+  "archive": [
     {
       "title": "🔄 자동화 정비 — KPI·로보택시·아침브리핑",
       "category": "",
@@ -40,9 +55,7 @@
       ],
       "date": "2026-06-09",
       "order": 3
-    }
-  ],
-  "archive": [
+    },
     {
       "title": "🔋 LGES 북미 CAPA 정정 — UC2 과대·MIH/MIL 혼동 수정",
       "category": "Cell",
