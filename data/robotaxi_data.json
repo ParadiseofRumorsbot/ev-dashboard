@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-06-12T14:35:00.385Z",
+  "syncedAt": "2026-06-12T19:53:29.654Z",
   "metrics": {
     "total_unsupervised": {
       "key": "total_unsupervised",
@@ -157,7 +157,7 @@
     {
       "date": "26.02",
       "desc": "Cybercab 첫 라인오프 · FSD 8B 마일 돌파 · FSD 구독 전환 ($99/월)",
-      "category": "production",
+      "category": "",
       "priority": "high"
     },
     {
@@ -318,7 +318,7 @@
     },
     {
       "date": "26.06.03",
-      "desc": "Austin 무감독 로보��시 전역 메트로 확대 (245 sq mi)",
+      "desc": "Austin 무감독 로보택시 전역 메트로 확대 (245 sq mi)",
       "category": "fleet",
       "priority": "high"
     },
