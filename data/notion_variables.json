@@ -1,7 +1,7 @@
 {
-  "syncedAt": "2026-06-12T09:56:50.772Z",
+  "syncedAt": "2026-06-12T14:34:58.853Z",
   "dbId": "659a8d5a89c344a5b68960fead1cf889",
-  "count": 38,
+  "count": 39,
   "variables": [
     {
       "name": "글로벌 EV YTD누계",
@@ -58,7 +58,7 @@
       "region": "global",
       "year": "",
       "value": 85,
-      "unit": "",
+      "unit": "만",
       "path": "evGlobal.cn",
       "source": "Rho Motion",
       "updatedAt": "2026-06-09"
@@ -361,6 +361,18 @@
       "unit": "억원",
       "path": "evPerGwh.cathode.lges",
       "source": "LGES NCM 40%×1,400t×23만원",
+      "updatedAt": "2026-05-02"
+    },
+    {
+      "name": "환율",
+      "category": "basis",
+      "target": "기준점",
+      "region": "global",
+      "year": "",
+      "value": 1450,
+      "unit": "만원/톤",
+      "path": "basis.fx",
+      "source": "시장 환율",
       "updatedAt": "2026-05-02"
     },
     {
