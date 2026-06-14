@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-06-14T02:41:26.667Z",
+  "syncedAt": "2026-06-14T09:18:33.800Z",
   "metrics": {
     "total_unsupervised": {
       "key": "total_unsupervised",
@@ -318,7 +318,7 @@
     },
     {
       "date": "26.06.03",
-      "desc": "Austin 무감독 로보��시 전역 메트로 확대 (245 sq mi)",
+      "desc": "Austin 무감독 로보택시 전역 메트로 확대 (245 sq mi)",
       "category": "fleet",
       "priority": "high"
     },
