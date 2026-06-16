@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-06-16T10:54:10.791Z",
+  "syncedAt": "2026-06-16T16:23:46.698Z",
   "dbId": "659a8d5a89c344a5b68960fead1cf889",
   "count": 39,
   "variables": [
@@ -58,7 +58,7 @@
       "region": "global",
       "year": "",
       "value": 85,
-      "unit": "만",
+      "unit": "",
       "path": "evGlobal.cn",
       "source": "Rho Motion",
       "updatedAt": "2026-06-09"
