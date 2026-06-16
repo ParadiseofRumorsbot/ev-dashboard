@@ -1,7 +1,7 @@
 {
-  "syncedAt": "2026-06-15T20:45:32.696Z",
+  "syncedAt": "2026-06-16T02:48:30.993Z",
   "dbId": "659a8d5a89c344a5b68960fead1cf889",
-  "count": 38,
+  "count": 39,
   "variables": [
     {
       "name": "글로벌 EV YTD누계",
@@ -364,6 +364,18 @@
       "updatedAt": "2026-05-02"
     },
     {
+      "name": "환율",
+      "category": "basis",
+      "target": "기준점",
+      "region": "global",
+      "year": "",
+      "value": 1450,
+      "unit": "만원/톤",
+      "path": "basis.fx",
+      "source": "시장 환율",
+      "updatedAt": "2026-05-02"
+    },
+    {
       "name": "BEV/월",
       "category": "oemSales",
       "target": "VW Group",
@@ -390,7 +402,7 @@
     {
       "name": "perGwh (ESS)",
       "category": "cats",
-      "target": "솔브레인",
+      "target": "솔브레���",
       "region": "global",
       "year": "",
       "value": 198,
