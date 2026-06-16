@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-06-16T02:48:30.993Z",
+  "syncedAt": "2026-06-16T10:54:10.791Z",
   "dbId": "659a8d5a89c344a5b68960fead1cf889",
   "count": 39,
   "variables": [
@@ -58,7 +58,7 @@
       "region": "global",
       "year": "",
       "value": 85,
-      "unit": "",
+      "unit": "만",
       "path": "evGlobal.cn",
       "source": "Rho Motion",
       "updatedAt": "2026-06-09"
@@ -402,7 +402,7 @@
     {
       "name": "perGwh (ESS)",
       "category": "cats",
-      "target": "솔브레���",
+      "target": "솔브레인",
       "region": "global",
       "year": "",
       "value": 198,
