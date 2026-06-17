@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-06-17T02:44:56.115Z",
+  "syncedAt": "2026-06-17T10:26:15.443Z",
   "metrics": {
     "total_unsupervised": {
       "key": "total_unsupervised",
@@ -157,7 +157,7 @@
     {
       "date": "26.02",
       "desc": "Cybercab 첫 라인오프 · FSD 8B 마일 돌파 · FSD 구독 전환 ($99/월)",
-      "category": "production",
+      "category": "",
       "priority": "high"
     },
     {
