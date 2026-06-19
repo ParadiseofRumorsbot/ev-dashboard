@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-06-19T14:43:00.178Z",
+  "syncedAt": "2026-06-19T19:25:56.225Z",
   "latestDate": "2026-06-10",
   "count": 25,
   "this_week": [],
@@ -53,7 +53,7 @@
       "targets": [
         "robotaxi"
       ],
-      "date": "",
+      "date": "2026-06-09",
       "order": 3
     },
     {
@@ -148,7 +148,7 @@
     },
     {
       "title": "무감독 39대 반영",
-      "category": "FSD",
+      "category": "",
       "icon": "🚕",
       "body": "무감독 39대 반영 (5/13): Austin 27 + Dallas 5 + Houston 6+1. 도시별 차트 업데이트",
       "color": "teal",
