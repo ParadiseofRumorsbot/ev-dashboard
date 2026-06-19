@@ -518,7 +518,12 @@
 <!-- ══════════════════════════════════════════ -->
 <section id="sec-timeline">
 <div class="chart-section">
-<h2>글로벌 주요 EV 신차 출시 타임라인 (2026~2028)</h2>
+<h2>글로벌 EV 신차 출시 타임라인</h2>
+<div class="view-tabs">
+<button class="view-tab active" onclick="switchTLView('quarterly',this)">📅 분기별 단기뷰 (2026~28)</button>
+<button class="view-tab" onclick="switchTLView('roadmap',this)">🗺️ 연간 로드맵 (2021~30 · 7개 OEM)</button>
+</div>
+<div id="tlview-quarterly" class="tlview active">
 <p style="font-size:11px;color:var(--ink-2);margin:-4px 0 14px">미국·유럽 출시 기준 · 배터리 케미스트리 + 용량 구분 · 출처: OEM IR, Consumer Reports, electrive</p>
 <div class="chem-legend">
 <span><i style="background:#22c55e"></i>NCM (삼원계)</span>
@@ -584,18 +589,108 @@
 </div>
 </div>
 
+</div>
+
+<div id="tlview-roadmap" class="tlview">
+<p style="font-size:11px;color:var(--ink-2);margin:-4px 0 14px">7개 OEM · 지역별(북미·유럽·중국) 연간 출시 스케줄 + LFP 트림·배터리 공급사 매핑 · 출처: Marklines</p>
+<div class="rm-legend">
+<span style="font-style:italic;color:var(--ink-3)">이탤릭 = 페이스리프트</span>
+<span><b class="a-add">(추가)</b> 신규 추가</span>
+<span><b class="a-lfp">(LFP 추가)</b> LFP 트림</span>
+<span style="text-decoration:line-through;opacity:.6">취소선 = 출시 계획 폐기</span>
+<span><b class="a-delay">(연기)</b> / <b class="a-early">(조기)</b> 일정 변경</span>
+<span><i style="display:inline-block;width:10px;height:10px;background:rgba(85,109,255,0.06);border:1px solid var(--line)"></i> 2026E~ 추정</span>
+</div>
+<div class="oem-tabs" id="oemTabs"></div>
+<div id="rmBody"></div>
+</div>
+
+<script src="roadmap_data.js"></script>
 <script>
+function switchTLView(v,btn){
+document.querySelectorAll('.view-tab').forEach(t=>t.classList.remove('active'));
+document.querySelectorAll('.tlview').forEach(p=>p.classList.remove('active'));
+btn.classList.add('active');
+document.getElementById('tlview-'+v).classList.add('active');
+}
 function switchMarket(market,btn){
 document.querySelectorAll('.market-tab').forEach(t=>t.classList.remove('active'));
 document.querySelectorAll('.launch-panel').forEach(p=>p.classList.remove('active'));
 btn.classList.add('active');
 document.getElementById('panel-'+market).classList.add('active');
 }
+function rmEsc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function rmFmtModel(s){
+  var cls='rm-m';
+  if(/출시 계획 폐기/.test(s)) cls+=' rm-killed';
+  if(/facelift|refresh/i.test(s)) cls+=' rm-fl';
+  var body=rmEsc(s)
+    .replace(/\(LFP 추가\)/g,'<b class="a-lfp">(LFP 추가)</b>')
+    .replace(/\(추가\)/g,'<b class="a-add">(추가)</b>')
+    .replace(/\((연기[^)]*)\)/g,'<b class="a-delay">($1)</b>')
+    .replace(/\((조기[^)]*)\)/g,'<b class="a-early">($1)</b>')
+    .replace(/\(출시 계획 폐기\)/g,'<b class="a-kill">(폐기)</b>')
+    .replace(/\((EREV 전환|PHEV 전환)\)/g,'<b class="a-conv">($1)</b>');
+  return '<span class="'+cls+'"><span class="rm-nm">'+body+'</span></span>';
+}
+function rmRenderOEM(key){
+  var o=ROADMAP.oems[key], R=o.regions, Y=ROADMAP.years;
+  var h='<div class="rm-wrap"><table class="rm-table"><thead><tr><th>연도</th>';
+  R.forEach(function(r){h+='<th>'+r+'</th>';});
+  h+='</tr></thead><tbody>';
+  Y.forEach(function(y){
+    var est=y.indexOf('E')>=0;
+    h+='<tr class="'+(est?'est':'')+'"><td class="rm-yr">'+y+'</td>';
+    R.forEach(function(r){
+      var arr=(o.sched[y]&&o.sched[y][r])||[];
+      h+= arr.length? '<td class="rm-cell">'+arr.map(rmFmtModel).join('')+'</td>' : '<td class="rm-cell"><span class="rm-empty">–</span></td>';
+    });
+    h+='</tr>';
+  });
+  h+='</tbody></table></div>';
+  if(o.note) h+='<div class="oem-note">참고: '+rmEsc(o.note)+'</div>';
+  var lfp=ROADMAP.lfp[key];
+  if(lfp){
+    h+='<details class="sub-tog"><summary>LFP 트림 출시 계획</summary><div class="rm-wrap"><table class="mini-table"><thead><tr>';
+    lfp.cols.forEach(function(c,i){h+='<th class="'+(i<=1?'l':'')+'">'+rmEsc(c)+'</th>';});
+    h+='</tr></thead><tbody>';
+    lfp.rows.forEach(function(row){h+='<tr>'+row.map(function(c,i){return '<td class="'+(i<=1?'l':'')+'">'+rmEsc(c)+'</td>';}).join('')+'</tr>';});
+    h+='</tbody></table></div></details>';
+  }
+  var sl=ROADMAP.sales[key];
+  if(sl){
+    h+='<details class="sub-tog"><summary>모델별 판매대수 · 배터리 공급사</summary><div class="rm-wrap"><table class="mini-table mt-sales">'
+      +'<thead><tr><th class="l" rowspan="2">모델</th><th class="l" rowspan="2">배터리 공급사</th>'
+      +'<th class="yrgrp" colspan="3">2024</th><th class="yrgrp" colspan="3">2025</th><th class="yrgrp" colspan="3">2026 YTD</th></tr>'
+      +'<tr><th class="yrgrp">대수</th><th>YoY%</th><th>비중</th><th class="yrgrp">대수</th><th>YoY%</th><th>비중</th><th class="yrgrp">대수</th><th>YoY%</th><th>비중</th></tr></thead><tbody>';
+    sl.rows.forEach(function(r){
+      h+='<tr><td class="l">'+rmEsc(r[0])+'</td><td class="l sup">'+rmEsc(r[1])+'</td>';
+      for(var i=2;i<11;i++){h+='<td class="'+((i-2)%3===0?'yrgrp':'')+'">'+rmEsc(r[i])+'</td>';}
+      h+='</tr>';
+    });
+    h+='</tbody></table></div>';
+    if(sl.note)h+='<div class="oem-note">'+rmEsc(sl.note)+'</div>';
+    h+='</details>';
+  }
+  document.getElementById('rmBody').innerHTML=h;
+  document.querySelectorAll('.oem-tab').forEach(function(t){t.classList.toggle('active',t.dataset.k===key);});
+}
+(function(){
+  if(typeof ROADMAP==='undefined')return;
+  var tabs=document.getElementById('oemTabs');
+  Object.keys(ROADMAP.oems).forEach(function(k,i){
+    var b=document.createElement('button');
+    b.className='oem-tab'+(i===0?' active':''); b.dataset.k=k;
+    b.textContent=ROADMAP.oems[k].flag+' '+ROADMAP.oems[k].label;
+    b.onclick=function(){rmRenderOEM(k);}; tabs.appendChild(b);
+  });
+  rmRenderOEM(Object.keys(ROADMAP.oems)[0]);
+})();
 </script>
 </div>
 </section>
 
-<p class="updated">마지막 업데이트: 2026.06.15 <span id="notion-sync-date"></span></p>
+<p class="updated">마지막 업데이트: 2026.06.19 <span id="notion-sync-date"></span></p>
 
 <!-- ══════════════════════════════════════════ -->
 <!-- Charts JS (light theme) -->
