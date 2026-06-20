@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-06-20T08:40:12.436Z",
+  "syncedAt": "2026-06-20T13:27:47.322Z",
   "latestDate": "2026-06-10",
   "count": 25,
   "this_week": [],
@@ -53,7 +53,7 @@
       "targets": [
         "robotaxi"
       ],
-      "date": "2026-06-09",
+      "date": "",
       "order": 3
     },
     {
