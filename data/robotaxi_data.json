@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-06-23T19:49:56.803Z",
+  "syncedAt": "2026-06-24T02:14:51.816Z",
   "metrics": {
     "total_unsupervised": {
       "key": "total_unsupervised",
@@ -331,6 +331,12 @@
     {
       "date": "26.06.08",
       "desc": "FSD v14.3.3 배포 · FSD 누적 10.01B mi (도시 3.76B · 일 28.8M)",
+      "category": "fsd",
+      "priority": "normal"
+    },
+    {
+      "date": "26.06.13",
+      "desc": "FSD v14.3.4(2026.14.6.10) 롤아웃 시작 · Cybertruck Actually Smart Summon 첫 탑재(전 라인업 모델 통합) · ASS 최고속도 8mph(13km/h) · 로보택시형 승객 UI 추가",
       "category": "fsd",
       "priority": "normal"
     }
