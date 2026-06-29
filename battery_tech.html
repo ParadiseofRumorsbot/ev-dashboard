@@ -219,7 +219,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 <ol style="margin:0;padding-left:20px;font-size:12px;color:var(--text);line-height:1.9">
   <li>전고체가 오면 밸류체인 승자/패자가 뒤집힘 — <span style="background:rgba(229,62,62,0.12);padding:2px 6px;border-radius:4px;font-weight:600">분리막 사라짐(SKIET/WCP 리스크), 전해질 비중 3배(천보 기회), 음극재 교체(대주전자재료 기회)</span>.</li>
   <li>당장의 승부는 전고체가 아니라 <span style="background:rgba(229,62,62,0.12);padding:2px 6px;border-radius:4px;font-weight:600">원가 경쟁</span>. LFP ~$50 vs NMC ~$100/kWh(셀, 2026E) → 보급형 EV·ESS에서 LFP·Na-ion이 NMC를 밀어냄.</li>
-  <li>Na-ion 특허 <span style="background:rgba(229,62,62,0.12);padding:2px 6px;border-radius:4px;font-weight:600">CATL 87% 독점</span>, 한국 3사 거의 부재. ESS 시장에서 CATL 독주 시 대응력 약화.</li>
+  <li>Na-ion 특허 <span style="background:rgba(229,62,62,0.12);padding:2px 6px;border-radius:4px;font-weight:600">CATL·BYD 중국 2강</span>(유효 패밀리 CATL 1,600·BYD 1,400). 한국 LGES 250·SK온 100·삼성SDI 50으로 추격 단계.</li>
   <li>한국 3사 생존 전략: ①<b>삼성SDI</b> — 전고체 선점(2027H2 양산) ②<b>LGES</b> — 46시리즈 고객 lock-in(BMW 10년 10조) + ESS 수주잔고 140GWh ③<b>SK온</b> — 리스트럭처링 + Ford/현대 물량 확보.</li>
 </ol>
 </div>
@@ -326,12 +326,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 <tr style="background:rgba(56,161,105,0.06)"><td style="font-weight:700">분리막</td><td>30%</td><td style="color:var(--green);font-weight:700">낮음 ★</td><td><b>SKIET · WCP</b> (글로벌 1·2위)</td><td><span style="color:var(--red)">전고체 시 시장 소멸 리스크</span></td></tr>
 <tr><td style="font-weight:700">리튬 정제</td><td>65%+</td><td style="color:var(--red);font-weight:600">높음</td><td>포스코퓨처엠(아르헨)</td><td>호주·칠레 광산 확보 경쟁</td></tr>
 <tr><td style="font-weight:700">NdFeB 자석</td><td style="font-weight:700;color:var(--red)">85%+</td><td style="color:var(--red);font-weight:700">매우 높음</td><td>—</td><td>모터용, 중국 가공 독점</td></tr>
-<tr style="background:rgba(229,62,62,0.06)"><td style="font-weight:700">Na-ion 특허</td><td style="font-weight:700;color:var(--red)">CATL 87%</td><td style="color:var(--red);font-weight:700">매우 높음</td><td><span style="color:var(--red);font-weight:700">거의 부재</span></td><td>ESS 시장 CATL 독주 시 대응력 약화</td></tr>
+<tr style="background:rgba(229,62,62,0.06)"><td style="font-weight:700">Na-ion 특허</td><td style="font-weight:700;color:var(--red)">CATL·BYD 2강</td><td style="color:var(--accent);font-weight:700">높음</td><td><span style="color:var(--accent);font-weight:700">LGES 250·SK온 100</span></td><td>유효 패밀리 CATL 1,600·BYD 1,400, 한국 추격 단계</td></tr>
 </tbody>
 </table>
 </div>
 <div style="font-size:10px;color:var(--sub);line-height:1.6">
-📌 <span style="background:rgba(229,62,62,0.12);padding:2px 6px;border-radius:4px;font-weight:600">분리막은 한국이 글로벌 1·2위인 유일한 영역. 전고체가 오면 이 강점이 사라짐.</span> Na-ion은 특허부터 한국이 없음. 한국 3사의 기술 선점 속도가 생존을 결정.<br>
+📌 <span style="background:rgba(229,62,62,0.12);padding:2px 6px;border-radius:4px;font-weight:600">분리막은 한국이 글로벌 1·2위인 유일한 영역. 전고체가 오면 이 강점이 사라짐.</span> Na-ion 특허는 중국(CATL·BYD)이 선점, 한국은 추격 단계. 한국 3사의 기술 선점 속도가 생존을 결정.<br>
 출처: BNEF · BloombergNEF · Benchmark Mineral Intelligence · 각사 공시
 </div>
 </div>
@@ -340,15 +340,32 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 <!-- PATENT PORTFOLIO -->
 <!-- ══════════════════════════════════════════════ -->
 <div class="card">
-<h2>📊 <em>Global Battery Patent Portfolio</em> — 2026.05</h2>
+<h2>📊 <em>Global Battery Patent Portfolio</em> — 2026.06 기준</h2>
 <div class="grid-2">
 <div><div class="chart-wrap"><canvas id="cPatent"></canvas></div></div>
 <div><div class="chart-wrap"><canvas id="cTech"></canvas></div></div>
 </div>
 <div style="margin-top:12px;font-size:10px;color:var(--sub);line-height:1.6">
-※ Toyota 전고체 ~1,300건 글로벌 최다 · 삼성SDI 전고체 ~1,100건+각형 ~1,200건 · SDI·LGES 출원 증가율 세계 1·2위 (51.7%, 50.8%)<br>
-※ CATL Q1 2026 등록 특허 111%↑ · WIPO 전고체 국제출원 공개 (2026.03) · 중국 국가별 전고체 특허 출원 1위<br>
-※ <b style="color:#e97a00">Na-ion 특허</b>: CATL 4,804건(87% 독점) · BYD 260건 · HiNa 249건 — 한국 3사 Na-ion 특허 거의 부재
+※ 출처·기준: 유효 특허패밀리(Active Patent Families) 추정 — 글로벌 특허청 데이터 + 각사 2026 상반기 실적 기반. 소멸특허·단순 실용신안 제외 / 국가별 중복(패밀리) 합산 / 기술별 상호배타 분류. (차트는 차세대 3종만 표시, 기타·합계는 아래 표)<br>
+※ 전고체: 도요타 1,350 최다(유일하게 삼성SDI 1,100 상회) · LGES 850 · 파나소닉 400 · SK온 300 · CATL 200<br>
+※ 각형/원통: LGES 4,500 · 파나소닉 3,800(테슬라 공급 원통 공정) · BYD 3,200(블레이드) · SK온 2,100 · CATL 2,000<br>
+※ <b style="color:#e97a00">나트륨이온</b>: CATL 1,600 · BYD 1,400 = 중국 2강 / 한국 LGES 250 · SK온 100 · 삼성SDI 50 (추격 단계)<br>
+📌 한국은 전고체·각형(LGES·삼성SDI)에 자산 집중, Na-ion은 중국(CATL·BYD)이 선점 — 기업별 전략 차이가 뚜렷.
+</div>
+<div style="overflow-x:auto;margin-top:12px">
+<table class="ct" style="font-size:10px">
+<thead><tr><th>기업</th><th>전고체</th><th>각형/원통</th><th>Na-ion</th><th>기타</th><th>합계</th></tr></thead>
+<tbody>
+<tr><td style="font-weight:700">LG에너지솔루션</td><td>850</td><td>4,500</td><td>250</td><td>53,400</td><td style="font-weight:700">59,000</td></tr>
+<tr><td style="font-weight:700">BYD</td><td>150</td><td>3,200</td><td class="hl-a">1,400</td><td>18,250</td><td style="font-weight:700">23,000</td></tr>
+<tr><td style="font-weight:700">삼성SDI</td><td>1,100</td><td>1,200</td><td>50</td><td>19,537</td><td style="font-weight:700">21,887</td></tr>
+<tr><td style="font-weight:700">CATL</td><td>200</td><td>2,000</td><td class="hl-a">1,600</td><td>16,200</td><td style="font-weight:700">20,000</td></tr>
+<tr><td style="font-weight:700">파나소닉</td><td>400</td><td>3,800</td><td>50</td><td>10,750</td><td style="font-weight:700">15,000</td></tr>
+<tr><td style="font-weight:700">토요타</td><td class="hl-a">1,350</td><td>400</td><td>100</td><td>12,150</td><td style="font-weight:700">14,000</td></tr>
+<tr><td style="font-weight:700">SK온</td><td>300</td><td>2,100</td><td>100</td><td>10,500</td><td style="font-weight:700">13,000</td></tr>
+<tr><td style="font-weight:700">Tesla</td><td>0</td><td>57</td><td>0</td><td>43</td><td style="font-weight:700">100</td></tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -968,20 +985,22 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 <div class="rm-i"><div class="rm-d" style="background:var(--red)"></div><div class="rm-y">2026 Q4E</div><div class="rm-l">본격 양산<br>규모의 경제 시작</div></div>
 </div>
 
-<h3>특허 현황 — CATL 독점 구조</h3>
+<h3>특허 현황 — Na-ion 유효 특허패밀리 (2026.06)</h3>
 <table class="ct">
-<thead><tr><th>업체</th><th>Na-ion 특허 (건)</th><th>점유율</th><th>비고</th></tr></thead>
+<thead><tr><th>업체</th><th>Na-ion 유효 패밀리</th><th>비고</th></tr></thead>
 <tbody>
-<tr><td style="color:var(--red)">CATL</td><td class="hl-r">4,804</td><td class="hl-r">~87%</td><td>양극·음극·전해질·셀 전 밸류체인</td></tr>
-<tr><td>BYD</td><td>260</td><td>~4.7%</td><td>Blade Na-ion 추진</td></tr>
-<tr><td>HiNa (中科海钠)</td><td>249</td><td>~4.5%</td><td>중국과학원 스핀오프</td></tr>
-<tr><td>삼성SDI</td><td class="hl-r" style="color:var(--red)">극소수</td><td>—</td><td>Na-ion 투자 미미</td></tr>
-<tr><td>LGES</td><td class="hl-r" style="color:var(--red)">극소수</td><td>—</td><td>LFP 대응에 집중</td></tr>
-<tr><td>SK온</td><td class="hl-r" style="color:var(--red)">극소수</td><td>—</td><td>하이니켈·전고체 집중</td></tr>
+<tr><td style="color:var(--red)">CATL</td><td class="hl-r">1,600</td><td>중국 1강 · 양극·전해질·셀 전반</td></tr>
+<tr><td style="color:var(--red)">BYD</td><td class="hl-r">1,400</td><td>Blade Na-ion · ESS NFPP</td></tr>
+<tr><td>LGES</td><td>250</td><td>2027 양산 목표, 추격</td></tr>
+<tr><td>SK온</td><td>100</td><td>초기 단계</td></tr>
+<tr><td>토요타</td><td>100</td><td>—</td></tr>
+<tr><td>삼성SDI</td><td>50</td><td>개발 단계</td></tr>
+<tr><td>파나소닉</td><td>50</td><td>—</td></tr>
+<tr><td>Tesla</td><td>0</td><td>—</td></tr>
 </tbody>
 </table>
 <div style="font-size:10px;color:var(--sub);line-height:1.6;margin-top:8px">
-※ <b style="color:var(--red)">한국 3사 리스크</b>: Na-ion 특허 거의 부재 → ESS 시장에서 CATL 독주 시 대응력 약화<br>
+※ 기준: 유효 특허패밀리(Active Patent Families) 추정 · 글로벌 특허청+2026 상반기 실적 기반. 위는 글로벌 주요 셀 메이커 8사 — <b>HiNa(中科海钠)·중남대 등 중국 대학·스타트업은 본 집계 범위 밖(별도)</b>. 누적 출원 기준(특허청 2014~23)으로는 CATL·중국 대학이 상위였으나, 유효 패밀리 Na-ion은 CATL 1,600·BYD 1,400 = 중국 2강.<br>
 ※ <b style="color:var(--green)">한국 소재 수혜</b>: 애경케미칼(하드카본 음극재), Al foil 업체(음극 집전체 Cu→Al 전환)
 </div>
 
@@ -990,7 +1009,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 <div class="kp-row">
 <div class="kp-col">
 <strong>선도 (양산)</strong>
-<span class="kp-tag leader">CATL</span> 175Wh/kg 2세대 · HyperStrong ESS 60GWh · 특허 87%<br>
+<span class="kp-tag leader">CATL</span> 175Wh/kg 2세대 · HyperStrong ESS 60GWh · Na-ion 유효특허 1,600(중국 1강)<br>
 <span class="kp-tag leader">BYD</span> Blade Na-ion · 자체 EV 탑재 계획<br>
 <span class="kp-tag leader">HiNa (中科海钠)</span> 중국과학원 스핀오프 · 1GWh 양산라인
 </div>
@@ -1070,10 +1089,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 • <strong>업계 뉴스 반영</strong> — 삼성SDI BMS 칩 국산화(아나배틱세미, SK키파운드리, 11월 양산) · LG화학 LMR 양극재 청주 파일럿 양산 돌입 · 포스코퓨처엠 실리콘 음극재 2028 공급<br>
 • <strong>소재·장비</strong> — SKIET 분리막 계약 2,900억→24억 축소 · WCP ESS용 분리막 신규 공급 · 솔루스첨단소재 CFL 동박 3천억 매각 · 성일하이텍 군산 LFP 재활용 라인(연 500톤)<br>
 <br>
+<strong>📝 Update Log · 2026.06.29</strong><br>
+• <strong>특허 포트폴리오 전면 교정</strong> — "CATL Na-ion 4,804건 87% 독점"(PatSnap 과대집계) 폐기 → <b>유효 특허패밀리(Active Patent Families) 기준</b> 8개사 재산출(글로벌 특허청+2026 상반기 실적). 차트 차세대 3종(전고체·각형/원통·Na-ion)으로 재구성, 기타·합계 표 추가.<br>
+• <strong>Na-ion 특허 = 중국 2강</strong> — CATL 1,600·BYD 1,400 / 한국 LGES 250·SK온 100·삼성SDI 50(추격). 본문 "한국 부재" 서술 보정.<br><br>
 <strong>📝 Update Log · 2026.05.27</strong><br>
-• <strong>나트륨이온 배터리 신규 섹션</strong> — LFP vs Na-ion 비교, 카니발리제이션 구조(ESS/AIDC/2·3륜/저가EV), LFP ESS 침식 시나리오(2030E 43%), Al Foil GWh당 소요량(삼아알미늄), 시장 전망(25→600GWh), CATL 타임라인, 특허 독점 현황<br>
+• <strong>나트륨이온 배터리 신규 섹션</strong> — LFP vs Na-ion 비교, 카니발리제이션 구조(ESS/AIDC/2·3륜/저가EV), LFP ESS 침식 시나리오(2030E 43%), Al Foil GWh당 소요량(삼아알미늄), 시장 전망(25→600GWh), CATL 타임라인, 특허 현황<br>
 • <strong>6개 섹션 Figure 삽입</strong> — arXiv(전고체·건식·CNT), MDPI(실리콘), Ossila(LMFP), Wikimedia(Na-ion) · 용어 해설 토글 포함<br>
-• <strong>특허 차트 업데이트</strong> — Na-ion 카테고리 추가 (CATL 4,804건 87%), 도넛차트 9분류로 확장<br>
+• <strong>특허 차트 업데이트</strong> — Na-ion 카테고리 추가, 도넛차트 9분류로 확장<br>
 • <strong>sec-nav 6칸 확장</strong> — 나트륨이온 네비게이션 카드 추가<br><br>
 <strong>📝 Update Log · 2026.05.26</strong><br>
 • <strong>SVOLT</strong> — 반고체 배터리 2026.09 양산 개시 예정 · 복수 차량 모델 탑재 · 생산 원가 리튬이온 동등 수준<br>
@@ -1096,23 +1118,22 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 <script>
 // 업체별 특허 수 — 합계 내림차순 정렬
 const patentData=[
-  {name:'Toyota',solid:1300,cell:400,naion:5,etc:300},
-  {name:'삼성SDI',solid:1100,cell:1200,naion:12,etc:600},
-  {name:'CATL',solid:450,cell:950,naion:4804,etc:700},
-  {name:'LGES',solid:320,cell:800,naion:8,etc:500},
-  {name:'Panasonic',solid:280,cell:600,naion:15,etc:350},
-  {name:'Tesla',solid:80,cell:500,naion:3,etc:400},
-  {name:'BYD',solid:150,cell:700,naion:260,etc:500},
-  {name:'SK온',solid:200,cell:350,naion:5,etc:250},
-].sort((a,b)=>(b.solid+b.cell+b.naion+b.etc)-(a.solid+a.cell+a.naion+a.etc));
+  {name:'LGES',solid:850,cell:4500,naion:250},
+  {name:'BYD',solid:150,cell:3200,naion:1400},
+  {name:'삼성SDI',solid:1100,cell:1200,naion:50},
+  {name:'CATL',solid:200,cell:2000,naion:1600},
+  {name:'Panasonic',solid:400,cell:3800,naion:50},
+  {name:'Toyota',solid:1350,cell:400,naion:100},
+  {name:'SK온',solid:300,cell:2100,naion:100},
+  {name:'Tesla',solid:0,cell:57,naion:0},
+].sort((a,b)=>(b.solid+b.cell+b.naion)-(a.solid+a.cell+a.naion));
 
 new Chart(document.getElementById('cPatent'),{type:'bar',data:{
   labels:patentData.map(d=>d.name),
   datasets:[
     {label:'전고체',data:patentData.map(d=>d.solid),backgroundColor:'rgba(212,160,23,0.7)',borderRadius:2},
     {label:'각형/원통',data:patentData.map(d=>d.cell),backgroundColor:'rgba(109,40,217,0.4)',borderRadius:2},
-    {label:'Na-ion',data:patentData.map(d=>d.naion),backgroundColor:'rgba(233,122,0,0.6)',borderRadius:2},
-    {label:'기타(BMS/리사이클)',data:patentData.map(d=>d.etc),backgroundColor:'rgba(138,126,110,0.25)',borderRadius:2}
+    {label:'Na-ion',data:patentData.map(d=>d.naion),backgroundColor:'rgba(233,122,0,0.6)',borderRadius:2}
   ]
 },options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'top',labels:{color:'#8a7e6e',font:{size:9},padding:8}},tooltip:{backgroundColor:'#2c2418',titleColor:'#f8f5f0',bodyColor:'#e8e0d4'}},scales:{x:{stacked:true,grid:{display:false},ticks:{color:'#8a7e6e',font:{size:10}}},y:{stacked:true,grid:{color:'#e8e0d4'},ticks:{color:'#8a7e6e',callback:v=>v>=1000?(v/1000)+'k':v}}}}});
 
