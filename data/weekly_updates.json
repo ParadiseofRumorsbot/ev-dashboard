@@ -1,11 +1,11 @@
 {
-  "syncedAt": "2026-06-30T19:42:26.746Z",
+  "syncedAt": "2026-07-01T02:35:04.564Z",
   "latestDate": "2026-06-10",
   "count": 25,
   "this_week": [],
   "update_log": [
     {
-      "title": "🚗 EV 신차 브리핑 (6/10)",
+      "title": "🚗 EV 신차 브리��� (6/10)",
       "category": "",
       "icon": "🚗",
       "body": "Rivian R2 인도 개시(저가 대중형 87.9kWh·345mi·$45K~) · Mercedes GLC EV(94kWh·800V·2H26 출시) · 현대 아이오닉5 2027 페이스리프트 한국 출시·가격 인하 · BYD U9X 베이징오토쇼 고성능 공개 · Xiaomi EREV(주행거리 연장형) 베이징 공장 승인 · Mitsubishi Eclipse EV 북미 공개. (Rivian R2·GLC EV는 타임라인 기반영, 아이오닉5 F/L 신규 추가)",
@@ -53,7 +53,7 @@
       "targets": [
         "robotaxi"
       ],
-      "date": "",
+      "date": "2026-06-09",
       "order": 3
     },
     {
@@ -203,7 +203,7 @@
       "title": "중국 4월 NEV 반영",
       "category": "중국",
       "icon": "🇨🇳",
-      "body": "중국 4월 NEV 판매 84.9만대 데이터 반영 (BEV 57.9만 / PHEV 19.2만) · CPCA",
+      "body": "중국 4월 NEV 판매 84.9���대 데이터 반영 (BEV 57.9만 / PHEV 19.2만) · CPCA",
       "color": "red",
       "section": "update_log",
       "targets": [
