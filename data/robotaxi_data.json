@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-06T09:55:44.266Z",
+  "syncedAt": "2026-07-06T14:59:07.036Z",
   "metrics": {
     "total_unsupervised": {
       "key": "total_unsupervised",
@@ -205,7 +205,7 @@
     {
       "date": "26.04.19",
       "desc": "🔥 Houston home base 30+ Robotaxi pre-positioned 확인 (TeslaTracker)",
-      "category": "fleet",
+      "category": "",
       "priority": "normal"
     },
     {
@@ -318,7 +318,7 @@
     },
     {
       "date": "26.06.03",
-      "desc": "Austin 무감독 로보��시 전역 메트로 확대 (245 sq mi)",
+      "desc": "Austin 무감독 로보택시 전역 메트로 확대 (245 sq mi)",
       "category": "fleet",
       "priority": "high"
     },
