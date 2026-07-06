@@ -91,9 +91,9 @@
   const FALLBACK_LOG = [
     '🇩🇪 독일 5월 EV — BEV 59,969(+39%) · PHEV 27,921(+11%) · Tesla 5,111(+322%, 26F ~6만대 vs 25Y 1.9만대, 역대최고 22Y 6.9만대) · 출처 KBA',
     '🔋 Tesla 유럽 5월 부활 — 프랑스 5,446(+655%, 역대최고) · 덴마크 1,750(+136%, Model Y 1위) · 독일 5,111(+322%) · 포르투갈 +350% · 노르웨이 MS 21.5% · 타임라인 2025 -28%→1Q26 +45%→4월 +46%→5월 폭증',
-    '🌐 주요국 4월 EV 판매(SNE) — 글로벌 171.6만(+10%, BEV 125.7만 +20%) · 영국 +54.5% · 독일 +31.6% · 프랑스 +28% · 미국 -34.9% · 중국 -6.3%',
-    '⚡ ESS 4월 Grid 12.8GWh(+27%) vs BTM 4.9 Flat — Grid가 성장 주도 · 유럽 Grid +104% · 중국 Grid +86%',
-    '🌍 글로벌 EV 4월 160만대 (중85·유40·북12·기타24) · YTD 560만대 (-0.2% YoY) — 출처 Rho Motion·Benchmark',
+    '🌐 주요국 5월 EV 판매(SNE) — 글로벌 185.3만(+7%, BEV 134.2만 +18%) · 영국 +30.5% · 독일 +36.2% · 프랑스 +65.1% · 미국 -19.2% · 중국 -5.0%',
+    '⚡ ESS 5월 Grid 14.6GWh(-32%) vs BTM 5.1 Flat — 누적 113.2GWh(+20%) · 유럽 Grid +81% · 미국 Grid -82%',
+    '🌍 글로벌 EV 5월 185.3만대 (중108·유42·미9·한4) · 누적 775.4만대 (+3.5% YoY) — 출처 SNE Research',
     '⚡ ESS 4월 글로벌 17.7GWh (+18% YoY) · 미국 1.1GWh (-67%) · 유럽 1.6GWh (+39%) �� 중국 9.4GWh (+55%)',
     '💰 광물가격 5월3주: 리튬 -6.7% WoW (+18.2% QoQ) · LiPF6 +6.1% · 구리 -3.0%',
     '⚡ 유럽 전력가격 5월3주 85.7€/MWh (WoW +5.8%) · 5월 평균 83.4€/MWh (MoM +3.1%)',
@@ -110,13 +110,13 @@
     '📰 매일 7AM KST EV 뉴스 자동 모니터링 워크플로우 신규 (GitHub Actions)',
   ];
   const FALLBACK_WEEK = [
-    {icon:'⚡',title:'ESS 4월',body:'글로벌 17.7GWh (+18%) · 미국 1.1GWh (-67%) · 유럽 1.6GWh (+39%) · 중국 9.4GWh (+55%)',color:'purple'},
-    {icon:'🔋',title:'Cell',body:'대형 3사 -1.0% (LGES -4.4%, SDI +5.4%, SK이노 +0.2%) · CATL DC 전력장비 진출',color:'yellow'},
-    {icon:'⚙️',title:'소재',body:'소재 +5.7% · SQM 호주 리튬 광산 2배 증설 · 포퓨엠 실리콘 음극재 2028',color:'teal'},
-    {icon:'💰',title:'메탈',body:'리튬 -6.7% WoW (+18.2% QoQ) · LiPF6 +6.1% · 유럽 전력 85.7€/MWh',color:'blue'},
-    {icon:'🚗',title:'EV',body:'Stellantis-Leapmotor 이탈리아 · Mazda/Subaru EV 연기 · Sungrow 중동 15.3GWh',color:'red'},
+    {icon:'⚡',title:'ESS 5월',body:'글로벌 19.7GWh (-26%) · 북미 2.1GWh (-74%) · 유럽 2.8GWh (+48%) · 중국 7.5GWh (-49%) · 누적 113.2GWh (+20%)',color:'purple'},
+    {icon:'🔋',title:'Cell',body:'대형 3사 +7.1% (LGES +9.4%, SDI +2.8%, SK이노 +6.2%) · LGES·SDI 연중 분기 흑전 전망 · Ford-CATL 美 LFP 6월 생산개시',color:'yellow'},
+    {icon:'⚙️',title:'소재',body:'소재 -0.9% · 에코프로비엠 1.2조 유상증자 결정 · 서진시스템 SDI 북미 ESS 인클로저 5년 계약',color:'teal'},
+    {icon:'💰',title:'메탈',body:'리튬 5월 고점 $24.1/kg 대비 -13% · CATL 젠샤워 광산 재가동 임박 · 유럽 전력 90.1€/MWh',color:'blue'},
+    {icon:'🚗',title:'EV',body:'Tesla 2Q 인도 48.0만(+25%)·ESS 13.5GWh(+41%) · Rivian 인도 가이던스 상향 · VW·Bosch 자율주행 협력 종료',color:'red'},
   ];
-  const FALLBACK_DATE = '2026.06.02';
+  const FALLBACK_DATE = '2026.07.06';
 
   function renderUpdateLog(items, date) {
     document.getElementById('update-log-date').textContent = date;
@@ -176,7 +176,7 @@
 <div class="metrics" id="kpi-metrics">
 <div class="metric"><div class="label">2025 글로벌</div><div class="value" data-kpi="global_2025">2,070만</div><div class="delta up">▲ YoY +21%</div></div>
 <div class="metric"><div class="label">중국 점유율 (2025)</div><div class="value" data-kpi="cn_share">62.3%</div><div class="delta down">▼ 24→25 -2.3%p</div></div>
-<div class="metric"><div class="label">미국 26.05</div><div class="value" data-kpi="us_apr">10.4만</div><div class="delta down">▼ YoY -19.2% · 점유 7.0%</div></div>
+<div class="metric"><div class="label">미국 26.06</div><div class="value" data-kpi="us_apr">10.5만</div><div class="delta down">▼ YoY -20.2% · 점유 7.6%</div></div>
 <div class="metric"><div class="label">중국 26.05</div><div class="value" data-kpi="cn_apr">86.5만</div><div class="delta down">▼ YoY -5.0% · 점유 56.6%</div></div>
 </div>
 
@@ -218,33 +218,33 @@
 <section id="sec-regional">
 <!-- 글로벌 EV 4월/누계 -->
 <div class="card" style="border-left:4px solid var(--accent)">
-<div class="card-title">글로벌 EV 판매 · 2026년 4월 / 누계</div>
+<div class="card-title">글로벌 EV 판매 · 2026년 5월 / 누계</div>
 <div class="num-row">
-<div class="num-box"><div class="num-label">YTD 누계</div><div class="num-value" data-kpi="evGlobal.ytd">560만대</div><div class="num-sub" style="color:var(--red)">-0.2% YoY</div></div>
-<div class="num-box" style="border-color:var(--accent)"><div class="num-label">4월 글로벌</div><div class="num-value" data-kpi="evGlobal.monthly">171.6만대</div><div class="num-sub" style="color:var(--green)">월간 +10%</div></div>
-<div class="num-box"><div class="num-label">🇨🇳 중국</div><div class="num-value" data-kpi="evGlobal.cn">98.9만</div><div class="num-sub" style="color:var(--red)">-1%</div></div>
-<div class="num-box"><div class="num-label">🇪🇺 유럽</div><div class="num-value" data-kpi="evGlobal.eu">40.3만</div><div class="num-sub" style="color:var(--green)">+27%</div></div>
-<div class="num-box"><div class="num-label">🇺🇸 미국</div><div class="num-value" data-kpi="evGlobal.na">8.6만</div><div class="num-sub" style="color:var(--red)">-35%</div></div>
-<div class="num-box"><div class="num-label">기타</div><div class="num-value" data-kpi="evGlobal.etc">23.8만</div><div class="num-sub" style="color:var(--green)">+110%</div></div>
+<div class="num-box"><div class="num-label">YTD 누계</div><div class="num-value">775.4만대</div><div class="num-sub" style="color:var(--green)">+3.5% YoY</div></div>
+<div class="num-box" style="border-color:var(--accent)"><div class="num-label">5월 글로벌</div><div class="num-value">185.3만대</div><div class="num-sub" style="color:var(--green)">월간 +7%</div></div>
+<div class="num-box"><div class="num-label">🇨🇳 중국</div><div class="num-value">108.4만</div><div class="num-sub" style="color:var(--red)">-2.6%</div></div>
+<div class="num-box"><div class="num-label">🇪🇺 유럽</div><div class="num-value">41.7만</div><div class="num-sub" style="color:var(--green)">+25.6%</div></div>
+<div class="num-box"><div class="num-label">🇺🇸 미국</div><div class="num-value">9.4만</div><div class="num-sub" style="color:var(--red)">-32.6%</div></div>
+<div class="num-box"><div class="num-label">기타</div><div class="num-value">25.8만</div><div class="num-sub" style="color:var(--ink-3)">한국 3.6만 포함</div></div>
 </div>
-<div style="font-size:10px;color:var(--ink-3);margin-top:8px">출처: SNE Research (2026년 4월)</div>
+<div style="font-size:10px;color:var(--ink-3);margin-top:8px">출처: SNE Research (2026년 5월)</div>
 </div>
 
 <!-- 주요국 4월 상세 -->
 <div class="card" style="border-left:4px solid var(--teal)">
-<div class="card-title">주요국 4월 EV 판매 상세</div>
-<div style="font-size:11px;color:var(--ink-2);margin-bottom:10px">글로벌 <b style="color:var(--ink)">171.6만대 (+10% YoY)</b> — BEV 125.7만(+20%) · PHEV 45.9만(-10%) <span style="color:var(--ink-3)">(SNE 기준)</span></div>
+<div class="card-title">주요국 5월 EV 판매 상세</div>
+<div style="font-size:11px;color:var(--ink-2);margin-bottom:10px">글로벌 <b style="color:var(--ink)">185.3만대 (+7% YoY)</b> — BEV 134.2만(+18%) · PHEV 51.1만(-14%) <span style="color:var(--ink-3)">(SNE 기준)</span></div>
 <div class="scroll-x">
 <table class="data-table" style="min-width:520px">
-<thead><tr><th style="text-align:left">국가</th><th style="text-align:right">4월 판매</th><th style="text-align:right">YoY</th><th style="text-align:right">EV 점유율</th><th style="text-align:right">누계 M/S</th></tr></thead>
+<thead><tr><th style="text-align:left">국가</th><th style="text-align:right">5월 판매</th><th style="text-align:right">YoY</th><th style="text-align:right">EV 점유율</th><th style="text-align:right">누계 M/S</th></tr></thead>
 <tbody>
-<tr><td>🇺🇸 미국</td><td style="text-align:right">82,826</td><td style="text-align:right;color:var(--red)">-34.9%</td><td style="text-align:right">6.0%</td><td style="text-align:right">6.7%</td></tr>
-<tr><td>🇨🇳 중국</td><td style="text-align:right">771,000</td><td style="text-align:right;color:var(--red)">-6.3%</td><td style="text-align:right">55.0%</td><td style="text-align:right">43.7%</td></tr>
-<tr><td>🇬🇧 영국</td><td style="text-align:right">59,681</td><td style="text-align:right;color:var(--green)">+54.5%</td><td style="text-align:right">40.0%</td><td style="text-align:right">34.9%</td></tr>
-<tr><td>🇩🇪 독일</td><td style="text-align:right">91,896</td><td style="text-align:right;color:var(--green)">+31.6%</td><td style="text-align:right">36.8%</td><td style="text-align:right">34.5%</td></tr>
-<tr><td>🇫🇷 프랑스</td><td style="text-align:right">44,962</td><td style="text-align:right;color:var(--green)">+28.0%</td><td style="text-align:right">32.2%</td><td style="text-align:right">32.4%</td></tr>
-<tr><td>🇸🇪 스웨덴</td><td style="text-align:right">15,729</td><td style="text-align:right;color:var(--green)">+2.2%</td><td style="text-align:right">62.5%</td><td style="text-align:right">62.9%</td></tr>
-<tr><td>🇳🇴 노르웨이</td><td style="text-align:right">11,103</td><td style="text-align:right;color:var(--red)">-1.3%</td><td style="text-align:right">98.9%</td><td style="text-align:right">98.7%</td></tr>
+<tr><td>🇺🇸 미국</td><td style="text-align:right">103,950</td><td style="text-align:right;color:var(--red)">-19.2%</td><td style="text-align:right">7.0%</td><td style="text-align:right">6.9%</td></tr>
+<tr><td>🇨🇳 중국</td><td style="text-align:right">865,000</td><td style="text-align:right;color:var(--red)">-5.0%</td><td style="text-align:right">56.6%</td><td style="text-align:right">46.5%</td></tr>
+<tr><td>🇬🇧 영국</td><td style="text-align:right">66,098</td><td style="text-align:right;color:var(--green)">+30.5%</td><td style="text-align:right">41.1%</td><td style="text-align:right">36.0%</td></tr>
+<tr><td>🇩🇪 독일</td><td style="text-align:right">87,890</td><td style="text-align:right;color:var(--green)">+36.2%</td><td style="text-align:right">36.7%</td><td style="text-align:right">35.0%</td></tr>
+<tr><td>🇫🇷 프랑스</td><td style="text-align:right">45,563</td><td style="text-align:right;color:var(--green)">+65.1%</td><td style="text-align:right">35.4%</td><td style="text-align:right">33.0%</td></tr>
+<tr><td>🇸🇪 스웨덴</td><td style="text-align:right">17,450</td><td style="text-align:right;color:var(--green)">+7.5%</td><td style="text-align:right">64.6%</td><td style="text-align:right">63.3%</td></tr>
+<tr><td>🇳🇴 노르웨이</td><td style="text-align:right">15,307</td><td style="text-align:right;color:var(--green)">+13.1%</td><td style="text-align:right">98.4%</td><td style="text-align:right">98.6%</td></tr>
 </tbody>
 </table>
 </div>
@@ -428,33 +428,33 @@
 <!-- ══════════════════════════════════════════ -->
 <section id="sec-battery">
 <div class="chart-section">
-<h2>���로벌 배터리 출하량 트래커 (2026.04)</h2>
-<p style="font-size:11px;color:var(--ink-2);margin:-4px 0 14px">글로벌 105.7GWh (+24% YoY) · 누적 352.7GWh (+14%) · 한국 3사 합산 점유율 11.9% · <span style="color:var(--yellow)">EV 배터리 (ESS 별도)</span></p>
+<h2>���로벌 배터리 출하량 트래커 (2026.05)</h2>
+<p style="font-size:11px;color:var(--ink-2);margin:-4px 0 14px">글로벌 115.4GWh (+23% YoY) · 누적 469.2GWh (+16%) · 한국 3사 합산 점유율 12.6% · <span style="color:var(--yellow)">EV 배터리 (ESS 별도)</span></p>
 
 <div class="batt-grid">
-<div class="batt-card"><div class="bc-name">CATL</div><div class="bc-value">42.7 <span class="bc-unit">GWh</span></div><div class="bc-delta" style="color:var(--green)">▲ +17% · MS 39.1%</div></div>
-<div class="batt-card"><div class="bc-name">BYD</div><div class="bc-value">15.2 <span class="bc-unit">GWh</span></div><div class="bc-delta" style="color:var(--red)">▼ -3% · MS 13.9%</div></div>
-<div class="batt-card kr"><div class="bc-name">LGES 🇰🇷</div><div class="bc-value">11.8 <span class="bc-unit">GWh</span></div><div class="bc-delta" style="color:var(--green)">▲ +16% · MS 10.8%</div></div>
-<div class="batt-card"><div class="bc-name">CALB</div><div class="bc-value">5.3 <span class="bc-unit">GWh</span></div><div class="bc-delta" style="color:var(--green)">▲ +43% · MS 4.9%</div></div>
-<div class="batt-card kr"><div class="bc-name">SK on 🇰🇷</div><div class="bc-value">3.9 <span class="bc-unit">GWh</span></div><div class="bc-delta" style="color:var(--red)">▼ -6% · MS 3.6%</div></div>
-<div class="batt-card"><div class="bc-name">Panasonic</div><div class="bc-value">3.3 <span class="bc-unit">GWh</span></div><div class="bc-delta" style="color:var(--red)">▼ -5% · MS 3.0%</div></div>
-<div class="batt-card kr"><div class="bc-name">삼성SDI 🇰🇷</div><div class="bc-value">2.2 <span class="bc-unit">GWh</span></div><div class="bc-delta" style="color:var(--red)">▼ -28% · MS 2.0%</div></div>
+<div class="batt-card"><div class="bc-name">CATL</div><div class="bc-value">46.5 <span class="bc-unit">GWh</span></div><div class="bc-delta" style="color:var(--green)">▲ +32% · MS 40.3%</div></div>
+<div class="batt-card"><div class="bc-name">BYD</div><div class="bc-value">17.4 <span class="bc-unit">GWh</span></div><div class="bc-delta" style="color:var(--green)">▲ +9% · MS 15.1%</div></div>
+<div class="batt-card kr"><div class="bc-name">LGES 🇰🇷</div><div class="bc-value">9.4 <span class="bc-unit">GWh</span></div><div class="bc-delta" style="color:var(--green)">▲ +8% · MS 8.1%</div></div>
+<div class="batt-card"><div class="bc-name">CALB</div><div class="bc-value">5.8 <span class="bc-unit">GWh</span></div><div class="bc-delta" style="color:var(--green)">▲ +28% · MS 5.1%</div></div>
+<div class="batt-card kr"><div class="bc-name">SK on 🇰🇷</div><div class="bc-value">3.4 <span class="bc-unit">GWh</span></div><div class="bc-delta" style="color:var(--green)">▲ +1% · MS 3.0%</div></div>
+<div class="batt-card"><div class="bc-name">Panasonic</div><div class="bc-value">3.1 <span class="bc-unit">GWh</span></div><div class="bc-delta" style="color:var(--red)">▼ -24% · MS 2.7%</div></div>
+<div class="batt-card kr"><div class="bc-name">삼성SDI 🇰🇷</div><div class="bc-value">1.7 <span class="bc-unit">GWh</span></div><div class="bc-delta" style="color:var(--red)">▼ -35% · MS 1.5%</div></div>
 </div>
 
 <div class="grid-2">
-<div><h3 style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;font-weight:600">셀사별 4월 출하량 (GWh)</h3><div class="chart-wrap sm"><canvas id="bShip"></canvas></div></div>
-<div><h3 style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;font-weight:600">1Q26 누적 YoY (%)</h3><div class="chart-wrap sm"><canvas id="bYoY"></canvas></div></div>
+<div><h3 style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;font-weight:600">셀사별 5월 출하량 (GWh)</h3><div class="chart-wrap sm"><canvas id="bShip"></canvas></div></div>
+<div><h3 style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;font-weight:600">5월 YoY (%)</h3><div class="chart-wrap sm"><canvas id="bYoY"></canvas></div></div>
 </div>
 
 <div class="grid-2" style="margin-top:16px">
-<div><h3 style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;font-weight:600">US 3월 EV 배터리 점유율 · 8.0GWh (-29%)</h3><div class="chart-wrap sm"><canvas id="bUS"></canvas></div></div>
-<div><h3 style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;font-weight:600">EU 3월 EV 배터리 점유율 · 29.3GWh (+33%)</h3><div class="chart-wrap sm"><canvas id="bEU"></canvas></div></div>
+<div><h3 style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;font-weight:600">US 5월 EV 배터리 점유율 · 8.0GWh (-27%)</h3><div class="chart-wrap sm"><canvas id="bUS"></canvas></div></div>
+<div><h3 style="font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-bottom:8px;font-weight:600">EU 5월 EV 배터리 점유율 · 22.8GWh (+27%)</h3><div class="chart-wrap sm"><canvas id="bEU"></canvas></div></div>
 </div>
 
 <div class="info-box" style="margin-top:16px;line-height:1.8">
 <strong>한국 3사 정리</strong> ·
-<span style="color:var(--purple)">LGES</span>: 글로벌 3위 견조(+16%), 유럽 21% 2위 ·
-<span style="color:var(--purple)">SK on</span>: 미국 11% 3위, 닛산 캔턴 SDI 전환 영향 ·
+<span style="color:var(--purple)">LGES</span>: 글로벌 3위 견조(+8%), 유럽 18% 2위 ·
+<span style="color:var(--purple)">SK on</span>: 미국 14% 3위, 닛산 캔턴 SDI 전환 영향 ·
 <span style="color:var(--purple)">삼성SDI</span>: -28% 부진, ESS·전고체 전환 본격화 시점
 </div>
 </div>
@@ -741,47 +741,47 @@ backgroundColor:['#4ecdc4','#556dff','#a78bfa'],borderRadius:6
 // Monthly BEV+PHEV
 const stackOpt=(unit,fmt)=>({...defOpt,scales:{x:{stacked:true,grid:{display:false},ticks:{color:tickColor,font:{size:10,family:'JetBrains Mono'}}},y:{stacked:true,grid:{color:gridColor},ticks:{color:tickColor,font:{size:10,family:'JetBrains Mono'},callback:fmt||defOpt.scales.y.ticks.callback}}},plugins:{legend:{display:false},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.dataset.label+': '+ctx.parsed.y.toLocaleString()+unit}}}});
 
-new Chart(document.getElementById('cG'),{type:'bar',data:{labels:['1월','2월','3월'],datasets:[
-{label:'BEV',data:[76.3,72.1,130.8],backgroundColor:'#556dff',borderRadius:3},
-{label:'PHEV',data:[40.3,33.4,51.5],backgroundColor:'#a78bfa',borderRadius:3}
+new Chart(document.getElementById('cG'),{type:'bar',data:{labels:['1월','2월','3월','4월','5월'],datasets:[
+{label:'BEV',data:[76.3,72.1,130.8,125.7,134.2],backgroundColor:'#556dff',borderRadius:3},
+{label:'PHEV',data:[40.3,33.4,51.5,45.9,51.1],backgroundColor:'#a78bfa',borderRadius:3}
 ]},options:stackOpt('만대',v=>v+'만')});
 
-new Chart(document.getElementById('cU'),{type:'bar',data:{labels:['1월','2월','3월','4월'],datasets:[
-{label:'BEV',data:[65000,73659,88582,64517],backgroundColor:'#556dff',borderRadius:3},
-{label:'PHEV',data:[12000,14083,16265,18309],backgroundColor:'#a78bfa',borderRadius:3}
+new Chart(document.getElementById('cU'),{type:'bar',data:{labels:['1월','2월','3월','4월','5월'],datasets:[
+{label:'BEV',data:[65000,73659,88582,64517,81188],backgroundColor:'#556dff',borderRadius:3},
+{label:'PHEV',data:[12000,14083,16265,18309,22762],backgroundColor:'#a78bfa',borderRadius:3}
 ]},options:stackOpt('대',v=>(v/10000).toFixed(1)+'만')});
 
-new Chart(document.getElementById('cC'),{type:'bar',data:{labels:['1월','2월','3월','4월'],datasets:[
-{label:'BEV',data:[34.8,27.8,56.8,57.9],backgroundColor:'#556dff',borderRadius:3},
-{label:'PHEV',data:[24.9,13.4,20.4,19.2],backgroundColor:'#a78bfa',borderRadius:3}
+new Chart(document.getElementById('cC'),{type:'bar',data:{labels:['1월','2월','3월','4월','5월'],datasets:[
+{label:'BEV',data:[34.8,27.8,56.8,57.9,63.7],backgroundColor:'#556dff',borderRadius:3},
+{label:'PHEV',data:[24.9,13.4,20.4,19.2,22.8],backgroundColor:'#a78bfa',borderRadius:3}
 ]},options:stackOpt('만대',v=>v+'만')});
 
-new Chart(document.getElementById('cE'),{type:'bar',data:{labels:['1월','2월','3월','4월(7국)'],datasets:[
-{label:'BEV',data:[20.3,20.9,36.1,18.8],backgroundColor:'#556dff',borderRadius:3},
-{label:'PHEV',data:[10.4,10.1,16.9,null],backgroundColor:'#a78bfa',borderRadius:3}
+new Chart(document.getElementById('cE'),{type:'bar',data:{labels:['1월','2월','3월','4월(7국)','5월'],datasets:[
+{label:'BEV',data:[20.3,20.9,36.1,18.8,28.7],backgroundColor:'#556dff',borderRadius:3},
+{label:'PHEV',data:[10.4,10.1,16.9,null,13.0],backgroundColor:'#a78bfa',borderRadius:3}
 ]},options:stackOpt('만대',v=>v+'만')});
 
 // Battery tracker
 new Chart(document.getElementById('bShip'),{type:'bar',data:{labels:['CATL','BYD','LGES','CALB','SK on','Panasonic','SDI'],datasets:[{
-data:[42.7,15.2,11.8,5.3,3.9,3.3,2.2],
+data:[46.5,17.4,9.4,5.8,3.4,3.1,1.7],
 backgroundColor:['#4ecdc4','#8B8B82','#a78bfa','#8B8B82','#a78bfa','#8B8B82','#a78bfa'],
 borderRadius:4
 }]},options:{...defOpt,plugins:{legend:{display:false},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.parsed.y+' GWh'}}},scales:{...defOpt.scales,y:{...defOpt.scales.y,ticks:{...defOpt.scales.y.ticks,callback:v=>v+'GWh'}}}}});
 
 new Chart(document.getElementById('bYoY'),{type:'bar',data:{labels:['CATL','BYD','LGES','CALB','SK on','Panasonic','SDI'],datasets:[{
-data:[15,-8,7,31,-10,4,-27],
+data:[32,9,8,28,1,-24,-35],
 backgroundColor:ctx=>{const v=ctx.parsed?.y??ctx.raw;return v>=0?'#22c55e':'#ef4444'},
 borderRadius:4
 }]},options:{...defOpt,plugins:{legend:{display:false},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>(ctx.parsed.y>=0?'+':'')+ctx.parsed.y+'%'}}},scales:{...defOpt.scales,y:{...defOpt.scales.y,ticks:{...defOpt.scales.y.ticks,callback:v=>v+'%'}}}}});
 
 new Chart(document.getElementById('bUS'),{type:'doughnut',data:{labels:['Panasonic','LGES','SK on','CATL','SDI','기타'],datasets:[{
-data:[40,22,11,9,7,11],
+data:[36,23,14,8,5,14],
 backgroundColor:['#8B8B82','#a78bfa','#a78bfa','#4ecdc4','#a78bfa','#E2E1D8'],
 borderColor:'#fff',borderWidth:2
 }]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:'#4A4A45',font:{size:10},padding:6}},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.label+': '+ctx.parsed+'%'}}}}});
 
 new Chart(document.getElementById('bEU'),{type:'doughnut',data:{labels:['CATL','LGES','BYD','SK on','SDI','CALB','기타'],datasets:[{
-data:[43,21,7,7,5,2,15],
+data:[43,18,8,7,5,3,16],
 backgroundColor:['#4ecdc4','#a78bfa','#8B8B82','#a78bfa','#a78bfa','#8B8B82','#E2E1D8'],
 borderColor:'#fff',borderWidth:2
 }]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:'#4A4A45',font:{size:10},padding:6}},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>ctx.label+': '+ctx.parsed+'%'}}}}});
