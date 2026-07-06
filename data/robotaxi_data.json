@@ -1,6 +1,13 @@
 {
-  "syncedAt": "2026-07-06T19:42:44.088Z",
+  "syncedAt": "2026-07-06T23:57:19.445Z",
   "metrics": {
+    "cum_miles": {
+      "key": "cum_miles",
+      "value": 11.3,
+      "unit": "B",
+      "date": "2026-06-21",
+      "note": "[미확인/2차출처] ~11.3B 누적 FSD 마일(도심 ~4.2B) · 공식 tesla.com/fsd/safety 403 미확인·트윗(@wholemars) 2차보도 · 11B 돌파 ~6/10 · 정확치 11,319,318,829는 spurious precision로 미채택 · 재확인 필요"
+    },
     "total_unsupervised": {
       "key": "total_unsupervised",
       "value": 39,
@@ -50,13 +57,6 @@
       "date": "2026-05-13",
       "note": "Dallas 무감독"
     },
-    "cum_miles": {
-      "key": "cum_miles",
-      "value": 10,
-      "unit": "B",
-      "date": "2026-05-04",
-      "note": "10B 돌파 (5/4) · 도시 3.76B"
-    },
     "subscribers": {
       "key": "subscribers",
       "value": 1280000,
@@ -66,6 +66,16 @@
     }
   },
   "history": {
+    "cum_miles": [
+      {
+        "date": "2026-05-04",
+        "value": 10
+      },
+      {
+        "date": "2026-06-21",
+        "value": 11.3
+      }
+    ],
     "total_unsupervised": [
       {
         "date": "2026-05-13",
@@ -114,12 +124,6 @@
       {
         "date": "2026-05-13",
         "value": 5
-      }
-    ],
-    "cum_miles": [
-      {
-        "date": "2026-05-04",
-        "value": 10
       }
     ],
     "subscribers": [
@@ -205,7 +209,7 @@
     {
       "date": "26.04.19",
       "desc": "🔥 Houston home base 30+ Robotaxi pre-positioned 확인 (TeslaTracker)",
-      "category": "",
+      "category": "fleet",
       "priority": "normal"
     },
     {
@@ -338,6 +342,54 @@
       "date": "26.06.13",
       "desc": "FSD v14.3.4(2026.14.6.10) 롤아웃 시작 · Cybertruck Actually Smart Summon 첫 탑재(전 라인업 모델 통합) · ASS 최고속도 8mph(13km/h) · 로보택시형 승객 UI 추가",
       "category": "fsd",
+      "priority": "normal"
+    },
+    {
+      "date": "26.06.15",
+      "desc": "FSD 2026.14.6.11 재배포 빌드 롤아웃 — 신규 기능 없음, v14.3.4 페이로드 동일(Cybertruck Actually Smart Summon 포함)",
+      "category": "fsd",
+      "priority": "normal"
+    },
+    {
+      "date": "26.06.19",
+      "desc": "FSD 2026.16.6(v14.3.3) 오세아니아(호주·뉴질랜드) 확대 배포 — 비전 인코더 업그레이드·MLIR 재작성 반응속도 20%↑·SLOTH 속도 프로파일",
+      "category": "fsd",
+      "priority": "normal"
+    },
+    {
+      "date": "26.06.19",
+      "desc": "Giga Texas 야적장 Cybercab 약 85대 포착(드론) — 5월 말 약 60대 대비 증가, 양산 램프 신호 [2차출처]",
+      "category": "production",
+      "priority": "normal"
+    },
+    {
+      "date": "26.06.21",
+      "desc": "🏁 FSD 누적 ~11.3B 마일 보도(도심 ~4.2B) — 공식 tesla.com/fsd/safety 미확인·트윗 기반 2차보도 [미확인/2차출처] · 11B 돌파 ~6/10",
+      "category": "",
+      "priority": "normal"
+    },
+    {
+      "date": "26.06.23",
+      "desc": "FSD 2026.14.6.12 점빌드 감지(Cybertruck AWD, Arizona) — 릴리스노트 v14.3.4 동일, 마이너 수정 추정",
+      "category": "fsd",
+      "priority": "normal"
+    },
+    {
+      "date": "26.06.29",
+      "desc": "🧠 FSD v14 Lite(2026.20.5.1) HW3(AI3) 얼리액세스 롤아웃 — HW4 V14 지능을 HW3로 증류한 첫 레거시 HW용 V14 · Start Self-Driving from Park · Arrival Options(하차 위치 선택) · SLOTH 속도 프로파일 · 7/1경 미국·캐나다·멕시코 배포",
+      "category": "fsd",
+      "priority": "high"
+    },
+    {
+      "date": "26.07.03",
+      "desc": "🚕 마이애미 무인(세이프티 모니터 없음) 로보택시 개시 — TX·CA 외 첫 도시 · 서부 마이애미-데이드 지오펜스(~10~20 sq mi) · Model Y · 차량대수 미공개 · 계획 5개도시(LV·마이애미·올랜도·피닉스·탬파) 중 첫 개시",
+      "category": "fleet",
+      "priority": "high"
+    },
+    {
+      "date": "26.07.07",
+      "desc": "Giga Texas '스케일링 대형 발표' 예고(Lars Moravy) — Cybercab 양산/Model Y L/4680 등 후보 [미확정]",
+      "category": "production",
       "priority": "normal"
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-06T19:42:43.270Z",
+  "syncedAt": "2026-07-06T23:57:18.664Z",
   "latestDate": "2026-06-10",
   "count": 25,
   "this_week": [],
@@ -44,7 +44,7 @@
       "order": 2
     },
     {
-      "title": "🚕 로보택시/FSD 트래킹 갱신",
+      "title": "🚕 로보택���/FSD 트래킹 갱신",
       "category": "",
       "icon": "🚕",
       "body": "무감독 28대 · 총 등록 719대(+16) · Austin 전역 메트로 245 sq mi(6/3) · Cybercab 애틀랜타 목격 · FSD v14.3.3 (누적 10.01B mi) · 출처 RobotaxiTracker·Tesla 안전보고서",
@@ -189,7 +189,7 @@
     {
       "title": "FSD 10B+ 마일",
       "category": "FSD",
-      "icon": "🏁",
+      "icon": "����",
       "body": "일일 28.8M · 도시 3.76B · 구독 1.28M",
       "color": "purple",
       "section": "this_week",
@@ -206,9 +206,7 @@
       "body": "중국 4월 NEV 판매 84.9만대 데이터 반영 (BEV 57.9만 / PHEV 19.2만) · CPCA",
       "color": "red",
       "section": "update_log",
-      "targets": [
-        "index"
-      ],
+      "targets": [],
       "date": "2026-05-17",
       "order": 2
     },
