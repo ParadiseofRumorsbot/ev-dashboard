@@ -204,8 +204,6 @@
           el.textContent=(typeof v.value==='number'?v.value.toLocaleString('en-US'):v.value)+(v.unit||'');
         }
       });
-      const syncEl=document.getElementById('notion-sync-date');
-      if(syncEl)syncEl.textContent='Notion 동기화: '+data.syncedAt.split('T')[0];
     })
     .catch(()=>{});
 })();
@@ -690,7 +688,7 @@ function rmRenderOEM(key){
 </div>
 </section>
 
-<p class="updated">마지막 업데이트: 2026.06.19 <span id="notion-sync-date"></span></p>
+<p class="updated">마지막 업데이트: 2026.06.19 (EV 판매 KPI·텍스트는 수동 하드코딩)</p>
 
 <!-- ══════════════════════════════════════════ -->
 <!-- Charts JS (light theme) -->

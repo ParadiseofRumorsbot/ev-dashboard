@@ -28,7 +28,8 @@ jobs:
       - name: Check for changes
         id: changes
         run: |
-          git diff --quiet data/weekly_patents.json 2>/dev/null && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+          git add data/weekly_patents.json
+          git diff --cached --quiet && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push
         if: steps.changes.outputs.changed == 'true'
