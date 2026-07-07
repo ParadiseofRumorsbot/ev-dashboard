@@ -193,6 +193,7 @@
 <span><i style="background:#4ecdc4"></i>연간 마일 (B)</span>
 </div>
 <div class="chart-wrap"><canvas id="c1"></canvas></div>
+<div style="margin:6px 2px 0;font-size:11px;color:var(--ink-3);line-height:1.4">* 26.06 ~11.3B는 잠정치 — [미확인·2차출처], 공식 tesla.com/fsd/safety 재확인 전 (지표카드와 일치)</div>
 </div>
 
 <div class="grid-2">
@@ -214,10 +215,12 @@
 <span><i style="background:#ff6b6b"></i>무감독 차량</span>
 </div>
 <div class="chart-wrap sm"><canvas id="c4"></canvas></div>
+<div style="margin:6px 2px 0;font-size:11px;color:var(--ink-3);line-height:1.4">* 26.06.08 무감독 28대(코호트 기준) · 총차량 53대(5/13 최신) · 트래커 활성/코호트 지표 혼재 주의</div>
 </div>
 <div class="chart-section" id="sec-cybercab">
 <h2>Cybercab 누적 생산</h2>
 <div class="chart-wrap sm"><canvas id="c5"></canvas></div>
+<div style="margin:6px 2px 0;font-size:11px;color:var(--ink-3);line-height:1.4">* 26.06 ~85대는 Giga TX 야적 드론 목격 기준 [2차출처] · 공식 TX 등록은 42대(5/28)</div>
 </div>
 </div>
 
@@ -440,8 +443,8 @@ const gridColor='rgba(255,255,255,0.06)';
 const tickColor='#6b7a99';
 const defOpt={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{backgroundColor:'#1e293b',titleColor:'#e0e6f0',bodyColor:'#94a3c0',borderColor:'#2d3a52',borderWidth:1,cornerRadius:8,padding:12}},scales:{x:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}},y:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:11}}}}};
 
-new Chart(document.getElementById('c1'),{type:'line',data:{labels:['2021','2022','2023','2024','2025','26.02','26.03','26.04','26.05'],datasets:[
-{label:'누적',data:[0.006,0.086,0.756,3.0,7.25,8.0,8.5,9.5,10.0],borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,0.1)',fill:true,borderWidth:2.5,tension:.3,pointRadius:4}
+new Chart(document.getElementById('c1'),{type:'line',data:{labels:['2021','2022','2023','2024','2025','26.02','26.03','26.04','26.05','26.06'],datasets:[
+{label:'누적',data:[0.006,0.086,0.756,3.0,7.25,8.0,8.5,9.5,10.0,11.3],borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,0.1)',fill:true,borderWidth:2.5,tension:.3,pointRadius:4}
 ]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'Billion miles',color:tickColor}}}}});
 
 new Chart(document.getElementById('c2'),{type:'bar',data:{labels:['2021','2022','2023','2024','2025','2026E'],datasets:[{
@@ -454,25 +457,25 @@ data:[5300676,2175763,485133,397274],
 backgroundColor:['#4ecdc4','#556dff','#ffd93d','#ff6b6b'],borderRadius:6
 }]},options:{...defOpt,indexAxis:'y',scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,callback:v=>(v/1000000).toFixed(1)+'M'}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:10}}}}}});
 
-new Chart(document.getElementById('c4'),{type:'line',data:{labels:['25.06','25.12','26.01','26.03','26.04.16','26.04.18','26.04.30','26.05.06','26.05.13','26.05.25'],datasets:[
-{label:'총 차량',data:[13,135,200,37,46,46,46,53,53,27],borderColor:'#556dff',borderWidth:2,tension:.3,pointRadius:4},
-{label:'무감독',data:[0,0,8,4,12,12,25,27,39,22],borderColor:'#ff6b6b',borderWidth:2,tension:.3,pointRadius:4,borderDash:[5,3]}
+new Chart(document.getElementById('c4'),{type:'line',data:{labels:['25.06','25.12','26.01','26.03','26.04.16','26.04.18','26.04.30','26.05.06','26.05.13','26.05.25','26.06.08'],datasets:[
+{label:'총 차량',data:[13,135,200,37,46,46,46,53,53,27,53],borderColor:'#556dff',borderWidth:2,tension:.3,pointRadius:4},
+{label:'무감독',data:[0,0,8,4,12,12,25,27,39,22,28],borderColor:'#ff6b6b',borderWidth:2,tension:.3,pointRadius:4,borderDash:[5,3]}
 ]},options:defOpt});
 
-new Chart(document.getElementById('c5'),{type:'bar',data:{labels:['26.02','26.03','26.04','26.05'],datasets:[{
-data:[1,25,60,42],backgroundColor:['#2d3a52','#556dff','#a78bfa','#4ecdc4'],borderRadius:4
+new Chart(document.getElementById('c5'),{type:'bar',data:{labels:['26.02','26.03','26.04','26.05','26.06'],datasets:[{
+data:[1,25,60,42,85],backgroundColor:['#2d3a52','#556dff','#a78bfa','#4ecdc4','#ffd93d'],borderRadius:4
 }]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'테스트 플릿 (대)',color:tickColor}}}}});
 
 // 도시별 Day 1 Fleet Size vs 현재 무감독 비교
-new Chart(document.getElementById('c6'),{type:'bar',data:{labels:['Austin\n(25.6.22)','Dallas\n(26.4.18)','Houston\n(26.4.18)','Bay Area\n(Supervised)'],datasets:[{
+new Chart(document.getElementById('c6'),{type:'bar',data:{labels:['Austin\n(25.6.22)','Dallas\n(26.4.18)','Houston\n(26.4.18)','Bay Area\n(Supervised)','Miami\n(26.7.3)'],datasets:[{
 label:'Day 1',
-data:[13,1,1,130],
-backgroundColor:['#4ecdc4','#ffd93d','#ff6b6b','#6b7a99'],borderRadius:6
+data:[13,1,1,130,null],
+backgroundColor:['#4ecdc4','#ffd93d','#ff6b6b','#6b7a99','#a78bfa'],borderRadius:6
 },{
-label:'현재 (5/25)',
-data:[27,5,6,0],
-backgroundColor:['rgba(78,205,196,0.4)','rgba(255,217,61,0.4)','rgba(255,107,107,0.4)','rgba(107,122,153,0.2)'],borderRadius:6,borderWidth:2,borderColor:['#4ecdc4','#ffd93d','#ff6b6b','#6b7a99']
-}]},options:{...defOpt,scales:{x:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}},y:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:11}}}},plugins:{...defOpt.plugins,legend:{display:true,position:'top',labels:{color:tickColor,font:{size:10}}},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>{const labels=[['13대 Active Day 1','1대 Unsupervised Day 1','1대 Unsupervised Day 1','~130대 Supervised'],['27대 Unsupervised (5/25)','5대 Unsupervised (5/25)','6대 Unsupervised (5/25)','CA 퍼밋 미취득']];return labels[ctx.datasetIndex][ctx.dataIndex]}}}}}});
+label:'현재 (7/7)',
+data:[28,5,6,0,null],
+backgroundColor:['rgba(78,205,196,0.4)','rgba(255,217,61,0.4)','rgba(255,107,107,0.4)','rgba(107,122,153,0.2)','rgba(167,139,250,0.4)'],borderRadius:6,borderWidth:2,borderColor:['#4ecdc4','#ffd93d','#ff6b6b','#6b7a99','#a78bfa']
+}]},options:{...defOpt,scales:{x:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}},y:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:11}}}},plugins:{...defOpt.plugins,legend:{display:true,position:'top',labels:{color:tickColor,font:{size:10}}},tooltip:{...defOpt.plugins.tooltip,callbacks:{label:ctx=>{const labels=[['13대 Active Day 1','1대 Unsupervised Day 1','1대 Unsupervised Day 1','~130대 Supervised','미공개 (7/3 개시)'],['28대 코호트 (6/8)','5대 (6/8)','6대 (6/8)','CA 퍼밋 미취득','7/3 무인 개시·대수 미공개']];return labels[ctx.datasetIndex][ctx.dataIndex]}}}}}});
 </script>
 <script>
 (function(){
