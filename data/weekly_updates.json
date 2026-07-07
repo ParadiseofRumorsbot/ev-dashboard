@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-07T02:06:07.286Z",
+  "syncedAt": "2026-07-07T09:23:52.017Z",
   "latestDate": "2026-07-07",
   "count": 27,
   "this_week": [
@@ -61,7 +61,7 @@
       "title": "📊 글로벌 EV 판매 카드 Notion 연동",
       "category": "",
       "icon": "📊",
-      "body": "글로벌/중·유·북미·기타 월간·누계 카드를 모델변수 DB 연동으로 전환 — 매월 Notion 수정 시 자동 갱신 (4월: 글로벌 160만·누계 560만)",
+      "body": "글로벌/중·유·북미·기타 ��간·누계 카드를 모델변수 DB 연동으로 전환 — 매월 Notion 수정 시 자동 갱신 (4월: 글로벌 160만·누계 560만)",
       "color": "blue",
       "section": "update_log",
       "targets": [
@@ -220,9 +220,7 @@
       "body": "일일 28.8M · 도시 3.76B · 구독 1.28M",
       "color": "purple",
       "section": "this_week",
-      "targets": [
-        "robotaxi"
-      ],
+      "targets": [],
       "date": "2026-05-17",
       "order": 1
     },
