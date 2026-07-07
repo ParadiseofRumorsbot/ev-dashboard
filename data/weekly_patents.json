@@ -1,0 +1,83 @@
+{
+  "type": "battery_patent_monitor",
+  "lastUpdated": "2026-07-07T01:47:19.282Z",
+  "weekOf": "2026-07-07",
+  "description": "배터리·EV 특허 모니터링 — 주간 수집",
+  "note": "⚠️ 자동 수집 결과입니다. 대시보드 반영 전 사용자 확인 필요.",
+  "totalItems": 7,
+  "companyStats": {
+    "Other": 5,
+    "BMW": 1,
+    "BYD": 1
+  },
+  "techStats": {
+    "기타": 5,
+    "리사이클링": 1,
+    "충전": 1
+  },
+  "items": [
+    {
+      "title": "STI Stock Extends Triple-Digit Rally: Solidion Highlights Commercial-Ready Lithium Battery Technology - Stocktwits",
+      "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNaVE1R05fUEtfaWV3V01rS2d5VnRqLUFWUGlJWDBOUUc1ZTBCWWF5dlVmY05nOXM3TjZ1Z1NiREZUYnotVzVZeDRnTGR5QzVHWkF1T3JsVWFfQXoyNjJrRVdycGhrdlE5cXctOHZBTlV1blBjZzNVXzZvTE1qY1lGRmlHbk1OU1pzb2JyTndyd0dvY2NaOWI0clNZdDRKMG40U1R2cTIwYUprNTFZdTI0dXZXSGdaRnNNV2ZEalVBaElUbnR3WDVCZERpQkUxZnJNZFJFQzFzZjVJeEhpVEZvQXVrOTliSFFJOFVCblpJQ3BCTzl0Q1c4?oc=5",
+      "pubDate": "Sun, 05 Jul 2026 23:00:14 GMT",
+      "source": "Stocktwits",
+      "company": "Other",
+      "tech": "기타",
+      "score": 1
+    },
+    {
+      "title": "Chinese inventors win European Inventor Award for battery recycling breakthrough - Global Times",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE40dkUyOS1MUUxFNGo3WUJOTmRadkhTMnBrQVlvM1Y0T2JCTUFmdDFNZWxSNS1OLTF3eFk1dW9jcDl6aktTUTd4Yk5MNTVnM0JRNUhUY0hwc2lyVm1xWVYtVmlR?oc=5",
+      "pubDate": "Fri, 03 Jul 2026 07:01:00 GMT",
+      "source": "Global Times",
+      "company": "Other",
+      "tech": "리사이클링",
+      "score": 1
+    },
+    {
+      "title": "BMW iX3 Appears in Design Patent Listing, India Launch Imminent - ACKO Drive",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNd2x0SlhBMmd1Yk80ZkJ2Y01IaUVveWpxZGpudFFsV0x1M0ZLU2RuS0lhRDN1TW5sMnNCYkVnOGU0eFFsWW9YTGJQQkplVldWOGNIWFpXcldnQlg4aUQtRE1QUkIxdEFQbWhKbm1JQ2RPOE5pN0lyaWlxTlI5dGNtdFdIWHhNUHQ3RUVueWtrQ3UtOFUy?oc=5",
+      "pubDate": "Tue, 30 Jun 2026 15:03:24 GMT",
+      "source": "ACKO Drive",
+      "company": "BMW",
+      "tech": "기타",
+      "score": 1
+    },
+    {
+      "title": "Verdek, Andromeda Power Form V2G, V2B Partnership - thebuzzevnews.com",
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5aSW5xSnMzVHpuV1VodVBobVFqN3hab3hhU3R5VFJRVHNxMWlqczBBbUpIX1VfOEFBMlBRcmQwMlI3b3VIRjRfR1dvRmhIUjdKT1BYaXlwVmFUYWNOajNPdm9mME8wVklYODE3WVl0bGY?oc=5",
+      "pubDate": "Thu, 02 Jul 2026 14:00:00 GMT",
+      "source": "thebuzzevnews.com",
+      "company": "Other",
+      "tech": "충전",
+      "score": 1
+    },
+    {
+      "title": "Londian Wason, Electrolytic Copper Foil Manufacturer, Files for NYSE IPO - TradingView",
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQZUd5anhWQWlldjFUdFppS2lVbTVZUUJXbGtjOE1RMk9fdUZDbkhrRzd3QWJNN0ZNb1F3dHo1RWhrOEZDVkg3blJKVlE0SU9hYkhReDFKY1NnSlVvSV9UemVVRXhjS3BGbjZEdFJnZFRCQXhOVEdodVIzcC04YmRtTHhPd3BUVWN6TTV5M0U0TzVPejJ4WmRvT3Jaal9Nc2RWQzRlV3puaW82WGVUMVYtczJ0ZHFBdEJraV9UQ0d5ZlVrb2xhMm5aWlgxaHQ?oc=5",
+      "pubDate": "Thu, 02 Jul 2026 19:57:01 GMT",
+      "source": "TradingView",
+      "company": "Other",
+      "tech": "기타",
+      "score": 1
+    },
+    {
+      "title": "Vision Marine seeks patent for electric outboard trim from boat or dock - Stock Titan",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOdDdGMU5tY3JyaloydjlRbDB6SHAxV3hDWUVLX2tZWnQ3Tkl4VnFxWGtma1JMRjhtN1Y5SDBVS1ZvbjRPUVNHNlJpdU5YY1BJYWhiamZGNjRlbHpsY3ZlMnlpb0QxVW83SjV3TjJoWk5xb1BzRE0zVEVIdXFnb2dOMnVCZWdoR2VsRkIzRkZSNGw0ZjU3YlI1YzJ2cWJYbjJFc05sSC1FYUpKOGdrcVJPdzZBd2JGMEFYdVlj?oc=5",
+      "pubDate": "Thu, 02 Jul 2026 12:19:00 GMT",
+      "source": "Stock Titan",
+      "company": "Other",
+      "tech": "기타",
+      "score": 1
+    },
+    {
+      "title": "BYD Patents Revolutionary System Using Computer Vision to Detect Animals Under Cars Before Starting, Preventing Tragedies - CPG Click Oil and Gas",
+      "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNZXhYelY4ZUpDWTJMUWNpdXEwbVduWWJ4T2tMejJzcVgxZTByNEF3TVdXNzJxVFVPS1NtY05xUmlsSGNyY1YtY2FpRjBLY2pEdml0cVpJWWZLekhoVXEyOTVXV2R5T29qdXdxb0F3b2pYSXg0QW5nRWM4WkxxNjZqbUdNdGwxV21YSkJEQzZFUjZsYTk3MGNBenh0VmcwU3otQlVpOHIzU3NaWFJwY2h5R0xhRkNYU1ExTGdtTDJmMGx3UnF2YWR6U0g1UkFVX01lZTRkU0JpYVhJbEhUbk1SckxsZ2sySmlDRTUzTzZJTHFWQllxUXVn?oc=5",
+      "pubDate": "Mon, 06 Jul 2026 00:02:00 GMT",
+      "source": "CPG Click Oil and Gas",
+      "company": "BYD",
+      "tech": "기타",
+      "score": 1
+    }
+  ]
+}
