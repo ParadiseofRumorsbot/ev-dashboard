@@ -1,7 +1,7 @@
 {
-  "syncedAt": "2026-07-07T09:23:52.017Z",
+  "syncedAt": "2026-07-07T14:07:07.315Z",
   "latestDate": "2026-07-07",
-  "count": 27,
+  "count": 26,
   "this_week": [
     {
       "title": "🚕 마이애미 무인 로보택시 개시",
@@ -17,21 +17,7 @@
       "order": 1
     }
   ],
-  "update_log": [
-    {
-      "title": "🚕 로보택시·FSD 브리핑 (6/10~7/7)",
-      "category": "FSD",
-      "icon": "🚕",
-      "body": "마이애미 무인 로보택시 개시(7/3) — TX·CA 외 첫 도시, 세이프티 모니터 없이, Model Y, 계획 5개도시 중 첫 개시(차량대수 미공개). · FSD v14 Lite(2026.20.5.1) HW3 얼리액세스 롤아웃(6/29) — 첫 레거시 HW용 V14. · Cybercab Giga TX 야적 ~85대 포착(6/19, 2차) · Lars Moravy 7/7 Giga TX 대형 발표 예고. · FSD 누적 ~11.3B 마일 보도(6/21, [미확인·2차출처]) · 무감독 코호트 39대 유지(활성 30일 24대). · ⚠️ '텍사스 무인 100대'설은 주차재고 오집계로 기각(실제 24~30대).",
-      "color": "purple",
-      "section": "update_log",
-      "targets": [
-        "both"
-      ],
-      "date": "2026-07-07",
-      "order": 1
-    }
-  ],
+  "update_log": [],
   "archive": [
     {
       "title": "🚗 EV 신차 브리핑 (6/10)",
@@ -61,7 +47,7 @@
       "title": "📊 글로벌 EV 판매 카드 Notion 연동",
       "category": "",
       "icon": "📊",
-      "body": "글로벌/중·유·북미·기타 ��간·누계 카드를 모델변수 DB 연동으로 전환 — 매월 Notion 수정 시 자동 갱신 (4월: 글로벌 160만·누계 560만)",
+      "body": "글로벌/중·유·북미·기타 월간·누계 카드를 모델변수 DB 연동으로 전환 — 매월 Notion 수정 시 자동 갱신 (4월: 글로벌 160만·누계 560만)",
       "color": "blue",
       "section": "update_log",
       "targets": [
@@ -74,7 +60,7 @@
       "title": "🚕 로보택시/FSD 트래킹 갱신",
       "category": "",
       "icon": "🚕",
-      "body": "무감독 28대 · 총 등록 719대(+16) · Austin 전역 메트로 245 sq mi(6/3) · Cybercab 애틀랜타 목격 · FSD v14.3.3 (누적 10.01B mi) · 출처 RobotaxiTracker·Tesla 안전보고서",
+      "body": "무감독 28대 · ��� 등록 719대(+16) · Austin 전역 메트로 245 sq mi(6/3) · Cybercab 애틀랜타 목격 · FSD v14.3.3 (누적 10.01B mi) · 출처 RobotaxiTracker·Tesla 안전보고서",
       "color": "purple",
       "section": "update_log",
       "targets": [
@@ -100,7 +86,7 @@
       "title": "🇪🇺 T&E High Stakes — EU 시나리오 전 대시보드 반영",
       "category": "유럽",
       "icon": "🇪🇺",
-      "body": "T&E 2026.05 High Stakes 보고서 통합 — EU REF/COM/LOW 3종 시나리오 4개 페이지 반영",
+      "body": "T&E 2026.05 High Stakes 보고서 통합 �� EU REF/COM/LOW 3종 시나리오 4개 페이지 반영",
       "color": "blue",
       "section": "update_log",
       "targets": [],
@@ -217,10 +203,12 @@
       "title": "FSD 10B+ 마일",
       "category": "FSD",
       "icon": "🏁",
-      "body": "일일 28.8M · 도시 3.76B · 구독 1.28M",
+      "body": "일일 28.8M · 도�� 3.76B · 구독 1.28M",
       "color": "purple",
       "section": "this_week",
-      "targets": [],
+      "targets": [
+        "robotaxi"
+      ],
       "date": "2026-05-17",
       "order": 1
     },
