@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-06T23:57:19.445Z",
+  "syncedAt": "2026-07-07T00:47:15.963Z",
   "metrics": {
     "cum_miles": {
       "key": "cum_miles",
@@ -340,7 +340,7 @@
     },
     {
       "date": "26.06.13",
-      "desc": "FSD v14.3.4(2026.14.6.10) 롤아웃 시작 · Cybertruck Actually Smart Summon 첫 탑재(전 라인업 모델 통합) · ASS 최고속도 8mph(13km/h) · 로보택시형 승객 UI 추가",
+      "desc": "FSD v14.3.4(2026.14.6.10) 롤아웃 시작 · Cybertruck Actually Smart Summon 첫 탑재(전 라인업 모델 ���합) · ASS 최고속도 8mph(13km/h) · 로보택시형 승객 UI 추가",
       "category": "fsd",
       "priority": "normal"
     },
@@ -365,7 +365,7 @@
     {
       "date": "26.06.21",
       "desc": "🏁 FSD 누적 ~11.3B 마일 보도(도심 ~4.2B) — 공식 tesla.com/fsd/safety 미확인·트윗 기반 2차보도 [미확인/2차출처] · 11B 돌파 ~6/10",
-      "category": "",
+      "category": "fsd",
       "priority": "normal"
     },
     {
