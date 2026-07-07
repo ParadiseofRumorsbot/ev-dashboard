@@ -224,6 +224,11 @@ async function main() {
     }
   }
 
+  // dataRange.to는 실제 데이터가 존재하는 최신월로 설정 (요청 끝월 months.at(-1) 아님 — Census 발표래그로 최근 1~2개월은 빈값)
+  const monthsWithData = new Set();
+  for (const hs of Object.keys(out.monthly)) for (const t of Object.keys(out.monthly[hs])) monthsWithData.add(t);
+  if (monthsWithData.size) out.meta.dataRange.to = [...monthsWithData].sort().at(-1);
+
   const p = path.join(__dirname, '..', 'data', 'census-import.json');
   fs.mkdirSync(path.dirname(p), { recursive: true });
   fs.writeFileSync(p, JSON.stringify(out, null, 2));
