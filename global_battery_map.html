@@ -584,7 +584,7 @@ function renderLeaderboard(){
 
 // === TIMELINE ===
 function renderTimeline(){
-  const fl=af();const minY=2022,maxY=2030,todayY=2026.38,span=maxY-minY;
+  const fl=af();const minY=2022,maxY=2030,todayY=2026.51,span=maxY-minY;
   function parseSop(s){if(!s)return 2026;const m=s.match(/(\d)H(\d{2,4})/);if(m){const yr=+m[2]<100?2000+ +m[2]:+m[2];return yr+(m[1]==='2'?.5:0);}return +s||2026;}
   let h='<div class="tl-head">';for(let y=minY;y<=maxY;y++)h+='<span>'+y+'</span>';h+='</div>';
   const todayL=((todayY-minY)/span*100);
@@ -605,7 +605,7 @@ function renderTimeline(){
       if(conW>0)h+='<div class="tl-seg" style="left:'+conL+'%;width:'+Math.max(conW,.5)+'%;background:#d4e8f0;opacity:.7"></div>';
       if(opW>0)h+='<div class="tl-seg" style="left:'+opL+'%;width:'+Math.max(opW,.5)+'%;background:'+col+';opacity:.6"><span>'+(cap>0?cap+'G':'')+'</span></div>';
     }
-    h+='<div class="tl-today" style="left:'+todayL+'%"><span class="tl-today-lbl">TODAY · 26Q2</span></div>';
+    h+='<div class="tl-today" style="left:'+todayL+'%"><span class="tl-today-lbl">TODAY · 26Q3</span></div>';
     h+='</div></div>';
   });
   document.getElementById('tab-tl').innerHTML=h;
@@ -674,7 +674,7 @@ function renderCapCurve(){
   g.selectAll('.cc-a').data(series).enter().append('path')
     .attr('fill',d=>CO_COL[d.key]||'#888').attr('fill-opacity',.65).attr('stroke',d=>CO_COL[d.key]||'#888').attr('stroke-width',.5).attr('d',area);
   // TODAY line
-  const todayX=x(2026.38);
+  const todayX=x(2026.51);
   g.append('line').attr('x1',todayX).attr('x2',todayX).attr('y1',0).attr('y2',ih).attr('stroke','var(--red)').attr('stroke-width',2).attr('stroke-dasharray','6,3');
   g.append('text').attr('x',todayX+4).attr('y',12).style('fill','var(--red)').style('font-size','9px').style('font-weight','700').text('TODAY');
   // Demand overlay
