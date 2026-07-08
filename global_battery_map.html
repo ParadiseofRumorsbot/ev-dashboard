@@ -157,8 +157,11 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:h
 </div>
 <!-- Update Log -->
 <details class="toggle-box" style="background:var(--bg-soft,#F5F4ED);border:1px solid var(--border,#E2E1D8);border-left:3px solid #c6973b;border-radius:6px;padding:12px 16px;margin:12px 16px 0;font-size:10px;color:#8a7e6e;line-height:1.8;font-family:monospace">
-<summary style="font-weight:700;color:#c6973b;cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px"><span style="font-size:11px;color:#8a7e6e;transition:transform .2s">▸</span> Update Log · 2026.06.02</summary>
+<summary style="font-weight:700;color:#c6973b;cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px"><span style="font-size:11px;color:#8a7e6e;transition:transform .2s">▸</span> Update Log · 2026.07.08</summary>
 <div style="margin-top:8px">
+<strong style="color:#c6973b">📝 2026.07.08</strong><br>
+• <strong style="color:var(--text,#0A0A08)">미국 EV+ESS 수요 시나리오(DEM) 상향</strong> — ESS 축 한 단계씩 상향(Bear/Base/Bull), Q1 2026 미국 BESS 설치 사상 최대(+54%) 등 실측 상회 반영 · 출처: ACP·SEIA·EIA·언론종합<br>
+<br>
 <strong style="color:#c6973b">📝 2026.06.02</strong><br>
 • <strong style="color:var(--text,#0A0A08)">유럽 점유율 SNE 정확 수치 갱신</strong> — 55→45→34→31%, 사상 첫 30%선 붕괴<br>
 • <strong style="color:var(--text,#0A0A08)">각형(프리즈매틱) 전환 카드 신설</strong> — VW(파우치→각형·중국→한국), GM(LMR 각형 픽업 2028), 현대기아(P6 각형 유럽 중저가 2Q26) · 출처 SNE Research·각사 공시<br>
@@ -254,15 +257,16 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:h
 <b>빨간 밴드</b>=수요 범위(Bear~Bull). 가운데 점선=Base.
 <h4>📈 수요 시나리오</h4>
 <table><tr><th></th><th>EV침투율</th><th>ESS</th><th>전제</th></tr>
-<tr><td><b>Bear</b></td><td>5.5→8%</td><td>IEA×0.85</td><td>IRA 폐지 장기화</td></tr>
-<tr><td><b>Base</b></td><td>6.5→10%</td><td>IEA</td><td>고유가 점진 회복</td></tr>
-<tr><td><b>Bull</b></td><td>7.5→13%</td><td>IEA×1.2</td><td>AI DC BTM ESS 가속</td></tr></table>
+<tr><td><b>Bear</b></td><td>5.5→8%</td><td>IEA</td><td>고유가 점진 회복</td></tr>
+<tr><td><b>Base</b></td><td>6.5→10%</td><td>IEA×1.2</td><td>AI DC BTM ESS 가속</td></tr>
+<tr><td><b>Bull</b></td><td>7.5→13%</td><td>IEA×1.2 상회</td><td>AI DC BTM+FTM 가속, ESS 수요 셀사이드 상단 수준 [자체추정]</td></tr></table>
 <h4>⚠️ 공급 부족 조건</h4>
 <table><tr><th></th><th>EV</th><th>ESS</th></tr>
 <tr><th>NCM</th><td class="safe">한국3사+Panasonic 여유</td><td>소수</td></tr>
 <tr><th>LFP</th><td>Tesla,중국</td><td class="hl">⚠ 비중국 LFP 부족</td></tr></table>
 중국산 셀 수입 <b>40.3%</b>(26.03 Census). FEOC=보조금 미적용(수입 금지 아님).<br>
-<b>ESS 프로젝트 취소/지연 (~38.8GWh, 자체추정)</b><br>FREYR(10.2G)·KORE(9.6G)·iM3NY(0.8G)·ABF(7.2G)·Gotion(4G)·Microvast(4G)·Kontrolmatik(3G)·AESC(증설미진). → 비중국 ESS 공급 부족 가시화. 셀3사 북미 ESS 수주잔고 ~200GWh
+<b>ESS 프로젝트 취소/지연 (~38.8GWh, 자체추정)</b><br>FREYR(10.2G)·KORE(9.6G)·iM3NY(0.8G)·ABF(7.2G)·Gotion(4G)·Microvast(4G)·Kontrolmatik(3G)·AESC(증설미진). → 비중국 ESS 공급 부족 가시화. 셀3사 북미 ESS 수주잔고 ~200GWh<br>
+<span style="font-size:9px;color:var(--ink-3)">※ 2026-07-08 시나리오 밴드 상향 — Q1 2026 미국 BESS 설치 사상 최대(+54%) 등 실측 상회 반영</span>
 </div>
 </div></div>
 <!-- EV-LINKS -->
@@ -319,9 +323,9 @@ const D=[
 D.forEach(f=>FAC_STATES.add(f.st));
 
 const DEM={
-  bear:{ev:{2026:70,2027:83,2028:102},ess:{2026:60,2027:81,2028:98},total:{2026:130,2027:164,2028:200},label:'Bear'},
-  base:{ev:{2026:83,2027:102,2028:128},ess:{2026:71,2027:95,2028:115},total:{2026:154,2027:197,2028:243},label:'Base'},
-  bull:{ev:{2026:96,2027:128,2028:166},ess:{2026:85,2027:114,2028:138},total:{2026:181,2027:242,2028:304},label:'Bull'},
+  bear:{ev:{2026:70,2027:83,2028:102},ess:{2026:71,2027:95,2028:115},total:{2026:141,2027:178,2028:217},label:'Bear'},
+  base:{ev:{2026:83,2027:102,2028:128},ess:{2026:85,2027:114,2028:138},total:{2026:168,2027:216,2028:266},label:'Base'},
+  bull:{ev:{2026:96,2027:128,2028:166},ess:{2026:115,2027:149,2028:186},total:{2026:211,2027:277,2028:352},label:'Bull'},
 };
 const CUR_UTIL=0.55;
 
