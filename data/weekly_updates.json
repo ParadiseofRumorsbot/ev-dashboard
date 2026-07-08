@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-08T01:47:03.930Z",
+  "syncedAt": "2026-07-08T08:07:53.471Z",
   "latestDate": "2026-07-07",
   "count": 27,
   "this_week": [
@@ -61,7 +61,7 @@
       "title": "📊 글로벌 EV 판매 카드 Notion 연동",
       "category": "",
       "icon": "📊",
-      "body": "글로벌/중·유·북미·기타 월간·누계 카드를 모델변수 DB 연동으로 전환 — 매월 Notion 수정 시 자동 갱신 (4월: 글로벌 160만·누계 560만)",
+      "body": "글로벌/중·유·북미·기타 ���간·누계 카드를 모델변수 DB 연동으로 전환 — 매월 Notion 수정 시 자동 갱신 (4월: 글로벌 160만·누계 560만)",
       "color": "blue",
       "section": "update_log",
       "targets": [
@@ -100,7 +100,7 @@
       "title": "🇪🇺 T&E High Stakes — EU 시나리오 전 대시보드 반영",
       "category": "유럽",
       "icon": "🇪🇺",
-      "body": "T&E 2026.05 High Stakes 보고서 통합 — EU REF/COM/LOW 3종 시나리오 4개 페이지 반영",
+      "body": "T&E 2026.05 High Stakes 보���서 통합 — EU REF/COM/LOW 3종 시나리오 4개 페이지 반영",
       "color": "blue",
       "section": "update_log",
       "targets": [],
@@ -177,7 +177,7 @@
       "title": "무감독 39대 반영",
       "category": "FSD",
       "icon": "🚕",
-      "body": "무감독 39대 반영 (5/13): Austin 27 + Dallas 5 + Houston 6+1. 도시별 차트 업데이트",
+      "body": "무감독 39��� 반영 (5/13): Austin 27 + Dallas 5 + Houston 6+1. 도시별 차트 업데이트",
       "color": "teal",
       "section": "update_log",
       "targets": [
@@ -188,7 +188,7 @@
     },
     {
       "title": "미국 BEV 모델별 판매량",
-      "category": "미국",
+      "category": "",
       "icon": "🇺🇸",
       "body": "미국 BEV 모델별 판매량 추이 테이블 신규 (WardsAuto, 2025.5~2026.4, OEM×모델 12개월 추적)",
       "color": "teal",
