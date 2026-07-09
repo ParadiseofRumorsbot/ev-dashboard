@@ -1,7 +1,7 @@
 {
-  "syncedAt": "2026-07-09T09:26:10.938Z",
+  "syncedAt": "2026-07-09T14:30:53.217Z",
   "dbId": "659a8d5a89c344a5b68960fead1cf889",
-  "count": 37,
+  "count": 39,
   "variables": [
     {
       "name": "글로벌 EV YTD누계",
@@ -28,7 +28,7 @@
       "updatedAt": "2026-06-23"
     },
     {
-      "name": "유럽 EV 월간",
+      "name": "유럽 EV ��간",
       "category": "evGlobal",
       "target": "유럽",
       "region": "eu",
@@ -58,7 +58,7 @@
       "region": "global",
       "year": "",
       "value": 98.9,
-      "unit": "",
+      "unit": "만",
       "path": "evGlobal.cn",
       "source": "SNE Research",
       "updatedAt": "2026-06-23"
@@ -97,6 +97,18 @@
       "unit": "GWh",
       "path": "cellMakers[0].essGwh.y25",
       "source": "1Q26 CC",
+      "updatedAt": "2026-05-02"
+    },
+    {
+      "name": "BEV/월",
+      "category": "oemSales",
+      "target": "Tesla",
+      "region": "eu",
+      "year": "",
+      "value": 20000,
+      "unit": "대/월",
+      "path": "oemSales.eu.oems[0].bev",
+      "source": "ACEA 1Q26÷3",
       "updatedAt": "2026-05-02"
     },
     {
@@ -385,6 +397,18 @@
       "unit": "대/월",
       "path": "oemSales.us.oems[3].bev",
       "source": "Autodata 2026.04",
+      "updatedAt": "2026-05-02"
+    },
+    {
+      "name": "perGwh (ESS)",
+      "category": "cats",
+      "target": "솔브레인",
+      "region": "global",
+      "year": "",
+      "value": 198,
+      "unit": "억원",
+      "path": "cats[4].perGwh",
+      "source": "1,700t × ASP 1,165만원/t",
       "updatedAt": "2026-05-02"
     },
     {
