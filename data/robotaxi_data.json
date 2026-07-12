@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-12T07:59:33.651Z",
+  "syncedAt": "2026-07-12T12:56:18.304Z",
   "metrics": {
     "cum_miles": {
       "key": "cum_miles",
@@ -330,6 +330,12 @@
       "date": "26.06.08",
       "desc": "Cybercab 애틀랜타 서비스센터 다수 목격",
       "category": "production",
+      "priority": "normal"
+    },
+    {
+      "date": "26.06.08",
+      "desc": "FSD v14.3.3 배포 · FSD 누적 10.01B mi (도시 3.76B · 일 28.8M)",
+      "category": "fsd",
       "priority": "normal"
     },
     {
