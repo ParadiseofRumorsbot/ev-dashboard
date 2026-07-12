@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-11T18:44:37.691Z",
+  "syncedAt": "2026-07-12T01:47:48.449Z",
   "latestDate": "2026-07-07",
   "count": 27,
   "this_week": [
@@ -61,7 +61,7 @@
       "title": "📊 글로벌 EV 판매 카드 Notion 연동",
       "category": "",
       "icon": "📊",
-      "body": "글로벌/중·유·북미·기타 ��간·누계 카드를 모델변수 DB 연동으로 전환 — 매월 Notion 수정 시 자동 갱신 (4월: 글로벌 160만·누계 560만)",
+      "body": "글로벌/중·유·북미·기타 ���간·누계 카드를 모델변수 DB 연동으로 전환 — 매월 Notion 수정 시 자동 갱신 (4월: 글로벌 160만·누계 560만)",
       "color": "blue",
       "section": "update_log",
       "targets": [
@@ -220,9 +220,7 @@
       "body": "일일 28.8M · 도시 3.76B · 구독 1.28M",
       "color": "purple",
       "section": "this_week",
-      "targets": [
-        "robotaxi"
-      ],
+      "targets": [],
       "date": "2026-05-17",
       "order": 1
     },
@@ -281,7 +279,7 @@
     },
     {
       "title": "타임라인 5건 추가",
-      "category": "",
+      "category": "FSD",
       "icon": "📅",
       "body": "타임라인 5건: Ford Energy ESS 20GWh · SDI-GM JV 중단 · Tesla 독일 셀 · LG화학 LMR · Morrow 파산",
       "color": "yellow",
