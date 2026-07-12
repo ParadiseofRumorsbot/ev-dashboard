@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-12T01:47:48.449Z",
+  "syncedAt": "2026-07-12T07:59:32.888Z",
   "latestDate": "2026-07-07",
   "count": 27,
   "this_week": [
@@ -220,7 +220,9 @@
       "body": "일일 28.8M · 도시 3.76B · 구독 1.28M",
       "color": "purple",
       "section": "this_week",
-      "targets": [],
+      "targets": [
+        "robotaxi"
+      ],
       "date": "2026-05-17",
       "order": 1
     },
@@ -279,7 +281,7 @@
     },
     {
       "title": "타임라인 5건 추가",
-      "category": "FSD",
+      "category": "",
       "icon": "📅",
       "body": "타임라인 5건: Ford Energy ESS 20GWh · SDI-GM JV 중단 · Tesla 독일 셀 · LG화학 LMR · Morrow 파산",
       "color": "yellow",
