@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-13T05:18:24.148Z",
+  "syncedAt": "2026-07-13T08:48:32.747Z",
   "metrics": {
     "cum_miles": {
       "key": "cum_miles",
@@ -262,7 +262,7 @@
     },
     {
       "date": "26.05.04",
-      "desc": "🌙 Austin 야간 무감독 운행 최초 시작 · 기존 오후 4시 종�� → 야간까지 확대",
+      "desc": "🌙 Austin 야간 무감독 운행 최초 시작 · 기존 오후 4시 종료 → 야간까지 확대",
       "category": "fleet",
       "priority": "high"
     },
@@ -365,7 +365,7 @@
     {
       "date": "26.06.21",
       "desc": "🏁 FSD 누적 ~11.3B 마일 보도(도심 ~4.2B) — 공식 tesla.com/fsd/safety 미확인·트윗 기반 2차보도 [미확인/2차출처] · 11B 돌파 ~6/10",
-      "category": "fsd",
+      "category": "",
       "priority": "normal"
     },
     {
@@ -383,7 +383,7 @@
     {
       "date": "26.07.03",
       "desc": "🚕 마이애미 무인(세이프티 모니터 없음) 로보택시 개시 — TX·CA 외 첫 도시 · 서부 마이애미-데이드 지오펜스(~10~20 sq mi) · Model Y · 차량대수 미공개 · 계획 5개도시(LV·마이애미·올랜도·피닉스·탬파) 중 첫 개시",
-      "category": "",
+      "category": "fleet",
       "priority": "high"
     },
     {
