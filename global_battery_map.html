@@ -123,6 +123,23 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:h
 .ev-links a{color:var(--accent);text-decoration:none;padding:2px 6px;border:1px solid var(--border);border-radius:3px;background:var(--card)}
 .ev-links a:hover{background:#f5f0e8}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+#tab-gd .gd-wrap{padding:12px 4px;max-height:calc(100vh - 300px);overflow:auto}
+#tab-gd .gd-note{font-size:10px;color:var(--sub);background:#f5f0e8;border:1px solid var(--border);border-radius:4px;padding:8px 10px;margin-bottom:12px;line-height:1.7}
+#tab-gd .gd-note b{color:var(--text)}#tab-gd .gd-note em{color:var(--red);font-style:normal}
+#tab-gd .gd-h{font-size:13px;font-weight:600;margin:18px 0 6px;color:var(--text)}
+#tab-gd .gd-sub{font-size:10px;color:var(--sub);margin:4px 0 8px;line-height:1.5}
+#tab-gd table.gd-t{width:100%;border-collapse:collapse;font-size:11px}
+#tab-gd .gd-t th{background:#f5f0e8;color:var(--sub);font-size:9px;text-transform:uppercase;letter-spacing:.5px;padding:5px 6px;text-align:right;border-bottom:1px solid var(--border);white-space:nowrap}
+#tab-gd .gd-t th.l{text-align:left}
+#tab-gd .gd-t td{padding:4px 6px;border-bottom:1px solid var(--bg-grid);vertical-align:top}
+#tab-gd .gd-t td.n{text-align:right;font-family:monospace;white-space:nowrap}
+#tab-gd .gd-t td.sm{font-size:9px;color:var(--sub);line-height:1.4}
+#tab-gd .gd-plant tr.gd-excl td{opacity:.5}
+#tab-gd .gd-rc{color:var(--red);font-weight:600}
+#tab-gd .gd-strk{text-decoration:line-through;color:var(--red)}
+#tab-gd .gd-bar{display:inline-block;height:9px;background:var(--accent);border-radius:2px;vertical-align:middle}
+#tab-gd .gd-det{margin-top:14px}
+#tab-gd .gd-det summary{cursor:pointer;font-size:12px;font-weight:600;color:var(--accent);padding:6px 0}
 </style></head><body>
 <div class="page-wrap">
 <aside class="sidebar">
@@ -143,6 +160,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:h
 <a href="#" class="sidebar-link" onclick="switchTab('ac');return false">Cell → Customer</a>
 <a href="#" class="sidebar-link" onclick="switchTab('cc');return false">Capacity Curve</a>
 <a href="#" class="sidebar-link" onclick="switchTab('svd');return false">Supply vs Demand</a>
+<a href="#" class="sidebar-link" onclick="switchTab('gd');return false">글로벌 디자인 CAPA</a>
 </aside>
 <main>
 <div class="app">
@@ -157,9 +175,13 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:h
 </div>
 <!-- Update Log -->
 <details class="toggle-box" style="background:var(--bg-soft,#F5F4ED);border:1px solid var(--border,#E2E1D8);border-left:3px solid #c6973b;border-radius:6px;padding:12px 16px;margin:12px 16px 0;font-size:10px;color:#8a7e6e;line-height:1.8;font-family:monospace">
-<summary style="font-weight:700;color:#c6973b;cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px"><span style="font-size:11px;color:#8a7e6e;transition:transform .2s">▸</span> Update Log · 2026.07.08</summary>
+<summary style="font-weight:700;color:#c6973b;cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px"><span style="font-size:11px;color:#8a7e6e;transition:transform .2s">▸</span> Update Log · 2026.07.13</summary>
 <div style="margin-top:8px">
-<strong style="color:#c6973b">📝 2026.07.08</strong><br>
+<strong style="color:#c6973b">📝 2026.07.13</strong><br>
+• <strong style="color:var(--text,#0A0A08)">글로벌 디자인 CAPA 탭 신설</strong> — 한국3사+Panasonic 글로벌 명목 CAPA(2024~28E) 추가: 기업별 총계·지역 매트릭스·공장 43거점·EV→ESS 전환. 기존 geo탭(가용 CAPA)과 정의 구분 · 출처: 자체정리(공개자료 종합)<br>
+• <strong style="color:var(--text,#0A0A08)">UC1 오하이오(Warren) 정정</strong> — 가용 50G(EV40+ESS10) → <strong style="color:var(--red)">40G(EV 전용)</strong>. 2028까지 ESS 생산계획 없음, ESS는 UC2(스프링힐)가 흡수<br>
+• <strong style="color:var(--text,#0A0A08)">넥스트스타(온타리오)·뉴칼라일 코멘트 반영</strong> — 온타리오 명목 49.5G 유지(실질동인=북미 BESS) · 뉴칼라일 GM JV 건설중단(27→36 로드맵 백지화)<br>
+<br>
 • <strong style="color:var(--text,#0A0A08)">미국 EV+ESS 수요 시나리오(DEM) 상향</strong> — ESS 축 한 단계씩 상향(Bear/Base/Bull), Q1 2026 미국 BESS 설치 사상 최대(+54%) 등 실측 상회 반영 · 출처: ACP·SEIA·EIA·언론종합<br>
 <br>
 <strong style="color:#c6973b">📝 2026.06.02</strong><br>
@@ -216,6 +238,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:h
 <button class="tab-btn" onclick="switchTab('ac')">Cell → Customer</button>
 <button class="tab-btn" onclick="switchTab('cc')">Capacity Curve</button>
 <button class="tab-btn" onclick="switchTab('svd')">Supply vs Demand</button>
+<button class="tab-btn" onclick="switchTab('gd')">글로벌 디자인 CAPA</button>
 </div>
 <!-- TAB: Geography -->
 <div id="tab-geo" class="tab-pane active">
@@ -269,6 +292,69 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:h
 <span style="font-size:9px;color:var(--ink-3)">※ 2026-07-08 시나리오 밴드 상향 — Q1 2026 미국 BESS 설치 사상 최대(+54%) 등 실측 상회 반영</span>
 </div>
 </div></div>
+<!-- TAB: Global Design CAPA -->
+<div id="tab-gd" class="tab-pane">
+<div class="gd-wrap">
+<div class="gd-note">📐 <b>디자인(명목) CAPA</b> · 연말기준 · 한국3사 + Panasonic 글로벌 · <em>geo탭의 가용/실질 CAPA와 정의가 다름(명목이 체계적으로 큼)</em> · 출처: 자체정리(공개자료 종합) · 기준 2026-07-13</div>
+
+<h3 class="gd-h">① 기업별 총 디자인 CAPA <span style="font-size:10px;color:var(--sub)">(GWh, 연말기준)</span></h3>
+<table class="gd-t gd-tot">
+<thead><tr><th class="l">기업</th><th>2024</th><th>2025</th><th>2026E</th><th>2027E</th><th>2028E</th><th class="l" style="width:34%">2028E</th></tr></thead>
+<tbody>
+<tr><td class="l"><b>LGES</b></td><td class="n">317</td><td class="n">523.5</td><td class="n">604</td><td class="n">604</td><td class="n"><b>604</b></td><td><span class="gd-bar" style="width:100%"></span> 604</td></tr>
+<tr><td class="l"><b>삼성SDI</b></td><td class="n">71</td><td class="n">113</td><td class="n">115</td><td class="n">176</td><td class="n"><b>185</b></td><td><span class="gd-bar" style="width:30.6%"></span> 185</td></tr>
+<tr><td class="l"><b>SK온</b></td><td class="n">154</td><td class="n">234</td><td class="n">234</td><td class="n">234</td><td class="n"><b>234</b></td><td><span class="gd-bar" style="width:38.7%"></span> 234</td></tr>
+<tr><td class="l"><b>Panasonic</b></td><td class="n">46</td><td class="n">81</td><td class="n">81</td><td class="n">81</td><td class="n"><b>82</b></td><td><span class="gd-bar" style="width:13.6%"></span> 82</td></tr>
+</tbody></table>
+<div class="gd-sub">* Panasonic/PPES(Toyota JV·히메지)는 관계회사로 별도 — 2028E 관계회사 총 30GWh, 위 Panasonic 합계 미포함 · SK온 켄터키 Glendale 82GWh는 Ford 지배로 SK 합산 제외 · <b style="color:var(--red)">삼성SDI 2028E 185 중 뉴칼라일 36GWh는 무산 리스크(실질 ~149)</b></div>
+
+<h3 class="gd-h">② 기업 × 지역 매트릭스 <span style="font-size:10px;color:var(--sub)">(GWh, 연말기준)</span></h3>
+<table class="gd-t gd-mtx">
+<thead><tr><th class="l">기업</th><th class="l">지역</th><th>2024</th><th>2025</th><th>2026E</th><th>2027E</th><th>2028E</th></tr></thead>
+<tbody>
+<tr><td class="l" rowspan="5"><b>LGES</b></td><td class="l">한국</td><td class="n">33</td><td class="n">42</td><td class="n">42</td><td class="n">42</td><td class="n">42</td></tr>
+<tr><td class="l">북미</td><td class="n">95</td><td class="n">236.5</td><td class="n">317</td><td class="n">317</td><td class="n">317</td></tr>
+<tr><td class="l">유럽</td><td class="n">86</td><td class="n">90</td><td class="n">90</td><td class="n">90</td><td class="n">90</td></tr>
+<tr><td class="l">중국</td><td class="n">93</td><td class="n">145</td><td class="n">145</td><td class="n">145</td><td class="n">145</td></tr>
+<tr><td class="l">중국 제외 아시아</td><td class="n">10</td><td class="n">10</td><td class="n">10</td><td class="n">10</td><td class="n">10</td></tr>
+<tr><td class="l" rowspan="5"><b>삼성SDI</b></td><td class="l">한국</td><td class="n">11</td><td class="n">16</td><td class="n">16</td><td class="n">16</td><td class="n">16</td></tr>
+<tr><td class="l">북미</td><td class="n">0</td><td class="n">33</td><td class="n">33</td><td class="n">94</td><td class="n">103</td></tr>
+<tr><td class="l">유럽</td><td class="n">40</td><td class="n">40</td><td class="n">40</td><td class="n">40</td><td class="n">40</td></tr>
+<tr><td class="l">중국</td><td class="n">18</td><td class="n">18</td><td class="n">18</td><td class="n">18</td><td class="n">18</td></tr>
+<tr><td class="l">중국 제외 아시아</td><td class="n">2</td><td class="n">6</td><td class="n">8</td><td class="n">8</td><td class="n">8</td></tr>
+<tr><td class="l" rowspan="5"><b>SK온</b></td><td class="l">한국</td><td class="n">7</td><td class="n">7</td><td class="n">7</td><td class="n">7</td><td class="n">7</td></tr>
+<tr><td class="l">북미</td><td class="n">22</td><td class="n">102</td><td class="n">102</td><td class="n">102</td><td class="n">102</td></tr>
+<tr><td class="l">유럽</td><td class="n">47.5</td><td class="n">47.5</td><td class="n">47.5</td><td class="n">47.5</td><td class="n">47.5</td></tr>
+<tr><td class="l">중국</td><td class="n">77.5</td><td class="n">77.5</td><td class="n">77.5</td><td class="n">77.5</td><td class="n">77.5</td></tr>
+<tr><td class="l">중국 제외 아시아</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td class="n">0</td></tr>
+<tr><td class="l" rowspan="2"><b>Panasonic</b></td><td class="l">북미</td><td class="n">41</td><td class="n">73</td><td class="n">73</td><td class="n">73</td><td class="n">73</td></tr>
+<tr><td class="l">중국 제외 아시아</td><td class="n">5</td><td class="n">8</td><td class="n">8</td><td class="n">8</td><td class="n">9</td></tr>
+</tbody></table>
+
+<details class="gd-det"><summary>③ 공장별 상세 (43개 거점) ▼</summary>
+<table class="gd-t gd-plant">
+<thead><tr><th class="l">기업</th><th class="l">거점</th><th class="l">지역</th><th class="l">화학/폼팩터</th><th class="l">적용처</th><th>24</th><th>25</th><th>26E</th><th>27E</th><th>28E</th><th class="l">비고 · 라인전환</th></tr></thead>
+<tbody id="gdPlantBody"></tbody>
+</table>
+</details>
+
+<details class="gd-det"><summary>④ EV→ESS 라인전환 현황 ▼</summary>
+<table class="gd-t">
+<thead><tr><th class="l">기업</th><th class="l">거점 / 라인</th><th class="l">전환 현황</th><th class="l">디자인 CAPA 처리</th></tr></thead>
+<tbody>
+<tr><td class="l">LGES</td><td class="l">미시간 Lansing / 구 Ultium 3</td><td class="sm">GM 전기차→Tesla Megapack 3향 LFP ESS 전환. 공급 2027년부터</td><td class="sm">기존 50GWh 디자인 유지. 믹스=LFP ESS</td></tr>
+<tr><td class="l">LGES</td><td class="l">테네시 Spring Hill</td><td class="sm">기존 전기차 라인 일부 LFP ESS로 전환</td><td class="sm">총 디자인 50GWh 유지</td></tr>
+<tr><td class="l">LGES</td><td class="l">L-H Battery Ohio / Honda JV</td><td class="sm">2026년 ESS 셀 생산 시작</td><td class="sm">40GWh 디자인 유지</td></tr>
+<tr><td class="l">LGES</td><td class="l">Arizona ESS LFP 17GWh</td><td class="sm">중단/재배정. 46시리즈 원통형 우선</td><td class="sm">확정 0, 옵션 +17GWh</td></tr>
+<tr><td class="l">삼성SDI</td><td class="l">StarPlus Kokomo</td><td class="sm">전기차→ESS NCA/LFP 전환. 26년말 미국 ESS 30GWh 목표</td><td class="sm">1공장33/2공장67 디자인 유지</td></tr>
+<tr><td class="l">삼성SDI</td><td class="l">천안 DryEV</td><td class="sm">건식전극 파일럿(공정 검증). 대형 셀 추가 아님</td><td class="sm">파일럿 1GWh 유지. 확장시 옵션 +7GWh</td></tr>
+<tr><td class="l">SK온</td><td class="l">서산 2공장</td><td class="sm">전기차 2개 라인(3GWh)→LFP ESS</td><td class="sm">공장 6GWh 유지</td></tr>
+<tr><td class="l">SK온</td><td class="l">조지아 Commerce</td><td class="sm">Flatiron 공급 위해 일부 전기차→LFP ESS</td><td class="sm">22GWh 디자인 유지</td></tr>
+<tr><td class="l">SK온</td><td class="l">BlueOval 구조조정</td><td class="sm">SK온=Tennessee, Ford=Kentucky 인수</td><td class="sm">Tennessee 45 SK 반영 / Kentucky 82 SK 제외</td></tr>
+<tr><td class="l">Panasonic</td><td class="l">Kansas De Soto</td><td class="sm">자동차용 2170. 데이터센터 셀은 FY2029부터</td><td class="sm">2028까지 32GWh 유지</td></tr>
+</tbody></table>
+</details>
+</div></div>
 <!-- EV-LINKS -->
 <div style="padding:8px 0"><div class="ev-links">
 <a href="index.html">EV 판매</a><a href="robotaxi.html">FSD·로보택시</a><a href="battery_scenario.html">Battery Scenario</a><a href="us-import.html">US Import</a><a href="Battery_bom_routing.html">ESS BOM</a><a href="2차전지_컨콜정리.html">컨콜 정리</a>
@@ -288,7 +374,7 @@ const D=[
 {co:"삼성SDI",id:"NewCarlisle_GM",cat:"cell",city:"New Carlisle",st:"IN",lat:41.72,lon:-86.51,unit:"GWh",status:"cancelled",app:"EV",cust:"GM JV",sop:"N/A",alloc:{GM:0},r:{2026:0,2027:0,2028:0},note:"⚠ JV 중단 확정(260517). 5.2조원 규모. 260519 콥데이 '논의 중이나 정보 극히 제한적' → 260517 중단 보도"},
 {co:"LG에너지솔루션",id:"MIH_Holland",cat:"cell",city:"Holland",st:"MI",lat:42.79,lon:-86.11,unit:"GWh",status:"operational",app:"ESS",cust:"ESS(유틸리티)",sop:"2022",alloc:{ESS:17},r:{2026:17,2027:17,2028:17},note:"ESS Only 17GWh. EV 라인 없음"},
 {co:"LG에너지솔루션",id:"MIL_Lansing",cat:"cell",city:"Lansing",st:"MI",lat:42.73,lon:-84.56,unit:"GWh",status:"ramping",app:"ESS+EV",cust:"Tesla,Toyota",sop:"1H26",alloc:{Tesla:15,Toyota:10},r:{2026:25,2027:25,2028:25},note:"ESS+EV 25GWh. Tesla·Toyota향"},
-{co:"LG에너지솔루션",id:"UC1_Ohio_GM",cat:"cell",city:"Warren",st:"OH",lat:41.24,lon:-80.77,unit:"GWh",status:"operational",app:"EV+ESS",cust:"GM Ultium",sop:"2022",alloc:{GM:50},r:{2026:50,2027:50,2028:50},note:"UC1 가용CAPA EV40+ESS10=50GWh"},
+{co:"LG에너지솔루션",id:"UC1_Ohio_GM",cat:"cell",city:"Warren",st:"OH",lat:41.24,lon:-80.77,unit:"GWh",status:"operational",app:"EV",cust:"GM Ultium",sop:"2022",alloc:{GM:40},r:{2026:40,2027:40,2028:40},note:"UC1 가용CAPA EV 40GWh(GM향). 2028까지 ESS 생산계획 없음 — 북미 EV 물량 UC1 통합, ESS는 UC2(스프링힐) 흡수. 260713 정정"},
 {co:"LG에너지솔루션",id:"UC2_Tennessee_GM",cat:"cell",city:"Spring Hill",st:"TN",lat:35.75,lon:-86.93,unit:"GWh",status:"operational",app:"EV+ESS",cust:"GM Ultium",sop:"2023",alloc:{GM:34},r:{2026:34,2027:34,2028:34},note:"UC2 가용CAPA EV20(라인 절반 미설치)+ESS14=34GWh"},
 {co:"LG에너지솔루션",id:"Arizona_46",cat:"cell",city:"Queen Creek",st:"AZ",lat:33.24,lon:-111.63,unit:"GWh",status:"construction",app:"EV",cust:"Tesla,Ford,Benz",sop:"2H27",alloc:{Tesla:18,Ford:9,Benz:9},r:{2026:0,2027:36,2028:36},note:"4680 40G 1H26 착공 (ev-dashboard)"},
 {co:"LG에너지솔루션",id:"Ontario_CA",cat:"cell",city:"Windsor",st:"ON",lat:42.31,lon:-83.04,unit:"GWh",status:"ramping",app:"ESS",cust:"Stellantis→ESS",sop:"1H25",alloc:{ESS:10},r:{2026:10,2027:0,2028:0},note:"ESS LFP (ev-dashboard)"},
@@ -506,6 +592,62 @@ g.append('rect').attr('width',w).attr('height',h).attr('fill','transparent')
 
 // === TAB SYSTEM ===
 let activeTab='geo';
+// === GLOBAL DESIGN CAPA (유안타 리퀘스트 26.7.13) ===
+const GD_PLANTS=[
+{co:"LGES",plant:"오창 / 청주",region:"한국",chem:"파우치/원통형; 46시리즈; LFP/ESS 파일럿",app:"전기차, 소형전지, ESS 파일럿, 건식전극 파일럿",status:"진행 중; 46시리즈 2025년부터, 건식전극 목표 2028년",y:[33,42,42,42,42],note:"건식전극 파일럿과 46시리즈 CAPA는 해당 거점 내 포함. 추가 가산 라인 아님"},
+{co:"LGES",plant:"난징 + 빈장 클러스터",region:"중국",chem:"원통형 + 파우치; NCM/NCA",app:"전기차, 소형전지, Tesla Shanghai, 중국 OEM",status:"진행 중",y:[93,145,145,145,145],note:"계획 디자인 CAPA 유지"},
+{co:"LGES",plant:"브로츠와프 / 비스쿠피체 포드고르네",region:"유럽",chem:"파우치; 주로 NCM",app:"전기차 및 일부 ESS 모듈",status:"진행 중",y:[86,90,90,90,90],note:"라인전환 미반영. 제품 믹스는 고객별로 변동 가능"},
+{co:"LGES",plant:"미시간 Holland",region:"북미",chem:"NCM + LFP ESS",app:"전기차, ESS, 주택용/계통용 저장장치",status:"진행 중; LFP는 2025년부터",y:[5,21.5,21.5,21.5,21.5],note:"라인 믹스는 ESS로 전환. 설치 라인 기준 디자인 CAPA는 불변"},
+{co:"LGES",plant:"미시간 Lansing",region:"북미",chem:"각형 LFP ESS",app:"ESS; Tesla Megapack 3",status:"2027년부터 생산",y:[0,50,50,50,50],note:"전기차 공장 설계는 유지, 적용처는 LFP ESS로 전환. 단계적 라인 가동 가능성이 있으나 디자인 CAPA는 50GWh 처리"},
+{co:"LGES",plant:"오하이오 Warren",region:"북미",chem:"대면적 파우치; NMCA/LMR 옵션",app:"전기차; 화학계 다변화 가능",status:"진행 중",y:[40,40,40,40,40],note:"확인된 ESS 전환은 미반영. GM/LGES는 전기차 배터리 생산 지속",rc:"북미 EV 물량 UC1 통합(가동률 방어). 2028까지 ESS 생산계획 없음 — ESS는 스프링힐 UC2가 흡수"},
+{co:"LGES",plant:"테네시 Spring Hill",region:"북미",chem:"파우치 전기차 + LFP ESS 전환",app:"전기차 + ESS",status:"진행 중; ESS는 2026년부터",y:[50,50,50,50,50],note:"기존 전기차 라인의 일부를 ESS로 전환. 총 디자인 CAPA 증가는 없음"},
+{co:"LGES",plant:"오하이오 Jeffersonville",region:"북미",chem:"파우치 리튬이온; ESS 셀 생산 시작; Honda EV/HEV 옵션",app:"단기 ESS, 중기 Honda EV/HEV",status:"초기 생산 2026년",y:[0,0,40,40,40],note:"단기 생산은 ESS로 이동. 건물/자산 소유는 조정됐으나 LGES JV 지분은 유지"},
+{co:"LGES",plant:"조지아 Bryan County",region:"북미",chem:"파우치 전기차 셀",app:"전기차; 북미 Hyundai/Kia/Genesis",status:"2026년 초 생산",y:[0,30,30,30,30],note:"전환 미반영"},
+{co:"LGES",plant:"온타리오 Windsor",region:"북미",chem:"파우치 전기차 + ESS 재배정 가능",app:"전기차 + ESS 옵션",status:"모듈 2024년; 셀 2025년 말~2026년",y:[0,45,49.5,49.5,49.5],note:"거래 후 기존 JV 총 CAPA를 LGES 보유로 산정. 향후 적용처 믹스는 ESS로 이동 가능",rc:"명목 49.5GWh(당초45→상향) 예정대로 구축. 실질 가동동인=EV 아닌 북미 BESS 수주. LGES 100%인수(26.2)로 믹스개선"},
+{co:"LGES",plant:"애리조나 Queen Creek",region:"북미",chem:"46시리즈 원통형: 4680/4695/46120",app:"전기차; Rivian/BMW/Tesla/비Tesla 가능",status:"파일럿 2026년; 양산 목표 2026년 말",y:[0,0,36,36,36],note:"원통형 46시리즈는 유지. ESS 부분은 별도 중단"},
+{co:"LGES",plant:"애리조나 Queen Creek ESS 라인",region:"북미",chem:"각형 LFP ESS",app:"ESS",status:"중단 / 검토 중",y:[0,0,0,0,0],note:"중단 상태. 확정 합산 제외, 옵션 업사이드에만 유지"},
+{co:"LGES",plant:"인도네시아 Karawang",region:"중국 제외 아시아",chem:"파우치 전기차 셀",app:"전기차; Hyundai/Kia ASEAN",status:"진행 중",y:[10,10,10,10,10],note:"라인전환 미반영"},
+{co:"LGES",plant:"인도네시아 Karawang 증설",region:"중국 제외 아시아",chem:"파우치 전기차 셀",app:"전기차",status:"검토 중",y:[0,0,0,0,0],note:"옵션 증설만 반영"},
+{co:"삼성SDI",plant:"울산",region:"한국",chem:"각형 NCA/NCM; ESS NCA",app:"ESS, 전기차, 국내 계통 프로젝트",status:"진행 중",y:[10,15,15,15,15],note:"NCA ESS 생산 거점. 공개자료 기준 2028년 대규모 증설 확정 없음"},
+{co:"삼성SDI",plant:"천안 46파이 / DryEV",region:"한국",chem:"46시리즈 원통형; 건식전극 파일럿",app:"마이크로모빌리티, 전기차 파일럿, 공정 검증",status:"4695는 2025년부터; 건식전극 파일럿은 2025~2026년",y:[1,1,1,1,1],note:"파일럿/마더라인은 1GWh 베이스로 반영. 과거 보도는 8~12GWh 확장 가능성을 언급했으나 확정 아님"},
+{co:"삼성SDI",plant:"수원 R&D / 전고체 파일럿",region:"한국",chem:"전고체 파일럿",app:"샘플/R&D",status:"2023년부터 샘플; 제한적 파일럿",y:[0,0,0,0,0],note:"R&D/파일럿 전용. CAPA 합산 제외"},
+{co:"삼성SDI",plant:"시안",region:"중국",chem:"각형 전기차 셀",app:"전기차; 중국 OEM",status:"진행 중",y:[15,15,15,15,15],note:"2026년 전환 공시 없음. 기존 중국 전기차 셀 거점 기준 추정"},
+{co:"삼성SDI",plant:"톈진",region:"중국",chem:"원통형/소형 리튬이온",app:"소형전지, 전동공구, 모빌리티",status:"진행 중",y:[3,3,3,3,3],note:"2026년 전환 공시 없음"},
+{co:"삼성SDI",plant:"괴드",region:"유럽",chem:"각형 NCM/NCA; 스태킹 증설",app:"전기차; 유럽 BMW/VW/Stellantis/HMG",status:"진행 중; 2025년 이후 개보수/증설",y:[40,40,40,40,40],note:"CAPA는 디자인 기준으로 산정. 환경/인허가에 따른 가동률 이슈는 별도"},
+{co:"삼성SDI",plant:"세렘반 1·2공장",region:"중국 제외 아시아",chem:"21700 원통형; 46시리즈 라인 옵션 가능",app:"전동공구, 마이크로모빌리티, 전기차/소형전지",status:"2공장 2024년; 2025년 완공",y:[2,6,8,8,8],note:"베이스는 보수적. 시장 추정치 15GWh 이상이 전부 셀 명목로 확인될 경우 옵션 업사이드"},
+{co:"삼성SDI",plant:"베트남 모듈/팩 조립",region:"중국 제외 아시아",chem:"모듈/팩; 셀 CAPA 미공개",app:"모듈 조립",status:"진행 중",y:[0,0,0,0,0],note:"모듈/팩 전용. 추가 셀 CAPA 없음"},
+{co:"삼성SDI",plant:"인디애나 Kokomo 1·2공장",region:"북미",chem:"각형 NCA/NCM + LFP ESS 전환",app:"전기차 + ESS; Stellantis, 미국 ESS 고객",status:"1공장 2025년; 2공장 2027년",y:[0,33,33,67,67],note:"전기차 라인 일부를 ESS NCA/LFP로 전환. 총 디자인 CAPA는 공장 명목 유지"},
+{co:"삼성SDI",plant:"인디애나 New Carlisle",region:"북미",chem:"각형 하이니켈 셀",app:"전기차; GM",status:"생산 목표 2027년",y:[0,0,0,27,36],note:"라인전환 미반영. 램프업은 2028년 이후 가능성이 높으나 디자인 CAPA는 표기",rc:"건설 전면중단(pause). 당초 27→36 로드맵 백지화, 2028 유의미 상업가동 難. geo탭도 cancelled 처리"},
+{co:"SK On",plant:"서산 1공장",region:"한국",chem:"파우치 NCM",app:"전기차",status:"진행 중",y:[1,1,1,1,1],note:"전환 미반영"},
+{co:"SK On",plant:"서산 2공장",region:"한국",chem:"파우치 NCM 일부 LFP ESS 전환",app:"전기차 + LFP ESS",status:"ESS 전환 2026~2027년",y:[6,6,6,6,6],note:"적용처 믹스는 변경되나 총 디자인 CAPA는 6GWh 유지"},
+{co:"SK On",plant:"서산 3공장",region:"한국",chem:"전기차 파우치 / 향후 LFP/ESS 가능",app:"향후 전기차/ESS",status:"지연 / 검토 중",y:[0,0,0,0,0],note:"옵션 전용. 공사/램프업 재개 전에는 합산 금지"},
+{co:"SK On",plant:"코마롬 1·2공장",region:"유럽",chem:"파우치 NCM",app:"전기차; VW/Ford/유럽 OEM",status:"진행 중",y:[17.5,17.5,17.5,17.5,17.5],note:"라인전환 미반영"},
+{co:"SK On",plant:"이반차",region:"유럽",chem:"파우치 NCM",app:"전기차; 유럽 OEM",status:"양산 2024년",y:[30,30,30,30,30],note:"전환 미반영"},
+{co:"SK On",plant:"조지아 Commerce 1·2공장",region:"북미",chem:"파우치 NCM + LFP ESS 전환",app:"전기차 + LFP ESS",status:"진행 중; ESS 전환 2026년 하반기",y:[22,22,22,22,22],note:"전기차 라인 일부 ESS 전환. 디자인 CAPA 증가는 없음"},
+{co:"SK On",plant:"조지아 Bartow County",region:"북미",chem:"파우치 전기차 셀",app:"전기차; Hyundai/Kia/Genesis",status:"2025년 하반기 시작",y:[0,35,35,35,35],note:"ESS 전환 미반영. 전기차 공급 거점"},
+{co:"SK On",plant:"테네시 Stanton",region:"북미",chem:"파우치 전기차; 향후 ESS 옵션",app:"초기 전기차; ESS 옵션",status:"2025년 지분구조 변경; CAPA 유지",y:[0,45,45,45,45],note:"JV 분할: Tennessee는 2026년부터 SK On에 반영. 구조조정 이후 ESS 활용 가능성"},
+{co:"SK On",plant:"켄터키 Glendale 1·2공장",region:"북미",chem:"파우치 전기차 셀",app:"Ford 전기차; 구조조정 후 SK On 지배 아님",status:"2025/2026년 지분구조 변경",y:[0,82,82,82,82],note:"한국계 기술 이력은 있으나 SK On 합산에서 제외"},
+{co:"SK On",plant:"창저우 BEST",region:"중국",chem:"파우치 NCM",app:"전기차; 중국 OEM",status:"진행 중",y:[7.5,7.5,7.5,7.5,7.5],note:"전환 미반영"},
+{co:"SK On",plant:"옌청 SKOJ/SKOY",region:"중국",chem:"파우치 NCM",app:"전기차; 중국 OEM",status:"진행 중; 2025년 지배구조 통합",y:[60,60,60,60,60],note:"지배구조 통합. CAPA 추가는 가정하지 않음"},
+{co:"SK On",plant:"후이저우 / EUE 잔여 중국 CAPA",region:"중국",chem:"파우치 NCM",app:"전기차; 중국 OEM",status:"진행 중",y:[10,10,10,10,10],note:"잔여 추정치. 신규 전환 미반영"},
+{co:"Panasonic",plant:"네바다 Sparks",region:"북미",chem:"2170 원통형 NCA/NCA+",app:"전기차; Tesla Model 3/Y, 팩",status:"진행 중",y:[41,41,41,41,41],note:"디자인 CAPA 감축 미반영. 일부 연도 실제 FY 생산은 명목보다 낮을 수 있음"},
+{co:"Panasonic",plant:"캔자스 De Soto",region:"북미",chem:"2170 원통형; FY2029 이후 데이터센터 셀 믹스 가능",app:"전기차; 2028/2029 이후 데이터센터 저장장치",status:"양산 2025년; 데이터센터 셀 FY2029",y:[0,32,32,32,32],note:"2028년까지 2170 디자인 CAPA로 산정. 데이터센터 전환은 기간 이후 시작"},
+{co:"Panasonic",plant:"와카야마",region:"중국 제외 아시아",chem:"4680 원통형; 고용량",app:"전기차; Tesla 및 기타 고객; 공정 데모 허브",status:"2024년 준비 완료; 양산 시점 지연",y:[0,3,3,3,3],note:"수 GWh를 3GWh 베이스로 가정. 초기 라인 완전 승인 시 옵션 +2GWh"},
+{co:"Panasonic",plant:"오사카 스미노에·가이즈카",region:"중국 제외 아시아",chem:"18650/2170 원통형",app:"전기차; Mazda/Toyota, 특수 전기차 셀",status:"진행 중; Mazda 공급 2027년부터",y:[5,5,5,5,6],note:"일본 기존 라인 세부 미공개. 2028년 베이스 6GWh, 2030년 Mazda 목표까지 옵션 +4GWh"},
+{co:"Panasonic/PPES",plant:"히메지 시설",region:"중국 제외 아시아",chem:"각형 BEV 셀",app:"Toyota BEV; 차세대 고성능 배터리",status:"2026년부터",y:[0,10,30,30,30],note:"관계회사/JV CAPA는 별도 표시. Panasonic Energy 원통형 합계에는 미포함"},
+{co:"Panasonic/PPES",plant:"노스캐롤라이나 Liberty",region:"북미",chem:"각형/원통형 HEV + BEV 배터리 라인",app:"Toyota HEV/PHEV/BEV",status:"2025년 생산; 2030년까지 램프업",y:[0,10,15,20,25],note:"Panasonic 합계에서 제외. Toyota 소유 CAPA와 Panasonic Energy 혼동 방지를 위해 표시"},
+{co:"Panasonic",plant:"멕시코 데이터센터용 배터리 셀 공장",region:"북미",chem:"니켈계 데이터센터 백업 셀; LFP 아님",app:"데이터센터 백업/UPS",status:"FY2027 목표, CAPA 미공개",y:[0,0,0,0,0],note:"CAPA 미공개. GWh 합계 미포함"}
+];
+function renderGD(){
+  const tb=document.getElementById("gdPlantBody");if(!tb)return;
+  const EXCL=/합산 제외|합계에서 제외|합산 금지|CAPA 미공개/;
+  tb.innerHTML=GD_PLANTS.map(function(o){
+    var ex=o.co==="Panasonic/PPES"||EXCL.test(o.note);
+    var yc=o.y.map(function(v){return '<td class="n">'+(v===0?"·":v)+"</td>";}).join("");
+    var rc=o.rc?'<span class="gd-rc">⚠ '+o.rc+"</span> ":"";
+    return '<tr class="'+(ex?"gd-excl":"")+'"><td class="l">'+o.co+'</td><td class="l">'+o.plant+'</td><td class="l">'+o.region+'</td><td class="sm">'+o.chem+'</td><td class="sm">'+o.app+'</td>'+yc+'<td class="sm">'+rc+o.note+"</td></tr>";
+  }).join("");
+}
 window.switchTab=function(id){
   activeTab=id;
   document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
@@ -521,6 +663,7 @@ function renderTab(){
   else if(activeTab==='ac')renderSankey();
   else if(activeTab==='cc')renderCapCurve();
   else if(activeTab==='svd')renderTL();
+  else if(activeTab==='gd')renderGD();
 }
 
 // === KPI ===
