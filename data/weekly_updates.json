@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-16T01:44:30.699Z",
+  "syncedAt": "2026-07-16T07:55:26.880Z",
   "latestDate": "2026-07-13",
   "count": 29,
   "this_week": [
@@ -14,7 +14,7 @@
         "index"
       ],
       "date": "2026-07-13",
-      "order": null
+      "order": 1
     }
   ],
   "update_log": [
@@ -57,7 +57,7 @@
         "both"
       ],
       "date": "2026-07-07",
-      "order": 1
+      "order": null
     },
     {
       "title": "🚗 EV 신차 브리핑 (6/10)",
@@ -87,7 +87,7 @@
       "title": "📊 글로벌 EV 판매 카드 Notion 연동",
       "category": "",
       "icon": "📊",
-      "body": "글로벌/중·유·북미·기타 월간·누계 카드��� 모델변수 DB 연동으로 전환 — 매월 Notion 수정 시 자동 갱신 (4월: 글로벌 160만·누계 560만)",
+      "body": "글로벌/중·유·북미·기타 월간·누계 카드를 모델변수 DB 연동으로 전환 — 매월 Notion 수정 시 자동 갱신 (4월: 글로벌 160만·누계 560만)",
       "color": "blue",
       "section": "update_log",
       "targets": [
@@ -250,7 +250,7 @@
         "robotaxi"
       ],
       "date": "2026-05-17",
-      "order": null
+      "order": 1
     },
     {
       "title": "중국 4월 NEV 반영",
