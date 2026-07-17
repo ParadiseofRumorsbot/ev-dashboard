@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-17T01:47:42.461Z",
+  "syncedAt": "2026-07-17T07:52:14.240Z",
   "latestDate": "2026-07-13",
   "count": 29,
   "this_week": [
@@ -57,7 +57,7 @@
         "both"
       ],
       "date": "2026-07-07",
-      "order": null
+      "order": 1
     },
     {
       "title": "🚗 EV 신차 브리핑 (6/10)",
@@ -100,7 +100,7 @@
       "title": "🚕 로보택시/FSD 트래킹 갱신",
       "category": "",
       "icon": "🚕",
-      "body": "무감독 28대 · 총 등록 719대(+16) · Austin 전역 메트로 245 sq mi(6/3) · Cybercab 애틀랜타 목격 · FSD v14.3.3 (누적 10.01B mi) · 출처 RobotaxiTracker·Tesla 안전보고서",
+      "body": "무감독 28대 · 총 등록 719대(+16) · Austin 전역 메트로 245 sq mi(6/3) · Cybercab 애틀랜타 목격 · FSD v14.3.3 (누적 10.01B mi) · 출처 RobotaxiTracker·Tesla 안전보고���",
       "color": "purple",
       "section": "update_log",
       "targets": [
@@ -157,7 +157,7 @@
     },
     {
       "title": "🔋 Battery Scenario EU 정책 시나리오 3종 (총 10개)",
-      "category": "",
+      "category": "Cell",
       "icon": "🔋",
       "body": "EU_REF(14.6M, 1445GWh), EU_COM(10.1M, 632GWh), EU_LOW(7.3M, 421GWh) K3 가동률 시뮬레이션",
       "color": "purple",
@@ -200,7 +200,7 @@
       "order": 6
     },
     {
-      "title": "무감독 39대 반영",
+      "title": "무���독 39대 반영",
       "category": "FSD",
       "icon": "🚕",
       "body": "무감독 39대 반영 (5/13): Austin 27 + Dallas 5 + Houston 6+1. 도시별 차트 업데이트",
