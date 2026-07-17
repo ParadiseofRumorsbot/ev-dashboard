@@ -1,7 +1,7 @@
 {
-  "syncedAt": "2026-07-17T13:04:36.130Z",
+  "syncedAt": "2026-07-17T18:52:34.025Z",
   "dbId": "659a8d5a89c344a5b68960fead1cf889",
-  "count": 39,
+  "count": 38,
   "variables": [
     {
       "name": "글로벌 EV YTD누계",
@@ -58,7 +58,7 @@
       "region": "global",
       "year": "",
       "value": 98.9,
-      "unit": "만",
+      "unit": "",
       "path": "evGlobal.cn",
       "source": "SNE Research",
       "updatedAt": "2026-06-23"
@@ -97,18 +97,6 @@
       "unit": "GWh",
       "path": "cellMakers[0].essGwh.y25",
       "source": "1Q26 CC",
-      "updatedAt": "2026-05-02"
-    },
-    {
-      "name": "BEV/월",
-      "category": "oemSales",
-      "target": "Tesla",
-      "region": "eu",
-      "year": "",
-      "value": 20000,
-      "unit": "대/월",
-      "path": "oemSales.eu.oems[0].bev",
-      "source": "ACEA 1Q26÷3",
       "updatedAt": "2026-05-02"
     },
     {

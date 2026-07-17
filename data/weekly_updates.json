@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-17T13:04:36.632Z",
+  "syncedAt": "2026-07-17T18:52:34.480Z",
   "latestDate": "2026-07-13",
   "count": 29,
   "this_week": [
@@ -14,7 +14,7 @@
         "index"
       ],
       "date": "2026-07-13",
-      "order": null
+      "order": 1
     }
   ],
   "update_log": [
@@ -100,7 +100,7 @@
       "title": "🚕 로보택시/FSD 트래킹 갱신",
       "category": "",
       "icon": "🚕",
-      "body": "무감독 28대 · 총 등록 719대(+16) · Austin 전역 메트로 245 sq mi(6/3) · Cybercab 애틀랜타 목격 · FSD v14.3.3 (누적 10.01B mi) · 출처 RobotaxiTracker·Tesla 안전보고서",
+      "body": "무감독 28대 · 총 등록 719대(+16) · Austin 전역 메트로 245 sq mi(6/3) · Cybercab 애틀랜타 목격 · FSD v14.3.3 (누적 10.01B mi) · 출처 RobotaxiTracker·Tesla 안전보고���",
       "color": "purple",
       "section": "update_log",
       "targets": [
@@ -200,7 +200,7 @@
       "order": 6
     },
     {
-      "title": "무감독 39대 반영",
+      "title": "무���독 39대 반영",
       "category": "FSD",
       "icon": "🚕",
       "body": "무감독 39대 반영 (5/13): Austin 27 + Dallas 5 + Houston 6+1. 도시별 차트 업데이트",
