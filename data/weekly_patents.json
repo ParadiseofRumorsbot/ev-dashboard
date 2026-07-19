@@ -1,119 +1,99 @@
 {
   "type": "battery_patent_monitor",
-  "lastUpdated": "2026-07-12T23:43:31.018Z",
-  "weekOf": "2026-07-12",
+  "lastUpdated": "2026-07-19T23:48:53.451Z",
+  "weekOf": "2026-07-19",
   "description": "배터리·EV 특허 모니터링 — 주간 수집",
   "note": "⚠️ 자동 수집 결과입니다. 대시보드 반영 전 사용자 확인 필요.",
-  "totalItems": 11,
+  "totalItems": 9,
   "companyStats": {
-    "Other": 8,
-    "Startup": 1,
-    "Tesla": 2
+    "Other": 7,
+    "Tesla": 1,
+    "Hyundai": 1
   },
   "techStats": {
-    "전고체": 3,
-    "기타": 6,
-    "건식전극": 1,
-    "충전": 1
+    "전고체": 2,
+    "기타": 7
   },
   "items": [
     {
-      "title": "Chasing 600 Wh/kg: Chery files sulfide patent to fix solid state cell degradation - CarNewsChina.com",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPMGJpNmRXTUhRTjA4aWdXdENnbzRTRzRkZmNTRTdYNkdjQmN6SVpJVWRGNE5NZGFaZWpicHhQdWVfUVM4ZG0zRlhyS09HYlp5OUpUWkhBQ2lXQlFSRWRwelAxWjZodld3NlZPY2JHR3Y5djlKblJGUlpLY2VFWlNTbGJaeGJHMFVxNnFPZnRyYVV1U1J5XzFVQzkwZi1zNUV5eTA5MzhkYldpZzNXMWFHS1BESDVvdng3?oc=5",
-      "pubDate": "Wed, 08 Jul 2026 04:00:00 GMT",
-      "source": "CarNewsChina.com",
+      "title": "Talent New Energy: Solid-State Lithium Battery Empowers a Green Future - WIPO - World Intellectual Property Organization",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPS09zN0dLQXk5UEVHeXgyS3NibjJVS3U1UEl1NlJhWjRGOElnRXBtQ1Z5TnFwRjF1ZXpYVzJPVXltMF95WkUybkpycGFNVjZKY0VIMFBhQU9SNXlRcnN2MGdudzU5Yy1aSU4zTHQwZkxoN3BVdV9qV3ZLVG5kSmgzWjhXUnBuSHpyVndpR3dabEh3TmFCTjNMYWJ1bVFZM3NJay1ZMW5QWDlheDFGUkRmbDF4SWpiYzdGemZ0eg?oc=5",
+      "pubDate": "Tue, 14 Jul 2026 16:57:31 GMT",
+      "source": "WIPO - World Intellectual Property Organization",
       "company": "Other",
       "tech": "전고체",
+      "score": 4
+    },
+    {
+      "title": "UM6P has already filed 91 patents — and the pace is picking up - Medias24",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOdnZpVlpaRW5SaG1ZZGZqT0ppMktubVpHZDVmNEZzQzlRRWxZMVZrNkNDcDU1RDZWYkF3dC1wcWJpamRpa3o0eWpCNXc5aGZqRFMwRkdfWkZmSkpNT0ZzMnM2ZTJPV3pVbFZzaFV0NjNPQXNlTER6YWhoNnBKWTVNMEFPdm9aX0RnTWZ5cFpUdVd3TGRrMU9kR2FXQjZJeUVoaGtv?oc=5",
+      "pubDate": "Sun, 19 Jul 2026 10:39:31 GMT",
+      "source": "Medias24",
+      "company": "Other",
+      "tech": "기타",
       "score": 2
     },
     {
-      "title": "Solid Power: A Cash-Backed Speculative Buy On Solid-State Battery Disruption (NASDAQ:SLDP) - Seeking Alpha",
-      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQZzNZSWxwcmFJQkw3ZGhLN1A3aTZfY0dXOWs3a3BVaWVUbkJDS1BvR3hQZTRoMWc4aUlCR2t6WTJXTnVmeTJVRWN4b3RfQXR4M1ZwSWFjY1RURUV6aW10NnVmOW9KMk16dmVrRV9QV3ZpWUkyZG9BSG9CazREcVFkV0s4Wjd2di15bUYyb2tITFBMZGtFeUI2Ni1oNDJySDZwN1JJaW1EZFcxRTlDZXRIZ0p3eTU?oc=5",
-      "pubDate": "Mon, 06 Jul 2026 08:46:07 GMT",
-      "source": "Seeking Alpha",
-      "company": "Startup",
+      "title": "Chery Liefeng Shooting Brake concept design patent filed in India - HT Auto",
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPRm1MSXFzNEkwOTVvOG9ZVmVoS1NQVU1qVGxNYW9PTGdoUXJkY05hMGJsd1JydlNHWGp6bEpjRTlrazd4ZXFrVzd0TFM0S203WjBNNE55ODllck9rbEY1U3o4UnJEaXBGU0dna3EweEhUN2dMcU9RSGlkUkk2THhBM1F1RFVYX2lCWmdNbW1zNF9sWFVaZFJQQ2dGQkJjc2xrUXpTRW5BRFRwRHE3alowcTBjYlcwYVVBLVpZT1dCM3o5dFh5cEN1STFNNHNMYkhHMHVPalhsTdIB3AFBVV95cUxOTGVSbWpLVG5wTFVjcFhObWt3VmdCMUFGRU5QNVk4eVM4ZjlCOEV3RU9SR1BXbW5rMGdaM3Fmc0ZhNG5iei1VR1BWcDM4RW1mSXZKQ0V3bTVzUW1xUmp4T2ZaVlZyaWpNakdmbXNkVy1GX3NlcXpFaVdWUDQ3OF9aakhGd1lIRmNpdkRjRUJHWjBBLUpvVGRWb0s0U2l0RGVkNkcyX2J6NElzdV9STXJqR3pYLTJJeHhSUUdDcmR2c3Q5R0Z0TEY2dDgtcFpOS3Y3U2NuOWtGVGxZdkZH?oc=5",
+      "pubDate": "Thu, 16 Jul 2026 10:16:50 GMT",
+      "source": "HT Auto",
+      "company": "Other",
+      "tech": "기타",
+      "score": 2
+    },
+    {
+      "title": "Global Landscape Analysis of Solid-State Battery Regulations, Policies, and Standards (Q2 2026) - SMM Metal",
+      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNRktQRXlDZWc3TWVTQmlnMWpXZUN1clZXQUVwMHo1cFRtbTY1UUhMYnJyUVNzX3VKVFhIMTl3RUZhSmI3NThUZ2V2R1lYSHRmNnRFSjNTY1FuMWVST2VRN0QybDFKVzBqcEZxU3IzZ0d3aVVwcXdPd2tJZjJHZ3UyWmtIWnJIaFJHWkhQNGRJVGY0eHJfMkVJbG5tTjFYSnNxTkJzbXNBVktFRzFHSDFUYUQzVng1NEItdW5QZGYyOF9aeEFkQ2dwWmwtaEtMSHVIY1E?oc=5",
+      "pubDate": "Mon, 13 Jul 2026 05:47:56 GMT",
+      "source": "SMM Metal",
+      "company": "Other",
       "tech": "전고체",
       "score": 1
     },
     {
-      "title": "Battery X Metals Presents Positive Preliminary Lithium-Ion Battery Rebalancing Trial Results Demonstrating Significant Estimated Driving Range Improvements and Accelerated Commercialization Progress of its Patent-Pending Lithium-Ion Battery Rebalancin - ACCESS Newswire",
-      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxONV8yYTlfT2VKRjI4NEduc1RSbnZ0bXRsWkVsLWNTVF9GQWFHRmJuVWEzS19QcGNub1Fwb2lReFZyRlR1RmUyZDZiRHNZTkhMMUFRNG53cVBZcFpsSURhM0VRQlJhdENyTXRSUUd6cEN0MWxfeDl5QlB4UXBfSGd5QzhmbGx4c0ZKRV9Hb0xYSndiYUxqSC1IcWdBSEtmWW15TkJLemVfVEdJM0tBak5RN2RnYlFJR2lRNnFKNzRrcjJiNlozdFlyOXhMZmdYRVJsSmFXTnVZb0t0YXFaaHVXdmFfWTU?oc=5",
-      "pubDate": "Sat, 11 Jul 2026 00:03:13 GMT",
-      "source": "ACCESS Newswire",
-      "company": "Other",
-      "tech": "기타",
-      "score": 1
-    },
-    {
-      "title": "STI Stock Extends Triple-Digit Rally: Solidion Highlights Commercial-Ready Lithium Battery Technology - Stocktwits",
-      "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNaVE1R05fUEtfaWV3V01rS2d5VnRqLUFWUGlJWDBOUUc1ZTBCWWF5dlVmY05nOXM3TjZ1Z1NiREZUYnotVzVZeDRnTGR5QzVHWkF1T3JsVWFfQXoyNjJrRVdycGhrdlE5cXctOHZBTlV1blBjZzNVXzZvTE1qY1lGRmlHbk1OU1pzb2JyTndyd0dvY2NaOWI0clNZdDRKMG40U1R2cTIwYUprNTFZdTI0dXZXSGdaRnNNV2ZEalVBaElUbnR3WDVCZERpQkUxZnJNZFJFQzFzZjVJeEhpVEZvQXVrOTliSFFJOFVCblpJQ3BCTzl0Q1c4?oc=5",
-      "pubDate": "Thu, 09 Jul 2026 21:27:50 GMT",
-      "source": "Stocktwits",
-      "company": "Other",
-      "tech": "기타",
-      "score": 1
-    },
-    {
-      "title": "5 Things to Know About Tesla's Dry Electrode Battery Breakthrough - BASENOR - Tesla Accessories",
-      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOSk1CZng5MFlFM0NTRjFDbzd2UkQ1SV9RaTA1d3hmLTFJYS1IcE1zaFJxeEs5Y2h6aEtOcjkweU9oWW82X21xWDJieTVPRzV0N0hZdXhUQlR6ME9PVnNzaUZYSk9TN2x3SkM1UUM1d1dVeUtCeG9hWXhxYnJJTGpubXFfVEpIRFMtMU9URzNCZUhEX0xaYWZXMzhzTHNTZUdj?oc=5",
-      "pubDate": "Tue, 07 Jul 2026 20:04:30 GMT",
-      "source": "BASENOR - Tesla Accessories",
-      "company": "Tesla",
-      "tech": "건식전극",
-      "score": 1
-    },
-    {
-      "title": "Tesla Keeps Part Of Arbitration Award In Battery IP Feud - Law360",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQdmdUNUVjcjhNWkpMMk1CbGR1MXM4VzRvQmtJNDdXWkFDWnNmVXpHbUk0c0ttRTRGNEJvejQ1ZlhJa2Y3OUxydENsOTlMMzhxWHFfTUpQMHRZM2xVUEhLWHl4TmEtR0ZZdHBrU003Wk1lRnlyQjhyX2tNclc5X2l3M1RYdU5jT2JkRWY0TEM4OGt2Vk05dmVYTV9jeXo3WV9femw3MXVhMG95VkRTT3k0RUlOeWJKOG8z0gFyQVVfeXFMT2pjc1RncENHM1hNaThPTEhYcHhqR241aXcwRGdxbFN4amZJb2RDWi1YMWh2dFVxZXJ5emlLcWRKMWp1V18wWGxfT3NjZW9mRG1rUFFLMUtlVl90d1AxOWV3MDFtMmRwc2VMTmt3T21RbXNR?oc=5",
-      "pubDate": "Fri, 10 Jul 2026 00:58:00 GMT",
-      "source": "Law360",
+      "title": "Battery X Metals Completes First-Generation Proprietary Battery Adaptor for Tesla Model 3 and Model Y, Marking a Significant Commercial Readiness Milestone for its Patent-Pending Lithium-Ion Battery Rebalancing Platform - Yahoo Finance",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOSHBreExRbWIwVkRfZFVmb3FBRVBHSm96OWhaZFV2bmEtV0YzeDRDMEMwcTJpanJOcXJPN0N5VDJBcnM1SFNscnJPYUt2NmVZNXE4cGlndEFuekdFNEJNbkZkUDZKTUpNSW10THEybldpQjBoQzRWdGtPTHpUbTJ5aHpjZEtDb3Rra1FucEtKdnNDdHM?oc=5",
+      "pubDate": "Wed, 15 Jul 2026 21:00:00 GMT",
+      "source": "Yahoo Finance",
       "company": "Tesla",
       "tech": "기타",
       "score": 1
     },
     {
-      "title": "Range Rover Electric Debuts at Goodwood: 800V Charging, One Key Trade-Off - Tech Times",
-      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQVXVnZXBRYnJIRWRqTktCQll3d21VbUhHZHBMRmdRaWlUSF9zWl9ud3lTY195QjRxcTc5UHp4Q2g4VHlCWkVyakhSdUlNLXJITEZjakFDVG5jUE40VlNlT2NaeWl0S3lkdk9BMU82ci1HZGVxR1JyMFdUX0V4LUtoVklXN3pNNktnalh4Z0Jka1Q2TjQ2VXBvWkVYcVU3UDQ1ZXVOWDBiU010bVJGeGFEd1N5TDhzUTYwTUFtd1NWLTE?oc=5",
-      "pubDate": "Thu, 09 Jul 2026 19:13:05 GMT",
-      "source": "Tech Times",
-      "company": "Other",
-      "tech": "충전",
-      "score": 1
-    },
-    {
-      "title": "3 Penny Stocks to Watch Today, 7/9/2026 - TipRanks",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5pak0wSlJzb2c3eFkyNnBBUC1HWVdwdDlQa3RxQ0p0aVBBSzl6TWp5UV9rYy1SQmFjX29ZYXd2d0YtdHNNSzNEa1VBQVRYdE5iYzFhM3pBS283YWt2dlJSXzZmaDdzelcwdTZqTFNoQWRweGVPalJj?oc=5",
-      "pubDate": "Thu, 09 Jul 2026 14:13:30 GMT",
-      "source": "TipRanks",
+      "title": "Battery X Reports Positive Lithium-Ion Battery Rebalancing Trial Results - Fuel Cells Works",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQaFlwRGN0R0RPcGdpVTdzSWg4SDY5QV9xVWlwYktpQnFtOUVsclA1Q1Q4cmJYeXIwOTFJLWd3QU9rYWNzX2FfWk5QTXg4Ym00VFFMOU9aVHJ2VmNhNjRsWjBBSktPUzQ3aXBKeEFRZ2hMQUNkRUdJOC1jdnhxZ3MxT21BbzgwbGw5eURxOHdCdkZYZzhtZER6bzd5bVJvU0ZPT3p1RVJndEk4dmpsdkk4MGt4SkdXTzhxeVE?oc=5",
+      "pubDate": "Mon, 13 Jul 2026 14:39:00 GMT",
+      "source": "Fuel Cells Works",
       "company": "Other",
       "tech": "기타",
       "score": 1
     },
     {
-      "title": "Milk Analogy Sparks Heated Exchange in TC Bonder Patent Dispute - thelec.net",
-      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5fRldBMmtuckdob0VNNV92eGtDS2lQc2Zxc204YXVoa1NHc0loZHNfT1BpMmNyUVc2ek9JSF9FUjB4SDVFNkpOQVREdGJ0MHYyY1cxZFFuUXVrUnp1Y1k3QXdQbFdYUzQ?oc=5",
-      "pubDate": "Thu, 09 Jul 2026 22:30:00 GMT",
-      "source": "thelec.net",
+      "title": "New Hyundai Patent Could Change The Way EV Batteries Are Charged Forever - AOL.com",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOTWMyeFEzcWplUzAyNFRiRnhsd01ubVppdkpaQ20xTDUxSUtyVHZxdkVWdzA1Z044bVlOZmVQYVRoMWpVclZJN0N2S193Y3lKblA1YVd3Q2lXTWRvcmhtRlVlYV9OdHlJUURDUzlxMmtYU0pmaWhSWUNFTmJyelZyWg?oc=5",
+      "pubDate": "Sun, 19 Jul 2026 09:38:44 GMT",
+      "source": "AOL.com",
+      "company": "Hyundai",
+      "tech": "기타",
+      "score": 1
+    },
+    {
+      "title": "Chery, JSW file design patent for Exeed Liefeng in India - NewsBytes",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNNUdzd3E0REdMejVJTVdrR0VadUlYcmtrRjhMaDYxS2cxV3hnMFFLUHRmdEFlQ05xb2VxQjBiOFVMMm5fa0xGbTFZSnJOZjcwQ29CQ0IzNG13V3phYWlxVUhNUDFDRFhwaUJhTzY0SGt2QktKRnRFbjVjeWM2RUZ5NS00bzBCaEpyaXZQNm1FcDJjWF9aSDNCa05TdU02RHJJ?oc=5",
+      "pubDate": "Thu, 16 Jul 2026 10:46:19 GMT",
+      "source": "NewsBytes",
       "company": "Other",
       "tech": "기타",
       "score": 1
     },
     {
-      "title": "LG Chem Wins Final Ruling in Six-Year OLED Patent Dispute With SFC - thelec.net",
-      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5uZFBvTkJsNFA1bklaUW1EbTJfVHh4UEZJUDVaaFQ3VGlqVjJCUUlmVXA3a2lvblVRcjdkcjlXUHFuY2psLWtSZUVtVlRldTQyMlZBUnRJWU9iRW5kTXBDR19NNXZYZjQ?oc=5",
-      "pubDate": "Tue, 07 Jul 2026 07:51:24 GMT",
-      "source": "thelec.net",
+      "title": "Acer v Nokia decision provides safe harbour from UK involvement in F/RAND licensing disputes - IAM Patent",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNX1BrT0VPOVdNRWVWVEhYaWlhZVQtWkNJREJWaXc3eWZJV28xTC0tVXlhMW5zVjZ5Y29OcVVjcmUycmRfQnhkbWs5VGhrMEZHYk1sTzBvWTdmazRJMzlpcE1CYjR5R2o1Tm5KVlBwdG5tb2M3WEF5a1liWUtFNEw3MDZCSm5ybXdxRGpJMjBmOW0xZjlSZ09GVUNGNkJQdnlBWjdvVUZ4Q3FsMmhyQzl6SmhZMVVnOHB5VmZRTw?oc=5",
+      "pubDate": "Sat, 18 Jul 2026 08:30:59 GMT",
+      "source": "IAM Patent",
       "company": "Other",
       "tech": "기타",
-      "score": 1
-    },
-    {
-      "title": "Donut Lab Remains Defiant About Its Solid-State Battery, Saying Proof Is Coming Soon - InsideEVs",
-      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQM1hBdE9rTVFyTEVVWU9aMm5mTEJ3UWxINXFFeEYwZlZVbGt5RmoyY3BaRXNYV1htd09PUmRWcDVLWXE4RHJWLXhRcmhwc3Vtczhlek5BbzJwWWlscjEtQlg4WjczNENISWFaeXJKVFpoTWpVS1pNdmFhemhGMThDcA?oc=5",
-      "pubDate": "Sun, 12 Jul 2026 00:19:51 GMT",
-      "source": "InsideEVs",
-      "company": "Other",
-      "tech": "전고체",
       "score": 1
     }
   ]
