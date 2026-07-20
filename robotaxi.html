@@ -464,9 +464,9 @@ data:[5300676,2175763,485133,397274],
 backgroundColor:['#4ecdc4','#556dff','#ffd93d','#ff6b6b'],borderRadius:6
 }]},options:{...defOpt,indexAxis:'y',scales:{x:{grid:{color:gridColor},ticks:{color:tickColor,callback:v=>(v/1000000).toFixed(1)+'M'}},y:{grid:{display:false},ticks:{color:tickColor,font:{size:10}}}}}});
 
-new Chart(document.getElementById('c4'),{type:'line',data:{labels:['25.06','25.12','26.01','26.03','26.04.16','26.04.18','26.04.30','26.05.06','26.05.13','26.05.25','26.06.08'],datasets:[
-{label:'총 차량',data:[13,135,200,37,46,46,46,53,53,27,53],borderColor:'#556dff',borderWidth:2,tension:.3,pointRadius:4},
-{label:'무감독',data:[0,0,8,4,12,12,25,27,39,22,28],borderColor:'#ff6b6b',borderWidth:2,tension:.3,pointRadius:4,borderDash:[5,3]}
+new Chart(document.getElementById('c4'),{type:'line',data:{labels:['25.06','25.12','26.01','26.03','26.04.16','26.04.18','26.04.30','26.05.06','26.05.13','26.05.25','26.06.08','26.07.20'],datasets:[
+{label:'총 차량',data:[13,135,200,37,46,46,46,53,53,27,53,null],borderColor:'#556dff',borderWidth:2,tension:.3,pointRadius:4},
+{label:'무감독',data:[0,0,8,4,12,12,25,27,39,22,28,28],borderColor:'#ff6b6b',borderWidth:2,tension:.3,pointRadius:4,borderDash:[5,3]}
 ]},options:defOpt});
 
 new Chart(document.getElementById('c5'),{type:'bar',data:{labels:['26.02','26.03','26.04','26.05','26.06'],datasets:[{
