@@ -1,23 +1,90 @@
 {
-  "syncedAt": "2026-07-19T18:51:20.912Z",
-  "latestDate": "2026-07-13",
-  "count": 29,
+  "syncedAt": "2026-07-20T01:01:13.758Z",
+  "latestDate": "2026-07-20",
+  "count": 35,
   "this_week": [
     {
-      "title": "🏭 글로벌 디자인 CAPA 탭 신설",
-      "category": "Cell",
-      "icon": "🏭",
-      "body": "배터리 맵에 한국3사+Panasonic 글로벌 명목 CAPA(2024~28E) 탭 신설 — 기업별 총계·지역 매트릭스·공장 43거점·EV→ESS 전환. UC1 오하이오(Warren) 가용 50→40GWh(EV전용) 정정.",
+      "title": "🌍 6월 EV 판매 — 미국 -20.2%·중국 -6.6%·유럽 강세",
+      "category": "미국",
+      "icon": "🌍",
+      "body": "미국 104,631대(YoY -20.2%, 점유 7.6%) · 중국 926,000대(-6.6%, 57.2%, EREV 제외 BEV+PHEV 기준) · 프랑스 68,791대(+69.3%) · 스웨덴 20,642대(+14.7%) · 노르웨이 19,558대(+6.2%). 유럽 BEV는 독일 84,057대(+78.2%)·영국 63,950대(+35.1%)로 강세 지속, 7개국 합 264,865대(+54.6%). 영국·독일은 6월 PHEV 미발표로 표에는 5월 BEV+PHEV 유지. 출처: WardsAuto·CPCA·Cleantechnica·ACEA·각국 자동차협회",
+      "color": "red",
+      "section": "this_week",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-07-20",
+      "order": 1
+    },
+    {
+      "title": "🇺🇸 미국 BEV 후퇴 ↔ HEV 급증",
+      "category": "미국",
+      "icon": "🇺🇸",
+      "body": "6월 미국 파워트레인 침투율 BEV 5.30%(YoY -29.5%) · HEV 16.12%(+42.8%) · PHEV 1.28%(-19.0%) · ICE 77.30%. 전체 시장은 +7.5% 성장으로 BEV만 역행. 현대차 BEV 3,394대(-33.7%)·HEV 20,526대(+74.0%), 기아 BEV 2,226대(+7.3%)·HEV 21,793대(+186.7%). 출처: Autodata·EV-Volumes",
+      "color": "yellow",
+      "section": "this_week",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-07-20",
+      "order": 2
+    },
+    {
+      "title": "⚡ ESS가 EV보다 kWh당 이익 2.1배",
+      "category": "ESS",
+      "icon": "⚡",
+      "body": "미국 ESS는 시스템 단위 판가 220달러/kWh로 kWh당 영업이익 36달러(영업이익 11+AMPC 25), EV는 셀 단위 100달러/kWh로 17달러(영업이익 8+AMPC 9). 영업이익률은 EV 17% vs ESS 16%로 ESS가 1%p 낮지만 절대이익은 2.1배 — EV 라인의 ESS 전환이 이익 레버리지로 연결되는 구조. BNEF 2030E ESS 수요도 상향 지속(글로벌 445→551→828GWh, 미국 71→77→102GWh). 수익성 수치는 자체추정 · 출처: BloombergNEF",
       "color": "teal",
       "section": "this_week",
       "targets": [
         "index"
       ],
-      "date": "2026-07-13",
-      "order": 1
+      "date": "2026-07-20",
+      "order": 3
+    },
+    {
+      "title": "🔋 Tesla 유럽 6월 — 국가별 차별화",
+      "category": "유럽",
+      "icon": "🔋",
+      "body": "프��스 7,474대(+105%)로 유럽 최대 기여, 반면 노르웨이 3,222대(-43%)로 역행 · 스페인 2,774대(+5%) · 이탈리아 2,423대(+43%) · 스웨덴 1,525대(+56%). 5월까지의 일괄 회복에서 국가별로 갈리는 국면으로 전환. 6월 독일·덴마크·포르투갈은 Tesla 실적 미집계. 출처: ACEA·각국 자동차협회",
+      "color": "purple",
+      "section": "this_week",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-07-20",
+      "order": 4
+    },
+    {
+      "title": "💰 리튬 7월 2주 22,654달러/톤",
+      "category": "Battery",
+      "icon": "💰",
+      "body": "중국 탄산리튬 주간 07-05 23,081달러/톤 → 07-12 22,654달러/톤 · 6월 월간 마감 21,437달러/톤(5월 25,642 대비 -16.4%). 배터리 시나리오 페이지의 금속계산기 현재가가 21,841→22,654달러로 자동 갱신됨. 출처: Bloomberg",
+      "color": "blue",
+      "section": "this_week",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-07-20",
+      "order": 5
     }
   ],
   "update_log": [
+    {
+      "title": "📊 6월 EV 판매 반영 + ESS 수익성·BNEF 전망 카드 신설",
+      "category": "미국",
+      "icon": "📊",
+      "body": "① index: KPI 중국 26.05→26.06(92.6만, -6.6%, 57.2%) · 주요국 표 6월 전환(미국 104,631·중국 926,000·프랑스 68,791·스웨덴 20,642·노르웨이 19,558, 영국·독일은 5월 유지하고 6월 BEV 각주 병기) · Tesla 유럽 카드 6월 전환 · 미국 파워트레인 믹스 카드 신설. ② battery_scenario: 미국 EV vs ESS kWh당 수익성 카드 신설 · BNEF ESS 수요 전망 상향 카드 신설 · 리튬 주간 2주와 6월 월간 추가. Autodata와 WardsAuto는 분모가 달라 카드에 기준 차이를 명시함. 출처: WardsAuto·CPCA·Cleantechnica·ACEA·Autodata·EV-Volumes·BloombergNEF·Bloomberg",
+      "color": "blue",
+      "section": "update_log",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-07-20",
+      "order": 1
+    }
+  ],
+  "archive": [
     {
       "title": "🔋 배터리 맵 개편 — 글로벌 CAPA·UC1 정정·건식 타임라인",
       "category": "Battery",
@@ -30,9 +97,20 @@
       ],
       "date": "2026-07-13",
       "order": 1
-    }
-  ],
-  "archive": [
+    },
+    {
+      "title": "🏭 글로벌 디자인 CAPA 탭 신설",
+      "category": "Cell",
+      "icon": "🏭",
+      "body": "배터리 맵에 한국3사+Panasonic 글로벌 명목 CAPA(2024~28E) 탭 신설 — 기업별 총계·지역 매트릭스·공장 43거점·EV→ESS 전환. UC1 오하이오(Warren) 가용 50→40GWh(EV전용) 정정.",
+      "color": "teal",
+      "section": "this_week",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-07-13",
+      "order": 1
+    },
     {
       "title": "🚕 로보택시·FSD 브리핑 (6/10~7/7)",
       "category": "FSD",
@@ -73,7 +151,7 @@
       "order": 1
     },
     {
-      "title": "🔄 자동화 정비 — KPI·로보택시·아침브리핑",
+      "title": "🔄 자동화 정비 — KPI��로보택시·아침브리핑",
       "category": "",
       "icon": "🔄",
       "body": "글로벌 EV 판매 KPI Notion 자동연동 · FSD/로보택시 트래킹 매일 갱신 상시화 · 아침 브리핑 텔레그램 전환 · 정기 업데이트 체크리스트 신설",
@@ -81,7 +159,7 @@
       "section": "update_log",
       "targets": [],
       "date": "2026-06-09",
-      "order": 1
+      "order": null
     },
     {
       "title": "📊 글로벌 EV 판매 카드 Notion 연동",
@@ -100,7 +178,7 @@
       "title": "🚕 로보택시/FSD 트래킹 갱신",
       "category": "",
       "icon": "🚕",
-      "body": "무감독 28대 · 총 등록 719대(+16) · Austin 전역 메트로 245 sq mi(6/3) · Cybercab 애틀랜타 목격 · FSD v14.3.3 (누적 10.01B mi) · 출처 RobotaxiTracker·Tesla 안전보고��",
+      "body": "무감독 28대 · 총 등록 719대(+16) · Austin 전역 메트로 245 sq mi(6/3) · Cybercab 애틀랜타 목격 · FSD v14.3.3 (누적 10.01B mi) · 출처 RobotaxiTracker·Tesla 안전보고서",
       "color": "purple",
       "section": "update_log",
       "targets": [
@@ -148,7 +226,7 @@
       "title": "📊 민감도 버블차트 + BEV/CAPA 미스매치 차트 신규",
       "category": "유럽",
       "icon": "📊",
-      "body": "index.html — 6개국 민감도 매트릭스(UK 81%p), BEV/CAPA 양방향, EU 타임라인 위젯",
+      "body": "index.html — 6개국 민감도 매트���스(UK 81%p), BEV/CAPA 양방향, EU 타임라인 위젯",
       "color": "blue",
       "section": "update_log",
       "targets": [],
@@ -157,7 +235,7 @@
     },
     {
       "title": "🔋 Battery Scenario EU 정책 시나리오 3종 (총 10개)",
-      "category": "",
+      "category": "Cell",
       "icon": "🔋",
       "body": "EU_REF(14.6M, 1445GWh), EU_COM(10.1M, 632GWh), EU_LOW(7.3M, 421GWh) K3 가동률 시뮬레이션",
       "color": "purple",
