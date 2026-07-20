@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-20T01:04:48.172Z",
+  "syncedAt": "2026-07-20T02:01:34.295Z",
   "latestDate": "2026-07-20",
   "count": 35,
   "this_week": [
@@ -214,7 +214,7 @@
     {
       "title": "T&E High Stakes 보고서 — EU CO2 시나리오 3종 통합",
       "category": "유럽",
-      "icon": "🇪🇺",
+      "icon": "",
       "body": "T&E 2026.05.12 'High stakes' 보고서 기반 EU_REF/EU_COM/EU_LOW 3종 시나리오 → 한국 셀 3사 유럽 거점 가동률 및 부품사 TAM 영향 정량화. REF 시나리오 채택 가능성 ↑",
       "color": "purple",
       "section": "this_week",
@@ -226,7 +226,7 @@
       "title": "📊 민감도 버블차트 + BEV/CAPA 미스매치 차트 신규",
       "category": "유럽",
       "icon": "📊",
-      "body": "index.html — 6개국 민감도 매트릭스(UK 81%p), BEV/CAPA 양방향, EU 타임라인 위��",
+      "body": "index.html — 6개국 민감도 매트릭스(UK 81%p), BEV/CAPA 양방향, EU 타임라인 위젯",
       "color": "blue",
       "section": "update_log",
       "targets": [],
@@ -294,7 +294,7 @@
       "title": "미국 BEV 모델별 판매량",
       "category": "미국",
       "icon": "🇺🇸",
-      "body": "미국 BEV 모델별 판매량 추이 테이�� 신규 (WardsAuto, 2025.5~2026.4, OEM×모델 12개월 추적)",
+      "body": "미국 BEV 모델별 판매량 추이 테이블 신규 (WardsAuto, 2025.5~2026.4, OEM×모델 12개월 추적)",
       "color": "teal",
       "section": "update_log",
       "targets": [

@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-20T01:04:49.060Z",
+  "syncedAt": "2026-07-20T02:01:35.083Z",
   "metrics": {
     "cum_miles": {
       "key": "cum_miles",
@@ -334,7 +334,7 @@
     },
     {
       "date": "26.06.08",
-      "desc": "FSD v14.3.3 배포 · FSD ���적 10.01B mi (도시 3.76B · 일 28.8M)",
+      "desc": "FSD v14.3.3 배포 · FSD 누적 10.01B mi (도시 3.76B · 일 28.8M)",
       "category": "fsd",
       "priority": "normal"
     },
@@ -365,7 +365,7 @@
     {
       "date": "26.06.21",
       "desc": "🏁 FSD 누적 ~11.3B 마일 보도(도심 ~4.2B) — 공식 tesla.com/fsd/safety 미확인·트윗 기반 2차보도 [미확인/2차출처] · 11B 돌파 ~6/10",
-      "category": "fsd",
+      "category": "",
       "priority": "normal"
     },
     {
