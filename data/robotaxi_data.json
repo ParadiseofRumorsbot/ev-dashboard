@@ -1,19 +1,40 @@
 {
-  "syncedAt": "2026-07-20T02:01:35.083Z",
+  "syncedAt": "2026-07-20T05:31:49.559Z",
   "metrics": {
+    "dallas_unsupervised": {
+      "key": "dallas_unsupervised",
+      "value": 4,
+      "unit": "대",
+      "date": "2026-07-20",
+      "note": "RobotaxiTracker 30일 활성 기준 · 111 rides · 361마일 · 무감독 비중 76.6%(Austin보다 높음). 종전 5대(05-13) 대비 -1"
+    },
+    "houston_unsupervised": {
+      "key": "houston_unsupervised",
+      "value": 0,
+      "unit": "대",
+      "date": "2026-07-20",
+      "note": "RobotaxiTracker 30일 활성 0대 — 종전 6대(05-13)에서 활성 차량이 사라짐. 누적 실적은 94 rides·576마일로 남아있으나 최근 30일 운행 기록 없음(중단 여부는 트래커에 명시 없음)"
+    },
+    "austin_unsupervised": {
+      "key": "austin_unsupervised",
+      "value": 16,
+      "unit": "대",
+      "date": "2026-07-20",
+      "note": "RobotaxiTracker 30일 활성 기준 · 444 rides · 1,665마일 · 무감독 비중 27.9%. 종전 28대(06-08)는 누적 코호트 기준이었음 — 정의 통일"
+    },
     "cum_miles": {
       "key": "cum_miles",
-      "value": 11.3,
+      "value": 12.07,
       "unit": "B",
-      "date": "2026-06-21",
-      "note": "[미확인/2차출처] ~11.3B 누적 FSD 마일(도심 ~4.2B) · 공식 tesla.com/fsd/safety 403 미확인·트윗(@wholemars) 2차보도 · 11B 돌파 ~6/10 · 정확치 11,319,318,829는 spurious precision로 미채택 · 재확인 필요"
+      "date": "2026-07-20",
+      "note": "[공식] tesla.com/fsd/safety 직접 확인 — 누적 12,074,141,132마일(도심 4,554,840,899). 종전 11.3B(06-21)는 2차출처 추정치였으나 이번에 1차출처로 확인됨 — 기존 '재확인 필요' 플래그 해소. WebFetch는 403이라 브라우저로 조회해야 함"
     },
     "total_unsupervised": {
       "key": "total_unsupervised",
-      "value": 39,
+      "value": 20,
       "unit": "대",
-      "date": "2026-06-08",
-      "note": "RobotaxiTracker 검증 무감독 39대 (Austin 28)"
+      "date": "2026-07-20",
+      "note": "RobotaxiTracker 30일 활성 기준(Austin 16 + Dallas 4 + Houston 0). ⚠️ 종전 39대는 트래커의 '누적 코호트'(한 번이라도 무감독 검증된 차량 총수)를 활성 대수로 오기재한 것 — 이번에 정의를 활성 기준으로 바로잡음. 누적 코호트는 여전히 39대로 6/8 이후 증가 없음(확장 정체). 누적 무감독 라이드 649건·3,000+마일"
     },
     "total_registered": {
       "key": "total_registered",
@@ -21,13 +42,6 @@
       "unit": "대",
       "date": "2026-06-08",
       "note": "RobotaxiTracker 총 등록 차량 +16 · TxMCCS 무감독 미포함"
-    },
-    "austin_unsupervised": {
-      "key": "austin_unsupervised",
-      "value": 28,
-      "unit": "대",
-      "date": "2026-06-08",
-      "note": "RobotaxiTracker · Austin 무감독 (5/13 27→28)"
     },
     "austin_total": {
       "key": "austin_total",
@@ -43,20 +57,6 @@
       "date": "2026-05-13",
       "note": "마일/일 (333/초) · 구독 1.28M"
     },
-    "houston_unsupervised": {
-      "key": "houston_unsupervised",
-      "value": 6,
-      "unit": "대",
-      "date": "2026-05-13",
-      "note": "Houston 무감독"
-    },
-    "dallas_unsupervised": {
-      "key": "dallas_unsupervised",
-      "value": 5,
-      "unit": "대",
-      "date": "2026-05-13",
-      "note": "Dallas 무감독"
-    },
     "subscribers": {
       "key": "subscribers",
       "value": 1280000,
@@ -66,30 +66,24 @@
     }
   },
   "history": {
-    "cum_miles": [
-      {
-        "date": "2026-05-04",
-        "value": 10
-      },
-      {
-        "date": "2026-06-21",
-        "value": 11.3
-      }
-    ],
-    "total_unsupervised": [
+    "dallas_unsupervised": [
       {
         "date": "2026-05-13",
-        "value": 39
+        "value": 5
       },
       {
-        "date": "2026-06-08",
-        "value": 39
+        "date": "2026-07-20",
+        "value": 4
       }
     ],
-    "total_registered": [
+    "houston_unsupervised": [
       {
-        "date": "2026-06-08",
-        "value": 719
+        "date": "2026-05-13",
+        "value": 6
+      },
+      {
+        "date": "2026-07-20",
+        "value": 0
       }
     ],
     "austin_unsupervised": [
@@ -100,6 +94,44 @@
       {
         "date": "2026-06-08",
         "value": 28
+      },
+      {
+        "date": "2026-07-20",
+        "value": 16
+      }
+    ],
+    "cum_miles": [
+      {
+        "date": "2026-05-04",
+        "value": 10
+      },
+      {
+        "date": "2026-06-21",
+        "value": 11.3
+      },
+      {
+        "date": "2026-07-20",
+        "value": 12.07
+      }
+    ],
+    "total_unsupervised": [
+      {
+        "date": "2026-05-13",
+        "value": 39
+      },
+      {
+        "date": "2026-06-08",
+        "value": 39
+      },
+      {
+        "date": "2026-07-20",
+        "value": 20
+      }
+    ],
+    "total_registered": [
+      {
+        "date": "2026-06-08",
+        "value": 719
       }
     ],
     "austin_total": [
@@ -112,18 +144,6 @@
       {
         "date": "2026-05-13",
         "value": 29
-      }
-    ],
-    "houston_unsupervised": [
-      {
-        "date": "2026-05-13",
-        "value": 6
-      }
-    ],
-    "dallas_unsupervised": [
-      {
-        "date": "2026-05-13",
-        "value": 5
       }
     ],
     "subscribers": [

@@ -1,7 +1,7 @@
 {
-  "syncedAt": "2026-07-20T02:01:34.295Z",
+  "syncedAt": "2026-07-20T05:31:48.710Z",
   "latestDate": "2026-07-20",
-  "count": 35,
+  "count": 37,
   "this_week": [
     {
       "title": "6월 EV 판매 — 미국 -20.2%·중국 -6.6%·유럽 강세",
@@ -46,7 +46,7 @@
       "title": "Tesla 유럽 6월 — 국가별 차별화",
       "category": "유럽",
       "icon": "🔋",
-      "body": "프랑스 7,474대(+105%)로 유럽 최대 기여, 반면 노르웨이 3,222대(-43%)로 역행 · 스페인 2,774대(+5%) · 이탈리아 2,423대(+43%) · 스웨덴 1,525대(+56%). 5월까지의 일괄 회복에서 국가별로 갈리는 국면으로 전환. 6월 독일·덴마크·포르투갈은 Tesla 실적 미집계. 출처: ACEA·각국 자동차협회",
+      "body": "프랑스 7,474대(+105%)로 유럽 최대 기여, 반면 노르웨이 3,222대(-43%)로 역행 · 스페인 2,774대(+5%) · 이탈리아 2,423대(+43%) · 스웨덴 1,525대(+56%). 5월까지의 일괄 회복에서 국가별로 갈리는 국면으로 전환. 6월 독일·덴마크·포르투갈은 Tesla 실적 미���계. 출처: ACEA·각국 자동차협회",
       "color": "purple",
       "section": "this_week",
       "targets": [
@@ -67,6 +67,19 @@
       ],
       "date": "2026-07-20",
       "order": 5
+    },
+    {
+      "title": "FSD 누적 12.07B · 무감독 활성 20대",
+      "category": "FSD",
+      "icon": "🚕",
+      "body": "FSD 누적 주행 12.07B마일(도심 4.55B) — Tesla 공식 안전페이지 직접 확인으로 종전 2차출처 추정(11.3B)을 1차출처로 교체. 무감독 로보택시는 30일 활성 20대(Austin 16·Dallas 4·Houston 0)이며, 누적 검증 코호트 39대는 6/8 이후 증가 없음 — 확장이 멈췄음. Houston은 활�� 6대→0대. 출처: tesla.com/fsd/safety · RobotaxiTracker",
+      "color": "purple",
+      "section": "this_week",
+      "targets": [
+        "both"
+      ],
+      "date": "2026-07-20",
+      "order": 6
     }
   ],
   "update_log": [
@@ -82,6 +95,19 @@
       ],
       "date": "2026-07-20",
       "order": 1
+    },
+    {
+      "title": "FSD/로보택시 지표 갱신 + 무감독 정의 정정",
+      "category": "FSD",
+      "icon": "🚕",
+      "body": "05-04~06-21에 멈춰 있던 FSD 지표를 원천(Notion FSD메트릭 DB) 기준 갱신. cum_miles 11.3B→12.07B(공식 1차출처로 승급, '재확인 필요' 플래그 해소) · dallas 5→4 · houston 6→0. ⚠️ 정의 정정: total_unsupervised 39→20, austin_unsupervised 28→16 — 종전 값은 트래커의 '누적 코호트'를 활성 대수로 오기재한 것이라 30일 활성 기준으로 통일함(누적 코호트 39는 비고에 명기). total_registered(719)·subscribers(1.28M)·austin_total(53)은 현재 소스로 재현되지 않아 미변경 보류. 출처: tesla.com/fsd/safety · RobotaxiTracker",
+      "color": "purple",
+      "section": "update_log",
+      "targets": [
+        "both"
+      ],
+      "date": "2026-07-20",
+      "order": 2
     }
   ],
   "archive": [
@@ -155,7 +181,7 @@
       "category": "",
       "icon": "🔄",
       "body": "글로벌 EV 판매 KPI Notion 자동연동 · FSD/로보택시 트래킹 매일 갱신 상시화 · 아침 브리핑 텔레그램 전환 · 정기 업데이트 체크리스트 신설",
-      "color": "teal",
+      "color": "",
       "section": "update_log",
       "targets": [],
       "date": "2026-06-09",
@@ -177,7 +203,7 @@
     {
       "title": "🚕 로보택시/FSD 트래킹 갱신",
       "category": "",
-      "icon": "",
+      "icon": "🚕",
       "body": "무감독 28대 · 총 등록 719대(+16) · Austin 전역 메트로 245 sq mi(6/3) · Cybercab 애틀랜타 목격 · FSD v14.3.3 (누적 10.01B mi) · 출처 RobotaxiTracker·Tesla 안전보고서",
       "color": "purple",
       "section": "update_log",
@@ -214,7 +240,7 @@
     {
       "title": "T&E High Stakes 보고서 — EU CO2 시나리오 3종 통합",
       "category": "유럽",
-      "icon": "",
+      "icon": "🇪🇺",
       "body": "T&E 2026.05.12 'High stakes' 보고서 기반 EU_REF/EU_COM/EU_LOW 3종 시나리오 → 한국 셀 3사 유럽 거점 가동률 및 부품사 TAM 영향 정량화. REF 시나리오 채택 가능성 ↑",
       "color": "purple",
       "section": "this_week",
@@ -345,7 +371,7 @@
     },
     {
       "title": "중국 4월 NEV",
-      "category": "중국",
+      "category": "���국",
       "icon": "🇨🇳",
       "body": "NEV 84.9만대 (YoY -7%, 침투율 61.4%) · BEV 57.9만 (+2.5%) · PHEV 19.2만 (-25.6%)",
       "color": "red",
