@@ -1,7 +1,7 @@
 {
-  "syncedAt": "2026-07-20T07:45:29.255Z",
+  "syncedAt": "2026-07-20T08:40:16.082Z",
   "latestDate": "2026-07-20",
-  "count": 37,
+  "count": 36,
   "this_week": [
     {
       "title": "6월 EV 판매 — 미국 -20.2%·중국 -6.6%·유럽 강세",
@@ -28,19 +28,6 @@
       ],
       "date": "2026-07-20",
       "order": 2
-    },
-    {
-      "title": "ESS가 EV보다 kWh당 이익 2.1배",
-      "category": "ESS",
-      "icon": "⚡",
-      "body": "미국 ESS는 시스템 단위 판가 220달러/kWh로 kWh당 영업이익 36달러(영업이익 11+AMPC 25), EV는 셀 단위 100달러/kWh로 17달러(영업이익 8+AMPC 9). 영업이익률은 EV 17% vs ESS 16%로 ESS가 1%p 낮지만 절대이익은 2.1배 — EV 라인의 ESS 전환이 이익 레버리지로 연결되는 구조. BNEF 2030E ESS 수요도 상향 지속(글로벌 445→551→828GWh, 미국 71→77→102GWh). 수익성 수치는 자체추정 · 출처: BloombergNEF",
-      "color": "teal",
-      "section": "this_week",
-      "targets": [
-        "index"
-      ],
-      "date": "2026-07-20",
-      "order": 3
     },
     {
       "title": "Tesla 유럽 6월 — 국가별 차별화",
@@ -191,7 +178,7 @@
       "title": "📊 글로벌 EV 판매 카드 Notion 연동",
       "category": "",
       "icon": "📊",
-      "body": "글로벌/중·유·북미·기타 월간·누계 카드를 모델변수 DB 연동으로 전환 — 매월 Notion 수정 ��� 자동 갱신 (4월: 글로벌 160만·누계 560만)",
+      "body": "글로벌/중·유·북미·기타 월간·누계 카드를 모델변수 DB 연동으로 전환 — 매월 Notion 수정 시 자동 갱신 (4월: 글로벌 160만·누계 560만)",
       "color": "blue",
       "section": "update_log",
       "targets": [
@@ -246,7 +233,7 @@
       "section": "this_week",
       "targets": [],
       "date": "2026-05-19",
-      "order": 1
+      "order": null
     },
     {
       "title": "📊 민감도 버블차트 + BEV/CAPA 미스매치 차트 신규",
