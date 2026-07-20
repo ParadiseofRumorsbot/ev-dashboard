@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-20T05:31:48.710Z",
+  "syncedAt": "2026-07-20T07:45:29.255Z",
   "latestDate": "2026-07-20",
   "count": 37,
   "this_week": [
@@ -46,7 +46,7 @@
       "title": "Tesla 유럽 6월 — 국가별 차별화",
       "category": "유럽",
       "icon": "🔋",
-      "body": "프랑스 7,474대(+105%)로 유럽 최대 기여, 반면 노르웨이 3,222대(-43%)로 역행 · 스페인 2,774대(+5%) · 이탈리아 2,423대(+43%) · 스웨덴 1,525대(+56%). 5월까지의 일괄 회복에서 국가별로 갈리는 국면으로 전환. 6월 독일·덴마크·포르투갈은 Tesla 실적 미���계. 출처: ACEA·각국 자동차협회",
+      "body": "프랑스 7,474대(+105%)로 유럽 최대 기여, 반면 노르웨이 3,222대(-43%)로 역행 · 스페인 2,774대(+5%) · 이탈리아 2,423대(+43%) · 스웨덴 1,525대(+56%). 5월까지의 일괄 회복에서 국가별로 갈리는 국면으로 전환. 6월 독일·덴마크·포르투갈은 Tesla 실적 미집계. 출처: ACEA·각국 자동차협회",
       "color": "purple",
       "section": "this_week",
       "targets": [
@@ -69,10 +69,10 @@
       "order": 5
     },
     {
-      "title": "FSD 누적 12.07B · 무감독 활성 20대",
+      "title": "FSD 누적 12.07B · 무감독 39대 중 20대만 운행",
       "category": "FSD",
       "icon": "🚕",
-      "body": "FSD 누적 주행 12.07B마일(도심 4.55B) — Tesla 공식 안전페이지 직접 확인으로 종전 2차출처 추정(11.3B)을 1차출처로 교체. 무감독 로보택시는 30일 활성 20대(Austin 16·Dallas 4·Houston 0)이며, 누적 검증 코호트 39대는 6/8 이후 증가 없음 — 확장이 멈췄음. Houston은 활�� 6대→0대. 출처: tesla.com/fsd/safety · RobotaxiTracker",
+      "body": "FSD 누적 주행 12.07B마일(도심 4.55B) — Tesla 공식 안전페이지 직접 확인으로 종전 2차출처 추정(11.3B)을 1차출처로 교체. 무감독 로보택시는 누적 검증 39대(Austin 28·Dallas 5·Houston 6)이지만 최근 30일 실제 운행은 20대(Austin 16·Dallas 4·Houston 0)로 절반 수준 — 특히 Houston은 활성 0대. 누적 39대는 6/8 이후 한 대도 안 늘어 확장이 멈췄음. 전체 추적 차량은 770대(+51). 출처: tesla.com/fsd/safety · RobotaxiTracker",
       "color": "purple",
       "section": "this_week",
       "targets": [
@@ -97,10 +97,10 @@
       "order": 1
     },
     {
-      "title": "FSD/로보택시 지표 갱신 + 무감독 정의 정정",
+      "title": "FSD 지표 갱신 + 무감독 누적/활성 2계열 분리",
       "category": "FSD",
       "icon": "🚕",
-      "body": "05-04~06-21에 멈춰 있던 FSD 지표를 원천(Notion FSD메트릭 DB) 기준 갱신. cum_miles 11.3B→12.07B(공식 1차출처로 승급, '재확인 필요' 플래그 해소) · dallas 5→4 · houston 6→0. ⚠️ 정의 정정: total_unsupervised 39→20, austin_unsupervised 28→16 — 종전 값은 트래커의 '누적 코호트'를 활성 대수로 오기재한 것이라 30일 활성 기준으로 통일함(누적 코호트 39는 비고에 명기). total_registered(719)·subscribers(1.28M)·austin_total(53)은 현재 소스로 재현되지 않아 미변경 보류. 출처: tesla.com/fsd/safety · RobotaxiTracker",
+      "body": "05-04~06-21에 멈춰 있던 FSD 지표를 원천(Notion FSD메트릭 DB) 기준 갱신. cum_miles 11.3B→12.07B(Tesla 공식 안전페이지 직접 확인 — 종전 2차출처 추정을 1차출처로 교체, '재확인 필요' 플래그 해소) · total_registered 719→770(트래커 'ALL TRACKED'). 무감독 대수는 트래커가 두 개 계열로 제공한다는 점을 확인해 분리함 — ① 누적(Cumulative verified) total 39·Austin 28·Dallas 5·Houston 6은 기존 계열 그대로 유지하며 6/8 이후 변동 없음(확장 정체), ② 30일 활성 total 20·Austin 16·Dallas 4·Houston 0을 신규 지표 4종(active_*)으로 추가. 누적 39대 중 실제 운행은 20대(51%)이고 Houston은 활성 0대라는 게 핵심. subscribers(1.28M)·austin_total(53)·daily_miles(29M)은 현재 소스로 확인 안 돼 미변경. 출처: tesla.com/fsd/safety · RobotaxiTracker",
       "color": "purple",
       "section": "update_log",
       "targets": [
@@ -181,7 +181,7 @@
       "category": "",
       "icon": "🔄",
       "body": "글로벌 EV 판매 KPI Notion 자동연동 · FSD/로보택시 트래킹 매일 갱신 상시화 · 아침 브리핑 텔레그램 전환 · 정기 업데이트 체크리스트 신설",
-      "color": "",
+      "color": "teal",
       "section": "update_log",
       "targets": [],
       "date": "2026-06-09",
@@ -191,7 +191,7 @@
       "title": "📊 글로벌 EV 판매 카드 Notion 연동",
       "category": "",
       "icon": "📊",
-      "body": "글로벌/중·유·북미·기타 월간·누계 카드를 모델변수 DB 연동으로 전환 — 매월 Notion 수정 시 자동 갱신 (4월: 글로벌 160만·누계 560만)",
+      "body": "글로벌/중·유·북미·기타 월간·누계 카드를 모델변수 DB 연동으로 전환 — 매월 Notion 수정 ��� 자동 갱신 (4월: 글로벌 160만·누계 560만)",
       "color": "blue",
       "section": "update_log",
       "targets": [
@@ -371,7 +371,7 @@
     },
     {
       "title": "중국 4월 NEV",
-      "category": "���국",
+      "category": "중국",
       "icon": "🇨🇳",
       "body": "NEV 84.9만대 (YoY -7%, 침투율 61.4%) · BEV 57.9만 (+2.5%) · PHEV 19.2만 (-25.6%)",
       "color": "red",

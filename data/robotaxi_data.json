@@ -1,26 +1,61 @@
 {
-  "syncedAt": "2026-07-20T05:31:49.559Z",
+  "syncedAt": "2026-07-20T07:45:29.975Z",
   "metrics": {
-    "dallas_unsupervised": {
-      "key": "dallas_unsupervised",
-      "value": 4,
+    "active_unsupervised": {
+      "key": "active_unsupervised",
+      "value": 20,
       "unit": "대",
       "date": "2026-07-20",
-      "note": "RobotaxiTracker 30일 활성 기준 · 111 rides · 361마일 · 무감독 비중 76.6%(Austin보다 높음). 종전 5대(05-13) 대비 -1"
+      "note": "신규 지표. RobotaxiTracker /unsupervised 30일 활성 기준(Austin 16+Dallas 4+Houston 0). 누적 코호트 39대 대비 51%만 실제 운행. 누적 무감독 라이드 649건·3,000+마일. ⚠️ robotaxi.html renderMetrics에 바인딩이 없어 현재 화면 미표시(JSON 적재만) — total_unsupervised의 비고로 노출 중"
     },
-    "houston_unsupervised": {
-      "key": "houston_unsupervised",
+    "houston_active": {
+      "key": "houston_active",
       "value": 0,
       "unit": "대",
       "date": "2026-07-20",
-      "note": "RobotaxiTracker 30일 활성 0대 — 종전 6대(05-13)에서 활성 차량이 사라짐. 누적 실적은 94 rides·576마일로 남아있으나 최근 30일 운행 기록 없음(중단 여부는 트래커에 명시 없음)"
+      "note": "신규 지표. RobotaxiTracker 30일 활성 0대 — 누적 6대 중 최근 30일 운행 차량 없음. 화면 미바인딩(JSON 적재만)"
     },
-    "austin_unsupervised": {
-      "key": "austin_unsupervised",
+    "austin_active": {
+      "key": "austin_active",
       "value": 16,
       "unit": "대",
       "date": "2026-07-20",
-      "note": "RobotaxiTracker 30일 활성 기준 · 444 rides · 1,665마일 · 무감독 비중 27.9%. 종전 28대(06-08)는 누적 코호트 기준이었음 — 정의 통일"
+      "note": "신규 지표. RobotaxiTracker 30일 활성 · 444 rides · 1,665마일 · 무감독 비중 27.9%. 누적 28대 대비 57%. 화면 미바인딩(JSON 적재만)"
+    },
+    "total_registered": {
+      "key": "total_registered",
+      "value": 770,
+      "unit": "대",
+      "date": "2026-07-20",
+      "note": "RobotaxiTracker 'ALL TRACKED'(전체 추적 차량). 719대(06-08) → 770대로 +51. ⚠️ Texas DMV 등록 기준은 175대로 전혀 다른 별개 수치이니 혼동 금지"
+    },
+    "dallas_active": {
+      "key": "dallas_active",
+      "value": 4,
+      "unit": "대",
+      "date": "2026-07-20",
+      "note": "신규 지표. RobotaxiTracker 30일 활성 · 111 rides · 361마일 · 무감독 비중 76.6%. 누적 5대 대비 80%. 화면 미바인딩(JSON 적재만)"
+    },
+    "dallas_unsupervised": {
+      "key": "dallas_unsupervised",
+      "value": 5,
+      "unit": "대",
+      "date": "2026-07-20",
+      "note": "RobotaxiTracker 누적 기준 — 05-13 이후 5대로 변동 없음. 30일 활성은 4대(111 rides·361마일·무감독 비중 76.6%로 Austin보다 높음)"
+    },
+    "houston_unsupervised": {
+      "key": "houston_unsupervised",
+      "value": 6,
+      "unit": "대",
+      "date": "2026-07-20",
+      "note": "RobotaxiTracker 누적 기준 — 05-13 이후 6대로 변동 없음. 30일 활성은 0대 — 누적 실적 94 rides·576마일은 남아있으나 최근 30일 운행 기록 없음(중단 여부는 트래커에 명시 없음)"
+    },
+    "austin_unsupervised": {
+      "key": "austin_unsupervised",
+      "value": 28,
+      "unit": "대",
+      "date": "2026-07-20",
+      "note": "RobotaxiTracker 누적 기준 — 6/8 이후 28대로 변동 없음. 같은 시점 30일 활성은 16대(444 rides·1,665마일·무감독 비중 27.9%)"
     },
     "cum_miles": {
       "key": "cum_miles",
@@ -31,17 +66,10 @@
     },
     "total_unsupervised": {
       "key": "total_unsupervised",
-      "value": 20,
+      "value": 39,
       "unit": "대",
       "date": "2026-07-20",
-      "note": "RobotaxiTracker 30일 활성 기준(Austin 16 + Dallas 4 + Houston 0). ⚠️ 종전 39대는 트래커의 '누적 코호트'(한 번이라도 무감독 검증된 차량 총수)를 활성 대수로 오기재한 것 — 이번에 정의를 활성 기준으로 바로잡음. 누적 코호트는 여전히 39대로 6/8 이후 증가 없음(확장 정체). 누적 무감독 라이드 649건·3,000+마일"
-    },
-    "total_registered": {
-      "key": "total_registered",
-      "value": 719,
-      "unit": "대",
-      "date": "2026-06-08",
-      "note": "RobotaxiTracker 총 등록 차량 +16 · TxMCCS 무감독 미포함"
+      "note": "RobotaxiTracker '플릿 성장' 섹션 누적 기준(Cumulative verified unsupervised vehicles). 6/8 이후 39대로 변동 없음 — 확장이 멈췄음. 같은 시점 30일 활성은 20대(Austin 16·Dallas 4·Houston 0)로 누적의 51%만 실제 운행 중. ⚠️ 누적과 30일 활성은 트래커가 서로 다른 페이지에 표시하는 별개 계열이니 혼용 금지"
     },
     "austin_total": {
       "key": "austin_total",
@@ -66,6 +94,40 @@
     }
   },
   "history": {
+    "active_unsupervised": [
+      {
+        "date": "2026-07-20",
+        "value": 20
+      }
+    ],
+    "houston_active": [
+      {
+        "date": "2026-07-20",
+        "value": 0
+      }
+    ],
+    "austin_active": [
+      {
+        "date": "2026-07-20",
+        "value": 16
+      }
+    ],
+    "total_registered": [
+      {
+        "date": "2026-06-08",
+        "value": 719
+      },
+      {
+        "date": "2026-07-20",
+        "value": 770
+      }
+    ],
+    "dallas_active": [
+      {
+        "date": "2026-07-20",
+        "value": 4
+      }
+    ],
     "dallas_unsupervised": [
       {
         "date": "2026-05-13",
@@ -73,7 +135,7 @@
       },
       {
         "date": "2026-07-20",
-        "value": 4
+        "value": 5
       }
     ],
     "houston_unsupervised": [
@@ -83,7 +145,7 @@
       },
       {
         "date": "2026-07-20",
-        "value": 0
+        "value": 6
       }
     ],
     "austin_unsupervised": [
@@ -97,7 +159,7 @@
       },
       {
         "date": "2026-07-20",
-        "value": 16
+        "value": 28
       }
     ],
     "cum_miles": [
@@ -125,13 +187,7 @@
       },
       {
         "date": "2026-07-20",
-        "value": 20
-      }
-    ],
-    "total_registered": [
-      {
-        "date": "2026-06-08",
-        "value": 719
+        "value": 39
       }
     ],
     "austin_total": [
