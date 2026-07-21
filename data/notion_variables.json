@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-20T19:24:55.059Z",
+  "syncedAt": "2026-07-21T01:45:54.722Z",
   "dbId": "659a8d5a89c344a5b68960fead1cf889",
   "count": 39,
   "variables": [
@@ -28,7 +28,7 @@
       "updatedAt": "2026-06-23"
     },
     {
-      "name": "유럽 EV ��간",
+      "name": "유럽 EV 월간",
       "category": "evGlobal",
       "target": "유럽",
       "region": "eu",
