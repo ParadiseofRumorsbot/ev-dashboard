@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-21T01:45:55.147Z",
+  "syncedAt": "2026-07-21T08:07:28.385Z",
   "latestDate": "2026-07-20",
   "count": 37,
   "this_week": [
@@ -49,7 +49,9 @@
       "body": "프랑스 7,474대(+105%)로 유럽 최대 기여, 반면 노르웨이 3,222대(-43%)로 역행 · 스페인 2,774대(+5%) · 이탈리아 2,423대(+43%) · 스웨덴 1,525대(+56%). 5월까지의 일괄 회복에서 국가별로 갈리는 국면으로 전환. 6월 독일·덴마크·포르투갈은 Tesla 실적 미집계. 출처: ACEA·각국 자동차협회",
       "color": "purple",
       "section": "this_week",
-      "targets": [],
+      "targets": [
+        "index"
+      ],
       "date": "2026-07-20",
       "order": 4
     },
@@ -110,7 +112,7 @@
   ],
   "archive": [
     {
-      "title": "🔋 배터리 맵 개편 — 글로벌 CAPA·UC1 정정·건식 타임라인",
+      "title": "🔋 배터리 맵 개편 — 글로벌 CAPA·UC1 정���·건식 타임라인",
       "category": "Battery",
       "icon": "🔋",
       "body": "① 배터리 맵: 글로벌 디자인 CAPA 탭 신설(기업 총계·지역 매트릭스·공장 43거점·EV→ESS 전환). ② UC1 Warren geo탭 가용 50G(EV+ESS)→40G(EV전용) 정정 — 2028까지 ESS 계획 없음, ESS는 UC2 흡수. ③ 온타리오 명목 49.5G 유지(실질동인=북미 BESS)·뉴칼라일 GM JV 건설중단 반영. ④ 기술/특허 탭: 기업별 건식전극 타임라인 추가. 출처: 자체정리(공개자료 종합).",
@@ -283,7 +285,7 @@
       "title": "🚗 EV 타임라인 북미/유럽 탭 + 10건 뉴스",
       "category": "미국",
       "icon": "🚗",
-      "body": "탭 분할 + CLA EV·Lexus ES EV 출시���료, Rivian R2 Q2, GV60 Magma, Volvo EX60, Ford EU",
+      "body": "탭 분할 + CLA EV·Lexus ES EV 출시완료, Rivian R2 Q2, GV60 Magma, Volvo EX60, Ford EU",
       "color": "teal",
       "section": "update_log",
       "targets": [],
