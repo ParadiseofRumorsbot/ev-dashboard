@@ -1,7 +1,7 @@
 {
-  "syncedAt": "2026-07-22T13:21:34.815Z",
+  "syncedAt": "2026-07-22T18:57:03.168Z",
   "latestDate": "2026-07-20",
-  "count": 37,
+  "count": 36,
   "this_week": [
     {
       "title": "6월 EV 판매 — 미국 -20.2%·중국 -6.6%·유럽 강세",
@@ -191,7 +191,7 @@
       "title": "📊 글로벌 EV 판매 카드 Notion 연동",
       "category": "",
       "icon": "📊",
-      "body": "글로벌/중·유·북미·기타 월간·누계 카드를 모델변수 DB 연동으로 전환 — 매월 Notion ���정 시 자동 갱신 (4월: 글로벌 160만·누계 560만)",
+      "body": "글로벌/중·유·북미·기타 월간·누계 카드를 모델변수 DB 연동으로 전환 — 매월 Notion 수정 시 자동 갱신 (4월: 글로벌 160만·누계 560만)",
       "color": "blue",
       "section": "update_log",
       "targets": [
@@ -224,17 +224,6 @@
         "index"
       ],
       "date": "2026-05-22",
-      "order": 1
-    },
-    {
-      "title": "🇪🇺 T&E High Stakes — EU 시나리오 전 대시보드 반영",
-      "category": "유럽",
-      "icon": "🇪🇺",
-      "body": "T&E 2026.05 High Stakes 보고서 통합 — EU REF/COM/LOW 3종 시나리오 4개 페이지 반영",
-      "color": "blue",
-      "section": "update_log",
-      "targets": [],
-      "date": "2026-05-19",
       "order": 1
     },
     {
