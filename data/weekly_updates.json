@@ -1,7 +1,7 @@
 {
-  "syncedAt": "2026-07-22T18:57:03.168Z",
+  "syncedAt": "2026-07-23T01:00:17.003Z",
   "latestDate": "2026-07-20",
-  "count": 36,
+  "count": 37,
   "this_week": [
     {
       "title": "6월 EV 판매 — 미국 -20.2%·중국 -6.6%·유럽 강세",
@@ -20,7 +20,7 @@
       "title": "미국 BEV 후퇴 ↔ HEV 급증",
       "category": "미국",
       "icon": "🇺🇸",
-      "body": "6월 미국 파워트레인 침투율 BEV 5.30%(YoY -29.5%) · HEV 16.12%(+42.8%) · PHEV 1.28%(-19.0%) · ICE 77.30%. 전체 ��장은 +7.5% 성장으로 BEV만 역행. 현대차 BEV 3,394대(-33.7%)·HEV 20,526대(+74.0%), 기아 BEV 2,226대(+7.3%)·HEV 21,793대(+186.7%). 출처: Autodata·EV-Volumes",
+      "body": "6월 미국 파워트레인 침투율 BEV 5.30%(YoY -29.5%) · HEV 16.12%(+42.8%) · PHEV 1.28%(-19.0%) · ICE 77.30%. 전체 시장은 +7.5% 성장으로 BEV만 역행. 현대차 BEV 3,394대(-33.7%)·HEV 20,526대(+74.0%), 기아 BEV 2,226대(+7.3%)·HEV 21,793대(+186.7%). 출처: Autodata·EV-Volumes",
       "color": "yellow",
       "section": "this_week",
       "targets": [
@@ -112,7 +112,7 @@
   ],
   "archive": [
     {
-      "title": "🔋 배터리 맵 개편 — 글로벌 CAPA·UC1 정정·건식 타임라인",
+      "title": "🔋 배터리 맵 개편 — 글로벌 CAPA·UC1 정���·건식 타임라인",
       "category": "Battery",
       "icon": "🔋",
       "body": "① 배터리 맵: 글로벌 디자인 CAPA 탭 신설(기업 총계·지역 매트릭스·공장 43거점·EV→ESS 전환). ② UC1 Warren geo탭 가용 50G(EV+ESS)→40G(EV전용) 정정 — 2028까지 ESS 계획 없음, ESS는 UC2 흡수. ③ 온타리오 명목 49.5G 유지(실질동인=북미 BESS)·뉴칼라일 GM JV 건설중단 반영. ④ 기술/특허 탭: 기업별 건식전극 타임라인 추가. 출처: 자체정리(공개자료 종합).",
@@ -224,6 +224,17 @@
         "index"
       ],
       "date": "2026-05-22",
+      "order": 1
+    },
+    {
+      "title": "🇪🇺 T&E High Stakes — EU 시나리오 전 대시보드 반영",
+      "category": "유럽",
+      "icon": "🇪🇺",
+      "body": "T&E 2026.05 High Stakes 보고서 통합 — EU REF/COM/LOW 3종 시나리오 4개 페이지 반영",
+      "color": "blue",
+      "section": "update_log",
+      "targets": [],
+      "date": "2026-05-19",
       "order": 1
     },
     {

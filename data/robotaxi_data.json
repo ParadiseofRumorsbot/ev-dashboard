@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-22T18:57:04.035Z",
+  "syncedAt": "2026-07-23T01:00:18.016Z",
   "metrics": {
     "active_unsupervised": {
       "key": "active_unsupervised",
@@ -441,7 +441,7 @@
     {
       "date": "26.06.21",
       "desc": "🏁 FSD 누적 ~11.3B 마일 보도(도심 ~4.2B) — 공식 tesla.com/fsd/safety 미확인·트윗 기반 2차보도 [미확인/2차출처] · 11B 돌파 ~6/10",
-      "category": "",
+      "category": "fsd",
       "priority": "normal"
     },
     {
@@ -457,6 +457,12 @@
       "priority": "high"
     },
     {
+      "date": "26.07",
+      "desc": "올랜도·탬파 무감독 로보택시 개시 — 마이애미 포함 플로리다 3개 도시 확장, 총 7개 metro 운영(무감독 6개: Austin·Dallas·Houston·Miami·Orlando·Tampa + SF Bay 세이프티 드라이버) (2Q26 컨콜)",
+      "category": "fleet",
+      "priority": "high"
+    },
+    {
       "date": "26.07.03",
       "desc": "🚕 마이애미 무인(세이프티 모니터 없음) 로보택시 개시 — TX·CA 외 첫 도시 · 서부 마이애미-데이드 지오펜스(~10~20 sq mi) · Model Y · 차량대수 미공개 · 계획 5개도시(LV·마이애미·올랜도·피닉스·탬파) 중 첫 개시",
       "category": "fleet",
@@ -467,6 +473,18 @@
       "desc": "Giga Texas '스케일링 대형 발표' 예고(Lars Moravy) — Cybercab 양산/Model Y L/4680 등 후보 [미확정]",
       "category": "production",
       "priority": "normal"
+    },
+    {
+      "date": "26.07.22",
+      "desc": "Cybercab 생산 개시(기가팩토리 텍사스) · 스티어링·페달 리트로핏 차량으로 섀시 주행 데이터 축적 중 · 7월부터 공장 캠퍼스 직원 라이드 시작",
+      "category": "production",
+      "priority": "high"
+    },
+    {
+      "date": "26.07.22",
+      "desc": "2Q26 컨콜: 무감독 누적 380,000+마일·notable 사고 0건(회사 공식, 트래커 계열과 별개) · 주간 무감독 마일 +10%/주 성장 지속 · V15 7개 트랙 중 40% 병합 빌드 운행 중 · Phoenix·라스베이거스 준비 중",
+      "category": "fleet",
+      "priority": "high"
     }
   ]
 }
