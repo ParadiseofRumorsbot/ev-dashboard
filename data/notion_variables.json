@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-24T13:17:19.455Z",
+  "syncedAt": "2026-07-24T19:12:04.081Z",
   "dbId": "659a8d5a89c344a5b68960fead1cf889",
   "count": 39,
   "variables": [
@@ -58,7 +58,7 @@
       "region": "global",
       "year": "",
       "value": 98.9,
-      "unit": "",
+      "unit": "만",
       "path": "evGlobal.cn",
       "source": "SNE Research",
       "updatedAt": "2026-06-23"
@@ -365,7 +365,7 @@
     },
     {
       "name": "환율",
-      "category": "",
+      "category": "basis",
       "target": "기준점",
       "region": "global",
       "year": "",

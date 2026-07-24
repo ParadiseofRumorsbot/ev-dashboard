@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-24T13:17:20.471Z",
+  "syncedAt": "2026-07-24T19:12:04.630Z",
   "latestDate": "2026-07-20",
   "count": 37,
   "this_week": [
@@ -72,7 +72,7 @@
       "title": "FSD 누적 12.07B · 무감독 39대 중 20대만 운행",
       "category": "FSD",
       "icon": "🚕",
-      "body": "FSD 누적 주행 12.07B마일(도심 4.55B) — Tesla 공식 안전페이지 직접 확인으로 종전 2차출처 추정(11.3B)을 1차출처로 교체. 무감독 로보택시는 누적 검증 39대(Austin 28·Dallas 5·Houston 6)이지만 최근 30일 실제 운행은 20대(Austin 16·Dallas 4·Houston 0)로 절반 수준 — 특히 Houston은 활성 0대. 누적 39대는 6/8 이후 한 대도 안 늘어 확장이 멈췄음. 전체 추적 차량은 770대(+51). 출처: tesla.com/fsd/safety · RobotaxiTracker",
+      "body": "FSD 누적 주행 12.07B마일(도심 4.55B) — Tesla 공식 안전페이지 직접 확인으로 종전 2차출처 추정(11.3B)을 1차출처로 교체. 무감독 ���보택시는 누적 검증 39대(Austin 28·Dallas 5·Houston 6)이지만 최근 30일 실제 운행은 20대(Austin 16·Dallas 4·Houston 0)로 절반 수준 — 특히 Houston은 활성 0대. 누적 39대는 6/8 이후 한 대도 안 늘어 확장이 멈췄음. 전체 추적 차량은 770대(+51). 출처: tesla.com/fsd/safety · RobotaxiTracker",
       "color": "purple",
       "section": "this_week",
       "targets": [
@@ -141,7 +141,7 @@
       "title": "🚕 로보택시·FSD 브리핑 (6/10~7/7)",
       "category": "FSD",
       "icon": "🚕",
-      "body": "마이애미 무인 로보택시 개시(7/3) — TX·CA 외 첫 도시, 세이프티 모니터 없이, Model Y, 계획 5개도�� 중 첫 개시(차량대수 미공개). · FSD v14 Lite(2026.20.5.1) HW3 얼리액세스 롤아웃(6/29) — 첫 레거시 HW용 V14. · Cybercab Giga TX 야적 ~85대 포착(6/19, 2차) · Lars Moravy 7/7 Giga TX 대형 발표 예고. · FSD 누적 ~11.3B 마일 보도(6/21, [미확인·2차출처]) · 무감독 코호트 39대 유지(활성 30일 24대). · ⚠️ '텍사스 무인 100대'설은 주차재고 오집계로 기각(실제 24~30대).",
+      "body": "마이애미 무인 로보택시 개시(7/3) — TX·CA 외 첫 도시, 세이프티 모니터 없이, Model Y, 계획 5개도시 중 첫 개시(차량대수 미공개). · FSD v14 Lite(2026.20.5.1) HW3 얼리액세스 롤아웃(6/29) — 첫 레거시 HW용 V14. · Cybercab Giga TX 야적 ~85대 포착(6/19, 2차) · Lars Moravy 7/7 Giga TX 대형 발표 예고. · FSD 누적 ~11.3B 마일 보도(6/21, [미확인·2차출처]) · 무감독 코호트 39대 유지(활성 30일 24대). · ⚠️ '텍사스 무인 100대'설은 주차재고 오집계로 기각(실제 24~30대).",
       "color": "purple",
       "section": "update_log",
       "targets": [
@@ -180,7 +180,7 @@
       "title": "🔄 자동화 정비 — KPI·로보택시·아침브리핑",
       "category": "",
       "icon": "🔄",
-      "body": "글로벌 EV 판매 KPI Notion ���동연동 · FSD/로보택시 트래킹 매일 갱신 상시화 · 아침 브리핑 텔레그램 전환 · 정기 업데이트 체크리스트 신설",
+      "body": "글로벌 EV 판매 KPI Notion 자동연동 · FSD/로보택시 트래킹 매일 갱신 상시화 · 아침 브리핑 텔레그램 전환 · 정기 업데이트 체크리스트 신설",
       "color": "teal",
       "section": "update_log",
       "targets": [],
@@ -239,9 +239,9 @@
     },
     {
       "title": "T&E High Stakes 보고서 — EU CO2 시나리오 3종 통합",
-      "category": "유럽",
+      "category": "",
       "icon": "🇪🇺",
-      "body": "T&E 2026.05.12 'High stakes' 보고서 기반 EU_REF/EU_COM/EU_LOW 3종 시나리오 → 한국 셀 3사 유럽 거점 가동률 및 부품사 TAM 영향 정량화. REF 시나리오 채택 ���능성 ↑",
+      "body": "T&E 2026.05.12 'High stakes' 보고서 기반 EU_REF/EU_COM/EU_LOW 3종 시나리오 → 한국 셀 3사 유럽 거점 가동률 및 부품사 TAM 영향 정량화. REF 시나리오 채택 가능성 ↑",
       "color": "purple",
       "section": "this_week",
       "targets": [],
