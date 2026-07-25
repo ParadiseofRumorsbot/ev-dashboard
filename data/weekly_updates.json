@@ -1,7 +1,7 @@
 {
-  "syncedAt": "2026-07-24T19:12:04.630Z",
+  "syncedAt": "2026-07-25T01:48:12.238Z",
   "latestDate": "2026-07-20",
-  "count": 37,
+  "count": 36,
   "this_week": [
     {
       "title": "6월 EV 판매 — 미국 -20.2%·중국 -6.6%·유럽 강세",
@@ -28,19 +28,6 @@
       ],
       "date": "2026-07-20",
       "order": 2
-    },
-    {
-      "title": "ESS가 EV보다 kWh당 이익 2.1배",
-      "category": "ESS",
-      "icon": "⚡",
-      "body": "미국 ESS는 시스템 단위 판가 220달러/kWh로 kWh당 영업이익 36달러(영업이익 11+AMPC 25), EV는 셀 단위 100달러/kWh로 17달러(영업이익 8+AMPC 9). 영업이익률은 EV 17% vs ESS 16%로 ESS가 1%p 낮지만 절대이익은 2.1배 — EV 라인의 ESS 전환이 이익 레버리지로 연결되는 구조. BNEF 2030E ESS 수요도 상향 지속(글로벌 445→551→828GWh, 미국 71→77→102GWh). 수익성 수치는 자체추정 · 출처: BloombergNEF",
-      "color": "teal",
-      "section": "this_week",
-      "targets": [
-        "index"
-      ],
-      "date": "2026-07-20",
-      "order": 3
     },
     {
       "title": "Tesla 유럽 6월 — 국가별 차별화",
@@ -72,7 +59,7 @@
       "title": "FSD 누적 12.07B · 무감독 39대 중 20대만 운행",
       "category": "FSD",
       "icon": "🚕",
-      "body": "FSD 누적 주행 12.07B마일(도심 4.55B) — Tesla 공식 안전페이지 직접 확인으로 종전 2차출처 추정(11.3B)을 1차출처로 교체. 무감독 ���보택시는 누적 검증 39대(Austin 28·Dallas 5·Houston 6)이지만 최근 30일 실제 운행은 20대(Austin 16·Dallas 4·Houston 0)로 절반 수준 — 특히 Houston은 활성 0대. 누적 39대는 6/8 이후 한 대도 안 늘어 확장이 멈췄음. 전체 추적 차량은 770대(+51). 출처: tesla.com/fsd/safety · RobotaxiTracker",
+      "body": "FSD 누적 주행 12.07B마일(도심 4.55B) — Tesla 공식 안전페이지 직접 확인으로 종전 2차출처 추정(11.3B)을 1차출처로 교체. 무감독 로보택시는 누적 검증 39대(Austin 28·Dallas 5·Houston 6)이지만 최근 30일 실제 운행은 20대(Austin 16·Dallas 4·Houston 0)로 절반 수준 — 특히 Houston은 활성 0대. 누적 39대는 6/8 이후 한 대도 안 늘어 확장이 멈췄음. 전체 추적 차량은 770대(+51). 출처: tesla.com/fsd/safety · RobotaxiTracker",
       "color": "purple",
       "section": "this_week",
       "targets": [
@@ -239,14 +226,14 @@
     },
     {
       "title": "T&E High Stakes 보고서 — EU CO2 시나리오 3종 통합",
-      "category": "",
+      "category": "유럽",
       "icon": "🇪🇺",
       "body": "T&E 2026.05.12 'High stakes' 보고서 기반 EU_REF/EU_COM/EU_LOW 3종 시나리오 → 한국 셀 3사 유럽 거점 가동률 및 부품사 TAM 영향 정량화. REF 시나리오 채택 가능성 ↑",
       "color": "purple",
       "section": "this_week",
       "targets": [],
       "date": "2026-05-19",
-      "order": 1
+      "order": null
     },
     {
       "title": "📊 민감도 버블차트 + BEV/CAPA 미스매치 차트 신규",
