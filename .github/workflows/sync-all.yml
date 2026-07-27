@@ -2,7 +2,7 @@ name: Sync Notion (Updates + Robotaxi)
 
 on:
   schedule:
-    - cron: '0 */6 * * *'   # 6시간마다 (KST 03·09·15·21시)
+    - cron: '50 20 * * *'   # 하루 1회 (KST 05:50, 아침 브리핑 전) — 즉시 반영 필요 시 workflow_dispatch 수동 트리거
   workflow_dispatch:          # 수동 트리거
 
 jobs:
