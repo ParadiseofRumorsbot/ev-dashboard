@@ -1,127 +1,110 @@
 {
   "type": "battery_patent_monitor",
-  "lastUpdated": "2026-07-26T23:53:04.290Z",
-  "weekOf": "2026-07-26",
+  "lastUpdated": "2026-08-02T23:51:07.108Z",
+  "weekOf": "2026-08-02",
   "description": "배터리·EV 특허 모니터링 — 주간 수집",
   "note": "⚠️ 자동 수집 결과입니다. 대시보드 반영 전 사용자 확인 필요.",
-  "totalItems": 12,
+  "totalItems": 10,
   "companyStats": {
-    "Other": 6,
-    "BMW": 1,
-    "LG Energy": 5
+    "BYD": 2,
+    "Other": 7,
+    "LG Energy": 1
   },
   "techStats": {
-    "충전": 1,
-    "기타": 10,
-    "전고체": 1
+    "전고체": 4,
+    "리사이클링": 2,
+    "기타": 3,
+    "BMS/열관리": 1
   },
   "items": [
     {
-      "title": "MG 07 arrives at dealerships across China with 840 km range and 800V ahead of July 29 pre-sale - CarNewsChina.com",
-      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPbjAzcFpReW5mTWRYakFEVS1IVjlaeEtySXJ2R0xVSXhJYmtuLXZwdDBnMW1YSmtGY0sxM2VsLUpCV3JqdWZQVFNjQnlqTDJCSFdYYnI4dHRWTFFEUVctTnFmWTFRNUZYMk1odl9aT2Z4QV9iRnU4YjlVeVlTTzNTczY5UDQ5ZUhsQXlMelhWMHdRdlMyckNwdTZ1N2MtbmFtN1Mwb2J3ZGUxSmVGZ1VXYWFmZ1hnaXFlMWtRWnBlcGczd21EZG41THpVdzhZQnRKLWlFTXlfQQ?oc=5",
-      "pubDate": "Tue, 21 Jul 2026 02:09:00 GMT",
+      "title": "BYD’s new solid-state battery patent reveals a dual-electrolyte cathode approach to interface challenges - CarNewsChina.com",
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQeFhpbVU3bUVFb0RLY0pranJVNlZNRFdubjJiaEFTRjMweXN4cUhscjg3VFdreGVTODVNd0dZc2s0VzJ3SG9NSWtscEx6OWZRb2c1M0ZwamVZOTV3WVNXX2c5QjRzSGhUZXMwcjNHbE05MkJ4NWtMOWdtaEtqX1dXcGZzcTdBSUhLS2RGcWlKd0xIQ2JjQklCV2pHWXg5NmdaZEp6V3BiMnJfcFVaM1dBVGJ6Q1JOUkk5Z1dkWUlILVNlTkR4a1llV05idHNKX3d6ZmhraFZQZw?oc=5",
+      "pubDate": "Wed, 29 Jul 2026 10:30:00 GMT",
       "source": "CarNewsChina.com",
+      "company": "BYD",
+      "tech": "전고체",
+      "score": 4
+    },
+    {
+      "title": "Altilium Granted UK Patent for EV Battery Recycling - The EV Report",
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE8wd0p0UzU3X0FNdVR2RG9Xci0xRU9zTXJjVkltTXpWdU9fMEd6TDM4WktMOEs0aUpTZDVfVHVMODBLa1Jlbko5NWx2alhhWlRjSWlJTmRIME5ZZEdWT2dJN1pXbHc2RHNfSWpKS29kcFE?oc=5",
+      "pubDate": "Wed, 29 Jul 2026 16:05:29 GMT",
+      "source": "The EV Report",
       "company": "Other",
-      "tech": "충전",
+      "tech": "리사이클링",
+      "score": 4
+    },
+    {
+      "title": "Altilium secures first UK patent for EV battery recycling process - bestmag.co.uk",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPSkR2MllEc3gtZDBoMDFTLU9DTVpoOE9udEpKSGtjbWM3NGtielp2bUVOei0waTJZZmRPOEdqSXduWXlHMVR3c2FrU01GMUhCcjYtajR0TWpHOWxlWkkzSDd6aDkyYVZ2ZERzT3NyUkNXS3hlazZmemlIV01WVnNUSQ?oc=5",
+      "pubDate": "Thu, 30 Jul 2026 08:01:20 GMT",
+      "source": "bestmag.co.uk",
+      "company": "Other",
+      "tech": "리사이클링",
       "score": 2
     },
     {
-      "title": "Korea IP Agency Teams Up With SK Group to Boost Patent Competitiveness - Seoul Economic Daily",
-      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPeG5EYVRRSl9kc2tWNG83WGw3X2VBUHdpNHpoU1BncFNjaUxHdGVlRG5GdXJBa1Q1WWduTXdTU0NDSV9NRXFBVVEwMjdtSmZFSE9yNWxHMTNoY21SOFBYaHRGX1hpT2FvU3ZRWUdsb1p1bXluNHd1Tk9xV2NTQmIxQ2pxTTFSVVdxbVlQVXNiY1c2bFJ2LVNBR1E3QnJMMk53?oc=5",
-      "pubDate": "Thu, 23 Jul 2026 00:47:50 GMT",
-      "source": "Seoul Economic Daily",
-      "company": "Other",
-      "tech": "기타",
-      "score": 2
-    },
-    {
-      "title": "BMW seeks patent on branded screw design that could steer repairs back to dealerships - Yahoo Autos",
-      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOWnJ6STFVSFRoR3dMRXVxZHl5U2lUNlVvNTFmcXRTOFFwQW9rYWhLQnM3UkpSa0VQYzAzQXI2WVF0anBaM3o1Ni1NVFFoMzV5cmtyOEt6STBVTlV2endoSGFwTXhnV1JMbWlpZTNfcGhhSEV3MExsc2lLZ0U5N2ltT1RfQUZzODU4VnY1S1huM1BwbW90amxkYkJZR2RnVjMtVE1iWXRpbmQxVHRMa1BQbE5fd2ZGbUlEZnp3NXMzSFF1YlJGRmRhS2JwOTA4dldxU1BzbWhtNkVGX0NrTVpHam5lTUtTc25XWTFTVw?oc=5",
-      "pubDate": "Wed, 22 Jul 2026 05:36:00 GMT",
-      "source": "Yahoo Autos",
-      "company": "BMW",
-      "tech": "기타",
-      "score": 2
+      "title": "BYD Finds A Way To Make Solid-State EV Batteries Last Longer - Autoblog",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxONVJwZ2k2a2RfeGpfaGZmdkI2TEZkNlBfUWpRbmF5UmlpWUxOOHJUcUg3SGJoRWkyWEp2MFZpZnpfdU5XWTNWVTZzaU9HSkFtdm5ZbXJ6Wmk5SGNTRkZ5MFlCeVBfNl9aREV0VnVkSlp1ZmlOYkhhRTl2RmRWSk1UMmN1dDBmWnpWeHRGZi1BTjkxaktD?oc=5",
+      "pubDate": "Thu, 30 Jul 2026 13:46:00 GMT",
+      "source": "Autoblog",
+      "company": "BYD",
+      "tech": "전고체",
+      "score": 1
     },
     {
       "title": "'745 Miles Of Range With The Solid-State Pack' - The Battery Making Today’s EVs Instantly Obsolete - CarBuzz",
       "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNNDFEV05LRzhTeUxCUjhJdm52MWcwV2tmTF8wT3YwU2dza0VqTkFMeG5LakpiX2hVZUd1UzdXNGRRRWt3ZUVNZWo3Sk4wZUZ2TV9YM2VUam13dzNuTlA5WThtV1NuYlhROUJ1akdOMk43a2Fqei1OZnhCVlBIZTdEcFdMbWRDN3BmVFBsaUVyRVJCaW1jYkhDZmN3VQ?oc=5",
-      "pubDate": "Fri, 24 Jul 2026 22:31:14 GMT",
+      "pubDate": "Tue, 28 Jul 2026 13:15:15 GMT",
       "source": "CarBuzz",
       "company": "Other",
       "tech": "전고체",
       "score": 1
     },
     {
-      "title": "The Alchemy of Grid Freedom: How to Brand the Next Generation of Patented innovative products? - The Sunday Times, Sri Lanka",
-      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOX0JMamt2MXdpclZNUkhFQ0FKXzRTWnNTZWJoam14VTc1OGFFdjBkbk9JaWZiUnpyZk81M3Y4M21jTEVsS3YtbHBaZkhGUk03amMxODNEMDJZN3NheHIwSkJ2ZElhS2R0U2dYWDVkb2FVZHVGYndnMVBqaG9qbW84c0NkN0lNaU4tNmpjM0MwVnJPNXkyRC1zU0JGeEEyclV5MmlUUkdvWkJFbXVTQ0MwZGtSRUNZLUxwVC1vME51ZnptTVNya1dhY0lSRmU3NDNrcnczQi1nRVdrT01XTXBkTWxR?oc=5",
-      "pubDate": "Sun, 26 Jul 2026 03:21:26 GMT",
-      "source": "The Sunday Times, Sri Lanka",
+      "title": "LG takes EVE Energy patent fight to US court, trade commission - ESS News",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNamV3UmtSQlNQOEtOZk9TMWpPNHRsOVBUcnRwNGxzb0JoeTA3U2xLY2xnblZwZF9IYW1iY3VRWjhYUXQwTW1Vb0tQWXBJTnRjZmVleHQ2LUd3bkd3R1V0ckhuZWx0OVhnODhSRnktbzJuVFVSQzJZdmliVlM0OWpFaUhnTGNWbU50Q2pmQjM1b1ZwMFM0TmI0TjZRUTdHNVk?oc=5",
+      "pubDate": "Mon, 27 Jul 2026 16:09:33 GMT",
+      "source": "ESS News",
       "company": "Other",
       "tech": "기타",
       "score": 1
     },
     {
-      "title": "Tulip Battery Licensing Program Brings US ITC Action Against EVE Energy - IPWatchdog.com",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQR25oRmdyLXphTjkwaEYzNXYxZHotaWtkSUhhTWFsY1RoY1ZQUVhmcjdNckF0SEVWTzJ2MFd0UmVZU2d2anppUjhNSWctenlVOWhjb214MWRhX0VMOU5WZmlrNEwzdkNnU0xWcXB6REhLZC1wRktMNzFpNmZnNjFVbnZXWWZCNGVCdi1iTmpsOTJFTFNLbXRmV09nNTByMFhrYXhn?oc=5",
-      "pubDate": "Thu, 23 Jul 2026 14:44:37 GMT",
-      "source": "IPWatchdog.com",
+      "title": "LG takes EVE Energy patent fight to U.S. court, trade commission - pv magazine USA",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNYjJYcnZYeWlkX2RvUklPYUtXdnZyd1JBRGRRdDF1RldwLWY2cXhQWk0xOHNIZTM1ODNnaVExVUdTVGxRYm5vYkV6dGx2SDR6ZjBwS0p1TU5aWUJHaVpUNXl1MmdLNHlOVUQyTW4tZWdDRTl1Wi05dTNwaTdIclgyVTdlU0gtdVo2RGdBZ1BOQ1FiLXdkWlJmYS1jNDhPZy1Lc2RxUA?oc=5",
+      "pubDate": "Mon, 27 Jul 2026 13:15:12 GMT",
+      "source": "pv magazine USA",
       "company": "Other",
       "tech": "기타",
       "score": 1
     },
     {
-      "title": "LG Energy Solution files U.S. patent suits against Chinese battery maker - Korea JoongAng Daily",
-      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTnhyLXNwaHktdTVwRjJrZ3RsTXpWN2tQcjJDZDk3MTg4eW5wMWQ3MzhRTFQtcUNNRHRZWGpFUXk1MjRxR0ZYaHNFcVZQTG1PcnhSSmpYeEZROFY5enhvZHlTalVtbTd3UmhZamhJZGFmcE55Nkttc3BZcVVYXzJxOTNhXzNxeExTT2ltTTRlRjFwM210MXQ4QWZzWmE0cjlTY1p1VXVwMzM2LVhqVXNiNDBnTVdGRkFhbGhGcGJ1N3g?oc=5",
-      "pubDate": "Thu, 23 Jul 2026 07:39:53 GMT",
-      "source": "Korea JoongAng Daily",
+      "title": "LG Energy Solution Sues EVE Energy Over Battery Patents - Backfire News",
+      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOQTVnM1NYcE5HZGdoYTlsVGp4ME9CdVhpV1BqcVljTzBRUjVoMzE1dm1NbGtGcmkxelk3U2s2MUdIS0RCUjBMRXh3M0RPOE1KakxRRHBmdG51N2VKNzg0NGxKeHdjdE1ESVNONWlHSVMzUndVbDhlUjNXQVF1V0NHS0FuandnazNteDRsQkhJci1JUGFWLTEzRFlrYV9zNndlWTZZRWVjZ003NGE0a0pYTDVnM1FUM1E4dkxwTVVRb1daR0lsWnlkQ093clN4ckxZX2tCeGY4YUdDWEhwcVowTWM5Szg?oc=5",
+      "pubDate": "Fri, 31 Jul 2026 11:48:31 GMT",
+      "source": "Backfire News",
       "company": "LG Energy",
       "tech": "기타",
       "score": 1
     },
     {
-      "title": "LG Energy Solution Sues China's EVE Energy in US Over Cylindrical Battery Patents, Broadening Pressure Campaign - finance.biggo.com",
-      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE02c2ZBSmxGVHc0TFlLMW41cTgtZFE3OHoxeGxsTTFvT0M5cnM3YUROakhtNFd3ZTFfU3QzNkxnd2JVUkpTY1Z1U3UyYlFBVnRZclIwSEM4MGlTTGplRFlBNDNIQjJGOFd6c3hfZ3g1THhvUE5DUXc?oc=5",
-      "pubDate": "Fri, 24 Jul 2026 00:35:00 GMT",
-      "source": "finance.biggo.com",
-      "company": "LG Energy",
-      "tech": "기타",
-      "score": 1
-    },
-    {
-      "title": "LG Energy Says Bosch, Others Infringe Battery Patents - Law360",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQaG1ZcUUtWE1vQThEdHRNU0xGWFhJalYwYW10THNZc1R1TWhvMm9rVEtRVy1EX0hvd2JWUUh0MWJIalJYdGR4blMxSzF5TF95M0hXQjZ0aC1GVC0wdDNKdm9GUW9kNEJha1ppWGNYeXBBMHNoTTRxZDhOdXF1QW5oZG00LVNPcXBreUdUUFFVQ0ZTaVkyOVdN0gFWQVVfeXFMTnRBRHVId1dtNm9qRE9XdW1NOXhtS3JIS29aZ1NGMTR2TmpXZDdJQlNvalAzQWVqZ3I1MW9mb0s1Nnh5RHNrQWRXb05HVXhHOXVkLWR5RHc?oc=5",
-      "pubDate": "Wed, 22 Jul 2026 20:51:00 GMT",
-      "source": "Law360",
-      "company": "LG Energy",
-      "tech": "기타",
-      "score": 1
-    },
-    {
-      "title": "LG Energy Solution Files U.S. Patent Complaint Against Chinese EVE Energy - Businesskorea",
-      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9LTHBvNlM4VHdmNk5YR29ya2JXZkR1Um5IU09Fb0FTOVN2bjZzTTI2TlIwQUhvM0JDRWJXMmhGUzFEN0VUbFJ5TTZ5ZWUtbkdyR0RtSGxFZzBoRWZRblkzb1JjaFNoa1lTZ0lhYUctV2hTaVg2?oc=5",
-      "pubDate": "Thu, 23 Jul 2026 11:52:25 GMT",
-      "source": "Businesskorea",
-      "company": "LG Energy",
-      "tech": "기타",
-      "score": 1
-    },
-    {
-      "title": "U.S. Investigates Three Chinese Battery-Material Makers Over Alleged Patent Violations - Caixin Global",
-      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPeV94Zy1na0ZfUXdHMFg4OTdleG52a0RnejFqN3czUHk0NTZLTUZzRFNhVUxYR21wQUNhVXZqcGhPTk5PREl3bXZad2ZPSnBxNnM2WlpGMUVuVGpxWGZWWklQRlhuNEJqSGRacVBCbG1XZ3FDTzQyOEl3UUJZeVA4aGx4blJSTkV0V1dxSURYZ2dLcGZ6WnhENDU3bnNrTlBmYlk1dk4tQUNhOUtoQW40MXF2ZjY5TFpjdXB6MUt5Vm15UHhqV18tRE9WUGpmUkJ5aTFELWdB?oc=5",
-      "pubDate": "Fri, 24 Jul 2026 10:29:00 GMT",
-      "source": "Caixin Global",
+      "title": "How BMS Innovations Can Improve Vehicle Charging, Safety and Lifetime - IDTechEx",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQWDdjTGFVeFFRTUUySUgyMEE1V2hXdFFWblFCQzFDVlo2eVBDSmFZX2dHWXpaRDhBX1c0bXNmOC0zTXdMM1BMRHZvNndQZks1NW1pbTVFNEtUc0ZvRXBXaWVNY2dEc2VBb0JIYkZFdWJCNVN2Y1ZKMzBtU0NvOWFvY1lEVDVRRlYtNVB6dG83NGp2UkxVYkoyOUk1by1MTlpKNnBVT3JFRGhyM3pIR2dyZDJteDhGN2ROVVRN?oc=5",
+      "pubDate": "Tue, 28 Jul 2026 15:00:00 GMT",
+      "source": "IDTechEx",
       "company": "Other",
-      "tech": "기타",
+      "tech": "BMS/열관리",
       "score": 1
     },
     {
-      "title": "LG Energy Solution Files ITC Complaint Against China's EVE Energy, Expanding Patent War to Cylindrical Batteries - finance.biggo.com",
-      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5WYkJrXzA4dEI1SGFiQzdVelV3NER5R0ptQjBodWtMVG9FSkNoTDVERkhlcWpNdktIbm5ySUxDYWoxY1NHWmQ4NUxQWF9XbWkyY2NPRzhscF9WNWRPbXItbEZsUkU3X3M1X1dERWdhbzZNcE1FdlE?oc=5",
-      "pubDate": "Thu, 23 Jul 2026 01:36:00 GMT",
-      "source": "finance.biggo.com",
-      "company": "LG Energy",
-      "tech": "기타",
+      "title": "Solid-State Battery July 2026 ： Policy Standardization + Hundred-Ton-Level Production Lines + Semi-Solid Batteries - Shanghai Metals Market",
+      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNOXplVDBLOWxSQWEzN1Yyem4zNzlhdUJuWFdBaGRDZWJ1VjJEQk1pMVpicUluSENteGVVLWlUa0VPSWdtOWp5SUx0bjdiVU5CdExCRHpsN0ExWk1Qc25sZEJoVXpITWhrOGJab25PcURNZXNGbDhFdFdDcXd6bUlBMUlTZlpncEdaR0h0ejJNaUk2UENPY1p1VXA2UjBPVVQwWVlSeGlEZkxMU3RyaUl3T2lHVGQ4Z19QX1NlU01sdG92ZkV5dlV3R2dXUWU3MHlta1BRazFLZWNSYWZHbFhMc2haMUZUMTZHT05lQnVoNVBtQQ?oc=5",
+      "pubDate": "Thu, 30 Jul 2026 09:55:11 GMT",
+      "source": "Shanghai Metals Market",
+      "company": "Other",
+      "tech": "전고체",
       "score": 1
     }
   ]
