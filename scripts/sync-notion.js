@@ -37,6 +37,7 @@ function notionRequest(path, body) {
     };
     const req = https.request(options, res => {
       let chunks = '';
+      res.setEncoding('utf8');
       res.on('data', c => chunks += c);
       res.on('end', () => {
         if (res.statusCode >= 400) {
