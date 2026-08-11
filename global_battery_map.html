@@ -355,7 +355,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:h
 <tr><td class="l">LGES</td><td class="l">L-H Battery Ohio / Honda JV</td><td class="sm">2026년 ESS 셀 생산 시작</td><td class="sm">40GWh 디자인 유지</td></tr>
 <tr><td class="l">LGES</td><td class="l">Arizona ESS LFP 17GWh</td><td class="sm">중단/재배정. 46시리즈 원통형 우선</td><td class="sm">확정 0, 옵션 +17GWh</td></tr>
 <tr><td class="l">삼성SDI</td><td class="l">StarPlus Kokomo</td><td class="sm">전기차→ESS NCA/LFP 전환. 26년말 미국 ESS 30GWh 목표. 수주가 29년 캐파 상당부분 커버·28년부터 캐파 초과 전망(추가 캐파 내부 검토)</td><td class="sm">1공장33/2공장67 디자인 유지</td></tr>
-<tr><td class="l">삼성SDI</td><td class="l">New Carlisle / 구 GM JV</td><td class="sm">GM 지분 49.99% 인수·단독법인 전환(260811 공시). 4개 라인(각 9G) 중 2개를 ESS LFP로 전환 = 20~24G [추정]. SOP 2H27E</td><td class="sm">명목 36GWh 유지. geo탭은 전환분 22G만 반영</td></tr>
+<tr><td class="l">삼성SDI</td><td class="l">New Carlisle / 단독법인</td><td class="sm">GM 지분 49.99% 인수·단독법인 전환(260811 공시). 4개 라인(각 9G) 중 2개를 ESS LFP로 전환 = 20~24G [추정]. SOP 2H27E</td><td class="sm">명목 36GWh 유지. geo탭은 전환분 22G만 반영</td></tr>
 <tr><td class="l">삼성SDI</td><td class="l">천안 DryEV</td><td class="sm">건식전극 파일럿(공정 검증). 대형 셀 추가 아님</td><td class="sm">파일럿 1GWh 유지. 확장시 옵션 +7GWh</td></tr>
 <tr><td class="l">SK온</td><td class="l">서산 2공장</td><td class="sm">전기차 2개 라인(3GWh)→LFP ESS</td><td class="sm">공장 6GWh 유지</td></tr>
 <tr><td class="l">SK온</td><td class="l">조지아 Commerce</td><td class="sm">Flatiron 공급 위해 일부 전기차→LFP ESS</td><td class="sm">22GWh 디자인 유지</td></tr>
@@ -380,7 +380,7 @@ const FAC_STATES=new Set();
 const D=[
 // CELL (ev-dashboard CELL3_CAPA 100%)
 {co:"삼성SDI",id:"Kokomo_IN",cat:"cell",city:"Kokomo",st:"IN",lat:40.49,lon:-86.13,unit:"GWh",status:"ramping",app:"EV+ESS",cust:"Stellantis,유틸리티,Tesla(추정)",sop:"2H24",alloc:{Stellantis:29},r:{2026:27,2027:29,2028:29},note:"L1 NCA EV 8G(3Q26 종료) / L2 NCA ESS 7G(가동중) / L3 LFP ESS 12G(26.10월 셀 양산·연내 SBB 2.0 공급) / L4 LFP ESS 10G(1Q27). 260730 2Q26 컨콜 기준. ESS 전환 라인이 테슬라향 수주 대응 거점 — 260130 공급계약 공시(상대 유보), 27년부터 3년 연 10G·3조원대 [추정]"},
-{co:"삼성SDI",id:"NewCarlisle_GM",cat:"cell",city:"New Carlisle",st:"IN",lat:41.72,lon:-86.51,unit:"GWh",status:"construction",app:"EV+ESS",cust:"자체(단독법인)",sop:"2H27E",alloc:{ESS:22},r:{2026:0,2027:22,2028:22},note:"GM JV 종료·GM 지분 49.99% 인수로 단독법인 전환(260811 공시). 전체 36G(4개 라인×9G) 중 2개 라인 ESS LFP 전환 = 20~24G, 중간값 22G 반영 [추정]. 잔여 2개 라인 용도 미정, 투자계획 미확정. 현재 외관공사 마무리·장비 반입 단계로 SOP 2H27E"},
+{co:"삼성SDI",id:"NewCarlisle_IN",cat:"cell",city:"New Carlisle",st:"IN",lat:41.72,lon:-86.51,unit:"GWh",status:"construction",app:"EV+ESS",cust:"자체(단독법인)",sop:"2H27E",alloc:{ESS:22},r:{2026:0,2027:22,2028:22},note:"GM JV 종료·GM 지분 49.99% 인수로 단독법인 전환(260811 공시). 전체 36G(4개 라인×9G) 중 2개 라인 ESS LFP 전환 = 20~24G, 중간값 22G 반영 [추정]. 잔여 2개 라인 용도 미정, 투자계획 미확정. 현재 외관공사 마무리·장비 반입 단계로 SOP 2H27E"},
 {co:"LG에너지솔루션",id:"MIH_Holland",cat:"cell",city:"Holland",st:"MI",lat:42.79,lon:-86.11,unit:"GWh",status:"operational",app:"ESS",cust:"ESS(유틸리티)",sop:"2022",alloc:{ESS:17},r:{2026:17,2027:17,2028:17},note:"ESS Only 17GWh. EV 라인 없음"},
 {co:"LG에너지솔루션",id:"MIL_Lansing",cat:"cell",city:"Lansing",st:"MI",lat:42.73,lon:-84.56,unit:"GWh",status:"ramping",app:"ESS+EV",cust:"Tesla,Toyota",sop:"1H26",alloc:{Tesla:15,Toyota:10},r:{2026:25,2027:25,2028:25},note:"ESS+EV 25GWh. Tesla·Toyota향"},
 {co:"LG에너지솔루션",id:"UC1_Ohio_GM",cat:"cell",city:"Warren",st:"OH",lat:41.24,lon:-80.77,unit:"GWh",status:"operational",app:"EV",cust:"GM Ultium",sop:"2022",alloc:{GM:40},r:{2026:40,2027:40,2028:40},note:"UC1 가용CAPA EV 40GWh(GM향). 2028까지 ESS 생산계획 없음 — 북미 EV 물량 UC1 통합, ESS는 UC2(스프링힐) 흡수. 260713 정정"},
