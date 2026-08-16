@@ -1,156 +1,156 @@
 {
   "type": "battery_patent_monitor",
-  "lastUpdated": "2026-08-09T23:21:19.319Z",
-  "weekOf": "2026-08-09",
+  "lastUpdated": "2026-08-16T23:11:05.385Z",
+  "weekOf": "2026-08-16",
   "description": "배터리·EV 특허 모니터링 — 주간 수집",
   "note": "⚠️ 자동 수집 결과입니다. 대시보드 반영 전 사용자 확인 필요.",
   "totalItems": 15,
   "companyStats": {
-    "BYD": 5,
+    "BYD": 2,
     "Other": 9,
-    "Panasonic": 1
+    "CATL": 3,
+    "Mercedes": 1
   },
   "techStats": {
-    "전고체": 7,
-    "양극재": 3,
-    "음극재": 1,
-    "기타": 3,
-    "리사이클링": 1
+    "전고체": 5,
+    "리사이클링": 4,
+    "기타": 5,
+    "충전": 1
   },
   "items": [
     {
-      "title": "BYD files six solid-state battery patents, eyes 2027 production with dual-electrolyte cathode cells - CarNewsChina.com",
-      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNUlgxM3Y1MlVfYmVYdVNBbF80Vy11ZGtDVWN1X2p1X2FJeWlXdEFSRGFVOFFRNHcxNk9hRk1sYjFLTloyeHVUdVhxeXdqVC1OWDlUc2hNWmxveXBGSEpvcGpEcXZPdHJ3aV8xVGtyS19GSGFaSkxqb0cwR2dJWXJDUmNvUERUVXh3NUtscnlqbXhxODNtNDFLSFFvejBkc3REcHVpaS1HdEtOaEhPN1dFRjVIZXJoS1Rkc0pEc0hwM1BOUzV6RG1uem5mVk9qZHlH?oc=5",
-      "pubDate": "Thu, 06 Aug 2026 08:30:00 GMT",
-      "source": "CarNewsChina.com",
+      "title": "BYD Filed Six New Solid-State Battery Patents, But the Real Story Is Whether Two Rocks Actually Touch - Yahoo Autos",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPcHFWa3JldWFLR2FqUUlKaGpUa2xELWNqdm1xX2NxZVR5d1BweHNrZjJHZTRWRWFyQU9zcXdzQ3NDeU5ubktpUER2WEI3ZkJ1aTJCOXNzTHZTeFZKbVJCdjNEQWZ0ZzUxU2xIeEVqdVJSSjB0M1h0dXBUcnJqRGxaYVppMHRpZlhkeFdKSU95N1pQTWhXRUc4?oc=5",
+      "pubDate": "Mon, 10 Aug 2026 21:00:00 GMT",
+      "source": "Yahoo Autos",
       "company": "BYD",
       "tech": "전고체",
-      "score": 4
-    },
-    {
-      "title": "Altilium secures a patent for its EcoCathode battery recycling process - Charged EVs",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPWTlXZXU3OFVRa3FGZEdEc0o0ZnRHdG1wbm1NcGNlUHpVNjdWOERGc2YyOHZRTDZ0WjBqQ1Bya2tRcFUycDNIZzIyYVhQX1lQTVVwNkNIREE3NlhNeUxVTmQxZ0dQc3RMV2FhR3FMTk1rN242cW03MUJWc3pfNXNrcC02WjBiLTV4aTBtMDNUd2xwaDVxY3c1SlJ2VUhydnpuR2tzMTRB?oc=5",
-      "pubDate": "Thu, 06 Aug 2026 15:21:35 GMT",
-      "source": "Charged EVs",
-      "company": "Other",
-      "tech": "양극재",
       "score": 3
     },
     {
-      "title": "BYD files six more solid-state battery patents - electrive.com",
-      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNbzFuaHpJODdqN3oxYlFYbzdKZ1dRMWpzTkgyVS1UVEVLQ0kzdXUxUlJUWFd6R0d0WWh3WFZ2bFRhbTcwMnpoZTJzTHNwb0otOWpyYlFITGdhQTlENTJSLVY5cW5wUVhqZHNnLVBMMC1sSDY0cVRURzF3Sm5KTjEzWXlVNU9NbVNiRGM2ZA?oc=5",
-      "pubDate": "Fri, 07 Aug 2026 10:13:40 GMT",
-      "source": "electrive.com",
-      "company": "BYD",
-      "tech": "전고체",
-      "score": 2
-    },
-    {
-      "title": "BYD bets on dual-electrolyte solid-state battery tech, to start production next year - ArenaEV - ArenaEV",
-      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNLUhXdGd3WlJvQkVrSG5HbGszakpVRWhIVFFoMHRlZFdsX1J2NjFqQVduU1dCdE9uWWR0N2hCdE9vZFpIUmlKSGRMUWFaTVBjX1haeHpBZG1BNlYzbXA3SnR4ZlBVc1NYcUNEdnBWUjdvMGt4LVJiaHdVdkJQQTNKTUU4U0ZtUFBQZVRwSjVOUTdVeTTSAY8BQVVfeXFMUGV1MW5OdkN2ZEhEQmFydWNYcjhqU3B1Q1NON0psWnFVcF9ZR2VDMUo1TFlQbkNfdEM2TEh4N2NWaGtFbGltclZERDlsclg1eUtDdjZVekJwNmZfY3B1cTlkWUpSVlZjcFRLaWlXa0FsdWdHMHhFNW5xRllBODUtQkJMN19wWjJHQVN1WFVqQ3M?oc=5",
-      "pubDate": "Fri, 07 Aug 2026 10:12:02 GMT",
-      "source": "ArenaEV",
-      "company": "BYD",
-      "tech": "전고체",
-      "score": 2
-    },
-    {
-      "title": "Integrals Power to supply cathode material for UK project to develop LMFP battery technology - Charged EVs",
-      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOekh2Q1U0U1QwNVJVa2Y3NXRUUWNjaHNyX1lsbWo5MmtxSzNpcldlSFRQQWVTYVZWcmZGRHlJZ3IwRktWdTZ5eUtWa2htVlBON2pzdmI3YnB1aU96YjBOaFNqTUNWX0VlV3NONFFqOXJidGl6ZndINXF3N0Y4cEZBTkJxMTdDQkVyeGRldG5PdWF3dzExaXpQS0lzMjVYd3d6eTNiVnQwRDlDZG1YSG1qdnFtckM2VHB1QWVEY1NFdGdycHc?oc=5",
-      "pubDate": "Fri, 07 Aug 2026 14:01:41 GMT",
-      "source": "Charged EVs",
-      "company": "Other",
-      "tech": "양극재",
-      "score": 2
-    },
-    {
-      "title": "POSCO Future M to supply LFP cathode materials to major battery maker - Batteries News",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNcWRLVlBUWXRDYmRjX2pMWmdtbUNOb0tyblpHb2dTNmZOWGdWenRlWXdBOGs3OHZBWUEzMkJDSnVfc2poa1FFRno3NmVoRml4NzlwVjVNVW12VWR1bFc5WVkxOHVpbVNDb3pzdWVLblFFY2YxdmY2RWJMTDl0MHZlQVlQYlpkS1owaEVLeDZjX3BjQWkwMGFKY1BFcDI?oc=5",
-      "pubDate": "Sat, 08 Aug 2026 16:48:03 GMT",
-      "source": "Batteries News",
-      "company": "Other",
-      "tech": "양극재",
-      "score": 2
-    },
-    {
-      "title": "BYD Solid-State Battery Production to Begin in 2027: Dual-Electrolyte Design, 400 Wh/kg, and the Road to $70/kWh - Intelligent Living",
-      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE50M0tBUmE2Y3Y0YkF0RUFvRExQVUgySFl1Ui1WRGFQX25kM2ZHX1RkdHNxQTJlTFJha1otOWFFU3lfMVpWM25Zand5T2hISl9RcU1meloxZVB4MGxiMk1YcWtCOG9CQU5aX3RwTV9wY3BKNFJGRXRpT2tRcGZ1dw?oc=5",
-      "pubDate": "Sat, 08 Aug 2026 05:26:08 GMT",
-      "source": "Intelligent Living",
-      "company": "BYD",
-      "tech": "전고체",
-      "score": 2
-    },
-    {
-      "title": "Pure Lithium Receives Australian Patent for \"Lithium Metal Anode and Battery\" - Batteries News",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOdm8xVzlKZFgyclFqR3k0aDJudW0wYmxsWnUwVllJNkgyRmRhMjlTVmRjQ19vUVhjQ2MwU0U3SERiZnFBYmMyY3hvaWtrQmtjUkxFM2RzTVZ3OXl1MTY3TGo3UjR1UEJwRW02djNVWHhBMVU3SHZKUDFWcC10ZjFCOXhtcmpKanF6RlltV25CWDdaS3hiOC1IX3hCTkx5SlJnaWxpUA?oc=5",
-      "pubDate": "Sat, 08 Aug 2026 16:37:55 GMT",
-      "source": "Batteries News",
-      "company": "Other",
-      "tech": "음극재",
-      "score": 2
-    },
-    {
-      "title": "A prototype vehicle equipped with an all-solid-state battery carries a device to apply pressure to the battery｜ZERO - note",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBHbm43ZVBNaXRvVHFHbTd0VEt6NERobEg2a2hHa1ZQVVNBQV9DYWJnSjlTUTR3ZHhBOUZyWlFsb3FSRExUY05sTnVxQnhoa0g2ODFEN1dfaFFjTnc?oc=5",
-      "pubDate": "Wed, 05 Aug 2026 10:18:41 GMT",
-      "source": "note",
-      "company": "Other",
-      "tech": "전고체",
-      "score": 2
-    },
-    {
-      "title": "AI boom raises patent stakes for Korean chipmakers - The Korea Herald",
-      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBxZHFMYUZqNjZWdEV5RHlWUXIydEU5Mlo5M1FhTGRiTnptVExkUVlKTXBITjg4SUFqWVpwT0JzOFZGVk9oemFZajgzZFNNOF9ZZnJnQnZEQQ?oc=5",
-      "pubDate": "Tue, 04 Aug 2026 02:25:56 GMT",
-      "source": "The Korea Herald",
-      "company": "Other",
-      "tech": "기타",
-      "score": 2
-    },
-    {
-      "title": "BYD files six more solid-state battery patents, targets 2027 trial production - EVs & Beyond",
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPLW5lZ3o4Zmh5QlBUeGVZRVJReU9USUMwbzFCbVExSTFnNDZ3YjdyamtlU0dRRlVOMXdpMGd6enh6bTlGOFU1X3VuTVZLNHd6allBLVZGSHFrM1pGcXBJZkZlVlgzbTY3cWVFWGFQV2l4WnlqNm5rM01DTmdFbDBEX1JmcUowekUy?oc=5",
-      "pubDate": "Fri, 07 Aug 2026 19:40:00 GMT",
-      "source": "EVs & Beyond",
-      "company": "BYD",
-      "tech": "전고체",
-      "score": 2
-    },
-    {
-      "title": "Resources, environment ministries team up to promote battery recycling industry - koreajoongangdaily.com",
-      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOUDZxeUw1Q0o2ZDhVZVByVDJsSFc2S3JGN3FYTFZNOERvR1hJTTlDbmhMN3A5WHhVS0N2VENHS3BXU0lSN2NVbEQwbDZqVWNRazhxWWRzMjBDbzk2RWhOY21oWFlxUnAzdXZyNVZZTnotcVM5cEtTWkFlV2gwczBkS1dEek9HOXVmbXB6RnFBRjBMWHRDa0VwZ29EeHJTVnc3dTZwaFZEcEE2SXJSNm5TSW5YLVRRd1ZOdEZSOFlTUWJNRzBieEQ3OVlkMA?oc=5",
-      "pubDate": "Fri, 07 Aug 2026 05:53:17 GMT",
-      "source": "koreajoongangdaily.com",
+      "title": "MiniMines Cleantech secures Indian patent for hybrid hydrometallurgy battery recycling technology - pv magazine India",
+      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOWktjc1NUMG5wSDdJRnNwRFZnaVpkNkEzVUJVUWFRZFdpUjdFMFB4eGFFQ0kzalhoWjNBX3hubE9CbUJ3UHY3blBnYTdOME8xZ0sxZWF4eE5KY1NGVjlRTjNLWXA0M19rcHJsR21aQ0dIX0dRLUZaV0ZOVlNUTERmd3I0cm1FWTJWUUEzb2ZNbXB1OEUzZ2ZoYjVyMzg1eEVRYnpobFQ5WHNacHRsX0pnOWJ2VXZXZHA1NU1WODA5R0swYkU3MUNIZnFPTHA2cThmLW8zaXFETjY3bkU?oc=5",
+      "pubDate": "Wed, 12 Aug 2026 13:35:40 GMT",
+      "source": "pv magazine India",
       "company": "Other",
       "tech": "리사이클링",
+      "score": 3
+    },
+    {
+      "title": "MiniMines Secures Indian Patent for Hybrid Hydrometallurgy Technology for Lithium Ion Battery Recycling - Energetica India Magazine",
+      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOVmFreUhMOFIwNGs2NkkwMGlPeXhrOHhvak14ckhEWGxtdHZkb1RrMFFLcXd3clNUQ1hNQktvcGFDVWg2ajY0b2h6all4VjNTQUlGOHpvNk5EdVVjb2k2M0VzcnpzaXVaeS1nS1ExRGdkbGdiN2RfbzFpOGlOOXd0XzUyVVo4SEw0X2xIRXVqYjhQSkxFNkRJaGdEWmV5N2doNmJtakt0bjFub2x4aVBYTkdiTXktc0Z4RVdKYTFXLUJFLTZOZUE4aUlKNXRvX0R0dEJTWk4zbVE?oc=5",
+      "pubDate": "Thu, 13 Aug 2026 10:44:38 GMT",
+      "source": "Energetica India Magazine",
+      "company": "Other",
+      "tech": "리사이클링",
+      "score": 3
+    },
+    {
+      "title": "BYD Secures Six Patents for Solid State Battery Technology - Fuel Cells Works",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNWFl0LVlSbUpScUhZUFZYWDFVcmJEV1J5dUpYZ1lqR1hVdkdBaUFFVjRpRHoyVjVOMFZEaG8zN2pvSjIyQ1hzVm9MeGpMamVqZUFNZVZ2Y0luaWVBMEhYdzNzVU1KSnpHdlo3S0VxU0c1UzJoTW5KX3VtYXpHY0lNOU5feG5Qeml1M3ZoMUNtYlljeVlzdFltSllVWTJtaHlSSFZZNlQ5RXZZS3QtVy1vNlhsdXQzWTJybVlZRVdpbkQ?oc=5",
+      "pubDate": "Mon, 10 Aug 2026 12:20:00 GMT",
+      "source": "Fuel Cells Works",
+      "company": "BYD",
+      "tech": "전고체",
+      "score": 2
+    },
+    {
+      "title": "CATL’s 500 Wh/kg Solid-State Battery: Sulfide Patent, 2027 Pilot Production, and What It Means for EVs - Intelligent Living",
+      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1kRXZYUzd3MXN4a0RPSG43cGlNNW9vcE0tVjhyc3FDVzhLWmY2bVEwaWNwNjJWem1PQ3NTNWpzUVBVTEZVZVdlM09fd01sbE5kbE9vdHp2YVJRUzQ4Rk81MkxWZi1UdnV0a2Fja2MzWl9naFFkbGstWXphcEw?oc=5",
+      "pubDate": "Sun, 16 Aug 2026 10:38:00 GMT",
+      "source": "Intelligent Living",
+      "company": "CATL",
+      "tech": "전고체",
+      "score": 2
+    },
+    {
+      "title": "Opinion Cobalt supply: why battery recycling patents matter - Mining Technology",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNMF9ETEpSaVIxaTVLRGhEM1ZKZ0xpZmFGckluVzdfRTNyc3lPazBrejh1WWNBcDEzT1ZHQ1NVX2JRV1g0ajZ3MXJvaVBoRGFVQXBZVmVFQTZSMTc2WGhfQ0E1djFfeGFrb2VwZG54dUtRMFpma2xSclBDSUl4WlBzNzdERzJJdEdmelRqSk9nSlJtNkdScVRFaw?oc=5",
+      "pubDate": "Tue, 11 Aug 2026 13:33:20 GMT",
+      "source": "Mining Technology",
+      "company": "Other",
+      "tech": "리사이클링",
+      "score": 2
+    },
+    {
+      "title": "MiniMines Secures Patent for Hybrid Battery Recycling Tech - mvapulse.com",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNU2NWMEYxX2tYMXI3ZlprVUFFdHBCY2IwaC12STRRckFHdEhTbTY4ZHRjZnk5R2JWdThxN1JnNUQ5dFpfV3BjLUNvWWNaNWpaamktc0RoN29zM3Mya3hsa0VuVTJaWmlvRERqUV9UYzFNLTl4NVo1ZUl1RVBraEZfcEpjcVZHLU1JaE80Nw?oc=5",
+      "pubDate": "Wed, 12 Aug 2026 13:34:16 GMT",
+      "source": "mvapulse.com",
+      "company": "Other",
+      "tech": "리사이클링",
+      "score": 2
+    },
+    {
+      "title": "Bergen Carbon Q2 2026 slides: cash burn cut 33%, patent milestone reached - Investing.com",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQWEN5SFFTSlZjMWFkSUUyeERDZ1E0b1BYcWNjZUY2Z3lGSGlaWE5DUVFUNDZsRFZIOFdaSDQxTWdkcElMZU9wd2hWbC1ydm9iVlY1ejRpSGJENU8ydDlmeTJPdV9pbUtJUjNMMTluYmRxMW95TDBkeE5MWmFxYUNKU3lYTGxMZWdlck03X0lDY0VqbFgtZXRmZFJtUXhtcHZQZW5EVG85U3NOTUNNQWJtSHc2VjlhOTNIVWJ6NzBWbkxnbWhBSnc?oc=5",
+      "pubDate": "Wed, 12 Aug 2026 07:11:34 GMT",
+      "source": "Investing.com",
+      "company": "Other",
+      "tech": "기타",
       "score": 1
     },
     {
-      "title": "Donut Lab Remains Defiant About Its Solid-State Battery, Saying Proof Is Coming Soon - InsideEVs",
-      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQM1hBdE9rTVFyTEVVWU9aMm5mTEJ3UWxINXFFeEYwZlZVbGt5RmoyY3BaRXNYV1htd09PUmRWcDVLWXE4RHJWLXhRcmhwc3Vtczhlek5BbzJwWWlscjEtQlg4WjczNENISWFaeXJKVFpoTWpVS1pNdmFhemhGMThDcA?oc=5",
-      "pubDate": "Sun, 09 Aug 2026 01:15:39 GMT",
-      "source": "InsideEVs",
+      "title": "2 Procopio IP Partners named to 2026 IAM Strategy 300 Global Leaders List - procopio.com",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1hSDQwZG55TVJfeHJnVHBSaHV3R0hzc2NfaE14S1hoYUdTS0tLVkg0NjJrbGF3VE4tZmdDZ0RubWRvNTFPZEtXbFFtZThQclBSVXpFc1lLQ0NhaldFaS00Y1gwZy0tdw?oc=5",
+      "pubDate": "Wed, 12 Aug 2026 22:14:07 GMT",
+      "source": "procopio.com",
       "company": "Other",
+      "tech": "기타",
+      "score": 1
+    },
+    {
+      "title": "European Patent Office revokes Hanwha’s long-disputed passivation patent - pv-magazine.com",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOVW9vU0l3T3JhLXdkYWdwajg5WDRkNXo1WGZ6N1hrT1JpNFBsYTBwbExYaGRCYlZYVUtURkRubDRwTFZ6THZPM2VZUEhmTk9SYURTd2ctYmYtQktVcmN6emxNenYxTU1KLVV4aC1hNmVDa29aNzFXUC1ObXlKVEx0UnJkY2tCYXJydDBLR2RkVWZfLWtqb3NkVDg2bktOOWdtMVBRRDd1eUpyR2RwTTR5Qg?oc=5",
+      "pubDate": "Wed, 12 Aug 2026 06:28:31 GMT",
+      "source": "pv-magazine.com",
+      "company": "Other",
+      "tech": "기타",
+      "score": 1
+    },
+    {
+      "title": "Battery X Metals Appoints Lithium-Ion Battery and Electric Vehicle Entrepreneur William Fan as President to Advance Development of Its Patent-Pending Lithium-Ion Battery Rebalancing Technology Platform and Corporate Growth Initiatives - ACCESS Newswire",
+      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQMXQtb2JQSlQ2eko4bGswZE5sR0dHVk54NzA0anQwdFEyR3pSWkFrbTEyOVdfMUZPN2VzNW9UWW5oSWlGS0JwMUlncFZpVlNadUQ3STFMbUR2QVcyOExDTXlPRDY4U2VzYXZzOEd5WDl3RWc5YWdReWwwcGlpRVhPX1ZCQXlXZXpMWkI3S0IwN21uUVZUMVhMbFkyd0JrbDZoWUJGeW5CT2xpTTI0blNwbEtjbjl4Ymw0YTdKeEU3ZUg2dTNmTlJ1MDhLU3k5cWVobWMxa3F3R3FsWU1LOGVLcmJjZTY?oc=5",
+      "pubDate": "Thu, 13 Aug 2026 07:09:09 GMT",
+      "source": "ACCESS Newswire",
+      "company": "Other",
+      "tech": "기타",
+      "score": 1
+    },
+    {
+      "title": "EV, Battery & Charging News: BorgWarner, ChargePoint, Merecedes-Benz, BTC Power, Pure Lithium & PowerFlex - AUTO Connected Car News",
+      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNQ2xMRGhOU3JSczZwVGpmcUJXbnVFNklzTGF3SHpselc3SE1JMEV1TnRHTEh1c1BqX3ZRWjlpQmVNeVdlWm83SWtleXhIRHluMzVzYXdQbjhyUE1vdE9WSUpvX2ZxelNBbmk0U015WWVrSXVSN2t2YTVUOHhjSjM4dC04LV9LRjdpLXN0d1FzSTQweHQ1NU5FdUlqLWpacEs4ZFdacnRITDViTmdFMTNFRmZQcE1fRUpPZFktVnJBVnNDX3FVWFExOVRFcHhHOVBrdXM0?oc=5",
+      "pubDate": "Sun, 09 Aug 2026 23:27:38 GMT",
+      "source": "AUTO Connected Car News",
+      "company": "Mercedes",
+      "tech": "충전",
+      "score": 1
+    },
+    {
+      "title": "NLST Stock Rallies After ITC Patent Action Against MU, SMCI, HPE – Roth Capital Sees Settlement Upside - Yahoo Finance",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOdUhmdVA0M0MwV2Z2ZkxKOWhtTzdTUnlIdDA3aUhCRm9mRW9BaXlmdThvcDFZODQ3U3VoS2JQTW8tcnJES3B4UU5UMUdHcEpoVW5OUDBNallYR212MktqbDZ5eUVPZHlBZUlzYkJJQno0RU1fS01SWWQ5cGFkLTlrVlAwbGFCaU9QVUNXQzhlUkFFc09VTDdYbHZn?oc=5",
+      "pubDate": "Wed, 12 Aug 2026 16:54:02 GMT",
+      "source": "Yahoo Finance",
+      "company": "Other",
+      "tech": "기타",
+      "score": 1
+    },
+    {
+      "title": "CATL targets 2027 start for solid-state battery pilot production - electrive.com",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOd0hLdHB5UEY3MEdTd1B2VjFBOHVVRWhidUMydl9ocXI0VHJ2ZXZ1dmlGYkdMMnQ4WU1kSHBHTW54eVNZc2NYZ2VPYXA4Zi15cUNHYlNGRGV2dF9qVXUwVXhfMV9JMXljSFpFRzk2TnhUV1RYcDAxUzZRRENIVm9DazVXUFE0SVNjWDRRalZnd0JDTm9FV0hNdnJqT2s4QWdjTkRIUw?oc=5",
+      "pubDate": "Tue, 11 Aug 2026 08:00:00 GMT",
+      "source": "electrive.com",
+      "company": "CATL",
       "tech": "전고체",
       "score": 1
     },
     {
-      "title": "RED's Compressed RAW Patent Invalidated in Japan – Nikon Loses Defending the Patent It Once Fought - CineD",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQdlRzRzNPMC1oWGsyREd4a3o0LThoM2U3TkN2T2lXeXUteW5zUm1EcFJOc3FjUHhHYm45UnNxTTdKV0pfeTdELXdWN3MzY0pCY1hfSTFTZkNicldCRHBNVmRiYmZzVEd4bmVfcy1Gem9nWF9RMElqT1ZYRWYyTWhIMm02OTYwRWFQZlpieG83aTJJaHhOWlhrTmdNWG9vN1k5TDFOSXRndDBfdkd1U2d1Wm1PblNOd1ZCN3c?oc=5",
-      "pubDate": "Fri, 07 Aug 2026 21:25:11 GMT",
-      "source": "CineD",
-      "company": "Other",
-      "tech": "기타",
-      "score": 1
-    },
-    {
-      "title": "Panasonic did what Apple, Sony and Nikon couldn’t: overturn a Red Raw video patent - Yahoo Tech",
-      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNR28tbnlCMlRiYW1hRGJrUzFyQUg4LU1VWkU1ZE1VaE5IMkR5VFFvNUdaVlNvRU9RR2FLelFVM0pueDBDLTZubGplTGNBaFB0enpCeFQ0M0ZnR2ZFUVJHM0RNM0RuVE9zYVlhZ2JBcVZDX1F5SzJBcVlJeGdnSWF0cmdBM1U1SVI1MWdWa1RB?oc=5",
-      "pubDate": "Thu, 06 Aug 2026 23:01:48 GMT",
-      "source": "Yahoo Tech",
-      "company": "Panasonic",
-      "tech": "기타",
+      "title": "CATL and BYD Both Target 2027 for Solid-State Batteries — But Mass Production Is Still Years Away - Gagadget.com",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPalJRdlh1ZE5fWHJsYXZSZXVESmlfNGp4Mms5cEFwNE5QcEhXUHpmdVIwaGt3bHJRX1pzbEp5T1hRcEswYmUtanI3aG5MdWtabl9raC0zbDJvQ0lFejE1bjNVSGRUQmxDOXN5N0NvTVpzMk1kazNEaWZtLUpjNDlwMG85dWN3eTZnS01EcGJSUnFxbHJIZEc5a09QelZCd2NZSDdXdHJQQ2lyMkJkTWNmVnpESFhtNVM5dTliS0t3UktoSldQOFHSAcsBQVVfeXFMTmRnUWlaUGttMGlPMktBaVZScVJjUGxDZDh2M1hlTTFPNmc5ZkVRalJVRjZsdENlUkFjN1dIU3JyTGpuY0FUVi1QSkhIS1l1YWtiRU1kVVJXRnNsajlSczZzVlB4WnJob0VyNVE0OF9nSnMtSVBEY0h3bWcySjBDM0dFQjN6R3BmNUFpbm1peWJ6a1dlNDNfU21XQW1tUlpRUTBUY01TLXdGV0p2WUZKbFJtSFNpckIxNVJ1OWpNcnFtM3VyTkVIMWdaYVU?oc=5",
+      "pubDate": "Mon, 10 Aug 2026 14:18:38 GMT",
+      "source": "Gagadget.com",
+      "company": "CATL",
+      "tech": "전고체",
       "score": 1
     }
   ]
