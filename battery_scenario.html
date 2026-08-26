@@ -928,6 +928,163 @@ main{flex:1;min-width:0;max-width:1100px;padding:24px 0 60px 28px}
     </div>
   </section>
 
+  <!-- 🔋 BBU 레이어 · AI DC 랙단위 전력보호 -->
+  <section class="guide-card" style="border-left:3px solid #5B4FE9;padding:14px 18px;margin-bottom:16px">
+    <div style="font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:10px">🔋 BBU 레이어 · AI 데이터센터 랙단위 전력보호 (Battery Backup Unit)</div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:10px">
+      <div style="background:var(--bg-soft);border-radius:8px;padding:10px 14px;min-width:140px;border:2px solid #5B4FE9"><div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase">BBU 시장 성장률</div><div style="font-family:var(--mono);font-size:18px;font-weight:700;color:#5B4FE9">CAGR ~30%</div><div style="font-size:10px;color:var(--ink-3)">향후 7개년 · 미국 AI DC 신규 설치와 비례</div></div>
+      <div style="background:var(--bg-soft);border-radius:8px;padding:10px 14px;min-width:140px"><div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase">삼성SDI · 18650 BBU M/S</div><div style="font-family:var(--mono);font-size:18px;font-weight:700">50% 이상</div><div style="font-size:10px;color:var(--ink-3)">북미 BBU = 삼성SDI·Panasonic 과점</div></div>
+      <div style="background:var(--bg-soft);border-radius:8px;padding:10px 14px;min-width:140px"><div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase">차세대 랙 전력밀도</div><div style="font-family:var(--mono);font-size:18px;font-weight:700">1MW</div><div style="font-size:10px;color:var(--ink-3)">5~10kW → 120kW → 1MW(추정)</div></div>
+      <div style="background:var(--bg-soft);border-radius:8px;padding:10px 14px;min-width:140px"><div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase">정전 손실비용</div><div style="font-family:var(--mono);font-size:18px;font-weight:700">$8,851<span style="font-size:12px;color:var(--ink-3)">/분</span></div><div style="font-size:10px;color:var(--ink-3)">건당 평균 $740,357 (2016년 기준)</div></div>
+    </div>
+    <div style="font-size:11px;color:var(--ink-2);line-height:1.7">
+      <strong style="color:#5B4FE9">구조 변화:</strong> 랙 전력밀도가 올라가면서 <b>"기존 중앙 UPS에 집중됐던 백업 및 저장 기능이 랙과 데이터센터 단위로 분산되는 방향"</b>. 백업 계층이 중앙 1계층에서 <b>랙(BBU)·전원실(UPS)·데이터센터(BESS) 3계층</b>으로 쪼개지며 BBU가 신규 셀 수요층으로 추가됨. 현재까지 BBU향은 <b>전량 18650 원형 셀</b>이며, 삼성SDI가 차세대 <b>21700 Tabless</b> 제품을 공개·출시했음.
+    </div>
+
+    <!-- 전력보호 3계층 -->
+    <div style="margin-top:12px;padding-top:10px;border-top:1px dashed var(--line)">
+      <div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">전력보호 3계층 — 설치단위별 역할 분담</div>
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+      <table class="data-table" style="min-width:520px;font-size:11px">
+      <thead><tr><th style="text-align:left">계층</th><th style="text-align:left">설치 단위</th><th style="text-align:left">역할</th></tr></thead>
+      <tbody>
+      <tr><td><span style="color:#5B4FE9;font-weight:700">BBU</span> <span style="color:var(--ink-3);font-size:10px">Battery Backup Unit</span></td><td>서버 랙 / 개별 서버</td><td>랙별 전원 분산 공급 · 순간 부하변동·단기 전원이상 대응</td></tr>
+      <tr><td>UPS</td><td>별도 전원실</td><td>중앙 관리 백업</td></tr>
+      <tr><td>BESS</td><td>데이터센터 단위</td><td>대규모 부하변동 · 계통 완충</td></tr>
+      </tbody>
+      </table>
+      </div>
+      <div style="font-size:9px;color:var(--ink-3);margin-top:4px">출처: Panasonic Energy</div>
+    </div>
+
+    <!-- 랙 전력밀도 & 800VDC 전환 -->
+    <div style="margin-top:12px;padding-top:10px;border-top:1px dashed var(--line)">
+      <div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">랙 전력밀도 상승 → 800VDC 전환 (NVIDIA)</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;font-size:10.5px;color:var(--ink-2);margin-bottom:8px">
+        <div style="background:var(--bg-soft);border-radius:6px;padding:7px 11px"><b>5~10kW</b> <span style="color:var(--ink-3)">과거 일반 서버랙</span></div>
+        <span style="color:var(--ink-3);font-family:var(--mono)">→</span>
+        <div style="background:var(--bg-soft);border-radius:6px;padding:7px 11px"><b>20~30kW 이상</b> <span style="color:var(--ink-3)">AI/HPC 랙</span></div>
+        <span style="color:var(--ink-3);font-family:var(--mono)">→</span>
+        <div style="background:var(--bg-soft);border-radius:6px;padding:7px 11px"><b>120kW 이상</b> <span style="color:var(--ink-3)">AI 랙스케일(GB200 NVL72)</span></div>
+        <span style="color:var(--ink-3);font-family:var(--mono)">→</span>
+        <div style="background:var(--bg-soft);border-radius:6px;padding:7px 11px;border:2px solid #5B4FE9"><b style="color:#5B4FE9">1MW</b> <span style="color:var(--ink-3)">차세대 랙(추정)</span></div>
+      </div>
+      <div style="font-size:10px;color:var(--ink-3);line-height:1.6;margin-bottom:8px">참고 로드맵 — 세대별 Hopper 30kW → Blackwell 100kW → Rubin 200~300kW → Feynman 1MW / 제품별 DGX H100 40.8kW → GB300 NVL72 140kW <span>(원문 그림 표기 출처: Panasonic Energy)</span></div>
+      <div style="font-size:11px;color:var(--ink-2);line-height:1.7;margin-bottom:8px">
+        <strong style="color:#5B4FE9">왜 800VDC인가:</strong> 기존 <b>415VAC 다단계 변환</b> 구조는 랙 전력이 커질수록 전류·전력손실·배선부담이 급증 → NVIDIA는 <b>AC/DC 변환 지점을 랙 외부로 옮기고 800VDC를 랙까지 직접 공급</b>하는 구조를 제시. 이 아키텍처에서 <b>랙 인근 = Energy Storage</b>, <b>데이터센터 전력망 = BESS</b>로 배치됨.
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px">
+        <div style="background:var(--bg-soft);border-radius:8px;padding:10px 12px;border-left:3px solid #5B4FE9">
+          <div style="font-family:var(--mono);font-size:10px;font-weight:700;color:#5B4FE9;margin-bottom:4px">① 2026년 하반기</div>
+          <div style="font-size:10.5px;color:var(--ink-2);line-height:1.55">기존 AC 인프라에 <b>800VDC Power Rack 추가</b> 방식으로 초기 도입</div>
+        </div>
+        <div style="background:var(--bg-soft);border-radius:8px;padding:10px 12px;border-left:3px solid #5B4FE9">
+          <div style="font-family:var(--mono);font-size:10px;font-weight:700;color:#5B4FE9;margin-bottom:4px">② 2027년</div>
+          <div style="font-size:10.5px;color:var(--ink-2);line-height:1.55"><b>Rubin Ultra 기반 차세대 AI 랙</b>부터 본격 적용 확대</div>
+        </div>
+        <div style="background:var(--bg-soft);border-radius:8px;padding:10px 12px;border-left:3px solid #5B4FE9">
+          <div style="font-family:var(--mono);font-size:10px;font-weight:700;color:#5B4FE9;margin-bottom:4px">③ 장기</div>
+          <div style="font-size:10.5px;color:var(--ink-2);line-height:1.55">중전압(MV) 단계에서 <b>800VDC로 직접 변환</b></div>
+        </div>
+      </div>
+      <div style="font-size:10px;color:var(--ink-2);line-height:1.6;margin-top:8px;background:var(--bg-soft);border-radius:6px;padding:8px 11px">↔ 인접 「🔌 NVIDIA 800V DC 아키텍처 · 루빈울트라 BESS 수요」 카드는 같은 전환의 <b>BESS 사이징 축</b>(AI팩토리 136MW · 200~300MWh)을 다룸 — 이 카드는 그 앞단인 <b>랙 단위 BBU 레이어와 AC→DC 아키텍처 이행</b>을 다루므로 두 카드를 함께 볼 것.</div>
+      <div style="font-size:9px;color:var(--ink-3);margin-top:6px">출처: NVIDIA</div>
+    </div>
+
+    <!-- 용도별 글로벌 데이터센터 전력 수요 전망 -->
+    <div style="margin-top:12px;padding-top:10px;border-top:1px dashed var(--line)">
+      <div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">용도별 글로벌 데이터센터 전력 수요 전망 · 2025~2029E (McKinsey)</div>
+      <div class="legend" style="font-size:10px;margin-bottom:6px">
+        <span><i style="background:#8895A7"></i>Non-AI</span>
+        <span><i style="background:#2E9BE6"></i>AI Inference</span>
+        <span><i style="background:#6C5CE7"></i>AI Training</span>
+        <span><i style="background:#E53E3E;border-radius:50%"></i>AI 전력수요 비중 (우축)</span>
+      </div>
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+      <svg viewBox="0 0 720 320" preserveAspectRatio="xMidYMid meet" role="img" aria-label="용도별 글로벌 데이터센터 전력 수요 전망 적층 막대 차트" style="width:100%;min-width:560px;height:auto;display:block;font-family:var(--mono)">
+        <text x="56" y="14" style="fill:var(--ink-3);font-size:9px">AI 전력수요 비중 (우축, %)</text>
+        <line x1="56" y1="95" x2="660" y2="95" style="stroke:var(--line);stroke-width:1;stroke-dasharray:3 3"></line>
+        <line x1="56" y1="65" x2="660" y2="65" style="stroke:var(--line);stroke-width:1;stroke-dasharray:3 3"></line>
+        <line x1="56" y1="35" x2="660" y2="35" style="stroke:var(--line);stroke-width:1;stroke-dasharray:3 3"></line>
+        <text x="666" y="98" style="fill:var(--ink-3);font-size:9px">50%</text>
+        <text x="666" y="68" style="fill:var(--ink-3);font-size:9px">60%</text>
+        <text x="666" y="38" style="fill:var(--ink-3);font-size:9px">70%</text>
+        <polyline points="116,83 237,62 358,50 479,44 600,38" fill="none" style="stroke:var(--bg-card);stroke-width:5;stroke-linejoin:round;opacity:.75"></polyline>
+        <polyline points="116,83 237,62 358,50 479,44 600,38" fill="none" style="stroke:#E53E3E;stroke-width:2;stroke-linejoin:round"></polyline>
+        <circle cx="116" cy="83" r="3.2" style="fill:#E53E3E"></circle>
+        <circle cx="237" cy="62" r="3.2" style="fill:#E53E3E"></circle>
+        <circle cx="358" cy="50" r="3.2" style="fill:#E53E3E"></circle>
+        <circle cx="479" cy="44" r="3.2" style="fill:#E53E3E"></circle>
+        <circle cx="600" cy="38" r="3.2" style="fill:#E53E3E"></circle>
+        <text x="116" y="75" text-anchor="middle" style="fill:#E53E3E;font-size:9.5px;font-weight:700">~54%</text>
+        <text x="237" y="54" text-anchor="middle" style="fill:#E53E3E;font-size:9.5px;font-weight:700">~61%</text>
+        <text x="358" y="42" text-anchor="middle" style="fill:#E53E3E;font-size:9.5px;font-weight:700">~65%</text>
+        <text x="479" y="36" text-anchor="middle" style="fill:#E53E3E;font-size:9.5px;font-weight:700">~67%</text>
+        <text x="600" y="30" text-anchor="middle" style="fill:#E53E3E;font-size:9.5px;font-weight:700">~69%</text>
+        <text x="56" y="106" style="fill:var(--ink-3);font-size:9px">(GWh) · 원문 축 라벨 그대로</text>
+        <line x1="56" y1="110" x2="660" y2="110" style="stroke:var(--line);stroke-width:1"></line>
+        <line x1="56" y1="155" x2="660" y2="155" style="stroke:var(--line);stroke-width:1"></line>
+        <line x1="56" y1="200" x2="660" y2="200" style="stroke:var(--line);stroke-width:1"></line>
+        <line x1="56" y1="245" x2="660" y2="245" style="stroke:var(--line);stroke-width:1"></line>
+        <line x1="56" y1="290" x2="660" y2="290" style="stroke:var(--line-s);stroke-width:1.5"></line>
+        <text x="48" y="113" text-anchor="end" style="fill:var(--ink-3);font-size:9px">200</text>
+        <text x="48" y="158" text-anchor="end" style="fill:var(--ink-3);font-size:9px">150</text>
+        <text x="48" y="203" text-anchor="end" style="fill:var(--ink-3);font-size:9px">100</text>
+        <text x="48" y="248" text-anchor="end" style="fill:var(--ink-3);font-size:9px">50</text>
+        <text x="48" y="293" text-anchor="end" style="fill:var(--ink-3);font-size:9px">0</text>
+        <rect x="88" y="254.9" width="56" height="35.1" style="fill:#8895A7"></rect>
+        <rect x="88" y="237.8" width="56" height="17.1" style="fill:#2E9BE6"></rect>
+        <rect x="88" y="215.3" width="56" height="22.5" style="fill:#6C5CE7"></rect>
+        <text x="116" y="208" text-anchor="middle" style="fill:var(--ink);font-size:10px;font-weight:700">~83</text>
+        <rect x="209" y="253.1" width="56" height="36.9" style="fill:#8895A7"></rect>
+        <rect x="209" y="227.9" width="56" height="25.2" style="fill:#2E9BE6"></rect>
+        <rect x="209" y="197.3" width="56" height="30.6" style="fill:#6C5CE7"></rect>
+        <text x="237" y="190" text-anchor="middle" style="fill:var(--ink);font-size:10px;font-weight:700">~103</text>
+        <rect x="330" y="249.5" width="56" height="40.5" style="fill:#8895A7"></rect>
+        <rect x="330" y="209.9" width="56" height="39.6" style="fill:#2E9BE6"></rect>
+        <rect x="330" y="173.9" width="56" height="36" style="fill:#6C5CE7"></rect>
+        <text x="358" y="167" text-anchor="middle" style="fill:var(--ink);font-size:10px;font-weight:700">~129</text>
+        <rect x="451" y="244.1" width="56" height="45.9" style="fill:#8895A7"></rect>
+        <rect x="451" y="195.5" width="56" height="48.6" style="fill:#2E9BE6"></rect>
+        <rect x="451" y="152.3" width="56" height="43.2" style="fill:#6C5CE7"></rect>
+        <text x="479" y="145" text-anchor="middle" style="fill:var(--ink);font-size:10px;font-weight:700">~153</text>
+        <rect x="572" y="240.5" width="56" height="49.5" style="fill:#8895A7"></rect>
+        <rect x="572" y="174.8" width="56" height="65.7" style="fill:#2E9BE6"></rect>
+        <rect x="572" y="128" width="56" height="46.8" style="fill:#6C5CE7"></rect>
+        <text x="600" y="121" text-anchor="middle" style="fill:var(--ink);font-size:10px;font-weight:700">~180</text>
+        <text x="116" y="306" text-anchor="middle" style="fill:var(--ink-2);font-size:10px">2025</text>
+        <text x="237" y="306" text-anchor="middle" style="fill:var(--ink-2);font-size:10px">2026E</text>
+        <text x="358" y="306" text-anchor="middle" style="fill:var(--ink-2);font-size:10px">2027E</text>
+        <text x="479" y="306" text-anchor="middle" style="fill:var(--ink-2);font-size:10px">2028E</text>
+        <text x="600" y="306" text-anchor="middle" style="fill:var(--ink-2);font-size:10px">2029E</text>
+      </svg>
+      </div>
+      <div style="font-size:9px;color:var(--ink-3);line-height:1.6;margin-top:6px">
+        ※ 원문 그래프에 데이터 라벨이 없어 <b>전량 눈대중 근사치(~)</b> — 성분합과 AI 비중선이 상호 정합함은 확인.<br>
+        ※ 축 라벨은 원문 그대로 <b>(GWh)</b>이나, 값의 크기로 볼 때 전력 <b>용량(GW) 계열</b>로 추정됨 — 단위 해석에 유의하고 다른 표의 GWh 값과 합산하지 말 것.<br>
+        출처: McKinsey
+      </div>
+    </div>
+
+    <!-- 정전 손실비용 -->
+    <div style="margin-top:12px;padding-top:10px;border-top:1px dashed var(--line)">
+      <div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">정전 손실비용 — 백업 계층 확충의 배경</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;font-size:10.5px;color:var(--ink-2);margin-bottom:6px">
+        <div style="background:var(--bg-soft);border-radius:6px;padding:8px 12px"><b>1분당</b> $8,851 · <b>건당 평균</b> $740,357 <span style="color:var(--ink-3)">(2016년 기준)</span></div>
+        <div style="background:var(--bg-soft);border-radius:6px;padding:8px 12px"><b>2026년 기준</b> 건당 손실 $1M 초과 건수가 전체의 <span style="background:rgba(229,62,62,0.1);padding:1px 4px;border-radius:3px;font-weight:600">35% 초과</span> · $5M 초과도 <span style="background:rgba(229,62,62,0.1);padding:1px 4px;border-radius:3px;font-weight:600">10%</span></div>
+        <div style="background:var(--bg-soft);border-radius:6px;padding:8px 12px"><b>보험 담보한도</b> 하이퍼스케일러 대상 <span style="background:rgba(229,62,62,0.1);padding:1px 4px;border-radius:3px;font-weight:600">+167%</span> <span style="color:var(--ink-3)">확대(기존 DC 사업 대비)</span></div>
+      </div>
+      <div style="font-size:10.5px;color:var(--ink-2);line-height:1.6;background:var(--bg-soft);border-radius:6px;padding:8px 11px">
+        <b>규모별 손실:</b> 평균 DC 면적 <b>3.3천ft² → 50.0천ft²</b> 구간에서 정전 1회당 평균 손실 <b>~$0.3mn → ~$2.3mn</b>(해당 구간 추정 IT부하 ~3MW → ~20MW). 그림 판독 기반 근사치로 <b>~</b> 유지.
+      </div>
+      <div style="font-size:9px;color:var(--ink-3);margin-top:6px">출처: outagecost.com(분당·건당 손실) · Swiss Re(보험 담보한도) · University of Chicago(면적별 손실)</div>
+    </div>
+
+    <div style="font-size:11px;color:var(--ink-2);line-height:1.7;margin-top:10px">
+      <span style="color:var(--ink-3);font-size:10px">⚠ 이 카드의 BBU·McKinsey 데이터센터 전력 프레임은 위 「⚡ AI 데이터센터 전력 → BESS」 카드의 <b>IEA 415→945 TWh 프레임과 산정 기준·단위가 다른 별도 계열</b> — 같은 표·같은 문장에 섞어 인용하지 말 것. 노션 AIDC-BESS 원단위(GWh/GW) 리서치와도 프레임 혼합 금지.<br>출처: NVIDIA · Panasonic Energy · McKinsey · 삼성SDI · outagecost.com · Swiss Re · University of Chicago</span>
+    </div>
+  </section>
+
   <details class="guide-card toggle-box" style="border-left:3px solid #00A878;padding:14px 18px">
     <summary style="font-family:var(--mono);font-size:11px;color:#00A878;font-weight:700;cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px"><span style="font-size:11px;color:var(--ink-3);transition:transform .2s">▸</span> Update Log · 2026.08.07</summary>
     <div style="font-family:var(--mono);font-size:11px;color:var(--ink-2);letter-spacing:.04em;line-height:1.8;margin-top:10px">

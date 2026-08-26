@@ -40,7 +40,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 .card li::before{content:'▸ ';color:var(--accent)}
 
 /* SECTION NAV CARDS */
-.sec-nav{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:24px}
+.sec-nav{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;margin-bottom:24px}
 .sec-link{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px 14px;text-decoration:none;color:var(--text);transition:all .2s;cursor:pointer;text-align:center;position:relative;overflow:hidden}
 .sec-link:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.06)}
 .sec-link .ico{font-size:24px;margin-bottom:6px}
@@ -53,6 +53,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 .sec-link.s-si::after{background:var(--blue)}
 .sec-link.s-cathode::after{background:var(--purple)}
 .sec-link.s-sodium::after{background:#e97a00}
+.sec-link.s-tabless::after{background:#be185d}
 @media(max-width:768px){.sec-nav{grid-template-columns:repeat(3,1fr)}}
 
 /* FIGURES */
@@ -169,6 +170,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 <a href="#sec-si" class="sidebar-link" data-target="sec-si">실리콘 음극재</a>
 <a href="#sec-cathode" class="sidebar-link" data-target="sec-cathode">차세대 양극재</a>
 <a href="#sec-sodium" class="sidebar-link" data-target="sec-sodium">나트륨이온</a>
+<a href="#sec-tabless" class="sidebar-link" data-target="sec-tabless">원통형 Tabless</a>
 </aside>
 <main>
 <div class="app">
@@ -380,6 +382,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 <a href="#sec-si" class="sec-link s-si"><div class="ico">🔋</div><div class="lbl">실리콘 음극재</div><div class="sub">Silicon Anode<br>이론용량 11배</div></a>
 <a href="#sec-cathode" class="sec-link s-cathode"><div class="ico">⚗️</div><div class="lbl">차세대 양극재</div><div class="sub">Hi-Nickel · LMFP<br>단결정 NMC</div></a>
 <a href="#sec-sodium" class="sec-link s-sodium"><div class="ico">🧂</div><div class="lbl">나트륨이온</div><div class="sub">Sodium-ion Battery<br>LFP 대체·ESS</div></a>
+<a href="#sec-tabless" class="sec-link s-tabless"><div class="ico">🔌</div><div class="lbl">원통형 Tabless</div><div class="sub">Tabless Cylindrical<br>18650 → 21700</div></a>
 </div>
 
 <!-- ══════════════════════════════════════════════ -->
@@ -1102,6 +1105,114 @@ SpaceX 우주 데이터센터 '27년 1GW→'29년 10GW 계획(언론종합), 원
 </div>
 </details>
 </div>
+<!-- ══════════════════════════════════════════════ -->
+<!-- SEC 7: 원통형 Tabless -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="card" id="sec-tabless">
+<h2>🔌 <em>Tabless Cylindrical Cell</em> — 원통형 Tabless 집전구조 · 18650 → 21700</h2>
+
+<h3>18650 → 21700 Tabless — 설계 변화와 효과</h3>
+<table class="ct">
+<thead><tr><th style="width:20%">설계 변화</th><th>주요 효과</th><th style="color:var(--teal)">BBU 적용상 이점</th></tr></thead>
+<tbody>
+<tr><td>18650 → 21700 대형화</td><td>셀당 에너지 <span class="hl-a">50% 증가</span></td><td class="hl-g">동일용량 기준 셀 수량 33% 감소 · 집적도 향상</td></tr>
+<tr><td>셀 수량 감소</td><td>용접점 · 버스바 · 접속부품 감소</td><td class="hl-g">팩 구조 단순화 · 고장 우려지점 감소</td></tr>
+<tr><td>Tabless 집전구조</td><td>집전면적 확대 · 전류 이동거리 단축</td><td class="hl-g">내부저항 · 전압강하 · 저항손실 감소</td></tr>
+<tr><td>전류/발열 분산</td><td>탭 주변 전류집중 · 국부 과열 완화</td><td class="hl-g">고출력 방전대응 · 열관리 부담 완화</td></tr>
+</tbody>
+</table>
+
+<h3>탭 vs 탭리스 — 전류 경로</h3>
+<div class="diagram">
+<div class="diagram-title">▼ 일반 탭 셀 vs 탭리스 셀 — 전극을 펼친 상태의 전류 경로 개념도</div>
+<div style="overflow-x:auto">
+<svg viewBox="0 0 700 222" style="width:100%;min-width:600px;max-width:700px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="일반 탭 셀과 탭리스 셀의 전류 경로 비교 개념도">
+<defs>
+<marker id="tbl-ar-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,1 L9,5 L0,9 z" style="fill:var(--red)"/></marker>
+<marker id="tbl-ar-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,1 L9,5 L0,9 z" style="fill:var(--green)"/></marker>
+</defs>
+<text x="30" y="20" style="fill:var(--text);font-size:11px;font-weight:700">일반 탭 셀 (Single-tab)</text>
+<ellipse cx="58" cy="95" rx="26" ry="23" style="fill:var(--red);opacity:.13"/>
+<rect x="30" y="70" width="250" height="72" rx="3" style="fill:var(--card);stroke:var(--border);stroke-width:1.5"/>
+<line x1="80" y1="70" x2="80" y2="142" style="stroke:var(--border);stroke-dasharray:2 4"/>
+<line x1="130" y1="70" x2="130" y2="142" style="stroke:var(--border);stroke-dasharray:2 4"/>
+<line x1="180" y1="70" x2="180" y2="142" style="stroke:var(--border);stroke-dasharray:2 4"/>
+<line x1="230" y1="70" x2="230" y2="142" style="stroke:var(--border);stroke-dasharray:2 4"/>
+<rect x="42" y="52" width="32" height="18" rx="2" style="fill:var(--red);opacity:.9"/>
+<text x="58" y="65" text-anchor="middle" style="fill:#fff;font-size:9px;font-weight:700">탭</text>
+<text x="84" y="63" style="fill:var(--red);font-size:9px;font-weight:600">전류 집중 · 국부 과열</text>
+<line x1="272" y1="88" x2="84" y2="88" marker-end="url(#tbl-ar-r)" style="stroke:var(--red);stroke-width:1.6;opacity:.85"/>
+<line x1="272" y1="106" x2="84" y2="106" marker-end="url(#tbl-ar-r)" style="stroke:var(--red);stroke-width:1.6;opacity:.85"/>
+<line x1="272" y1="124" x2="84" y2="124" marker-end="url(#tbl-ar-r)" style="stroke:var(--red);stroke-width:1.6;opacity:.85"/>
+<line x1="84" y1="158" x2="272" y2="158" style="stroke:var(--sub);stroke-width:1;opacity:.5"/>
+<line x1="84" y1="153" x2="84" y2="163" style="stroke:var(--sub);stroke-width:1;opacity:.5"/>
+<line x1="272" y1="153" x2="272" y2="163" style="stroke:var(--sub);stroke-width:1;opacity:.5"/>
+<text x="178" y="174" text-anchor="middle" style="fill:var(--sub);font-size:9px">이동거리 김 (포일 길이 방향)</text>
+<text x="155" y="196" text-anchor="middle" style="fill:var(--sub);font-size:9.5px">전류가 탭 한 지점으로 집중돼 길게 이동</text>
+<text x="155" y="211" text-anchor="middle" style="fill:var(--sub);font-size:9.5px">→ 내부저항 · 전압강하 · 국부 발열 증가</text>
+<text x="335" y="112" text-anchor="middle" style="fill:var(--border);font-size:20px">→</text>
+<text x="390" y="20" style="fill:var(--text);font-size:11px;font-weight:700">탭리스 셀 (Tabless)</text>
+<text x="640" y="48" text-anchor="end" style="fill:var(--green);font-size:9px;font-weight:600">전극 가장자리 전체 = 집전부</text>
+<rect x="390" y="56" width="250" height="12" rx="2" style="fill:var(--green);opacity:.85"/>
+<rect x="390" y="70" width="250" height="72" rx="3" style="fill:var(--card);stroke:var(--border);stroke-width:1.5"/>
+<line x1="440" y1="70" x2="440" y2="142" style="stroke:var(--border);stroke-dasharray:2 4"/>
+<line x1="490" y1="70" x2="490" y2="142" style="stroke:var(--border);stroke-dasharray:2 4"/>
+<line x1="540" y1="70" x2="540" y2="142" style="stroke:var(--border);stroke-dasharray:2 4"/>
+<line x1="590" y1="70" x2="590" y2="142" style="stroke:var(--border);stroke-dasharray:2 4"/>
+<line x1="405" y1="136" x2="405" y2="73" marker-end="url(#tbl-ar-g)" style="stroke:var(--green);stroke-width:1.6;opacity:.85"/>
+<line x1="430" y1="136" x2="430" y2="73" marker-end="url(#tbl-ar-g)" style="stroke:var(--green);stroke-width:1.6;opacity:.85"/>
+<line x1="455" y1="136" x2="455" y2="73" marker-end="url(#tbl-ar-g)" style="stroke:var(--green);stroke-width:1.6;opacity:.85"/>
+<line x1="480" y1="136" x2="480" y2="73" marker-end="url(#tbl-ar-g)" style="stroke:var(--green);stroke-width:1.6;opacity:.85"/>
+<line x1="505" y1="136" x2="505" y2="73" marker-end="url(#tbl-ar-g)" style="stroke:var(--green);stroke-width:1.6;opacity:.85"/>
+<line x1="530" y1="136" x2="530" y2="73" marker-end="url(#tbl-ar-g)" style="stroke:var(--green);stroke-width:1.6;opacity:.85"/>
+<line x1="555" y1="136" x2="555" y2="73" marker-end="url(#tbl-ar-g)" style="stroke:var(--green);stroke-width:1.6;opacity:.85"/>
+<line x1="580" y1="136" x2="580" y2="73" marker-end="url(#tbl-ar-g)" style="stroke:var(--green);stroke-width:1.6;opacity:.85"/>
+<line x1="605" y1="136" x2="605" y2="73" marker-end="url(#tbl-ar-g)" style="stroke:var(--green);stroke-width:1.6;opacity:.85"/>
+<line x1="630" y1="136" x2="630" y2="73" marker-end="url(#tbl-ar-g)" style="stroke:var(--green);stroke-width:1.6;opacity:.85"/>
+<line x1="378" y1="73" x2="378" y2="136" style="stroke:var(--sub);stroke-width:1;opacity:.5"/>
+<line x1="373" y1="73" x2="383" y2="73" style="stroke:var(--sub);stroke-width:1;opacity:.5"/>
+<line x1="373" y1="136" x2="383" y2="136" style="stroke:var(--sub);stroke-width:1;opacity:.5"/>
+<text x="515" y="174" text-anchor="middle" style="fill:var(--sub);font-size:9px">이동거리 짧음 (셀 높이 방향)</text>
+<text x="515" y="196" text-anchor="middle" style="fill:var(--sub);font-size:9.5px">전극 가장자리 전체가 집전부로 작용</text>
+<text x="515" y="211" text-anchor="middle" style="fill:var(--sub);font-size:9.5px">→ 전류·발열 분산 · 내부저항 감소</text>
+</svg>
+</div>
+<div style="margin-top:12px;font-size:10px;color:var(--sub);line-height:1.6;text-align:center">
+일반 탭 셀: 전류가 <b style="color:var(--red)">탭 한 지점으로 집중</b>돼 길게 이동 &nbsp;|&nbsp; 탭리스 셀: <b style="color:var(--green)">전극 가장자리 전체가 집전부</b>로 작용해 전류가 셀 높이 방향으로 짧게 이동 → 전류 집중 · 내부저항 · 국부 발열 감소
+</div>
+</div>
+
+<h3>BBU 적용 맥락 — 왜 BBU(Battery Backup Unit)에서 21700 Tabless인가</h3>
+<ul>
+<li><span class="hl-a">시장 구조</span>: 북미 BBU 시장은 <b>삼성SDI·Panasonic이 대부분 공급</b>하는 과점 구조 · 현재까지 BBU향은 <b>전량 18650 원형 셀</b></li>
+<li><span class="hl-g">삼성SDI</span>: BBU향 18650 기준 점유율 <b>50% 이상</b> · 차세대 <b>21700 Tabless</b> 제품 공개·출시 · 양극활물질 <b>LMO 채용</b>으로 가격경쟁력 확보</li>
+<li><span class="hl-a">생산거점</span>: <b>말레이시아 거점에 BBU향 셀 생산능력 집중</b> — 소형전지 말레이시아 CAPA 13.0 → 2028E 20.0 → 2029E 25.0 GWh · 현재 대비 <b>2개 라인 신/증설 가능</b></li>
+<li>Panasonic: Tabless 제품은 향후 <b>Tesla EV향 4680 전지에만 적용 예정</b>이며, 현재 양산 적용 문제로 매출기여도는 낮음</li>
+</ul>
+
+<div class="kp">
+<div class="kp-title">🔌 Key Players — BBU향 원형 셀</div>
+<div class="kp-row">
+<div class="kp-col">
+<strong>공급 (북미 과점)</strong>
+<span class="kp-tag leader">삼성SDI</span> BBU향 18650 점유율 50% 이상 · 21700 Tabless 공개<br>
+<span class="kp-tag leader">Panasonic</span> 북미 BBU 공동 공급 · Tabless는 Tesla EV향 4680 적용 예정
+</div>
+<div class="kp-col">
+<strong>생산거점</strong>
+<span class="kp-tag material">삼성SDI 말레이시아</span> BBU향 셀 CAPA 집중<br>
+소형전지 13.0 → 2028E 20.0 → 2029E 25.0 GWh · 2개 라인 신/증설 여력
+</div>
+</div>
+</div>
+
+<div style="font-size:10px;color:var(--sub);line-height:1.6;margin-top:8px">
+※ 설계·구조 원리 출처: <i>Cell Architecture Design for Fast-Charging Lithium-Ion Batteries in Electric Vehicles</i> · <i>Prediction of Thermal Issues for Larger Format 4680 Cylindrical Cells and Their Mitigation with Enhanced Current Collection</i> · <i>18650 vs. 21700 Li-ion cells – A direct comparison of electrochemical, thermal, and geometrical properties</i><br>
+※ 시장·CAPA 출처: 삼성SDI · Panasonic Energy 발표·언론보도 / 위 개념도는 구조 원리를 나타낸 도식으로 실제 셀 치수·권취 형상과 무관<br>
+※ 위 말레이시아 CAPA는 <b>삼성SDI 소형전지 기준 계열</b> — 배터리 맵 페이지의 공장 단위 설계 CAPA 계열과 집계 기준이 달라 값이 다르며, 두 계열은 각각 별개로 유지
+</div>
+</div>
+
 
 <!-- ══════════════════════════════════════════════ -->
 <!-- ROADMAP -->
