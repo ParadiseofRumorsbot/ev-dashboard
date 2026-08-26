@@ -1,8 +1,77 @@
 {
-  "syncedAt": "2026-08-25T21:10:37.870Z",
-  "latestDate": "2026-07-20",
-  "count": 37,
+  "syncedAt": "2026-08-26T07:39:47.983Z",
+  "latestDate": "2026-08-26",
+  "count": 41,
   "this_week": [
+    {
+      "title": "AI 데이터센터 BBU — 랙 단위 전력보호 레이어",
+      "category": "Cell",
+      "icon": "🔋",
+      "body": "백업 기능이 중앙 UPS 1계층에서 랙(BBU)·전원실(UPS)·데이터센터(BESS) 3계층으로 분산되는 중. BBU 시장은 미국 AI DC 신규 설치와 비례해 향후 7개년 CAGR ~30% 근접 예상. 북미 BBU는 삼성SDI·Panasonic 과점이며 현재까지 BBU향은 전량 18650 원형 셀, BBU향 18650 기준 삼성SDI 점유율 50% 이상. 삼성SDI가 차세대 21700 Tabless 제품 공개. 출처: Panasonic Energy",
+      "color": "purple",
+      "section": "this_week",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-08-26",
+      "order": 1
+    },
+    {
+      "title": "랙 전력밀도 1MW 전망 — 800VDC 전환 개시",
+      "category": "ESS",
+      "icon": "🔌",
+      "body": "서버랙 전력밀도가 과거 5~10kW → AI/HPC 20~30kW 이상 → GB200 NVL72 120kW 이상으로 상승, 차세대 랙은 1MW로 추정. 415VAC 다단계 변환은 랙 전력이 커질수록 전류·전력손실·배선부담이 급증 → NVIDIA는 AC/DC 변환 지점을 랙 외부로 옮기고 800VDC를 랙까지 직접 공급하는 구조를 제시. 2026년 하반기 기존 AC 인프라에 800VDC Power Rack 추가로 초기 도입, 2027년 Rubin Ultra 기반 차세대 랙부터 본격 확대, 장기적으로 중전압 단계에서 800VDC 직접 변환. 랙 인근은 Energy Storage, 데이터센터 전력망은 BESS가 담당. 출처: NVIDIA",
+      "color": "blue",
+      "section": "this_week",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-08-26",
+      "order": 2
+    },
+    {
+      "title": "삼성SDI ESS CAPA 2029E 92GWh — GM JV, Synergy Cells 단독 전환",
+      "category": "Battery",
+      "icon": "🏭",
+      "body": "ESS(중대형 각형) 생산능력 2025년 10GWh → 2026E 14 → 2027E 32 → 2028E 72 → 2029E 92GWh. 2028년 예정이던 GM JV가 삼성SDI 단독 공장 Synergy Cells로 전환되며 ESS향 물량 집중(2028E·2029E 각 30GWh) — 배터리 맵 geo탭의 New Carlisle ESS 22GWh[추정, 260811 공시]와는 산정 기준이 다른 별개 계열. 소형전지 말레이시아는 BBU향 셀 거점으로 13GWh → 2028E 20 → 2029E 25GWh 증설. 출처: 삼성SDI",
+      "color": "teal",
+      "section": "this_week",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-08-26",
+      "order": 3
+    }
+  ],
+  "update_log": [
+    {
+      "title": "BBU 레이어 4개 탭 반영",
+      "category": "Cell",
+      "icon": "🔋",
+      "body": "BBU(랙 단위 전력보호) 레이어 4개 탭 반영 — ① Battery Scenario: BBU 레이어 카드 신설(전력보호 3계층·랙 전력밀도 사다리·800VDC 3단 타임라인·용도별 DC 전력수요 차트·정전 손실비용 1분당 $8,851) ② 배터리 맵: 삼성SDI 생산능력 전망(2021~2029E 자동차전지·ESS·소형전지) + Panasonic 북미 두 계열 대조표 신설 ③ 기술/특허: 원통형 Tabless 섹션 신설(18650→21700 설계변화·전류경로 도식) ④ ESS BOM: NVIDIA 전력구조 2종(AI 랙 부하 평활화·시대별 DC 전력 구조도 3단). 기존 수치는 전량 불변이며 검증 이슈 3건은 각주로만 명시 — DC 전력수요 차트 축이 GWh 표기이나 값 크기상 GW 계열 추정 · 삼성SDI 소형전지 소계가 원문에서 구성항목 합과 불일치(2027E 40 vs 52, 2028E 47 vs 52) · Panasonic 북미 CAPA가 리포트(Nevada 37·Kansas 4→34)와 대시보드 기존(41·16→32)으로 상이. 출처: NVIDIA·McKinsey·Panasonic Energy·삼성SDI",
+      "color": "blue",
+      "section": "update_log",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-08-26",
+      "order": 1
+    }
+  ],
+  "archive": [
+    {
+      "title": "📊 6월 EV 판매 반영 + ESS 수익성·BNEF 전망 카드 신설",
+      "category": "미국",
+      "icon": "📊",
+      "body": "① index: KPI 중국 26.05→26.06(92.6만, -6.6%, 57.2%) · 주요국 표 6월 전환(미국 104,631·중국 926,000·프랑스 68,791·스웨덴 20,642·노르웨이 19,558, 영국·독일은 5월 유지하고 6월 BEV 각주 병기) · Tesla 유럽 카드 6월 전환 · 미국 파워트레인 믹스 카드 신설. ② battery_scenario: 미국 EV vs ESS kWh당 수익성 카드 신설 · BNEF ESS 수요 전망 상향 카드 신설 · 리튬 주간 2주와 6월 월간 추가. Autodata와 WardsAuto는 분모가 달라 카드에 기준 차이를 명시함. 출처: WardsAuto·CPCA·Cleantechnica·ACEA·Autodata·EV-Volumes·BloombergNEF·Bloomberg",
+      "color": "blue",
+      "section": "update_log",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-07-20",
+      "order": 1
+    },
     {
       "title": "6월 EV 판매 — 미국 -20.2%·중국 -6.6%·유럽 강세",
       "category": "미국",
@@ -15,6 +84,19 @@
       ],
       "date": "2026-07-20",
       "order": 1
+    },
+    {
+      "title": "FSD 지표 갱신 + 무감독 누적/활성 2계열 분리",
+      "category": "FSD",
+      "icon": "🚕",
+      "body": "05-04~06-21에 멈춰 있던 FSD 지표를 원천(Notion FSD메트릭 DB) 기준 갱신. cum_miles 11.3B→12.07B(Tesla 공식 안전페이지 직접 확인 — 종전 2차출처 추정을 1차출처로 교체, '재확인 필요' 플래그 해소) · total_registered 719→770(트래커 'ALL TRACKED'). 무감독 대수는 트래커가 두 개 계열로 제공한다는 점을 확인해 분리함 — ① 누적(Cumulative verified) total 39·Austin 28·Dallas 5·Houston 6은 기존 계열 그대로 유지하며 6/8 이후 변동 없음(확장 정체), ② 30일 활성 total 20·Austin 16·Dallas 4·Houston 0을 신규 지표 4종(active_*)으로 추가. 누적 39대 중 실제 운행은 20대(51%)이고 Houston은 활성 0대라는 게 핵심. subscribers(1.28M)·austin_total(53)·daily_miles(29M)은 현재 소스로 확인 안 돼 미변경. 출처: tesla.com/fsd/safety · RobotaxiTracker",
+      "color": "purple",
+      "section": "update_log",
+      "targets": [
+        "both"
+      ],
+      "date": "2026-07-20",
+      "order": 2
     },
     {
       "title": "미국 BEV 후퇴 ↔ HEV 급증",
@@ -80,37 +162,7 @@
       ],
       "date": "2026-07-20",
       "order": 6
-    }
-  ],
-  "update_log": [
-    {
-      "title": "📊 6월 EV 판매 반영 + ESS 수익성·BNEF 전망 카드 신설",
-      "category": "미국",
-      "icon": "📊",
-      "body": "① index: KPI 중국 26.05→26.06(92.6만, -6.6%, 57.2%) · 주요국 표 6월 전환(미국 104,631·중국 926,000·프랑스 68,791·스웨덴 20,642·노르웨이 19,558, 영국·독일은 5월 유지하고 6월 BEV 각주 병기) · Tesla 유럽 카드 6월 전환 · 미국 파워트레인 믹스 카드 신설. ② battery_scenario: 미국 EV vs ESS kWh당 수익성 카드 신설 · BNEF ESS 수요 전망 상향 카드 신설 · 리튬 주간 2주와 6월 월간 추가. Autodata와 WardsAuto는 분모가 달라 카드에 기준 차이를 명시함. 출처: WardsAuto·CPCA·Cleantechnica·ACEA·Autodata·EV-Volumes·BloombergNEF·Bloomberg",
-      "color": "blue",
-      "section": "update_log",
-      "targets": [
-        "index"
-      ],
-      "date": "2026-07-20",
-      "order": 1
     },
-    {
-      "title": "FSD 지표 갱신 + 무감독 누적/활성 2계열 분리",
-      "category": "FSD",
-      "icon": "🚕",
-      "body": "05-04~06-21에 멈춰 있던 FSD 지표를 원천(Notion FSD메트릭 DB) 기준 갱신. cum_miles 11.3B→12.07B(Tesla 공식 안전페이지 직접 확인 — 종전 2차출처 추정을 1차출처로 교체, '재확인 필요' 플래그 해소) · total_registered 719→770(트래커 'ALL TRACKED'). 무감독 대수는 트래커가 두 개 계열로 제공한다는 점을 확인해 분리함 — ① 누적(Cumulative verified) total 39·Austin 28·Dallas 5·Houston 6은 기존 계열 그대로 유지하며 6/8 이후 변동 없음(확장 정체), ② 30일 활성 total 20·Austin 16·Dallas 4·Houston 0을 신규 지표 4종(active_*)으로 추가. 누적 39대 중 실제 운행은 20대(51%)이고 Houston은 활성 0대라는 게 핵심. subscribers(1.28M)·austin_total(53)·daily_miles(29M)은 현재 소스로 확인 안 돼 미변경. 출처: tesla.com/fsd/safety · RobotaxiTracker",
-      "color": "purple",
-      "section": "update_log",
-      "targets": [
-        "both"
-      ],
-      "date": "2026-07-20",
-      "order": 2
-    }
-  ],
-  "archive": [
     {
       "title": "🔋 배터리 맵 개편 — 글로벌 CAPA·UC1 정정·건식 타임라인",
       "category": "Battery",
