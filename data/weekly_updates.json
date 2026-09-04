@@ -1,8 +1,37 @@
 {
-  "syncedAt": "2026-09-03T22:50:12.974Z",
-  "latestDate": "2026-08-26",
-  "count": 41,
+  "syncedAt": "2026-09-04T07:28:38.413Z",
+  "latestDate": "2026-09-04",
+  "count": 42,
   "this_week": [
+    {
+      "title": "Cybercab 론칭 행사 — Austin 첫 일반인 탑승",
+      "category": "FSD",
+      "icon": "🚕",
+      "body": "9/3(현지) Austin 다운타운 Cybercab 론칭 행사(초청제). 스티어링휠·페달 없는 Cybercab 첫 일반인 데모 탑승, Robotaxi 앱 Cybercab 배차 지원. TX DMV 등록 420대(Model Y 375 + Cybercab 45). FSD 누적 14.12B마일(공식 9/4).",
+      "color": "purple",
+      "section": "this_week",
+      "targets": [
+        "robotaxi"
+      ],
+      "date": "2026-09-04",
+      "order": 1
+    }
+  ],
+  "update_log": [],
+  "archive": [
+    {
+      "title": "BBU 레이어 4개 탭 반영",
+      "category": "Cell",
+      "icon": "🔋",
+      "body": "BBU(랙 단위 전력보호) 레이어 4개 탭 반영 — ① Battery Scenario: BBU 레이어 카드 신설(전력보호 3계층·랙 전력밀도 사다리·800VDC 3단 타임라인·용도별 DC 전력수요 차트·정전 손실비용 1분당 $8,851) ② 배터리 맵: 삼성SDI 생산능력 전망(2021~2029E 자동차전지·ESS·소형전지) + Panasonic 북미 두 계열 대조표 신설 ③ 기술/특허: 원통형 Tabless 섹션 신설(18650→21700 설계변화·전류경로 도식) ④ ESS BOM: NVIDIA 전력구조 2종(AI 랙 부하 평활화·시대별 DC 전력 구조도 3단). 기존 수치는 전량 불변이며 검증 이슈 3건은 각주로만 명시 — DC 전력수요 차트 축이 GWh 표기이나 값 크기상 GW 계열 추정 · 삼성SDI 소형전지 소계가 원문에서 구성항목 합과 불일치(2027E 40 vs 52, 2028E 47 vs 52) · Panasonic 북미 CAPA가 리포트(Nevada 37·Kansas 4→34)와 대시보드 기존(41·16→32)으로 상이. 출처: NVIDIA·McKinsey·Panasonic Energy·삼성SDI",
+      "color": "blue",
+      "section": "update_log",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-08-26",
+      "order": 1
+    },
     {
       "title": "AI 데이터센터 BBU — 랙 단위 전력보호 레이어",
       "category": "Cell",
@@ -41,24 +70,7 @@
       ],
       "date": "2026-08-26",
       "order": 3
-    }
-  ],
-  "update_log": [
-    {
-      "title": "BBU 레이어 4개 탭 반영",
-      "category": "Cell",
-      "icon": "🔋",
-      "body": "BBU(랙 단위 전력보호) 레이어 4개 탭 반영 — ① Battery Scenario: BBU 레이어 카드 신설(전력보호 3계층·랙 전력밀도 사다리·800VDC 3단 타임라인·용도별 DC 전력수요 차트·정전 손실비용 1분당 $8,851) ② 배터리 맵: 삼성SDI 생산능력 전망(2021~2029E 자동차전지·ESS·소형전지) + Panasonic 북미 두 계열 대조표 신설 ③ 기술/특허: 원통형 Tabless 섹션 신설(18650→21700 설계변화·전류경로 도식) ④ ESS BOM: NVIDIA 전력구조 2종(AI 랙 부하 평활화·시대별 DC 전력 구조도 3단). 기존 수치는 전량 불변이며 검증 이슈 3건은 각주로만 명시 — DC 전력수요 차트 축이 GWh 표기이나 값 크기상 GW 계열 추정 · 삼성SDI 소형전지 소계가 원문에서 구성항목 합과 불일치(2027E 40 vs 52, 2028E 47 vs 52) · Panasonic 북미 CAPA가 리포트(Nevada 37·Kansas 4→34)와 대시보드 기존(41·16→32)으로 상이. 출처: NVIDIA·McKinsey·Panasonic Energy·삼성SDI",
-      "color": "blue",
-      "section": "update_log",
-      "targets": [
-        "index"
-      ],
-      "date": "2026-08-26",
-      "order": 1
-    }
-  ],
-  "archive": [
+    },
     {
       "title": "📊 6월 EV 판매 반영 + ESS 수익성·BNEF 전망 카드 신설",
       "category": "미국",
