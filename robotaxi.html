@@ -199,7 +199,7 @@
 <span><i style="background:#4ecdc4"></i>연간 마일 (B)</span>
 </div>
 <div class="chart-wrap"><canvas id="c1"></canvas></div>
-<div style="margin:6px 2px 0;font-size:11px;color:var(--ink-3);line-height:1.4">* 26.07 12.07B는 공식 tesla.com/fsd/safety 직접 확인(26.07.20 · 12,074,141,132마일, 도심 4.55B) — 지표카드와 일치. 26.06 11.3B는 당시 2차출처 추정치로 보존.</div>
+<div style="margin:6px 2px 0;font-size:11px;color:var(--ink-3);line-height:1.4">* 26.09 14.12B는 공식 tesla.com/fsd/safety 직접 확인(26.09.04 · 14,122,355,796마일, 도심 5.48B). 26.07 12.07B는 공식 tesla.com/fsd/safety 직접 확인(26.07.20 · 12,074,141,132마일, 도심 4.55B). 26.06 11.3B는 당시 2차출처 추정치로 보존.</div>
 </div>
 
 <div class="grid-2">
@@ -226,7 +226,7 @@
 <div class="chart-section" id="sec-cybercab">
 <h2>Cybercab 테스트 플릿 추이 (대)</h2>
 <div class="chart-wrap sm"><canvas id="c5"></canvas></div>
-<div style="margin:6px 2px 0;font-size:11px;color:var(--ink-3);line-height:1.4">* 26.06 ~85대는 Giga TX 야적 드론 목격 기준 [2차출처] · 공식 TX 등록은 42대(5/28)</div>
+<div style="margin:6px 2px 0;font-size:11px;color:var(--ink-3);line-height:1.4">* 26.06 ~85대는 Giga TX 야적 드론 목격 기준 [2차출처] · 공식 TX 등록은 42대(5/28) · 26.09 45대는 TX DMV 공식 등록 상업 인가분(robotaxitracker.com DMV 데이터 · 26.09.04 확인, 야적 관측과 별개 계열)</div>
 <div style="margin:6px 2px 0;font-size:11px;color:var(--ink-3);line-height:1.4">* 26.07.08 대형 바디패널 <b>플라스틱 신공정</b> 도입 확인 — 사출성형 공차 이슈 임시방편이 아닌 Cybercab 전용 신규 공정(Unboxed 공정 일환·장난감차 제조 방식 착안, 수년 전부터 예고된 방향). Giga TX 현장 관찰 [2차출처]</div>
 </div>
 </div>
@@ -452,8 +452,8 @@ const gridColor='rgba(255,255,255,0.06)';
 const tickColor='#6b7a99';
 const defOpt={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{backgroundColor:'#1e293b',titleColor:'#e0e6f0',bodyColor:'#94a3c0',borderColor:'#2d3a52',borderWidth:1,cornerRadius:8,padding:12}},scales:{x:{grid:{display:false},ticks:{color:tickColor,font:{size:11}}},y:{grid:{color:gridColor},ticks:{color:tickColor,font:{size:11}}}}};
 
-new Chart(document.getElementById('c1'),{type:'line',data:{labels:['2021','2022','2023','2024','2025','26.02','26.03','26.04','26.05','26.06','26.07'],datasets:[
-{label:'누적',data:[0.006,0.086,0.756,3.0,7.25,8.0,8.5,9.5,10.0,11.3,12.07],borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,0.1)',fill:true,borderWidth:2.5,tension:.3,pointRadius:4}
+new Chart(document.getElementById('c1'),{type:'line',data:{labels:['2021','2022','2023','2024','2025','26.02','26.03','26.04','26.05','26.06','26.07','26.09'],datasets:[
+{label:'누적',data:[0.006,0.086,0.756,3.0,7.25,8.0,8.5,9.5,10.0,11.3,12.07,14.12],borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,0.1)',fill:true,borderWidth:2.5,tension:.3,pointRadius:4}
 ]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'Billion miles',color:tickColor}}}}});
 
 new Chart(document.getElementById('c2'),{type:'bar',data:{labels:['2021','2022','2023','2024','2025','2026E'],datasets:[{
@@ -471,8 +471,8 @@ new Chart(document.getElementById('c4'),{type:'line',data:{labels:['25.06','25.1
 {label:'무감독',data:[0,0,8,4,12,12,25,27,39,22,28,28],borderColor:'#ff6b6b',borderWidth:2,tension:.3,pointRadius:4,borderDash:[5,3]}
 ]},options:defOpt});
 
-new Chart(document.getElementById('c5'),{type:'bar',data:{labels:['26.02','26.03','26.04','26.05','26.06'],datasets:[{
-data:[1,25,60,42,85],backgroundColor:['#2d3a52','#556dff','#a78bfa','#4ecdc4','#ffd93d'],borderRadius:4
+new Chart(document.getElementById('c5'),{type:'bar',data:{labels:['26.02','26.03','26.04','26.05','26.06','26.09'],datasets:[{
+data:[1,25,60,42,85,45],backgroundColor:['#2d3a52','#556dff','#a78bfa','#4ecdc4','#ffd93d','#ff6b6b'],borderRadius:4
 }]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'테스트 플릿 (대)',color:tickColor}}}}});
 
 // 도시별 Day 1 Fleet Size vs 현재 무감독 비교
