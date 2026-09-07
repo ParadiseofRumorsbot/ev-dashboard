@@ -1,109 +1,99 @@
 {
   "type": "battery_patent_monitor",
-  "lastUpdated": "2026-08-31T01:00:27.856Z",
-  "weekOf": "2026-08-31",
+  "lastUpdated": "2026-09-07T00:30:28.145Z",
+  "weekOf": "2026-09-07",
   "description": "배터리·EV 특허 모니터링 — 주간 수집",
   "note": "⚠️ 자동 수집 결과입니다. 대시보드 반영 전 사용자 확인 필요.",
-  "totalItems": 10,
+  "totalItems": 9,
   "companyStats": {
-    "Panasonic": 2,
-    "Other": 6,
-    "BYD": 1,
-    "Toyota": 1
+    "Other": 8,
+    "Startup": 1
   },
   "techStats": {
-    "기타": 7,
-    "전고체": 1,
-    "BMS/열관리": 2
+    "음극재": 1,
+    "리사이클링": 1,
+    "기타": 5,
+    "전고체": 2
   },
   "items": [
     {
-      "title": "July USPTO patent transactions; InterDigital broadens Disney UPC action; AT&T, Verizon and T-Mobile defeat Celerity IP; Panasonic Energy interview; Chinese technical trade secrets ruling; plus much more - IAM Patent",
-      "link": "https://news.google.com/rss/articles/CBMizgJBVV95cUxPSTUySlJocUNRNGZiZTM0VTJwNUJHSjZ4bXpjUVZJMW1Kc25QOWEtbjlmeVJRLTk0SnNpTk15TmNWT1Y4cW4xTHc3QWs3MWlRb1ljajB4R1Z0SlNodng2MHYtTGE0bVVGQjV6ZXV2S0ZqT01qMklWTXBLa2I5R1kxVi1vMkxiOU54b2xGSjE0Z0g3SEpUN0lyaG9LOFNiS1pULWp3cmlfRVMyclRudUdLV09UWXdnSGg5WjNHaEVWR3VCMzIyaGU2bV94MG9aMFZ1M25XMXNRdlpiUi1ON0JRcWk0bnJROTJJdGNmZkNkb0Y3RmNGVE1XSGE4VTBPOWVIY3poMU53THg4VGR1N2Q0SDNaYzRXd24tMjV5SlJRcm41dTUzZzI2STlGeUZoeXFVX3h5S0hoV3l6LWxXSXpMQ2g0T3BRc0dBSmRiY1hR?oc=5",
-      "pubDate": "Sun, 30 Aug 2026 12:24:42 GMT",
-      "source": "IAM Patent",
-      "company": "Panasonic",
-      "tech": "기타",
-      "score": 3
+      "title": "Asahi Kasei develops novel pre-doping lithium technology for silicon anodes - electrive.com",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNcVVFdjZQSW5odVNxVURRLTdnSE4yUGVLcGdsZHp3aEp2MGJULWRsN21SdkJXdWxoTDJLRTgtUGNQWTdQV1ZTU0dENGRBRkItZXFDU3lfak1uMjNkWlVsaHZwNUtmd2F5TURBYkNId2RleHFLS1FzXy1EOEVab1hvZFZlUGNDa0ZhN1VpZXpWXzNyYUt4YVVsR3h1NlRWbEoyc1B2MVprZTNoVFlINE5OUTNOZw?oc=5",
+      "pubDate": "Mon, 31 Aug 2026 16:03:45 GMT",
+      "source": "electrive.com",
+      "company": "Other",
+      "tech": "음극재",
+      "score": 2
     },
     {
-      "title": "Why High-Quality U.S. Patent Specifications Face Fatal Failures in China - IPWatchdog.com",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPR3RFbDlsVWFueW9TeHZoU0l5VVFPSzJSZjJrMm5sX3oyQ1FDajlqZ0x3Um9EZHZXd1p1U0lkd2s4WWZzXzRZdmJzMjFrX0VianZZd3ZhRmlTdkctRXBweTAwSExXUVlYYmNwZDVkR0tiYTVJZG13RHJPLUpGUUxBUFZySFdZZXpXTWNtdlE2cGd0R3k5aXQ5S0JuSlFubzlheEFlSg?oc=5",
-      "pubDate": "Wed, 26 Aug 2026 16:50:40 GMT",
-      "source": "IPWatchdog.com",
+      "title": "Altilium secures UK patent for EV battery recycling - electrive.com",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNaE1fQTJuT1l6TnAzZFcxZGRBa2tDLXFGX19BSjVaUE0tSXJOdkt6YjQyd0ZKSzEya3Bzd0QzUTlpNkQ2aGJNSnA3QkdDdTNvQXNqeEFHMWwyaDNiNkhjc3BiU2U1ZW9OVGR1a2didWhCRElrZmJXTmFjeHp1VHNVMVNQR3doZlFsRngtOHE5T2hTWTA?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 16:30:00 GMT",
+      "source": "electrive.com",
+      "company": "Other",
+      "tech": "리사이클링",
+      "score": 2
+    },
+    {
+      "title": "Lithium Ark Granted European Patent for Breakthrough Lithium Refining Technology - AZoM",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5ZRGNZYUVaMmtfMHREV3hIc2hRSlZJXzNERDB3MmFDNWJEdndOZVdjMFBtay1nRUUtOVJjZmxaY3Exb1hSREhUTzdUYS1wdkR3TmhkWkhR?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 10:23:00 GMT",
+      "source": "AZoM",
       "company": "Other",
       "tech": "기타",
       "score": 2
     },
     {
-      "title": "BYD Finds A Way To Make Solid-State EV Batteries Last Longer - AOL.ca",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1oOXNhTEwySGNVckNOb3VyV2xhMzBiZmZYZC1mSjZGOG8wODdFZjZZdlEyYVdwc2dkZjdiR3NTRUNMVGZLSThQTl9tRHZTYmN5NS1ERHFBanhNRUd0S29OYklzWkNDYUZaU3BHRy1DcmFXQmdPV2Zr?oc=5",
-      "pubDate": "Wed, 26 Aug 2026 02:00:32 GMT",
-      "source": "AOL.ca",
-      "company": "BYD",
+      "title": "Top Solid-State Battery Stocks 2026: The Pilot-Line Year - exoswan.com",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5lVm1tQzNnTGd5TjdIcG5fLVdteEZUSU1lczVmVG1FWnNvNWM5UUZUemRreWJVV1BOVmpoaEM0ek9KYkJkNEpraG1WMGtVZjRXaHlsMUFKNlhOZw?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 07:00:00 GMT",
+      "source": "exoswan.com",
+      "company": "Other",
       "tech": "전고체",
       "score": 1
     },
     {
-      "title": "Shoals awarded more than $96 million in damages in patent dispute with Voltage - pv magazine USA",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOYW9RZk1rXzlmeHl0c0NSTGNVTWluTzA4T3d5ODg3OU1VYjFoSzhMa1hiWmE2TTN3NWVlT2RiWWduZ0hCWkRRekVpbmlRbjhGbFdQbkZmY2ZaSEphVE96UEtxbW1wa1dzVTc0WGtjYm5kYUFnbzExOFI1VU5nQnFkazE1dWNhRWd0TU5NQVhzZnVuakIyRHI5NkZpU1ZpZU5xVUsxc2NUdHdFZG43dEx0NHNicWZsc2xD?oc=5",
-      "pubDate": "Thu, 27 Aug 2026 19:02:34 GMT",
-      "source": "pv magazine USA",
+      "title": "ProLogium Begins Mass Production of High-Energy-Density All-Solid-State Battery, Reaching 381 Wh/kg and 903 Wh/L - StreetInsider",
+      "link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQd0JZQmtad1F0Z09TUWx0ejdVNEZFbFI0ZkpXNnN3cExIVjFzLVUxNnlzS0l6QTYzdk8wRmI2UTJGd0lFMnkyREJVc1M1SU1VanJEeDZtSlVMOWF6ZkRjUWtsRHhTWGpMZlVYT0xsSXhMODU1SWdGNnBsMUZzQ1BFMExjTDNtcElnMVpDWWIyOW43WlBLeEswNHVfTmdLU3Y4M09WZWVWVElZTWF6NlV0WFVZcDN3b3hhaTZDOFRsN0ZmZWVSTEV1R1JLcV9CbWNJUDlQM2dESzAzVWk5UmkyaFR5WXpkdEppU3BUZ3o1ek1MTE1EU0drS29tNldDZDl2?oc=5",
+      "pubDate": "Wed, 02 Sep 2026 07:07:54 GMT",
+      "source": "StreetInsider",
+      "company": "Other",
+      "tech": "전고체",
+      "score": 1
+    },
+    {
+      "title": "Honda Patents UC3 Electric Scooter in India - Autocar Professional",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNSTdyZjRqVHJLRUo1QS1tdGZoY3MyOHRYUlVxd1NEY0hHVTFLQmp4Z04tR0Y2RUlwalhpQ0dHaDFLUVJLRDA2WEJYcnJLMU9oSUJSaTNlQk9WQUIyX2s0ZmhhbzIzR29senhHVkdHOUlYYVVhMER3QlNBTm5ZblJQOWdQVURYeWVJ0gGQAUFVX3lxTFBseDBNMFpib2tFRkY0dC00X18xMF9aa0FoVTZSSnFvVzZMY0VFT3JfVE9QamtLUjFGVTB0WlZXVW5wODFidXVVNk9TUDFkV1NyaWhJcDlwcmFPZlBZZks0WXEwOElQUTdjZllSVTNsSHY2NE50bUdBVWF6Qm1EMW5OdEdGVjVXQzAxTEJIcEVxUQ?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 03:45:59 GMT",
+      "source": "Autocar Professional",
       "company": "Other",
       "tech": "기타",
       "score": 1
     },
     {
-      "title": "Africa Battery Management System Market Size, Share,Trends, Growth Analysis Report, 2029 - MarketsandMarkets",
-      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNVEg3bVlTZHVRY3JlOEw3OXZ3OFhlV29abHRTU1luekEtSTFtYjRjdVpyOWR4UWwyeGR2Y1ZkLS1jUmtMa0NwMlZBZlkyUWtIdzJlbS1Cd2VTSzc1TnB6T0JqQU1SLXV3dC1VaFFoclNPZFpxbUdVQ3lJUzlFMldVbjJyRURELW1FOEJmaFNRdjE4Vkt0bjM3S3loZw?oc=5",
-      "pubDate": "Sun, 30 Aug 2026 13:38:32 GMT",
-      "source": "MarketsandMarkets",
-      "company": "Other",
-      "tech": "BMS/열관리",
-      "score": 1
-    },
-    {
-      "title": "Rest-Of-Europe Battery Management System Market Size, Share,Trends, Growth Analysis Report, 2029 - MarketsandMarkets",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPdnRVM0tVRkh3Vm9HN1F0WUVoVER6Y2xCX0NPR3dxTFkyQ3YxeDJucDZVSzNIdThDa0hoMk1Dd1Q1M3U1TzRoMGVVZDI0eUdNZ2NnVFVLVTJpck5jZUhpM2owNFF2VkJXRmhTTDJiSXdrUF9QaEMxRG90b3Rra25xLUh3Nm1tSXFBaTB5LV9uNXdIa01acjQ0cF9EOHNFSWo1d1dBd1Jn?oc=5",
-      "pubDate": "Sun, 30 Aug 2026 15:42:29 GMT",
-      "source": "MarketsandMarkets",
-      "company": "Other",
-      "tech": "BMS/열관리",
-      "score": 1
-    },
-    {
-      "title": "Parul University And IIT Palakkad Secure Joint Patent For E-Waste Innovation - Free Press Journal",
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNeUpQZGYxOTAyX3dyYW1rWU9RQklQYkh2TlRNYlA3OXQ4Qzc5bFR4Q3NUcEd1U0NkZXFtZWNob0VpSVhlWDZiYU5vbDUwVzg0a3JJQXB1T1VQb0VESFJSYVdYeVBueXBHaE1IUWdqYVdFRzRKUnJBal9QMWFrXzAwVDItY1FKdHBuX0lTSFBrMjFxemRSZnF5ZjhhRldLTEUyWFBFWWlwOS1hOVJVNFltMGowYndoOTIzN0lFMWpB0gHDAUFVX3lxTE1FdUxSczBmdmh0ZXdkbE5KU1ZyUlBtSVZZMFNvS1RVaHlXQTdLbHRVX1ZJcTA5UHNGN195ZGMwMXlYZldaejlLcG56bWtMZExEX3dXcDlqWWFRVG1XTWsyQ0JWc3RIcUR0bUxQVFBJdVl0TkxRV2Y2RDhYbkYxaDBjQWFHSU1aVFBBY1d5d205N1hhaDVMZmNkS0VQZEh1QU1jUVBLQThGLTRWZFVFTFo0SUpzZzZNa0VETVhiMVlrS1ZEcw?oc=5",
-      "pubDate": "Wed, 26 Aug 2026 15:18:49 GMT",
-      "source": "Free Press Journal",
+      "title": "Honda UC3 patented in India - Autocar India",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5sRUNVTG1oNDMtY1o2bUpLdFhIdFBXdkx1ZmRObTVkaVB0VzJWc0tqV0d6cXN0SnpyNFQ0d01nLXk5VmtPd3UzNG5GLTBqb3h3a1ZCUGtIcDhxN2VLZW83dDdub25FYkZKalU3c1BjcU8tU0xqeDhCX1RoMG9SZ9IBgwFBVV95cUxQYW9haWd1V0l5RnBOZHZCZUFwN0stakhpcmowbGVxRm9jMzR3bTlOMm5CVjA0NXFYcFR6R0twZmV3Y1lwOEM3LWF5LUlIdmhrVXZPZk9PR0gtTXRPeE1pN0dSOXU4a0xrZ3pCMFpzLVBwRWNFVzJDdkNEREFsSlJteUdIVQ?oc=5",
+      "pubDate": "Tue, 01 Sep 2026 01:30:00 GMT",
+      "source": "Autocar India",
       "company": "Other",
       "tech": "기타",
       "score": 1
     },
     {
-      "title": "337-TA-1518 Investigation Initiated: EVE Energy, Chervon, and Others Implicated in U.S. Cylindrical Battery Patent Investigation - ChemNet News",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBvSkg3eU40Zm5oWmlrSUhwZXVtZHJaOHd4enpnMW0tRVI5QWhEY0ZxbnV3cHhDcFhsS1diVTlHT2NXVDZCZUVaX3RrMUlxQi1Q?oc=5",
-      "pubDate": "Tue, 25 Aug 2026 07:04:06 GMT",
-      "source": "ChemNet News",
+      "title": "Patent Behind Sila’s Moses Lake Battery Tech Survives Challenge - Source ONE News",
+      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPLUJ2N2pYbEZydWZOMXJNTUpGa0JFcGYxNjJrbnQxNlRDUFlrZWstNGJZMmphQWFWbEc5YTZodlQzR3F4QXVNV0xXVXVlQWVQSUprLVdCQnF0WHRYdk5aT0FLOGpSNFQ4U2cxMVdleHhMNXdLUWMwcFdlTzcxbFRpMks0R3RDa2h3SlRYNE9sQnZoeTlTcmFVYllfekc4bUtiZGtYVlJWQ05yT2FFbkNCWE5odVBIZEYzdWVhRXhRcVZvLW5ZUmF2V0RoUW40LUktSTVHMTlvN1dPVEctYUJvUVRKZUhYM3RlY3JkWHdBcw?oc=5",
+      "pubDate": "Fri, 04 Sep 2026 23:20:52 GMT",
+      "source": "Source ONE News",
+      "company": "Startup",
+      "tech": "기타",
+      "score": 1
+    },
+    {
+      "title": "LiPower New Energy, Energy Storage Battery Manufacturer, Files for Nasdaq Capital Market IPO - TradingView",
+      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQRUtXSTFWSHc4NDZJVXhNbXFkR3VQSmFGcjRNdHd4LVd5MmJqc18tZFROekRxM2FadWdSQ282X2tLdWhGQTBxamI3MVMyR0ZzUzRWMFZVeFkyZHVrQV9idzVfemY2N1BvZW5HWWw1T2czbV9STjk3ZEwzdGY1X2k1cFZ5dkladWpBMnhfTzdUUU9JcFFzU0tYZFU3eWhHa2ZKX1VhcFZZYUpwMVlEcEJkS3lxZlFGZXJmYmVVT3kzb0k5UkNVeW1uUTRZbklxNFY4R2RXOWVWYzFGTnJUbDlWVFJoemxoVEk?oc=5",
+      "pubDate": "Wed, 02 Sep 2026 10:07:02 GMT",
+      "source": "TradingView",
       "company": "Other",
-      "tech": "기타",
-      "score": 1
-    },
-    {
-      "title": "Toyota files patent that looks to solve one of the biggest issues facing a solar-powered EV - supercarblondie.com",
-      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFAxR05vOVVTa0RRUmZnZndnNFlfblNzcjdaR1A3NE9xbWlDRFpzcTVMYjRRLWVTcG9JeUxINWFNVTZ0bE8zZHVzMFhNQy1DaTlCb2NYNzY5Y3ZVeW9lcHlZWFBfSzl5VnlBdnU0?oc=5",
-      "pubDate": "Sun, 30 Aug 2026 10:13:00 GMT",
-      "source": "supercarblondie.com",
-      "company": "Toyota",
-      "tech": "기타",
-      "score": 1
-    },
-    {
-      "title": "Panasonic Energy sharpens patent strategy with lessons from LG battery licensing venture - IAM Patent",
-      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNUENYRFBYUk0yejBKbXFRbTdXNUZRSVRKaXRxa05pQmdoamxQVFhFRTdDZHlyVFBmeGgyTFZfU2NzdHBudWJfb19PWnAxZFhFQ0paOU0zcnpmR3lzbG11R2FkckFqel9rVk9EUVYtQkVZczBmVVJlM09TUDFXWkJaTUtZTm16X1ZTaVhGbGlNcWkwYUxoQUxuOWdBcE9YTXJrY3pHU1J1REt0SkdTb3dmNlBn?oc=5",
-      "pubDate": "Fri, 28 Aug 2026 03:25:40 GMT",
-      "source": "IAM Patent",
-      "company": "Panasonic",
       "tech": "기타",
       "score": 1
     }
