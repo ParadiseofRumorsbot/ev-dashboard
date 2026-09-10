@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-09T22:46:36.212Z",
+  "syncedAt": "2026-09-10T05:59:40.190Z",
   "dbId": "659a8d5a89c344a5b68960fead1cf889",
   "count": 39,
   "variables": [
@@ -81,11 +81,11 @@
       "target": "SDI",
       "region": "us",
       "year": "y27",
-      "value": 28,
+      "value": 30,
       "unit": "GWh",
       "path": "cellMakers[0].essGwh.y27",
-      "source": "1Q26 CC",
-      "updatedAt": "2026-05-02"
+      "source": "삼성SDI 2026-09-01 그룹미팅: 2027년 초 미국 ESS CAPA 약 30GWh를 모델 기준으로 사용. 글로벌 약 40GWh와 구분. 뉴칼라일은 2028년 말 가동 목표로 제외. https://www.notion.so/3ceec6e3f40881dd9e12c5d47f81cb17",
+      "updatedAt": "2026-09-10"
     },
     {
       "name": "ESS CAPA",
@@ -408,8 +408,8 @@
       "value": 198,
       "unit": "억원",
       "path": "cats[4].perGwh",
-      "source": "1,700t × ASP 1,165만원/t",
-      "updatedAt": "2026-05-02"
+      "source": "기존 1Q26 CC 모델 가정: 1,700t/GWh × ASP 1,165만원/t ÷ 10,000 = 약 198억원/GWh (점유율 적용 전). ESS SDI M/S 70%는 계산 시 한 번만 적용 → 약 139억원/GWh. 2026-09-10 중복 적용 정정; ASP 신규 갱신 아님.",
+      "updatedAt": "2026-09-10"
     },
     {
       "name": "K3 M/S",
@@ -465,11 +465,11 @@
       "target": "SDI",
       "region": "us",
       "year": "y26",
-      "value": 28,
+      "value": 19,
       "unit": "GWh",
       "path": "cellMakers[0].essGwh.y26",
-      "source": "1Q26 CC",
-      "updatedAt": "2026-05-02"
+      "source": "삼성SDI 2026-09-01 그룹미팅: 미국 연말 CAPA 19GWh = 코코모 NCA ESS 7 + 4Q LFP 12 (합산 추정). 글로벌 약 30GWh와 구분. https://www.notion.so/3ceec6e3f40881dd9e12c5d47f81cb17",
+      "updatedAt": "2026-09-10"
     }
   ]
 }
