@@ -110,9 +110,9 @@ const DATA = {
     {
       id:'electrolyte', code:'E', name:'전해액',
       company:'솔브레인홀딩스', costPct:0, apcId:'apc1',
-      perGwh: 139,  // 억원/GWh — 1,700t × ASP 1,165만원/t × M/S 70%
+      perGwh: 198,  // 억원/GWh — 점유율 적용 전. 1,700t × ASP 1,165만원/t ÷ 10,000; ESS M/S 70%는 계산 시 한 번 적용
       color:'#5B4FE9', bg:'#EFEDFE',
-      desc:'Cells 52% 내부. LFP는 NCM 대비 전해액 소요 1.70배(1,000→1,700t). 솔브레인홀딩스가 SDI ESS 전해액 메인 — 북미(인디애나) 100% 솔밴더 [추정], 헝가리(괴드) 솔브레인 약 70%·동화 30%. Michigan 공장 AMPC 수혜. ⚗️ LiPF6(전해염): 전해액 원가의 62% 비중(솔브레인 1Q26 분기보고서 매입 USD 24.6M). 후성 국내 LiPF6 1천→2천톤 가동 상승 중 → 가격 안정화 시그널(자체 추정).',
+      desc:'모델 원단위 198억원/GWh는 점유율 적용 전이며 ESS SDI M/S 70% 적용 후 약 139억원/GWh. 기존 1Q26 CC 가정의 중복 적용 정정(2026-09-10), ASP 신규 갱신 아님. Cells 52% 내부. LFP는 NCM 대비 전해액 소요 1.70배(1,000→1,700t). 솔브레인홀딩스가 SDI ESS 전해액 메인 — 북미(인디애나) 100% 솔밴더 [추정], 헝가리(괴드) 솔브레인 약 70%·동화 30%. Michigan 공장 AMPC 수혜. ⚗️ LiPF6(전해염): 전해액 원가의 62% 비중(솔브레인 1Q26 분기보고서 매입 USD 24.6M). 후성 국내 LiPF6 1천→2천톤 가동 상승 중 → 가격 안정화 시그널(자체 추정).',
       bomItems:[
         {name:'LFP 전해액', note:'1,700톤/GWh'},
         {name:'NCM 전해액 (비교)', note:'1,000톤/GWh'},
@@ -172,7 +172,7 @@ const DATA = {
   cellMakers: [
     {
       id:'sdi', name:'삼성SDI', color:'#1B6CFF',
-      essGwh: {y25:14, y26:28, y27:28},
+      essGwh: {y25:14, y26:19, y27:30},
       essUtil: {y25:0.3, y26:0.55, y27:0.7},
       evGwh: {y25:28.0, y26:36.3, y27:48.1},  // K3 EV 출하
       supplyChain: {
@@ -180,7 +180,7 @@ const DATA = {
         copperFoil:'롯데에너지', alFoil:'삼아알미늄·DI동일', can:'상신이디피·신흥에스이씨',
         enclosure:'서진시스템', thermal:'한중엔시에스',
       },
-      guidance:'2Q26 OP 2,038억 흑자전환(7분기만·관세환급 포함, 제외시도 소폭흑자). 상반기 누계 매출 7.35조·OP 482억(배터리 △173억, 전자재료 +655억). EBITDA 8,029억. 美 ESS 수주 29년 캐파 상당부분 커버·28년부터 캐파 초과→추가 캐파 내부검토. 美 LFP ESS 10월 셀 양산·연내 SBB 2.0 공급. UPS·BPU M/S 각 40~50%·매출 YoY 70%+. 전고체 2027H2(첫 상용화 휴머노이드·2H26 샘플). Na-ion UPS/전력용ESS 개발 착수. 유럽 침투율 26년 20%중반→30년 30%후반. EV 적자폭 축소되나 기존 PJT 물량감소 리스크.',
+      guidance:'미국 ESS: 2026년 말 19GWh(기존 NCA 7 + 4Q LFP 12, 합산 추정), 2027년 초 약 30GWh를 모델 기준으로 사용. 글로벌은 연말 약 30GWh·2027년 초 약 40GWh로 미국과 구분. 뉴칼라일은 2028년 말 가동 목표로 2027년 CAPA에서 제외. SPE 30GWh+의 약 80%가 2029년까지 수주로 확보. 출처: 삼성SDI 그룹미팅(2026-09-01). 2Q26 OP 2,038억 흑자전환(7분기만·관세환급 포함, 제외시도 소폭흑자). 상반기 누계 매출 7.35조·OP 482억(배터리 △173억, 전자재료 +655억). EBITDA 8,029억. 美 LFP ESS 10월 셀 양산·연내 SBB 2.0 공급. UPS·BPU M/S 각 40~50%·매출 YoY 70%+. 전고체 2027H2(첫 상용화 휴머노이드·2H26 샘플). Na-ion UPS/전력용ESS 개발 착수. 유럽 침투율 26년 20%중반→30년 30%후반. EV 적자폭 축소되나 기존 PJT 물량감소 리스크.',
     },
     {
       id:'lges', name:'LG에너지솔루션', color:'#00A878',
@@ -192,7 +192,7 @@ const DATA = {
         copperFoil:'SKC·롯데에너지', alFoil:'삼아알미늄·DI동일', can:'율촌화학·피플웍스',
         enclosure:'Fluence(자체)', thermal:'미확정',
       },
-      guidance:'2Q26 IRA 제외 흑자 전환(기존 하반기→앞당김). 2Q26 매출 +10%QoQ. ESS 수주잔고 140GWh. 46시리즈 440GWh+(BMW 10년 10조 포함). 4680+4695+46120. Tesla 하반기 재개. 북미 50GWh+(연말). 부채비율 140%.',
+      guidance:'2Q26 매출 7조 5,602억원(+15.3% QoQ), 영업이익 1,133억원. AMPC 2,410억원 제외 시 -1,277억원 적자(차감 계산). 기존 2Q26 IRA 제외 전사 흑자 목표 미달, 4Q26 IRA 제외 ESS 수익성 확보 목표. ESS 수주잔고 140GWh·46시리즈 440GWh+. 북미 ESS 연말 50GWh+ 확보 계획. GM JV 1기 3Q26 중반 재가동 예정. 부채비율 157%(1Q26 140%). 출처: LG에너지솔루션 2Q26 실적발표 컨콜(2026-07-30).',
     },
     {
       id:'skon', name:'SK ON', color:'#E9A23B',
@@ -318,7 +318,7 @@ const DATA = {
   scenarios: [
     {
       id:'base', name:'Base Case',
-      desc:'현행 가이던스. ESS: SDI 28G×55%, LGES 56.5G×45%. EV: K3 모델 유지. 부품사 perGwh 변동 없음.',
+      desc:'현행 모델 기준. ESS: SDI 미국 연말 CAPA×가동률 55%, LGES 56.5G×45%. 연말 CAPA×가동률은 단순 시나리오이며 실제 연간 출하 가이던스가 아님. EV: K3 모델 유지.',
       cm:{}, catAdj:{}, evAdj:{}, evCatAdj:{}, notes:[],
     },
     {
@@ -454,9 +454,9 @@ const DATA = {
 
   // 북미 ESS CAPA (GWh)
   northAmericaCapa: {
-    '2025E':40.5, '2026E':106.5, '2027E':142.5,
+    '2025E':40.5, '2026E':96.5, '2027E':133.5,
     detail: [
-      {name:'SDI', y25:14, y26:28, y27:28, note:'코코모 NCA 7G+LFP 21G. 뉴칼라일 ESS LFP 전환 22G는 가동 28년 말 제시로 27년에서 제외(260901 그룹미팅) [추정]'},
+      {name:'SDI', y25:14, y26:19, y27:30, note:'미국 기준: 26년 말 NCA 7+LFP 12=19GWh(합산 추정), 27년 초 약 30GWh를 모델 기준으로 사용. 글로벌 약 30/40GWh와 구분. 뉴칼라일 28년 말 가동 목표로 27년 제외. 출처: 삼성SDI 그룹미팅(2026-09-01)'},
       {name:'LGES', y25:16.5, y26:56.5, y27:56.5, note:'홀랜드+온타리오+랜싱+JV'},
       {name:'SK ON', y25:0, y26:4, y27:10, note:'테네시 단독(JV해체), ESS 전환'},
       {name:'AESC', y25:7, y26:7, y27:7, note:''},
@@ -776,18 +776,21 @@ main{flex:1;min-width:0;max-width:1100px;padding:24px 0 60px 28px}
 <a href="us-import.html" class="sidebar-link">US 수입</a>
 <a href="Battery_bom_routing.html" class="sidebar-link">ESS BOM</a>
 <a href="battery_scenario.html" class="sidebar-link" active>Battery Scenario</a>
+<a href="Battery-Atlas-3D.html" class="sidebar-link">배터리 3D</a>
 <a href="2차전지_컨콜정리.html" class="sidebar-link">컨콜 정리</a>
 <a href="battery_tech.html" class="sidebar-link">기술 / 특허</a>
 <a href="global_battery_map.html" class="sidebar-link">배터리 맵</a>
 <div class="sidebar-group">Sections</div>
 <a href="#sim-panel" class="sidebar-link" data-target="sim-panel">시뮬레이터</a>
 </aside>
+<nav class="toc-nav-mobile" aria-label="페이지 이동"><a href="index.html">EV 판매</a><a href="robotaxi.html">FSD / 로보택시</a><a href="us-import.html">US 수입</a><a href="Battery_bom_routing.html">ESS BOM</a><a href="battery_scenario.html" aria-current="page">Battery Scenario</a><a href="Battery-Atlas-3D.html">배터리 3D</a><a href="2차전지_컨콜정리.html">컨콜 정리</a><a href="battery_tech.html">기술 / 특허</a><a href="global_battery_map.html">배터리 맵</a></nav>
 <main>
 <main>
   <header class="hdr">
     <div class="hdr-tag">Battery Scenario Simulator <span style="font-weight:400;font-size:11px;opacity:.6;margin-left:6px">by. sangmin woo</span></div>
     <h1><b>Battery</b>Scenario</h1>
     <p class="hdr-sub">셀사별 CAPA × 가동률 × 부품사 $/kWh → TAM 시뮬레이터. 시나리오 프리셋으로 ESS + EV 통합 TAM 변동을 즉시 확인.</p>
+    <p id="modelSource" class="hdr-sub" role="status">승인된 모델 변수 불러오는 중…</p>
   </header>
 
   <!-- 🔬 배터리 특허 피드: GitHub Actions 매주 월요일 8AM KST 자동 수집 -->
@@ -2427,12 +2430,39 @@ function syncBuToTd(){
   });
 }
 
+// Only these reviewed model variables are connected; other DB rows need separate validation.
+async function loadReviewedModel(){
+  const paths=['cellMakers[0].essGwh.y26','cellMakers[0].essGwh.y27','cats[4].perGwh'];
+  const status=document.getElementById('modelSource');
+  try{
+    const response=await fetch('data/notion_variables.json',{cache:'no-cache',signal:AbortSignal.timeout(5000)});
+    if(!response.ok)throw new Error('모델 변수 로드 실패');
+    const data=await response.json();
+    const rows=paths.map(path=>data.variables.find(v=>v.path===path));
+    if(rows.some(v=>!v||!Number.isFinite(v.value)||v.value<0))throw new Error('모델 변수 누락');
+    rows.forEach(v=>setByPath(DATA,v.path,v.value));
+    status.textContent='Notion 모델 변수 반영 · 동기화 '+data.syncedAt.slice(0,10)+' · SDI 미국 ESS CAPA / 전해액 원단위';
+  }catch(e){
+    status.textContent='기준값 사용(2026-09-10 검토) · Notion 동기화 자료를 불러오지 못했습니다.';
+  }
+  ['y26','y27'].forEach(yr=>{
+    DATA.northAmericaCapa.detail[0][yr]=DATA.cellMakers[0].essGwh[yr];
+    const key=yr==='y26'?'2026E':'2027E';
+    DATA.northAmericaCapa[key]=DATA.northAmericaCapa.detail.reduce((sum,r)=>sum+(r[yr]||0),0);
+  });
+  paths.forEach(path=>setByPath(edOriginal,path,getByPath(DATA,path)));
+  edOriginal.northAmericaCapa=JSON.parse(JSON.stringify(DATA.northAmericaCapa));
+}
+
 // ===== Init =====
-syncBuToTd();
-renderCapa();renderRegionTabs();renderOem();renderCellMakers();
-renderScenTabs();renderScenario();renderCell3Tabs();renderCell3();
-renderLiTabs();renderLiChart();renderMetalCalc();renderLfpCost();buildEditorSections();
-window.addEventListener('resize',()=>renderLiChart());
+(async()=>{
+  await loadReviewedModel();
+  syncBuToTd();
+  renderCapa();renderRegionTabs();renderOem();renderCellMakers();
+  renderScenTabs();renderScenario();renderCell3Tabs();renderCell3();
+  renderLiTabs();renderLiChart();renderMetalCalc();renderLfpCost();buildEditorSections();
+  window.addEventListener('resize',()=>renderLiChart());
+})();
 </script>
 </main>
 </div>
