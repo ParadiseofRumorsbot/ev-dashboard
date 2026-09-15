@@ -765,6 +765,7 @@ main{flex:1;min-width:0;max-width:1100px;padding:24px 0 60px 28px}
 .ft{margin-top:32px;padding-top:14px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-family:var(--mono);font-size:9px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;flex-wrap:wrap;gap:8px}
 .ft strong{color:var(--ink-2);font-weight:600}
 </style>
+<link rel="stylesheet" href="assets/sib-research.css?v=20260915">
 </head>
 <body>
 <div class="page-wrap">
@@ -857,7 +858,7 @@ main{flex:1;min-width:0;max-width:1100px;padding:24px 0 60px 28px}
 
   <!-- 📈 ESS 수요 전망 상향 추이 (BNEF) -->
   <section class="guide-card" style="border-left:3px solid #0984E3;padding:14px 18px;margin-bottom:16px">
-    <div style="font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:10px">📈 ESS 수요 전망 상향 추이 · 2030E (BloombergNEF)</div>
+    <div style="font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:10px">📈 ESS 수요 전망 상향 추이 · 2030E (기존 외부 전망 인용)</div>
     <div style="font-size:11px;color:var(--ink-2);margin-bottom:10px">전망 시점이 바뀔 때마다 2030년 ESS 수요 전망이 <b style="color:#0984E3">계단식으로 상향</b>되고 있음 — 전망치 자체보다 <b>상향의 방향성과 속도</b>가 신호.</div>
     <div class="scroll-x">
     <table class="data-table" style="min-width:480px;font-size:11px">
@@ -865,14 +866,27 @@ main{flex:1;min-width:0;max-width:1100px;padding:24px 0 60px 28px}
     <tbody>
     <tr><td>글로벌</td><td style="text-align:right">445 GWh</td><td style="text-align:right">551 GWh</td><td style="text-align:right;font-weight:700">828 GWh</td><td style="text-align:right;color:#00A878;font-weight:700">+50%</td></tr>
     <tr><td>중국</td><td style="text-align:right">181 GWh</td><td style="text-align:right">262 GWh</td><td style="text-align:right;font-weight:700">394 GWh</td><td style="text-align:right;color:#00A878;font-weight:700">+50%</td></tr>
-    <tr><td>미국</td><td style="text-align:right">71 GWh</td><td style="text-align:right">77 GWh</td><td style="text-align:right;font-weight:700">102 GWh</td><td style="text-align:right;color:#00A878;font-weight:700">+43%</td></tr>
+    <tr><td>미국</td><td style="text-align:right">71 GWh</td><td style="text-align:right">77 GWh</td><td style="text-align:right;font-weight:700">102 GWh</td><td style="text-align:right;color:#00A878;font-weight:700">+33%</td></tr>
     </tbody>
     </table>
     </div>
     <div style="font-size:11px;color:var(--ink-2);line-height:1.7;margin-top:10px">
-      <span style="color:var(--ink-3);font-size:10px">⚠️ BNEF 프레임은 이 페이지의 북미 ESS CAPA 테이블·미국 EV+ESS 수요 시나리오와 <b>산정 기준이 다른 별도 추정</b> — 같은 표에 섞어 인용하지 말 것.<br>출처: BloombergNEF</span>
+      <span style="color:var(--ink-3);font-size:10px">⚠️ BNEF 프레임은 이 페이지의 북미 ESS CAPA 테이블·미국 EV+ESS 수요 시나리오와 <b>산정 기준이 다른 별도 추정</b> — 같은 표에 섞어 인용하지 말 것.<br>출처: 기존 BloombergNEF 인용(1H24·1H25·1H26). 원보고서·연간 설치/출하 범위 미대조; 검토 2026.09.15. 상향폭은 직전 전망 대비 계산(미국 102÷77−1 ≈ 33%).<br>소듐 탭의 2030년 480GWh(기존 자체 가정)·612GWh(7월 재기준 자체 계산)와 이 표의 828GWh는 별도 계열입니다. <a href="#sib-sensitivity">자체 가정의 범위와 민감도 보기</a>.</span>
     </div>
   </section>
+
+  <section id="sib-sensitivity" class="sib-panel" data-sib-market="sensitivity"><p>ESS 수요 민감도를 불러오는 중입니다.</p><noscript>계산에는 JavaScript가 필요합니다.</noscript></section>
+  <section class="sib-panel">
+    <h3>ESS 용도와 계산 범위</h3>
+    <div class="sib-scroll"><table class="sib-table"><thead><tr><th>용도</th><th>주요 변수</th><th>계산 시 구분</th></tr></thead><tbody>
+    <tr><th>전력망·발전소 FTM</th><td>설치 전력 × 저장시간</td><td>최대 8h 요구는 회사의 프로젝트 설명</td></tr>
+    <tr><th>부지 내 부하 완충 BESS</th><td>시설 전력 × 담당 비율 × 시간</td><td>부하 공급량과 명목 배터리 용량 구분</td></tr>
+    <tr><th>자체발전 연계 BESS</th><td>일일 에너지·충방전 횟수·효율</td><td>시간대별 발전·소비 차이 필요</td></tr>
+    <tr><th>UPS·랙 BBU</th><td>보호 부하·백업 시간·출력</td><td>시간 단위 BESS의 소듐 침투율과 별도</td></tr>
+    </tbody></table></div>
+    <p class="sib-note">출처: <a href="https://www.lgensol.com/upload/file/irEvent/26_2Q_LGES_business_performance_F_KR.pdf" target="_blank" rel="noopener">LG에너지솔루션 2Q26 IR(2026.07.30, 10쪽)</a>, 개인 ESS 리서치(2026.07.06·07.30); 검토 2026.09.15. 기존 GPU 출하 기반 모델과 아래 시설 용량 계산은 수요를 보는 서로 다른 방법이며 합산하지 않습니다. <a href="battery_tech.html#sec-sodium">소듐의 제품별 적용 범위 →</a></p>
+  </section>
+  <section id="sib-sizing" class="sib-panel" data-sib-sizing><p>데이터센터 ESS 계산기를 불러오는 중입니다.</p><noscript>계산에는 JavaScript가 필요합니다.</noscript></section>
 
   <!-- ⚡ AI 데이터센터 전력 → BESS 신규 수요축 -->
   <section class="guide-card" style="border-left:3px solid #F8B739;padding:14px 18px;margin-bottom:16px">
@@ -925,9 +939,9 @@ main{flex:1;min-width:0;max-width:1100px;padding:24px 0 60px 28px}
   <section class="guide-card" style="border-left:3px solid #76B900;padding:14px 18px;margin-bottom:16px">
     <div style="font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:10px">🔌 NVIDIA 800V DC 아키텍처 · 루빈울트라 BESS 수요</div>
     <div style="font-size:11px;color:var(--ink-2);line-height:1.7">
-      <strong style="color:#76B900">2025.10 OCP Summit:</strong> AI 팩토리당 설비용량 136MW(IT 100MW), 듀레이션 2~3시간 가정 시 <b>BESS 200~300MWh</b> 필요(NVIDIA·Fluence).<br>
+      <strong style="color:#76B900">2025.10 OCP Summit:</strong> AI 팩토리당 설비용량 136MW(IT 100MW). <b>IT 부하 100MW 전량을 2~3시간</b> 공급한다고 가정하면 <b>200~300MWh</b>(자체 환산). 시설 전체 136MW 전량 기준은 272~408MWh이며, 실제 BESS 담당 전력·손실 조건에 따라 달라짐.<br>
       <strong style="color:#76B900">루빈울트라 판매 가정</strong>('27년 25만개 → '28년 450만개) 적용 시 BESS 수요 <b>'27년 1.9GWh → '28년 34.9GWh</b> <span style="color:var(--ink-3);font-size:10px">[자체추정]</span><br>
-      <span style="color:var(--ink-3);font-size:10px">⚠ 위 Grid/On-site 프레임워크와 별개 축 · 노션 AIDC-BESS 원단위 리서치(Bear/Base/Bull GWh/GW)와 프레임 혼합 금지 · 출처: NVIDIA·Fluence</span>
+      <span style="color:var(--ink-3);font-size:10px">위 물량은 GPU 판매 가정 기반의 별도 시나리오입니다. 시설 전력 기반 계산과 합산하지 않으며 IT/시설 전력·담당 비율을 맞춰 대조합니다. 출처: NVIDIA·Fluence 기존 인용(2025.10); 산식 검토 2026.09.15. <a href="#sib-sizing">시설 용량별 계산 →</a></span>
     </div>
   </section>
 
@@ -944,6 +958,7 @@ main{flex:1;min-width:0;max-width:1100px;padding:24px 0 60px 28px}
       <strong style="color:#5B4FE9">구조 변화:</strong> 랙 전력밀도가 올라가면서 <b>"기존 중앙 UPS에 집중됐던 백업 및 저장 기능이 랙과 데이터센터 단위로 분산되는 방향"</b>. 백업 계층이 중앙 1계층에서 <b>랙(BBU)·전원실(UPS)·데이터센터(BESS) 3계층</b>으로 쪼개지며 BBU가 신규 셀 수요층으로 추가됨. 현재까지 BBU향은 <b>전량 18650 원형 셀</b>이며, 삼성SDI가 차세대 <b>21700 Tabless</b> 제품을 공개·출시했음.
     </div>
 
+    <p class="sib-note">소듐 적용은 랙 BBU·중앙 UPS·부지 BESS별로 고객 인증과 출력·백업시간을 확인합니다. BBU 전체 수요를 소듐 수요로 환산하지 않습니다. 출처: LG에너지솔루션 2Q26 IR(2026.07.30); 검토 2026.09.15.</p>
     <!-- 전력보호 3계층 -->
     <div style="margin-top:12px;padding-top:10px;border-top:1px dashed var(--line)">
       <div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">전력보호 3계층 — 설치단위별 역할 분담</div>
@@ -2466,5 +2481,6 @@ async function loadReviewedModel(){
 </script>
 </main>
 </div>
+<script src="assets/sib-research.js?v=20260915"></script>
 </body>
 </html>

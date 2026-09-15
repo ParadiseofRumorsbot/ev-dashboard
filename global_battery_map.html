@@ -140,7 +140,8 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:h
 #tab-gd .gd-bar{display:inline-block;height:9px;background:var(--accent);border-radius:2px;vertical-align:middle}
 #tab-gd .gd-det{margin-top:14px}
 #tab-gd .gd-det summary{cursor:pointer;font-size:12px;font-weight:600;color:var(--accent);padding:6px 0}
-</style></head><body>
+</style><link rel="stylesheet" href="assets/sib-research.css?v=20260915">
+</head><body>
 <div class="page-wrap">
 <aside class="sidebar">
 <div class="sidebar-hdr">EV Dashboard</div>
@@ -415,6 +416,13 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:h
 
 <div class="gd-sub" style="border-top:1px solid var(--border);padding-top:6px;margin-top:12px">출처: 삼성SDI(⑤ 생산능력 전망 · Synergy Cells 전환 · 말레이시아 라인 증설) · Panasonic Energy(⑥ 북미 생산능력 발표 · 언론보도 · BBU/UPS/BESS 계층 구분 · BBU향 18650 전량 적용) · 본 대시보드 기존 계열은 ①②③ 자체정리(공개자료 종합) 및 geo탭 시설 데이터 · 반영 2026-08-26</div>
 </div></div>
+<section id="sib-map-context" class="sib-panel">
+<span class="sib-badge">소듐 공급망 보완 · 2026.09.15</span><h3>소듐 개발 현황과 북미 공장 데이터</h3>
+<p>에코프로비엠(양극재)·애경케미칼(하드카본)·솔브레인(전해액)은 K-소듐 얼라이언스 공동개발 단계입니다. 지도에 표시된 <b>솔브레인홀딩스 북미 전해액 거점</b>에 솔브레인의 협약 물량을 귀속하지 않습니다.</p>
+<p>포스코퓨처엠의 하드카본 2028년 양산 목표, LG에너지솔루션의 오창 샘플·난징 파일럿, 에너지11·피엔티 등의 실증·설비 협력은 연구·검증 단계와 상업 양산을 구분합니다. 이 자료만으로 기존 북미 공장의 화학계·생산능력을 바꾸지 않습니다.</p>
+<p class="sib-note">CAPA는 생산능력, 계약은 기간별 공급 협약, 출하는 실제 공급 물량입니다. HyperStrong의 3년 60GWh는 공급 협력 물량입니다. 소재 톤/년·셀 GWh/년·실증 kWh를 합산하지 않습니다.</p>
+<p class="sib-note">출처: <a href="https://www.ecopro.co.kr/sub0401/view/id/2149" target="_blank" rel="noopener">에코프로(2026.07.27)</a>, LG에너지솔루션 2Q26 IR(2026.07.30), 각사(제공 SIB 기술자료 2026.09.15, 28~30쪽 재인용). <a href="battery_tech.html#sib-supply-chain">국내 기업별 단계 보기 →</a> · <a href="battery_scenario.html#sib-sensitivity">글로벌 ESS 자체 시나리오 →</a></p>
+</section>
 <!-- EV-LINKS -->
 <div style="padding:8px 0"><div class="ev-links"><a href="Battery-Atlas-3D.html">배터리 3D</a>
 <a href="index.html">EV 판매</a><a href="robotaxi.html">FSD·로보택시</a><a href="battery_scenario.html">Battery Scenario</a><a href="us-import.html">US Import</a><a href="Battery_bom_routing.html">ESS BOM</a><a href="2차전지_컨콜정리.html">컨콜 정리</a>
@@ -456,11 +464,11 @@ const D=[
 // CATHODE
 {co:"Tesla",id:"Cathode_TX",cat:"cathode",city:"Austin",st:"TX",lat:30.22,lon:-97.63,unit:"GWh",status:"early_ramp",app:"ESS",cust:"자체",r:{2026:10,2027:10,2028:10},note:"LFP Cathode 10G (SEC 8-K)"},
 {co:"LG화학",id:"Clarksville_TN",cat:"cathode",city:"Clarksville",st:"TN",lat:36.53,lon:-87.36,unit:"만톤",status:"construction",app:"EV+ESS",cust:"LGES,GM",r:{2026:0,2027:6,2028:12},note:"$3B+ 12만톤 (LG화학 공식)"},
-{co:"에코프로비엠",id:"Becancour_QC",cat:"cathode",city:"Bécancour",st:"QC",lat:46.33,lon:-72.38,unit:"만톤",status:"construction",app:"EV",cust:"SDI,SK온",r:{2026:0,2027:0.5,2028:1.5},note:"IRA 북미 거점 (에코프로비엠 IR)"},
+{co:"에코프로비엠",id:"Becancour_QC",cat:"cathode",city:"Bécancour",st:"QC",lat:46.33,lon:-72.38,unit:"만톤",status:"construction",app:"EV",cust:"SDI,SK온",r:{2026:0,2027:0.5,2028:1.5},note:"IRA 북미 거점 (에코프로비엠 IR). K-소듐 얼라이언스 공동개발(2026.07)은 회사 차원의 별도 활동이며 이 거점의 소듐 양산 CAPA를 뜻하지 않음"},
 {co:"포스코퓨처엠",id:"UltiumCAM_QC",cat:"cathode",city:"Bécancour",st:"QC",lat:46.34,lon:-72.37,unit:"만톤",status:"delayed",app:"EV",cust:"GM JV",r:{2026:0,2027:0.5,2028:1.5},note:"투자 지연 (포스코퓨처엠 컨콜)"},
 // ELECTROLYTE (만톤)
-{co:"솔브레인홀딩스",id:"Indiana",cat:"electrolyte",city:"Dubois County",st:"IN",lat:38.36,lon:-86.68,unit:"만톤",status:"operational",app:"EV+ESS",cust:"삼성SDI(독점)",r:{2026:7.5,2027:7.5,2028:7.5},note:"SDI Kokomo 대응. 전해액 전사 가동률 1H26 24.8%(2Q26 20.8%, 반기보고서) — 거점별 가동률은 비공시"},
-{co:"솔브레인홀딩스",id:"Michigan",cat:"electrolyte",city:"Holland",st:"MI",lat:42.80,lon:-86.10,unit:"만톤",status:"operational",app:"EV+ESS",cust:"LGES",r:{2026:0.5,2027:0.5,2028:0.5},note:"LGES Holland 대응 (솔브레인 IR)"},
+{co:"솔브레인홀딩스",id:"Indiana",cat:"electrolyte",city:"Dubois County",st:"IN",lat:38.36,lon:-86.68,unit:"만톤",status:"operational",app:"EV+ESS",cust:"삼성SDI(독점)",r:{2026:7.5,2027:7.5,2028:7.5},note:"SDI Kokomo 대응. 전해액 전사 가동률 1H26 24.8%(2Q26 20.8%, 반기보고서) — 거점별 가동률은 비공시. K-소듐 얼라이언스 참여사 솔브레인과 구분(2026.09.15 검토)"},
+{co:"솔브레인홀딩스",id:"Michigan",cat:"electrolyte",city:"Holland",st:"MI",lat:42.80,lon:-86.10,unit:"만톤",status:"operational",app:"EV+ESS",cust:"LGES",r:{2026:0.5,2027:0.5,2028:0.5},note:"LGES Holland 대응 (솔브레인 IR). 솔브레인홀딩스 거점이며 K-소듐 얼라이언스 참여사 솔브레인과 구분(2026.09.15 검토)"},
 {co:"덕산일렉테라",id:"Shelbyville_TN",cat:"electrolyte",city:"Shelbyville",st:"TN",lat:35.48,lon:-86.46,unit:"만톤",status:"operational",app:"EV+ESS",cust:"9사+",r:{2026:10,2027:10,2028:20},note:"북미 최대 10만톤 믹서9개 인프라20만톤 (NDR 260515)"},
 {co:"엔켐",id:"Covington_GA",cat:"electrolyte",city:"Covington",st:"GA",lat:33.60,lon:-83.86,unit:"만톤",status:"ramping",app:"EV+ESS",cust:"LGES,SK온",r:{2026:10,2027:15,2028:20},note:"20만톤 목표 (엔켐 IR)"},
 {co:"동화일렉트로라이트",id:"Tennessee",cat:"electrolyte",city:"Clarksville",st:"TN",lat:36.45,lon:-87.30,unit:"만톤",status:"operational",app:"EV+ESS",cust:"글로벌 셀사",r:{2026:5,2027:8.6,2028:8.6},note:"8.6만톤 완공 (동화 IR)"},
