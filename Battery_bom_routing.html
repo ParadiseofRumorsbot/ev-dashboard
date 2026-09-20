@@ -97,7 +97,7 @@ const DATA = {
     {
       id:'cathode', code:'D', name:'LFP 양극재',
       company:'엘앤에프', costPct:0, apcId:'apc1',
-      perGwh: 552,  // 억원/GWh — 2,400t × ASP 23만원/kg
+      perGwh: 313,  // 억원/GWh — 2,400t × ASP 1,305만원/톤($9/kg × 1,450원, 2026-09-20 조정)
       color:'#E91E63', bg:'#FBE0EA',
       desc:'Cells 52% 내부. LFP는 NCM 대비 GWh당 소요량 1.71배(1,400→2,400t). 엘앤에프가 SDI LFP ESS 양극재 솔밴더로 3Q26 말 양산, LFP 3만톤 가동+3만톤 증설 중(27년 1Q 말 6만톤 완공, 추가 부지 확보). 출하 26년 5,000톤+·27년 5만톤+(2Q26 컨콜 260806). SK온과 ESS용 LFP 1,600억 계약(260917, 26~28년). 포스코퓨처엠도 NCM 1만톤 라인을 LFP 1.5만톤으로 전환, 26년 12월 양산 목표(NDR 260804) — 듀얼 벤더 후보.',
       bomItems:[
@@ -109,7 +109,7 @@ const DATA = {
       opMcap:'2.9%', valuation:'시총 5.8조 / 2027E OP 1,709억',
       isCellInternal: true,  // Cells 52% 내부 소재
       tPerGwh: 2400,
-      asp: 2300,  // 만원/톤
+      asp: 1305,  // 만원/톤 ($9/kg × 1,450원)
     },
     {
       id:'electrolyte', code:'E', name:'전해액',
@@ -298,7 +298,7 @@ const DATA = {
       id:'sdi_vw', name:'SDI VW LFP 수주',
       desc:'VW LFP 각형 20GWh 수주 확정 → 헝가리 라인 2개 LFP 전환. 엘앤에프 LFP 6→12만톤. EV: SDI 벤츠+BMW 가동률 상향.',
       cm:{sdi:{essGwh_y26:35, essGwh_y27:35, essUtil_y26:0.6, essUtil_y27:0.8}},
-      catAdj:{cathode:{perGwh_sdi:580}, enclosure:{perGwh_sdi:370}, electrolyte:{perGwh_sdi:154}},
+      catAdj:{cathode:{perGwh_sdi:329}, enclosure:{perGwh_sdi:370}, electrolyte:{perGwh_sdi:154}},
       evAdj:{sdi:{evGwh_y26:40, evGwh_y27:55}},  // 벤츠+BMW 물량 증가
       evCatAdj:{},
       notes:['VW LFP 수주 확률 90%+. 헝가리 라인 2개 전환 진행 중','SDI VW LFP 양극재 → 엘앤에프 독점','솔브레인홀딩스 헝가리 전해액 CAPA 6만톤 [추정 — 거점별 CAPA 미공시]. 21.73%는 FY25 전사 가동률(27,376/126,000톤)이며 헝가리 개별 가동률은 미공시 — 아래 61%는 전사율을 헝가리에 대입한 시산. SDI M/S 70% 기준 VW LFP 20GWh 시 +2.38만톤 → 가동률 61%','SDI EV: 벤츠GLB+BMW iX3 물량 반영'],
@@ -307,7 +307,7 @@ const DATA = {
       id:'lges_ess', name:'LGES ESS 가속',
       desc:'LGES CAPA 56.5→70GWh. 양극재 상주리원→엘앤에프 전환. EV: Tesla향 하반기 재개 + 46시리즈 확대.',
       cm:{lges:{essGwh_y26:70, essUtil_y26:0.5, essUtil_y27:0.65}},
-      catAdj:{cathode:{perGwh_lges:400}, enclosure:{perGwh_lges:280}, thermal:{perGwh_lges:100}},
+      catAdj:{cathode:{perGwh_lges:227}, enclosure:{perGwh_lges:280}, thermal:{perGwh_lges:100}},
       evAdj:{lges:{evGwh_y26:175}},  // Tesla향 재개 + 유럽 강세
       evCatAdj:{cathode:{lges:160}},  // 엘앤에프 LGES NCM M/S 40→50% (LFP 추가)
       notes:['LGES LFP 양극재 → 엘앤에프 전환(28~)','서진 LGES 인클로저 진입','Tesla향 하반기 물량 재개'],
@@ -316,7 +316,7 @@ const DATA = {
       id:'war_bull', name:'전쟁 고유가 Bull',
       desc:'전쟁 장기화 → 고유가 → EV 수요 pull-in. 미국 136→150만대, 유럽 440→470만대. ESS: DC ESS 가속.',
       cm:{sdi:{essUtil_y26:0.7,essUtil_y27:0.85}, lges:{essUtil_y26:0.55,essUtil_y27:0.7}, skon:{essGwh_y27:15,essUtil_y26:0.6,essUtil_y27:0.7}},
-      catAdj:{cathode:{perGwh:600}, electrolyte:{perGwh:215}},
+      catAdj:{cathode:{perGwh:340}, electrolyte:{perGwh:215}},
       evAdj:{sdi:{evGwh_y26:42}, lges:{evGwh_y26:175}, skon:{evGwh_y26:130}},
       evCatAdj:{},
       notes:['리튬가 $20→$25 → 양극재·전해액 ASP 상승','EV 수요 pull-in (고유가)','CHARGE Act 통과 가정','이란 전쟁 고유가 → EV/ESS pull-in (LGES·SDI 1Q26 CC 공통 언급)'],
@@ -325,7 +325,7 @@ const DATA = {
       id:'erev_bear', name:'EREV 가속 + 북미 하향',
       desc:'EREV 전환 가속(18만대→30만대). 대수↑ but kWh/대 -60%. 미국 136→120만대. CHARGE Act 미통과.',
       cm:{sdi:{essUtil_y26:0.4,essUtil_y27:0.55}, lges:{essUtil_y26:0.3,essUtil_y27:0.4}, skon:{essUtil_y26:0.25,essUtil_y27:0.35}},
-      catAdj:{cathode:{perGwh:480}, electrolyte:{perGwh:170}, enclosure:{perGwh:320}},
+      catAdj:{cathode:{perGwh:272}, electrolyte:{perGwh:170}, enclosure:{perGwh:320}},
       evAdj:{sdi:{evGwh_y26:32}, lges:{evGwh_y26:145}, skon:{evGwh_y26:105}},
       evCatAdj:{},
       notes:['EREV 30만대 전환 → GWh -12 감소','Honda 0 Series 취소 → LGES -10GWh','Ford EV 취소 → SKON -15GWh','CHARGE Act 미통과 → 중국산 ESS 지속'],
