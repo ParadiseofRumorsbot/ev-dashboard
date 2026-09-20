@@ -1,6 +1,6 @@
 # 🚗 EV 대시보드 업데이트 체크리스트
-> repo: github.com/ParadiseofRumorsbot/ev-dashboard · 최종정리 2026-06-09
-> 작업 폴더(정본): `…\ev-dashboard\ev-dashboard-repo`
+> repo: github.com/ParadiseofRumorsbot/ev-dashboard · 최종정리 2026-09-20
+> 작업 폴더(정본): origin과 연결된 클론 — PC마다 경로가 다름(예: `…\ev-dashboard\ev-dashboard-repo`, `…\클로드,노션,BOT 파일\ev-dashboard`)
 
 ## 0. 항상 지킬 규칙
 - [ ] 증권사명 표기 금지 → 원데이터 출처(SNE Research·Rho Motion·WardsAuto·CPCA·KBA·SMMT·ACEA·관세청·LME·US Census 등)
@@ -44,6 +44,16 @@
 - [ ] 셀·소재·장비 / Car·Energy·Robot 뉴스
 ### B-3. 분기·비정기
 - [ ] CAPA·가동률 / 전고체·나트륨 로드맵 / 정책(AMPC·관세·중간선거) / On-site·DC ESS 수주
+### B-4. MD 수치 옮길 때 확인 (2026-09-20 추가)
+- [ ] 미국 모델별 표(도표 24)는 직전 호와 대조 — 2026-09-21호는 12개 값 행에서 7월 값을 8월 값으로 덮어써 열이 한 칸 밀렸고, 13개 값 행은 첫 열 고정 + 최근 분기 값 2회 중복 구조였음. 본문 MoM·YoY와 표의 인접 값이 맞는지 검산
+- [ ] 같은 호 안에서도 본문과 표 값이 다를 수 있음(8월 미국 BEV 본문 86,186 vs 표 86,168) → BEV+PHEV 합계가 맞는 쪽 사용
+- [ ] SNE 글로벌 월별 값은 다음 달 발표에서 바뀜(2026년 5월 185.3만 → 176.3만) → 누계는 최신 자료 기준으로 쓰고 기준일 표기. Rho Motion 누적치도 과거월 소급 개정이 있음(5월 누적 113.2 → 6월 누적 182.2GWh)
+- [ ] 월별 차트는 카드와 별개로 하드코딩 — 카드만 갱신하고 차트를 빼먹지 않기(cG·cU·cC·cE, cOEM·c4·cTSLA, bShip·bYoY·bUS·bEU)
+### B-5. 탭 간 정합 (2026-09-20 추가)
+- [ ] battery_scenario의 `cellMakers`(essGwh·supplyChain·guidance)·`cats`(desc·investPoint·valuation)를 고치면 Battery_bom_routing의 같은 블록도 함께 수정 — BOM 탭은 `notion_variables.json`을 읽지 않고, 시나리오 탭도 검토된 3개 경로만 읽음
+- [ ] 전해액 `perGwh`는 정의가 다름: 시나리오 198(점유율 적용 전, `essMS`로 한 번 적용) vs BOM 139(M/S 70% 적용 후) → 값 복사 금지
+- [ ] 배터리 맵 `sop`는 "1H26"·"2H26" 또는 연도만 — 타임라인 파서가 분기("4Q26")를 못 읽어 2026.0으로 찍힘. 분기는 note에 적기
+- [ ] 로컬 프리뷰는 같은 URL을 다시 열면 브라우저 캐시로 옛 HTML이 보임 → `?v=` 쿼리를 붙여 확인
 
 ## C. 테마 워치
 - [ ] 유럽 Tesla 판매 반등 / On-site·DC ESS 수요 / 트럼프 정책 Unwinding(중간선거)
