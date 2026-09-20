@@ -82,13 +82,13 @@ const DATA = {
     },
     {
       id:'packaging', code:'C', name:'패키징 (팩/모듈 소재)',
-      company:'율촌화학 · 신흥에스이씨', costPct:5.6, apcId:'apc1',
+      company:'율촌화학 · 상신이디피 · 신흥에스이씨', costPct:5.6, apcId:'apc1',
       perGwh: 133,  // 억원/GWh
       color:'#E9A23B', bg:'#FBF1DC',
       desc:'셀을 둘러싸 팩/모듈을 형성하는 소재. 파우치 포장재(율촌화학), CAN=캔/외장통(상신이디피)·캡 어셈블리=뚜껑(신흥에스이씨). LFP 전환 시 소요량 변화 제한적.',
       bomItems:[
         {name:'파우치 Al-Lam 포장재', note:'율촌화학'},
-        {name:'CAN (원통형/각형)', note:'상신이디피 · 미국 매출 FY25 250.6억 → 1H26 232.7억(공시)'},
+        {name:'CAN (원통형/각형)', note:'상신이디피 · CAN 약 60억원/GWh(회사 IR 260421) · 미국 매출 FY25 250.6억 → 1H26 232.7억(공시)'},
         {name:'캡 어셈블리', note:'신흥에스이씨 · 미국 법인 26E 700억(흑전) · BBU CID +130% YoY · 라인 2→4개'},
       ],
       investPoint:'SDI 내 원형 CAN 90~100%·각형 약 70%(각형은 회사 비공개) + 미국 CAN 라인: 명목 6대 중 가동 2대 → 26년 말 4대(SBB 2.0용 LFP 2대, 4Q 양산) → 27년 300Ah 톨캔 5대 증설로 명목 11대, 월 CAPA 350만개+ → 600만개 후반(260908 탐방) + 27년 매출 목표 4,000억 이상(회사) + 헝가리 보합 + 46파이 헝가리 28년 하반기',
@@ -937,7 +937,7 @@ function buildSvg(){
   const pkgTag=E('g',{'data-tag':'packaging',class:'tag-bub'});
   A(pkgTag,E('rect',{x:Z.apc1.x+Z.apc1.w-145,y:Z.apc1.y+Z.apc1.h-18,width:70,height:14,rx:7}),E('text',{x:Z.apc1.x+Z.apc1.w-110,y:Z.apc1.y+Z.apc1.h-11},'PKG 5.6%'));
   g1.appendChild(pkgTag);
-  A(g1,E('text',{x:Z.apc1.x+10,y:Z.apc1.y+Z.apc1.h-10,class:'tier-mod'},'PACKAGING 5.6% (율촌화학·신흥에스이씨) + PRODUCTION 8.0%'));
+  A(g1,E('text',{x:Z.apc1.x+10,y:Z.apc1.y+Z.apc1.h-10,class:'tier-mod'},'PACKAGING 5.6% (율촌화학·상신이디피·신흥에스이씨) + PRODUCTION 8.0%'));
   svg.appendChild(g1);
   A(svg,E('line',{id:'arr-apc1-app',x1:Z.apc1.x+Z.apc1.w/2,y1:Z.apc1.y+Z.apc1.h,x2:Z.apc1.x+Z.apc1.w/2,y2:Z.gpu.y,class:'flow-arr','marker-end':'url(#ah)'}));
 
