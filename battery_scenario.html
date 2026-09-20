@@ -78,17 +78,16 @@ const DATA = {
     },
     {
       id:'packaging', code:'C', name:'패키징 (팩/모듈 소재)',
-      company:'율촌화학 · 상신이디피 · 신흥에스이씨', costPct:5.6, apcId:'apc1',
-      perGwh: 133,  // 억원/GWh
+      company:'율촌화학 · 신흥에스이씨', costPct:3.1, apcId:'apc1',
+      perGwh: 73,  // 억원/GWh — IRS Packaging 5.6%(133억) − CAN 60억(상신이디피 카드로 분리)
       color:'#E9A23B', bg:'#FBF1DC',
-      desc:'셀을 둘러싸 팩/모듈을 형성하는 소재. 파우치 포장재(율촌화학), CAN=캔/외장통(상신이디피)·캡 어셈블리=뚜껑(신흥에스이씨). LFP 전환 시 소요량 변화 제한적.',
+      desc:'셀을 둘러싸 팩/모듈을 형성하는 소재. 파우치 포장재(율촌화학)·캡 어셈블리=뚜껑(신흥에스이씨). CAN(상신이디피)은 별도 카드로 분리 — IRS Packaging 5.6%(133억원/GWh)에서 CAN 60억원/GWh를 뺀 나머지. LFP 전환 시 소요량 변화 제한적.',
       bomItems:[
         {name:'파우치 Al-Lam 포장재', note:'율촌화학'},
-        {name:'CAN (원통형/각형)', note:'상신이디피 · CAN 약 60억원/GWh(회사 IR 260421)'},
         {name:'캡 어셈블리', note:'신흥에스이씨'},
       ],
-      investPoint:'상신이디피: SDI 내 원형 CAN 90~100%·각형 약 70%(각형은 회사 비공개), 미국 CAN 라인 26년 말 가동 4대 → 27년 명목 11대(260908 탐방). 신흥에스이씨: 각형 CAN 신규',
-      opMcap:'—', valuation:'상신이디피 2026E OP 265억(자체추정 260815)',
+      investPoint:'신흥에스이씨: 각형 캡 어셈블리 주력·각형 CAN 신규. 율촌화학: 파우치 포장재',
+      opMcap:'—', valuation:'—',
     },
     {
       id:'cathode', code:'D', name:'LFP 양극재',
@@ -158,6 +157,20 @@ const DATA = {
       tPerGwh: 130,
       asp: 2769,  // 만원/톤
     },
+    {
+      id:'can', code:'G', name:'각형 CAN (셀 외장 캔)',
+      company:'상신이디피', costPct:2.5, apcId:'apc1',
+      perGwh: 60,  // 억원/GWh — 회사 IR(260421) ESS 대형 각형 기준. IRS Packaging 5.6%(133억)에서 분리(2026-09-20)
+      color:'#4CAF50', bg:'#E6F4E7',
+      desc:'IRS Packaging 5.6%(133억원/GWh)에 들어 있던 셀 외장 캔을 따로 뺀 카드. 딥드로잉으로 측벽을 얇게 성형하는 각형·원형 CAN. 삼성SDI 코코모(SPE) 4개 라인 캔을 상신이디피가 공급(회사 확인, 260908 탐방), 말레이시아 원형은 사실상 단독, 헝가리는 중국 Kedali와 이원화(점유율은 회사 비공개). 알루미늄 등 원재료 등락은 삼성SDI 단가 협상에 연동돼 시차를 두고 보전.',
+      bomItems:[
+        {name:'ESS 대형 각형 CAN', note:'약 60억원/GWh(회사 IR 260421) · SBB 2.0용 273Ah 4Q26 양산 · 300Ah대 톨캔 27년'},
+        {name:'미국 인디애나 라인', note:'명목 6대 중 가동 2대 → 26년 말 4대 → 27년 명목 11대 · 월 CAPA 350만개+ → 600만개 후반(260908 탐방)'},
+        {name:'원형 CAN (18650·21700)', note:'말레이시아 BBU·전동공구향 · 하부 벤트 신형 21700 · 미국 매출 FY25 250.6억 → 1H26 232.7억(공시)'},
+      ],
+      investPoint:'SDI 내 원형 CAN 90~100%·각형 약 70%(각형은 회사 비공개), 미국 CAN 라인 26년 말 가동 4대 → 27년 명목 11대(260908 탐방), 27년 매출 목표 4,000억 이상(회사)',
+      opMcap:'9.0%', valuation:'26E 매출 3,355억·OP 265억(자체추정 260815)',
+    },
   ],
 
   // 스케일업 기준
@@ -218,6 +231,7 @@ const DATA = {
     electrolyte:{sdi:70,  lges:0,   skon:0},
     alfoil:     {sdi:70,  lges:30,  skon:0},
     separator:  {sdi:50,  lges:50,  skon:0},
+    can:        {sdi:100, lges:0,   skon:0},
   },
 
   // EV M/S — 부품사별 × 셀사별 Market Share (%)
@@ -230,6 +244,7 @@ const DATA = {
     electrolyte:{sdi:38,  lges:0,   skon:0},
     alfoil:     {sdi:13,  lges:3,   skon:0},
     separator:  {sdi:25,  lges:25,  skon:0},
+    can:        {sdi:0,   lges:0,   skon:0},
   },
 
   // ═══════════════════════════════════════════════════════
@@ -371,13 +386,13 @@ const DATA = {
       subScenarios:{
         charge_act:{
           cm:{sdi:{essUtil_y26:0.75,essUtil_y27:0.9}, lges:{essUtil_y26:0.6,essUtil_y27:0.75}, skon:{essGwh_y26:8,essGwh_y27:15,essUtil_y26:0.65,essUtil_y27:0.75}},
-          catAdj:{enclosure:{perGwh:400}, thermal:{perGwh:210}, cathode:{perGwh:600}, electrolyte:{perGwh:160}, alfoil:{perGwh:45}, separator:{perGwh:40}},
+          catAdj:{enclosure:{perGwh:400}, thermal:{perGwh:210}, cathode:{perGwh:340}, electrolyte:{perGwh:160}, alfoil:{perGwh:45}, separator:{perGwh:40}},
           evAdj:{}, evCatAdj:{},
           notes:['CHARGE Act: 중국산 FEOC 배터리 ESS 설치 금지(ITC 수급 요건 강화)','중국산 퇴출 → K3 3사 북미 ESS 수주 급증. CATL·BYD 미국 ESS 사실상 차단','서진시스템 탈중국 프리미엄: 350→400억/GWh. SDI SBB 독점 + LGES Fluence 진입 가능','한중엔시에스 SDI 가동률 급등 시 사실상 독점 수혜. 인디애나 공장 27년 풀가동','엘앤에프 LFP 양극재 소요 비례 증가. 6만톤 CAPA 풀가동 시나리오','SKON 테네시 ESS 전환 + Flatiron 후속 수주 가속','삼성SDI 260901 그룹미팅: 미국 ESS 내 중국 업체 점유율 작년 80%+ → 올해 약 50%(회사 설명)'],
         },
         ai_dc:{
           cm:{sdi:{essGwh_y26:35,essUtil_y26:0.65,essGwh_y27:40,essUtil_y27:0.8}, lges:{essGwh_y26:65,essUtil_y26:0.5,essUtil_y27:0.65}, skon:{essGwh_y26:6,essUtil_y26:0.55,essUtil_y27:0.65}},
-          catAdj:{enclosure:{perGwh:380}, thermal:{perGwh:200}, cathode:{perGwh:570}},
+          catAdj:{enclosure:{perGwh:380}, thermal:{perGwh:200}, cathode:{perGwh:323}},
           evAdj:{}, evCatAdj:{},
           notes:['AI DC 전력 수요 폭증 → BTM ESS 신규 시장 10~15GWh(26~27E)','SDI 1Q26 CC: DC ESS CAGR 30%+, 마이크로그리드 60%+. BBU $8억(+70%Y)','Hyperscaler(AWS·MS·Google) BTM ESS RFP 급증. 4시간+ 장주기 수요','서진시스템: DC ESS 인클로저 → 기존 Grid-scale 대비 고사양·고ASP. 랙마운트형 추가','한중엔시에스: DC 냉각 기술 기보유(서버 수냉). ESS+서버 통합 냉각 가능','LGES CAPA 56.5→65GWh: 온타리오·랜싱 증설분 DC ESS 할당','삼성SDI 260901 그룹미팅: ESS 잔고는 전력용 60~70%, 그중 BTM 노출 20~30%·상업용 스탠드얼론 약 5% — BTM 기대는 제한적','LGES 2Q26 컨콜: 일부 빅테크와 배터리 직납 BTM 논의 중, FERC 6월 정책 2건'],
         },
@@ -1111,7 +1126,8 @@ main{flex:1;min-width:0;max-width:1100px;padding:24px 0 60px 28px}
       • <strong>ESS 신규 설치 카드 6월 갱신</strong> — 글로벌 Grid 42.8GWh(+50%)·BTM 8.0(+55%), 미국 Grid 12.0(+81%) · 1~6월 누적 182.2GWh(+41%) · 4월 미국 Grid −86% 상충 주석 해소 · 출처: Rho Motion(2026년 6월)<br>
       • <strong>Fluence FY26 가이던스 하향 반영</strong> — 매출 약 24억$(종전 29~31억$)·조정 EBITDA 약 −2억$ · 휴스턴 위탁생산 시설 램프 지연 · 출처: Fluence 보도자료(2026-09-16)<br>
       • <strong>IR 노트 정합</strong> — 삼성SDI guidance에 헝가리 가동률·삼성디스플레이 지분 매각·CAPEX 추가(260901 그룹미팅) · LGES guidance에 ESS 신규 수주·애리조나 46시리즈 4Q26 가동 추가(2Q26 컨콜) · 엘앤에프 LFP 6만톤 27년 1Q 말 완공·SK온 LFP 계약 · 상신이디피 M/S 분리 표기·2026E OP 265억(자체추정) · 삼아알미늄 OPM 경로 · 천보 LiFSI·BBU 정량·비츠로셀 CBU 각주<br>
-      • <strong>LFP 양극재 원단위 조정</strong> — 552 → 313억원/GWh(2,400t × ASP $9/kg × 1,450원; 종전 ASP 약 $15.9/kg). 양극재 값을 직접 지정한 시나리오 프리셋 7개도 같은 비율(×0.567)로 재조정 · 근거: 삼성SDI 공급계약 공시(260324) 역산·각사 IR<br>
+      • <strong>상신이디피(각형 CAN) 카드 분리</strong> — 패키징 카드(율촌화학·신흥에스이씨) 133 → 73억원/GWh, 새 CAN 카드 60억원/GWh(회사 IR 260421)·삼성SDI 100%. 1GWh 합계는 그대로 · ESS만 반영(EV 쪽은 미반영)<br>
+      • <strong>LFP 양극재 원단위 조정</strong> — 552 → 313억원/GWh(2,400t × ASP $9/kg × 1,450원; 종전 ASP 약 $15.9/kg). 양극재 값을 직접 지정한 시나리오 프리셋 9개도 같은 비율(×0.567)로 재조정 · 근거: 삼성SDI 공급계약 공시(260324) 역산·각사 IR<br>
       • <strong>금속 계산기</strong> — 니켈 18,955→16,660 · 코발트 56,290→55,850 $/톤 · 출처: 한국광물자원공사(2026-08 월평균)<br>
       <br>
       <strong style="color:#00A878">📝 2026.08.07</strong><br>

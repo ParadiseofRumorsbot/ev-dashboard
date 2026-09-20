@@ -82,17 +82,16 @@ const DATA = {
     },
     {
       id:'packaging', code:'C', name:'패키징 (팩/모듈 소재)',
-      company:'율촌화학 · 상신이디피 · 신흥에스이씨', costPct:5.6, apcId:'apc1',
-      perGwh: 133,  // 억원/GWh
+      company:'율촌화학 · 신흥에스이씨', costPct:3.1, apcId:'apc1',
+      perGwh: 73,  // 억원/GWh — IRS Packaging 5.6%(133억) − CAN 60억(상신이디피 카드로 분리)
       color:'#E9A23B', bg:'#FBF1DC',
-      desc:'셀을 둘러싸 팩/모듈을 형성하는 소재. 파우치 포장재(율촌화학), CAN=캔/외장통(상신이디피)·캡 어셈블리=뚜껑(신흥에스이씨). LFP 전환 시 소요량 변화 제한적.',
+      desc:'셀을 둘러싸 팩/모듈을 형성하는 소재. 파우치 포장재(율촌화학)·캡 어셈블리=뚜껑(신흥에스이씨). CAN(상신이디피)은 별도 카드로 분리 — IRS Packaging 5.6%(133억원/GWh)에서 CAN 60억원/GWh를 뺀 나머지. LFP 전환 시 소요량 변화 제한적.',
       bomItems:[
         {name:'파우치 Al-Lam 포장재', note:'율촌화학'},
-        {name:'CAN (원통형/각형)', note:'상신이디피 · CAN 약 60억원/GWh(회사 IR 260421) · 미국 매출 FY25 250.6억 → 1H26 232.7억(공시)'},
         {name:'캡 어셈블리', note:'신흥에스이씨 · 미국 법인 26E 700억(흑전) · BBU CID +130% YoY · 라인 2→4개'},
       ],
-      investPoint:'SDI 내 원형 CAN 90~100%·각형 약 70%(각형은 회사 비공개) + 미국 CAN 라인: 명목 6대 중 가동 2대 → 26년 말 4대(SBB 2.0용 LFP 2대, 4Q 양산) → 27년 300Ah 톨캔 5대 증설로 명목 11대, 월 CAPA 350만개+ → 600만개 후반(260908 탐방) + 27년 매출 목표 4,000억 이상(회사) + 헝가리 보합 + 46파이 헝가리 28년 하반기',
-      opMcap:'9.0%', valuation:'26E 매출 3,355억·OP 265억(자체추정 260815)',
+      investPoint:'신흥에스이씨: 미국 법인 26E 700억(흑전)·BBU CID +130% YoY·라인 2→4개 + 율촌화학 파우치 포장재',
+      opMcap:'—', valuation:'—',
     },
     {
       id:'cathode', code:'D', name:'LFP 양극재',
@@ -144,6 +143,20 @@ const DATA = {
       isCellInternal: true,
       tPerGwh: 500,
       asp: 776,  // 만원/톤
+    },
+    {
+      id:'can', code:'G', name:'각형 CAN (셀 외장 캔)',
+      company:'상신이디피', costPct:2.5, apcId:'apc1',
+      perGwh: 60,  // 억원/GWh — 회사 IR(260421) ESS 대형 각형 기준. IRS Packaging 5.6%(133억)에서 분리(2026-09-20)
+      color:'#4CAF50', bg:'#E6F4E7',
+      desc:'IRS Packaging 5.6%(133억원/GWh)에 들어 있던 셀 외장 캔을 따로 뺀 카드. 딥드로잉으로 측벽을 얇게 성형하는 각형·원형 CAN. 삼성SDI 코코모(SPE) 4개 라인 캔을 상신이디피가 공급(회사 확인, 260908 탐방), 말레이시아 원형은 사실상 단독, 헝가리는 중국 Kedali와 이원화(점유율은 회사 비공개). 알루미늄 등 원재료 등락은 삼성SDI 단가 협상에 연동돼 시차를 두고 보전.',
+      bomItems:[
+        {name:'ESS 대형 각형 CAN', note:'약 60억원/GWh(회사 IR 260421) · SBB 2.0용 273Ah 4Q26 양산 · 300Ah대 톨캔 27년'},
+        {name:'미국 인디애나 라인', note:'명목 6대 중 가동 2대 → 26년 말 4대 → 27년 명목 11대 · 월 CAPA 350만개+ → 600만개 후반(260908 탐방)'},
+        {name:'원형 CAN (18650·21700)', note:'말레이시아 BBU·전동공구향 · 하부 벤트 신형 21700 · 미국 매출 FY25 250.6억 → 1H26 232.7억(공시)'},
+      ],
+      investPoint:'SDI 내 원형 CAN 90~100%·각형 약 70%(각형은 회사 비공개) + 미국 CAN 라인: 명목 6대 중 가동 2대 → 26년 말 4대(SBB 2.0용 LFP 2대, 4Q 양산) → 27년 300Ah 톨캔 5대 증설로 명목 11대, 월 CAPA 350만개+ → 600만개 후반(260908 탐방) + 27년 매출 목표 4,000억 이상(회사) + 헝가리 보합 + 46파이 헝가리 28년 하반기',
+      opMcap:'9.0%', valuation:'26E 매출 3,355억·OP 265억(자체추정 260815)',
     },
   ],
 
@@ -203,6 +216,7 @@ const DATA = {
     cathode:    {sdi:0,  lges:129, skon:32},
     electrolyte:{sdi:58, lges:0,   skon:0},
     alfoil:     {sdi:5,  lges:1,   skon:0},
+    can:        {sdi:0,  lges:0,   skon:0},
   },
 
   // ═══════════════════════════════════════════════════════
@@ -968,7 +982,7 @@ function updateSvg(){
   // Zone mapping
   const zoneMap={
     enclosure:['enclosure'],thermal:['thermal'],packaging:['cells','cellInt'],
-    cathode:['cells','cellInt'],electrolyte:['cells','cellInt'],alfoil:['cells','cellInt'],
+    cathode:['cells','cellInt'],electrolyte:['cells','cellInt'],alfoil:['cells','cellInt'],can:['cells','cellInt'],
   };
   (zoneMap[c.id]||[]).forEach(z=>svg.querySelectorAll(`[data-zone="${z}"]`).forEach(e=>e.classList.add('lit')));
   // Tags
@@ -983,6 +997,7 @@ function updateSvg(){
     cathode:['arr-grid-apc3','arr-apc3-apc2','arr-apc2-apc1','arr-apc1-app'],
     electrolyte:['arr-grid-apc3','arr-apc3-apc2','arr-apc2-apc1','arr-apc1-app'],
     alfoil:['arr-grid-apc3','arr-apc3-apc2','arr-apc2-apc1','arr-apc1-app'],
+    can:['arr-grid-apc3','arr-apc3-apc2','arr-apc2-apc1'],
   };
   (flows[c.id]||[]).forEach(id=>{const a=document.getElementById(id);if(a)a.classList.add('lit')});
 }
