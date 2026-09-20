@@ -1,103 +1,110 @@
 {
-  "syncedAt": "2026-09-19T22:30:53.289Z",
+  "syncedAt": "2026-09-20T22:43:15.604Z",
   "metrics": {
+    "houston_active": {
+      "key": "houston_active",
+      "value": 16,
+      "unit": "대",
+      "date": "2026-09-20",
+      "note": "RobotaxiTracker 30일 활성(서비스 중 32대 중) · 화면 미바인딩(JSON 적재만) · 9/20"
+    },
     "orlando_unsupervised": {
       "key": "orlando_unsupervised",
       "value": 3,
       "unit": "대",
-      "date": "2026-09-04",
-      "note": "신규 지표 · 현재 서비스 중 · 9/4"
+      "date": "2026-09-20",
+      "note": "현재 서비스 중 · 30d 활성 2 · 9/4와 동일 · 9/20"
     },
-    "texas_dmv_registered": {
-      "key": "texas_dmv_registered",
-      "value": 420,
+    "austin_active": {
+      "key": "austin_active",
+      "value": 160,
       "unit": "대",
-      "date": "2026-09-04",
-      "note": "신규 지표 · TX DMV 등록 = Model Y 375 + Cybercab 45 · 161 matched+259 unmatched 정합 · 9/4"
+      "date": "2026-09-20",
+      "note": "RobotaxiTracker 30일 활성(서비스 중 198대 중) · 화면 미바인딩(JSON 적재만) · 9/20"
     },
-    "total_registered": {
-      "key": "total_registered",
-      "value": 940,
+    "tampa_unsupervised": {
+      "key": "tampa_unsupervised",
+      "value": 14,
       "unit": "대",
-      "date": "2026-09-04",
-      "note": "트래커 tracked all-time(개편 후 계열, 구 ALL TRACKED 770 대응) · 9/4"
+      "date": "2026-09-20",
+      "note": "현재 서비스 중 · 30d 활성 12 · 9/4 11대 · 9/20"
     },
-    "miami_unsupervised": {
-      "key": "miami_unsupervised",
-      "value": 3,
+    "cum_miles": {
+      "key": "cum_miles",
+      "value": 14.69,
+      "unit": "B",
+      "date": "2026-09-20",
+      "note": "공식 tesla.com/fsd/safety 직접 확인 (9/20) · 14,688,237,635마일 · 도심 5.71B · 9/4 14.12B"
+    },
+    "austin_unsupervised": {
+      "key": "austin_unsupervised",
+      "value": 198,
       "unit": "대",
-      "date": "2026-09-04",
-      "note": "신규 지표 · 현재 서비스 중 · 9/4"
+      "date": "2026-09-20",
+      "note": "현재 서비스 중 · Austin tracked all-time 246 · 30d 활성 160 · 9/4 119대 · 9/20"
     },
     "houston_unsupervised": {
       "key": "houston_unsupervised",
       "value": 32,
       "unit": "대",
-      "date": "2026-09-04",
-      "note": "현재 서비스 중(트래커 개편 후 계열) · 9/4"
+      "date": "2026-09-20",
+      "note": "현재 서비스 중(트래커 개편 후 계열) · 9/4와 동일 · 30d 활성 16 · 9/20"
     },
-    "tampa_unsupervised": {
-      "key": "tampa_unsupervised",
-      "value": 11,
+    "miami_unsupervised": {
+      "key": "miami_unsupervised",
+      "value": 4,
       "unit": "대",
-      "date": "2026-09-04",
-      "note": "신규 지표 · 현재 서비스 중 · 9/4"
-    },
-    "dallas_unsupervised": {
-      "key": "dallas_unsupervised",
-      "value": 39,
-      "unit": "대",
-      "date": "2026-09-04",
-      "note": "현재 서비스 중(트래커 개편 후 계열) · 9/4"
+      "date": "2026-09-20",
+      "note": "현재 서비스 중 · 30d 활성 2 · 9/4 3대 · 9/20"
     },
     "total_unsupervised": {
       "key": "total_unsupervised",
-      "value": 214,
+      "value": 309,
       "unit": "대",
-      "date": "2026-09-04",
-      "note": "⚠️정의 변경: 트래커 개편(26.09)으로 구 누적검증 계열 소멸 → 현재 서비스 중 무감독(전 도시) · 30d 활성 178 · 9/4"
+      "date": "2026-09-20",
+      "note": "현재 서비스 중 무감독(전 도시, 트래커 개편 후 계열) · 30d 활성 234 · 9/4 214대 · robotaxitracker.com 9/20"
     },
-    "active_unsupervised": {
-      "key": "active_unsupervised",
-      "value": 178,
+    "total_registered": {
+      "key": "total_registered",
+      "value": 1010,
       "unit": "대",
-      "date": "2026-09-04",
-      "note": "30일 활성(전체 214 중) · robotaxitracker.com · 9/4"
+      "date": "2026-09-20",
+      "note": "트래커 전체 차량(Active 카드 all 기준: 무감독 309 + 감독 Bay Area 701) · 30d 활성 294 · 9/4 940과 같은 계열로 보이나 9/4 산식은 확인 못 함 · 9/20"
     },
-    "austin_unsupervised": {
-      "key": "austin_unsupervised",
-      "value": 119,
+    "daily_miles": {
+      "key": "daily_miles",
+      "value": 34.9,
+      "unit": "M",
+      "date": "2026-09-20",
+      "note": "마일/일 (공식 카운터 증가 속도 실측 404/초, 9/20) · 9/4→9/20 누적 증가분 평균 35.4M/일과 부합 · 도심 14.4M/일"
+    },
+    "texas_dmv_registered": {
+      "key": "texas_dmv_registered",
+      "value": 448,
       "unit": "대",
-      "date": "2026-09-04",
-      "note": "현재 서비스 중(정의 변경 동일) · Austin tracked all-time 166 · 9/4"
-    },
-    "cum_miles": {
-      "key": "cum_miles",
-      "value": 14.12,
-      "unit": "B",
-      "date": "2026-09-04",
-      "note": "공식 tesla.com/fsd/safety 직접 확인 (9/4) · 14,122,355,796마일 · 도심 5.48B"
-    },
-    "houston_active": {
-      "key": "houston_active",
-      "value": 0,
-      "unit": "대",
-      "date": "2026-07-20",
-      "note": "신규 지표. RobotaxiTracker 30일 활성 0대 — 누적 6대 중 최근 30일 운행 차량 없음. 화면 미바인딩(JSON 적재만)"
-    },
-    "austin_active": {
-      "key": "austin_active",
-      "value": 16,
-      "unit": "대",
-      "date": "2026-07-20",
-      "note": "신규 지표. RobotaxiTracker 30일 활성 · 444 rides · 1,665마일 · 무감독 비중 27.9%. 누적 28대 대비 57%. 화면 미바인딩(JSON 적재만)"
+      "date": "2026-09-20",
+      "note": "TX DMV 등록 = Model Y 390 + Cybercab 58 · 최근 30일 +262 · 추적 번호판 매칭 265 · 9/4 420대 · 9/20"
     },
     "dallas_active": {
       "key": "dallas_active",
-      "value": 4,
+      "value": 42,
       "unit": "대",
-      "date": "2026-07-20",
-      "note": "신규 지표. RobotaxiTracker 30일 활성 · 111 rides · 361마일 · 무감독 비중 76.6%. 누적 5대 대비 80%. 화면 미바인딩(JSON 적재만)"
+      "date": "2026-09-20",
+      "note": "RobotaxiTracker 30일 활성(서비스 중 51대 중) · 화면 미바인딩(JSON 적재만) · 9/20"
+    },
+    "dallas_unsupervised": {
+      "key": "dallas_unsupervised",
+      "value": 51,
+      "unit": "대",
+      "date": "2026-09-20",
+      "note": "현재 서비스 중(트래커 개편 후 계열) · 30d 활성 42 · 9/4 39대 · 9/20"
+    },
+    "active_unsupervised": {
+      "key": "active_unsupervised",
+      "value": 234,
+      "unit": "대",
+      "date": "2026-09-20",
+      "note": "30일 활성(전체 309 중) · Austin 160·Dallas 42·Houston 16·Tampa 12·Miami 2·Orlando 2 · robotaxitracker.com · 9/20"
     },
     "austin_total": {
       "key": "austin_total",
@@ -105,13 +112,6 @@
       "unit": "대",
       "date": "2026-05-13",
       "note": "Austin 총 플릿"
-    },
-    "daily_miles": {
-      "key": "daily_miles",
-      "value": 29,
-      "unit": "M",
-      "date": "2026-05-13",
-      "note": "마일/일 (333/초) · 구독 1.28M"
     },
     "subscribers": {
       "key": "subscribers",
@@ -122,116 +122,44 @@
     }
   },
   "history": {
+    "houston_active": [
+      {
+        "date": "2026-07-20",
+        "value": 0
+      },
+      {
+        "date": "2026-09-20",
+        "value": 16
+      }
+    ],
     "orlando_unsupervised": [
       {
         "date": "2026-09-04",
         "value": 3
-      }
-    ],
-    "texas_dmv_registered": [
-      {
-        "date": "2026-09-04",
-        "value": 420
-      }
-    ],
-    "total_registered": [
-      {
-        "date": "2026-06-08",
-        "value": 719
       },
       {
-        "date": "2026-07-20",
-        "value": 770
-      },
-      {
-        "date": "2026-09-04",
-        "value": 940
-      }
-    ],
-    "miami_unsupervised": [
-      {
-        "date": "2026-09-04",
+        "date": "2026-09-20",
         "value": 3
       }
     ],
-    "houston_unsupervised": [
-      {
-        "date": "2026-05-13",
-        "value": 6
-      },
+    "austin_active": [
       {
         "date": "2026-07-20",
-        "value": 6
+        "value": 16
       },
       {
-        "date": "2026-09-04",
-        "value": 32
+        "date": "2026-09-20",
+        "value": 160
       }
     ],
     "tampa_unsupervised": [
       {
         "date": "2026-09-04",
         "value": 11
-      }
-    ],
-    "dallas_unsupervised": [
-      {
-        "date": "2026-05-13",
-        "value": 5
       },
       {
-        "date": "2026-07-20",
-        "value": 5
-      },
-      {
-        "date": "2026-09-04",
-        "value": 39
-      }
-    ],
-    "total_unsupervised": [
-      {
-        "date": "2026-05-13",
-        "value": 39
-      },
-      {
-        "date": "2026-06-08",
-        "value": 39
-      },
-      {
-        "date": "2026-07-20",
-        "value": 39
-      },
-      {
-        "date": "2026-09-04",
-        "value": 214
-      }
-    ],
-    "active_unsupervised": [
-      {
-        "date": "2026-07-20",
-        "value": 20
-      },
-      {
-        "date": "2026-09-04",
-        "value": 178
-      }
-    ],
-    "austin_unsupervised": [
-      {
-        "date": "2026-05-13",
-        "value": 27
-      },
-      {
-        "date": "2026-06-08",
-        "value": 28
-      },
-      {
-        "date": "2026-07-20",
-        "value": 28
-      },
-      {
-        "date": "2026-09-04",
-        "value": 119
+        "date": "2026-09-20",
+        "value": 14
       }
     ],
     "cum_miles": [
@@ -250,36 +178,168 @@
       {
         "date": "2026-09-04",
         "value": 14.12
+      },
+      {
+        "date": "2026-09-20",
+        "value": 14.69
       }
     ],
-    "houston_active": [
+    "austin_unsupervised": [
+      {
+        "date": "2026-05-13",
+        "value": 27
+      },
+      {
+        "date": "2026-06-08",
+        "value": 28
+      },
       {
         "date": "2026-07-20",
-        "value": 0
+        "value": 28
+      },
+      {
+        "date": "2026-09-04",
+        "value": 119
+      },
+      {
+        "date": "2026-09-20",
+        "value": 198
       }
     ],
-    "austin_active": [
+    "houston_unsupervised": [
+      {
+        "date": "2026-05-13",
+        "value": 6
+      },
       {
         "date": "2026-07-20",
-        "value": 16
+        "value": 6
+      },
+      {
+        "date": "2026-09-04",
+        "value": 32
+      },
+      {
+        "date": "2026-09-20",
+        "value": 32
       }
     ],
-    "dallas_active": [
+    "miami_unsupervised": [
       {
-        "date": "2026-07-20",
+        "date": "2026-09-04",
+        "value": 3
+      },
+      {
+        "date": "2026-09-20",
         "value": 4
       }
     ],
-    "austin_total": [
+    "total_unsupervised": [
       {
         "date": "2026-05-13",
-        "value": 53
+        "value": 39
+      },
+      {
+        "date": "2026-06-08",
+        "value": 39
+      },
+      {
+        "date": "2026-07-20",
+        "value": 39
+      },
+      {
+        "date": "2026-09-04",
+        "value": 214
+      },
+      {
+        "date": "2026-09-20",
+        "value": 309
+      }
+    ],
+    "total_registered": [
+      {
+        "date": "2026-06-08",
+        "value": 719
+      },
+      {
+        "date": "2026-07-20",
+        "value": 770
+      },
+      {
+        "date": "2026-09-04",
+        "value": 940
+      },
+      {
+        "date": "2026-09-20",
+        "value": 1010
       }
     ],
     "daily_miles": [
       {
         "date": "2026-05-13",
         "value": 29
+      },
+      {
+        "date": "2026-09-20",
+        "value": 34.9
+      }
+    ],
+    "texas_dmv_registered": [
+      {
+        "date": "2026-09-04",
+        "value": 420
+      },
+      {
+        "date": "2026-09-20",
+        "value": 448
+      }
+    ],
+    "dallas_active": [
+      {
+        "date": "2026-07-20",
+        "value": 4
+      },
+      {
+        "date": "2026-09-20",
+        "value": 42
+      }
+    ],
+    "dallas_unsupervised": [
+      {
+        "date": "2026-05-13",
+        "value": 5
+      },
+      {
+        "date": "2026-07-20",
+        "value": 5
+      },
+      {
+        "date": "2026-09-04",
+        "value": 39
+      },
+      {
+        "date": "2026-09-20",
+        "value": 51
+      }
+    ],
+    "active_unsupervised": [
+      {
+        "date": "2026-07-20",
+        "value": 20
+      },
+      {
+        "date": "2026-09-04",
+        "value": 178
+      },
+      {
+        "date": "2026-09-20",
+        "value": 234
+      }
+    ],
+    "austin_total": [
+      {
+        "date": "2026-05-13",
+        "value": 53
       }
     ],
     "subscribers": [
@@ -567,10 +627,22 @@
       "priority": "high"
     },
     {
+      "date": "26.08.20",
+      "desc": "네바다 교통국(NTA), Tesla Robotaxi LLC를 자율주행 네트워크 사업자로 만장일치 승인 — 클라크 카운티(라스베이거스 포함)에서 12개월간 최대 5,000대 유상 무인 운송 허용 · 종전 임시명령(스트립 일부 구간 10대 한도) 대체 (네바다 주정부 보도자료 2026-08-20)",
+      "category": "regulation",
+      "priority": "high"
+    },
+    {
       "date": "26.09.03",
       "desc": "Cybercab 론칭 행사(Austin 다운타운, 초청제) — 스티어링휠·페달 없는 Cybercab 첫 일반인 데모 탑승 · 전날 공공도로 무인주행 개시 · Robotaxi 앱 Cybercab 배차 지원 · TX DMV 등록 Cybercab 45대(상업 인가) · 공개 라이브스트림 없음(언론종합)",
       "category": "fleet",
       "priority": "high"
+    },
+    {
+      "date": "26.09.20",
+      "desc": "무감독 플릿 309대로 확대(9/4 214대) — Austin 198·Dallas 51·Houston 32·Tampa 14·Miami 4·Orlando 3, 30일 활성 234대 · TX DMV 등록 448대(Model Y 390 + Cybercab 58, 최근 30일 +262) · FSD 누적 14.69B마일·일 약 35M마일 (robotaxitracker.com·tesla.com/fsd/safety 9/20 확인)",
+      "category": "fleet",
+      "priority": "normal"
     }
   ]
 }

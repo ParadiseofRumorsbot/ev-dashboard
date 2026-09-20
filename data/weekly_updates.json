@@ -1,8 +1,142 @@
 {
-  "syncedAt": "2026-09-19T22:30:52.548Z",
-  "latestDate": "2026-09-04",
-  "count": 42,
+  "syncedAt": "2026-09-20T22:43:14.730Z",
+  "latestDate": "2026-09-21",
+  "count": 52,
   "this_week": [
+    {
+      "title": "8월 EV 판매 — 미국 -38%·중국 -8.5%·유럽 강세",
+      "category": "미국",
+      "icon": "🚗",
+      "body": "미국 106,289대(YoY -38.0%, 점유 7.7%) · 중국 924,000대(-8.5%, 60.0%, EREV 제외 BEV+PHEV 기준) · 독일 94,336대(+48.9%) · 영국 41,770대(+31.5%) · 프랑스 42,599대(+86.5%) · 스웨덴 15,155대(+27.3%) · 노르웨이 13,325대(-2.7%). 7월 글로벌 176.4만대(+8%, BEV 125.7만 +17%·PHEV 50.8만 -9%). 출처: WardsAuto·CPCA·Cleantechnica·SNE Research",
+      "color": "red",
+      "section": "this_week",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-09-21",
+      "order": 1
+    },
+    {
+      "title": "ESS 6월 설치 50.8GWh(+51%) — 미국 Grid 반등",
+      "category": "ESS",
+      "icon": "⚡",
+      "body": "글로벌 50.8GWh(+51%): Grid 42.8GWh(+50%)·BTM 8.0GWh(+55%). 미국 13.0GWh(+76%, Grid 12.0 +81%) · 유럽 4.2GWh(+249%) · 중국 12.7GWh(-15%). 1~6월 누적 182.2GWh(+41%) — 5월 발표 누적(113.2GWh)에 6월분을 더한 값보다 커 과거월 소급 상향이 포함된 것으로 보임. 출처: Rho Motion(2026년 6월)",
+      "color": "purple",
+      "section": "this_week",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-09-21",
+      "order": 2
+    },
+    {
+      "title": "7월 배터리 출하 116.0GWh(+22%) — 한국 3사 부진",
+      "category": "Battery",
+      "icon": "🔋",
+      "body": "CATL 46.6GWh(+33%) · BYD 18.7(+21%) · LGES 7.6(-18%) · CALB 6.0(+12%) · Panasonic 3.6(-2%) · SK on 3.2(-25%) · 삼성SDI 1.8(-32%). 1~7월 누적 724.6GWh(+20%). 미국 8.6GWh(-29%)·유럽 24.0GWh(+35%). 유럽 내 한국 3사 점유 26%(-8%p), 1~7월 누적 29%(2025년 34%). 출처: SNE Research(2026년 7월)",
+      "color": "yellow",
+      "section": "this_week",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-09-21",
+      "order": 3
+    },
+    {
+      "title": "Fluence FY26 가이던스 하향 — 미국 ESS 후공정 병목",
+      "category": "ESS",
+      "icon": "🏭",
+      "body": "FY26 매출 약 24억달러(종전 29~31억달러), 조정 EBITDA 약 -2억달러(종전 약 -1,000만달러). 휴스턴 위탁생산 시설 램프 지연과 공급망 문제가 원인이며 회사는 국내외 수요는 강하다고 설명. 배터리 시나리오 탭 Fluence 카드에 반영. 출처: Fluence 보도자료(2026-09-16)",
+      "color": "teal",
+      "section": "this_week",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-09-21",
+      "order": 4
+    },
+    {
+      "title": "SK온–엘앤에프 LFP 양극재 1,600억원 공급계약",
+      "category": "SK온",
+      "icon": "⚙️",
+      "body": "계약기간 2026-09-17~2028-12-31, 이후 최대 3년 연장 협의 가능. ESS용 LFP 배터리(서산·미국 조지아 라인) 생산에 투입. 시나리오·BOM 탭의 SK온 양극재 표기를 MOU에서 계약으로 변경. 출처: 언론종합(2026-09-17)",
+      "color": "teal",
+      "section": "this_week",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-09-21",
+      "order": 5
+    },
+    {
+      "title": "8월 양극재 수출 5.5억달러(+41.8%) — 단가 27.9달러/kg",
+      "category": "Battery",
+      "icon": "📦",
+      "body": "수출액 5.5억달러(YoY +41.8%, MoM -0.2%) · 중량 2.0만톤(+18.5%) · 단가 27.9달러/kg(+19.6%). NCM 4.0억달러(+36.7%)·26.2달러/kg, NCA 1.1억달러(+38.5%)·28.7달러/kg. 대구 1.9억달러(+35.9%)·단가 29.6달러/kg. 8월부터 청주·포항·천안은 수출 중량·단가 미공개. 출처: 관세청·산업통상자원부(2026년 8월)",
+      "color": "blue",
+      "section": "this_week",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-09-21",
+      "order": 6
+    },
+    {
+      "title": "메탈 — 코발트 9월 -18.7%·탄산리튬 선물 6일 연속 하락",
+      "category": "Battery",
+      "icon": "💰",
+      "body": "9월 MoM 니켈 -1.4% · 코발트 -18.7% · 망간 +3.3% · 알루미늄 +2.7% · 구리 -0.9% · LiPF6 +1.7%. 8월 평균 니켈 16,660·코발트 55,850달러/톤(금속 계산기 반영). 광저우선물거래소 탄산리튬 주력계약(LC2701) 9/16 125,820위안/톤(-2.95%), 6거래일 연속 하락. 유럽 3국 전력가 9월 3주 139.0유로/MWh(9월 평균 134.4, MoM +19.7%). 출처: 한국광물자원공사·광저우선물거래소·TradingEconomics",
+      "color": "blue",
+      "section": "this_week",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-09-21",
+      "order": 7
+    },
+    {
+      "title": "Tesla 무감독 309대 — Austin 198대로 확대 · FSD 누적 14.69B",
+      "category": "FSD",
+      "icon": "🚕",
+      "body": "무감독(세이프티 드라이버 없음) 현재 서비스 중 309대(9/4 214대): Austin 198·Dallas 51·Houston 32·Tampa 14·Miami 4·Orlando 3, 30일 활성 234대. TX DMV 등록 448대(Model Y 390 + Cybercab 58, 최근 30일 +262). FSD 누적 14.69B마일(도심 5.71B), 일 약 35M마일. 네바다 교통국은 8/20 클라크 카운티 최대 5,000대 유상 운행을 승인. 출처: robotaxitracker.com·tesla.com/fsd/safety(2026-09-20)·네바다 주정부 보도자료(2026-08-20)",
+      "color": "red",
+      "section": "this_week",
+      "targets": [
+        "both"
+      ],
+      "date": "2026-09-21",
+      "order": 8
+    }
+  ],
+  "update_log": [
+    {
+      "title": "8월 EV 판매·7월 배터리 출하·IR 노트 정합 반영",
+      "category": "Battery",
+      "icon": "📊",
+      "body": "① index: KPI·주요국 표 6월→8월, 글로벌 카드 5월→7월(누계 1,111.4만대), 배터리 출하 5월→7월, 미국 BEV 모델표 25.9~26.8로 이동(26.4 개정: Model 3 8,000대 뒤늦은 집계), 월별 차트 미국·중국 8월·유럽 7월까지(글로벌은 보류) ② 배터리 맵: 코코모 L1 존치로 27·28E 29→37G, LGES 애리조나 4Q26 가동, Bécancour 무기한 유예 ③ 시나리오·BOM: ESS 설치 6월, Fluence 가이던스 하향, 니켈·코발트 8월 평균, 삼성SDI·LGES·상신이디피·엘앤에프·Al박·천보 문구를 IR 노트 기준으로 정합 ④ 기술 탭: LG화학·대주전자재료·동일알미늄·삼아알미늄·소듐 공급망 표 보강",
+      "color": "teal",
+      "section": "update_log",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-09-21",
+      "order": 1
+    },
+    {
+      "title": "로보택시 탭 갱신 — FSD 14.69B·무감독 309대·TX DMV 448대",
+      "category": "FSD",
+      "icon": "🤖",
+      "body": "FSD 지표를 9/20 기준으로 갱신: 누적 14.12B→14.69B(공식 페이지 직접 확인), 일일 마일 29M→34.9M(카운터 증가 속도 실측), 무감독 전체 214→309대·Austin 119→198대, TX DMV 등록 420→448대(Cybercab 45→58). 차트 c1(FSD 누적)·c4(Austin 플릿)·c5(Cybercab)·c6(도시별)와 도시별 현황 요약을 같은 값으로 맞춤. 타임라인에 8/20 네바다 승인 추가. 출처: tesla.com/fsd/safety·robotaxitracker.com(2026-09-20)",
+      "color": "purple",
+      "section": "update_log",
+      "targets": [
+        "robotaxi"
+      ],
+      "date": "2026-09-21",
+      "order": 2
+    }
+  ],
+  "archive": [
     {
       "title": "Cybercab 론칭 행사 — Austin 첫 일반인 탑승",
       "category": "FSD",
@@ -15,10 +149,7 @@
       ],
       "date": "2026-09-04",
       "order": 1
-    }
-  ],
-  "update_log": [],
-  "archive": [
+    },
     {
       "title": "BBU 레이어 4개 탭 반영",
       "category": "Cell",

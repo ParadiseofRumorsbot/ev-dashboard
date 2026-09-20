@@ -1,19 +1,31 @@
 {
-  "syncedAt": "2026-09-19T22:30:52.071Z",
+  "syncedAt": "2026-09-20T22:43:14.214Z",
   "dbId": "659a8d5a89c344a5b68960fead1cf889",
-  "count": 39,
+  "count": 40,
   "variables": [
+    {
+      "name": "perGwh (ESS)",
+      "category": "cats",
+      "target": "상신이디피",
+      "region": "global",
+      "year": "",
+      "value": 60,
+      "unit": "억원",
+      "path": "cats[7].perGwh",
+      "source": "회사 IR(260421) ESS 대형 각형 CAN 약 60억원/GWh. IRS Packaging 5.6%(133억원/GWh)에서 분리해 2026-09-20 신설. ESS 점유율 가정: 삼성SDI 100%, SK ON 0%, LGES는 26E 0%·27E 44%(각형 LFP ESS 미시간 랜싱 Tesla향 15GWh ÷ LGES 27E ESS 출하 33.9GWh, 각형 캔 상신 공급은 자체추정 — 회사 확인은 미국 중대형 각형 비공개 신규 거래처 샘플 납품까지, 260908 탐방). 27E 전용 값은 HTML의 essMS27.can.lges. 시나리오 탭 기준 경로(BOM 탭에서는 cats[6])",
+      "updatedAt": "2026-09-20"
+    },
     {
       "name": "글로벌 EV YTD누계",
       "category": "evGlobal",
       "target": "글로벌",
       "region": "global",
       "year": "",
-      "value": 560,
+      "value": 1111.4,
       "unit": "만대",
       "path": "evGlobal.ytd",
-      "source": "Rho Motion·Benchmark",
-      "updatedAt": "2026-06-09"
+      "source": "SNE Research (1~7월 누계, 2026-09 기준)",
+      "updatedAt": "2026-09-20"
     },
     {
       "name": "글로벌 EV 월간",
@@ -21,11 +33,11 @@
       "target": "글로벌",
       "region": "global",
       "year": "",
-      "value": 171.6,
+      "value": 176.4,
       "unit": "만대",
       "path": "evGlobal.monthly",
-      "source": "SNE Research",
-      "updatedAt": "2026-06-23"
+      "source": "SNE Research (2026년 7월)",
+      "updatedAt": "2026-09-20"
     },
     {
       "name": "유럽 EV 월간",
@@ -33,11 +45,11 @@
       "target": "유럽",
       "region": "eu",
       "year": "",
-      "value": 40.3,
+      "value": 43.5,
       "unit": "만",
       "path": "evGlobal.eu",
-      "source": "SNE Research",
-      "updatedAt": "2026-06-23"
+      "source": "SNE Research (2026년 7월)",
+      "updatedAt": "2026-09-20"
     },
     {
       "name": "미국 EV 월간",
@@ -45,11 +57,11 @@
       "target": "미국",
       "region": "global",
       "year": "",
-      "value": 8.6,
+      "value": 9.3,
       "unit": "만",
       "path": "evGlobal.na",
-      "source": "SNE Research",
-      "updatedAt": "2026-06-23"
+      "source": "SNE Research (2026년 7월)",
+      "updatedAt": "2026-09-20"
     },
     {
       "name": "중국 EV 월간",
@@ -57,11 +69,11 @@
       "target": "중국",
       "region": "global",
       "year": "",
-      "value": 98.9,
+      "value": 94.8,
       "unit": "만",
       "path": "evGlobal.cn",
-      "source": "SNE Research",
-      "updatedAt": "2026-06-23"
+      "source": "SNE Research (2026년 7월)",
+      "updatedAt": "2026-09-20"
     },
     {
       "name": "기타 EV 월간",
@@ -69,11 +81,11 @@
       "target": "기타",
       "region": "global",
       "year": "",
-      "value": 23.8,
+      "value": 28.8,
       "unit": "만",
       "path": "evGlobal.etc",
-      "source": "SNE Research",
-      "updatedAt": "2026-06-23"
+      "source": "SNE Research (2026년 7월)",
+      "updatedAt": "2026-09-20"
     },
     {
       "name": "ESS CAPA",
@@ -201,11 +213,11 @@
       "target": "율촌/신흥",
       "region": "global",
       "year": "",
-      "value": 133,
+      "value": 73,
       "unit": "억원",
       "path": "cats[2].perGwh",
-      "source": "IRS 5.6%",
-      "updatedAt": "2026-05-02"
+      "source": "IRS Packaging 5.6%(133억원/GWh)에서 CAN 60억원/GWh(상신이디피, cats[7])를 별도 카드로 분리한 나머지. 2026-09-20 조정, 종전 133",
+      "updatedAt": "2026-09-20"
     },
     {
       "name": "BEV/월",
@@ -237,11 +249,11 @@
       "target": "엘앤에프",
       "region": "global",
       "year": "",
-      "value": 552,
+      "value": 313,
       "unit": "억원",
       "path": "cats[3].perGwh",
-      "source": "2,400t × ASP 23만원/kg",
-      "updatedAt": "2026-05-02"
+      "source": "2,400t/GWh × ASP 1,305만원/톤($9/kg × 1,450원) = 약 313억원/GWh. 종전 552억(ASP 2,300만원/톤, 약 $15.9/kg)은 과대로 판단해 2026-09-20 조정. 대조 근거: 삼성SDI 공급계약 공시(260324) 역산 약 $7~7.7/kg, 포스코퓨처엠 NDR(260804) $7~8/kg(일부 $10), 자체 모델(260719) 약 $10/kg",
+      "updatedAt": "2026-09-20"
     },
     {
       "name": "BEV/월",
