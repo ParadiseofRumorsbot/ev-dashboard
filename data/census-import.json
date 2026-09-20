@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2026-09-13",
+    "lastUpdated": "2026-09-20",
     "dataRange": {
       "from": "2023-01",
       "to": "2026-07"
@@ -4921,15 +4921,15 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "GB": {
-            "val": 1122761,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
           "MX": {
             "val": 50625,
             "qty": 0,
             "name": "MEXICO"
+          },
+          "GB": {
+            "val": 1122761,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
           },
           "OTHER": {
             "val": 4987496,
@@ -5365,20 +5365,20 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 6126,
+          "CN": {
+            "val": 96487,
             "qty": 0,
-            "name": "CANADA"
+            "name": "CHINA"
           },
           "GB": {
             "val": 643661,
             "qty": 0,
             "name": "UNITED KINGDOM"
           },
-          "CN": {
-            "val": 96487,
+          "CA": {
+            "val": 6126,
             "qty": 0,
-            "name": "CHINA"
+            "name": "CANADA"
           },
           "OTHER": {
             "val": 6054845,
@@ -5392,20 +5392,20 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CN": {
+          "CA": {
             "val": 0,
             "qty": 0,
-            "name": "CHINA"
+            "name": "CANADA"
           },
           "GB": {
             "val": 700020,
             "qty": 0,
             "name": "UNITED KINGDOM"
           },
-          "CA": {
+          "CN": {
             "val": 0,
             "qty": 0,
-            "name": "CANADA"
+            "name": "CHINA"
           },
           "OTHER": {
             "val": 3097910,
@@ -5419,20 +5419,20 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CN": {
-            "val": 39680,
+          "CA": {
+            "val": 0,
             "qty": 0,
-            "name": "CHINA"
+            "name": "CANADA"
           },
           "GB": {
             "val": 713574,
             "qty": 0,
             "name": "UNITED KINGDOM"
           },
-          "CA": {
-            "val": 0,
+          "CN": {
+            "val": 39680,
             "qty": 0,
-            "name": "CANADA"
+            "name": "CHINA"
           },
           "OTHER": {
             "val": 1794591,
@@ -5751,11 +5751,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CN": {
-            "val": 222352,
-            "qty": 0,
-            "name": "CHINA"
-          },
           "GB": {
             "val": 336060,
             "qty": 0,
@@ -5765,6 +5760,11 @@
             "val": 0,
             "qty": 0,
             "name": "GERMANY"
+          },
+          "CN": {
+            "val": 222352,
+            "qty": 0,
+            "name": "CHINA"
           },
           "OTHER": {
             "val": 1670250,
@@ -5805,6 +5805,11 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CN": {
+            "val": 4975,
+            "qty": 0,
+            "name": "CHINA"
+          },
           "GB": {
             "val": 1086136,
             "qty": 0,
@@ -5814,11 +5819,6 @@
             "val": 0,
             "qty": 0,
             "name": "GERMANY"
-          },
-          "CN": {
-            "val": 4975,
-            "qty": 0,
-            "name": "CHINA"
           },
           "OTHER": {
             "val": 3557416,
@@ -6870,6 +6870,11 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CL": {
+            "val": 683334,
+            "qty": 0,
+            "name": "CHILE"
+          },
           "IN": {
             "val": 18190,
             "qty": 0,
@@ -6879,11 +6884,6 @@
             "val": 6250,
             "qty": 0,
             "name": "CHINA"
-          },
-          "CL": {
-            "val": 683334,
-            "qty": 0,
-            "name": "CHILE"
           },
           "OTHER": {
             "val": 0,
@@ -6897,6 +6897,11 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CL": {
+            "val": 112493,
+            "qty": 0,
+            "name": "CHILE"
+          },
           "IN": {
             "val": 0,
             "qty": 0,
@@ -6912,11 +6917,6 @@
             "qty": 0,
             "name": "JAPAN"
           },
-          "CL": {
-            "val": 112493,
-            "qty": 0,
-            "name": "CHILE"
-          },
           "OTHER": {
             "val": 8294,
             "qty": 0,
@@ -6929,21 +6929,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CL": {
-            "val": 1543895,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "GB": {
-            "val": 2234,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 6167,
-            "qty": 0,
-            "name": "GERMANY"
-          },
           "IN": {
             "val": 0,
             "qty": 0,
@@ -6958,6 +6943,21 @@
             "val": 6092,
             "qty": 0,
             "name": "JAPAN"
+          },
+          "CL": {
+            "val": 1543895,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "GB": {
+            "val": 2234,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 6167,
+            "qty": 0,
+            "name": "GERMANY"
           },
           "OTHER": {
             "val": 1030000,
@@ -7364,16 +7364,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "IN": {
-            "val": 2825,
-            "qty": 0,
-            "name": "INDIA"
-          },
-          "CN": {
-            "val": 55250,
-            "qty": 0,
-            "name": "CHINA"
-          },
           "CL": {
             "val": 882250,
             "qty": 0,
@@ -7383,6 +7373,16 @@
             "val": 5896,
             "qty": 0,
             "name": "GERMANY"
+          },
+          "IN": {
+            "val": 2825,
+            "qty": 0,
+            "name": "INDIA"
+          },
+          "CN": {
+            "val": 55250,
+            "qty": 0,
+            "name": "CHINA"
           },
           "OTHER": {
             "val": 0,
@@ -7396,6 +7396,16 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "IN": {
+            "val": 0,
+            "qty": 0,
+            "name": "INDIA"
+          },
+          "CN": {
+            "val": 6750,
+            "qty": 0,
+            "name": "CHINA"
+          },
           "CL": {
             "val": 31710,
             "qty": 0,
@@ -7410,16 +7420,6 @@
             "val": 11792,
             "qty": 0,
             "name": "GERMANY"
-          },
-          "IN": {
-            "val": 0,
-            "qty": 0,
-            "name": "INDIA"
-          },
-          "CN": {
-            "val": 6750,
-            "qty": 0,
-            "name": "CHINA"
           },
           "OTHER": {
             "val": 0,
@@ -8023,11 +8023,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CL": {
-            "val": 1383349,
-            "qty": 0,
-            "name": "CHILE"
-          },
           "IN": {
             "val": 15938,
             "qty": 0,
@@ -8047,6 +8042,11 @@
             "val": 170995,
             "qty": 0,
             "name": "AUSTRALIA"
+          },
+          "CL": {
+            "val": 1383349,
+            "qty": 0,
+            "name": "CHILE"
           },
           "OTHER": {
             "val": 0,
@@ -8297,15 +8297,15 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "IN": {
-            "val": 6198,
-            "qty": 0,
-            "name": "INDIA"
-          },
           "CA": {
             "val": 56850,
             "qty": 0,
             "name": "CANADA"
+          },
+          "IN": {
+            "val": 6198,
+            "qty": 0,
+            "name": "INDIA"
           },
           "OTHER": {
             "val": 444307,
@@ -8319,15 +8319,15 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 34376,
-            "qty": 0,
-            "name": "CANADA"
-          },
           "IN": {
             "val": 0,
             "qty": 0,
             "name": "INDIA"
+          },
+          "CA": {
+            "val": 34376,
+            "qty": 0,
+            "name": "CANADA"
           },
           "OTHER": {
             "val": 1659016,
@@ -8341,15 +8341,15 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "IN": {
-            "val": 0,
-            "qty": 0,
-            "name": "INDIA"
-          },
           "CA": {
             "val": 0,
             "qty": 0,
             "name": "CANADA"
+          },
+          "IN": {
+            "val": 0,
+            "qty": 0,
+            "name": "INDIA"
           },
           "OTHER": {
             "val": 1827079,
@@ -8390,20 +8390,20 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "IN": {
-            "val": 0,
+          "CA": {
+            "val": 29768,
             "qty": 0,
-            "name": "INDIA"
+            "name": "CANADA"
           },
           "DE": {
             "val": 4428,
             "qty": 0,
             "name": "GERMANY"
           },
-          "CA": {
-            "val": 29768,
+          "IN": {
+            "val": 0,
             "qty": 0,
-            "name": "CANADA"
+            "name": "INDIA"
           },
           "OTHER": {
             "val": 2339423,
@@ -8417,20 +8417,20 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 15961,
+          "IN": {
+            "val": 0,
             "qty": 0,
-            "name": "CANADA"
+            "name": "INDIA"
           },
           "DE": {
             "val": 3494,
             "qty": 0,
             "name": "GERMANY"
           },
-          "IN": {
-            "val": 0,
+          "CA": {
+            "val": 15961,
             "qty": 0,
-            "name": "INDIA"
+            "name": "CANADA"
           },
           "OTHER": {
             "val": 1789295,
@@ -8653,15 +8653,15 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 11565,
-            "qty": 0,
-            "name": "CANADA"
-          },
           "AU": {
             "val": 0,
             "qty": 0,
             "name": "AUSTRALIA"
+          },
+          "CA": {
+            "val": 11565,
+            "qty": 0,
+            "name": "CANADA"
           },
           "OTHER": {
             "val": 925342,
@@ -8697,20 +8697,20 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 9287,
+          "AU": {
+            "val": 0,
             "qty": 0,
-            "name": "CANADA"
+            "name": "AUSTRALIA"
           },
           "DE": {
             "val": 4925,
             "qty": 0,
             "name": "GERMANY"
           },
-          "AU": {
-            "val": 0,
+          "CA": {
+            "val": 9287,
             "qty": 0,
-            "name": "AUSTRALIA"
+            "name": "CANADA"
           },
           "OTHER": {
             "val": 704982,
@@ -8778,20 +8778,20 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "AU": {
-            "val": 0,
+          "CA": {
+            "val": 10111,
             "qty": 0,
-            "name": "AUSTRALIA"
+            "name": "CANADA"
           },
           "DE": {
             "val": 0,
             "qty": 0,
             "name": "GERMANY"
           },
-          "CA": {
-            "val": 10111,
+          "AU": {
+            "val": 0,
             "qty": 0,
-            "name": "CANADA"
+            "name": "AUSTRALIA"
           },
           "OTHER": {
             "val": 383727,
@@ -8940,15 +8940,15 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "DE": {
-            "val": 2042,
-            "qty": 0,
-            "name": "GERMANY"
-          },
           "CA": {
             "val": 14612,
             "qty": 0,
             "name": "CANADA"
+          },
+          "DE": {
+            "val": 2042,
+            "qty": 0,
+            "name": "GERMANY"
           },
           "OTHER": {
             "val": 476340,
@@ -8962,15 +8962,15 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "DE": {
-            "val": 0,
-            "qty": 0,
-            "name": "GERMANY"
-          },
           "CA": {
             "val": 6884,
             "qty": 0,
             "name": "CANADA"
+          },
+          "DE": {
+            "val": 0,
+            "qty": 0,
+            "name": "GERMANY"
           },
           "OTHER": {
             "val": 1660466,
@@ -8984,15 +8984,15 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 0,
-            "qty": 0,
-            "name": "CANADA"
-          },
           "DE": {
             "val": 0,
             "qty": 0,
             "name": "GERMANY"
+          },
+          "CA": {
+            "val": 0,
+            "qty": 0,
+            "name": "CANADA"
           },
           "OTHER": {
             "val": 1212374,
@@ -9006,15 +9006,15 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 0,
-            "qty": 0,
-            "name": "CANADA"
-          },
           "DE": {
             "val": 0,
             "qty": 0,
             "name": "GERMANY"
+          },
+          "CA": {
+            "val": 0,
+            "qty": 0,
+            "name": "CANADA"
           },
           "OTHER": {
             "val": 901050,
@@ -9028,15 +9028,15 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 9246,
-            "qty": 0,
-            "name": "CANADA"
-          },
           "DE": {
             "val": 0,
             "qty": 0,
             "name": "GERMANY"
+          },
+          "CA": {
+            "val": 9246,
+            "qty": 0,
+            "name": "CANADA"
           },
           "OTHER": {
             "val": 45334,
@@ -9072,20 +9072,20 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "ID": {
-            "val": 14400,
+          "CA": {
+            "val": 9110,
             "qty": 0,
-            "name": "INDONESIA"
+            "name": "CANADA"
           },
           "DE": {
             "val": 0,
             "qty": 0,
             "name": "GERMANY"
           },
-          "CA": {
-            "val": 9110,
+          "ID": {
+            "val": 14400,
             "qty": 0,
-            "name": "CANADA"
+            "name": "INDONESIA"
           },
           "OTHER": {
             "val": 960712,
@@ -9263,15 +9263,15 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "IN": {
-            "val": 9659,
-            "qty": 0,
-            "name": "INDIA"
-          },
           "CA": {
             "val": 3445,
             "qty": 0,
             "name": "CANADA"
+          },
+          "IN": {
+            "val": 9659,
+            "qty": 0,
+            "name": "INDIA"
           },
           "OTHER": {
             "val": 1011598,
@@ -9410,11 +9410,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CN": {
-            "val": 28350,
-            "qty": 0,
-            "name": "CHINA"
-          },
           "CL": {
             "val": 26115780,
             "qty": 0,
@@ -9424,6 +9419,11 @@
             "val": 9032940,
             "qty": 0,
             "name": "ARGENTINA"
+          },
+          "CN": {
+            "val": 28350,
+            "qty": 0,
+            "name": "CHINA"
           },
           "OTHER": {
             "val": 10853,
@@ -9558,21 +9558,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "IN": {
-            "val": 48022,
-            "qty": 0,
-            "name": "INDIA"
-          },
-          "CN": {
-            "val": 11673,
-            "qty": 0,
-            "name": "CHINA"
-          },
-          "JP": {
-            "val": 0,
-            "qty": 0,
-            "name": "JAPAN"
-          },
           "CL": {
             "val": 24075176,
             "qty": 0,
@@ -9587,6 +9572,21 @@
             "val": 145897,
             "qty": 0,
             "name": "UNITED KINGDOM"
+          },
+          "IN": {
+            "val": 48022,
+            "qty": 0,
+            "name": "INDIA"
+          },
+          "CN": {
+            "val": 11673,
+            "qty": 0,
+            "name": "CHINA"
+          },
+          "JP": {
+            "val": 0,
+            "qty": 0,
+            "name": "JAPAN"
           },
           "OTHER": {
             "val": 3290,
@@ -9904,6 +9904,16 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CN": {
+            "val": 13042,
+            "qty": 0,
+            "name": "CHINA"
+          },
+          "JP": {
+            "val": 6900,
+            "qty": 0,
+            "name": "JAPAN"
+          },
           "CL": {
             "val": 19256030,
             "qty": 0,
@@ -9919,16 +9929,6 @@
             "qty": 0,
             "name": "UNITED KINGDOM"
           },
-          "CN": {
-            "val": 13042,
-            "qty": 0,
-            "name": "CHINA"
-          },
-          "JP": {
-            "val": 6900,
-            "qty": 0,
-            "name": "JAPAN"
-          },
           "OTHER": {
             "val": 2412,
             "qty": 0,
@@ -9941,16 +9941,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CN": {
-            "val": 405600,
-            "qty": 0,
-            "name": "CHINA"
-          },
-          "JP": {
-            "val": 0,
-            "qty": 0,
-            "name": "JAPAN"
-          },
           "CL": {
             "val": 10604708,
             "qty": 0,
@@ -9965,6 +9955,16 @@
             "val": 279485,
             "qty": 0,
             "name": "UNITED KINGDOM"
+          },
+          "CN": {
+            "val": 405600,
+            "qty": 0,
+            "name": "CHINA"
+          },
+          "JP": {
+            "val": 0,
+            "qty": 0,
+            "name": "JAPAN"
           },
           "OTHER": {
             "val": 158706,
@@ -10015,21 +10015,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CL": {
-            "val": 8490034,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "AR": {
-            "val": 5112968,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "GB": {
-            "val": 25372,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
           "CN": {
             "val": 33927,
             "qty": 0,
@@ -10044,6 +10029,21 @@
             "val": 0,
             "qty": 0,
             "name": "JAPAN"
+          },
+          "CL": {
+            "val": 8490034,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "AR": {
+            "val": 5112968,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "GB": {
+            "val": 25372,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
           },
           "OTHER": {
             "val": 109280,
@@ -10475,15 +10475,15 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "AR": {
-            "val": 8644088,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
           "CL": {
             "val": 6595046,
             "qty": 0,
             "name": "CHILE"
+          },
+          "AR": {
+            "val": 8644088,
+            "qty": 0,
+            "name": "ARGENTINA"
           },
           "GB": {
             "val": 33708,
@@ -10539,6 +10539,11 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CN": {
+            "val": 4035,
+            "qty": 0,
+            "name": "CHINA"
+          },
           "CL": {
             "val": 2903534,
             "qty": 0,
@@ -10553,11 +10558,6 @@
             "val": 32640,
             "qty": 0,
             "name": "UNITED KINGDOM"
-          },
-          "CN": {
-            "val": 4035,
-            "qty": 0,
-            "name": "CHINA"
           },
           "OTHER": {
             "val": 4929,
@@ -10603,6 +10603,16 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "IN": {
+            "val": 25500,
+            "qty": 0,
+            "name": "INDIA"
+          },
+          "CN": {
+            "val": 14383,
+            "qty": 0,
+            "name": "CHINA"
+          },
           "CL": {
             "val": 10508349,
             "qty": 0,
@@ -10617,16 +10627,6 @@
             "val": 80784,
             "qty": 0,
             "name": "UNITED KINGDOM"
-          },
-          "IN": {
-            "val": 25500,
-            "qty": 0,
-            "name": "INDIA"
-          },
-          "CN": {
-            "val": 14383,
-            "qty": 0,
-            "name": "CHINA"
           },
           "OTHER": {
             "val": 6293,
@@ -11297,6 +11297,31 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 541531,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 1712484,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "GB": {
+            "val": 5174,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 1553552,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "PL": {
+            "val": 3862,
+            "qty": 0,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 1096340,
             "qty": 0,
@@ -11321,31 +11346,6 @@
             "val": 1730091,
             "qty": 0,
             "name": "JAPAN"
-          },
-          "GB": {
-            "val": 5174,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 1553552,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "PL": {
-            "val": 3862,
-            "qty": 0,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 541531,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 1712484,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 4318914,
@@ -11421,6 +11421,31 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 593751,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 252864,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "GB": {
+            "val": 23652,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 1941005,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "PL": {
+            "val": 0,
+            "qty": 0,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 1291852,
             "qty": 0,
@@ -11445,31 +11470,6 @@
             "val": 1235807,
             "qty": 0,
             "name": "JAPAN"
-          },
-          "GB": {
-            "val": 23652,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 1941005,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "PL": {
-            "val": 0,
-            "qty": 0,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 593751,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 252864,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 9042624,
@@ -12156,6 +12156,41 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 586190,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 5295654,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "AR": {
+            "val": 6300,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 5070,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 7862,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 1094610,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "PL": {
+            "val": 7842,
+            "qty": 0,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 545977,
             "qty": 0,
@@ -12186,41 +12221,6 @@
             "qty": 0,
             "name": "AUSTRALIA"
           },
-          "AR": {
-            "val": 6300,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 5070,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 7862,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 1094610,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "PL": {
-            "val": 7842,
-            "qty": 0,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 586190,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 5295654,
-            "qty": 0,
-            "name": "MEXICO"
-          },
           "OTHER": {
             "val": 3432253,
             "qty": 0,
@@ -12233,41 +12233,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 568782,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 814945,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "AR": {
-            "val": 0,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 2410,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 28255,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 787576,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "PL": {
-            "val": 2250,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 1542483,
             "qty": 0,
@@ -12297,6 +12262,41 @@
             "val": 0,
             "qty": 0,
             "name": "AUSTRALIA"
+          },
+          "AR": {
+            "val": 0,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 2410,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 28255,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 787576,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "PL": {
+            "val": 2250,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "CA": {
+            "val": 568782,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 814945,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 2954951,
@@ -12469,6 +12469,41 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 611455,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 2738698,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "AR": {
+            "val": 0,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 2834,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 79366,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 1164798,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "PL": {
+            "val": 57522,
+            "qty": 0,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 242739,
             "qty": 0,
@@ -12503,41 +12538,6 @@
             "val": 0,
             "qty": 0,
             "name": "AUSTRALIA"
-          },
-          "AR": {
-            "val": 0,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 2834,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 79366,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 1164798,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "PL": {
-            "val": 57522,
-            "qty": 0,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 611455,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 2738698,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 2741596,
@@ -12986,6 +12986,31 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 581932,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 7500992,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "SE": {
+            "val": 4916,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 105514,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 1071904,
+            "qty": 0,
+            "name": "GERMANY"
+          },
           "IN": {
             "val": 874884,
             "qty": 0,
@@ -13010,31 +13035,6 @@
             "val": 1158173,
             "qty": 0,
             "name": "JAPAN"
-          },
-          "SE": {
-            "val": 4916,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 105514,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 1071904,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "CA": {
-            "val": 581932,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 7500992,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 4554036,
@@ -13120,36 +13120,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 574153,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 2170031,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "CL": {
-            "val": 0,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "SE": {
-            "val": 7656,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 255881,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 1971934,
-            "qty": 0,
-            "name": "GERMANY"
-          },
           "IN": {
             "val": 243388,
             "qty": 0,
@@ -13180,6 +13150,36 @@
             "qty": 0,
             "name": "JAPAN"
           },
+          "CL": {
+            "val": 0,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "SE": {
+            "val": 7656,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 255881,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 1971934,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "CA": {
+            "val": 574153,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 2170031,
+            "qty": 0,
+            "name": "MEXICO"
+          },
           "OTHER": {
             "val": 9206352,
             "qty": 0,
@@ -13192,36 +13192,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 555364,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 534458,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "CL": {
-            "val": 0,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "SE": {
-            "val": 0,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 74077,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 2063412,
-            "qty": 0,
-            "name": "GERMANY"
-          },
           "IN": {
             "val": 580675,
             "qty": 0,
@@ -13252,6 +13222,36 @@
             "qty": 0,
             "name": "JAPAN"
           },
+          "CL": {
+            "val": 0,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "SE": {
+            "val": 0,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 74077,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 2063412,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "CA": {
+            "val": 555364,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 534458,
+            "qty": 0,
+            "name": "MEXICO"
+          },
           "OTHER": {
             "val": 13310349,
             "qty": 0,
@@ -13264,36 +13264,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 468886,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 1797147,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "CL": {
-            "val": 0,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "SE": {
-            "val": 0,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 112875,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 1078001,
-            "qty": 0,
-            "name": "GERMANY"
-          },
           "IN": {
             "val": 1070197,
             "qty": 0,
@@ -13323,6 +13293,36 @@
             "val": 857941,
             "qty": 0,
             "name": "JAPAN"
+          },
+          "CL": {
+            "val": 0,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "SE": {
+            "val": 0,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 112875,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 1078001,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "CA": {
+            "val": 468886,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 1797147,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 9443417,
@@ -14425,6 +14425,26 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 4138,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 37164,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "GB": {
+            "val": 13506,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 890193,
+            "qty": 0,
+            "name": "GERMANY"
+          },
           "TH": {
             "val": 2550,
             "qty": 0,
@@ -14444,26 +14464,6 @@
             "val": 315199,
             "qty": 0,
             "name": "JAPAN"
-          },
-          "GB": {
-            "val": 13506,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 890193,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "CA": {
-            "val": 4138,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 37164,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 731146,
@@ -14581,26 +14581,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 0,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 25092,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "GB": {
-            "val": 8566,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 129039,
-            "qty": 0,
-            "name": "GERMANY"
-          },
           "TH": {
             "val": 0,
             "qty": 0,
@@ -14625,6 +14605,26 @@
             "val": 24494,
             "qty": 0,
             "name": "JAPAN"
+          },
+          "GB": {
+            "val": 8566,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 129039,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "CA": {
+            "val": 0,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 25092,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 162508,
@@ -15102,20 +15102,10 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CN": {
-            "val": 152548,
+          "MX": {
+            "val": 5757,
             "qty": 0,
-            "name": "CHINA"
-          },
-          "KR": {
-            "val": 22700,
-            "qty": 0,
-            "name": "KOREA, SOUTH"
-          },
-          "JP": {
-            "val": 24097,
-            "qty": 0,
-            "name": "JAPAN"
+            "name": "MEXICO"
           },
           "GB": {
             "val": 0,
@@ -15132,10 +15122,20 @@
             "qty": 0,
             "name": "POLAND"
           },
-          "MX": {
-            "val": 5757,
+          "CN": {
+            "val": 152548,
             "qty": 0,
-            "name": "MEXICO"
+            "name": "CHINA"
+          },
+          "KR": {
+            "val": 22700,
+            "qty": 0,
+            "name": "KOREA, SOUTH"
+          },
+          "JP": {
+            "val": 24097,
+            "qty": 0,
+            "name": "JAPAN"
           },
           "OTHER": {
             "val": 114069,
@@ -15149,20 +15149,10 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CN": {
-            "val": 127885,
-            "qty": 0,
-            "name": "CHINA"
-          },
-          "KR": {
+          "MX": {
             "val": 0,
             "qty": 0,
-            "name": "KOREA, SOUTH"
-          },
-          "JP": {
-            "val": 34414,
-            "qty": 0,
-            "name": "JAPAN"
+            "name": "MEXICO"
           },
           "GB": {
             "val": 0,
@@ -15179,10 +15169,20 @@
             "qty": 0,
             "name": "POLAND"
           },
-          "MX": {
+          "CN": {
+            "val": 127885,
+            "qty": 0,
+            "name": "CHINA"
+          },
+          "KR": {
             "val": 0,
             "qty": 0,
-            "name": "MEXICO"
+            "name": "KOREA, SOUTH"
+          },
+          "JP": {
+            "val": 34414,
+            "qty": 0,
+            "name": "JAPAN"
           },
           "OTHER": {
             "val": 318912,
@@ -15196,26 +15196,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "MX": {
-            "val": 36288,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "GB": {
-            "val": 9851,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 375713,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "PL": {
-            "val": 9805,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 3180,
             "qty": 0,
@@ -15235,6 +15215,26 @@
             "val": 76753,
             "qty": 0,
             "name": "JAPAN"
+          },
+          "GB": {
+            "val": 9851,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 375713,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "PL": {
+            "val": 9805,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "MX": {
+            "val": 36288,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 219881,
@@ -15758,21 +15758,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "MX": {
-            "val": 3313,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "DE": {
-            "val": 477561,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "PL": {
-            "val": 2333,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 0,
             "qty": 0,
@@ -15793,6 +15778,21 @@
             "qty": 0,
             "name": "JAPAN"
           },
+          "DE": {
+            "val": 477561,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "PL": {
+            "val": 2333,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "MX": {
+            "val": 3313,
+            "qty": 0,
+            "name": "MEXICO"
+          },
           "OTHER": {
             "val": 801253,
             "qty": 0,
@@ -15805,21 +15805,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "MX": {
-            "val": 0,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "DE": {
-            "val": 445318,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "PL": {
-            "val": 0,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 0,
             "qty": 0,
@@ -15839,6 +15824,21 @@
             "val": 45652,
             "qty": 0,
             "name": "JAPAN"
+          },
+          "DE": {
+            "val": 445318,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "PL": {
+            "val": 0,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "MX": {
+            "val": 0,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 19305,
@@ -16365,21 +16365,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "MX": {
-            "val": 8904,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "DE": {
-            "val": 416125,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "PL": {
-            "val": 10497,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "CN": {
             "val": 127589,
             "qty": 0,
@@ -16394,6 +16379,21 @@
             "val": 42353,
             "qty": 0,
             "name": "JAPAN"
+          },
+          "DE": {
+            "val": 416125,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "PL": {
+            "val": 10497,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "MX": {
+            "val": 8904,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 109801,
@@ -16716,31 +16716,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 60052442,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 30508602,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "CL": {
-            "val": 264775,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "GB": {
-            "val": 0,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 975288,
-            "qty": 0,
-            "name": "GERMANY"
-          },
           "TH": {
             "val": 0,
             "qty": 0,
@@ -16760,6 +16735,31 @@
             "val": 0,
             "qty": 0,
             "name": "JAPAN"
+          },
+          "CL": {
+            "val": 264775,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "GB": {
+            "val": 0,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 975288,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "CA": {
+            "val": 60052442,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 30508602,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 6029880,
@@ -16887,6 +16887,31 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 65927704,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 33954594,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "CL": {
+            "val": 253729,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "GB": {
+            "val": 95922,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 2324514,
+            "qty": 0,
+            "name": "GERMANY"
+          },
           "TH": {
             "val": 0,
             "qty": 0,
@@ -16907,31 +16932,6 @@
             "qty": 0,
             "name": "JAPAN"
           },
-          "CL": {
-            "val": 253729,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "GB": {
-            "val": 95922,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 2324514,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "CA": {
-            "val": 65927704,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 33954594,
-            "qty": 0,
-            "name": "MEXICO"
-          },
           "OTHER": {
             "val": 13231235,
             "qty": 0,
@@ -16944,31 +16944,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 63986725,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 33986472,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "CL": {
-            "val": 103628,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "GB": {
-            "val": 0,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 2691776,
-            "qty": 0,
-            "name": "GERMANY"
-          },
           "IN": {
             "val": 34993,
             "qty": 0,
@@ -16998,6 +16973,31 @@
             "val": 0,
             "qty": 0,
             "name": "JAPAN"
+          },
+          "CL": {
+            "val": 103628,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "GB": {
+            "val": 0,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 2691776,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "CA": {
+            "val": 63986725,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 33986472,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 9656067,
@@ -17547,6 +17547,31 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 58584917,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 28134703,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "CL": {
+            "val": 220626,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "GB": {
+            "val": 62712,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 1474405,
+            "qty": 0,
+            "name": "GERMANY"
+          },
           "IN": {
             "val": 0,
             "qty": 0,
@@ -17572,31 +17597,6 @@
             "qty": 0,
             "name": "JAPAN"
           },
-          "CL": {
-            "val": 220626,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "GB": {
-            "val": 62712,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 1474405,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "CA": {
-            "val": 58584917,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 28134703,
-            "qty": 0,
-            "name": "MEXICO"
-          },
           "OTHER": {
             "val": 5914196,
             "qty": 0,
@@ -17609,31 +17609,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 62434846,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 29442722,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "CL": {
-            "val": 791172,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "GB": {
-            "val": 44689,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 1401075,
-            "qty": 0,
-            "name": "GERMANY"
-          },
           "IN": {
             "val": 0,
             "qty": 0,
@@ -17663,6 +17638,31 @@
             "val": 0,
             "qty": 0,
             "name": "JAPAN"
+          },
+          "CL": {
+            "val": 791172,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "GB": {
+            "val": 44689,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 1401075,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "CA": {
+            "val": 62434846,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 29442722,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 5912325,
@@ -18463,41 +18463,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 77699828,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 52787421,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "CL": {
-            "val": 568021,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "GB": {
-            "val": 5567913,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 4090471,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 52578,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 553428,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 159163,
             "qty": 0,
@@ -18528,6 +18493,41 @@
             "qty": 0,
             "name": "JAPAN"
           },
+          "CL": {
+            "val": 568021,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "GB": {
+            "val": 5567913,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 4090471,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 52578,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 553428,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "CA": {
+            "val": 77699828,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 52787421,
+            "qty": 0,
+            "name": "MEXICO"
+          },
           "OTHER": {
             "val": 22735588,
             "qty": 0,
@@ -18540,41 +18540,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 88110840,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 53963646,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "CL": {
-            "val": 1254125,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "GB": {
-            "val": 2049838,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 3505052,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 0,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 488936,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 105675,
             "qty": 0,
@@ -18609,6 +18574,41 @@
             "val": 41904,
             "qty": 0,
             "name": "JAPAN"
+          },
+          "CL": {
+            "val": 1254125,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "GB": {
+            "val": 2049838,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 3505052,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 0,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 488936,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "CA": {
+            "val": 88110840,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 53963646,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 23340597,
@@ -19350,6 +19350,36 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 213727689,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 79609572,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "CL": {
+            "val": 916093,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "GB": {
+            "val": 3589975,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 768705,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 2379545,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
           "IN": {
             "val": 0,
             "qty": 0,
@@ -19389,36 +19419,6 @@
             "val": 1639944,
             "qty": 0,
             "name": "AUSTRALIA"
-          },
-          "CL": {
-            "val": 916093,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "GB": {
-            "val": 3589975,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 768705,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 2379545,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "CA": {
-            "val": 213727689,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 79609572,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 19797294,
@@ -19762,6 +19762,41 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 45245167,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 2789924,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "AR": {
+            "val": 75414,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 3530437,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 1986155,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 9203701,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 2451588,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
           "IN": {
             "val": 1041073,
             "qty": 0,
@@ -19796,41 +19831,6 @@
             "val": 9823323,
             "qty": 0,
             "name": "JAPAN"
-          },
-          "AR": {
-            "val": 75414,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 3530437,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 1986155,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 9203701,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 2451588,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "CA": {
-            "val": 45245167,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 2789924,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 99561482,
@@ -19931,6 +19931,41 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 50639115,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 1367389,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "AR": {
+            "val": 0,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 6253333,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 1447190,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 7153863,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 548478,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
           "IN": {
             "val": 1258442,
             "qty": 0,
@@ -19970,41 +20005,6 @@
             "val": 0,
             "qty": 0,
             "name": "AUSTRALIA"
-          },
-          "AR": {
-            "val": 0,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 6253333,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 1447190,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 7153863,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 548478,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "CA": {
-            "val": 50639115,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 1367389,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 89063070,
@@ -20110,6 +20110,46 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 52522598,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 444527,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "AR": {
+            "val": 0,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 5927771,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 3168417,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 4487080,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 2205965,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 19774,
+            "qty": 0,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 309125,
             "qty": 0,
@@ -20155,46 +20195,6 @@
             "qty": 0,
             "name": "AUSTRALIA"
           },
-          "AR": {
-            "val": 0,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 5927771,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 3168417,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 4487080,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 2205965,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 19774,
-            "qty": 0,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 52522598,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 444527,
-            "qty": 0,
-            "name": "MEXICO"
-          },
           "OTHER": {
             "val": 96834705,
             "qty": 0,
@@ -20207,46 +20207,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 51234137,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 281179,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "AR": {
-            "val": 185007,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 2933638,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 3618224,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 8975836,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 688923,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 0,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 297706,
             "qty": 0,
@@ -20291,6 +20251,46 @@
             "val": 0,
             "qty": 0,
             "name": "AUSTRALIA"
+          },
+          "AR": {
+            "val": 185007,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 2933638,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 3618224,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 8975836,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 688923,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 0,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "CA": {
+            "val": 51234137,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 281179,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 95804212,
@@ -20886,41 +20886,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 51289325,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 1133978,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "SE": {
-            "val": 2698041,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 5273586,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 4804243,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 1392874,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 1462448,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 4288810,
             "qty": 0,
@@ -20950,6 +20915,41 @@
             "val": 7352904,
             "qty": 0,
             "name": "JAPAN"
+          },
+          "SE": {
+            "val": 2698041,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 5273586,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 4804243,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 1392874,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 1462448,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "CA": {
+            "val": 51289325,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 1133978,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 85281707,
@@ -21045,6 +21045,41 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 44357599,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 829161,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "SE": {
+            "val": 3174991,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 3778483,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 4262496,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 977555,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 1186676,
+            "qty": 0,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 4808522,
             "qty": 0,
@@ -21079,41 +21114,6 @@
             "val": 5560673,
             "qty": 0,
             "name": "JAPAN"
-          },
-          "SE": {
-            "val": 3174991,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 3778483,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 4262496,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 977555,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 1186676,
-            "qty": 0,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 44357599,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 829161,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 95923516,
@@ -21970,6 +21970,46 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 51726013,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 185226,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "AR": {
+            "val": 135143,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 3707148,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 2815749,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 3612262,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 873144,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 37279,
+            "qty": 0,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 2594068,
             "qty": 0,
@@ -22005,46 +22045,6 @@
             "qty": 0,
             "name": "JAPAN"
           },
-          "AR": {
-            "val": 135143,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 3707148,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 2815749,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 3612262,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 873144,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 37279,
-            "qty": 0,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 51726013,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 185226,
-            "qty": 0,
-            "name": "MEXICO"
-          },
           "OTHER": {
             "val": 120148394,
             "qty": 0,
@@ -22057,6 +22057,46 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 45114098,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 374015,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "AR": {
+            "val": 0,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 3024425,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 1861326,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 1895703,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 2500260,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 54699,
+            "qty": 0,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 3690274,
             "qty": 0,
@@ -22097,46 +22137,6 @@
             "qty": 0,
             "name": "AUSTRALIA"
           },
-          "AR": {
-            "val": 0,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 3024425,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 1861326,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 1895703,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 2500260,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 54699,
-            "qty": 0,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 45114098,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 374015,
-            "qty": 0,
-            "name": "MEXICO"
-          },
           "OTHER": {
             "val": 139336123,
             "qty": 0,
@@ -22149,46 +22149,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 41561757,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 559872,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "AR": {
-            "val": 60727,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 6871968,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 6798171,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 4275760,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 1521778,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 561859,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 3674432,
             "qty": 0,
@@ -22229,6 +22189,46 @@
             "qty": 0,
             "name": "AUSTRALIA"
           },
+          "AR": {
+            "val": 60727,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 6871968,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 6798171,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 4275760,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 1521778,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 561859,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "CA": {
+            "val": 41561757,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 559872,
+            "qty": 0,
+            "name": "MEXICO"
+          },
           "OTHER": {
             "val": 127319551,
             "qty": 0,
@@ -22241,46 +22241,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 47148839,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 429711,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "AR": {
-            "val": 0,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 3486513,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 2703823,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 5311010,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 786898,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 1232099,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 4197460,
             "qty": 0,
@@ -22320,6 +22280,46 @@
             "val": 0,
             "qty": 0,
             "name": "AUSTRALIA"
+          },
+          "AR": {
+            "val": 0,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 3486513,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 2703823,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 5311010,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 786898,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 1232099,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "CA": {
+            "val": 47148839,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 429711,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 117533707,
@@ -23151,41 +23151,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 13022975,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 343847,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "SE": {
-            "val": 10312441,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 1377873,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 34983053,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 70005,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 179562,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 2447791,
             "qty": 0,
@@ -23226,6 +23191,41 @@
             "qty": 0,
             "name": "AUSTRALIA"
           },
+          "SE": {
+            "val": 10312441,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 1377873,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 34983053,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 70005,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 179562,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "CA": {
+            "val": 13022975,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 343847,
+            "qty": 0,
+            "name": "MEXICO"
+          },
           "OTHER": {
             "val": 189755183,
             "qty": 0,
@@ -23238,6 +23238,41 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 21063797,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 292477,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "SE": {
+            "val": 5868971,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 3912576,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 74845749,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 34762,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 40490,
+            "qty": 0,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 4261087,
             "qty": 0,
@@ -23282,41 +23317,6 @@
             "val": 0,
             "qty": 0,
             "name": "AUSTRALIA"
-          },
-          "SE": {
-            "val": 5868971,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 3912576,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 74845749,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 34762,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 40490,
-            "qty": 0,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 21063797,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 292477,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 212816698,
@@ -23802,36 +23802,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 242451,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 226792,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "AR": {
-            "val": 0,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 694885,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 2095,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 8637188,
-            "qty": 0,
-            "name": "GERMANY"
-          },
           "IN": {
             "val": 7967580,
             "qty": 0,
@@ -23871,6 +23841,36 @@
             "val": 135593,
             "qty": 0,
             "name": "JAPAN"
+          },
+          "AR": {
+            "val": 0,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 694885,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 2095,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 8637188,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "CA": {
+            "val": 242451,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 226792,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 50372339,
@@ -24058,6 +24058,41 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 128817,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 319793,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "AR": {
+            "val": 0,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 2156893,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 22341,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 4667842,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 29574,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
           "IN": {
             "val": 6855649,
             "qty": 0,
@@ -24097,41 +24132,6 @@
             "val": 171250,
             "qty": 0,
             "name": "JAPAN"
-          },
-          "AR": {
-            "val": 0,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 2156893,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 22341,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 4667842,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 29574,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "CA": {
-            "val": 128817,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 319793,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 34535318,
@@ -24764,6 +24764,31 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 16780,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 240093,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "SE": {
+            "val": 1463191,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "DE": {
+            "val": 5316143,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 13114,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
           "IN": {
             "val": 2783288,
             "qty": 0,
@@ -24798,31 +24823,6 @@
             "val": 303967,
             "qty": 0,
             "name": "JAPAN"
-          },
-          "SE": {
-            "val": 1463191,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "DE": {
-            "val": 5316143,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 13114,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "CA": {
-            "val": 16780,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 240093,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 25977366,
@@ -24990,36 +24990,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 0,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 136103,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "SE": {
-            "val": 2644102,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 6723,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 7646931,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 0,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
           "IN": {
             "val": 2701597,
             "qty": 0,
@@ -25054,6 +25024,36 @@
             "val": 198695,
             "qty": 0,
             "name": "JAPAN"
+          },
+          "SE": {
+            "val": 2644102,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 6723,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 7646931,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 0,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "CA": {
+            "val": 0,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 136103,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 20766970,
@@ -25713,6 +25713,21 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "MX": {
+            "val": 383007,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "SE": {
+            "val": 2421744,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "DE": {
+            "val": 5959346,
+            "qty": 0,
+            "name": "GERMANY"
+          },
           "IN": {
             "val": 5841229,
             "qty": 0,
@@ -25753,21 +25768,6 @@
             "qty": 0,
             "name": "JAPAN"
           },
-          "SE": {
-            "val": 2421744,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "DE": {
-            "val": 5959346,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "MX": {
-            "val": 383007,
-            "qty": 0,
-            "name": "MEXICO"
-          },
           "OTHER": {
             "val": 30031143,
             "qty": 0,
@@ -25780,31 +25780,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "MX": {
-            "val": 0,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "SE": {
-            "val": 1996624,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 9354,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 6142069,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 47775,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
           "IN": {
             "val": 6336836,
             "qty": 0,
@@ -25850,6 +25825,31 @@
             "qty": 0,
             "name": "AUSTRALIA"
           },
+          "SE": {
+            "val": 1996624,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 9354,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 6142069,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 47775,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "MX": {
+            "val": 0,
+            "qty": 0,
+            "name": "MEXICO"
+          },
           "OTHER": {
             "val": 28836879,
             "qty": 0,
@@ -25862,36 +25862,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 3520,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 3372,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "SE": {
-            "val": 1537741,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 4812,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 6110442,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 0,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
           "IN": {
             "val": 5435193,
             "qty": 0,
@@ -25936,6 +25906,36 @@
             "val": 0,
             "qty": 0,
             "name": "AUSTRALIA"
+          },
+          "SE": {
+            "val": 1537741,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 4812,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 6110442,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 0,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "CA": {
+            "val": 3520,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 3372,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 34550785,
@@ -26036,36 +26036,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 0,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 17039,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "SE": {
-            "val": 1844934,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 0,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 7826484,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 32664,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
           "IN": {
             "val": 5184536,
             "qty": 0,
@@ -26110,6 +26080,36 @@
             "val": 0,
             "qty": 0,
             "name": "AUSTRALIA"
+          },
+          "SE": {
+            "val": 1844934,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 0,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 7826484,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 32664,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "CA": {
+            "val": 0,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 17039,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 24866933,
@@ -27368,6 +27368,51 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 11687183,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 12560114,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "CL": {
+            "val": 115483,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "AR": {
+            "val": 134045,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 4329791,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 3704497,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 36953169,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 1573692,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 9998392,
+            "qty": 0,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 33611654,
             "qty": 0,
@@ -27412,51 +27457,6 @@
             "val": 607836,
             "qty": 0,
             "name": "AUSTRALIA"
-          },
-          "CL": {
-            "val": 115483,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "AR": {
-            "val": 134045,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 4329791,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 3704497,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 36953169,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 1573692,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 9998392,
-            "qty": 0,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 11687183,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 12560114,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 85103117,
@@ -27577,6 +27577,51 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 13304287,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 15518362,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "CL": {
+            "val": 49325,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "AR": {
+            "val": 95580,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 4216616,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 3821609,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 40713724,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 2599875,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 12889614,
+            "qty": 0,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 52730472,
             "qty": 0,
@@ -27627,55 +27672,10 @@
             "qty": 0,
             "name": "AUSTRALIA"
           },
-          "CL": {
-            "val": 49325,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "AR": {
-            "val": 95580,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 4216616,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 3821609,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 40713724,
-            "qty": 0,
-            "name": "GERMANY"
-          },
           "MA": {
             "val": 7620,
             "qty": 0,
             "name": "MOROCCO"
-          },
-          "HU": {
-            "val": 2599875,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 12889614,
-            "qty": 0,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 13304287,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 15518362,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 97542774,
@@ -28697,51 +28697,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 21437352,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 14982110,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "CL": {
-            "val": 16055,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "AR": {
-            "val": 259726,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 4101216,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 2702542,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 38329193,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 2462037,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 12109655,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 39178742,
             "qty": 0,
@@ -28792,10 +28747,55 @@
             "qty": 0,
             "name": "AUSTRALIA"
           },
+          "CL": {
+            "val": 16055,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "AR": {
+            "val": 259726,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 4101216,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 2702542,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 38329193,
+            "qty": 0,
+            "name": "GERMANY"
+          },
           "MA": {
             "val": 2830,
             "qty": 0,
             "name": "MOROCCO"
+          },
+          "HU": {
+            "val": 2462037,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 12109655,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "CA": {
+            "val": 21437352,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 14982110,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 101245279,
@@ -28809,6 +28809,51 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 15208064,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 13323154,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "CL": {
+            "val": 201652,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "AR": {
+            "val": 180927,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 3489615,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 2311929,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 32054074,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 713880,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 14052673,
+            "qty": 0,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 30721954,
             "qty": 0,
@@ -28859,55 +28904,10 @@
             "qty": 0,
             "name": "AUSTRALIA"
           },
-          "CL": {
-            "val": 201652,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "AR": {
-            "val": 180927,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 3489615,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 2311929,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 32054074,
-            "qty": 0,
-            "name": "GERMANY"
-          },
           "MA": {
             "val": 0,
             "qty": 0,
             "name": "MOROCCO"
-          },
-          "HU": {
-            "val": 713880,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 14052673,
-            "qty": 0,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 15208064,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 13323154,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 101340532,
@@ -29033,51 +29033,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 11653523,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 12700832,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "CL": {
-            "val": 22710,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "AR": {
-            "val": 0,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 2475559,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 4429306,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 34342754,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 1399832,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 12350702,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 55279025,
             "qty": 0,
@@ -29128,10 +29083,55 @@
             "qty": 0,
             "name": "AUSTRALIA"
           },
+          "CL": {
+            "val": 22710,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "AR": {
+            "val": 0,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 2475559,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 4429306,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 34342754,
+            "qty": 0,
+            "name": "GERMANY"
+          },
           "MA": {
             "val": 0,
             "qty": 0,
             "name": "MOROCCO"
+          },
+          "HU": {
+            "val": 1399832,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 12350702,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "CA": {
+            "val": 11653523,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 12700832,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 102640408,
@@ -30148,6 +30148,51 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 8560540,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 9998675,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "CL": {
+            "val": 368260,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "AR": {
+            "val": 280134,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 1971011,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 5314268,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 36431161,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 744654,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 18404825,
+            "qty": 0,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 53009461,
             "qty": 0,
@@ -30198,55 +30243,10 @@
             "qty": 0,
             "name": "AUSTRALIA"
           },
-          "CL": {
-            "val": 368260,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "AR": {
-            "val": 280134,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 1971011,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 5314268,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 36431161,
-            "qty": 0,
-            "name": "GERMANY"
-          },
           "MA": {
             "val": 8238,
             "qty": 0,
             "name": "MOROCCO"
-          },
-          "HU": {
-            "val": 744654,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 18404825,
-            "qty": 0,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 8560540,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 9998675,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 71851698,
@@ -31599,51 +31599,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 13170373,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 18201322,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "CL": {
-            "val": 832990,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "AR": {
-            "val": 17414,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 3393910,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 4748533,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 43734837,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 748403,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 25555794,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 60372531,
             "qty": 0,
@@ -31694,10 +31649,55 @@
             "qty": 0,
             "name": "AUSTRALIA"
           },
+          "CL": {
+            "val": 832990,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "AR": {
+            "val": 17414,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 3393910,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 4748533,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 43734837,
+            "qty": 0,
+            "name": "GERMANY"
+          },
           "MA": {
             "val": 0,
             "qty": 0,
             "name": "MOROCCO"
+          },
+          "HU": {
+            "val": 748403,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 25555794,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "CA": {
+            "val": 13170373,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 18201322,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 92265899,
@@ -32253,6 +32253,46 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 1707671,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 47386412,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "AR": {
+            "val": 0,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 254352,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 1051858,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 26249417,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 3413480,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 1698440,
+            "qty": 0,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 2225123,
             "qty": 0,
@@ -32292,46 +32332,6 @@
             "val": 13038356,
             "qty": 0,
             "name": "JAPAN"
-          },
-          "AR": {
-            "val": 0,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 254352,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 1051858,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 26249417,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 3413480,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 1698440,
-            "qty": 0,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 1707671,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 47386412,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 38922716,
@@ -33467,6 +33467,46 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 1360612,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 41494079,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "CL": {
+            "val": 0,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "SE": {
+            "val": 549483,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 493208,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 29121369,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 1464813,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 1186003,
+            "qty": 0,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 3538685,
             "qty": 0,
@@ -33511,46 +33551,6 @@
             "val": 48996,
             "qty": 0,
             "name": "AUSTRALIA"
-          },
-          "CL": {
-            "val": 0,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "SE": {
-            "val": 549483,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 493208,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 29121369,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 1464813,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 1186003,
-            "qty": 0,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 1360612,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 41494079,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 31164623,
@@ -33661,46 +33661,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 1750334,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 44917074,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "CL": {
-            "val": 34451,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "SE": {
-            "val": 385040,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 646836,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 25499201,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 2382883,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 1821897,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 2356710,
             "qty": 0,
@@ -33745,6 +33705,46 @@
             "val": 0,
             "qty": 0,
             "name": "AUSTRALIA"
+          },
+          "CL": {
+            "val": 34451,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "SE": {
+            "val": 385040,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 646836,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 25499201,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 2382883,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 1821897,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "CA": {
+            "val": 1750334,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 44917074,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 33336569,
@@ -34559,6 +34559,41 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 1353532,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 46398563,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "SE": {
+            "val": 458864,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 420014,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 20077748,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 1625566,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 2086131,
+            "qty": 0,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 2757954,
             "qty": 0,
@@ -34594,41 +34629,6 @@
             "qty": 0,
             "name": "JAPAN"
           },
-          "SE": {
-            "val": 458864,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 420014,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 20077748,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 1625566,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 2086131,
-            "qty": 0,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 1353532,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 46398563,
-            "qty": 0,
-            "name": "MEXICO"
-          },
           "OTHER": {
             "val": 30329318,
             "qty": 0,
@@ -34641,41 +34641,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 1519730,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 51223937,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "SE": {
-            "val": 356277,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 222910,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 26382440,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 1539957,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 2131674,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 3138279,
             "qty": 0,
@@ -34716,6 +34681,41 @@
             "qty": 0,
             "name": "AUSTRALIA"
           },
+          "SE": {
+            "val": 356277,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 222910,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 26382440,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 1539957,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 2131674,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "CA": {
+            "val": 1519730,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 51223937,
+            "qty": 0,
+            "name": "MEXICO"
+          },
           "OTHER": {
             "val": 25304353,
             "qty": 0,
@@ -34728,51 +34728,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 1545036,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 63657959,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "CL": {
-            "val": 28301,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "AR": {
-            "val": 2205,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 446312,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 724620,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 27117191,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 4863875,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 2295774,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 3415476,
             "qty": 0,
@@ -34817,6 +34772,51 @@
             "val": 10219,
             "qty": 0,
             "name": "AUSTRALIA"
+          },
+          "CL": {
+            "val": 28301,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "AR": {
+            "val": 2205,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 446312,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 724620,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 27117191,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 4863875,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 2295774,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "CA": {
+            "val": 1545036,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 63657959,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 35089237,
@@ -35890,51 +35890,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 689954,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 62728603,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "CL": {
-            "val": 0,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "AR": {
-            "val": 0,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 369518,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 568814,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 15999814,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 1252404,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 1336113,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 2286024,
             "qty": 0,
@@ -35985,6 +35940,51 @@
             "qty": 0,
             "name": "AUSTRALIA"
           },
+          "CL": {
+            "val": 0,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "AR": {
+            "val": 0,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 369518,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 568814,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 15999814,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 1252404,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 1336113,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "CA": {
+            "val": 689954,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 62728603,
+            "qty": 0,
+            "name": "MEXICO"
+          },
           "OTHER": {
             "val": 24217040,
             "qty": 0,
@@ -35997,51 +35997,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 1488181,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 74913193,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "CL": {
-            "val": 0,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "AR": {
-            "val": 2529,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 172058,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 530789,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 21179858,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 2889757,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 1186169,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 2769753,
             "qty": 0,
@@ -36091,6 +36046,51 @@
             "val": 38036,
             "qty": 0,
             "name": "AUSTRALIA"
+          },
+          "CL": {
+            "val": 0,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "AR": {
+            "val": 2529,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 172058,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 530789,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 21179858,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 2889757,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 1186169,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "CA": {
+            "val": 1488181,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 74913193,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 39335875,
@@ -36728,6 +36728,41 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 714265,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 1064869,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "SE": {
+            "val": 2291,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 134987,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 1459959,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 41973,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 12153,
+            "qty": 0,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 131905,
             "qty": 0,
@@ -36777,41 +36812,6 @@
             "val": 134486,
             "qty": 0,
             "name": "AUSTRALIA"
-          },
-          "SE": {
-            "val": 2291,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 134987,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 1459959,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 41973,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 12153,
-            "qty": 0,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 714265,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 1064869,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 3007816,
@@ -37778,41 +37778,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 227755,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 433699,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "SE": {
-            "val": 30886,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 266970,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 959220,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 9171,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 8366,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 17671,
             "qty": 0,
@@ -37857,6 +37822,41 @@
             "val": 49845,
             "qty": 0,
             "name": "AUSTRALIA"
+          },
+          "SE": {
+            "val": 30886,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 266970,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 959220,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 9171,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 8366,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "CA": {
+            "val": 227755,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 433699,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 4258972,
@@ -37962,6 +37962,41 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 373567,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 115111,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "SE": {
+            "val": 10511,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 109634,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 1233192,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 2486,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 16255,
+            "qty": 0,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 136011,
             "qty": 0,
@@ -38011,41 +38046,6 @@
             "val": 405315,
             "qty": 0,
             "name": "AUSTRALIA"
-          },
-          "SE": {
-            "val": 10511,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 109634,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 1233192,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 2486,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 16255,
-            "qty": 0,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 373567,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 115111,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 3101199,
@@ -38957,36 +38957,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 343408,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 138151,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "SE": {
-            "val": 17404,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 33088,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 1122256,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 5557,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
           "IN": {
             "val": 78512,
             "qty": 0,
@@ -39036,6 +39006,36 @@
             "val": 102437,
             "qty": 0,
             "name": "AUSTRALIA"
+          },
+          "SE": {
+            "val": 17404,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 33088,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 1122256,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 5557,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "CA": {
+            "val": 343408,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 138151,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 2661419,
@@ -40236,6 +40236,41 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 249865,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 414032,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "SE": {
+            "val": 6842,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 83615,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 909699,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 4042,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 53127,
+            "qty": 0,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 275988,
             "qty": 0,
@@ -40290,41 +40325,6 @@
             "val": 63969,
             "qty": 0,
             "name": "AUSTRALIA"
-          },
-          "SE": {
-            "val": 6842,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 83615,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 909699,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 4042,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 53127,
-            "qty": 0,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 249865,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 414032,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 2578777,
@@ -42221,41 +42221,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 11386955,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 7841453,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "SE": {
-            "val": 356235,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 8680513,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 29459357,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 51411632,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 31804655,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 371978,
             "qty": 0,
@@ -42306,6 +42271,41 @@
             "qty": 0,
             "name": "AUSTRALIA"
           },
+          "SE": {
+            "val": 356235,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 8680513,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 29459357,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 51411632,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 31804655,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "CA": {
+            "val": 11386955,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 7841453,
+            "qty": 0,
+            "name": "MEXICO"
+          },
           "OTHER": {
             "val": 32365852,
             "qty": 0,
@@ -42318,6 +42318,46 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 7060540,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 5107363,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "CL": {
+            "val": 58047,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "SE": {
+            "val": 341924,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 4330362,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 23751431,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 71682394,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 35987097,
+            "qty": 0,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 375608,
             "qty": 0,
@@ -42367,46 +42407,6 @@
             "val": 114317,
             "qty": 0,
             "name": "AUSTRALIA"
-          },
-          "CL": {
-            "val": 58047,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "SE": {
-            "val": 341924,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 4330362,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 23751431,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 71682394,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 35987097,
-            "qty": 0,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 7060540,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 5107363,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 28052577,
@@ -42522,46 +42522,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 6362008,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 6670725,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "CL": {
-            "val": 0,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "SE": {
-            "val": 1579988,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 5293086,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 27963401,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 93933459,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 41900714,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 2012,
             "qty": 0,
@@ -42611,6 +42571,46 @@
             "val": 242247,
             "qty": 0,
             "name": "AUSTRALIA"
+          },
+          "CL": {
+            "val": 0,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "SE": {
+            "val": 1579988,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 5293086,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 27963401,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 93933459,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 41900714,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "CA": {
+            "val": 6362008,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 6670725,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 38129828,
@@ -43552,6 +43552,46 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 82235364,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 13182450,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "CL": {
+            "val": 2435,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "SE": {
+            "val": 1541562,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 6416048,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 16280516,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 28228673,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 30690412,
+            "qty": 0,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 52654,
             "qty": 0,
@@ -43601,46 +43641,6 @@
             "val": 204077,
             "qty": 0,
             "name": "AUSTRALIA"
-          },
-          "CL": {
-            "val": 2435,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "SE": {
-            "val": 1541562,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 6416048,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 16280516,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 28228673,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 30690412,
-            "qty": 0,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 82235364,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 13182450,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 39002698,
@@ -43756,46 +43756,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 12049340,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 10504086,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "CL": {
-            "val": 6398,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "SE": {
-            "val": 1219005,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 4372156,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 29799905,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 41712379,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 28625055,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 194490,
             "qty": 0,
@@ -43850,6 +43810,46 @@
             "val": 106871,
             "qty": 0,
             "name": "AUSTRALIA"
+          },
+          "CL": {
+            "val": 6398,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "SE": {
+            "val": 1219005,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 4372156,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 29799905,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 41712379,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 28625055,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "CA": {
+            "val": 12049340,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 10504086,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 39036863,
@@ -44779,6 +44779,51 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 49047056,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 11345953,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "CL": {
+            "val": 25046,
+            "qty": 0,
+            "name": "CHILE"
+          },
+          "AR": {
+            "val": 3232,
+            "qty": 0,
+            "name": "ARGENTINA"
+          },
+          "SE": {
+            "val": 530784,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 4028259,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 11466916,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 5490607,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 16802453,
+            "qty": 0,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 162861,
             "qty": 0,
@@ -44833,51 +44878,6 @@
             "val": 82733,
             "qty": 0,
             "name": "AUSTRALIA"
-          },
-          "CL": {
-            "val": 25046,
-            "qty": 0,
-            "name": "CHILE"
-          },
-          "AR": {
-            "val": 3232,
-            "qty": 0,
-            "name": "ARGENTINA"
-          },
-          "SE": {
-            "val": 530784,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 4028259,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 11466916,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 5490607,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 16802453,
-            "qty": 0,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 49047056,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 11345953,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 78613871,
@@ -45632,6 +45632,21 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 159600,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 11480,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "DE": {
+            "val": 9373,
+            "qty": 0,
+            "name": "GERMANY"
+          },
           "TH": {
             "val": 3742179,
             "qty": 0,
@@ -45676,21 +45691,6 @@
             "val": 137400,
             "qty": 0,
             "name": "JAPAN"
-          },
-          "DE": {
-            "val": 9373,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "CA": {
-            "val": 159600,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 11480,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 2283298,
@@ -48612,6 +48612,21 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "MX": {
+            "val": 5426,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "GB": {
+            "val": 330192,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 4991855,
+            "qty": 0,
+            "name": "GERMANY"
+          },
           "TH": {
             "val": 26864465,
             "qty": 0,
@@ -48651,21 +48666,6 @@
             "val": 13580,
             "qty": 0,
             "name": "AUSTRALIA"
-          },
-          "GB": {
-            "val": 330192,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 4991855,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "MX": {
-            "val": 5426,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 24985130,
@@ -49270,6 +49270,31 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 13553728,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 33206152,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "SE": {
+            "val": 26390,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 0,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 5668858,
+            "qty": 0,
+            "name": "GERMANY"
+          },
           "IN": {
             "val": 150720116,
             "qty": 0,
@@ -49324,31 +49349,6 @@
             "val": 194234,
             "qty": 0,
             "name": "AUSTRALIA"
-          },
-          "SE": {
-            "val": 26390,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 0,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 5668858,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "CA": {
-            "val": 13553728,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 33206152,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 56198147,
@@ -51593,6 +51593,31 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 827307,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "SE": {
+            "val": 0,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 25885,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 4534840,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 0,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
           "IN": {
             "val": 58204450,
             "qty": 0,
@@ -51647,31 +51672,6 @@
             "val": 18314,
             "qty": 0,
             "name": "AUSTRALIA"
-          },
-          "SE": {
-            "val": 0,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 25885,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 4534840,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 0,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "CA": {
-            "val": 827307,
-            "qty": 0,
-            "name": "CANADA"
           },
           "OTHER": {
             "val": 62443796,
@@ -51787,41 +51787,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 413416,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 63621,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "SE": {
-            "val": 60060,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 46905,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 453580,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 0,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 0,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 69141915,
             "qty": 0,
@@ -51876,6 +51841,41 @@
             "val": 150211,
             "qty": 0,
             "name": "AUSTRALIA"
+          },
+          "SE": {
+            "val": 60060,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 46905,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 453580,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 0,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 0,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "CA": {
+            "val": 413416,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 63621,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 169311931,
@@ -52705,6 +52705,31 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 412897,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 3868,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "GB": {
+            "val": 220300,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 8359,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 2759,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
           "IN": {
             "val": 188023,
             "qty": 0,
@@ -52750,31 +52775,6 @@
             "qty": 0,
             "name": "JAPAN"
           },
-          "GB": {
-            "val": 220300,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 8359,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 2759,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "CA": {
-            "val": 412897,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 3868,
-            "qty": 0,
-            "name": "MEXICO"
-          },
           "OTHER": {
             "val": 67136455,
             "qty": 0,
@@ -52787,36 +52787,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 632676,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 0,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "GB": {
-            "val": 78454,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 1093544,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 0,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 62848,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 121759,
             "qty": 0,
@@ -52861,6 +52831,36 @@
             "val": 23400,
             "qty": 0,
             "name": "JAPAN"
+          },
+          "GB": {
+            "val": 78454,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 1093544,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 0,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 62848,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "CA": {
+            "val": 632676,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 0,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 52312607,
@@ -53376,6 +53376,26 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 1392109,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 115633221,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "GB": {
+            "val": 254878,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 333690,
+            "qty": 0,
+            "name": "GERMANY"
+          },
           "TH": {
             "val": 3782029,
             "qty": 0,
@@ -53396,26 +53416,6 @@
             "qty": 0,
             "name": "JAPAN"
           },
-          "GB": {
-            "val": 254878,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 333690,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "CA": {
-            "val": 1392109,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 115633221,
-            "qty": 0,
-            "name": "MEXICO"
-          },
           "OTHER": {
             "val": 13115889,
             "qty": 0,
@@ -53428,6 +53428,26 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 1428387,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 131735094,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "GB": {
+            "val": 35715,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 0,
+            "qty": 0,
+            "name": "GERMANY"
+          },
           "TH": {
             "val": 1035603,
             "qty": 0,
@@ -53452,26 +53472,6 @@
             "val": 4681,
             "qty": 0,
             "name": "AUSTRALIA"
-          },
-          "GB": {
-            "val": 35715,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 0,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "CA": {
-            "val": 1428387,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 131735094,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 6212691,
@@ -56414,6 +56414,26 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 170479263,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 862687979,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "GB": {
+            "val": 4559289,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 465566,
+            "qty": 0,
+            "name": "GERMANY"
+          },
           "IN": {
             "val": 7357,
             "qty": 0,
@@ -56439,26 +56459,6 @@
             "qty": 0,
             "name": "JAPAN"
           },
-          "GB": {
-            "val": 4559289,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 465566,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "CA": {
-            "val": 170479263,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 862687979,
-            "qty": 0,
-            "name": "MEXICO"
-          },
           "OTHER": {
             "val": 30123921,
             "qty": 0,
@@ -56471,6 +56471,26 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 138347586,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 762553944,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "GB": {
+            "val": 6309205,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 285571,
+            "qty": 0,
+            "name": "GERMANY"
+          },
           "IN": {
             "val": 26097,
             "qty": 0,
@@ -56495,26 +56515,6 @@
             "val": 204247287,
             "qty": 0,
             "name": "JAPAN"
-          },
-          "GB": {
-            "val": 6309205,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 285571,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "CA": {
-            "val": 138347586,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 762553944,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 20890157,
@@ -59047,41 +59047,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 1065411797,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 1561851213,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "SE": {
-            "val": 153078936,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 86600797,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 1044558762,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 73787213,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 41793,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 8770512,
             "qty": 0,
@@ -59111,6 +59076,41 @@
             "val": 7000,
             "qty": 0,
             "name": "AUSTRALIA"
+          },
+          "SE": {
+            "val": 153078936,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 86600797,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 1044558762,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 73787213,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 41793,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "CA": {
+            "val": 1065411797,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 1561851213,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 747198809,
@@ -62695,6 +62695,26 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 694165417,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 47028387,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "GB": {
+            "val": 195934366,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 450313478,
+            "qty": 0,
+            "name": "GERMANY"
+          },
           "KR": {
             "val": 423841527,
             "qty": 0,
@@ -62709,26 +62729,6 @@
             "val": 90000,
             "qty": 0,
             "name": "AUSTRALIA"
-          },
-          "GB": {
-            "val": 195934366,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 450313478,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "CA": {
-            "val": 694165417,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 47028387,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 395082464,
@@ -65397,6 +65397,31 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
+          "CA": {
+            "val": 165728912,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 10462339,
+            "qty": 0,
+            "name": "MEXICO"
+          },
+          "SE": {
+            "val": 3650844,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 76729899,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 162371842,
+            "qty": 0,
+            "name": "GERMANY"
+          },
           "CN": {
             "val": 0,
             "qty": 0,
@@ -65416,31 +65441,6 @@
             "val": 2379,
             "qty": 0,
             "name": "AUSTRALIA"
-          },
-          "SE": {
-            "val": 3650844,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 76729899,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 162371842,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "CA": {
-            "val": 165728912,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 10462339,
-            "qty": 0,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 344193138,
@@ -68744,15 +68744,10 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 3299,
+          "JP": {
+            "val": 30199,
             "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 26000,
-            "qty": 0,
-            "name": "MEXICO"
+            "name": "JAPAN"
           },
           "GB": {
             "val": 0,
@@ -68764,10 +68759,15 @@
             "qty": 0,
             "name": "GERMANY"
           },
-          "JP": {
-            "val": 30199,
+          "CA": {
+            "val": 3299,
             "qty": 0,
-            "name": "JAPAN"
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 26000,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 0,
@@ -68990,15 +68990,15 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "JP": {
-            "val": 0,
-            "qty": 0,
-            "name": "JAPAN"
-          },
           "CA": {
             "val": 0,
             "qty": 0,
             "name": "CANADA"
+          },
+          "JP": {
+            "val": 0,
+            "qty": 0,
+            "name": "JAPAN"
           },
           "OTHER": {
             "val": 0,
@@ -69394,20 +69394,15 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CN": {
-            "val": 297193,
+          "CA": {
+            "val": 71760122,
             "qty": 0,
-            "name": "CHINA"
+            "name": "CANADA"
           },
-          "KR": {
-            "val": 59852590,
+          "MX": {
+            "val": 9316301,
             "qty": 0,
-            "name": "KOREA, SOUTH"
-          },
-          "JP": {
-            "val": 130572352,
-            "qty": 0,
-            "name": "JAPAN"
+            "name": "MEXICO"
           },
           "SE": {
             "val": 103675665,
@@ -69424,15 +69419,20 @@
             "qty": 0,
             "name": "GERMANY"
           },
-          "CA": {
-            "val": 71760122,
+          "CN": {
+            "val": 297193,
             "qty": 0,
-            "name": "CANADA"
+            "name": "CHINA"
           },
-          "MX": {
-            "val": 9316301,
+          "KR": {
+            "val": 59852590,
             "qty": 0,
-            "name": "MEXICO"
+            "name": "KOREA, SOUTH"
+          },
+          "JP": {
+            "val": 130572352,
+            "qty": 0,
+            "name": "JAPAN"
           },
           "OTHER": {
             "val": 14722397,
@@ -71329,20 +71329,10 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CN": {
-            "val": 0,
+          "CA": {
+            "val": 174462,
             "qty": 0,
-            "name": "CHINA"
-          },
-          "KR": {
-            "val": 24231895,
-            "qty": 0,
-            "name": "KOREA, SOUTH"
-          },
-          "JP": {
-            "val": 208775264,
-            "qty": 0,
-            "name": "JAPAN"
+            "name": "CANADA"
           },
           "SE": {
             "val": 92321876,
@@ -71359,10 +71349,20 @@
             "qty": 0,
             "name": "GERMANY"
           },
-          "CA": {
-            "val": 174462,
+          "CN": {
+            "val": 0,
             "qty": 0,
-            "name": "CANADA"
+            "name": "CHINA"
+          },
+          "KR": {
+            "val": 24231895,
+            "qty": 0,
+            "name": "KOREA, SOUTH"
+          },
+          "JP": {
+            "val": 208775264,
+            "qty": 0,
+            "name": "JAPAN"
           },
           "OTHER": {
             "val": 21337919,
@@ -71660,15 +71660,20 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 154733,
+          "CN": {
+            "val": 21683956,
             "qty": 0,
-            "name": "CANADA"
+            "name": "CHINA"
           },
-          "MX": {
-            "val": 24517028,
+          "KR": {
+            "val": 291677956,
             "qty": 0,
-            "name": "MEXICO"
+            "name": "KOREA, SOUTH"
+          },
+          "JP": {
+            "val": 105376306,
+            "qty": 0,
+            "name": "JAPAN"
           },
           "GB": {
             "val": 7029368,
@@ -71685,20 +71690,15 @@
             "qty": 0,
             "name": "HUNGARY"
           },
-          "CN": {
-            "val": 21683956,
+          "CA": {
+            "val": 154733,
             "qty": 0,
-            "name": "CHINA"
+            "name": "CANADA"
           },
-          "KR": {
-            "val": 291677956,
+          "MX": {
+            "val": 24517028,
             "qty": 0,
-            "name": "KOREA, SOUTH"
-          },
-          "JP": {
-            "val": 105376306,
-            "qty": 0,
-            "name": "JAPAN"
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 91305215,
@@ -72541,15 +72541,20 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 1352658,
+          "CN": {
+            "val": 11756950,
             "qty": 0,
-            "name": "CANADA"
+            "name": "CHINA"
           },
-          "MX": {
-            "val": 392996864,
+          "KR": {
+            "val": 627431226,
             "qty": 0,
-            "name": "MEXICO"
+            "name": "KOREA, SOUTH"
+          },
+          "JP": {
+            "val": 209433982,
+            "qty": 0,
+            "name": "JAPAN"
           },
           "SE": {
             "val": 9808,
@@ -72571,20 +72576,15 @@
             "qty": 0,
             "name": "HUNGARY"
           },
-          "CN": {
-            "val": 11756950,
+          "CA": {
+            "val": 1352658,
             "qty": 0,
-            "name": "CHINA"
+            "name": "CANADA"
           },
-          "KR": {
-            "val": 627431226,
+          "MX": {
+            "val": 392996864,
             "qty": 0,
-            "name": "KOREA, SOUTH"
-          },
-          "JP": {
-            "val": 209433982,
-            "qty": 0,
-            "name": "JAPAN"
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 87696576,
@@ -72958,41 +72958,6 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "CA": {
-            "val": 3421286,
-            "qty": 0,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 940134856,
-            "qty": 0,
-            "name": "MEXICO"
-          },
-          "SE": {
-            "val": 0,
-            "qty": 0,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 9675722,
-            "qty": 0,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 324430480,
-            "qty": 0,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 43152552,
-            "qty": 0,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 0,
-            "qty": 0,
-            "name": "POLAND"
-          },
           "IN": {
             "val": 0,
             "qty": 0,
@@ -73022,6 +72987,41 @@
             "val": 222245738,
             "qty": 0,
             "name": "JAPAN"
+          },
+          "SE": {
+            "val": 0,
+            "qty": 0,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 9675722,
+            "qty": 0,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 324430480,
+            "qty": 0,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 43152552,
+            "qty": 0,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 0,
+            "qty": 0,
+            "name": "POLAND"
+          },
+          "CA": {
+            "val": 3421286,
+            "qty": 0,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 940134856,
+            "qty": 0,
+            "name": "MEXICO"
           },
           "OTHER": {
             "val": 73141859,
@@ -73529,25 +73529,15 @@
         "totalQty": 0,
         "qtyUnit": "M",
         "countries": {
-          "VN": {
-            "val": 0,
+          "CA": {
+            "val": 4316286,
             "qty": 0,
-            "name": "VIETNAM"
+            "name": "CANADA"
           },
-          "CN": {
-            "val": 19285429,
+          "MX": {
+            "val": 634933629,
             "qty": 0,
-            "name": "CHINA"
-          },
-          "KR": {
-            "val": 35094521,
-            "qty": 0,
-            "name": "KOREA, SOUTH"
-          },
-          "JP": {
-            "val": 128957538,
-            "qty": 0,
-            "name": "JAPAN"
+            "name": "MEXICO"
           },
           "SE": {
             "val": 491145,
@@ -73569,15 +73559,25 @@
             "qty": 0,
             "name": "HUNGARY"
           },
-          "CA": {
-            "val": 4316286,
+          "VN": {
+            "val": 0,
             "qty": 0,
-            "name": "CANADA"
+            "name": "VIETNAM"
           },
-          "MX": {
-            "val": 634933629,
+          "CN": {
+            "val": 19285429,
             "qty": 0,
-            "name": "MEXICO"
+            "name": "CHINA"
+          },
+          "KR": {
+            "val": 35094521,
+            "qty": 0,
+            "name": "KOREA, SOUTH"
+          },
+          "JP": {
+            "val": 128957538,
+            "qty": 0,
+            "name": "JAPAN"
           },
           "OTHER": {
             "val": 42578730,
@@ -83101,6 +83101,41 @@
         "totalQty": 19290907,
         "qtyUnit": "-",
         "countries": {
+          "CA": {
+            "val": 6550058,
+            "qty": 76204,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 4720936,
+            "qty": 56649,
+            "name": "MEXICO"
+          },
+          "SE": {
+            "val": 39965,
+            "qty": 146,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 1244146,
+            "qty": 1474,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 16955338,
+            "qty": 19519,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 57059222,
+            "qty": 104022,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 15045232,
+            "qty": 47571,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 12519,
             "qty": 11,
@@ -83150,41 +83185,6 @@
             "val": 61310,
             "qty": 455,
             "name": "AUSTRALIA"
-          },
-          "SE": {
-            "val": 39965,
-            "qty": 146,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 1244146,
-            "qty": 1474,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 16955338,
-            "qty": 19519,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 57059222,
-            "qty": 104022,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 15045232,
-            "qty": 47571,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 6550058,
-            "qty": 76204,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 4720936,
-            "qty": 56649,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 18525807,
@@ -87612,6 +87612,36 @@
         "totalQty": 55099782,
         "qtyUnit": "-",
         "countries": {
+          "CA": {
+            "val": 722715,
+            "qty": 17380,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 16437492,
+            "qty": 1880288,
+            "name": "MEXICO"
+          },
+          "GB": {
+            "val": 497602,
+            "qty": 67927,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 3246276,
+            "qty": 31172608,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 487040,
+            "qty": 37395,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 115299,
+            "qty": 6642,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 117145,
             "qty": 16417,
@@ -87652,36 +87682,6 @@
             "qty": 4836602,
             "name": "JAPAN"
           },
-          "GB": {
-            "val": 497602,
-            "qty": 67927,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 3246276,
-            "qty": 31172608,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 487040,
-            "qty": 37395,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 115299,
-            "qty": 6642,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 722715,
-            "qty": 17380,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 16437492,
-            "qty": 1880288,
-            "name": "MEXICO"
-          },
           "OTHER": {
             "val": 8285507,
             "qty": 0,
@@ -87694,6 +87694,41 @@
         "totalQty": 44815314,
         "qtyUnit": "-",
         "countries": {
+          "CA": {
+            "val": 277945,
+            "qty": 8371,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 15235408,
+            "qty": 1745000,
+            "name": "MEXICO"
+          },
+          "SE": {
+            "val": 871400,
+            "qty": 18669,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 111981,
+            "qty": 15699,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 1516676,
+            "qty": 20930088,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 390174,
+            "qty": 29025,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 123988,
+            "qty": 4064,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 24938,
             "qty": 2608,
@@ -87738,41 +87773,6 @@
             "val": 10200,
             "qty": 1098,
             "name": "AUSTRALIA"
-          },
-          "SE": {
-            "val": 871400,
-            "qty": 18669,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 111981,
-            "qty": 15699,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 1516676,
-            "qty": 20930088,
-            "name": "GERMANY"
-          },
-          "HU": {
-            "val": 390174,
-            "qty": 29025,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 123988,
-            "qty": 4064,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 277945,
-            "qty": 8371,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 15235408,
-            "qty": 1745000,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 7941248,
@@ -91119,6 +91119,41 @@
         "totalQty": 13589180,
         "qtyUnit": "-",
         "countries": {
+          "CA": {
+            "val": 762336,
+            "qty": 40856,
+            "name": "CANADA"
+          },
+          "MX": {
+            "val": 26369652,
+            "qty": 5512657,
+            "name": "MEXICO"
+          },
+          "SE": {
+            "val": 335187,
+            "qty": 5329,
+            "name": "SWEDEN"
+          },
+          "GB": {
+            "val": 343991,
+            "qty": 3504,
+            "name": "UNITED KINGDOM"
+          },
+          "DE": {
+            "val": 1439897,
+            "qty": 25131,
+            "name": "GERMANY"
+          },
+          "HU": {
+            "val": 26403,
+            "qty": 566,
+            "name": "HUNGARY"
+          },
+          "PL": {
+            "val": 541322,
+            "qty": 16707,
+            "name": "POLAND"
+          },
           "IN": {
             "val": 38702,
             "qty": 5209,
@@ -91164,45 +91199,10 @@
             "qty": 468258,
             "name": "JAPAN"
           },
-          "SE": {
-            "val": 335187,
-            "qty": 5329,
-            "name": "SWEDEN"
-          },
-          "GB": {
-            "val": 343991,
-            "qty": 3504,
-            "name": "UNITED KINGDOM"
-          },
-          "DE": {
-            "val": 1439897,
-            "qty": 25131,
-            "name": "GERMANY"
-          },
           "MA": {
             "val": 25430,
             "qty": 162,
             "name": "MOROCCO"
-          },
-          "HU": {
-            "val": 26403,
-            "qty": 566,
-            "name": "HUNGARY"
-          },
-          "PL": {
-            "val": 541322,
-            "qty": 16707,
-            "name": "POLAND"
-          },
-          "CA": {
-            "val": 762336,
-            "qty": 40856,
-            "name": "CANADA"
-          },
-          "MX": {
-            "val": 26369652,
-            "qty": 5512657,
-            "name": "MEXICO"
           },
           "OTHER": {
             "val": 6046557,
