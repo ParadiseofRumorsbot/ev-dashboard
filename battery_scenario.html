@@ -162,13 +162,14 @@ const DATA = {
       company:'상신이디피', costPct:2.5, apcId:'apc1',
       perGwh: 60,  // 억원/GWh — 회사 IR(260421) ESS 대형 각형 기준. IRS Packaging 5.6%(133억)에서 분리(2026-09-20)
       color:'#4CAF50', bg:'#E6F4E7',
-      desc:'IRS Packaging 5.6%(133억원/GWh)에 들어 있던 셀 외장 캔을 따로 뺀 카드. 딥드로잉으로 측벽을 얇게 성형하는 각형·원형 CAN. 삼성SDI 코코모(SPE) 4개 라인 캔을 상신이디피가 공급(회사 확인, 260908 탐방), 말레이시아 원형은 사실상 단독, 헝가리는 중국 Kedali와 이원화(점유율은 회사 비공개). 알루미늄 등 원재료 등락은 삼성SDI 단가 협상에 연동돼 시차를 두고 보전.',
+      desc:'IRS Packaging 5.6%(133억원/GWh)에 들어 있던 셀 외장 캔을 따로 뺀 카드. 딥드로잉으로 측벽을 얇게 성형하는 각형·원형 CAN. 삼성SDI 코코모(SPE) 4개 라인 캔을 상신이디피가 공급(회사 확인, 260908 탐방), 말레이시아 원형은 사실상 단독, 헝가리는 중국 Kedali와 이원화(점유율은 회사 비공개). 알루미늄 등 원재료 등락은 삼성SDI 단가 협상에 연동돼 시차를 두고 보전. LG에너지솔루션 각형 LFP ESS(미시간 랜싱·Tesla향 연 15GWh(언론 보도 기준), 2027년 공급 시작)용 캔도 상신이디피 공급으로 추정(자체추정) — 회사는 미국 중대형 각형 비공개 신규 거래처에 샘플 납품 중이라고만 밝힘(260908 탐방).',
       bomItems:[
         {name:'ESS 대형 각형 CAN', note:'약 60억원/GWh(회사 IR 260421) · SBB 2.0용 273Ah 4Q26 양산 · 300Ah대 톨캔 27년'},
         {name:'미국 인디애나 라인', note:'명목 6대 중 가동 2대 → 26년 말 4대 → 27년 명목 11대 · 월 CAPA 350만개+ → 600만개 후반(260908 탐방)'},
         {name:'원형 CAN (18650·21700)', note:'말레이시아 BBU·전동공구향 · 하부 벤트 신형 21700 · 미국 매출 FY25 250.6억 → 1H26 232.7억(공시)'},
+        {name:'LGES 각형 ESS CAN (추정)', note:'미시간 랜싱 Tesla향 각형 LFP 연 15GWh · 2027년 공급 시작 · 27E M/S 44%(15GWh ÷ LGES 27E ESS 출하 33.9GWh, 26E는 0%) · 회사 확인은 비공개 신규 거래처 샘플 납품까지(260908 탐방)'},
       ],
-      investPoint:'SDI 내 원형 CAN 90~100%·각형 약 70%(각형은 회사 비공개), 미국 CAN 라인 26년 말 가동 4대 → 27년 명목 11대(260908 탐방), 27년 매출 목표 4,000억 이상(회사)',
+      investPoint:'SDI 내 원형 CAN 90~100%·각형 약 70%(각형은 회사 비공개), 미국 CAN 라인 26년 말 가동 4대 → 27년 명목 11대(260908 탐방), 27년 매출 목표 4,000억 이상(회사), LGES 각형 ESS 캔 공급 추정(27년~, 자체추정)',
       opMcap:'9.0%', valuation:'26E 매출 3,355억·OP 265억(자체추정 260815)',
     },
   ],
@@ -202,7 +203,7 @@ const DATA = {
       evGwh: {y25:130.9, y26:162.1, y27:176.9},
       supplyChain: {
         cathode:'상주리원(~28)', electrolyte:'엔켐·중국', separator:'WCP·SKIET',
-        copperFoil:'SKC·롯데에너지', alFoil:'삼아알미늄·DI동일', can:'율촌화학·피플웍스',
+        copperFoil:'SKC·롯데에너지', alFoil:'삼아알미늄·DI동일', can:'율촌화학·피플웍스·상신이디피(각형 ESS 27년~ 추정)',
         enclosure:'Fluence(자체)', thermal:'미확정',
       },
       guidance:'2Q26 매출 7조 5,602억원(+15.3% QoQ), 영업이익 1,133억원. AMPC 2,410억원 제외 시 -1,277억원 적자(차감 계산). 기존 2Q26 IRA 제외 전사 흑자 목표 미달, 4Q26 IRA 제외 ESS 수익성 확보 목표. ESS 수주잔고 140GWh·46시리즈 440GWh+. 북미 ESS 연말 50GWh+ 확보 계획. GM JV 1기 3Q26 중반 재가동 예정. 부채비율 157%(1Q26 140%). 1H26 ESS 신규 수주 3조원+, 3Q ESS 출하 +50% QoQ, 북미 ESS 셀 5개 사이트, 애리조나 46시리즈 4Q26 가동, LFP 각형 27년 공급. 출처: LG에너지솔루션 2Q26 실적발표 컨콜(2026-07-30).',
@@ -231,7 +232,14 @@ const DATA = {
     electrolyte:{sdi:70,  lges:0,   skon:0},
     alfoil:     {sdi:70,  lges:30,  skon:0},
     separator:  {sdi:50,  lges:50,  skon:0},
-    can:        {sdi:100, lges:0,   skon:0},
+    can:        {sdi:100, lges:0,   skon:0},  // LGES 27E는 아래 essMS27
+  },
+
+  // 27E 전용 ESS M/S (%) — 값이 있으면 2027E TAM 계산에서만 essMS 대신 사용
+  essMS27: {
+    // LGES 각형 LFP ESS(미시간 랜싱·Tesla향 연 15GWh, 2027년 공급 시작) 15GWh ÷ LGES 27E ESS 출하 33.9GWh = 44%.
+    // 각형 캔은 상신이디피 공급으로 추정(자체추정) — 회사 확인은 미국 중대형 각형 비공개 신규 거래처 샘플 납품까지(260908 탐방)
+    can:        {lges:44},
   },
 
   // EV M/S — 부품사별 × 셀사별 Market Share (%)
@@ -1126,7 +1134,7 @@ main{flex:1;min-width:0;max-width:1100px;padding:24px 0 60px 28px}
       • <strong>ESS 신규 설치 카드 6월 갱신</strong> — 글로벌 Grid 42.8GWh(+50%)·BTM 8.0(+55%), 미국 Grid 12.0(+81%) · 1~6월 누적 182.2GWh(+41%) · 4월 미국 Grid −86% 상충 주석 해소 · 출처: Rho Motion(2026년 6월)<br>
       • <strong>Fluence FY26 가이던스 하향 반영</strong> — 매출 약 24억$(종전 29~31억$)·조정 EBITDA 약 −2억$ · 휴스턴 위탁생산 시설 램프 지연 · 출처: Fluence 보도자료(2026-09-16)<br>
       • <strong>IR 노트 정합</strong> — 삼성SDI guidance에 헝가리 가동률·삼성디스플레이 지분 매각·CAPEX 추가(260901 그룹미팅) · LGES guidance에 ESS 신규 수주·애리조나 46시리즈 4Q26 가동 추가(2Q26 컨콜) · 엘앤에프 LFP 6만톤 27년 1Q 말 완공·SK온 LFP 계약 · 상신이디피 M/S 분리 표기·2026E OP 265억(자체추정) · 삼아알미늄 OPM 경로 · 천보 LiFSI·BBU 정량·비츠로셀 CBU 각주<br>
-      • <strong>상신이디피(각형 CAN) 카드 분리</strong> — 패키징 카드(율촌화학·신흥에스이씨) 133 → 73억원/GWh, 새 CAN 카드 60억원/GWh(회사 IR 260421)·삼성SDI 100%. 1GWh 합계는 그대로 · ESS만 반영(EV 쪽은 미반영)<br>
+      • <strong>상신이디피(각형 CAN) 카드 분리</strong> — 패키징 카드(율촌화학·신흥에스이씨) 133 → 73억원/GWh, 새 CAN 카드 60억원/GWh(회사 IR 260421)·삼성SDI 100%, LGES는 26E 0%·27E 44%(각형 LFP ESS 랜싱 Tesla향 15GWh ÷ LGES 27E ESS 출하 33.9GWh, 상신 공급 추정 · 자체추정). 1GWh 합계는 그대로 · ESS만 반영(EV 쪽은 미반영)<br>
       • <strong>LFP 양극재 원단위 조정</strong> — 552 → 313억원/GWh(2,400t × ASP $9/kg × 1,450원; 종전 ASP 약 $15.9/kg). 양극재 값을 직접 지정한 시나리오 프리셋 9개도 같은 비율(×0.567)로 재조정 · 근거: 삼성SDI 공급계약 공시(260324) 역산·각사 IR<br>
       • <strong>금속 계산기</strong> — 니켈 18,955→16,660 · 코발트 56,290→55,850 $/톤 · 출처: 한국광물자원공사(2026-08 월평균)<br>
       <br>
@@ -1728,10 +1736,11 @@ function renderOemK3Summary(){
 
 // ===== Cell Maker Breakdown =====
 function getCmGwh(cm,yr,scen){const adj=scen&&scen.cm&&scen.cm[cm.id];const gKey=`essGwh_${yr}`;const uKey=`essUtil_${yr}`;const gwh=adj&&adj[gKey]!==undefined?adj[gKey]:cm.essGwh[yr];const util=adj&&adj[uKey]!==undefined?adj[uKey]:cm.essUtil[yr];return {gwh,util,output:gwh*util}}
-function getCatPerGwh(cat,cmId,scen){
-  // Base = cat.perGwh × essMS% / 100
+function getCatPerGwh(cat,cmId,scen,yr){
+  // Base = cat.perGwh × essMS% / 100 (2027E는 essMS27 값이 있으면 그 값)
   let base=cat.perGwh;
-  const ms=DATA.essMS&&DATA.essMS[cat.id]?DATA.essMS[cat.id][cmId]:100;
+  let ms=DATA.essMS&&DATA.essMS[cat.id]?DATA.essMS[cat.id][cmId]:100;
+  if(yr==='y27'&&DATA.essMS27&&DATA.essMS27[cat.id]&&DATA.essMS27[cat.id][cmId]!==undefined)ms=DATA.essMS27[cat.id][cmId];
   base=base*ms/100;
   if(!scen||!scen.catAdj||!scen.catAdj[cat.id])return Math.round(base);
   const adj=scen.catAdj[cat.id];const cmKey=`perGwh_${cmId}`;
@@ -1739,7 +1748,7 @@ function getCatPerGwh(cat,cmId,scen){
   if(adj.perGwh!==undefined)return Math.round(adj.perGwh*ms/100);
   return Math.round(base);
 }
-function calcTam(cat,cm,yr,scen){return Math.round(getCatPerGwh(cat,cm.id,scen)*getCmGwh(cm,yr,scen).output)}
+function calcTam(cat,cm,yr,scen){return Math.round(getCatPerGwh(cat,cm.id,scen,yr)*getCmGwh(cm,yr,scen).output)}
 function getOemEventDelta(cmId){let delta=0;Object.keys(DATA.oemSales).forEach(regionId=>{const region=DATA.oemSales[regionId];region.oems.forEach(o=>{let adjBev=o.bev,baseBev=o.bev;let k3shares={...o.k3},baseShares={...o.k3};DATA.oemEvents.forEach(ev=>{if(!activeEvents.has(ev.id)||ev.region!==regionId||ev.oem!==o.oem)return;adjBev+=ev.bevDelta;if(ev.k3Override)k3shares={...k3shares,...ev.k3Override}});const withEvent=adjBev*12*o.kWh/1e6*(k3shares[cmId]||0);const without=baseBev*12*o.kWh/1e6*(baseShares[cmId]||0);delta+=withEvent-without})});return delta}
 function getEvGwh(cm,yr,scen){const adj=scen&&scen.evAdj&&scen.evAdj[cm.id];const key=`evGwh_${yr}`;let base=adj&&adj[key]!==undefined?adj[key]:(cm.evGwh?cm.evGwh[yr]||0:0);base+=getOemEventDelta(cm.id);return Math.max(0,base)}
 function getEvPerGwh(catId,cmId,scen){
@@ -1774,7 +1783,7 @@ function renderCmTamYear(gridId,yr,scen){
   DATA.cats.forEach(cat=>{
     html+=`<div class="cm-tam-td" style="font-family:var(--sans);font-weight:500;display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:${cat.color};flex-shrink:0"></span>${cat.company}</div>`;
     let rowSum=0;
-    DATA.cellMakers.forEach((cm,ci)=>{const tam=calcTam(cat,cm,yr,scen);const pgwh=getCatPerGwh(cat,cm.id,scen);const basePgwh=getCatPerGwh(cat,cm.id,null);const changed=scen&&pgwh!==basePgwh;
+    DATA.cellMakers.forEach((cm,ci)=>{const tam=calcTam(cat,cm,yr,scen);const pgwh=getCatPerGwh(cat,cm.id,scen,yr);const basePgwh=getCatPerGwh(cat,cm.id,null,yr);const changed=scen&&pgwh!==basePgwh;
       html+=`<div class="cm-tam-td" style="font-weight:600${changed?';color:#E91E63':''}">${tam.toLocaleString()}${changed?`<br><span style="font-size:8px;color:var(--ink-3)">${pgwh}억/G</span>`:''}</div>`;
       totals[ci]+=tam;rowSum+=tam});
     totals[DATA.cellMakers.length]+=rowSum;html+=`<div class="cm-tam-td" style="font-weight:700">${rowSum.toLocaleString()}</div>`;
@@ -2402,6 +2411,7 @@ function buildEditorSections(){
       essRows.push(edField('essMS.'+cat.id+'.'+cmId, label+' (='+tam+'억)', v, '%'));
     });
   });
+  if(DATA.essMS27)Object.keys(DATA.essMS27).forEach(catId=>{const cat=DATA.cats.find(c=>c.id===catId);if(!cat)return;Object.keys(DATA.essMS27[catId]).forEach(cmId=>{const v=DATA.essMS27[catId][cmId];essRows.push(edField('essMS27.'+catId+'.'+cmId, cat.company+'→'+(cmId==='sdi'?'SDI':cmId==='lges'?'LGES':'SKON')+' 27E 전용 (='+Math.round(cat.perGwh*v/100)+'억)', v, '%'))})});
   h+=edSection('ESS 부품사별 셀사 M/S (%)', essRows);
   const evRows=[];
   DATA.cats.forEach(cat=>{
@@ -2453,7 +2463,7 @@ function reRenderAll(){renderCapa();renderRegionTabs();renderOem();renderCellMak
 function edExport(){const snapshot={exportedAt:new Date().toISOString(),source:'editor',changes:edChangeCount,data:{}};document.querySelectorAll('.ed-input.changed').forEach(inp=>{snapshot.data[inp.dataset.path]=parseFloat(inp.value)});const blob=new Blob([JSON.stringify(snapshot,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='scenario_snapshot_'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url)}
 function edImport(){const input=document.createElement('input');input.type='file';input.accept='.json';input.onchange=async(e)=>{const file=e.target.files[0];if(!file)return;const text=await file.text();const snapshot=JSON.parse(text);if(snapshot.data){Object.entries(snapshot.data).forEach(([path,val])=>setByPath(DATA,path,val));reRenderAll();buildEditorSections();document.getElementById('edStatus').textContent='📂 '+file.name+' 로드됨 ('+Object.keys(snapshot.data).length+'건)'}};input.click()}
 function edReset(){Object.assign(DATA.basis,JSON.parse(JSON.stringify(edOriginal.basis)));DATA.cellMakers.forEach((cm,i)=>{Object.assign(cm.essGwh,JSON.parse(JSON.stringify(edOriginal.cellMakers[i].essGwh)));Object.assign(cm.essUtil,JSON.parse(JSON.stringify(edOriginal.cellMakers[i].essUtil)));Object.assign(cm.evGwh,JSON.parse(JSON.stringify(edOriginal.cellMakers[i].evGwh)))});DATA.cats.forEach((c,i)=>{c.perGwh=edOriginal.cats[i].perGwh});if(DATA.evMS&&edOriginal.evMS)Object.keys(DATA.evMS).forEach(k=>{Object.assign(DATA.evMS[k],JSON.parse(JSON.stringify(edOriginal.evMS[k])))});
-  if(DATA.essMS&&edOriginal.essMS)Object.keys(DATA.essMS).forEach(k=>{Object.assign(DATA.essMS[k],JSON.parse(JSON.stringify(edOriginal.essMS[k])))});DATA.northAmericaCapa.detail.forEach((r,i)=>{r.y26=edOriginal.northAmericaCapa.detail[i].y26;r.y27=edOriginal.northAmericaCapa.detail[i].y27});reRenderAll();buildEditorSections();document.getElementById('edStatus').textContent='Notion 기본값으로 복원됨'}
+  if(DATA.essMS&&edOriginal.essMS)Object.keys(DATA.essMS).forEach(k=>{Object.assign(DATA.essMS[k],JSON.parse(JSON.stringify(edOriginal.essMS[k])))});if(DATA.essMS27&&edOriginal.essMS27)Object.keys(DATA.essMS27).forEach(k=>{Object.assign(DATA.essMS27[k],JSON.parse(JSON.stringify(edOriginal.essMS27[k])))});DATA.northAmericaCapa.detail.forEach((r,i)=>{r.y26=edOriginal.northAmericaCapa.detail[i].y26;r.y27=edOriginal.northAmericaCapa.detail[i].y27});reRenderAll();buildEditorSections();document.getElementById('edStatus').textContent='Notion 기본값으로 복원됨'}
 
 // ===== BU→TD Sync (슬라이더 기본값 버그 수정) =====
 function syncBuToTd(){
