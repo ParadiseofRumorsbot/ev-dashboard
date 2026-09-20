@@ -88,24 +88,24 @@ const DATA = {
       desc:'셀을 둘러싸 팩/모듈을 형성하는 소재. 파우치 포장재(율촌화학), CAN=캔/외장통(상신이디피)·캡 어셈블리=뚜껑(신흥에스이씨). LFP 전환 시 소요량 변화 제한적.',
       bomItems:[
         {name:'파우치 Al-Lam 포장재', note:'율촌화학'},
-        {name:'CAN (원통형/각형)', note:'상신이디피 · 미국 BESS 각형캔 26E 800억'},
+        {name:'CAN (원통형/각형)', note:'상신이디피 · 미국 매출 FY25 250.6억 → 1H26 232.7억(공시)'},
         {name:'캡 어셈블리', note:'신흥에스이씨 · 미국 법인 26E 700억(흑전) · BBU CID +130% YoY · 라인 2→4개'},
       ],
-      investPoint:'SDI CAN 90% M/S + 미국 BESS 각형캔 26E 800억(25년 244억→3.3배) + 라인 6→10개(연말) + 헝가리 바닥통과',
-      opMcap:'7.8%', valuation:'26E OP 238억(+176%), PER 17.8배 · 자체 추정',
+      investPoint:'SDI 내 원형 CAN 90~100%·각형 약 70%(각형은 회사 비공개) + 미국 CAN 라인: 명목 6대 중 가동 2대 → 26년 말 4대(SBB 2.0용 LFP 2대, 4Q 양산) → 27년 300Ah 톨캔 5대 증설로 명목 11대, 월 CAPA 350만개+ → 600만개 후반(260908 탐방) + 27년 매출 목표 4,000억 이상(회사) + 헝가리 보합 + 46파이 헝가리 28년 하반기',
+      opMcap:'9.0%', valuation:'26E 매출 3,355억·OP 265억(자체추정 260815)',
     },
     {
       id:'cathode', code:'D', name:'LFP 양극재',
       company:'엘앤에프', costPct:0, apcId:'apc1',
       perGwh: 552,  // 억원/GWh — 2,400t × ASP 23만원/kg
       color:'#E91E63', bg:'#FBE0EA',
-      desc:'Cells 52% 내부. LFP는 NCM 대비 GWh당 소요량 1.71배(1,400→2,400t). 엘앤에프가 SDI LFP ESS 양극재 솔밴더로 3Q26 SOP, 6만톤+ 증설 논의 중.',
+      desc:'Cells 52% 내부. LFP는 NCM 대비 GWh당 소요량 1.71배(1,400→2,400t). 엘앤에프가 SDI LFP ESS 양극재 솔밴더로 3Q26 말 양산, LFP 3만톤 가동+3만톤 증설 중(27년 1Q 말 6만톤 완공, 추가 부지 확보). 출하 26년 5,000톤+·27년 5만톤+(2Q26 컨콜 260806). SK온과 ESS용 LFP 1,600억 계약(260917, 26~28년). 포스코퓨처엠도 NCM 1만톤 라인을 LFP 1.5만톤으로 전환, 26년 12월 양산 목표(NDR 260804) — 듀얼 벤더 후보.',
       bomItems:[
         {name:'LFP 양극재', note:'2,400톤/GWh'},
         {name:'NCM 양극재 (비교)', note:'1,400톤/GWh'},
         {name:'LFP 배율', note:'×1.71'},
       ],
-      investPoint:'3Q26 SOP + 6만톤 초과증설 논의 + 무전구체 27년 + ESS 매출 20% 목표 + SDI LFP 3년 1.6조 확정',
+      investPoint:'3Q26 말 양산 + 27년 1Q 말 6만톤 완공 + 무전구체 27년 + ESS 매출 20% 목표 + SDI LFP 3년 1.6조 확정 + SK온 LFP 1,600억',
       opMcap:'2.9%', valuation:'시총 5.8조 / 2027E OP 1,709억',
       isCellInternal: true,  // Cells 52% 내부 소재
       tPerGwh: 2400,
@@ -133,7 +133,7 @@ const DATA = {
       company:'삼아알미늄', costPct:0, apcId:'apc1',
       perGwh: 39,  // 억원/GWh — 500t × ASP 776만원/t
       color:'#FF6B35', bg:'#FEEAE0',
-      desc:'Cells 52% 내부. LFP 전환 시 양극박 소요 1.43배(350→500t). 삼아알미늄 압연 매출처는 율촌화학·LGES·SK온 순(LGES 10.2%·도요타통상 10.2% 주주). 27년 Cold Mill 내재화로 OPM 5→10%. DI동일: 국내 M/S 1위, 가동률 72%(1Q26, 58%→66%→72%), LFP BESS용 코팅 알루미늄박 매출 급증, 자체 코팅 라인 연내 부분 가동 예정 (자체 추정).',
+      desc:'Cells 52% 내부. LFP 전환 시 양극박 소요 1.43배(350→500t, DI동일은 +20~30%로 설명·260911). 삼아알미늄 압연 매출처는 율촌화학·LGES·SK온 순(LGES 10.2%·도요타통상 10.2% 주주). Cold Mill 완공·배터리 투입 27년 3Q. 회사 제시 OPM 경로: 2Q26 1.75% → 카본코팅(+4~5%p)·스트립 내재화(+8~10%p)로 27년 말~28년 초 20%+. 율촌화학 전용 압연기 1대 반납 예정(26081x 컨콜). DI동일: 국내 M/S 1위(회사 자체 조사 약 40%), 천안 알박 가동률 1H26 73.9%(반기보고서)·약 75%(회사, 260911), 2Q26 배터리용 매출 중 ESS 약 60%, 상반기 코팅은 전량 중국 위탁.',
       bomItems:[
         {name:'LFP 양극박', note:'500톤/GWh'},
         {name:'NCM 양극박 (비교)', note:'350톤/GWh'},
@@ -159,15 +159,15 @@ const DATA = {
   cellMakers: [
     {
       id:'sdi', name:'삼성SDI', color:'#1B6CFF',
-      essGwh: {y25:14, y26:28, y27:28},
+      essGwh: {y25:14, y26:19, y27:30},
       essUtil: {y25:0.3, y26:0.55, y27:0.7},
       evGwh: {y25:28.0, y26:36.3, y27:48.1},  // K3 EV 출하
       supplyChain: {
-        cathode:'엘앤에프', electrolyte:'솔브레인', separator:'WCP',
+        cathode:'엘앤에프', electrolyte:'솔브레인홀딩스', separator:'WCP',
         copperFoil:'롯데에너지', alFoil:'삼아알미늄·DI동일', can:'상신이디피·신흥에스이씨',
         enclosure:'서진시스템', thermal:'한중엔시에스',
       },
-      guidance:'25Y 3Q 저점 공식 선언. 적자 48% 축소. 순이익 561억 흑자전환. EBITDA 4,280억(+543%Y). DC ESS CAGR 30%+, 마이크로그리드 60%+. BBU $8억(+70%Y). 탭리스 20%+. 벤츠 수주 확정. 헝가리 70%+. 디스플레이 매각 연내.',
+      guidance:'미국 ESS: 2026년 말 19GWh(기존 NCA 7 + 4Q LFP 12, 합산 추정), 2027년 초 약 30GWh를 모델 기준으로 사용. 글로벌은 연말 약 30GWh·2027년 초 약 40GWh로 미국과 구분. 뉴칼라일은 2028년 말 가동 목표로 2027년 CAPA에서 제외. SPE 30GWh+의 약 80%가 2029년까지 수주로 확보. 출처: 삼성SDI 그룹미팅(2026-09-01). 2Q26 OP 2,038억 흑자전환(7분기만·관세환급 포함, 제외시도 소폭흑자). 상반기 누계 매출 7.35조·OP 482억(배터리 △173억, 전자재료 +655억). EBITDA 8,029억. 美 LFP ESS 10월 셀 양산·연내 SBB 2.0 공급. UPS·BPU M/S 각 40~50%·매출 YoY 70%+. 전고체 2027H2(첫 상용화 휴머노이드·2H26 샘플). Na-ion UPS/전력용ESS 개발 착수. 유럽 침투율 26년 20%중반→30년 30%후반. EV 적자폭 축소되나 기존 PJT 물량감소 리스크. 헝가리 가동률 50%대. 삼성디스플레이 지분 13,088,235주 4조 4,500억원 매각(260821 공시, 잔여 10.22%) — 미국 ESS 재원. CAPEX 26년 약 3.3조원·27년 약 4조원.',
     },
     {
       id:'lges', name:'LG에너지솔루션', color:'#00A878',
@@ -179,7 +179,7 @@ const DATA = {
         copperFoil:'SKC·롯데에너지', alFoil:'삼아알미늄·DI동일', can:'율촌화학·피플웍스',
         enclosure:'Fluence(자체)', thermal:'미확정',
       },
-      guidance:'2Q26 IRA 제외 흑자 전환(기존 하반기→앞당김). 2Q26 매출 +10%QoQ. ESS 수주잔고 140GWh. 46시리즈 440GWh+(BMW 10년 10조 포함). 4680+4695+46120. Tesla 하반기 재개. 북미 50GWh+(연말). 부채비율 140%.',
+      guidance:'2Q26 매출 7조 5,602억원(+15.3% QoQ), 영업이익 1,133억원. AMPC 2,410억원 제외 시 -1,277억원 적자(차감 계산). 기존 2Q26 IRA 제외 전사 흑자 목표 미달, 4Q26 IRA 제외 ESS 수익성 확보 목표. ESS 수주잔고 140GWh·46시리즈 440GWh+. 북미 ESS 연말 50GWh+ 확보 계획. GM JV 1기 3Q26 중반 재가동 예정. 부채비율 157%(1Q26 140%). 1H26 ESS 신규 수주 3조원+, 3Q ESS 출하 +50% QoQ, 북미 ESS 셀 5개 사이트, 애리조나 46시리즈 4Q26 가동, LFP 각형 27년 공급. 출처: LG에너지솔루션 2Q26 실적발표 컨콜(2026-07-30).',
     },
     {
       id:'skon', name:'SK ON', color:'#E9A23B',
@@ -187,7 +187,7 @@ const DATA = {
       essUtil: {y25:0, y26:0.5, y27:0.6},
       evGwh: {y25:83.5, y26:120.8, y27:152.0},
       supplyChain: {
-        cathode:'엘앤에프(MOU)', electrolyte:'미정', separator:'미정',
+        cathode:'엘앤에프(LFP 계약)', electrolyte:'미정', separator:'미정',
         copperFoil:'미정', alFoil:'미정', can:'미정',
         enclosure:'미정', thermal:'미정',
       },
