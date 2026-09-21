@@ -1,83 +1,101 @@
 {
   "type": "battery_patent_monitor",
-  "lastUpdated": "2026-09-14T00:32:40.111Z",
-  "weekOf": "2026-09-14",
+  "lastUpdated": "2026-09-21T00:40:27.293Z",
+  "weekOf": "2026-09-21",
   "description": "배터리·EV 특허 모니터링 — 주간 수집",
   "note": "⚠️ 자동 수집 결과입니다. 대시보드 반영 전 사용자 확인 필요.",
-  "totalItems": 7,
+  "totalItems": 9,
   "companyStats": {
-    "Startup": 1,
-    "Other": 5,
-    "Samsung SDI": 1
+    "Other": 7,
+    "BYD": 2
   },
   "techStats": {
     "음극재": 1,
-    "기타": 4,
-    "전고체": 1,
-    "양극재": 1
+    "전고체": 5,
+    "양극재": 1,
+    "기타": 1,
+    "리사이클링": 1
   },
   "items": [
     {
-      "title": "Group14 Surpasses 170 Issued Patents, Reinforcing Global Protection of SCC55® Silicon Battery Material - Group14 Technologies",
-      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPSzNlVWdYRzFHT0pUMk5RODBZTjBsSmFtRDNPVThFQk16THJDWjBwU1hpOTVFUFpqOHJVaFpXZ29tc3J4QzVNMGp5ZjdmYm40Q29GUHdldzdIUldjTDllQU5rYVgtQ3hXMHkzSUR6cnJzT19oNWZicjVaUVlBV1RvZ19QY2dNTDBtTkRsQXE3R0tFLUpWRkQ5MzlCbzV6RWRjcThFeGdITzI5MFZzSHJXY0oxaFFJdDIwVGppZG05SlVRY0ExWEtvM245NVBXT2RoYTdUbXl3V0YyRTBzR1E?oc=5",
-      "pubDate": "Mon, 07 Sep 2026 08:23:23 GMT",
-      "source": "Group14 Technologies",
-      "company": "Startup",
+      "title": "HPQ Silicon receives patent for silicon nanowire production - Mining.com.au",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNZjNKTl9sTUV0LTNHUHh0TU1VbDVxV3piZWEyT0RkZ1pZVFkxZmdtbmpPa2hyVnUzczhBSlBWb0tsazQxY29BMzh5Wml5N2RsZFByUkFfazVLVU43MUtsa3ppLVZoeTVlcW9KRzBZamNfcDFKNW05THhoWkJQMWEwSGJ0Ylc2OHJZRVE?oc=5",
+      "pubDate": "Fri, 18 Sep 2026 21:52:43 GMT",
+      "source": "Mining.com.au",
+      "company": "Other",
       "tech": "음극재",
       "score": 2
     },
     {
-      "title": "Tulip Unveils Global Imaging Patent Licensing Program - PA Media",
-      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQUWZTcU1VRDVqRmRHbkMzX1kxSGNVT1AwTklKYzl3a3NCOEQyemM4TS1Xa0ZCSTZCaHhkck9jMTg0WGFBRGdzV29VbWJ6X3d6emlTaGNOYkVoS0pNaUpNdVg4dlEyekt3dVpNS25JTlk5dGZhbHdTYUREMUlUeVE2RzZQeHpqYjZOWkJYZE4tZ0FhRVkyRkljYTV1NXd2WUppMXBaUUF5b00?oc=5",
-      "pubDate": "Thu, 10 Sep 2026 02:46:26 GMT",
-      "source": "PA Media",
+      "title": "How Are Solid-State Battery Equipment Companies Progressing in the “Last Mile” ？ - Shanghai Metals Market",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPWmdzSUtsTXYtTHpfaTNTMnhUWmhJY2Q3VkZySVoxUEFvcGRGUmJVS0RvWHBrZ295UVVJa3lyMTBZTU9GeTJORDJjNy03bld6RzFxUlltbUJCVlpLeWVxb2dWU2xJcktFQkpXdzc3dlJsWVlUM0ZGNGNrZHhRUGRYVTEzTS1raGVQaXlVZHJkUWIxeG5CSDZqcW9jYWxBWlVXREZaT1dOQmtuQTFlUXdFNmZaTnoyR0JTckR4SXB3?oc=5",
+      "pubDate": "Wed, 16 Sep 2026 08:58:52 GMT",
+      "source": "Shanghai Metals Market",
       "company": "Other",
-      "tech": "기타",
+      "tech": "전고체",
       "score": 2
     },
     {
-      "title": "Semiconductor patent rankings; China IP Forum; Samsung SDI strategy; Via Licensing DRAM pool launch; ETSI director-general keynote; plus much more - IAM Patent",
-      "link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQNFNrZHJuanRjWGc1cVdZNndJc19iMEthbG1FcDdDNzBLSWZ3X3VsdTVMS1B5eU1saUxISXhXcHgyQm8yT0RQMTI4NnVkbmhwZWpBbFVJX0cyWlFsZVdmZG53ZjhuQXU2cnFQdDhhWkhiVEU4S2lmcWVEWVU1MW5HVGh4SWRPOHNYNGtVRk80eDJRV1ZfODdRVGhHQ211QnVIUUtNdldRekFzRXR1Y1MyTDRSQjlWUFEzNElhSTlIa3NtQjl1dklaQ3p5SzBoZm94ZmthM3R2cUNkM1NKMWxxQzFDWGdDT1ZyazJCRmk5N2lEUXFEV1lKYml6NllBRzR1?oc=5",
-      "pubDate": "Sun, 13 Sep 2026 10:43:09 GMT",
-      "source": "IAM Patent",
-      "company": "Samsung SDI",
-      "tech": "기타",
+      "title": "BYD Claims Solid-State Battery Lead in 2027 Demo; Chief Scientist Cites Unscaled Dry Rooms - Tech Times",
+      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPUGE2aGx5MVlDdVZHZWtlNm9qejc2WHJZRVZ5TFNTQ3JMbU42UUhEdUpQTFk2R2pmQ3J0dmdKU1h6Y2F3djJEUGtLVm9URG9VbWNQZHBIeTBMWDJ4RWZ3UzVlazRLZkxpT2VOMGZqLWtINEFEU3plbmVGZW5KN0I4UTlTdnVaX2JVNmdteVVtUzd6NzBjV0Y4ai1aT1Q2cjd4alV5c19nNjc5cGRVMm14NDZ4RlhXbXdoUVotUEszQ1NEc3NSYzEwWkFIWE9Bb1dBVWpUY3diOGg?oc=5",
+      "pubDate": "Mon, 14 Sep 2026 18:23:13 GMT",
+      "source": "Tech Times",
+      "company": "BYD",
+      "tech": "전고체",
       "score": 2
     },
     {
-      "title": "ProLogium begins series production of next-generation solid-state batteries in Taiwan - electrive.com",
-      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOYjNBeS1oWno1ZW14aDEwbDJtbm1WWWlkaW1qWjRDZlRqU3JLbnUtS3lFOU1TTGhCYlZmVnNzeUptSkduSldhUnZlUnFZQVRtQlR6b0F4YlJWaHdRTGk4bFJWY190MGNvTlR0a3o1UU9qMG9xbDc0bnMyd1FKZlBMTlM4YjlYUFZYSmVndUJ6TlZiUEFqcTd2bTVWR2MxME5rSXpYdElMTkFkUjRBd0ZBTl9TdXp0bldkZGUzaXBSdzQ?oc=5",
-      "pubDate": "Mon, 07 Sep 2026 11:00:00 GMT",
-      "source": "electrive.com",
+      "title": "A Decades-Old Chemistry Idea May Offer a Faster Way to Recycle Battery Cathodes - AZoM",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1vcFBVeDJEN3BYU21fendzZWZTczRsdWxMcUtiUU9XLWdsTE5sVnZZbldVdGdSajN2RWM3Z3diNGFMUVVTUFhLdlV0a2ppZGlDU0dDeUF3?oc=5",
+      "pubDate": "Tue, 15 Sep 2026 05:42:00 GMT",
+      "source": "AZoM",
+      "company": "Other",
+      "tech": "양극재",
+      "score": 2
+    },
+    {
+      "title": "BYD to Unveil Solid-State Battery in 2027 Leading Industry Race - Fuel Cells Works",
+      "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPZkNKV2s1Ymx5bDl3Y3NzSW9OTHJIU3JzeUQtRUpqU0FxeFJvQkJSVnJqNGVXdUZwZmowenZxekY2V2Y0M3lmZkhlZE1wa1ZPMkFlb3B5U0c3TjdDM04zcndxZXlsVnk0SXNlUUxnOFEzNTdLZEM5czg2aE9xd2NDdDgzNWxBSV85Rkl2dGlKWHR3TkFmcXNKTVplVlloQ3I4azJFN0NxX2lEZE1JY2F1eEV1RU1WTF9LM2tSVmpVMnZOZlBmeDVLSnJpeHcwVGlvRnZRVGt5UzhQM3Ey?oc=5",
+      "pubDate": "Mon, 14 Sep 2026 19:41:00 GMT",
+      "source": "Fuel Cells Works",
+      "company": "BYD",
+      "tech": "전고체",
+      "score": 1
+    },
+    {
+      "title": "Solid-State Battery Capacity Part 2 :Pilot Lines in Quick Succession; Capacity Planning Mismatches Demand - Shanghai Metals Market",
+      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPdDFiRDJTa2dvT2lxQ0pIVnVFcnBHeUVwM2FxNE1PazUyVDFCNWNZVUxnV0VhUlNZdnU0aWMyMmozTHJiX1h4ZjNwVjQyZDYxV1VMZkRQVTY2R3I4V0o3SXN1R25aRnV0eGpXM1c0Yktpd2l0YnRsY2R5TTUtemxQMW9HcTBIUWZLOGVtOWtRR0dqUldnZ3dZd1lFTlU1T3lwSEwwOHZJcGJBZlg4TkY4VVFoZEtUNk5sa0U1REpUSWttLUZ2ODBRaEh0VWZjXzYyVWdWdlRQZ1JLS2FtNVZpSl9R?oc=5",
+      "pubDate": "Thu, 17 Sep 2026 07:03:50 GMT",
+      "source": "Shanghai Metals Market",
       "company": "Other",
       "tech": "전고체",
       "score": 1
     },
     {
-      "title": "STI Stock Extends Triple-Digit Rally: Solidion Highlights Commercial-Ready Lithium Battery Technology - Stocktwits",
-      "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNaVE1R05fUEtfaWV3V01rS2d5VnRqLUFWUGlJWDBOUUc1ZTBCWWF5dlVmY05nOXM3TjZ1Z1NiREZUYnotVzVZeDRnTGR5QzVHWkF1T3JsVWFfQXoyNjJrRVdycGhrdlE5cXctOHZBTlV1blBjZzNVXzZvTE1qY1lGRmlHbk1OU1pzb2JyTndyd0dvY2NaOWI0clNZdDRKMG40U1R2cTIwYUprNTFZdTI0dXZXSGdaRnNNV2ZEalVBaElUbnR3WDVCZERpQkUxZnJNZFJFQzFzZjVJeEhpVEZvQXVrOTliSFFJOFVCblpJQ3BCTzl0Q1c4?oc=5",
-      "pubDate": "Wed, 09 Sep 2026 08:39:27 GMT",
-      "source": "Stocktwits",
+      "title": "Mitsui Kinzoku Partners with Factorial to Scale All-Solid-State Battery Manufacturing - Yahoo! Finance Canada",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNTnBtS2J2bFFteEFrdWI0amJkR3dTNmtCYWhJSkZxQjJiODlQOGdMNkZTeEdSQXRJU1hGSmZ6eENJT2loQnBXcFJTRm9qcW9MMDRyWXZySmd2clhwYzE0NlRFTHJZWGR4RjJlZ3lMaXI4dTRnSFRtTkZId3drQW9NLW9kM25LRXRQUUVvWUJwal9jQQ?oc=5",
+      "pubDate": "Thu, 17 Sep 2026 11:00:00 GMT",
+      "source": "Yahoo! Finance Canada",
+      "company": "Other",
+      "tech": "전고체",
+      "score": 1
+    },
+    {
+      "title": "First Solar drops TOPCon patent complaint - pv magazine USA",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPdzVNSWFtSWpJd0wwMFc2T3JhSDdmdGlIRFZVQ1Q1ZS0yY1ZPUHhPMWh6TmtYUUFGblpLUTh2OXF6a1B0c25CbjhJRGxjblItVWloT2FlWXI4YlJmSzNFaWFlZnV4dnJhX1k5YTlZLWRkaVlSYXhFd2RQU195LTZlLW9mS01SWno5?oc=5",
+      "pubDate": "Thu, 17 Sep 2026 10:56:13 GMT",
+      "source": "pv magazine USA",
       "company": "Other",
       "tech": "기타",
       "score": 1
     },
     {
-      "title": "Sensata OmniNode Integrates High-Voltage Power Distribution - The EV Report",
-      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9aSnA5c0RTaGg2NmJfNFhIQ0ZnY3pxYUpHeXdwel80TDUxSkdXZ2ZBaHFjZzJ5NG5IbjVJVlVwRjNtU19MVV9JRXZJcmczbkFJT0lkZGFDWkU5cjFSYVRGak1ubGVnV0NLMTNfMm5MVHpCSEI0RTlwdXNtbFo?oc=5",
-      "pubDate": "Tue, 08 Sep 2026 13:00:04 GMT",
-      "source": "The EV Report",
+      "title": "R3 Lithium buys bankrupt battery recycler's plant for $3M, restarts production - Dealroom",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPMDJkUHFaNWxGOVM4emNrWTZPVnRxWFUtWk1tc3dwTWE1UTAxbHhSNDM4ZkdXTm5ldUNocjNySUIwNHlZSExLWGk3aDZwTkl1TWtwLVJEZ09nbHR5WXZESWljMVoyM3hvRV82OWlyZWhtbjg4NlJEbXZobnFkTmVJVWl1dm0yZkFpckNBR2JOLWRjV3hyVFNkRjlNMndWeGRFdU15MlRfV3YyLU1CM1JF?oc=5",
+      "pubDate": "Sat, 19 Sep 2026 10:46:31 GMT",
+      "source": "Dealroom",
       "company": "Other",
-      "tech": "기타",
-      "score": 1
-    },
-    {
-      "title": "ZincFive Launches Next-Generation BMS, Setting a New Standard for Nickel-Zinc Battery Management - NTB Kommunikasjon",
-      "link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxPekdaZzhteG04LURMa1h0Z2NaSjRxbjRPR3Vpa3gxaFNFYUlkWktFenhCMzZyTGo5cHN2eDVnMFJQSEdMSnV0aWNoaWZMVzdsVnZvaDNJbjY3WHJIWWd5VmtRbUVQWlA5OTJkbHRLMzRIWlZkU3BaTjREaE04dmhjMC03ODdfbF9jeDhSdmdncjN0MXNnQi1XbS1lMTd2ejcydFo5X3VVVU5qNEJDbE5YMWUxV1N0dHNGdm52cWlHRkJ4c2RXNmFRNUtuN0xWVHJPVk0xYTdGeHpNLWx5ZVZLSTBjX1d1UTFvYTdDSHR0bUN6dzlaQWN5MGhWRThaZkMxaEpv?oc=5",
-      "pubDate": "Wed, 09 Sep 2026 12:05:00 GMT",
-      "source": "NTB Kommunikasjon",
-      "company": "Other",
-      "tech": "양극재",
+      "tech": "리사이클링",
       "score": 1
     }
   ]
