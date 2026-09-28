@@ -1,101 +1,137 @@
 {
   "type": "battery_patent_monitor",
-  "lastUpdated": "2026-09-21T00:40:27.293Z",
-  "weekOf": "2026-09-21",
+  "lastUpdated": "2026-09-28T01:19:40.262Z",
+  "weekOf": "2026-09-28",
   "description": "배터리·EV 특허 모니터링 — 주간 수집",
   "note": "⚠️ 자동 수집 결과입니다. 대시보드 반영 전 사용자 확인 필요.",
-  "totalItems": 9,
+  "totalItems": 13,
   "companyStats": {
-    "Other": 7,
-    "BYD": 2
+    "Other": 10,
+    "LG Energy": 2,
+    "BYD": 1
   },
   "techStats": {
-    "음극재": 1,
-    "전고체": 5,
-    "양극재": 1,
-    "기타": 1,
-    "리사이클링": 1
+    "리사이클링": 2,
+    "기타": 6,
+    "전고체": 4,
+    "충전": 1
   },
   "items": [
     {
-      "title": "HPQ Silicon receives patent for silicon nanowire production - Mining.com.au",
-      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNZjNKTl9sTUV0LTNHUHh0TU1VbDVxV3piZWEyT0RkZ1pZVFkxZmdtbmpPa2hyVnUzczhBSlBWb0tsazQxY29BMzh5Wml5N2RsZFByUkFfazVLVU43MUtsa3ppLVZoeTVlcW9KRzBZamNfcDFKNW05THhoWkJQMWEwSGJ0Ylc2OHJZRVE?oc=5",
-      "pubDate": "Fri, 18 Sep 2026 21:52:43 GMT",
-      "source": "Mining.com.au",
+      "title": "Imperial researcher awarded prestigious fellowship to advance battery recycling technology - Imperial College London",
+      "link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPWE1HdFZSNmkwSVdsUVdVbmY0aTJvQ0lVSkgyRDdZd2M5ckd3VzQ4MGx6SVRJemg4Vk90RC1VS3VHVUg3dF9uUUI0ZmVrcGFVdkVXQnEwOUZNaEx5bnFZT3VKNEtvU3Q1c0l0bEt5MnBiUUpDNVdnVjZFMGJMOTljSFA3X3diMkhxYTREWEN4WC12eU9nV1Z4V09hRGtPazZrc3NWZjdJaXJGY0djaXgwVm5LWlItdmc3ZG1aXzgwOExCM1pxbGpBUWNtbzd4b1JFMjBKbWFYYlBxOV9FMmJDX3ZmZjBaa3ZqbmdqYnpLRVZlOTBrRVVBMkZFd0lZNlU?oc=5",
+      "pubDate": "Thu, 24 Sep 2026 21:02:22 GMT",
+      "source": "Imperial College London",
       "company": "Other",
-      "tech": "음극재",
+      "tech": "리사이클링",
       "score": 2
     },
     {
-      "title": "How Are Solid-State Battery Equipment Companies Progressing in the “Last Mile” ？ - Shanghai Metals Market",
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPWmdzSUtsTXYtTHpfaTNTMnhUWmhJY2Q3VkZySVoxUEFvcGRGUmJVS0RvWHBrZ295UVVJa3lyMTBZTU9GeTJORDJjNy03bld6RzFxUlltbUJCVlpLeWVxb2dWU2xJcktFQkpXdzc3dlJsWVlUM0ZGNGNrZHhRUGRYVTEzTS1raGVQaXlVZHJkUWIxeG5CSDZqcW9jYWxBWlVXREZaT1dOQmtuQTFlUXdFNmZaTnoyR0JTckR4SXB3?oc=5",
-      "pubDate": "Wed, 16 Sep 2026 08:58:52 GMT",
-      "source": "Shanghai Metals Market",
+      "title": "LG Energy Wins Appeal To Patent Battery Tester At EPO - Law360",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPcVY0X1Vfam9lSTM5N3ZDdkN0ckp6OVJRQktlSkRoYW0yTm5ndlE5NUpBakFfR2tQc2xnNGpDVi01UUlfZVFSdlpsb0NGZUI2d2hnbi1aZDlLYjZNMDkwejlsZXJuX3J0a0lBaVkzVDRRZGhCLURFNUR3ZjMtRXh4WDBOYUl2bXVVVlB2YjVrU21ZdTBQQ21fQdIBVkFVX3lxTFA5NDRyT0tnMHJfOV9TUWVhUUtNTjdXUGNmb0pUYzR6YVdiOHhMZWtnZS1hTXBMdXdKZkZJNW41YldJWDJna1YtRjE1a2NfcXdreEljS293?oc=5",
+      "pubDate": "Fri, 25 Sep 2026 18:39:45 GMT",
+      "source": "Law360",
+      "company": "LG Energy",
+      "tech": "기타",
+      "score": 2
+    },
+    {
+      "title": "Chery’s Second Solid-state Battery? Exeed ET9 Patented in India - CarWale",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQem5hcHJpbm9xRndrb09tSjN1b0JJVkpOTW1LNm5sVHlGYWVIRUV2XzQ3a3lvVXlpaUN2Q1RlTVEtZFhRWWU2cXE1TzZORTBXb1NBcThZc084RVNhVjZ6TVE4VTJhaExrNEhhSk1YQS1Ja0FPOGYwWEMzd21sTF9ZVzI2MU94QmpINXM2QUZqMU1Gc09wSVE?oc=5",
+      "pubDate": "Thu, 24 Sep 2026 08:43:38 GMT",
+      "source": "CarWale",
       "company": "Other",
       "tech": "전고체",
       "score": 2
     },
     {
-      "title": "BYD Claims Solid-State Battery Lead in 2027 Demo; Chief Scientist Cites Unscaled Dry Rooms - Tech Times",
-      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPUGE2aGx5MVlDdVZHZWtlNm9qejc2WHJZRVZ5TFNTQ3JMbU42UUhEdUpQTFk2R2pmQ3J0dmdKU1h6Y2F3djJEUGtLVm9URG9VbWNQZHBIeTBMWDJ4RWZ3UzVlazRLZkxpT2VOMGZqLWtINEFEU3plbmVGZW5KN0I4UTlTdnVaX2JVNmdteVVtUzd6NzBjV0Y4ai1aT1Q2cjd4alV5c19nNjc5cGRVMm14NDZ4RlhXbXdoUVotUEszQ1NEc3NSYzEwWkFIWE9Bb1dBVWpUY3diOGg?oc=5",
-      "pubDate": "Mon, 14 Sep 2026 18:23:13 GMT",
-      "source": "Tech Times",
-      "company": "BYD",
-      "tech": "전고체",
-      "score": 2
-    },
-    {
-      "title": "A Decades-Old Chemistry Idea May Offer a Faster Way to Recycle Battery Cathodes - AZoM",
-      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1vcFBVeDJEN3BYU21fendzZWZTczRsdWxMcUtiUU9XLWdsTE5sVnZZbldVdGdSajN2RWM3Z3diNGFMUVVTUFhLdlV0a2ppZGlDU0dDeUF3?oc=5",
-      "pubDate": "Tue, 15 Sep 2026 05:42:00 GMT",
-      "source": "AZoM",
+      "title": "'745 Miles Of Range With The Solid-State Pack' - The Battery Making Today’s EVs Instantly Obsolete - CarBuzz",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQMU5JYkszdWZBdXFqZVlubXU2UlNTRXhaX3ZMX3pYbXRZYVdmZzNoQkFxenNkaGE3cEdJenpGcE1mLThSNmwxY2ZNMU95ckRaZzdwTVlSVmF1OVdTQ2c0OGIxMkNZdGdOVkplLUhRQnVraVNieU8tdXp1UTNYM0FiMGhGRVdPOFpPZng0UXFvd2U2cXc2dlhzSlBKVlAwaWF4?oc=5",
+      "pubDate": "Sun, 27 Sep 2026 13:48:11 GMT",
+      "source": "CarBuzz",
       "company": "Other",
-      "tech": "양극재",
-      "score": 2
-    },
-    {
-      "title": "BYD to Unveil Solid-State Battery in 2027 Leading Industry Race - Fuel Cells Works",
-      "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPZkNKV2s1Ymx5bDl3Y3NzSW9OTHJIU3JzeUQtRUpqU0FxeFJvQkJSVnJqNGVXdUZwZmowenZxekY2V2Y0M3lmZkhlZE1wa1ZPMkFlb3B5U0c3TjdDM04zcndxZXlsVnk0SXNlUUxnOFEzNTdLZEM5czg2aE9xd2NDdDgzNWxBSV85Rkl2dGlKWHR3TkFmcXNKTVplVlloQ3I4azJFN0NxX2lEZE1JY2F1eEV1RU1WTF9LM2tSVmpVMnZOZlBmeDVLSnJpeHcwVGlvRnZRVGt5UzhQM3Ey?oc=5",
-      "pubDate": "Mon, 14 Sep 2026 19:41:00 GMT",
-      "source": "Fuel Cells Works",
-      "company": "BYD",
       "tech": "전고체",
       "score": 1
     },
     {
-      "title": "Solid-State Battery Capacity Part 2 :Pilot Lines in Quick Succession; Capacity Planning Mismatches Demand - Shanghai Metals Market",
-      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPdDFiRDJTa2dvT2lxQ0pIVnVFcnBHeUVwM2FxNE1PazUyVDFCNWNZVUxnV0VhUlNZdnU0aWMyMmozTHJiX1h4ZjNwVjQyZDYxV1VMZkRQVTY2R3I4V0o3SXN1R25aRnV0eGpXM1c0Yktpd2l0YnRsY2R5TTUtemxQMW9HcTBIUWZLOGVtOWtRR0dqUldnZ3dZd1lFTlU1T3lwSEwwOHZJcGJBZlg4TkY4VVFoZEtUNk5sa0U1REpUSWttLUZ2ODBRaEh0VWZjXzYyVWdWdlRQZ1JLS2FtNVZpSl9R?oc=5",
-      "pubDate": "Thu, 17 Sep 2026 07:03:50 GMT",
+      "title": "Polymer Solid-State Battery Layout at “Wuhan Speed”: A Comprehensive Analysis of Ion Energy’s Layout - Shanghai Metals Market",
+      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNYVY2Zl84eXdkMUNUMkY4SmE1Wl9PLWNBNnE4U01ZWl8zdnMtMU5TbUdUSzVlNW1ES1J1alJjSHhHNGN1Q0VqSmk4YUZwMEdGS1NUY1dkdnVFaXpVTEhZN01rWkxocEVCaDJ3bS04UXg5RmNpU3RWWDNTc2VBaUR6T3lkSGpWcUs0M1NRSHJ0NEJRaEN1ck9rdlJCdG14THJJTFM0Um1KcUxyX3JaTEdhNGk5dXdIUTZ1c2tCVWtVaFRpVVUtUV9TajdnRk1LT2RVaG9UdWhZZzc?oc=5",
+      "pubDate": "Tue, 22 Sep 2026 10:52:00 GMT",
       "source": "Shanghai Metals Market",
       "company": "Other",
       "tech": "전고체",
       "score": 1
     },
     {
-      "title": "Mitsui Kinzoku Partners with Factorial to Scale All-Solid-State Battery Manufacturing - Yahoo! Finance Canada",
-      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNTnBtS2J2bFFteEFrdWI0amJkR3dTNmtCYWhJSkZxQjJiODlQOGdMNkZTeEdSQXRJU1hGSmZ6eENJT2loQnBXcFJTRm9qcW9MMDRyWXZySmd2clhwYzE0NlRFTHJZWGR4RjJlZ3lMaXI4dTRnSFRtTkZId3drQW9NLW9kM25LRXRQUUVvWUJwal9jQQ?oc=5",
-      "pubDate": "Thu, 17 Sep 2026 11:00:00 GMT",
-      "source": "Yahoo! Finance Canada",
-      "company": "Other",
-      "tech": "전고체",
-      "score": 1
-    },
-    {
-      "title": "First Solar drops TOPCon patent complaint - pv magazine USA",
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPdzVNSWFtSWpJd0wwMFc2T3JhSDdmdGlIRFZVQ1Q1ZS0yY1ZPUHhPMWh6TmtYUUFGblpLUTh2OXF6a1B0c25CbjhJRGxjblItVWloT2FlWXI4YlJmSzNFaWFlZnV4dnJhX1k5YTlZLWRkaVlSYXhFd2RQU195LTZlLW9mS01SWno5?oc=5",
-      "pubDate": "Thu, 17 Sep 2026 10:56:13 GMT",
-      "source": "pv magazine USA",
+      "title": "Gelion boost patent protection for its battery tech - Yahoo Finance",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQUjJGc1hVQXVtcDhPczJXWEFJT1B3SDlXY01kNjRMSEczU1BadkJlU3hZb0dua2hrVDlyRUdXU0QtdVR4c2RqOTlNaWVPd29YVlpIOHI3RWVuYnVQSk1MR3dZVzdoa0pKRGlxVW5CRHMyRTFFbS02VnlwMXd2Y044ZFdyS0dieVEzd3NaY0U0bFFOT2JXMlk3Mm9UeV9adnlw?oc=5",
+      "pubDate": "Wed, 23 Sep 2026 06:28:00 GMT",
+      "source": "Yahoo Finance",
       "company": "Other",
       "tech": "기타",
       "score": 1
     },
     {
-      "title": "R3 Lithium buys bankrupt battery recycler's plant for $3M, restarts production - Dealroom",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPMDJkUHFaNWxGOVM4emNrWTZPVnRxWFUtWk1tc3dwTWE1UTAxbHhSNDM4ZkdXTm5ldUNocjNySUIwNHlZSExLWGk3aDZwTkl1TWtwLVJEZ09nbHR5WXZESWljMVoyM3hvRV82OWlyZWhtbjg4NlJEbXZobnFkTmVJVWl1dm0yZkFpckNBR2JOLWRjV3hyVFNkRjlNMndWeGRFdU15MlRfV3YyLU1CM1JF?oc=5",
-      "pubDate": "Sat, 19 Sep 2026 10:46:31 GMT",
-      "source": "Dealroom",
+      "title": "Battery X Metals Appoints Lithium-Ion Battery and Electric Vehicle Entrepreneur William Fan as President to Advance Development of Its Patent-Pending Lithium-Ion Battery Rebalancing Technology Platform and Corporate Growth Initiatives - Batteries News",
+      "link": "https://news.google.com/rss/articles/CBMiywJBVV95cUxPbmkwVXBUUE1ROVhOaDNwTTdCaVRlWWRiWmxVT3N5N2syU0I4MDVOdTVrdlVsLU0yTXpXRW43X0lqV0ZmX21MOUJzMU5HTHZBUGtPRFJ5NGM5QjFLeGVXdGFHN0p2emh4Q1Q2WWxDX2txMEsyU2FacTNncjFFQnhrY0dtWkU5M0tRZmVmaVp2aHpHXzEwNXlOajVLcF8wN05zVnJ3M0UzemdrVlBQVkdqNGxGQU9udzhVWVM0RldxbmxzWmE0eUxXd0hPbG1CVGtreE1jRkh4Mm9tU3FkdTZiRU9tTEtSckpJbUZEVzFpTjRqbFMyLS1tLW4tUTlSYmJVR1ctdWNiRUxrTG1pcFp6aFJyQlZPU2xqbUdOY1Foby1nX2ZMVVZCRVc4TlllNTFFQjdkN1ViVDJYVldFb09UZ0VNenlBcWRFOGF3?oc=5",
+      "pubDate": "Fri, 25 Sep 2026 08:19:54 GMT",
+      "source": "Batteries News",
+      "company": "Other",
+      "tech": "기타",
+      "score": 1
+    },
+    {
+      "title": "Switchable Windows Cut Office Energy Use by Up to 35%, Patents Cover 35 Countries - AD HOC NEWS",
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPMm93MHgtWHNzeXZ0NDZiUnhNMHdEWW8ya1Y0SHkyYWZYbFBTY1VicERjYUt3dUM1NFhHMkNDSWg0eDNZUkZ1anZXQ2ZiTlNvejQ3XzNtdUt5TG9Ed0I5VXR2bmlzTmZ3d0ZjUWY1RG9mV1JuRkd4bW50ajVUUW5PbGxRc1liUW45VFhUMzhWSndNZlBfc0gtNGtRTUx3d1dibnEyYndnYWFibm9oYlcwMElDVmlPZ1BuSHhaYk5SOFFrbjBpbDRuWWpObVd5cE1RYkw2MU1nRQ?oc=5",
+      "pubDate": "Mon, 28 Sep 2026 00:00:46 GMT",
+      "source": "AD HOC NEWS",
+      "company": "Other",
+      "tech": "기타",
+      "score": 1
+    },
+    {
+      "title": "Only a handful of EVs can feed the grid, EECA’s first V2G report finds - EVs & Beyond",
+      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBlWk16QVRWNzU2dWlabkFfRm5jbHQxYm04anR3bmJaUkZvMmtkV0F3NG85bEoxdkdKYzdCRW9CeDBFTTRTeDRpZWRJR2QyRHFjZk5jcndpTlF1YWZwSzBYREhzOE9qMlloVDY0TGVnLV83OEt5aVE?oc=5",
+      "pubDate": "Sat, 26 Sep 2026 06:33:52 GMT",
+      "source": "EVs & Beyond",
+      "company": "Other",
+      "tech": "충전",
+      "score": 1
+    },
+    {
+      "title": "Refinyx Emerges from Stealth with Acquisition of Northvolt Recycling Technology and First Major U.S. Customer - FinancialContent",
+      "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPN3RnTnp2Q2RfaXh6aF9LaEMxY2JBY2QzZHN4SWtPX2F1ZGdSUWVILWtlcXRrMkEtQzNYeU0tekx0RUI4eTRGVzdLOTU4b3ZJcnBpMWNNMGpha0czWmVoSmZ5UlRMRE1QRW1QNGllR1lvUEdjWkI1R0prNTlHb2NZWEFvRzJEUFNfSEJwZW8zMS0yUS1UbmRYY3VlazJjekc2Rm50NV95eWZqLVdEcGZ0Qi1aMlBxVlZsS3I2dS1TTUtmSzdObnZybXJMZnZONEItQk9rdEkyOUhYWkRKdlNueVNFbU9RZDllcVBtU1hSWlRmNXprLUVjUXl3?oc=5",
+      "pubDate": "Fri, 25 Sep 2026 10:00:00 GMT",
+      "source": "FinancialContent",
       "company": "Other",
       "tech": "리사이클링",
+      "score": 1
+    },
+    {
+      "title": "B2U, LGES partner on battery repurposing for grid-scale applications - Solar Power World",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNYVIzQVlsdkVSN0tIeVRVWGFwcWZwcWxnbFdxelRnbGNzX1djTUt2WkMxbC1VT2N5TnNVc0d3QzJNVnlNTjJualFfNGczVEctSGZQc1MxQXFuV3BWWGdOR1JhSnA1SVA3N0RYbk9JOENEa05VVm9qYXN1aTZmNkx2dmp6TXRudHY1V0F3R1VDVXVJTk41Szl5YlUyNUgxU1lZUGFKUGhEUjR5QllUYzZDdU9HNkc?oc=5",
+      "pubDate": "Thu, 24 Sep 2026 13:16:51 GMT",
+      "source": "Solar Power World",
+      "company": "LG Energy",
+      "tech": "기타",
+      "score": 1
+    },
+    {
+      "title": "Kia Secures US Design Patent for Off-Road EV9 Based on SEMA Concept - eletric-vehicles.com",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNV1R2SUhHWHdrWnZoTjJZZG9NVjNnQWZMcFFZeWpFby1ZZUZ5NU03N3BhM0UtSmg1Mnl0eTA4bUZZLUM3SVprak1UZ3RIdjFIdERFOFY4bzJyY05KRkJmZG5RbWZ4X0kxbHVQdlVNd0duWmxxb3l3ZGNLbjcza0hIcTg3MDJLT3BEWHZQYjNYT3V6eHlmd3lEdzlOQXpkcERKTVM0?oc=5",
+      "pubDate": "Thu, 24 Sep 2026 18:10:07 GMT",
+      "source": "eletric-vehicles.com",
+      "company": "Other",
+      "tech": "기타",
+      "score": 1
+    },
+    {
+      "title": "BYD’s new ultra-luxe EV has coach doors and may be its first with solid-state batteries - Electrek",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOel9OWnhtb0Q1X01OcXVUazZNT0h2WUxBUWlrUjliNjQ3c3R3b0Y0RXRlMVNUSjZtcTc0ZHVoaGIyTXlrTEJKcVZzWGItX19vS2VmZjhrdm4yOGRJV0xzcGQ4Z1J6aE9Kd3dqckJkQkVQWjhkX2hFbklTTFlSSFF3ZmlfeDgzVEltVlUyY3YySUc?oc=5",
+      "pubDate": "Wed, 23 Sep 2026 17:52:00 GMT",
+      "source": "Electrek",
+      "company": "BYD",
+      "tech": "전고체",
       "score": 1
     }
   ]
