@@ -553,12 +553,19 @@
 <section id="sec-timeline">
 <div class="chart-section">
 <h2>글로벌 EV 신차 출시 타임라인</h2>
+<p style="font-size:11px;color:var(--ink-2);margin:-4px 0 12px">신차 일정 검토: 2026.09.29 · 미국 일정은 OEM 공식 발표와 Motor Intelligence Q3 2026을 대조 · 장기 전망은 EV Volumes July 2026 참고</p>
+<div class="news-box" style="margin-bottom:14px">
+<strong>미국 CAFE 완화: 단기 벌금 효과와 중장기 제품 전략을 구분</strong>
+<p style="margin:6px 0">2026.09.28 최종 규칙의 MY2031 평균 연비 추정치는 기존 50.4 → 34.9mpg. CAFE는 연비 기준이며 EPA 배출가스 규제와 별도 제도입니다. 벌금률은 2025.07.04 법 개정으로 이미 $0가 됐고, 이번 규칙은 MY2028부터 제조사 간 CAFE 크레딧 거래도 종료합니다.</p>
+<p style="margin:6px 0">해석: 추가 벌금 절감 효과는 제한적이나, 장기 BEV 투자·차종 구성·크레딧 수익에는 영향을 줄 수 있습니다. 두 일정표는 이번 발표 이전 자료이므로 아래 변경을 이번 조치의 결과로 단정하지 않습니다.</p>
+<p style="margin:6px 0 0;font-size:10px">출처: <a href="https://www.transportation.gov/briefing-room/president-trump-transportation-secretary-duffy-finalize-freedom-means-affordable-cars" target="_blank" rel="noopener">미 교통부 2026.09.28</a> · <a href="https://www.nhtsa.gov/document/cafe-ld-2022-2031-preliminary-regulatory-impact-analysis" target="_blank" rel="noopener">NHTSA 벌금률 설명</a> · <a href="https://www.reuters.com/business/autos-transportation/us-finalizes-new-lower-fuel-economy-standards-2026-09-28/" target="_blank" rel="noopener">Reuters</a></p>
+</div>
 <div class="view-tabs">
 <button class="view-tab active" onclick="switchTLView('quarterly',this)">📅 분기별 단기뷰 (2026~28)</button>
-<button class="view-tab" onclick="switchTLView('roadmap',this)">🗺️ 연간 로드맵 (2021~30 · 7개 OEM)</button>
+<button class="view-tab" onclick="switchTLView('roadmap',this)">🗺️ 연간 로드맵 (2021~30 · 8개 OEM)</button>
 </div>
 <div id="tlview-quarterly" class="tlview active">
-<p style="font-size:11px;color:var(--ink-2);margin:-4px 0 14px">미국·유럽 출시 기준 · 배터리 케미스트리 + 용량 구분 · 출처: OEM IR, Consumer Reports, electrive</p>
+<p style="font-size:11px;color:var(--ink-2);margin:-4px 0 14px">미국·유럽 출시 기준 · MI = Motor Intelligence Q3 2026 / EVV = EV Volumes July 2026 · 신규 검토 항목은 구동 방식·일정 근거를 병기 · 기존 항목 출처: OEM IR, Consumer Reports, electrive</p>
 <div class="chem-legend">
 <span><i style="background:#22c55e"></i>NCM (삼원계)</span>
 <span><i style="background:#ef4444"></i>LFP (인산철)</span>
@@ -572,27 +579,28 @@
 <button class="market-tab" onclick="switchMarket('eu',this)">🇪🇺 유럽</button>
 </div>
 
+<p style="font-size:10px;color:var(--ink-3);margin:0 0 10px">BEV: 순수전기 · PHEV: 플러그인 하이브리드 · EREV: 주행거리 연장형(PHEV 분류) · 연도·반기만 있는 일정은 여러 분기에 걸쳐 표시하며 특정 분기로 확정하지 않습니다.</p>
 <!-- NA Table -->
 <div id="panel-na" class="launch-panel active">
 <div class="launch-table-wrap">
 <table class="launch-table">
 <thead>
 <tr><th rowspan="2" style="min-width:90px;border-right:2px solid var(--line-s)">OEM</th><th colspan="4" class="year-header">2026</th><th colspan="4" class="year-header year-border">2027</th><th colspan="4" class="year-header year-border">2028</th></tr>
-<tr><th>Q1</th><th class="now">Q2</th><th>Q3</th><th>Q4</th><th class="year-border">Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th class="year-border">Q1</th><th>Q2</th><th>Q3</th><th>Q4</th></tr>
+<tr><th>Q1</th><th>Q2</th><th class="now">Q3</th><th>Q4</th><th class="year-border">Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th class="year-border">Q1</th><th>Q2</th><th>Q3</th><th>Q4</th></tr>
 </thead>
 <tbody>
 <tr><td class="brand"><span class="flag">🇺🇸</span>Tesla</td><td><span class="model-chip chip-lfp">Cybercab<span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc-lfp">Semi 파일럿<span class="chip-kwh">LR 822 / SR 548 kWh</span></span><span class="model-chip chip-nmc">Model 3 Ludicrous</span></td><td><span class="model-chip chip-nmc-lfp">Semi 램프</span></td><td><span class="model-chip chip-nmc">Model Y AWD 인하</span><span class="model-chip chip-unknown">Roadster</span></td><td class="empty year-border">-</td><td><span class="model-chip chip-nmc-lfp">Semi 풀램프</span></td><td class="empty">-</td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
-<tr><td class="brand"><span class="flag">🇩🇪</span>BMW</td><td><span class="model-chip chip-nmc">iX3 NK<span class="chip-kwh">108kWh</span><span class="chip-800v">⚡</span></span></td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-nmc">iX5 Electric<span class="chip-800v">⚡</span></span></td><td class="year-border"><span class="model-chip chip-nmc">iX1 NK<span class="chip-kwh">~83kWh</span><span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">i7 Gen6<span class="chip-kwh">112kWh</span><span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">iX7<span class="chip-800v">⚡</span></span></td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇩🇪</span>BMW</td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-nmc">iX3 NK BEV<span class="chip-kwh">108kWh</span><span class="chip-800v">⚡</span></span><span class="chip-kwh">2026.9 · OEM 계획</span></td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-nmc">iX5 Electric BEV<span class="chip-800v">⚡</span></span><span class="chip-kwh">2027 Q1 · MI 추정</span><span class="model-chip chip-nmc">iX1 NK<span class="chip-kwh">~83kWh</span><span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">i7 Gen6<span class="chip-kwh">112kWh</span><span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">iX7<span class="chip-800v">⚡</span></span></td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
 <tr><td class="brand"><span class="flag">🇩🇪</span>Mercedes</td><td><span class="model-chip chip-launched">CLA EV<span class="chip-kwh">85kWh</span><span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">EQG<span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">GLC EV<span class="chip-kwh">~94kWh</span><span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">GLB EV</span></td><td class="year-border"><span class="model-chip chip-nmc">C400 EV<span class="chip-800v">⚡</span></span></td><td class="empty">-</td><td><span class="model-chip chip-nmc">EQS F/L</span></td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-nmc">E-Class EV</span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
-<tr><td class="brand"><span class="flag">🇰🇷</span>현대·기아</td><td><span class="model-chip chip-nmc">아이오닉9<span class="chip-kwh">110kWh</span></span></td><td><span class="model-chip chip-lfp">아이오닉3<span class="chip-kwh">~58kWh</span></span></td><td><span class="model-chip chip-nmc">EV3<span class="chip-kwh">81kWh</span></span><span class="model-chip chip-nmc">EV9 GT<span class="chip-800v">⚡</span></span><span class="model-chip chip-nmc">아이오닉5 F/L<span class="chip-kwh">~84kWh</span><span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-lfp">EV4<span class="chip-kwh">~58kWh</span></span></td><td class="year-border"><span class="model-chip chip-unknown">Santa Fe EREV</span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇰🇷</span>현대·기아</td><td><span class="model-chip chip-nmc">아이오닉9<span class="chip-kwh">110kWh</span></span></td><td><span class="model-chip chip-lfp">아이오닉3<span class="chip-kwh">~58kWh</span></span></td><td><span class="model-chip chip-nmc">EV9 GT<span class="chip-800v">⚡</span></span><span class="model-chip chip-nmc">아이오닉5 F/L<span class="chip-kwh">~84kWh</span><span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">EV3 BEV<span class="chip-kwh">81kWh</span></span><span class="chip-kwh">2026 Q4 · MI 추정</span></td><td class="year-border"><span class="model-chip chip-unknown">Santa Fe EREV</span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
 <tr><td class="brand"><span class="flag">🇰🇷</span>Genesis</td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-nmc">GV60 Magma<span class="chip-kwh">84kWh</span><span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">GV90<span class="chip-kwh">~100kWh</span><span class="chip-800v">⚡</span></span></td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-unknown">GV70 F/L</span></td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
-<tr><td class="brand"><span class="flag">🇯🇵</span>Toyota·Lexus</td><td><span class="model-chip chip-launched">Lexus ES EV<span class="chip-kwh">74.7kWh</span></span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-unknown">Highlander EV</span></td><td class="empty">-</td><td><span class="model-chip chip-unknown">Lexus TZ<span class="chip-kwh">77~96kWh</span></span></td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
-<tr><td class="brand"><span class="flag">🇯🇵</span>Nissan·Honda</td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-nmc">Leaf 3<span class="chip-kwh">52/75kWh</span></span></td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-nmc">Honda 0 RSX</span></td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇯🇵</span>Toyota·Lexus</td><td><span class="model-chip chip-launched">Lexus ES EV<span class="chip-kwh">74.7kWh</span></span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="year-border" colspan="4"><span class="model-chip chip-unknown" title="MI Q3 2026, K721: Add CY27. EV Volumes I357: 2026 H2; 자료 간 차이.">Highlander BEV<span class="chip-kwh">2027 · 분기 미정</span></span><span class="model-chip chip-unknown" title="MI Q3 2026, K447: Add CY27. EV Volumes I350: 2026 H2; 자료 간 차이.">Lexus TZ BEV<span class="chip-kwh">2027 · 분기 미정</span></span></td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇯🇵</span>Nissan·Honda</td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-nmc">Leaf 3<span class="chip-kwh">52/75kWh</span></span></td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
 <tr><td class="brand"><span class="flag">🇸🇪</span>Volvo</td><td><span class="model-chip chip-nmc">EX60<span class="chip-kwh">83~117kWh</span><span class="chip-800v">⚡</span></span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-lfp">EX40</span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
 <tr><td class="brand"><span class="flag">🇺🇸</span>Rivian</td><td class="empty">-</td><td><span class="model-chip chip-lfp">R2 Perf<span class="chip-kwh">$58K 656hp</span></span></td><td class="empty">-</td><td><span class="model-chip chip-lfp">R2 Premium<span class="chip-kwh">$54K</span></span></td><td class="year-border"><span class="model-chip chip-lfp">R2 Standard<span class="chip-kwh">$48K</span></span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-unknown">로보택시 (우버)</span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
-<tr><td class="brand"><span class="flag">🇺🇸</span>Lucid</td><td><span class="model-chip chip-nmc">Gravity<span class="chip-kwh">~120kWh</span><span class="chip-800v">⚡</span></span></td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-nmc">Earth<span class="chip-kwh">~92kWh</span><span class="chip-800v">⚡</span></span></td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-nmc">Midsize SUV</span></td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇺🇸</span>Lucid</td><td><span class="model-chip chip-nmc">Gravity<span class="chip-kwh">~120kWh</span><span class="chip-800v">⚡</span></span></td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-unknown" title="Motor Intelligence Q3 2026, K476: Add Q4 26. EV Volumes I212: 2027 H1.">Cosmos BEV<span class="chip-kwh">2026 Q4 · MI 추정</span></span></td><td class="empty year-border">-</td><td><span class="model-chip chip-nmc">Earth BEV<span class="chip-kwh">~92kWh</span><span class="chip-800v">⚡</span></span><span class="chip-kwh">2027 Q2 · MI 추정</span></td><td class="empty">-</td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
 <tr><td class="brand"><span class="flag">🇺🇸</span>GM</td><td><span class="model-chip chip-lfp">Bolt 신형</span></td><td><span class="model-chip chip-nmc">Optiq-V<span class="chip-kwh">85kWh</span></span></td><td><span class="model-chip chip-nmc">Optiq 27MY</span></td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-nmc">Bolt EUV 신형</span></td><td class="empty">-</td><td><span class="model-chip chip-unknown">Equinox EV F/L</span></td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
-<tr><td class="brand"><span class="flag">🇺🇸</span>Ford</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty year-border">-</td><td><span class="model-chip chip-unknown">EV픽업<span class="chip-kwh">~$30K LFP</span></span></td><td><span class="model-chip chip-unknown">Explorer EV</span></td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-nmc-lfp">F-150 EREV</span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
+<tr><td class="brand"><span class="flag">🇺🇸</span>Ford</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="year-border" colspan="4"><span class="model-chip chip-unknown" title="Ford 공식 발표 2026.08.07: 북미 2027 초. EV Volumes는 Ranchero/2027 H2, MI는 Fathom/MY28로 표기.">Fathom BEV<span class="chip-kwh">2027 초 · 분기 미정</span></span></td><td class="empty year-border">-</td><td class="empty">-</td><td colspan="2"><span class="model-chip chip-unknown" title="EV Volumes July 2026, I102/J102 및 Change log 3171. 북미 판매대상으로 표시된 모델의 글로벌 SOD이며 미국 인도 확정일이 아님.">Explorer EREV<span class="chip-kwh">2028 H2 · EVV 추정 75%</span></span></td></tr>
 <tr><td class="brand"><span class="flag">🇺🇸</span>Scout</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-unknown">생산 시작</span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-unknown">Traveler 판매</span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
 <tr><td class="brand"><span class="flag">🇮🇹</span>Ferrari</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td><span class="model-chip chip-nmc">첫 EV<span class="chip-800v">⚡</span></span></td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
 </tbody>
@@ -606,7 +614,7 @@
 <table class="launch-table">
 <thead>
 <tr><th rowspan="2" style="min-width:90px;border-right:2px solid var(--line-s)">OEM</th><th colspan="4" class="year-header">2026</th><th colspan="4" class="year-header year-border">2027</th><th colspan="4" class="year-header year-border">2028</th></tr>
-<tr><th>Q1</th><th class="now">Q2</th><th>Q3</th><th>Q4</th><th class="year-border">Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th class="year-border">Q1</th><th>Q2</th><th>Q3</th><th>Q4</th></tr>
+<tr><th>Q1</th><th>Q2</th><th class="now">Q3</th><th>Q4</th><th class="year-border">Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th class="year-border">Q1</th><th>Q2</th><th>Q3</th><th>Q4</th></tr>
 </thead>
 <tbody>
 <tr><td class="brand"><span class="flag">🇩🇪</span>BMW</td><td><span class="model-chip chip-nmc">iX3 NK<span class="chip-kwh">108kWh</span><span class="chip-800v">⚡</span></span></td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td><td class="year-border"><span class="model-chip chip-nmc">iX1 NK<span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">i7 Gen6<span class="chip-800v">⚡</span></span><span class="model-chip chip-nmc">i3 차세대<span class="chip-800v">⚡</span></span></td><td><span class="model-chip chip-nmc">iX7<span class="chip-800v">⚡</span></span></td><td class="empty">-</td><td class="empty year-border">-</td><td class="empty">-</td><td class="empty">-</td><td class="empty">-</td></tr>
@@ -626,7 +634,7 @@
 </div>
 
 <div id="tlview-roadmap" class="tlview">
-<p style="font-size:11px;color:var(--ink-2);margin:-4px 0 14px">8개 OEM · 지역별(북미·유럽·중국) 연간 출시 스케줄 + LFP 트림·배터리 공급사 매핑 · 출처: Marklines (BMW는 Marklines 공개뉴스·BMW 보도자료 재구성)</p>
+<p style="font-size:11px;color:var(--ink-2);margin:-4px 0 14px">8개 OEM · 지역별(북미·유럽·중국) 연간 일정 · 기존 출처: Marklines (BMW는 공개뉴스·BMW 보도자료 재구성) · 2026.09.29 검토: Ford·기아·BMW 일정, Honda 취소 및 GM 변경 이력 · 미정 항목은 연도표 아래 표시</p>
 <div class="rm-legend">
 <span style="font-style:italic;color:var(--ink-3)">이탤릭 = 페이스리프트</span>
 <span><b class="a-add">(추가)</b> 신규 추가</span>
@@ -638,6 +646,30 @@
 <div class="oem-tabs" id="oemTabs"></div>
 <div id="rmBody"></div>
 </div>
+
+<details class="sub-tog" open>
+<summary>일정 미정·공식 취소 · Kia EV4 / F-150 Lightning EREV / Acura RSX</summary>
+<div class="rm-wrap"><table class="rm-table"><thead><tr><th>모델·미국 시장</th><th>상태</th><th>근거와 자료 차이</th></tr></thead><tbody>
+<tr><td class="rm-cell">Kia EV4 BEV</td><td class="rm-cell">일정 미정</td><td class="rm-cell">MI Q3 2026, Combined Cycle Chart G380:S380: 2026~2029 모두 TBD. 기존 Marklines 로드맵의 ‘폐기’ 표기와 다르므로 확정 취소로 단정하지 않음.</td></tr>
+<tr><td class="rm-cell">Ford F-150 Lightning EREV</td><td class="rm-cell">출시 시점 공식 미확정</td><td class="rm-cell">MI K233/O233: 2027 Q3 (MY28) / EVV I105: 2027 H1. <a href="https://www.fromtheroad.ford.com/us/en/articles/2025/next-gen-f-150-lightning-extended-range-electric-vehicle" target="_blank" rel="noopener">Ford 2025.12.15</a>는 EREV 방향을 발표하고 출시 시점은 추후 공개한다고 설명.</td></tr>
+<tr><td class="rm-cell">Acura RSX BEV</td><td class="rm-cell"><b class="a-kill">공식 취소</b></td><td class="rm-cell"><a href="https://global.honda/en/newsroom/news/2026/c260312eng.html" target="_blank" rel="noopener">Honda 2026.03.12</a>: RSX·Honda 0 SUV·0 Saloon 개발 및 출시 취소. 기존 단기 표 ‘Honda 0 RSX’ 표기를 정정.</td></tr>
+</tbody></table></div>
+</details>
+<details class="sub-tog">
+<summary>검토 근거·OEM별 특징 · 2026.09.29</summary>
+<div style="font-size:11px;line-height:1.7;color:var(--ink-2)">
+<p>자료 기준: EV Volumes는 July 2026 표제이나 변경 이력은 2026.08.04까지 포함. SOD는 인도 개시이며 판매지역 X가 지역별 출시일을 뜻하지는 않음. MI Q3 2026은 미국 시장 자료이며 Update 열 최종일은 2026.08.26. MY(연식)와 CY(달력연도), SOP(생산 개시)를 구분.</p>
+<ul>
+<li>BMW iX3: <a href="https://www.press.bmwgroup.com/usa/article/detail/T0457571EN_US/bmw-officially-announces-pricing-and-range-for-2027-bmw-ix3-50-xdrive" target="_blank" rel="noopener">BMW USA 2026.05.07</a>의 미국 2026년 9월 계획 적용. MI K102도 2026 Q3. iX5는 MI K108의 2027 Q1 적용(SOP 2026.12와 구분).</li>
+<li>Kia EV3: MI K387의 2026 Q4 적용. <a href="https://www.kiamedia.com/us/en/media/pressreleases/24568/the-all-new-2027-kia-ev3-debuts-at-new-york-international-auto-show" target="_blank" rel="noopener">Kia 공식 미국 발표</a>는 2026년 말 출시 예상.</li>
+<li>Toyota Highlander / Lexus TZ BEV: MI K721/K447은 CY2027, EVV I357/I350은 2026 H2. 미국 표에는 MI의 2027년 추정을 표시하며 분기는 미정.</li>
+<li>Lucid: MI K476/O475의 Cosmos 2026 Q4 / Earth 2027 Q2 적용. EVV I212/I213은 각각 2027 H1 / 2028 H1로 차이. 기존 ‘Midsize SUV’ 중복 가능 항목을 구체적인 모델명으로 정리.</li>
+<li>Ford Fathom: <a href="https://www.fromtheroad.ford.com/ar/es/articles/2026/ford-revela-el-nombre-y-el-precio-de-su-nueva-pickup-electrica-" target="_blank" rel="noopener">Ford 2026.08.07 공식 발표</a>의 북미 2027년 초 계획 적용. EVV C106/I106은 Ranchero·2027 H2, MI O227은 Fathom·MY28로 표기.</li>
+<li>Ford·Lincoln: EVV 북미 대상 BEV 6개 행 중 100% 등급 0개, 50% 이하 5개. Expedition·F-150 Lightning·Navigator BEV는 각각 25%(Future Vehicle Calendar 103~111행). 수치는 공급자의 출시 확실성 분류이며 판매확률·판매량 추정에 직접 사용하지 않음. Explorer·Aviator는 변경 이력 3171~3172행에서 EREV로 전환 표기.</li>
+<li>GM: EVV 변경 이력 3149~3156행에 2026.07.28 미래 BEV 8개 항목 삭제. 삭제 사유가 구체적이지 않아 공식 취소 8종으로 해석하지 않음. 이 캘린더는 판매 개시 차량도 삭제하므로 잔존 행 수가 전체 라인업 규모는 아님.</li>
+</ul>
+<p>EVV = EV Volumes, Future BEV/PHEV Rollout Calendar July 2026 (‘Future Vehicle Calendar’, ‘Change log’) · MI = Motor Intelligence / Autodata, Product Cycle Charts Q3 2026 (‘Combined Cycle Chart’). OEM 공식 발표를 우선 대조하고, 검토되지 않은 기존 항목은 기존 출처·수치를 유지.</p>
+</div></details>
 
 <script src="roadmap_data.js"></script>
 <script>
@@ -683,6 +715,7 @@ function rmRenderOEM(key){
   });
   h+='</tbody></table></div>';
   if(o.note) h+='<div class="oem-note">참고: '+rmEsc(o.note)+'</div>';
+  if(o.watchlist) h+='<div style="font-size:11px;line-height:1.7;margin:10px 0"><strong>일정 미정·검토 필요</strong><ul>'+o.watchlist.map(function(s){return '<li>'+rmEsc(s)+'</li>';}).join('')+'</ul></div>';
   var lfp=ROADMAP.lfp[key];
   if(lfp){
     h+='<details class="sub-tog"><summary>LFP 트림 출시 계획</summary><div class="rm-wrap"><table class="mini-table"><thead><tr>';
@@ -724,7 +757,7 @@ function rmRenderOEM(key){
 </div>
 </section>
 
-<p class="updated">마지막 업데이트: 2026.09.21 (EV 판매 KPI·텍스트는 수동 하드코딩)</p>
+<p class="updated">EV 판매 KPI 기준: 2026.09.21 · 신차 일정 검토: 2026.09.29 (수동 업데이트)</p>
 
 <!-- ══════════════════════════════════════════ -->
 <!-- Charts JS (light theme) -->

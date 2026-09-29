@@ -1,6 +1,10 @@
 /* ============================================================
    OEM 중장기 BEV 출시 로드맵 (2021~2030E) · 연도 × 지역
    출처: Marklines  (탈중국망 기회 리포트 표 재구성, 2026.06.18)
+   - 2026.09.29: Ford·Kia·BMW 일정 / Honda 취소 / GM 변경 이력 검토.
+     보완 출처: OEM 공식 발표, Motor Intelligence Q3 2026, EV Volumes July 2026.
+     원자료 셀·공식 링크·자료 차이는 index.html의 검토 근거에 기록.
+     watchlist는 연도 미확정 항목이며 확정 출시 일정에 포함하지 않음.
    - PDF 페이지 렌더링 이미지로 셀 위치 전수 검증 (2026-06-19)
    - 모델명 내 annotation 그대로 보존:
        refresh / facelift  → 페이스리프트 (이탤릭)
@@ -49,13 +53,14 @@ const ROADMAP = {
 
     Hyundai: {
       label: "현대차그룹", flag: "🇰🇷", regions: ["북미","유럽","중국"],
+      watchlist: ["Kia EV4 BEV · 미국 일정 미정: MI Q3 2026 G380:S380은 2026~2029 모두 TBD. 기존 Marklines의 폐기 표기와 달라 확정 취소로 단정하지 않음. 검토 2026.09.29."],
       sched: {
         "2021": {"북미":["Hyundai Ioniq 5"], "유럽":["Hyundai Ioniq 5","Kia EV6"]},
         "2022": {"북미":["Genesis G80","Genesis GV60","Kia EV6","Kia Niro"], "유럽":["Genesis GV70","Genesis GV60","Kia Niro","Genesis G80"]},
         "2023": {"북미":["Genesis GV70","Hyundai Ioniq 6","Kia EV9","Hyundai Kona"], "유럽":["Hyundai Kona","Hyundai Ioniq 6","Kia EV9"], "중국":["Kia EV5 (LFP 추가)"]},
         "2024": {"유럽":["Kia EV3","Hyundai Casper"]},
         "2025": {"북미":["Hyundai Ioniq 9","Kia EV6 facelift","Genesis GV60 facelift","Genesis GV70 facelift"], "유럽":["Kia EV4, Kia EV5, Kia PV5","Hyundai Ioniq 9","Hyundai Casper crossover","Genesis GV60 facelift, GV70 facelift","Hyundai Ioniq 6 facelift","Kia EV6 facelift"], "중국":["Hyundai EO (LFP 추가)"]},
-        "2026E": {"북미":["Kia EV3","Kia EV4 (출시 계획 폐기)","Kia EV8","Kia PV5","Genesis GV90"], "유럽":["Kia EV2 (LFP 추가)","Hyundai Ioniq 3 (LFP 추가)","Genesis GV90"], "중국":["Kia EV4","Hyundai Ioniq V (LFP 추가)"]},
+        "2026E": {"북미":["Kia EV3 BEV (Q4 · MI 추정)","Kia EV8","Kia PV5","Genesis GV90"], "유럽":["Kia EV2 (LFP 추가)","Hyundai Ioniq 3 (LFP 추가)","Genesis GV90"], "중국":["Kia EV4","Hyundai Ioniq V (LFP 추가)"]},
         "2027E": {"북미":["Kia PV7"], "유럽":["Kia EV6","Kia PV7","Genesis GV60","Kia B-Hatchback EV (추가)"], "중국":["Hyundai Ioniq Electric SUV (LFP 추가)"]},
         "2028E": {"북미":["Kia PV1 (출시 계획 폐기)","Kia EV6","Hyundai Ioniq 5","Genesis GV60"], "유럽":["Kia PV1 (출시 계획 폐기)","Hyundai Ioniq 5"]},
         "2029E": {"북미":["Kia Electric Pickup truck (EREV 전환)","Hyundai Ioniq 6 (출시 계획 폐기)","Kia PV9 (추가)","Hyundai Mid-size Pickup (추가)"], "유럽":["Kia EV7","Hyundai Ioniq 6","Kia PV9 (추가)"], "중국":["Kia EV7","Kia EV5"]},
@@ -66,6 +71,7 @@ const ROADMAP = {
     GM: {
       label: "GM", flag: "🇺🇸", regions: ["북미","유럽","중국"],
       note: "원문 이탤릭 = SGMW(Baojun·Wuling) 중국 JV 브랜드",
+      watchlist: ["EV Volumes Change log 3149~3156행: 2026.07.28 미래 BEV 8개 항목 삭제. 사유가 구체적이지 않아 공식 취소 8종으로 단정하지 않음. 기존 일정은 모델별 추가 근거 확인 전 유지. 검토 2026.09.29."],
       sched: {
         "2021": {"북미":["Chevrolet Bolt EUV","GMC Hummer EV Pickup","Chevrolet Brightdrop 600"], "중국":["Baojun KiWi EV","Wuling Nano EV"]},
         "2022": {"북미":["Cadillac Lyriq","Cruise AV"], "중국":["Cadillac Lyriq","Wuling Air EV"]},
@@ -82,6 +88,12 @@ const ROADMAP = {
 
     Ford: {
       label: "Ford", flag: "🇺🇸", regions: ["북미","유럽","중국"],
+      note: "2026.09.29 검토 · Fathom은 Ford 2026.08.07 공식 발표의 북미 2027년 초 계획. Explorer는 EV Volumes July 2026의 북미 판매대상 글로벌 SOD 추정이며 미국 인도 확정일은 아님.",
+      watchlist: [
+        "F-150 Lightning EREV · 출시 시점 공식 미확정: Ford 2025.12.15는 추후 공개. MI Q3 2026 K233/O233은 2027 Q3 (MY28), EV Volumes I105는 2027 H1로 차이.",
+        "장기 BEV 계획 주의: EV Volumes 북미 Ford·Lincoln BEV 6개 행 중 100% 등급 0개, 50% 이하 5개. Expedition·F-150 Lightning·Navigator BEV는 각각 25%. 공급자의 분류값이며 확정 출시·판매확률이 아님. 기존 BEV와 차세대 EREV를 중복 집계하지 않음.",
+        "Lincoln Aviator EREV · EV Volumes I109는 2029 H1, 출시 가능성 분류 75%. 변경 이력 3172행은 BEV→EREV로 표기하며 공식 일정 확인 필요."
+      ],
       sched: {
         "2021": {"북미":["Ford Mustang Mach-E"], "유럽":["Ford Mustang Mach-E"], "중국":["Ford Mustang Mach-E"]},
         "2022": {"북미":["Ford F-150 Lightening","Ford E-Transit"], "유럽":["Ford E-Transit"]},
@@ -89,8 +101,8 @@ const ROADMAP = {
         "2024": {"유럽":["Ford E-Transit Custom","Ford Explorer EV","Ford Capri","Ford E-Tourneo Custom","Ford E-Tourneo Courier","Ford E-Transit Courier"]},
         "2025": {"유럽":["Ford Puma EV"]},
         "2026E": {"유럽":["Ford E-Transit EV (출시 계획 폐기)","Ford Transit City (추가)"], "중국":["Ford Bronco New Energy (추가)"]},
-        "2027E": {"북미":["Ford Mid-size Electric pickup","Ford Mustang Mach-E"], "중국":["Ford Mustang Mach-E"]},
-        "2028E": {"북미":["Lincoln Corsair-E","Compact electric SUV","Next-generation pickup (출시 계획 폐기)","Ford E-Transit EV (출시 계획 폐기)"], "유럽":["Ford Mustang Mach-E"]},
+        "2027E": {"북미":["Ford Fathom BEV (2027 초 · OEM 계획)","Ford Mustang Mach-E"], "중국":["Ford Mustang Mach-E"]},
+        "2028E": {"북미":["Ford Explorer EREV (H2 · EVV 추정 75%)","Lincoln Corsair-E","Compact electric SUV","Next-generation pickup (출시 계획 폐기)","Ford E-Transit EV (출시 계획 폐기)"], "유럽":["Ford Mustang Mach-E"]},
         "2029E": {},
         "2030E": {}
       }
@@ -114,6 +126,7 @@ const ROADMAP = {
 
     Honda: {
       label: "Honda", flag: "🇯🇵", regions: ["북미","유럽","중국"],
+      note: "2026.09.29 대조: Honda 2026.03.12 공식 발표는 미국 생산 예정 Acura RSX·Honda 0 SUV·0 Saloon의 개발 및 출시 취소를 확인. 기존 폐기 표기를 유지하고 단기 표와 일치시킴.",
       sched: {
         "2021": {},
         "2022": {"중국":["Honda e:NS1","Honda e:NP1"]},
@@ -141,8 +154,8 @@ const ROADMAP = {
         "2023": {"북미":["i5 (1세대)"], "유럽":["i5 (1세대)"], "중국":["iX1 LWB (1세대)"]},
         "2024": {"북미":["i4 facelift (1세대)"], "유럽":["iX2 (1세대)","i5 Touring (1세대)","i4 facelift (1세대)"], "중국":["i5 LWB (1세대)","i4 facelift (1세대)"]},
         "2025": {"북미":["iX facelift (1세대)"], "유럽":["iX facelift (1세대)"], "중국":["iX facelift (1세대)"]},
-        "2026E": {"북미":["iX3 (2세대)"], "유럽":["iX3 (2세대)","i3 (2세대)","i7 facelift (1세대)"], "중국":["iX3 L (2세대)","i7 facelift (1세대)"]},
-        "2027E": {"북미":["i3 (2세대)","iX4 (2세대)","iX5 (2세대)","iM3 (2세대)","i5 facelift (1세대)","iX7 (2세대)"], "유럽":["iX4 (2세대)","iX5 (2세대)","i3 Touring (2세대)","iM3 (2세대)","i5 facelift (1세대)"], "중국":["i3 L (2세대)","iX5 L (2세대)"]},
+        "2026E": {"북미":["iX3 BEV (2세대; Q3 · OEM 9월 계획)"], "유럽":["iX3 (2세대)","i3 (2세대)","i7 facelift (1세대)"], "중국":["iX3 L (2세대)","i7 facelift (1세대)"]},
+        "2027E": {"북미":["i3 (2세대)","iX4 (2세대)","iX5 BEV (2세대; Q1 · MI 추정)","iM3 (2세대)","i5 facelift (1세대)","iX7 (2세대)"], "유럽":["iX4 (2세대)","iX5 (2세대)","i3 Touring (2세대)","iM3 (2세대)","i5 facelift (1세대)"], "중국":["i3 L (2세대)","iX5 L (2세대)"]},
         "2028E": {"북미":["iX6 (2세대)","iX5 M (2세대)","i4 (2세대)"], "유럽":["iX1 (2세대)","iX7 (2세대)","iX6 (2세대)","i4 (2세대)"]},
         "2029E": {"북미":["i5 (2세대)"], "유럽":["i5 (2세대)"]},
         "2030E": {}
