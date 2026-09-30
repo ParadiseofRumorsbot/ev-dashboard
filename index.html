@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="ev_growth.css">
 </head>
 <body>
 <div class="page-wrap">
@@ -37,6 +38,7 @@
 <a href="#sec-us-model" class="sidebar-link" data-target="sec-us-model">미국 모델별</a>
 <a href="#sec-kr" class="sidebar-link" data-target="sec-kr">한국 EV</a>
 <a href="#sec-timeline" class="sidebar-link" data-target="sec-timeline">신차 타임라인</a>
+<a href="#sec-cell-growth" class="sidebar-link" data-target="sec-cell-growth">셀 3사 EV 물량</a>
 </aside>
 
 <!-- ── Main ── -->
@@ -51,6 +53,7 @@
 <div class="toc-nav-mobile" id="tocMobile">
 <a href="index.html">EV 판매</a><a href="robotaxi.html">FSD</a><a href="us-import.html">US 수입</a><a href="Battery_bom_routing.html">ESS</a><a href="battery_scenario.html">Scenario</a><a href="battery_tech.html">기술</a><a href="global_battery_map.html">맵</a>
 <a href="Battery-Atlas-3D.html">배터리 3D</a>
+<a href="#sec-cell-growth">셀 3사 EV 물량</a>
 </div>
 
 <!-- News feed -->
@@ -671,6 +674,11 @@
 <p>EVV = EV Volumes, Future BEV/PHEV Rollout Calendar July 2026 (‘Future Vehicle Calendar’, ‘Change log’) · MI = Motor Intelligence / Autodata, Product Cycle Charts Q3 2026 (‘Combined Cycle Chart’). OEM 공식 발표를 우선 대조하고, 검토되지 않은 기존 항목은 기존 출처·수치를 유지.</p>
 </div></details>
 
+<section id="sec-cell-growth" style="margin:32px 0;padding-top:20px;scroll-margin-top:24px">
+<h2 style="margin-bottom:14px">셀 3사 EV 물량 · 2026E / 2028 / 2029</h2>
+<div id="ev-growth">엑셀 계산 결과를 불러오는 중입니다.</div>
+</section>
+<script src="ev_growth.js"></script>
 <script src="roadmap_data.js"></script>
 <script>
 function switchTLView(v,btn){

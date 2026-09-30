@@ -1,0 +1,27 @@
+#ev-growth{font-size:13px;line-height:1.65;color:var(--ink)}
+#ev-growth p{margin:8px 0 14px}
+#ev-growth .eg-intro{padding:16px 20px;background:var(--bg-soft);border-radius:10px;margin-bottom:18px}
+#ev-growth .eg-warning{color:#895915;background:#fff5df;padding:10px 14px;border-radius:6px}
+#ev-growth .eg-controls{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:16px 0}
+#ev-growth .eg-controls label{font-weight:600;display:flex;gap:8px;align-items:center}
+#ev-growth select,#ev-growth input{font:inherit;color:var(--ink);background:var(--bg-card);border:1px solid var(--line-s);padding:8px 10px;border-radius:6px;max-width:100%}
+#ev-growth .eg-controls>span,#ev-growth .eg-foot{font-size:11px;color:var(--ink-3)}
+#ev-growth .eg-tabs{display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--line-s);padding-bottom:10px;margin-bottom:18px}
+#ev-growth .eg-tabs button{font:inherit;font-weight:600;background:var(--bg-card);color:var(--ink-2);border:1px solid var(--line-s);padding:9px 17px;border-radius:7px;cursor:pointer}
+#ev-growth .eg-tabs button[aria-selected=true]{background:#17365d;color:#fff;border-color:#17365d}
+#ev-growth .eg-scroll{overflow:auto;max-width:100%;margin:12px 0}
+#ev-growth table{border-collapse:collapse;width:100%;font-size:12px;min-width:730px}
+#ev-growth th{background:#17365d;color:#fff;padding:11px 13px;text-align:right;white-space:nowrap;font-weight:600}
+#ev-growth td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top;text-align:right;font-variant-numeric:tabular-nums}
+#ev-growth th:first-child,#ev-growth td:first-child{text-align:left;min-width:140px}
+#ev-growth tr:nth-child(even){background:var(--bg-soft)}
+#ev-growth td:has(details),#ev-growth td:last-child:has(br){text-align:left;min-width:220px;max-width:400px}
+#ev-growth td details{max-width:330px;white-space:normal}
+#ev-growth summary{cursor:pointer;color:var(--ink-2)}
+#ev-growth .eg-missing{color:#96631b;white-space:nowrap}
+#ev-growth .eg-block{margin:20px 0}
+#ev-growth .eg-block>summary{padding:12px 0;font-weight:600}
+#ev-growth .eg-gap{border-left:3px solid #d6a33a;padding:12px 18px;background:var(--bg-soft)}
+#ev-growth h3{font-size:15px;margin-top:25px}
+#ev-growth a{color:var(--teal,#00796b)}
+@media(max-width:650px){#ev-growth{font-size:12px}#ev-growth .eg-intro{padding:10px 12px}#ev-growth .eg-controls{gap:10px}#ev-growth .eg-tabs button{padding:8px 10px}#ev-growth .eg-controls label{width:100%}}
