@@ -26,6 +26,28 @@ for(const invalid of [0,5,1.5,NaN])assert.throws(()=>model.calculateShelfReferen
 const hpeUnknown=model.calculate({platform:'b300',period:'y2025',chips:model.shipments.b300.y2025,replacementMode:'exclude'});
 for(const key of ['racks','backedMW','deliveredKWh','cellsPerRack','newCells','salesRevenue'])assert.equal(hpeUnknown[key],null,key);
 near(model.calculate({platform:'b300',period:'y2025',chips:model.shipments.b300.y2025,rackShare:100,replacementMode:'exclude'}).racks,20853.347222222223);
+// A sourced reference scenario starts calculating without pretending to know cell BOM.
+const defaults=model.getDefaults('b300','y2025');
+const start=model.calculate({...defaults,replacementMode:'exclude'});
+assert.deepEqual(start.errors,[]);
+near(start.racks,20853.347222222223);
+near(start.backedRacks,10426.673611111111);
+near(start.backedMW,344.08022916666667);
+near(start.deliveredKWh,.825);
+for(const key of ['cellsPerRack','newCells','nominalGWh','salesRevenue','opKRW'])assert.equal(start[key],null,key);
+assert.equal(defaults.rackShare,100); // Full-chip equivalent, not observed NVL72 mix.
+assert.equal(defaults.attach,50); // Report Base case, not HPE customer adoption.
+assert.equal(defaults.power,33); // One vendor shelf, not full HPE rack power.
+assert.equal(model.getDefaults('b300','q126').chips,992874);
+assert.equal(model.getDefaults('b300','y2028').attach,'');
+assert.equal(model.getDefaults('b300','y2026').chips,'');
+assert.equal(model.getDefaults('b200','y2025').attach,40);
+assert.equal(model.getDefaults('rubin','y2027').attach,55);
+assert.equal(model.getDefaults('rubin','y2025').attach,'');
+near(model.getBackupDefaults('shelf-4').power,132);
+near(model.calculate({...defaults,...model.getBackupDefaults('shelf-4'),replacementMode:'exclude'}).deliveredKWh,3.3);
+assert.equal(model.getBackupDefaults('manual').power,'');
+assert.equal(model.getBackupDefaults('manual').protectionSource,'');
 // Synthetic values exercise the engine; they are never production defaults.
 const base={platform:'b200',period:'y2025',chips:7200,rackShare:100,attach:100,protectionScope:'Test fixture DC load domain',protectionSource:'Synthetic test specification',power:120,seconds:90,cellW:120,cellWh:10,powerFactor:80,energyFactor:80,reserve:20,share:50,asp:3,replacementMode:'exclude',capacity:1,allocation:10,utilization:80,yield:90,margin:15,fx:1400,evLoss:100};
 const r=model.calculate(base);
