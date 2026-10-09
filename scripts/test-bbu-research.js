@@ -5,13 +5,20 @@ const path=require('node:path');
 const vm=require('node:vm');
 const model=require('../assets/bbu-research.js');
 const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-7,`${a} != ${b}`);
-const base={platform:'b200',period:'y2025',chips:7200,rackShare:100,attach:100,power:120,seconds:90,cellW:120,cellWh:10,powerFactor:80,energyFactor:80,reserve:20,share:50,asp:3,replacementMode:'exclude',capacity:1,allocation:10,utilization:80,yield:90,margin:15,fx:1400,evLoss:100};
+// Synthetic values exercise the engine; they are never production defaults.
+const base={platform:'b200',period:'y2025',chips:7200,rackShare:100,attach:100,protectionScope:'Test fixture DC load domain',protectionSource:'Synthetic test specification',power:120,seconds:90,cellW:120,cellWh:10,powerFactor:80,energyFactor:80,reserve:20,share:50,asp:3,replacementMode:'exclude',capacity:1,allocation:10,utilization:80,yield:90,margin:15,fx:1400,evLoss:100};
 const r=model.calculate(base);
 assert.deepEqual(r.errors,[]);
 near(r.racks,100);near(r.backedMW,12);near(r.deliveredKWh,3);
 near(r.cellsPerRack,1500);near(r.newCells,150000);near(r.nominalGWh,.0015);
 near(r.companyDemand,75000);near(r.supplyCells,72000);near(r.salesCells,72000);
 near(r.demandRevenue,225000);near(r.salesRevenue,216000);near(r.opKRW,.4536);near(r.offset,.4536);
+// A numeric rack power alone must not become an asserted backup load.
+for(const missing of [{protectionScope:''},{protectionSource:''},{protectionSource:'   '}]){
+  const unknown=model.calculate({...base,...missing});
+  for(const key of ['backedMW','deliveredKWh','cellsPerRack','newCells','salesRevenue','opKRW'])assert.equal(unknown[key],null,key);
+  assert.equal(unknown.racks,100);
+}
 // Short backup periods are power-limited; long ones become energy-limited.
 near(model.calculate({...base,seconds:240}).cellsPerRack,1500);
 near(model.calculate({...base,seconds:600}).cellsPerRack,3000);
