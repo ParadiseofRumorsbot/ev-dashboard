@@ -40,10 +40,35 @@ assert.equal(defaults.attach,50); // Report Base case, not HPE customer adoption
 assert.equal(defaults.power,33); // One vendor shelf, not full HPE rack power.
 assert.equal(model.getDefaults('b300','q126').chips,992874);
 assert.equal(model.getDefaults('b300','y2028').attach,'');
-assert.equal(model.getDefaults('b300','y2026').chips,'');
+assert.equal(model.getDefaults('b300','y2026').chips,5370000);
 assert.equal(model.getDefaults('b200','y2025').attach,40);
 assert.equal(model.getDefaults('rubin','y2027').attach,55);
 assert.equal(model.getDefaults('rubin','y2025').attach,'');
+// Every selectable period loads a sourced default; annual projections use the report mix.
+for(const period of Object.keys(model.periods)){
+  const platform=model.getDefaultPlatform(period),d=model.getDefaults(platform,period);
+  const r=model.calculate({...d,replacementMode:'exclude'});
+  assert.deepEqual(r.errors,[],period);
+  for(const key of ['chips','rackShare','attach'])assert.equal(typeof d[key],'number',period+':'+key);
+  assert.ok(r.racks>0,period);
+  assert.ok(r.backedRacks>0,period);
+}
+assert.equal(model.getDefaultPlatform('q226'),'b300');
+assert.equal(model.getDefaults('b300','q226').chips,311796); // Never annualize the partial quarter.
+assert.equal(model.getDefaultPlatform('y2030'),'report');
+const annual26=model.getShipmentReference('report','y2026');
+near(annual26.chips,200e6/.4/1200+3759e6/.5/1400+1196e6/.55/1800);
+near(annual26.attach,(200e6/1200+3759e6/1400+1196e6/1800)/annual26.chips*100);
+near(annual26.bbuMW,5155);
+assert.equal(model.getShipmentReference('report','q126'),null); // No invented quarterly split.
+assert.equal(model.getShipmentReference('b300','y2028'),null); // Dash is not an observed zero.
+const annual30=model.getShipmentReference('report','y2030');
+near(annual30.chips,91540e6/.95/5200);
+near(annual30.attach,95);
+near(annual30.bbuMW,91540);
+const forecast30=model.calculate({...model.getDefaults('report','y2030'),replacementMode:'exclude'});
+assert.notEqual(forecast30.backedMW,annual30.bbuMW); // A fixed vendor shelf comparison is not report market power.
+for(const key of ['newCells','nominalGWh','salesRevenue'])assert.equal(forecast30[key],null,key);
 near(model.getBackupDefaults('shelf-4').power,132);
 near(model.calculate({...defaults,...model.getBackupDefaults('shelf-4'),replacementMode:'exclude'}).deliveredKWh,3.3);
 assert.equal(model.getBackupDefaults('manual').power,'');
