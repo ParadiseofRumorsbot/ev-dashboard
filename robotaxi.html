@@ -36,7 +36,8 @@
 <a href="#sec-fsd-miles" class="sidebar-link" data-target="sec-fsd-miles">FSD 마일리지</a>
 <a href="#sec-fsd-safety" class="sidebar-link" data-target="sec-fsd-safety">FSD 안전</a>
 <a href="#sec-austin" class="sidebar-link" data-target="sec-austin">Austin 플릿</a>
-<a href="#sec-cybercab" class="sidebar-link" data-target="sec-cybercab">Cybercab 생산</a>
+<a href="#sec-cybercab" class="sidebar-link" data-target="sec-cybercab">Cybercab 등록·관측</a>
+<a href="#sec-tx-registered" class="sidebar-link" data-target="sec-tx-registered">텍사스 등록 플릿</a>
 <a href="#sec-cities" class="sidebar-link" data-target="sec-cities">도시별 비교</a>
 <a href="#sec-global" class="sidebar-link" data-target="sec-global">글로벌 도시</a>
 <a href="#sec-timeline" class="sidebar-link" data-target="sec-timeline">확장 타임라인</a>
@@ -188,6 +189,18 @@
 </div>
 </div>
 
+<div class="chart-section" id="sec-tx-registered">
+<h2>텍사스 로보택시 등록 플릿 · <span id="tx-registration-date">2026.10.09</span></h2>
+<div class="metrics">
+<div class="metric"><div class="label">Model Y 등록</div><div class="value" id="tx-model-y">420대</div><div class="delta neutral" id="tx-model-y-change">비교값 420대와 동일</div></div>
+<div class="metric"><div class="label">Cybercab 등록</div><div class="value" id="tx-cybercab">319대</div><div class="delta up" id="tx-cybercab-change">비교값 169대 대비 +150 · +88.8% (1.89배)</div></div>
+<div class="metric"><div class="label">TX 등록 합계</div><div class="value" id="tx-total">739대</div><div class="delta up" id="tx-total-change">비교값 589대 대비 +150 · +25.5%</div></div>
+<div class="metric"><div class="label">Cybercab 등록 비중</div><div class="value" id="tx-cybercab-share">43.2%</div><div class="delta neutral" id="tx-share-note">319 ÷ 739 · TX 등록 기준</div></div>
+</div>
+<p id="tx-registration-note" style="font-size:12px;color:var(--ink-2);line-height:1.7">Texas DMV의 Tesla Robotaxi, LLC 차량 목록에서 739개 고유 VIN을 직접 집계했습니다(2026.10.09). 등록 대수는 실제 운행·30일 활성·누적 생산량과 별도입니다.</p>
+<p style="font-size:11px;color:var(--ink-3);line-height:1.7">출처: <a href="https://txmccs.txdmv.gov/truckstop/companies/81edcff1-8a6e-4ed0-be1f-60668515e223/automated-motor-vehicles" target="_blank" rel="noopener">Texas DMV 차량 목록</a>. 직전 169·420·589대와 증감은 사용자 제공 10/9 게시물 기준이며, 아래 기존 9/20 트래커 지표와 비교 기준이 다릅니다.</p>
+</div>
+
 <div class="chart-section">
 <h2>FSD 유럽 승인 현황</h2>
 <div style="font-size:11px;color:var(--ink-2);line-height:1.6">FSD 유럽 5개국 승인(26.6월 기준), 하반기 승인국 확대 전망 — 국가별 승인 절차 진행 중</div>
@@ -226,9 +239,9 @@
 <div style="margin:6px 2px 0;font-size:11px;color:var(--ink-3);line-height:1.4">* 26.06.08 무감독 28대(코호트 기준) · 총차량 53대(5/13 최신) · 트래커 활성/코호트 지표 혼재 주의<br>* 26.09.04 119대·26.09.20 198대는 트래커 개편 후 '현재 서비스 중 무감독' 계열(Austin tracked all-time 246, 30일 활성 160 · robotaxitracker.com 26.09.20 확인) — 이전 코호트 기준 값과 정의가 달라 직접 비교 주의</div>
 </div>
 <div class="chart-section" id="sec-cybercab">
-<h2>Cybercab 테스트 플릿 추이 (대)</h2>
+<h2>Cybercab 관측·TX 등록 추이 (대)</h2>
 <div class="chart-wrap sm"><canvas id="c5"></canvas></div>
-<div style="margin:6px 2px 0;font-size:11px;color:var(--ink-3);line-height:1.4">* 26.06 ~85대는 Giga TX 야적 드론 목격 기준 [2차출처] · 공식 TX 등록은 42대(5/28) · 26.09 58대는 TX DMV 공식 등록 상업 인가분(robotaxitracker.com DMV 데이터 · 26.09.20 확인, 9/4 45대 · 야적 관측과 별개 계열)</div>
+<div style="margin:6px 2px 0;font-size:11px;color:var(--ink-3);line-height:1.4">* 기존 테스트·관측과 TX 등록을 별도 계열로 표시합니다. 26.06 ~85대는 Giga TX 야적 드론 목격 [2차출처], 공식 TX 등록은 42대(5/28). TX 등록 45대(9/4) → 58대(9/20, robotaxitracker.com DMV 데이터) → <b>319대(10/9, TxDMV 차량 목록 직접 집계)</b>. 관측·등록을 생산량이나 실제 운행 대수로 해석하지 않습니다.</div>
 <div style="margin:6px 2px 0;font-size:11px;color:var(--ink-3);line-height:1.4">* 26.07.08 대형 바디패널 <b>플라스틱 신공정</b> 도입 확인 — 사출성형 공차 이슈 임시방편이 아닌 Cybercab 전용 신규 공정(Unboxed 공정 일환·장난감차 제조 방식 착안, 수년 전부터 예고된 방향). Giga TX 현장 관찰 [2차출처]</div>
 </div>
 </div>
@@ -246,7 +259,7 @@
 <div style="display:flex;flex-direction:column;gap:10px;font-size:13px">
 <div style="background:var(--bg-soft);padding:12px;border-radius:8px;border-left:3px solid #4ecdc4">
 <div style="display:flex;justify-content:space-between;margin-bottom:4px"><strong style="color:var(--ink)">Austin, TX</strong><span style="color:#4ecdc4;font-size:11px">MATURE</span></div>
-<div style="color:var(--ink-2);font-size:12px">Day 1 (25.6.22): 13대 → 현재 무감독 198대(9/20 · tracked all-time 246, 30일 활성 160) · 야간 무감독 5/4~ · Geofence 245 sq mi · Cybercab 트래커 집계 42대·TX DMV 등록 58대</div>
+<div style="color:var(--ink-2);font-size:12px">Day 1 (25.6.22): 13대 → 무감독 198대(9/20 · tracked all-time 246, 30일 활성 160) · 야간 무감독 5/4~ · Geofence 245 sq mi · Cybercab 트래커 집계 42대(9/20). <a href="#sec-tx-registered">TX 전체 Cybercab 등록 319대(10/9)</a>는 Austin 실제 운행 대수와 별개입니다.</div>
 </div>
 <div style="background:var(--bg-soft);padding:12px;border-radius:8px;border-left:3px solid #ffd93d">
 <div style="display:flex;justify-content:space-between;margin-bottom:4px"><strong style="color:var(--ink)">Dallas, TX</strong><span style="color:#ffd93d;font-size:11px">RAMP</span></div>
@@ -421,6 +434,20 @@
       document.getElementById('m-total-unsup').textContent = m.total_unsupervised.value + '대';
       if (m.total_unsupervised.note) document.getElementById('m-total-note').textContent = m.total_unsupervised.note;
     }
+    const tx=m.texas_dmv_registered, cab=m.texas_dmv_cybercab, modelY=m.texas_dmv_model_y;
+    if(tx&&cab&&modelY&&tx.date>='2026-10-09'&&tx.date===cab.date&&tx.date===modelY.date&&tx.value===cab.value+modelY.value){
+      document.getElementById('tx-total').textContent=tx.value.toLocaleString('ko-KR')+'대';
+      document.getElementById('tx-cybercab').textContent=cab.value.toLocaleString('ko-KR')+'대';
+      document.getElementById('tx-model-y').textContent=modelY.value.toLocaleString('ko-KR')+'대';
+      document.getElementById('tx-cybercab-share').textContent=(cab.value/tx.value*100).toFixed(1)+'%';
+      const signed=n=>(n>0?'+':'')+n;
+      document.getElementById('tx-model-y-change').textContent='비교값 420대 대비 '+signed(modelY.value-420)+'대';
+      document.getElementById('tx-cybercab-change').textContent='비교값 169대 대비 '+signed(cab.value-169)+' · '+signed(((cab.value/169-1)*100).toFixed(1))+'% ('+(cab.value/169).toFixed(2)+'배)';
+      document.getElementById('tx-total-change').textContent='비교값 589대 대비 '+signed(tx.value-589)+' · '+signed(((tx.value/589-1)*100).toFixed(1))+'%';
+      document.getElementById('tx-share-note').textContent=cab.value+' ÷ '+tx.value+' · TX 등록 기준';
+      document.getElementById('tx-registration-date').textContent=formatDate(tx.date);
+      if(tx.note)document.getElementById('tx-registration-note').textContent=tx.note.split('출처: ')[0].trim();
+    }
   }
 
   // ── 1. Update Log + This Week (주간 업데이트 DB) ──
@@ -473,9 +500,10 @@ new Chart(document.getElementById('c4'),{type:'line',data:{labels:['25.06','25.1
 {label:'무감독',data:[0,0,8,4,12,12,25,27,39,22,28,28,119,198],borderColor:'#ff6b6b',borderWidth:2,tension:.3,pointRadius:4,borderDash:[5,3]}
 ]},options:defOpt});
 
-new Chart(document.getElementById('c5'),{type:'bar',data:{labels:['26.02','26.03','26.04','26.05','26.06','26.09'],datasets:[{
-data:[1,25,60,42,85,58],backgroundColor:['#2d3a52','#556dff','#a78bfa','#4ecdc4','#ffd93d','#ff6b6b'],borderRadius:4
-}]},options:{...defOpt,scales:{...defOpt.scales,y:{...defOpt.scales.y,title:{display:true,text:'테스트 플릿 (대)',color:tickColor}}}}});
+new Chart(document.getElementById('c5'),{type:'bar',data:{labels:['26.02','26.03','26.04','26.05','26.06','26.09.04','26.09.20','26.10.09'],datasets:[
+{label:'기존 테스트·관측',data:[1,25,60,42,85,null,null,null],backgroundColor:'#ffd93d',borderRadius:4},
+{label:'TX DMV 등록',data:[null,null,null,null,null,45,58,319],backgroundColor:'#4ecdc4',borderRadius:4}
+]},options:{...defOpt,plugins:{...defOpt.plugins,legend:{display:true,labels:{color:tickColor,font:{size:10}}}},scales:{...defOpt.scales,x:{...defOpt.scales.x,offset:true},y:{...defOpt.scales.y,title:{display:true,text:'대 · 관측/등록 별도 계열',color:tickColor}}}}});
 
 // 도시별 Day 1 Fleet Size vs 현재 무감독 비교
 new Chart(document.getElementById('c6'),{type:'bar',data:{labels:['Austin\n(25.6.22)','Dallas\n(26.4.18)','Houston\n(26.4.18)','Bay Area\n(Supervised)','Miami\n(26.7.3)'],datasets:[{
