@@ -141,6 +141,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:h
 #tab-gd .gd-det{margin-top:14px}
 #tab-gd .gd-det summary{cursor:pointer;font-size:12px;font-weight:600;color:var(--accent);padding:6px 0}
 </style><link rel="stylesheet" href="assets/sib-research.css?v=20260915">
+<link rel="stylesheet" href="assets/bbu-research.css?v=20261009">
 </head><body>
 <div class="page-wrap">
 <aside class="sidebar">
@@ -176,6 +177,15 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:h
 </div>
 <div class="live-badge">LIVE · Q2 2026</div>
 </div>
+<section class="bbu-panel" id="bbu-factories"><span class="bbu-kicker">AI 전력용 배터리 · 검토 2026.10.09</span><h2>BBU 셀·모듈 생산거점</h2>
+<div class="bbu-scroll"><table><thead><tr><th>회사·거점</th><th>생산 단계</th><th>확인 내용·시점</th><th>CAPA·투자 모델</th></tr></thead><tbody>
+<tr><th>삼성SDI · 말레이시아 스름반</th><td>BBU용 원통형 셀 / 전동공구 등 병행</td><td>40V3 21700: 2026.04.24 보도는 7월 양산 계획. 2026.09.24 외부 리서치는 7월 양산 개시 서술. 260901 기존 미팅은 4Q26 출하 언급</td><td><b>BBU 전용 CAPA·SKU별 고객 출하 미확인</b>. 전체 소형전지 CAPA와 분리. 라인 배정률·가동률·수율을 입력한 경우에만 공급 상한 계산</td></tr>
+<tr><th>Panasonic · 일본</th><td>데이터센터용 셀</td><td>FY3/29 생산능력 FY3/26 대비 약 3배 계획, 오사카 기존 EV 라인 전환</td><td>계획과 실제 가동 구분. 셀 출력 개선으로 셀 수/백업kW 변화</td></tr>
+<tr><th>Panasonic · 멕시코</th><td>에너지 저장 모듈 조립</td><td>제2공장 FY3/27, 제3공장 FY3/28 계획</td><td>셀 공장으로 분류하지 않음. 셀 CAPA GWh 합계 제외</td></tr>
+<tr><th>Panasonic · 미국 Kansas</th><td>현재 EV 셀 / DC 셀 전환 계획</td><td>DC 셀 FY3/29 개시 계획</td><td>공장 전체 EV CAPA를 즉시 BBU 공급능력으로 전환하지 않음</td></tr></tbody></table></div>
+<p class="bbu-note">삼성SDI의 13→20→25GWh와 2개 라인 여력은 아래 기존 소형전지 계열·미팅 기록으로 보존합니다. BBU 전용 수치로 확인되지 않아 자동 연결하지 않습니다. 생산 개시·고객 인증·실제 출하는 서로 다른 단계입니다.</p>
+<p class="bbu-note">출처: <a href="https://www.thelec.kr/news/articleView.html?idxno=55583">말레이시아 40V3 생산 계획 보도(2026.04.24)</a> · <a href="https://news.samsungsdi.com/ko/articleView?seq=428">삼성SDI 21700 기술(2026.03.13)</a> · 기존 삼성SDI 그룹미팅(2026.09.01) · 외부 리서치(2026.09.24) · <a href="https://holdings.panasonic/content/dam/holdings/global/en/corporate/investors/pdf/irday2026_ene_e.pdf">Panasonic IR Day 2026</a>. FY3/27은 2027년 3월 종료 회계연도입니다.</p>
+<a href="battery_scenario.html#bbu-model">말레이시아 공급 상한·이익 기여 계산</a></section>
 <!-- Update Log -->
 <details class="toggle-box" style="background:var(--bg-soft,#F5F4ED);border:1px solid var(--border,#E2E1D8);border-left:3px solid #c6973b;border-radius:6px;padding:12px 16px;margin:12px 16px 0;font-size:10px;color:#8a7e6e;line-height:1.8;font-family:monospace">
 <summary style="font-weight:700;color:#c6973b;cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px"><span style="font-size:11px;color:#8a7e6e;transition:transform .2s">▸</span> Update Log · 2026.09.21</summary>
@@ -407,7 +417,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:h
 </tbody></table>
 <div class="gd-sub"><b class="gd-rc">*</b> 소형전지 소계는 <b>원문 소계 기준</b>. 2027E·2028E는 구성항목 합(각 40.0·47.0)과 불일치 — 원문 표기 그대로 병기 · 2029E(52.0)는 구성항목 합과 일치 · 자동차전지·ESS 소계는 전 연도 구성항목 합과 일치함을 확인</div>
 <div class="gd-sub"><b class="gd-rc">†</b> <b>Synergy Cells</b> — 2028년 예정이던 GM JV가 삼성SDI 단독 공장으로 전환되면서 사명이 Synergy Cells로 변경, ESS향 물량 집중이 가능해짐(ESS 30.0GWh 2028E · 30.0GWh 2029E) · 북미 ESS/UPS 관련 Stellantis JV 1공장 30GWh분은 올 연말 완전 가동(원문 서술)<br><em style="font-style:normal;color:var(--red)">※ 위 Synergy Cells ESS 30GWh(2028E~)는 본 대시보드 geo탭·④의 New Carlisle ESS 22GWh [추정, 260811 공시 기준]와 산정 기준이 다른 별개 계열 — 기존 22GWh 수치는 변경하지 않고 그대로 유지</em></div>
-<div class="gd-sub"><b class="gd-rc">‡</b> <b>말레이시아</b> — BBU(Battery Backup Unit)향 셀 생산능력이 집중된 거점으로, 현재 대비 2개 라인 신·증설 가능(출처: 삼성SDI)<br><span style="color:var(--sub)">BBU = 서버 랙 단위에 설치돼 랙별 전원을 분산 공급하는 백업 전지 · 별도 전원실의 중앙 UPS, 데이터센터 단위 BESS와 구분 · 현재까지 BBU향은 전량 18650 원형 셀(출처: Panasonic Energy)</span></div>
+<div class="gd-sub"><b class="gd-rc">‡</b> <b>말레이시아</b> — BBU(Battery Backup Unit)향 셀 생산능력이 집중된 거점으로, 현재 대비 2개 라인 신·증설 가능(출처: 삼성SDI)<br><span style="color:var(--sub)">BBU = 서버 랙 단위에 설치돼 랙별 전원을 분산 공급하는 백업 전지 · 별도 전원실의 중앙 UPS, 데이터센터 단위 BESS와 구분 · 18650 중심 기존 제품에서 21700 고출력 셀로 전환 중(삼성SDI 공식 제품 설명 2026.03). 소형전지 전체 CAPA와 BBU 전용 배정능력은 구분</span></div>
 <div class="gd-sub"><b class="gd-rc">§</b> <b>라인 전환 산수</b> — NCA EV 8GWh/라인 → NCA ESS 7GWh(생산 속도 저하) → LFP ESS 10~12GWh(셀 대형화). 뉴칼라일은 NCA EV 9GWh/라인(출처: 삼성SDI 260901 그룹미팅)</div>
 
 <h3 class="gd-h">⑥ Panasonic 북미 생산능력 · 두 계열 대조 <span style="font-size:10px;color:var(--sub)">(GWh)</span></h3>
@@ -419,9 +429,9 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:h
 <tr><td class="l">출처 표기</td><td class="sm">Panasonic Energy 발표 · 언론보도</td><td class="sm">①②③ = 자체정리(공개자료 종합) · geo탭 시설 데이터 note = "Panasonic 공식"</td><td class="sm">Panasonic 발 자료로 직접 표기된 것은 발표 계열과 geo탭 note 두 곳</td></tr>
 </tbody></table>
 <div class="gd-sub">※ <b>어느 쪽이 맞다고 단정하지 않음</b> — 집계 기준(명목 vs 가동, 회계연도 vs 역년, 증설 단계 반영 시점) 차이 가능성 · <b style="color:var(--red)">기존 ①②③(Nevada 41 · De Soto 2025~ 32)과 geo탭(Nevada 41 · De Soto 2026E 16 → 2027E 25 → 2028E 32)은 변경하지 않고 그대로 유지</b>하며, 발표 계열은 대조용으로만 병기</div>
-<div class="gd-sub">※ Nevada·Kansas 생산능력은 전량 Tesla향 예정이며, Tesla와의 합작 공급 목적 투자 외 별도 증설 계획은 없음 · Tabless 제품은 Tesla EV향 4680 전지에만 적용 예정이며, 현재 양산 적용 문제로 매출기여도는 낮음</div>
+<div class="gd-sub">※ 기존 2026.08.26 기록의 Nevada·Kansas EV/Tesla향 계획은 당시 계열로 보존합니다. 이후 확인한 Kansas DC 셀 전환·BBU 제품 로드맵은 <a href="#bbu-factories">상단 생산거점 표</a> 참조. 당시 4680 설명을 현재 전체 Tabless 제품 범위로 일반화하지 않습니다.</div>
 
-<div class="gd-sub" style="border-top:1px solid var(--border);padding-top:6px;margin-top:12px">출처: 삼성SDI(⑤ 생산능력 전망 · Synergy Cells 전환 · 말레이시아 라인 증설) · Panasonic Energy(⑥ 북미 생산능력 발표 · 언론보도 · BBU/UPS/BESS 계층 구분 · BBU향 18650 전량 적용) · 본 대시보드 기존 계열은 ①②③ 자체정리(공개자료 종합) 및 geo탭 시설 데이터 · 반영 2026-08-26</div>
+<div class="gd-sub" style="border-top:1px solid var(--border);padding-top:6px;margin-top:12px">출처: 삼성SDI(⑤ 생산능력 전망 · Synergy Cells 전환 · 말레이시아 라인 증설) · Panasonic Energy(⑥ 북미 생산능력 발표 · 언론보도 · BBU/UPS/BESS 계층 구분 · BBU 제품군·18650 기존 제품 인용(21700 전환은 상단 2026.10.09 보완 참조)) · 본 대시보드 기존 계열은 ①②③ 자체정리(공개자료 종합) 및 geo탭 시설 데이터 · 반영 2026-08-26</div>
 </div></div>
 <section id="sib-map-context" class="sib-panel">
 <span class="sib-badge">소듐 공급망 보완 · 2026.09.15</span><h3>소듐 개발 현황과 북미 공장 데이터</h3>
@@ -711,7 +721,7 @@ const GD_PLANTS=[
 {co:"Panasonic",plant:"오사카 스미노에·가이즈카",region:"중국 제외 아시아",chem:"18650/2170 원통형",app:"전기차; Mazda/Toyota, 특수 전기차 셀",status:"진행 중; Mazda 공급 2027년부터",y:[5,5,5,5,6],note:"일본 기존 라인 세부 미공개. 2028년 베이스 6GWh, 2030년 Mazda 목표까지 옵션 +4GWh"},
 {co:"Panasonic/PPES",plant:"히메지 시설",region:"중국 제외 아시아",chem:"각형 BEV 셀",app:"Toyota BEV; 차세대 고성능 배터리",status:"2026년부터",y:[0,10,30,30,30],note:"관계회사/JV CAPA는 별도 표시. Panasonic Energy 원통형 합계에는 미포함"},
 {co:"Panasonic/PPES",plant:"노스캐롤라이나 Liberty",region:"북미",chem:"각형/원통형 HEV + BEV 배터리 라인",app:"Toyota HEV/PHEV/BEV",status:"2025년 생산; 2030년까지 램프업",y:[0,10,15,20,25],note:"Panasonic 합계에서 제외. Toyota 소유 CAPA와 Panasonic Energy 혼동 방지를 위해 표시"},
-{co:"Panasonic",plant:"멕시코 데이터센터용 배터리 셀 공장",region:"북미",chem:"니켈계 데이터센터 백업 셀; LFP 아님",app:"데이터센터 백업/UPS",status:"FY2027 목표, CAPA 미공개",y:[0,0,0,0,0],note:"CAPA 미공개. GWh 합계 미포함"}
+{co:"Panasonic",plant:"멕시코 데이터센터용 에너지 저장 모듈 공장",region:"북미",chem:"모듈 조립; 셀 생산능력 아님",app:"데이터센터 BBU 모듈",status:"제2공장 FY3/27·제3공장 FY3/28 계획",y:[0,0,0,0,0],note:"셀 CAPA 해당 없음. GWh 합계 제외. 출처: Panasonic IR Day 2026; BBU 생산거점 표 참조"}
 ];
 function renderGD(){
   const tb=document.getElementById("gdPlantBody");if(!tb)return;

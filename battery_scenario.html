@@ -402,7 +402,7 @@ const DATA = {
           cm:{sdi:{essGwh_y26:35,essUtil_y26:0.65,essGwh_y27:40,essUtil_y27:0.8}, lges:{essGwh_y26:65,essUtil_y26:0.5,essUtil_y27:0.65}, skon:{essGwh_y26:6,essUtil_y26:0.55,essUtil_y27:0.65}},
           catAdj:{enclosure:{perGwh:380}, thermal:{perGwh:200}, cathode:{perGwh:323}},
           evAdj:{}, evCatAdj:{},
-          notes:['AI DC 전력 수요 폭증 → BTM ESS 신규 시장 10~15GWh(26~27E)','SDI 1Q26 CC: DC ESS CAGR 30%+, 마이크로그리드 60%+. BBU $8억(+70%Y)','Hyperscaler(AWS·MS·Google) BTM ESS RFP 급증. 4시간+ 장주기 수요','서진시스템: DC ESS 인클로저 → 기존 Grid-scale 대비 고사양·고ASP. 랙마운트형 추가','한중엔시에스: DC 냉각 기술 기보유(서버 수냉). ESS+서버 통합 냉각 가능','LGES CAPA 56.5→65GWh: 온타리오·랜싱 증설분 DC ESS 할당','삼성SDI 260901 그룹미팅: ESS 잔고는 전력용 60~70%, 그중 BTM 노출 20~30%·상업용 스탠드얼론 약 5% — BTM 기대는 제한적','LGES 2Q26 컨콜: 일부 빅테크와 배터리 직납 BTM 논의 중, FERC 6월 정책 2건'],
+          notes:['AI DC 전력 수요 폭증 → BTM ESS 신규 시장 10~15GWh(26~27E)','SDI 1Q26 CC: DC ESS CAGR 30%+, 마이크로그리드 60%+. BBU 배터리 시장 $8억(+70%Y, 2026 전망·회사 매출 아님)','Hyperscaler(AWS·MS·Google) BTM ESS RFP 급증. 4시간+ 장주기 수요','서진시스템: DC ESS 인클로저 → 기존 Grid-scale 대비 고사양·고ASP. 랙마운트형 추가','한중엔시에스: DC 냉각 기술 기보유(서버 수냉). ESS+서버 통합 냉각 가능','LGES CAPA 56.5→65GWh: 온타리오·랜싱 증설분 DC ESS 할당','삼성SDI 260901 그룹미팅: ESS 잔고는 전력용 60~70%, 그중 BTM 노출 20~30%·상업용 스탠드얼론 약 5% — BTM 기대는 제한적','LGES 2Q26 컨콜: 일부 빅테크와 배터리 직납 BTM 논의 중, FERC 6월 정책 2건'],
         },
       },
       // 합산 시나리오 — resolveComposite()에서 동적 생성
@@ -789,6 +789,7 @@ main{flex:1;min-width:0;max-width:1100px;padding:24px 0 60px 28px}
 .ft strong{color:var(--ink-2);font-weight:600}
 </style>
 <link rel="stylesheet" href="assets/sib-research.css?v=20260915">
+<link rel="stylesheet" href="assets/bbu-research.css?v=20261009">
 </head>
 <body>
 <div class="page-wrap">
@@ -806,6 +807,7 @@ main{flex:1;min-width:0;max-width:1100px;padding:24px 0 60px 28px}
 <a href="global_battery_map.html" class="sidebar-link">배터리 맵</a>
 <div class="sidebar-group">Sections</div>
 <a href="#sim-panel" class="sidebar-link" data-target="sim-panel">시뮬레이터</a>
+<a href="#bbu-model" class="sidebar-link" data-target="bbu-model">BBU 수요·공급·이익</a>
 </aside>
 <nav class="toc-nav-mobile" aria-label="페이지 이동"><a href="index.html">EV 판매</a><a href="robotaxi.html">FSD / 로보택시</a><a href="us-import.html">US 수입</a><a href="Battery_bom_routing.html">ESS BOM</a><a href="battery_scenario.html" aria-current="page">Battery Scenario</a><a href="Battery-Atlas-3D.html">배터리 3D</a><a href="2차전지_컨콜정리.html">컨콜 정리</a><a href="battery_tech.html">기술 / 특허</a><a href="global_battery_map.html">배터리 맵</a></nav>
 <main>
@@ -968,17 +970,26 @@ main{flex:1;min-width:0;max-width:1100px;padding:24px 0 60px 28px}
     </div>
   </section>
 
+<section id="bbu-model" class="bbu-panel" data-bbu-calculator><p>BBU 수요·공급·이익 계산기를 불러오는 중입니다.</p><noscript>계산에는 JavaScript가 필요합니다. BBU 전용 CAPA·셀 가격은 미공개로, 실제 매출을 확정할 수 없습니다.</noscript></section>
+<section class="bbu-panel" id="bbu-chip-supply"><span class="bbu-kicker">AI 전력용 배터리 · 검토 2026.10.09</span><h2>AI 가속기와 메모리 공급 점검</h2>
+<div class="bbu-scroll"><table><thead><tr><th>자료</th><th>이번 입력</th><th>투자 모델에서의 역할</th></tr></thead><tbody>
+<tr><th>칩 출하량</th><td>B200·B300 분기 출하 중앙 추정</td><td>신규 수요 출발점. Rubin·기타 ASIC 물량은 추가 확보 후 별도 코호트로 계산</td></tr>
+<tr><th>고객별 확보량</th><td>2025년 4분기 누적 추정</td><td>고객 구성 참고. 신규 출하에 더하지 않으며 BBU 설치·가동 물량으로 간주하지 않음</td></tr>
+<tr><th>GPU 스펙</th><td>B200/GB200·B300/GB300 동일 누적 수치 반복</td><td>출하표를 기준으로 중복 제거. GPU 패키지·GB Superchip(2GPU)·H100e 단위 구분. TDP는 폼팩터·운용 모드별 검증</td></tr>
+<tr><th>HBM CAPA</th><td>3Q26 첨부표: 삼성전자 20만 / SK하이닉스 18.5만 / 마이크론 8.5만 → 합계 47만 장/월</td><td>12인치 웨이퍼 투입능력 추정. 수율·다이 면적·적층 수·HBM 세대·고객 배분을 거쳐야 GPU 생산량으로 환산 가능</td></tr>
+<tr><th>DRAM·NAND CAPA</th><td>3Q26 첨부표: DRAM 195.5만 / NAND 124.8만 장/월</td><td>메모리 수급 보조자료. HBM은 DRAM 범주이므로 별도 합산 금지. BBU 수요에 직접 곱하지 않음</td></tr>
+</tbody></table></div><p class="bbu-note">출처: 사용자 제공 가속기 엑셀(2026.08.20)·메모리 CAPA 이미지, 검토 2026.10.09. 숫자는 기업 확정 실적이 아닌 첨부 추정치입니다. <a href="https://epoch.ai/data/ai-chip-sales">Epoch 방법론</a> · <a href="https://epoch.ai/data/ai-chip-owners">확보량 정의와 시차</a>. 칩 출하→랙 완제품→설치·가동은 시점이 다르므로 수요와 매출의 인식 기간을 대조합니다.</p></section>
   <!-- 🔋 BBU 레이어 · AI DC 랙단위 전력보호 -->
   <section class="guide-card" style="border-left:3px solid #5B4FE9;padding:14px 18px;margin-bottom:16px">
     <div style="font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:10px">🔋 BBU 레이어 · AI 데이터센터 랙단위 전력보호 (Battery Backup Unit)</div>
     <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:10px">
-      <div style="background:var(--bg-soft);border-radius:8px;padding:10px 14px;min-width:140px;border:2px solid #5B4FE9"><div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase">BBU 시장 성장률</div><div style="font-family:var(--mono);font-size:18px;font-weight:700;color:#5B4FE9">CAGR ~30%</div><div style="font-size:10px;color:var(--ink-3)">향후 7개년 · 미국 AI DC 신규 설치와 비례</div></div>
-      <div style="background:var(--bg-soft);border-radius:8px;padding:10px 14px;min-width:140px"><div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase">삼성SDI · 18650 BBU M/S</div><div style="font-family:var(--mono);font-size:18px;font-weight:700">50% 이상</div><div style="font-size:10px;color:var(--ink-3)">북미 BBU = 삼성SDI·Panasonic 과점</div></div>
+      <div style="background:var(--bg-soft);border-radius:8px;padding:10px 14px;min-width:140px;border:2px solid #5B4FE9"><div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase">기존 BBU 성장 전망 · 범위 재확인</div><div style="font-family:var(--mono);font-size:18px;font-weight:700;color:#5B4FE9">CAGR ~30%</div><div style="font-size:10px;color:var(--ink-3)">향후 7개년 · 원인용 보존 / 신규 모델 제외</div></div>
+      <div style="background:var(--bg-soft);border-radius:8px;padding:10px 14px;min-width:140px"><div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase">삼성SDI · BBU 배터리 M/S</div><div style="font-family:var(--mono);font-size:18px;font-weight:700">40~50%</div><div style="font-size:10px;color:var(--ink-3)">2026.07.30 회사 발언 · 물량/금액 기준 미확인</div></div>
       <div style="background:var(--bg-soft);border-radius:8px;padding:10px 14px;min-width:140px"><div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase">차세대 랙 전력밀도</div><div style="font-family:var(--mono);font-size:18px;font-weight:700">1MW</div><div style="font-size:10px;color:var(--ink-3)">5~10kW → 120kW → 1MW(추정)</div></div>
       <div style="background:var(--bg-soft);border-radius:8px;padding:10px 14px;min-width:140px"><div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase">정전 손실비용</div><div style="font-family:var(--mono);font-size:18px;font-weight:700">$8,851<span style="font-size:12px;color:var(--ink-3)">/분</span></div><div style="font-size:10px;color:var(--ink-3)">건당 평균 $740,357 (2016년 기준)</div></div>
     </div>
     <div style="font-size:11px;color:var(--ink-2);line-height:1.7">
-      <strong style="color:#5B4FE9">구조 변화:</strong> 랙 전력밀도가 올라가면서 <b>"기존 중앙 UPS에 집중됐던 백업 및 저장 기능이 랙과 데이터센터 단위로 분산되는 방향"</b>. 백업 계층이 중앙 1계층에서 <b>랙(BBU)·전원실(UPS)·데이터센터(BESS) 3계층</b>으로 쪼개지며 BBU가 신규 셀 수요층으로 추가됨. 현재까지 BBU향은 <b>전량 18650 원형 셀</b>이며, 삼성SDI가 차세대 <b>21700 Tabless</b> 제품을 공개·출시했음. 삼성SDI 260901 그룹미팅: BBU 탑재율 약 30%→100% 지향, 21700 침투율 올해 10% 미만, BBU향 탭리스 4Q26 출하.
+      <strong style="color:#5B4FE9">구조 변화:</strong> 랙 전력밀도가 올라가면서 <b>"기존 중앙 UPS에 집중됐던 백업 및 저장 기능이 랙과 데이터센터 단위로 분산되는 방향"</b>. 백업 계층이 중앙 1계층에서 <b>랙(BBU)·전원실(UPS)·데이터센터(BESS) 3계층</b>으로 쪼개지며 BBU가 신규 셀 수요층으로 추가됨. 18650에서 <b>21700 Tabless로 전환 중</b>이며 삼성SDI는 BBU용 고출력 원통형 제품을 공개했습니다. <a href="battery_tech.html#bbu-technology">공식 기술 설명</a> · <a href="global_battery_map.html#bbu-factories">말레이시아 생산·출하 시점 근거 비교</a>. 기존 260901 미팅의 탑재율 약 30%→100% 지향, 21700 침투율 올해 10% 미만은 범위가 불명확한 참고 발언으로 보존하며 신규 계산에 자동 대입하지 않습니다.
     </div>
 
     <p class="sib-note">소듐 적용은 랙 BBU·중앙 UPS·부지 BESS별로 고객 인증과 출력·백업시간을 확인합니다. BBU 전체 수요를 소듐 수요로 환산하지 않습니다. 출처: LG에너지솔루션 2Q26 IR(2026.07.30); 검토 2026.09.15.</p>
@@ -2518,5 +2529,6 @@ async function loadReviewedModel(){
 </main>
 </div>
 <script src="assets/sib-research.js?v=20260915"></script>
+<script src="assets/bbu-research.js?v=20261009"></script>
 </body>
 </html>

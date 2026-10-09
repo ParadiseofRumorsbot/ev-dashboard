@@ -150,6 +150,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans
 .updated{text-align:center;font-size:10px;color:var(--sub);margin-top:20px;padding-top:12px;border-top:1px solid var(--border);font-family:monospace}
 </style>
 <link rel="stylesheet" href="assets/sib-research.css?v=20260915">
+<link rel="stylesheet" href="assets/bbu-research.css?v=20261009">
 </head>
 <body>
 <div class="page-wrap">
@@ -1064,7 +1065,7 @@ SpaceX 우주 데이터센터 '27년 1GW→'29년 10GW 계획(언론종합), 원
 <table class="ct">
 <thead><tr><th style="width:20%">설계 변화</th><th>주요 효과</th><th style="color:var(--teal)">BBU 적용상 이점</th></tr></thead>
 <tbody>
-<tr><td>18650 → 21700 대형화</td><td>셀당 에너지 <span class="hl-a">50% 증가</span></td><td class="hl-g">동일용량 기준 셀 수량 33% 감소 · 집적도 향상</td></tr>
+<tr><td>18650 → 21700 대형화</td><td>셀당 에너지 <span class="hl-a">50% 증가 가정</span></td><td class="hl-g">에너지 조건만 보면 셀 수량 33% 감소 · 출력·예비 조건 충족 시에 한함</td></tr>
 <tr><td>셀 수량 감소</td><td>용접점 · 버스바 · 접속부품 감소</td><td class="hl-g">팩 구조 단순화 · 고장 우려지점 감소</td></tr>
 <tr><td>Tabless 집전구조</td><td>집전면적 확대 · 전류 이동거리 단축</td><td class="hl-g">내부저항 · 전압강하 · 저항손실 감소</td></tr>
 <tr><td>전류/발열 분산</td><td>탭 주변 전류집중 · 국부 과열 완화</td><td class="hl-g">고출력 방전대응 · 열관리 부담 완화</td></tr>
@@ -1131,12 +1132,22 @@ SpaceX 우주 데이터센터 '27년 1GW→'29년 10GW 계획(언론종합), 원
 </div>
 </div>
 
+<section class="bbu-panel" id="bbu-technology"><span class="bbu-kicker">AI 전력용 배터리 · 검토 2026.10.09</span><h2>MLCC·CBU·BBU와 고출력 셀</h2>
+<div class="bbu-scroll"><table><thead><tr><th>부품·장치</th><th>설치·역할</th><th>배터리 투자 연결</th></tr></thead><tbody>
+<tr><th>MLCC</th><td>칩·보드 근처 디커플링, 고주파 잡음·전압 변동 억제</td><td>캐패시터 부품. BBU 전자회로 안에도 사용 가능</td></tr>
+<tr><th>슈퍼캐패시터·LIC / CBU</th><td>에너지 저장소자와 제어·전력변환을 묶어 반복적인 랙 부하 변동 완충</td><td>배터리와 역할 분담 가능. 배터리 수명·용량 감소 효과는 고객 설계 검증 필요</td></tr>
+<tr><th>리튬이온 셀 / BBU</th><td>셀·BMS·전력변환·모듈/선반. 정전 시 전원 유지, 설계에 따라 피크 지원</td><td>초고출력과 에너지·안전성·고객 인증이 중요. CBU와 반응속도 하나로 구분하지 않음</td></tr>
+<tr><th>SOFC·전원실 UPS·부지 BESS</th><td>발전·중앙 백업·장시간 저장. 전원 구성에 따라 함께 사용</td><td>랙 BBU 셀 수요와 별도 용도. 첨부 SOFC 개념도는 실제 랙 BOM의 근거가 아님</td></tr></tbody></table></div>
+<p><b>삼성SDI BBU:</b> 고출력 원통형 21700·탭리스·상하부 벤트, 하이니켈 NCA 양극재. <b>UPS U8A1:</b> 각형·LMO. 서로 다른 제품입니다. 셀당 Wh가 늘어도 출력 제약에 걸리면 셀 수가 같은 비율로 줄지 않습니다.</p>
+<p><b>백업시간:</b> OCP 3kW 모듈의 4분 규격과 상용 33kW·90초 제품은 서로 다른 사양입니다. 블랙웰·루빈의 공통 탑재 사양으로 단정하지 않습니다. PSU의 벌크 캐패시터도 별도 CBU 채택 증거가 아닙니다.</p>
+<p class="bbu-note">기업 발표: <a href="https://news.samsungsdi.com/ko/articleView?seq=428">삼성SDI 2026.03.13</a> · <a href="https://samsungsdi.co.kr/sdi-now/sdi-news/4781.html?idx=4781">삼성SDI NCA/LMO 구분 2026.03.09</a> · <a href="https://news.panasonic.com/global/stories/18524">Panasonic CBU 2026.03.25</a> · <a href="https://www.murata.com/en-global/products/capacitor/ceramiccapacitor/library/solution/non-mlcc">Murata MLCC</a> · <a href="https://www.opencompute.org/documents/open-rack-v3-bbu-module-spec-1-4-pdf">OCP 모듈</a> · <a href="https://www.compuware-us.com/landingpage/CBR-3332-1S1">Compuware 33kW 제품</a></p>
+<a href="battery_scenario.html#bbu-model">출력·백업시간·셀 성능 민감도 계산</a></section>
 <h3>BBU 적용 맥락 — 왜 BBU(Battery Backup Unit)에서 21700 Tabless인가</h3>
 <ul>
-<li><span class="hl-a">시장 구조</span>: 북미 BBU 시장은 <b>삼성SDI·Panasonic이 대부분 공급</b>하는 과점 구조 · 현재까지 BBU향은 <b>전량 18650 원형 셀</b></li>
-<li><span class="hl-g">삼성SDI</span>: BBU향 18650 기준 점유율 <b>50% 이상</b> · 차세대 <b>21700 Tabless</b> 제품 공개·출시 · 양극활물질 <b>LMO 채용</b>으로 가격경쟁력 확보 · 삼성SDI 260901 그룹미팅: BBU 탑재율 약 30%→100% 지향, 21700 침투율 올해 10% 미만, BBU향 탭리스 4Q26 출하</li>
-<li><span class="hl-a">생산거점</span>: <b>말레이시아 거점에 BBU향 셀 생산능력 집중</b> — 소형전지 말레이시아 CAPA 13.0 → 2028E 20.0 → 2029E 25.0 GWh · 현재 대비 <b>2개 라인 신/증설 가능</b></li>
-<li>Panasonic: Tabless 제품은 향후 <b>Tesla EV향 4680 전지에만 적용 예정</b>이며, 현재 양산 적용 문제로 매출기여도는 낮음</li>
+<li><span class="hl-a">시장 구조</span>: <b>셀과 시스템의 시장을 분리</b>해 비교. 18650 중심의 기존 시장에서 21700 고출력 셀로 전환 중이며, 기업별 점유율의 제품·지역·금액/물량 분모 확인 필요</li>
+<li><span class="hl-g">삼성SDI</span>: 2026.07.30 회사 발언: UPS·BBU 각 배터리 시장 <b>40~50%</b> · BBU <b>21700 Tabless·NCA</b> 공개. 기존 260901 미팅의 4Q26 출하 언급과 외부 자료의 7월 생산 개시는 단계·SKU가 달라 <a href="global_battery_map.html#bbu-factories">별도 이력으로 관리</a></li>
+<li><span class="hl-a">생산거점</span>: <b>말레이시아 거점에 BBU향 셀 생산능력 집중</b> — 소형전지 말레이시아 CAPA 13.0 → 2028E 20.0 → 2029E 25.0 GWh · 기존 미팅 기준 <b>2개 라인 신/증설 여력</b>. 이는 확정 BBU 전용 CAPA·양산 실적이 아니며 BBU 배정량은 미확인</li>
+<li>Panasonic: BBU 셀 출력 80W→120W→200W 초과 로드맵, 셀·모듈·시스템 수직계열화와 CBU 개발. 제품별 집전 구조·양산 사양은 별도 확인</li>
 <li><span class="hl-g">LG에너지솔루션</span>: 탭리스 2170 연내 오창 양산·BBU 전용 셀 개발 중(2Q26 컨콜)</li>
 </ul>
 
@@ -1145,8 +1156,8 @@ SpaceX 우주 데이터센터 '27년 1GW→'29년 10GW 계획(언론종합), 원
 <div class="kp-row">
 <div class="kp-col">
 <strong>공급 (북미 과점)</strong>
-<span class="kp-tag leader">삼성SDI</span> BBU향 18650 점유율 50% 이상 · 21700 Tabless 공개<br>
-<span class="kp-tag leader">Panasonic</span> 북미 BBU 공동 공급 · Tabless는 Tesla EV향 4680 적용 예정
+<span class="kp-tag leader">삼성SDI</span> 배터리 시장 40~50%(회사 발언) · 21700 Tabless 공개<br>
+<span class="kp-tag leader">Panasonic</span> 분산전원 시스템 약 80%(회사 조사, 2025.12 기준) · 셀 점유율과 구분
 </div>
 <div class="kp-col">
 <strong>생산거점</strong>

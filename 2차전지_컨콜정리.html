@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2차전지 컨콜 정리 20260517</title>
+<title>2차전지 컨콜 정리 · BBU 보완 20261009</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
@@ -41,6 +41,7 @@ hr.dv{border:none;border-top:1px solid var(--line);margin:28px 0}
 .fw{font-weight:600;color:var(--ink)}
 @media(max-width:640px){.w{padding:0}table{font-size:11px}thead th,tbody td{padding:6px 5px}.dg{grid-template-columns:1fr}}
 </style>
+<link rel="stylesheet" href="assets/bbu-research.css?v=20261009">
 </head>
 <body>
 <div class="page-wrap">
@@ -74,6 +75,16 @@ hr.dv{border:none;border-top:1px solid var(--line);margin:28px 0}
 <div style="display:inline-block;margin-top:8px;padding:3px 12px;background:var(--bg-soft);border:1px solid var(--line);border-radius:14px;font-size:11px;font-family:var(--mono);color:var(--cy)">2026.05.02</div>
 </div>
 
+<section class="bbu-panel" id="bbu-earnings"><span class="bbu-kicker">AI 전력용 배터리 · 검토 2026.10.09</span><h2>BBU 기업 발언과 이익 연결</h2>
+<div class="bbu-scroll"><table><thead><tr><th>회사·기준일</th><th>확인된 발언 / 자료</th><th>투자 모델 반영</th></tr></thead><tbody>
+<tr><th>삼성SDI · 1Q26</th><td>2026년 BBU 배터리 시장 약 8억 USD, +70% 이상 전망</td><td>시장 전망. SDI 매출이나 시스템 시장으로 읽지 않음</td></tr>
+<tr><th>삼성SDI · 2026.07.30</th><td>UPS·BBU 배터리 각각 2026년 매출 +70% 이상 전망, 각 시장 점유율 약 40~50%. 까다로운 인증·상대적으로 높은 수익성 설명</td><td>연간 전망과 확정 실적 구분. 금액/물량 점유율 분모·정확한 OPM 미공개</td></tr>
+<tr><th>삼성SDI · 말레이시아</th><td>BBU용 원통형 셀 거점. 21700 제품·양산 시점 자료는 <a href="global_battery_map.html#bbu-factories">생산거점 표</a> 참조</td><td>전용 CAPA·배정 비중·가동률 확인 후 회사 출하 상한 계산</td></tr>
+<tr><th>Panasonic · 2026.03.25</th><td>데이터센터 분산전원 시스템 약 80%(2025.12 회사 조사)</td><td>셀 점유율과 분모 다름. 셀·모듈·시스템 역할 구분</td></tr>
+<tr><th>LG에너지솔루션 · 2Q26</th><td>기존 컨콜 기록: 고출력 탭리스 2170·BBU용 개발 및 양산 추진</td><td>제품 개발→고객 인증→양산→실제 출하를 구분. 확인 전 점유율·매출 부여 안 함</td></tr></tbody></table></div>
+<p><b>이익 연결:</b> 선택 코호트의 공급 반영 셀 매출 × 가정 OPM. EV 손실과 비교할 때 기간·통화 기준을 맞춥니다. 기존 사업 이익과 중복 합산하지 않으며 BBU 전체·전사 이익으로 확대 해석하지 않습니다.</p>
+<p class="bbu-note">출처: <a href="https://earningscalls.dev/transcripts/samsung-sdi-co-ltd_a006400_earnings_call_transcript_2026-04-28">삼성SDI 1Q26 발언록</a> · <a href="https://www.roic.ai/quote/006400.KS/transcripts/2026-year/2-quarter">삼성SDI 2Q26 발언록</a> · <a href="https://news.panasonic.com/global/stories/18524">Panasonic 발표</a>. 아래 1Q26 기존 기록은 당시 기준으로 보존합니다.</p>
+<a href="battery_scenario.html#bbu-model">공급 상한·OPM 민감도·투자 가설 점검표</a></section>
 <!-- ========== 5월 2주 업데이트 LOG ========== -->
 <div style="background:var(--bg-card);border:1px solid var(--line);border-left:4px solid #3b82f6;border-radius:8px;padding:16px 20px;margin-bottom:24px;font-size:11px;color:var(--ink-2);line-height:1.8">
 <div style="font-size:13px;font-weight:700;color:#3b82f6;margin-bottom:10px">📝 5월 2주 업데이트 (2026.05.17)</div>
@@ -118,20 +129,20 @@ hr.dv{border:none;border-top:1px solid var(--line);margin:28px 0}
 </div>
 
 <!-- ========== 특이점 1 ========== -->
-<div class="ih"><div class="in n1">01</div><div class="it">삼성SDI가 BBU·DC ESS를 원형 배터리의 "새로운 본업"으로 재정의하기 시작함</div></div>
+<div class="ih"><div class="in n1">01</div><div class="it">삼성SDI의 AI 전력용 배터리 확대 — BBU 원통형과 대형 ESS 구분</div></div>
 <div class="ib">
-<p>1Q26에서 갑자기 DC향 ESS(CAGR 30%+), 마이크로그리드(CAGR 60%+), BBU($8억, YoY+70%)를 별도 세그먼트로 꺼내면서 탭리스 비중을 3~4%→20%+로 올리겠다고 언급.</p>
-<p>SDI가 원형 배터리 사업의 중심축을 EV에서 AI 인프라(BBU·DC 전력)로 옮기고 있다는 <span class="hl">전략적 전환 신호</span>.</p>
+<p>1Q26에서 갑자기 DC향 ESS(CAGR 30%+), 마이크로그리드(CAGR 60%+), BBU 배터리 시장(2026E $8억, YoY+70% 이상)를 별도 세그먼트로 꺼내면서 탭리스 비중을 3~4%→20%+로 올리겠다고 언급.</p>
+<p>BBU는 고출력 원통형의 수요 확대 기회이며, DC향 대형 ESS는 제품·생산거점이 별개입니다. AI 전력 수요의 수혜를 사업별로 나눠 확인합니다.</p>
 <table><thead><tr><th>세그먼트</th><th>2025년</th><th>2030년</th><th>CAGR</th></tr></thead>
 <tbody>
 <tr><td>미국 전체 ESS</td><td class="m">90GWh</td><td class="m">160GWh</td><td class="m">12%</td></tr>
 <tr><td>DC향 ESS</td><td class="m">9GWh</td><td class="m g">40GWh+</td><td class="m g">30%+</td></tr>
 <tr><td>마이크로그리드</td><td class="m">소규모</td><td class="m">—</td><td class="m g">60%+</td></tr>
-<tr><td>BBU 시장</td><td colspan="2" class="m">2026년 ~$8억</td><td class="m g">YoY +70%</td></tr>
+<tr><td>BBU 배터리 시장 전망</td><td colspan="2" class="m">2026년 ~$8억</td><td class="m g">YoY +70%</td></tr>
 </tbody></table>
 </div>
 <div class="op"><div class="op-l">개인 의견</div>
-SPE1 라인 1개(8GWh)가 BBU 라인으로 배정된 것으로 파악됨.<br>커버리지 종목 중 한중엔시에스(SBB 냉각)와 서진시스템(SBB 인클로저)의 TAM이 기존 "전력망 ESS" 시나리오보다 훨씬 더 커질 수 있다는 뜻.
+<b>2026.10.09 정정:</b> 기존의 “SPE1 8GWh를 BBU에 배정” 해석은 근거 재확인 전 BBU 계산에서 제외합니다. 미국 SPE의 대형 ESS·SBB와 말레이시아의 BBU 원통형 셀을 구분합니다.<br>아래 한중엔시에스·서진시스템 원단위는 기존 <b>SBB용 추정</b>이며 랙 BBU 공급 실적·TAM으로 전용하지 않습니다.
 <table><thead><tr><th>종목</th><th>역할</th><th>1GWh당 매출</th></tr></thead>
 <tbody><tr><td class="fw">서진시스템</td><td>SBB 인클로저 + 최종 조립</td><td class="m g">~350억원</td></tr>
 <tr><td class="fw">한중엔시에스</td><td>SBB 수냉식 냉각시스템</td><td class="m g">~180억원</td></tr></tbody></table></div>
@@ -247,7 +258,7 @@ SPE1 라인 1개(8GWh)가 BBU 라인으로 배정된 것으로 파악됨.<br>커
 <div class="dg">
 <div class="di new"><div class="dl">LGES 46시리즈</div><div class="dv2">440GWh+ · 3종 라인업</div><div class="dd">유럽 OEM 대규모 수주</div></div>
 <div class="di new"><div class="dl">SDI DC ESS</div><div class="dv2">DC 30%+ · 마이크로 60%+</div><div class="dd">3개 세그먼트 분리</div></div>
-<div class="di new"><div class="dl">SDI BBU</div><div class="dv2">$8억 YoY+70%</div><div class="dd">CSP 직접 조달 트렌드</div></div>
+<div class="di new"><div class="dl">BBU 배터리 시장 전망</div><div class="dv2">2026E $8억 YoY+70%</div><div class="dd">SDI 1Q26 발언 · 회사 매출 아님</div></div>
 <div class="di new"><div class="dl">엘앤에프 무전구체</div><div class="dv2">Fe₂O₃ 직접 LFP · 27년</div><div class="dd">FEOC + 원가 동시 해소</div></div>
 <div class="di new"><div class="dl">SDI Mercedes</div><div class="dv2">공급 계약 체결</div><div class="dd">"상반기 성과" 예고 실현</div></div>
 <div class="di new"><div class="dl">이란 전쟁</div><div class="dv2">3사 공통 긍정 해석</div><div class="dd">고유가→EV/ESS 촉진</div></div>
