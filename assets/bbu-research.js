@@ -83,6 +83,7 @@
   <p>선택한 GPU 세대·출하 기간의 NVL72만 분석합니다. 첨부 출하 추정치 외에 출처 없는 기본값은 넣지 않습니다. 보호 부하·백업시간·셀 사양·공급능력·가격·이익률은 해당 고객과 제품의 근거가 확인될 때 입력합니다.</p>
   <p class="bbu-warning"><b>현재 확정 계산 불가:</b> 블랙웰·루빈의 고객별 BBU 보호 범위·사양과 SDI BBU 전용 CAPA·ASP·이익률이 확인되지 않았습니다. 종전 임의 예시와 그 예시의 셀 수요·매출·이익 결과는 투자 추정치로 사용하지 않습니다.</p>
   <p><b>정전 백업의 범위:</b> BBU는 연결된 전원영역의 IT 부하에 전력을 공급해 전원 전환·작업 종료 시간을 확보합니다. <a href="https://www.opencompute.org/documents/open-rack-v3-bbu-shelf-spec-rev1-1-pdf-1">OCP ORv3 §4</a>는 공통 버스의 랙 내 IT 장비 전체를 백업하는 설계를 설명합니다. 데이터센터 냉각 등 시설 부하까지 포함하는 뜻은 아닙니다. 특정 랙의 전체/일부 보호 여부와 정전 중 부하 제한은 해당 설계자료로 확인해야 합니다.</p>
+  <p class="bbu-note"><a href="battery_tech.html#bbu-800v-evidence">800VDC 전력 경로·MLCC 순증 검토</a>: 첨부 Kyber 600kW와 MLCC 수량은 BBU 보호 부하·셀 수의 근거로 자동 적용하지 않습니다.</p>
   <form id="bbu-form"><div class="bbu-input-grid"><label>분석 기간<select name="period">${Object.entries(periods).map(([k,v])=>`<option value="${k}">${v.label}</option>`).join('')}</select></label><label>플랫폼<select name="platform">${Object.entries(shipments).map(([k,v])=>`<option value="${k}">${v.label}</option>`).join('')}</select></label></div>
   <div class="bbu-actions"><button type="reset">직접 입력 지우기</button><span data-bbu-mode>출하 추정치 외 입력 미확인 · 임의 기본값 없음</span></div>
   <div class="bbu-scroll"><table><thead><tr><th>여섯 변수</th><th>현재 근거</th><th>적용 기준</th></tr></thead><tbody>

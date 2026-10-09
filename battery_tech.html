@@ -1143,6 +1143,21 @@ SpaceX 우주 데이터센터 '27년 1GW→'29년 10GW 계획(언론종합), 원
 <p><b>보호 범위:</b> BBU의 기본 역할은 정전 시 연결된 IT 부하에 전력을 공급해 전원 전환·작업 종료 시간을 확보하는 것입니다. <a href="https://www.opencompute.org/documents/open-rack-v3-bbu-shelf-spec-rev1-1-pdf-1">OCP ORv3 BBU Shelf §4</a>에는 공통 버스의 랙 내 IT 장비 전체를 백업하는 설계가 명시돼 있습니다. 항상 일부만 보호한다고 단정할 수 없으며, 시설 전체 부하와도 다릅니다. 블랙웰·루빈의 정격 전력에 임의 보호 비율을 곱하지 않고 실제 전원 구성·정전 시 부하·백업시간을 확인합니다.</p>
 <p class="bbu-note">기업 발표: <a href="https://news.samsungsdi.com/ko/articleView?seq=428">삼성SDI 2026.03.13</a> · <a href="https://samsungsdi.co.kr/sdi-now/sdi-news/4781.html?idx=4781">삼성SDI NCA/LMO 구분 2026.03.09</a> · <a href="https://news.panasonic.com/global/stories/18524">Panasonic CBU 2026.03.25</a> · <a href="https://www.murata.com/en-global/products/capacitor/ceramiccapacitor/library/solution/non-mlcc">Murata MLCC</a> · <a href="https://www.opencompute.org/documents/open-rack-v3-bbu-module-spec-1-4-pdf">OCP 모듈</a> · <a href="https://www.compuware-us.com/landingpage/CBR-3332-1S1">Compuware 33kW 제품</a></p>
 <a href="battery_scenario.html#bbu-model">출력·백업시간·셀 성능 민감도 계산</a></section>
+<section class="bbu-panel" id="bbu-800v-evidence"><span class="bbu-kicker">800VDC · 첨부 전력 경로 자료 검토 · 2026.10.09</span><h2>800V 전환과 MLCC 순증 수요</h2>
+<p><b>전력 경로는 설명할 수 있지만, 추가 MLCC 개수는 아직 미확인입니다.</b> NVIDIA의 2025.05.20 공개 개념도는 800V 배전 → 랙 내 54V/12V DC/DC → GPU 코어 전압을 제시합니다. ROHM 백서는 800V→50V 변환을 검토합니다. 첨부 자료의 800V→50V→12V→0.7V는 하나의 분석 구성으로, 특정 Kyber 양산품의 확정 회로로 간주하지 않습니다.</p>
+<div class="bbu-scroll"><table><thead><tr><th>구간·부품</th><th>수요를 확인할 위치</th><th>BBU와 연결하는 기준</th></tr></thead><tbody>
+<tr><th>800V 배전·DC/DC</th><td>고전압 스위칭 회로의 필터·공진·스너버. MLCC·필름 등 실제 부품 종류와 SKU별 BOM 확인</td><td>배전 전압과 랙 정격만으로 배터리 용량·보호 부하를 확정할 수 없음</td></tr>
+<tr><th>저전압 VRM·GPU 주변</th><td>디커플링·전압 안정화. 기존 54V 구성에도 있던 부품을 전량 신규 수요로 계산하지 않음</td><td>MLCC 개수를 BBU 셀 수나 저장 용량으로 환산하지 않음</td></tr>
+<tr><th>CBU·BBU</th><td>연결 위치·백업 대상·전원 전환 조건·부하 변동 대응을 고객 설계로 확인</td><td>CBU는 장치, MLCC는 부품 종류. CBU의 저장소자를 모두 MLCC로 간주하지 않음</td></tr></tbody></table></div>
+<p><b>순증 산식:</b> 같은 GPU 구성·부하·백업 조건에서 <b>800V 구성 전체의 MLCC 수 − 기존 구성 전체의 MLCC 수</b>. 랙 밖으로 이동한 전력변환 장비도 같은 범위에 포함합니다. 이후 실제 랙 수로 확장하며, 공유 전원장치의 정수 수량·예비 구성은 별도로 산정합니다.</p>
+<details><summary>첨부 자료에서 추가 확인할 근거</summary><ul>
+<li>600kW·144 패키지/576 다이·10kW IBC 60개는 첨부 분석의 기준입니다. 최신 고객·OEM 사양과 대조 전에는 BBU 계산의 기본값으로 사용하지 않습니다.</li>
+<li>MLCC/Q의 “Vendor benchmark”에 문서명·부품번호·페이지가 없고, 연결된 “Excel sheet ③” 원본도 이 HTML에 포함되어 있지 않습니다. 표시용 MLCC/cap은 미리 정한 총수량을 cap 수로 나눈 역산값이므로 독립적인 BOM 근거가 아닙니다.</li>
+<li>SST 디커플링·PFC·LLC 및 IBC 항목은 회로 범위가 겹칩니다. CBU 항목에는 VRM 수량도 포함됩니다. 회로별 부품 식별자로 중복 여부를 먼저 확인해야 합니다.</li>
+<li>POD 32랙·SITE 128랙, 평균 MLCC 가격과 연간 사이트 수는 첨부 자료의 가정입니다. 확정 수량·시장 규모에 자동 적용하지 않습니다.</li>
+</ul></details>
+<p class="bbu-note">원자료: 사용자 제공 vrultra_kyber_800vdc_routing.html. 공개 근거: <a href="https://developer.nvidia.com/blog/nvidia-800-v-hvdc-architecture-will-power-the-next-generation-of-ai-factories/">NVIDIA 800VDC 개념도 · 2025.05.20, Figure 3</a> · <a href="https://fscdn.rohm.com/en/products/databook/white_paper/common/800vdc_architecture_solution_for_ai_server_wp-e.pdf">ROHM 백서 · §3-4, p.13</a> · <a href="https://www.murata.com/en-eu/s/blog/power-delivery-for-ai-processors-why-it-has-become-a-critical-engineering-challenge.html">Murata 프로세서 전력 공급·디커플링</a>. 이 공개 자료는 첨부 MLCC 수량을 검증하는 BOM이 아닙니다.</p>
+<a href="battery_scenario.html#bbu-model">보호 범위·근거를 확인한 BBU 수요 계산</a></section>
 <h3>BBU 적용 맥락 — 왜 BBU(Battery Backup Unit)에서 21700 Tabless인가</h3>
 <ul>
 <li><span class="hl-a">시장 구조</span>: <b>셀과 시스템의 시장을 분리</b>해 비교. 18650 중심의 기존 시장에서 21700 고출력 셀로 전환 중이며, 기업별 점유율의 제품·지역·금액/물량 분모 확인 필요</li>
