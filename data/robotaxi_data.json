@@ -1,6 +1,27 @@
 {
-  "syncedAt": "2026-10-09T00:41:33.780Z",
+  "syncedAt": "2026-10-09T05:57:25.635Z",
   "metrics": {
+    "texas_dmv_cybercab": {
+      "key": "texas_dmv_cybercab",
+      "value": 319,
+      "unit": "대",
+      "date": "2026-10-09",
+      "note": "TxDMV 등록 VIN 차종별 직접 집계. 사용자 제공 Sawyer Merritt 게시물의 직전 169대 대비 +150(+88.8%, 1.89배); 등록 합계 739대 중 43.2%. 실제 상업 운행·생산량 아님. 2026-10-09 확인."
+    },
+    "texas_dmv_model_y": {
+      "key": "texas_dmv_model_y",
+      "value": 420,
+      "unit": "대",
+      "date": "2026-10-09",
+      "note": "TxDMV Tesla Robotaxi, LLC 등록 VIN 차종별 직접 집계. 사용자 제공 직전 수치와 동일. Cybercab 319대와 합산 시 Texas 등록 총 739대. 실제 운행 대수 아님. 2026-10-09 확인."
+    },
+    "texas_dmv_registered": {
+      "key": "texas_dmv_registered",
+      "value": 739,
+      "unit": "대",
+      "date": "2026-10-09",
+      "note": "TxDMV Tesla Robotaxi, LLC 차량 목록 739개 고유 VIN 직접 집계(2026-10-09): Model Y 420 + Cybercab 319. 제공된 직전 589대 대비 +150(+25.5%). 등록 대수이며 실제 운행·30일 활성·트래커 전체와 별도. 출처: https://txmccs.txdmv.gov/truckstop/companies/81edcff1-8a6e-4ed0-be1f-60668515e223/automated-motor-vehicles"
+    },
     "houston_active": {
       "key": "houston_active",
       "value": 16,
@@ -78,13 +99,6 @@
       "date": "2026-09-20",
       "note": "마일/일 (공식 카운터 증가 속도 실측 404/초, 9/20) · 9/4→9/20 누적 증가분 평균 35.4M/일과 부합 · 도심 14.4M/일"
     },
-    "texas_dmv_registered": {
-      "key": "texas_dmv_registered",
-      "value": 448,
-      "unit": "대",
-      "date": "2026-09-20",
-      "note": "TX DMV 등록 = Model Y 390 + Cybercab 58 · 최근 30일 +262 · 추적 번호판 매칭 265 · 9/4 420대 · 9/20"
-    },
     "dallas_active": {
       "key": "dallas_active",
       "value": 42,
@@ -122,6 +136,32 @@
     }
   },
   "history": {
+    "texas_dmv_cybercab": [
+      {
+        "date": "2026-10-09",
+        "value": 319
+      }
+    ],
+    "texas_dmv_model_y": [
+      {
+        "date": "2026-10-09",
+        "value": 420
+      }
+    ],
+    "texas_dmv_registered": [
+      {
+        "date": "2026-09-04",
+        "value": 420
+      },
+      {
+        "date": "2026-09-20",
+        "value": 448
+      },
+      {
+        "date": "2026-10-09",
+        "value": 739
+      }
+    ],
     "houston_active": [
       {
         "date": "2026-07-20",
@@ -282,16 +322,6 @@
       {
         "date": "2026-09-20",
         "value": 34.9
-      }
-    ],
-    "texas_dmv_registered": [
-      {
-        "date": "2026-09-04",
-        "value": 420
-      },
-      {
-        "date": "2026-09-20",
-        "value": 448
       }
     ],
     "dallas_active": [
@@ -643,6 +673,12 @@
       "desc": "무감독 플릿 309대로 확대(9/4 214대) — Austin 198·Dallas 51·Houston 32·Tampa 14·Miami 4·Orlando 3, 30일 활성 234대 · TX DMV 등록 448대(Model Y 390 + Cybercab 58, 최근 30일 +262) · FSD 누적 14.69B마일·일 약 35M마일 (robotaxitracker.com·tesla.com/fsd/safety 9/20 확인)",
       "category": "fleet",
       "priority": "normal"
+    },
+    {
+      "date": "26.10.09",
+      "desc": "TX DMV 등록 총 739대 = Model Y 420 + Cybercab 319 (739개 고유 VIN 직접 확인). 사용자 제공 직전 게시물 대비 Cybercab 169→319대(+150, +88.8%, 1.89배), 전체 589→739대(+25.5%). 등록 대수이며 실제 상업 운행·30일 활성·누적 생산량과 별도. 출처: Texas DMV Tesla Robotaxi, LLC 차량 목록(2026-10-09).",
+      "category": "fleet",
+      "priority": "high"
     }
   ]
 }
