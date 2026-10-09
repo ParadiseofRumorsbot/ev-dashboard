@@ -1,8 +1,17 @@
 (function(root){
   'use strict';
-  const periods={y2025:{label:'2025년 · 공개 분기 합계',year:2025,fraction:1},q126:{label:'2026년 1분기',year:2026,fraction:.25},q226:{label:'2026년 2분기 · 잠정/불완전',year:2026,fraction:.25},y2026:{label:'2026년 연간 · 자체 전망',year:2026,fraction:1},y2027:{label:'2027년 · 자체 전망',year:2027,fraction:1},y2028:{label:'2028년 · 자체 전망',year:2028,fraction:1},y2029:{label:'2029년 · 자체 전망',year:2029,fraction:1},y2030:{label:'2030년 · 자체 전망',year:2030,fraction:1}};
+  const periods={y2025:{label:'2025년 · 첨부 출하 추정 합계',year:2025,fraction:1},q126:{label:'2026년 1분기',year:2026,fraction:.25},q226:{label:'2026년 2분기 · 잠정/불완전',year:2026,fraction:.25},y2026:{label:'2026년 연간 · 자체 전망',year:2026,fraction:1},y2027:{label:'2027년 · 자체 전망',year:2027,fraction:1},y2028:{label:'2028년 · 자체 전망',year:2028,fraction:1},y2029:{label:'2029년 · 자체 전망',year:2029,fraction:1},y2030:{label:'2030년 · 자체 전망',year:2030,fraction:1}};
   // Units are physical accelerators, not H100-equivalent compute or GB superchips.
   const shipments={b200:{label:'B200 계열 → GB200 NVL72',firstYear:2024,y2025:1720485,q126:347290,q226:90245},b300:{label:'B300 계열 → GB300 NVL72',firstYear:2025,y2025:1501441,q126:992874,q226:311796},rubin:{label:'Rubin NVL72 · 물량 직접 입력',firstYear:2026,y2025:null,q126:null,q226:null}};
+  const hpeReference={gpus:72,busV:50,nominalKW:132,peakKW:155,powerShelves:8,powerShelfKW:33,provisionKW:192,source:'https://www.hpe.com/us/en/collaterals/collateral.a50009244enw.html'};
+  const bbuReference={model:'Compuware CBR-3332-1S1',busV:50,moduleKW:5.5,modulesPerShelf:6,maxShelves:4,seconds:90,source:'https://www.compuware-us.com/landingpage/CBR-3332-1S1'};
+  // Product-level comparison only: no claim of HPE qualification, installation or cell BOM.
+  function calculateShelfReference(shelves){
+    if(!Number.isInteger(shelves)||shelves<1||shelves>bbuReference.maxShelves)throw new RangeError('비교 선반 수는 1~4개');
+    const modules=shelves*bbuReference.modulesPerShelf;
+    const backupKW=modules*bbuReference.moduleKW,oneOutKW=(modules-shelves)*bbuReference.moduleKW;
+    return {shelves,modules,backupKW,oneOutKW,deliveredKWh:backupKW*bbuReference.seconds/3600,oneOutKWh:oneOutKW*bbuReference.seconds/3600};
+  }
   const fields={
     chips:['칩 출하량 (개)',0,null],rackShare:['NVL72 공급 비중 (%)',0,100],attach:['선택한 NVL72의 BBU 탑재율 (%)',0,100],
     power:['정전 시 BBU가 담당하는 부하 (kW/랙)',0,null],seconds:['해당 부하에서 요구하는 백업 시간 (초)',1,null],cellW:['셀 정격 출력 (W)',1,null],cellWh:['셀 명목 용량 (Wh)',.01,null],
@@ -28,8 +37,8 @@
     const hasProtectionEvidence=['protectionScope','protectionSource'].every(k=>typeof input[k]==='string'&&input[k].trim().length>0);
     if(!hasProtectionEvidence)missing.push('BBU 보호 전원영역과 부하·시간의 근거 자료');
     if(hasProtectionEvidence&&out.backedRacks!==null&&requireKeys(['power']))out.backedMW=out.backedRacks*a.power/1000;
-    if(hasProtectionEvidence&&requireKeys(['power','seconds','cellW','cellWh','powerFactor','energyFactor','reserve'])){
-      out.deliveredKWh=a.power*a.seconds/3600;
+    if(hasProtectionEvidence&&requireKeys(['power','seconds']))out.deliveredKWh=a.power*a.seconds/3600;
+    if(out.deliveredKWh!==null&&requireKeys(['cellW','cellWh','powerFactor','energyFactor','reserve'])){
       const byPower=a.power*1000/(a.cellW*a.powerFactor/100);
       const byEnergy=out.deliveredKWh*1000/(a.cellWh*a.energyFactor/100);
       out.limiting=byPower>=byEnergy?'출력':'에너지';
@@ -70,7 +79,7 @@
     const specs=[['기준',null,0],['BBU 탑재율 −10%p','attach',-10],['BBU 탑재율 +10%p','attach',10],['백업 시간 ×0.5','seconds',.5],['백업 시간 ×2','seconds',2],['셀 출력 +20%','cellW',1.2],['셀 가격 −10%','asp',.9],['셀 가격 +10%','asp',1.1],['가동률 +10%p','utilization',10],['영업이익률 −5%p','margin',-5],['영업이익률 +5%p','margin',5]];
     return specs.map(([label,key,value])=>{const b={...a};if(key&&number(a[key])!==null)b[key]=['attach','utilization','margin'].includes(key)?Math.max(key==='margin'?-100:0,Math.min(100,Number(a[key])+value)):Number(a[key])*value;return {label,...calculate(b)};});
   }
-  const api={calculate,sensitivity,periods,shipments};
+  const api={calculate,sensitivity,periods,shipments,hpeReference,bbuReference,calculateShelfReference};
   if(typeof module!=='undefined'&&module.exports)module.exports=api;
   if(!root.document)return;
   root.BBUModel=api;
@@ -79,21 +88,32 @@
   const fmt=(v,d=1)=>v===null||!Number.isFinite(v)?'미확인':v.toLocaleString('ko-KR',{maximumFractionDigits:d});
   const input=k=>`<label>${fields[k][0]}<input type="number" name="${k}" min="${fields[k][1]}" ${fields[k][2]===null?'':`max="${fields[k][2]}"`} step="any" placeholder="미확인"></label>`;
   const group=(title,keys,note)=>`<fieldset><legend>${title}</legend><div class="bbu-input-grid">${keys.map(input).join('')}</div><p class="bbu-note">${note}</p></fieldset>`;
-  el.innerHTML=`<div class="bbu-heading"><div><span class="bbu-kicker">AI 전력용 배터리 · 검토 2026.10.09</span><h2>BBU 수요와 삼성SDI 공급·이익 시나리오</h2></div><a href="global_battery_map.html#bbu-factories">말레이시아 생산거점</a></div>
-  <p>선택한 GPU 세대·출하 기간의 NVL72만 분석합니다. 첨부 출하 추정치 외에 출처 없는 기본값은 넣지 않습니다. 보호 부하·백업시간·셀 사양·공급능력·가격·이익률은 해당 고객과 제품의 근거가 확인될 때 입력합니다.</p>
-  <p class="bbu-warning"><b>현재 확정 계산 불가:</b> 블랙웰·루빈의 고객별 BBU 보호 범위·사양과 SDI BBU 전용 CAPA·ASP·이익률이 확인되지 않았습니다. 종전 임의 예시와 그 예시의 셀 수요·매출·이익 결과는 투자 추정치로 사용하지 않습니다.</p>
+  el.innerHTML=`<div class="bbu-heading"><div><span class="bbu-kicker">AI 전력용 배터리 · 검토 2026.10.09</span><h2>HPE GB300 기준 BBU 수요·공급·이익</h2></div><a href="global_battery_map.html#bbu-factories">말레이시아 생산거점</a></div>
+  <p>대표 랙은 <b>HPE GB300 NVL72</b>입니다. HPE의 공식 랙 사양과 Compuware의 공개 BBU 사양으로 제품 단위 출력을 비교합니다. 실제 HPE 채택·호환 및 보호 부하는 미확인으로, 아래 비교표를 HPE 확정 구성이나 셀 수요로 자동 전환하지 않습니다.</p>
+  <div class="bbu-reference"><h3>① 대표 랙 · HPE 공식 사양</h3>
+  <div class="bbu-results"><div><span>GPU / 랙</span><strong>${hpeReference.gpus}개</strong><small>Blackwell Ultra</small></div><div><span>DC 버스</span><strong>${hpeReference.busV}V</strong><small>800V Kyber와 별도</small></div><div><span>설계전력 (TDP)</span><strong>${hpeReference.nominalKW}kW</strong><small>BBU 보호 부하 미확인</small></div><div><span>피크 전력 (EDPp)</span><strong>약 ${hpeReference.peakKW}kW</strong><small>설계전력과 구분</small></div></div>
+  <p>전원 선반 ${hpeReference.powerShelfKW}kW × ${hpeReference.powerShelves}개 = <b>${hpeReference.powerShelfKW*hpeReference.powerShelves}kW PSU 정격 합계</b> / 시설 버스웨이 권고 ${hpeReference.provisionKW}kW. 전원 선반 개수는 BBU 개수가 아닙니다. Power-Capacitance Shelf Kit도 배터리 선반으로 집계하지 않습니다.</p>
+  <p class="bbu-note">출처: <a href="${hpeReference.source}">HPE QuickSpecs V3 · 2026.09.08</a>, Standard Features / Power Delivery and Requirements. HPE BBU 셀·선반 수·백업시간은 이 자료에서 확인되지 않습니다.</p>
+  <h3>② 공개 BBU 제품으로 재계산 · HPE 탑재 구성 미확인</h3>
+  <p><a href="${bbuReference.source}">${bbuReference.model}</a>: ${bbuReference.busV}V, 선반당 ${bbuReference.moduleKW}kW 모듈 ${bbuReference.modulesPerShelf}개, 백업 ${bbuReference.seconds}초, 최대 ${bbuReference.maxShelves}개 선반 병렬. 선반 수별 제품 출력 합산이며 전압 일치만으로 HPE 호환이 확인되는 것은 아닙니다.</p>
+  <div class="bbu-scroll"><table data-bbu-shelf-reference><thead><tr><th>BBU 선반</th><th>배터리 모듈</th><th>전 모듈 정상 출력</th><th>90초 전달 에너지</th><th>선반마다 모듈 1개 이탈 시<br>출력 / 90초 에너지</th></tr></thead><tbody>${Array.from({length:bbuReference.maxShelves},(_,i)=>calculateShelfReference(i+1)).map(r=>`<tr><th>${r.shelves}개</th><td>${r.modules}개</td><td>${fmt(r.backupKW)}kW</td><td>${fmt(r.deliveredKWh,4)}kWh</td><td>${fmt(r.oneOutKW)}kW / ${fmt(r.oneOutKWh,4)}kWh</td></tr>`).join('')}</tbody></table></div>
+  <p><b>4개 선반 = 24개 배터리 모듈 · 132kW · 90초 · 3.3kWh 전달.</b> 정격 출력이 HPE 설계전력과 수치상 같아도 약 155kW 피크 대응은 단시간 과부하 허용치와 지속시간을 추가 확인해야 합니다. 선반마다 모듈 1개 이탈 시 110kW·2.75kWh로 내려갑니다. 실제 적용에는 보호 범위·설치 공간·전원 제어 검증이 필요합니다.</p>
+  <p class="bbu-note">전달 에너지 = 출력 × 90 ÷ 3,600. 3.3kWh는 배터리 명목 용량이 아니며, 24개는 셀이 아닌 모듈 수입니다. 셀 BOM 미공개로 셀 수·명목 GWh·SDI 매출은 산정하지 않습니다. 정전 시 IT 보호 부하와 시설 냉각 전력도 구분합니다.</p></div>
+  <p class="bbu-warning"><b>확인 후 연결할 항목:</b> HPE 실제 BBU 탑재율·보호 부하·셀 BOM과 SDI 공급 점유율·전용 CAPA·ASP·이익률. 아래 시장 계산기에 132kW·90초·100% 탑재율을 자동 입력하지 않습니다.</p>
   <p><b>정전 백업의 범위:</b> BBU는 연결된 전원영역의 IT 부하에 전력을 공급해 전원 전환·작업 종료 시간을 확보합니다. <a href="https://www.opencompute.org/documents/open-rack-v3-bbu-shelf-spec-rev1-1-pdf-1">OCP ORv3 §4</a>는 공통 버스의 랙 내 IT 장비 전체를 백업하는 설계를 설명합니다. 데이터센터 냉각 등 시설 부하까지 포함하는 뜻은 아닙니다. 특정 랙의 전체/일부 보호 여부와 정전 중 부하 제한은 해당 설계자료로 확인해야 합니다.</p>
   <p class="bbu-note"><a href="battery_tech.html#bbu-800v-evidence">800VDC 전력 경로·MLCC 순증 검토</a>: 첨부 Kyber 600kW와 MLCC 수량은 BBU 보호 부하·셀 수의 근거로 자동 적용하지 않습니다.</p>
-  <form id="bbu-form"><div class="bbu-input-grid"><label>분석 기간<select name="period">${Object.entries(periods).map(([k,v])=>`<option value="${k}">${v.label}</option>`).join('')}</select></label><label>플랫폼<select name="platform">${Object.entries(shipments).map(([k,v])=>`<option value="${k}">${v.label}</option>`).join('')}</select></label></div>
+  <h3>③ 랙 출하에서 셀 수요까지 · 근거 확인 후 계산</h3>
+  <form id="bbu-form"><div class="bbu-input-grid"><label>분석 기간<select name="period">${Object.entries(periods).map(([k,v])=>`<option value="${k}">${v.label}</option>`).join('')}</select></label><label>플랫폼<select name="platform">${Object.entries(shipments).map(([k,v])=>`<option value="${k}" ${k==='b300'?'selected':''}>${v.label}${k==='b300'?' · HPE 대표 사양':''}</option>`).join('')}</select></label></div>
+  <p class="bbu-note" data-bbu-hpe-shipments></p>
   <div class="bbu-actions"><button type="reset">직접 입력 지우기</button><span data-bbu-mode>출하 추정치 외 입력 미확인 · 임의 기본값 없음</span></div>
   <div class="bbu-scroll"><table><thead><tr><th>여섯 변수</th><th>현재 근거</th><th>적용 기준</th></tr></thead><tbody>
-  <tr><th>① 랙 출하량</th><td>Epoch 기반 첨부 출하표 · 2026.08.20 스냅샷</td><td>물리 칩 수 × NVL72 공급 비중 ÷ 72. 완제품 출하와 시차 존재</td></tr>
+  <tr><th>① 랙 출하량</th><td>B300 계열 첨부 추정 · HPE 72GPU/랙 참조</td><td>B300 출하 × NVL72 공급 비중 ÷ 72. 전체 제조사 시장 환산이며 HPE 실제 출하량은 아님</td></tr>
   <tr><th>② BBU 탑재율</th><td>세대 기준 외부 추정 40% / 50% / 55% (2026.09.24)</td><td>블랙웰 / 울트라 / 루빈. NVL72 전용 분모가 아니므로 자동 대입하지 않음</td></tr>
-  <tr><th>③ 출력·시간</th><td>랙 정격·GPU TDP로 BBU 보호 부하를 확정할 수 없음</td><td>보호 전원영역·정전 중 요구 kW·시간의 근거 필요. 4분 공통 규격 아님</td></tr>
+  <tr><th>③ 출력·시간</th><td>HPE 132kW / 피크 약 155kW. 비교 BBU 선반 33kW·90초</td><td>랙 전력과 BBU 보호 부하는 별도. HPE 실제 보호 범위·시간 확인 후 적용</td></tr>
   <tr><th>④ 셀 출력·용량</th><td>선택 랙의 확정 BBU BOM 미확인</td><td>출력·에너지 조건 중 큰 셀 수 + 예비분. 직병렬·전압 설계 별도 검증</td></tr>
   <tr><th>⑤ 셀 점유율·가격</th><td>삼성SDI 약 40~50% 회사 발언 (2026.07.30)</td><td>금액/물량 분모 미확인. 여기에는 물량점유율 가정을 입력; 시스템 점유율과 구분</td></tr>
   <tr><th>⑥ CBU·교체</th><td>Panasonic 7년→4~5년 단축 전망 (2025.12.05)</td><td>회사 전망. CBU 효과·교체주기는 가정; 설치연도별 셀 수 필요</td></tr></tbody></table></div>
-  ${group('①·② 랙과 BBU 채택',['chips','rackShare','attach'],'출하표의 B200/GB200·B300/GB300 중복 수치와 H100e를 합산하지 않습니다. 외부 추정과 기업 공시를 구분합니다.')}
+  ${group('①·② 랙과 BBU 채택',['chips','rackShare','attach'],'대표 사양을 HPE로 정해도 시장 전체 B300 출하량이 HPE 출하량으로 바뀌지는 않습니다. HPE만 분석하려면 HPE 배정 칩 물량을 확인해 직접 입력합니다. B200/GB200·B300/GB300 중복 수치와 H100e는 합산하지 않습니다.')}
   <fieldset><legend>③ 보호 범위와 근거 자료</legend><div class="bbu-input-grid"><label>BBU가 연결된 전원영역·장비<input name="protectionScope" type="text" maxlength="300" placeholder="해당 랙 설계자료에서 확인한 범위"></label><label>보호 부하·백업시간의 근거 자료<input name="protectionSource" type="text" maxlength="500" placeholder="고객·제품 SKU·자료명·페이지 또는 URL"></label></div><p class="bbu-note">두 항목을 모두 입력하기 전에는 BBU 출력·셀 수요·매출·이익을 계산하지 않습니다. 출처를 적는 것만으로 사양 검증이 완료되는 것은 아닙니다. 랙 120kW나 GPU TDP 합계에 임의 보호 비율을 곱하지 않습니다.</p></fieldset>
   ${group('③·④ 확인한 백업 사양과 셀',['power','seconds','cellW','cellWh','powerFactor','energyFactor','reserve'],'동일 고객·제품의 정전 시 요구 부하와 백업시간을 입력합니다. 셀 출력은 해당 방전 시간·온도·수명 조건에 맞는 값이어야 합니다. 사용 가능 비율·예비분도 설계 근거가 필요합니다. 다른 제품의 90초·4분 또는 셀 출력 로드맵을 임의로 조합하지 않습니다.')}
   ${group('⑤ 회사 셀 물량·가격',['share','asp'],'삼성SDI 셀 시장과 Panasonic 분산전원 시스템 80%는 범위가 다릅니다. 시스템 시장 금액에 셀 점유율을 곱하지 않습니다.')}
@@ -114,6 +134,8 @@
   function syncShip(){const a=read(),v=shipments[a.platform][a.period]??null;form.elements.chips.value=v===null?'':v;mode.textContent='출하 원자료 변경 · 나머지 값은 사용자 가정';}
   function render(){
     const a=read(),r=calculate(a),m=el.querySelector('[data-bbu-status]');
+    const chips=shipments.b300[a.period];
+    el.querySelector('[data-bbu-hpe-shipments]').textContent=a.platform!=='b300'?'다른 플랫폼 선택: 위 HPE GB300·Compuware 비교 사양은 이 플랫폼의 확정 구성으로 적용하지 않습니다.':chips==null?'선택 기간의 B300 출하 추정치가 없습니다. 확인한 물량을 직접 입력합니다.':`원자료 ${periods[a.period].label}: B300 ${fmt(chips,0)}개 ÷ 72 = ${fmt(chips/hpeReference.gpus,2)}랙 상당. 전량 NVL72 구성일 때의 단순 환산이며 실제 랙 출하·HPE 출하 추정이 아닙니다. 아래 공급 비중과 BBU 탑재율은 근거 확인 후 별도 입력합니다.`;
     m.textContent=r.errors.length?'입력 오류: '+r.errors.join(', '):'범위: '+periods[a.period].label+' / '+(a.replacementMode==='exclude'?'신규만·교체 제외':'입력 코호트 교체 포함')+(r.missing.length?' · 미확인 입력: '+r.missing.join(', '):' · 모든 결과는 입력한 자체 가정에 따른 시나리오');
     m.className=r.errors.length?'bbu-warning':'bbu-note';
     const data=[['NVL72 랙 환산',r.racks,'랙 상당'],['BBU 백업 출력',r.backedMW,'MW'],['랙당 필요 셀',r.cellsPerRack,'개'],['랙당 전달 에너지',r.deliveredKWh,'kWh'],['신규 셀',r.newCells===null?null:r.newCells/1e6,'백만개'],['신규 명목 용량',r.nominalGWh,'GWh'],['교체 셀'+(a.replacementMode==='exclude'?' (계산 제외)':''),r.replacementCells===null?null:r.replacementCells/1e6,'백만개'],['회사 수요',r.companyDemand===null?null:r.companyDemand/1e6,'백만개'],['배정 양품능력',r.supplyCells===null?null:r.supplyCells/1e6,'백만개'],['공급 반영 출하',r.salesCells===null?null:r.salesCells/1e6,'백만개'],['수요 기준 셀 매출',r.demandRevenue===null?null:r.demandRevenue/1e6,'백만USD'],['공급 반영 셀 매출',r.salesRevenue===null?null:r.salesRevenue/1e6,'백만USD'],['코호트 영업이익',r.opKRW,'억원'],['EV 손실 상쇄율',r.offset,'%']];

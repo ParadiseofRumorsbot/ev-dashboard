@@ -5,6 +5,27 @@ const path=require('node:path');
 const vm=require('node:vm');
 const model=require('../assets/bbu-research.js');
 const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-7,`${a} != ${b}`);
+// Manufacturer output ratings are separate from HPE's installed BBU configuration.
+assert.equal(model.hpeReference.gpus,72);
+assert.equal(model.hpeReference.nominalKW,132);
+assert.equal(model.hpeReference.peakKW,155);
+assert.equal(model.hpeReference.powerShelves*model.hpeReference.powerShelfKW,264);
+for(let shelves=1;shelves<=4;shelves++){
+  const ref=model.calculateShelfReference(shelves);
+  near(ref.modules,shelves*6);
+  near(ref.backupKW,shelves*33);
+  near(ref.deliveredKWh,shelves*.825);
+  near(ref.oneOutKW,shelves*27.5);
+  near(ref.oneOutKWh,shelves*.6875);
+}
+const fourShelves=model.calculateShelfReference(4);
+near(fourShelves.backupKW,model.hpeReference.nominalKW);
+assert.ok(fourShelves.backupKW<model.hpeReference.peakKW);
+assert.ok(fourShelves.oneOutKW<model.hpeReference.nominalKW);
+for(const invalid of [0,5,1.5,NaN])assert.throws(()=>model.calculateShelfReference(invalid),RangeError);
+const hpeUnknown=model.calculate({platform:'b300',period:'y2025',chips:model.shipments.b300.y2025,replacementMode:'exclude'});
+for(const key of ['racks','backedMW','deliveredKWh','cellsPerRack','newCells','salesRevenue'])assert.equal(hpeUnknown[key],null,key);
+near(model.calculate({platform:'b300',period:'y2025',chips:model.shipments.b300.y2025,rackShare:100,replacementMode:'exclude'}).racks,20853.347222222223);
 // Synthetic values exercise the engine; they are never production defaults.
 const base={platform:'b200',period:'y2025',chips:7200,rackShare:100,attach:100,protectionScope:'Test fixture DC load domain',protectionSource:'Synthetic test specification',power:120,seconds:90,cellW:120,cellWh:10,powerFactor:80,energyFactor:80,reserve:20,share:50,asp:3,replacementMode:'exclude',capacity:1,allocation:10,utilization:80,yield:90,margin:15,fx:1400,evLoss:100};
 const r=model.calculate(base);
@@ -37,6 +58,7 @@ near(model.calculate({...base,asp:0}).salesRevenue,0);
 assert.equal(model.calculate({...base,evLoss:0}).offset,null);
 assert.equal(model.calculate({...base,capacity:''}).salesRevenue,null);
 assert.equal(model.calculate({...base,cellW:''}).newCells,null);
+near(model.calculate({...base,cellW:'',cellWh:''}).deliveredKWh,3);
 assert.equal(model.calculate({...base,share:''}).companyDemand,null);
 assert.ok(model.calculate({...base,energyFactor:0}).errors.length);
 assert.ok(model.calculate({...base,attach:101}).errors.length);
@@ -66,4 +88,4 @@ for(const name of pages){
     assert.ok(fs.readFileSync(path.join(repo,m[1]),'utf8').includes(`id="${m[2]}"`),m[0]);
   }
 }
-console.log('PASS: units, output/energy constraints, capacity ceiling, sensitivity, missing vs zero, cohort replacements, source totals, six-page JS syntax and BBU links');
+console.log('PASS: HPE reference, shelf output/energy and derating, unknown HPE BBU, units, capacity ceiling, sensitivity, cohorts, source totals, six-page syntax and links');

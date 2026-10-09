@@ -807,7 +807,7 @@ main{flex:1;min-width:0;max-width:1100px;padding:24px 0 60px 28px}
 <a href="global_battery_map.html" class="sidebar-link">배터리 맵</a>
 <div class="sidebar-group">Sections</div>
 <a href="#sim-panel" class="sidebar-link" data-target="sim-panel">시뮬레이터</a>
-<a href="#bbu-model" class="sidebar-link" data-target="bbu-model">BBU 수요·공급·이익</a>
+<a href="#bbu-model" class="sidebar-link" data-target="bbu-model">HPE GB300·BBU 시나리오</a>
 </aside>
 <nav class="toc-nav-mobile" aria-label="페이지 이동"><a href="index.html">EV 판매</a><a href="robotaxi.html">FSD / 로보택시</a><a href="us-import.html">US 수입</a><a href="Battery_bom_routing.html">ESS BOM</a><a href="battery_scenario.html" aria-current="page">Battery Scenario</a><a href="Battery-Atlas-3D.html">배터리 3D</a><a href="2차전지_컨콜정리.html">컨콜 정리</a><a href="battery_tech.html">기술 / 특허</a><a href="global_battery_map.html">배터리 맵</a></nav>
 <main>
@@ -970,7 +970,7 @@ main{flex:1;min-width:0;max-width:1100px;padding:24px 0 60px 28px}
     </div>
   </section>
 
-<section id="bbu-model" class="bbu-panel" data-bbu-calculator><p>BBU 수요·공급·이익 계산기를 불러오는 중입니다.</p><noscript>계산에는 JavaScript가 필요합니다. BBU 전용 CAPA·셀 가격은 미공개로, 실제 매출을 확정할 수 없습니다.</noscript></section>
+<section id="bbu-model" class="bbu-panel" data-bbu-calculator><p>HPE GB300 NVL72 기준 BBU 계산기를 불러오는 중입니다.</p><noscript>계산에는 JavaScript가 필요합니다. HPE는 72GPU·50V·설계전력 132kW·피크 약 155kW입니다. 실제 BBU 구성·셀 BOM은 미확인으로 셀 수요·매출을 확정할 수 없습니다.</noscript></section>
 <section class="bbu-panel" id="bbu-chip-supply"><span class="bbu-kicker">AI 전력용 배터리 · 검토 2026.10.09</span><h2>AI 가속기와 메모리 공급 점검</h2>
 <div class="bbu-scroll"><table><thead><tr><th>자료</th><th>이번 입력</th><th>투자 모델에서의 역할</th></tr></thead><tbody>
 <tr><th>칩 출하량</th><td>B200·B300 분기 출하 중앙 추정</td><td>신규 수요 출발점. Rubin·기타 ASIC 물량은 추가 확보 후 별도 코호트로 계산</td></tr>
@@ -2529,6 +2529,6 @@ async function loadReviewedModel(){
 </main>
 </div>
 <script src="assets/sib-research.js?v=20260915"></script>
-<script src="assets/bbu-research.js?v=20261009c"></script>
+<script src="assets/bbu-research.js?v=20261009hpe"></script>
 </body>
 </html>
