@@ -98,7 +98,7 @@ const DATA = {
       company:'엘앤에프', costPct:0, apcId:'apc1',
       perGwh: 313,  // 억원/GWh — 2,400t × ASP 1,305만원/톤($9/kg × 1,450원, 2026-09-20 조정)
       color:'#E91E63', bg:'#FBE0EA',
-      desc:'Cells 52% 내부. LFP는 NCM 대비 GWh당 소요량 1.71배(1,400→2,400t). 엘앤에프가 SDI LFP ESS 양극재 솔밴더로 3Q26 말 양산, LFP 3만톤 가동+3만톤 증설 중(27년 1Q 말 6만톤 완공, 추가 부지 확보). 출하 26년 5,000톤+·27년 5만톤+(2Q26 컨콜 260806). SK온과 ESS용 LFP 1,600억 계약(260917, 26~28년). 포스코퓨처엠도 NCM 1만톤 라인을 LFP 1.5만톤으로 전환, 26년 12월 양산 목표(NDR 260804) — 듀얼 벤더 후보.',
+      desc:'Cells 52% 내부. LFP는 NCM 대비 GWh당 소요량 1.71배(1,400→2,400t). 엘앤에프가 SDI LFP ESS 양극재 솔밴더로 3Q26 말 양산, LFP 3만톤 가동+3만톤 증설 중(27년 1Q 말 6만톤 완공, 추가 부지 확보). 출하 26년 5,000톤+·27년 5만톤+(2Q26 컨콜 260806). SK온과 ESS용 LFP 1,600억 계약(260917, 26~28년). 포스코퓨처엠도 NCM 1만톤 라인을 LFP 1.5만톤으로 전환, 26년 12월 양산 목표(NDR 260804) — 듀얼 벤더 후보. 한국산 LFP 양극재 초기 가격은 중국산 대비 30~50% 프리미엄(중국 $8~10 vs 한국 $12~15/kg, 언론 보도 기준, 2026.10) — 본 카드 TAM은 $9/kg 가정(2026-09-20 조정) 유지, 프리미엄 반영 여부는 별도 결정. 비중국 LFP 양극재 업체·장기계약 현황은 시나리오 탭 「정책 격차 · 비중국 LFP 양극재 공급」 카드 참조.',
       bomItems:[
         {name:'LFP 양극재', note:'2,400톤/GWh'},
         {name:'NCM 양극재 (비교)', note:'1,400톤/GWh'},
@@ -154,7 +154,7 @@ const DATA = {
         {name:'ESS 대형 각형 CAN', note:'약 60억원/GWh(회사 IR 260421) · SBB 2.0용 273Ah 4Q26 양산 · 300Ah대 톨캔 27년'},
         {name:'미국 인디애나 라인', note:'명목 6대 중 가동 2대 → 26년 말 4대 → 27년 명목 11대 · 월 CAPA 350만개+ → 600만개 후반(260908 탐방)'},
         {name:'원형 CAN (18650·21700)', note:'말레이시아 BBU·전동공구향 · 하부 벤트 신형 21700 · 미국 매출 FY25 250.6억 → 1H26 232.7억(공시)'},
-        {name:'LGES 각형 ESS CAN (추정)', note:'미시간 랜싱 Tesla향 각형 LFP 연 15GWh · 2027년 공급 시작 · 27E M/S 44%(15GWh ÷ LGES 27E ESS 출하 33.9GWh, 26E는 0%) · 회사 확인은 비공개 신규 거래처 샘플 납품까지(260908 탐방)'},
+        {name:'LGES 각형 ESS CAN (추정)', note:'미시간 랜싱 Tesla향 각형 LFP 연 15GWh · 2027년 공급 시작 · 27E M/S 34%(15GWh ÷ LGES 27E ESS 출하 43.8GWh=73GWh×60%, 26E는 0%; 2026.10 CAPA 갱신 전 33.9GWh·44%) · 회사 확인은 비공개 신규 거래처 샘플 납품까지(260908 탐방)'},
       ],
       investPoint:'SDI 내 원형 CAN 90~100%·각형 약 70%(각형은 회사 비공개) + 미국 CAN 라인: 명목 6대 중 가동 2대 → 26년 말 4대(SBB 2.0용 LFP 2대, 4Q 양산) → 27년 300Ah 톨캔 5대 증설로 명목 11대, 월 CAPA 350만개+ → 600만개 후반(260908 탐방) + 27년 매출 목표 4,000억 이상(회사) + 헝가리 보합 + 46파이 헝가리 28년 하반기 + LGES 각형 ESS 캔 공급 추정(27년~, 자체추정)',
       opMcap:'9.0%', valuation:'26E 매출 3,355억·OP 265억(자체추정 260815)',
@@ -173,7 +173,7 @@ const DATA = {
   cellMakers: [
     {
       id:'sdi', name:'삼성SDI', color:'#1B6CFF',
-      essGwh: {y25:14, y26:19, y27:30},
+      essGwh: {y25:7, y26:19, y27:31},
       essUtil: {y25:0.3, y26:0.55, y27:0.7},
       evGwh: {y25:28.0, y26:36.3, y27:48.1},  // K3 EV 출하
       supplyChain: {
@@ -181,11 +181,11 @@ const DATA = {
         copperFoil:'롯데에너지', alFoil:'삼아알미늄·DI동일', can:'상신이디피·신흥에스이씨',
         enclosure:'서진시스템', thermal:'한중엔시에스',
       },
-      guidance:'미국 ESS: 2026년 말 19GWh(기존 NCA 7 + 4Q LFP 12, 합산 추정), 2027년 초 약 30GWh를 모델 기준으로 사용. 글로벌은 연말 약 30GWh·2027년 초 약 40GWh로 미국과 구분. 뉴칼라일은 2028년 말 가동 목표로 2027년 CAPA에서 제외. SPE 30GWh+의 약 80%가 2029년까지 수주로 확보. 출처: 삼성SDI 그룹미팅(2026-09-01). 2Q26 OP 2,038억 흑자전환(7분기만·관세환급 포함, 제외시도 소폭흑자). 상반기 누계 매출 7.35조·OP 482억(배터리 △173억, 전자재료 +655억). EBITDA 8,029억. 美 LFP ESS 10월 셀 양산·연내 SBB 2.0 공급. UPS·BPU M/S 각 40~50%·매출 YoY 70%+. 전고체 2027H2(첫 상용화 휴머노이드·2H26 샘플). Na-ion UPS/전력용ESS 개발 착수. 유럽 침투율 26년 20%중반→30년 30%후반. EV 적자폭 축소되나 기존 PJT 물량감소 리스크. 헝가리 가동률 50%대. 삼성디스플레이 지분 13,088,235주 4조 4,500억원 매각(260821 공시, 잔여 10.22%) — 미국 ESS 재원. CAPEX 26년 약 3.3조원·27년 약 4조원.',
+      guidance:'미국 ESS: 2026년 말 19GWh(기존 NCA 7 + 4Q LFP 12, 합산 추정), 2027년 초 약 30GWh를 모델 기준으로 사용. 글로벌은 연말 약 30GWh·2027년 초 약 40GWh로 미국과 구분. 뉴칼라일은 2028년 말 가동 목표로 2027년 CAPA에서 제외. SPE 30GWh+의 약 80%가 2029년까지 수주로 확보. 출처: 삼성SDI 그룹미팅(2026-09-01). 2Q26 OP 2,038억 흑자전환(7분기만·관세환급 포함, 제외시도 소폭흑자). 상반기 누계 매출 7.35조·OP 482억(배터리 △173억, 전자재료 +655억). EBITDA 8,029억. 美 LFP ESS 10월 셀 양산·연내 SBB 2.0 공급. UPS·BPU M/S 각 40~50%·매출 YoY 70%+. 전고체 2027H2(첫 상용화 휴머노이드·2H26 샘플). Na-ion UPS/전력용ESS 개발 착수. 유럽 침투율 26년 20%중반→30년 30%후반. EV 적자폭 축소되나 기존 PJT 물량감소 리스크. 헝가리 가동률 50%대. 삼성디스플레이 지분 13,088,235주 4조 4,500억원 매각(260821 공시, 잔여 10.22%) — 미국 ESS 재원. CAPEX 26년 약 3.3조원·27년 약 4조원. 미국 LFP ESS 공급계약 2025년 말 2조원+ · 2026.3 약 1.5조원(언론 보도 기준, 260130 공시 건과의 관계 미확인) · 출처: 언론 보도 기준, 2026.10.',
     },
     {
       id:'lges', name:'LG에너지솔루션', color:'#00A878',
-      essGwh: {y25:16.5, y26:56.5, y27:56.5},
+      essGwh: {y25:22, y26:57, y27:73},
       essUtil: {y25:0.3, y26:0.45, y27:0.6},
       evGwh: {y25:130.9, y26:162.1, y27:176.9},
       supplyChain: {
@@ -193,7 +193,7 @@ const DATA = {
         copperFoil:'SKC·롯데에너지', alFoil:'삼아알미늄·DI동일', can:'율촌화학·피플웍스·상신이디피(각형 ESS 27년~ 추정)',
         enclosure:'Fluence(자체)', thermal:'미확정',
       },
-      guidance:'2Q26 매출 7조 5,602억원(+15.3% QoQ), 영업이익 1,133억원. AMPC 2,410억원 제외 시 -1,277억원 적자(차감 계산). 기존 2Q26 IRA 제외 전사 흑자 목표 미달, 4Q26 IRA 제외 ESS 수익성 확보 목표. ESS 수주잔고 140GWh·46시리즈 440GWh+. 북미 ESS 연말 50GWh+ 확보 계획. GM JV 1기 3Q26 중반 재가동 예정. 부채비율 157%(1Q26 140%). 1H26 ESS 신규 수주 3조원+, 3Q ESS 출하 +50% QoQ, 북미 ESS 셀 5개 사이트, 애리조나 46시리즈 4Q26 가동, LFP 각형 27년 공급. 출처: LG에너지솔루션 2Q26 실적발표 컨콜(2026-07-30).',
+      guidance:'2Q26 매출 7조 5,602억원(+15.3% QoQ), 영업이익 1,133억원. AMPC 2,410억원 제외 시 -1,277억원 적자(차감 계산). 기존 2Q26 IRA 제외 전사 흑자 목표 미달, 4Q26 IRA 제외 ESS 수익성 확보 목표. ESS 수주잔고 140GWh·46시리즈 440GWh+. 북미 ESS 연말 50GWh+ 확보 계획. GM JV 1기 3Q26 중반 재가동 예정. 부채비율 157%(1Q26 140%). 1H26 ESS 신규 수주 3조원+, 3Q ESS 출하 +50% QoQ, 북미 ESS 셀 5개 사이트, 애리조나 46시리즈 4Q26 가동, LFP 각형 27년 공급. 출처: LG에너지솔루션 2Q26 실적발표 컨콜(2026-07-30). 2025 ESS 신규 수주 90GWh(사상 최대)·2026 목표 90GWh 이상 · 2Q26 ESS 매출 비중 약 20%, 상반기 ESS 매출 전년比 4.6배 · 공개 고객별 ESS 수주(2026.10 집계): EG4 Electronics 13.3 / 한화큐셀 9.8(2건) / Terra-Gen 8.0 / Excelsior Energy 7.5 / Delta Electronics 4.0 / PGE(폴란드) 1.0GWh · 출처: LG에너지솔루션 발표·언론 보도 기준, 2026.10.',
     },
     {
       id:'skon', name:'SK ON', color:'#E9A23B',
@@ -201,11 +201,11 @@ const DATA = {
       essUtil: {y25:0, y26:0.5, y27:0.6},
       evGwh: {y25:83.5, y26:120.8, y27:152.0},
       supplyChain: {
-        cathode:'엘앤에프(LFP 계약)', electrolyte:'미정', separator:'미정',
+        cathode:'엘앤에프(LFP 1,600억·~28)·포스코퓨처엠(LFP 1.1조·27~29)', electrolyte:'미정', separator:'미정',
         copperFoil:'미정', alFoil:'미정', can:'미정',
         enclosure:'미정', thermal:'미정',
       },
-      guidance:'Flatiron 1GW 수주. 테네시 ESS 전환 진행. 26H2 납품.',
+      guidance:'Flatiron 1GW/7.2GWh(동일 계약) · Neo Volta 9GWh 확보 · 조지아(Commerce) 2026.4 EV→LFP ESS 전환 공사 착수, 연말 LFP 양산(22GWh 중 일부, 2026.10~연말 공급) · 서산 ESS용 LFP 3GWh 전환(1H27 공급) · 출처: SK온, 언론 보도 기준, 2026.10',
     },
   ],
 
@@ -306,7 +306,7 @@ const DATA = {
   scenarios: [
     {
       id:'base', name:'Base Case',
-      desc:'현행 가이던스. ESS: SDI 28G×55%, LGES 56.5G×45%. EV: K3 모델 유지. 부품사 perGwh 변동 없음.',
+      desc:'현행 가이던스. ESS: SDI 28G×55%, LGES 57G×45%. EV: K3 모델 유지. 부품사 perGwh 변동 없음.',
       cm:{}, catAdj:{}, evAdj:{}, evCatAdj:{}, notes:[],
     },
     {
@@ -320,7 +320,7 @@ const DATA = {
     },
     {
       id:'lges_ess', name:'LGES ESS 가속',
-      desc:'LGES CAPA 56.5→70GWh. 양극재 상주리원→엘앤에프 전환. EV: Tesla향 하반기 재개 + 46시리즈 확대.',
+      desc:'LGES CAPA 57→70GWh(2026E). 양극재 상주리원→엘앤에프 전환. EV: Tesla향 하반기 재개 + 46시리즈 확대.',
       cm:{lges:{essGwh_y26:70, essUtil_y26:0.5, essUtil_y27:0.65}},
       catAdj:{cathode:{perGwh_lges:227}, enclosure:{perGwh_lges:280}, thermal:{perGwh_lges:100}},
       evAdj:{lges:{evGwh_y26:175}},  // Tesla향 재개 + 유럽 강세
@@ -352,8 +352,8 @@ const DATA = {
     '2025E':40.5, '2026E':106.5, '2027E':112.5,
     detail: [
       {name:'SDI', y25:14, y26:28, y27:28, note:'NCA 7G+LFP 21G'},
-      {name:'LGES', y25:16.5, y26:56.5, y27:56.5, note:'홀랜드+온타리오+랜싱+JV'},
-      {name:'SK ON', y25:0, y26:4, y27:10, note:'테네시 ESS 전환'},
+      {name:'LGES', y25:22, y26:57, y27:73, note:'홀랜드 16+넥스트스타 6(2025) · 2026 57 · 2027 73 — 외부 집계 2026.10(시나리오 탭과 동기)'},
+      {name:'SK ON', y25:0, y26:4, y27:10, note:'조지아 Commerce ESS 전환(2026.10 정정)'},
       {name:'AESC', y25:7, y26:7, y27:7, note:''},
       {name:'Tesla', y25:0, y26:10, y27:10, note:'지연 중'},
     ]
@@ -762,7 +762,7 @@ main{flex:1;min-width:0;max-width:1100px;padding:32px 0 80px 28px}
       </div>
       <div style="flex:1 1 210px;background:var(--bg-soft);border:1px solid var(--line);border-radius:8px;padding:10px 12px">
         <div style="font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.08em;color:#1B6CFF;margin-bottom:5px">2027</div>
-        <div style="font-size:11px;color:var(--ink-2);line-height:1.6">Rubin Ultra 기반 차세대 AI 랙부터 본격 적용 확대</div>
+        <div style="font-size:11px;color:var(--ink-2);line-height:1.6">Rubin Ultra 기반 차세대 AI 랙(Kyber, 1MW·800VDC)부터 본격 적용 확대 — 1초 미만 GPU 전력 변동 흡수용 에너지저장을 랙 구성요소로 포함(NVIDIA, 2026.9)</div>
       </div>
       <div style="flex:1 1 210px;background:var(--bg-soft);border:1px solid var(--line);border-radius:8px;padding:10px 12px">
         <div style="font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.08em;color:#1B6CFF;margin-bottom:5px">장기</div>
@@ -782,6 +782,62 @@ main{flex:1;min-width:0;max-width:1100px;padding:32px 0 80px 28px}
     <div style="display:flex;justify-content:flex-end">
       <span style="font-family:var(--mono);font-size:9px;color:var(--ink-3)">출처: NVIDIA (전력 구조·800VDC 로드맵) · Panasonic Energy (백업·저장 기능 분산 방향)</span>
     </div>
+  </section>
+
+  <!-- Non-PFE 자격 레이어 (2026.10) -->
+  <section class="scale-card" id="nonPfeCard" style="margin-top:24px">
+    <style>
+      #nonPfeCard table{width:100%;border-collapse:collapse;font-size:11px}
+      #nonPfeCard th{text-align:left;padding:5px 8px;border-bottom:1px solid var(--line);color:var(--ink-3);font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+      #nonPfeCard td{padding:5px 8px;border-bottom:1px solid var(--line-s);color:var(--ink-2);vertical-align:top;line-height:1.5}
+      #nonPfeCard .np-h{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin:18px 0 8px;padding-bottom:6px;border-bottom:1px dashed var(--line-s)}
+      #nonPfeCard .np-src{font-size:9px;color:var(--ink-3);margin-top:6px;line-height:1.6}
+    </style>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap">
+      <span style="font-size:18px">🪪</span>
+      <h3 style="margin:0;font-size:15px;font-weight:700;color:var(--ink)">Non-PFE 자격 레이어 <span style="font-family:var(--mono);font-size:11px;font-weight:500;color:var(--ink-3)">(세액공제 적격성 — 관세보다 구조적인 진입장벽 · 기준 2026.10)</span></h3>
+    </div>
+    <div style="font-size:11.5px;color:var(--ink-2);line-height:1.7">관세는 사법 판결·행정 조치로 변동하지만 OBBBA의 PFE(Prohibited Foreign Entity) 규제는 법률에 근거한 구조적 장벽. 45X·48E 세액공제의 Non-PFE 최소 비율(MACR)이 2030년까지 매년 상향(배터리 부품 60→85%, ESS 설비 55→75%). 셀 라인은 EV 라인 전환으로 확보됐지만 <b>Non-PFE 소재(LFP 양극재·음극재)는 물량 자체가 부족</b> — 자격은 결국 소재에서 결정. 비율 사다리·정책 격차 $/kWh는 시나리오 탭 「지역별 LFP 셀 제조원가」 블록 참조.</div>
+
+    <div class="np-h">A · 정책 일정</div>
+    <div style="overflow-x:auto"><table style="min-width:560px">
+    <thead><tr><th style="white-space:nowrap">시점</th><th>내용</th></tr></thead>
+    <tbody>
+    <tr><td style="white-space:nowrap">2025.7.4</td><td>OBBBA 발효 — 이후 체결·변경된 라이선스 계약은 실질 지배 판단 대상</td></tr>
+    <tr><td style="white-space:nowrap">2025.9.30</td><td>전기차 구매 세액공제(30D) 종료</td></tr>
+    <tr><td style="white-space:nowrap">2026.1.1</td><td>중국산 비EV 배터리 301조 25% 적용, Non-PFE 비율 요건 적용 개시</td></tr>
+    <tr><td style="white-space:nowrap">2026.2.20</td><td>대법원, IEEPA 관세 무효 판결(301조는 유지)</td></tr>
+    <tr><td style="white-space:nowrap">2026.3.12</td><td>USITC, 중국산 음극재 반덤핑·상계관세 부정 판정(2대1) — 관세 미발동</td></tr>
+    <tr><td style="white-space:nowrap">2026.7.24</td><td>추가관세 12.5%p(강제노동 관련, 법적 근거 USTR 원문 확인 전) → 중국산 리튬이온 배터리 40.9%</td></tr>
+    <tr><td style="white-space:nowrap">2027~2030</td><td>Non-PFE 비중 매년 상향: 45X 배터리 부품 65→85%, 48E ESS 설비 60→75%</td></tr>
+    </tbody></table></div>
+    <div class="np-src">출처: 미 재무부 · USTR · USITC · 언론종합 · 기준 2026.10 · PFE 판정: 중국 측 단일 지분 25% 이상 또는 합산 40% 이상, 라이선스 계약 통제 포함(IRS Notice 2026-15)</div>
+
+    <div class="np-h">B · 북미 ESS(LFP) 밸류체인 — 병목 단계의 Non-PFE 공급자</div>
+    <div style="overflow-x:auto"><table style="min-width:640px">
+    <thead><tr><th>단계</th><th style="white-space:nowrap">중국 점유율</th><th>한국·비중국 공급자</th><th>중국(PFE 대상)</th></tr></thead>
+    <tbody>
+    <tr><td>LFP 양극재</td><td>98%</td><td>포스코퓨처엠(포항 전환라인 연말 양산) · 엘앤에프(3Q26 말 3만톤 → 1H27 6만톤) · 씨앤피신소재(CNGR 51% 합작, 2027)</td><td>Hunan Yuneng · Dynanonic 등</td></tr>
+    <tr><td>구형화·흑연화</td><td>중국 대부분</td><td>퓨처그라프(새만금, 2027 양산) · Syrah Vidalia</td><td>중국 가공업체 다수</td></tr>
+    <tr><td>흑연 음극재</td><td>약 95%</td><td>포스코퓨처엠(세종 천연 7.4만톤·포항 인조 0.8만톤) · Novonix · Resonac · 미쓰비시케미칼</td><td>BTR · Shanshan · Putailai</td></tr>
+    <tr><td>ESS 셀(북미 생산)</td><td>–</td><td>LG에너지솔루션(미시간 등) · 삼성SDI(인디애나) · SK온(조지아)</td><td>CATL · BYD · EVE(세액공제 배제)</td></tr>
+    </tbody></table></div>
+    <div class="np-src">상류: 인산철 전구체 중국 90% 이상·탄산리튬 정련 70% 이상(IEA). 한국 측 대응 — 엘앤에프 인산철 전구체 내재화·무전구체 공법 개발, 인도·인도네시아·모로코 등 비중국 원료 협의 / 포스코퓨처엠 제철 부산물(산화철)+아르헨티나 리튬 신공법(2029 원가절감 목표) / 포스코홀딩스 아르헨티나 2공장 2026.10.6 준공(1·2단계 합산 4.8만톤 = 수산화리튬 2.5 + 탄산리튬 2.3, LCE 약 5만톤) / 포스코필바라 수산화리튬 4.3만톤 → 포스코퓨처엠 연 최대 3만톤·SK온 3년 최대 1.5만톤 공급.<br>
+    <b>흑연 상류 주의:</b> 새만금 구형흑연(2027)·탄자니아 마헨게 천연흑연(2025.10 착공 → 2028 상업생산, 연 6만톤) 가동 전까지 구형흑연·천연흑연 원료는 중국 외주·조달 → 음극재가 국산이어도 MACR 직접원가에 상류 PFE 원가 포함(기술 로드맵 탭 "새만금 구형흑연 27년 상반기 시운전"과 교차 참조).<br>
+    음극재 장기계약: 포스코퓨처엠 인조흑연 약 1조원(글로벌 완성차, 2026.3) · 천연흑연 6,710억원(2025.10).<br>
+    출처: 점유율은 IEA(리포트 표 경유) · 공급자 현황은 각사 발표·언론 보도 기준 · 기준 2026.10 · 기술 로드맵 탭 공급망 표(양극재 전구체 70%+·흑연 음극재 90%+·리튬 정제 65%+)와 집계 기준이 다름.</div>
+
+    <div class="np-h">C · 음극재 정책 변화</div>
+    <div style="overflow-x:auto"><table style="min-width:520px">
+    <thead><tr><th style="white-space:nowrap">시점</th><th>내용</th></tr></thead>
+    <tbody>
+    <tr><td style="white-space:nowrap">2025.7</td><td>미 상무부, 중국산 음극재 반덤핑 예비판정 93.5%</td></tr>
+    <tr><td style="white-space:nowrap">2025.10</td><td>중국, 음극재·생산장비를 수출허가 대상에 포함</td></tr>
+    <tr><td style="white-space:nowrap">2026.2</td><td>상무부 최종 판정(덤핑·보조금 인정)</td></tr>
+    <tr><td style="white-space:nowrap">2026.3.12</td><td>USITC 부정 판정(2대1) — 반덤핑·상계관세 미발동</td></tr>
+    <tr><td style="white-space:nowrap">2026년 말</td><td>흑연 FEOC 적용 유예 종료 예정</td></tr>
+    </tbody></table></div>
+    <div class="np-src">출처: 미 상무부 · USITC · 언론종합 · 기준 2026.10 · 중국 음극재 수출허가제 2개월 연장(2026.10 기준, 언론 보도) — 2027.1 통제 개시 여부는 미확정.</div>
   </section>
 
   <footer class="ft">

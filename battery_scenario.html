@@ -94,7 +94,7 @@ const DATA = {
       company:'엘앤에프', costPct:0, apcId:'apc1',
       perGwh: 313,  // 억원/GWh — 2,400t × ASP 1,305만원/톤($9/kg × 1,450원, 2026-09-20 조정)
       color:'#E91E63', bg:'#FBE0EA',
-      desc:'Cells 52% 내부. LFP는 NCM 대비 GWh당 소요량 1.71배(1,400→2,400t). 엘앤에프가 SDI LFP ESS 양극재 솔밴더로 3Q26 말 양산, LFP 3만톤 가동+3만톤 증설 중(27년 1Q 말 6만톤 완공, 추가 부지 확보). 출하 26년 5,000톤+·27년 5만톤+(2Q26 컨콜 260806). SK온과 ESS용 LFP 1,600억 계약(260917, 26~28년). 포스코퓨처엠도 NCM 1만톤 라인을 LFP 1.5만톤으로 전환, 26년 12월 양산 목표(NDR 260804) — 듀얼 벤더 후보.',
+      desc:'Cells 52% 내부. LFP는 NCM 대비 GWh당 소요량 1.71배(1,400→2,400t). 엘앤에프가 SDI LFP ESS 양극재 솔밴더로 3Q26 말 양산, LFP 3만톤 가동+3만톤 증설 중(27년 1Q 말 6만톤 완공, 추가 부지 확보). 출하 26년 5,000톤+·27년 5만톤+(2Q26 컨콜 260806). SK온과 ESS용 LFP 1,600억 계약(260917, 26~28년). 포스코퓨처엠도 NCM 1만톤 라인을 LFP 1.5만톤으로 전환, 26년 12월 양산 목표(NDR 260804) — 듀얼 벤더 후보. 한국산 LFP 양극재 초기 가격은 중국산 대비 30~50% 프리미엄(중국 $8~10 vs 한국 $12~15/kg, 언론 보도 기준, 2026.10) — 본 카드 TAM은 $9/kg 가정(2026-09-20 조정) 유지, 프리미엄 반영 여부는 별도 결정. 비중국 LFP 양극재 업체·장기계약 현황은 시나리오 탭 「정책 격차 · 비중국 LFP 양극재 공급」 카드 참조.',
       bomItems:[
         {name:'LFP 양극재', note:'2,400톤/GWh'},
         {name:'NCM 양극재 (비교)', note:'1,400톤/GWh'},
@@ -167,7 +167,7 @@ const DATA = {
         {name:'ESS 대형 각형 CAN', note:'약 60억원/GWh(회사 IR 260421) · SBB 2.0용 273Ah 4Q26 양산 · 300Ah대 톨캔 27년'},
         {name:'미국 인디애나 라인', note:'명목 6대 중 가동 2대 → 26년 말 4대 → 27년 명목 11대 · 월 CAPA 350만개+ → 600만개 후반(260908 탐방)'},
         {name:'원형 CAN (18650·21700)', note:'말레이시아 BBU·전동공구향 · 하부 벤트 신형 21700 · 미국 매출 FY25 250.6억 → 1H26 232.7억(공시)'},
-        {name:'LGES 각형 ESS CAN (추정)', note:'미시간 랜싱 Tesla향 각형 LFP 연 15GWh · 2027년 공급 시작 · 27E M/S 44%(15GWh ÷ LGES 27E ESS 출하 33.9GWh, 26E는 0%) · 회사 확인은 비공개 신규 거래처 샘플 납품까지(260908 탐방)'},
+        {name:'LGES 각형 ESS CAN (추정)', note:'미시간 랜싱 Tesla향 각형 LFP 연 15GWh · 2027년 공급 시작 · 27E M/S 34%(15GWh ÷ LGES 27E ESS 출하 43.8GWh=73GWh×60%, 26E는 0%; 2026.10 CAPA 갱신 전 33.9GWh·44%) · 회사 확인은 비공개 신규 거래처 샘플 납품까지(260908 탐방)'},
       ],
       investPoint:'SDI 내 원형 CAN 90~100%·각형 약 70%(각형은 회사 비공개), 미국 CAN 라인 26년 말 가동 4대 → 27년 명목 11대(260908 탐방), 27년 매출 목표 4,000억 이상(회사), LGES 각형 ESS 캔 공급 추정(27년~, 자체추정)',
       opMcap:'9.0%', valuation:'26E 매출 3,355억·OP 265억(자체추정 260815)',
@@ -186,7 +186,7 @@ const DATA = {
   cellMakers: [
     {
       id:'sdi', name:'삼성SDI', color:'#1B6CFF',
-      essGwh: {y25:14, y26:19, y27:30},
+      essGwh: {y25:7, y26:19, y27:31},
       essUtil: {y25:0.3, y26:0.55, y27:0.7},
       evGwh: {y25:28.0, y26:36.3, y27:48.1},  // K3 EV 출하
       supplyChain: {
@@ -194,11 +194,11 @@ const DATA = {
         copperFoil:'롯데에너지', alFoil:'삼아알미늄·DI동일', can:'상신이디피·신흥에스이씨',
         enclosure:'서진시스템', thermal:'한중엔시에스',
       },
-      guidance:'미국 ESS: 2026년 말 19GWh(기존 NCA 7 + 4Q LFP 12, 합산 추정), 2027년 초 약 30GWh를 모델 기준으로 사용. 글로벌은 연말 약 30GWh·2027년 초 약 40GWh로 미국과 구분. 뉴칼라일은 2028년 말 가동 목표로 2027년 CAPA에서 제외. SPE 30GWh+의 약 80%가 2029년까지 수주로 확보. 출처: 삼성SDI 그룹미팅(2026-09-01). 2Q26 OP 2,038억 흑자전환(7분기만·관세환급 포함, 제외시도 소폭흑자). 상반기 누계 매출 7.35조·OP 482억(배터리 △173억, 전자재료 +655억). EBITDA 8,029억. 美 LFP ESS 10월 셀 양산·연내 SBB 2.0 공급. UPS·BPU M/S 각 40~50%·매출 YoY 70%+. 전고체 2027H2(첫 상용화 휴머노이드·2H26 샘플). Na-ion UPS/전력용ESS 개발 착수. 유럽 침투율 26년 20%중반→30년 30%후반. EV 적자폭 축소되나 기존 PJT 물량감소 리스크. 헝가리 가동률 50%대. 삼성디스플레이 지분 13,088,235주 4조 4,500억원 매각(260821 공시, 잔여 10.22%) — 미국 ESS 재원. CAPEX 26년 약 3.3조원·27년 약 4조원.',
+      guidance:'미국 ESS: 2026년 말 19GWh(기존 NCA 7 + 4Q LFP 12, 합산 추정), 2027년 초 약 30GWh를 모델 기준으로 사용. 글로벌은 연말 약 30GWh·2027년 초 약 40GWh로 미국과 구분. 뉴칼라일은 2028년 말 가동 목표로 2027년 CAPA에서 제외. SPE 30GWh+의 약 80%가 2029년까지 수주로 확보. 출처: 삼성SDI 그룹미팅(2026-09-01). 2Q26 OP 2,038억 흑자전환(7분기만·관세환급 포함, 제외시도 소폭흑자). 상반기 누계 매출 7.35조·OP 482억(배터리 △173억, 전자재료 +655억). EBITDA 8,029억. 美 LFP ESS 10월 셀 양산·연내 SBB 2.0 공급. UPS·BPU M/S 각 40~50%·매출 YoY 70%+. 전고체 2027H2(첫 상용화 휴머노이드·2H26 샘플). Na-ion UPS/전력용ESS 개발 착수. 유럽 침투율 26년 20%중반→30년 30%후반. EV 적자폭 축소되나 기존 PJT 물량감소 리스크. 헝가리 가동률 50%대. 삼성디스플레이 지분 13,088,235주 4조 4,500억원 매각(260821 공시, 잔여 10.22%) — 미국 ESS 재원. CAPEX 26년 약 3.3조원·27년 약 4조원. 미국 LFP ESS 공급계약 2025년 말 2조원+ · 2026.3 약 1.5조원(언론 보도 기준, 260130 공시 건과의 관계 미확인) · 출처: 언론 보도 기준, 2026.10.',
     },
     {
       id:'lges', name:'LG에너지솔루션', color:'#00A878',
-      essGwh: {y25:16.5, y26:56.5, y27:56.5},
+      essGwh: {y25:22, y26:57, y27:73},
       essUtil: {y25:0.3, y26:0.45, y27:0.6},
       evGwh: {y25:130.9, y26:162.1, y27:176.9},
       supplyChain: {
@@ -206,7 +206,7 @@ const DATA = {
         copperFoil:'SKC·롯데에너지', alFoil:'삼아알미늄·DI동일', can:'율촌화학·피플웍스·상신이디피(각형 ESS 27년~ 추정)',
         enclosure:'Fluence(자체)', thermal:'미확정',
       },
-      guidance:'2Q26 매출 7조 5,602억원(+15.3% QoQ), 영업이익 1,133억원. AMPC 2,410억원 제외 시 -1,277억원 적자(차감 계산). 기존 2Q26 IRA 제외 전사 흑자 목표 미달, 4Q26 IRA 제외 ESS 수익성 확보 목표. ESS 수주잔고 140GWh·46시리즈 440GWh+. 북미 ESS 연말 50GWh+ 확보 계획. GM JV 1기 3Q26 중반 재가동 예정. 부채비율 157%(1Q26 140%). 1H26 ESS 신규 수주 3조원+, 3Q ESS 출하 +50% QoQ, 북미 ESS 셀 5개 사이트, 애리조나 46시리즈 4Q26 가동, LFP 각형 27년 공급. 출처: LG에너지솔루션 2Q26 실적발표 컨콜(2026-07-30).',
+      guidance:'2Q26 매출 7조 5,602억원(+15.3% QoQ), 영업이익 1,133억원. AMPC 2,410억원 제외 시 -1,277억원 적자(차감 계산). 기존 2Q26 IRA 제외 전사 흑자 목표 미달, 4Q26 IRA 제외 ESS 수익성 확보 목표. ESS 수주잔고 140GWh·46시리즈 440GWh+. 북미 ESS 연말 50GWh+ 확보 계획. GM JV 1기 3Q26 중반 재가동 예정. 부채비율 157%(1Q26 140%). 1H26 ESS 신규 수주 3조원+, 3Q ESS 출하 +50% QoQ, 북미 ESS 셀 5개 사이트, 애리조나 46시리즈 4Q26 가동, LFP 각형 27년 공급. 출처: LG에너지솔루션 2Q26 실적발표 컨콜(2026-07-30). 2025 ESS 신규 수주 90GWh(사상 최대)·2026 목표 90GWh 이상 · 2Q26 ESS 매출 비중 약 20%, 상반기 ESS 매출 전년比 4.6배 · 공개 고객별 ESS 수주(2026.10 집계): EG4 Electronics 13.3 / 한화큐셀 9.8(2건) / Terra-Gen 8.0 / Excelsior Energy 7.5 / Delta Electronics 4.0 / PGE(폴란드) 1.0GWh · 출처: LG에너지솔루션 발표·언론 보도 기준, 2026.10.',
     },
     {
       id:'skon', name:'SK ON', color:'#E9A23B',
@@ -214,11 +214,11 @@ const DATA = {
       essUtil: {y25:0, y26:0.5, y27:0.6},
       evGwh: {y25:83.5, y26:120.8, y27:152.0},
       supplyChain: {
-        cathode:'엘앤에프(LFP 계약)', electrolyte:'미정', separator:'미정',
+        cathode:'엘앤에프(LFP 1,600억·~28)·포스코퓨처엠(LFP 1.1조·27~29)', electrolyte:'미정', separator:'미정',
         copperFoil:'미정', alFoil:'미정', can:'미정',
         enclosure:'미정', thermal:'미정',
       },
-      guidance:'Flatiron 1GW 수주. 테네시 ESS 전환 진행. 26H2 납품.',
+      guidance:'Flatiron 1GW/7.2GWh(동일 계약) · Neo Volta 9GWh 확보 · 조지아(Commerce) 2026.4 EV→LFP ESS 전환 공사 착수, 연말 LFP 양산(22GWh 중 일부, 2026.10~연말 공급) · 서산 ESS용 LFP 3GWh 전환(1H27 공급) · 출처: SK온, 언론 보도 기준, 2026.10',
     },
   ],
 
@@ -237,9 +237,9 @@ const DATA = {
 
   // 27E 전용 ESS M/S (%) — 값이 있으면 2027E TAM 계산에서만 essMS 대신 사용
   essMS27: {
-    // LGES 각형 LFP ESS(미시간 랜싱·Tesla향 연 15GWh, 2027년 공급 시작) 15GWh ÷ LGES 27E ESS 출하 33.9GWh = 44%.
+    // LGES 각형 LFP ESS(미시간 랜싱·Tesla향 연 15GWh, 2027년 공급 시작) 15GWh ÷ LGES 27E ESS 출하 43.8GWh(73GWh×60%) = 34%(2026.10 CAPA 갱신 전 33.9GWh·44%).
     // 각형 캔은 상신이디피 공급으로 추정(자체추정) — 회사 확인은 미국 중대형 각형 비공개 신규 거래처 샘플 납품까지(260908 탐방)
-    can:        {lges:44},
+    can:        {lges:34},
   },
 
   // EV M/S — 부품사별 × 셀사별 Market Share (%)
@@ -341,7 +341,7 @@ const DATA = {
   scenarios: [
     {
       id:'base', name:'Base Case',
-      desc:'현행 모델 기준. ESS: SDI 미국 연말 CAPA×가동률 55%, LGES 56.5G×45%. 연말 CAPA×가동률은 단순 시나리오이며 실제 연간 출하 가이던스가 아님. EV: K3 모델 유지.',
+      desc:'현행 모델 기준. ESS: SDI 미국 연말 CAPA×가동률 55%, LGES 57G×45%. 연말 CAPA×가동률은 단순 시나리오이며 실제 연간 출하 가이던스가 아님. EV: K3 모델 유지.',
       cm:{}, catAdj:{}, evAdj:{}, evCatAdj:{}, notes:[],
     },
     {
@@ -355,7 +355,7 @@ const DATA = {
     },
     {
       id:'lges_ess', name:'LGES ESS 가속',
-      desc:'LGES CAPA 56.5→70GWh. 양극재 상주리원→엘앤에프 전환. EV: Tesla향 하반기 재개 + 46시리즈 확대.',
+      desc:'LGES CAPA 57→70GWh(2026E). 양극재 상주리원→엘앤에프 전환. EV: Tesla향 하반기 재개 + 46시리즈 확대.',
       cm:{lges:{essGwh_y26:70, essUtil_y26:0.5, essUtil_y27:0.65}},
       catAdj:{cathode:{perGwh_lges:227}, enclosure:{perGwh_lges:280}, thermal:{perGwh_lges:100}},
       evAdj:{lges:{evGwh_y26:175}},  // Tesla향 재개 + 유럽 강세
@@ -396,7 +396,7 @@ const DATA = {
           cm:{sdi:{essUtil_y26:0.75,essUtil_y27:0.9}, lges:{essUtil_y26:0.6,essUtil_y27:0.75}, skon:{essGwh_y26:8,essGwh_y27:15,essUtil_y26:0.65,essUtil_y27:0.75}},
           catAdj:{enclosure:{perGwh:400}, thermal:{perGwh:210}, cathode:{perGwh:340}, electrolyte:{perGwh:160}, alfoil:{perGwh:45}, separator:{perGwh:40}},
           evAdj:{}, evCatAdj:{},
-          notes:['CHARGE Act: 중국산 FEOC 배터리 ESS 설치 금지(ITC 수급 요건 강화)','중국산 퇴출 → K3 3사 북미 ESS 수주 급증. CATL·BYD 미국 ESS 사실상 차단','서진시스템 탈중국 프리미엄: 350→400억/GWh. SDI SBB 독점 + LGES Fluence 진입 가능','한중엔시에스 SDI 가동률 급등 시 사실상 독점 수혜. 인디애나 공장 27년 풀가동','엘앤에프 LFP 양극재 소요 비례 증가. 6만톤 CAPA 풀가동 시나리오','SKON 테네시 ESS 전환 + Flatiron 후속 수주 가속','삼성SDI 260901 그룹미팅: 미국 ESS 내 중국 업체 점유율 작년 80%+ → 올해 약 50%(회사 설명)'],
+          notes:['CHARGE Act: 중국산 FEOC 배터리 ESS 설치 금지(ITC 수급 요건 강화)','중국산 퇴출 → K3 3사 북미 ESS 수주 급증. CATL·BYD 미국 ESS 사실상 차단','서진시스템 탈중국 프리미엄: 350→400억/GWh. SDI SBB 독점 + LGES Fluence 진입 가능','한중엔시에스 SDI 가동률 급등 시 사실상 독점 수혜. 인디애나 공장 27년 풀가동','엘앤에프 LFP 양극재 소요 비례 증가. 6만톤 CAPA 풀가동 시나리오','SKON 조지아(Commerce) ESS 전환 + Flatiron 후속 수주 가속','삼성SDI 260901 그룹미팅: 미국 ESS 내 중국 업체 점유율 작년 80%+ → 올해 약 50%(회사 설명)'],
         },
         ai_dc:{
           cm:{sdi:{essGwh_y26:35,essUtil_y26:0.65,essGwh_y27:40,essUtil_y27:0.8}, lges:{essGwh_y26:65,essUtil_y26:0.5,essUtil_y27:0.65}, skon:{essGwh_y26:6,essUtil_y26:0.55,essUtil_y27:0.65}},
@@ -477,11 +477,11 @@ const DATA = {
 
   // 북미 ESS CAPA (GWh)
   northAmericaCapa: {
-    '2025E':40.5, '2026E':96.5, '2027E':133.5,
+    '2025E':36, '2026E':97, '2027E':151,
     detail: [
-      {name:'SDI', y25:14, y26:19, y27:30, note:'미국 기준: 26년 말 NCA 7+LFP 12=19GWh(합산 추정), 27년 초 약 30GWh를 모델 기준으로 사용. 글로벌 약 30/40GWh와 구분. 뉴칼라일 28년 말 가동 목표로 27년 제외. 출처: 삼성SDI 그룹미팅(2026-09-01)'},
-      {name:'LGES', y25:16.5, y26:56.5, y27:56.5, note:'홀랜드+온타리오+랜싱+JV'},
-      {name:'SK ON', y25:0, y26:4, y27:10, note:'테네시 단독(JV해체), ESS 전환'},
+      {name:'SDI', y25:7, y26:19, y27:31, note:'2025 말 NCA L2 7G(종전 14는 정의 불명) · 26년 말 19(NCA 7+LFP 12) · 27년 라인 합 31(NCA 7+LFP 12+L4 LFP 12; 회사 "27년 초 약 30"과 정합, L4는 회사 범위 10~12의 상단·외부 집계 2026.10) · 글로벌 약 30/40GWh와 구분. 뉴칼라일 28년 말 가동 목표로 27년 제외. 출처: 삼성SDI 그룹미팅(2026-09-01)·외부 집계(2026.10)'},
+      {name:'LGES', y25:22, y26:57, y27:73, note:'홀랜드 16+넥스트스타 6(2025) · 2026 57 = 홀랜드 16+랜싱 12+혼다JV 12+UC2 5+넥스트스타 12 · 2027 73(랜싱 28) — 외부 집계(각사 발표·언론 보도 종합, 2026.10); 회사 발표는 연말 북미 50GWh+(2Q26 컨콜)'},
+      {name:'SK ON', y25:0, y26:4, y27:10, note:'조지아 Commerce ESS 전환(2026.4 착공·연말 LFP 양산), 테네시는 EV·EREV(2026.10 정정)'},
       {name:'AESC', y25:7, y26:7, y27:7, note:''},
       {name:'Tesla', y25:0, y26:10, y27:10, note:'네바다 LFP, Megapack'},
       {name:'Ford Energy', y25:0, y26:0, y27:20, note:'KY BlueOval→ESS LFP, CATL 라이선스, 27H2'},
@@ -495,7 +495,7 @@ const CELL3_CAPA = {
   sdi: {
     name:'삼성SDI', color:'#1B6CFF',
     years:[2024,2025,2026,2027,2028,2029,2030],
-    total:{2024:111.4,2025:118.4,2026:125.3,2027:145.3,2028:172.3,2029:172.3,2030:181.3},
+    total:{2024:111.4,2025:118.4,2026:125.3,2027:147.3,2028:174.3,2029:174.3,2030:183.3},
     regions:[
       {name:'국내',sub:{2024:19.5,2025:19.5,2026:25.4,2027:25.4,2028:25.4,2029:25.4,2030:25.4},
        factories:[
@@ -509,12 +509,12 @@ const CELL3_CAPA = {
         {name:'텐진 1공장',app:'Power Tool',client:'샤오펑',note:'원통형, 파우치형',d:{2024:12,2025:12,2026:6,2027:6,2028:6,2029:6,2030:6}},
         {name:'시안 1공장',app:'EV',client:'샤오펑',note:'각형',d:{2024:5,2025:5,2026:5,2027:5,2028:5,2029:5,2030:5}},
       ]},
-      {name:'북미',sub:{2024:8,2025:15,2026:27,2027:37,2028:64,2029:64,2030:73},
+      {name:'북미',sub:{2024:8,2025:15,2026:27,2027:39,2028:66,2029:66,2030:75},
        factories:[
         {name:'스텔란티스 JV 1공장 L1',app:'EV',client:'스텔란티스',note:'각형 2H24',d:{2024:8,2025:8,2026:8,2027:8,2028:8,2029:8,2030:8}},
         {name:'스텔란티스 JV 1공장 L2',app:'ESS',client:'스텔란티스',note:'NCA ESS 7G, 4Q25 가동 (콥데이 260519)',d:{2024:0,2025:7,2026:7,2027:7,2028:7,2029:7,2030:7}},
         {name:'스텔란티스 JV 1공장 L3',app:'EV,ESS',client:'스텔란티스',note:'ESS LFP 12G 가동',d:{2024:0,2025:0,2026:12,2027:12,2028:12,2029:12,2030:12}},
-        {name:'스텔란티스 JV 1공장 L4',app:'ESS',client:'스텔란티스',note:'LFP ESS 10~11G, 1Q27 가동 예정 (콥데이 260519)',d:{2024:0,2025:0,2026:0,2027:10,2028:10,2029:10,2030:10}},
+        {name:'스텔란티스 JV 1공장 L4',app:'ESS',client:'스텔란티스',note:'LFP ESS 12G, 27년 상반기 전환(회사 범위 10~12G 상단·외부 집계 2026.10; 종전 10G 1Q27 콥데이 260519)',d:{2024:0,2025:0,2026:0,2027:12,2028:12,2029:12,2030:12}},
         {name:'뉴칼라일(인디애나)',app:'EV,ESS',client:'자체(단독법인)',note:'단독법인 전환(260811). ESS LFP 2개 라인 22G 전환 [추정], 디자인 36G. 가동 시작 28년 말 제시(260901 그룹미팅) — 명목 개시 2028년 27G로 battery map 명목표와 정합',d:{2024:0,2025:0,2026:0,2027:0,2028:27,2029:27,2030:36}},
       ]},
       {name:'유럽',sub:{2024:52.9,2025:52.9,2026:47.9,2027:57.9,2028:57.9,2029:57.9,2030:57.9},
@@ -530,12 +530,12 @@ const CELL3_CAPA = {
         {name:'베트남 1공장',app:'Power Tool',client:'VINFAST,삼성전자',note:'P-Series',d:{2024:4,2025:4,2026:4,2027:4,2028:4,2029:4,2030:4}},
       ]},
     ],
-    shipment:{2025:{util:48.1,total:57,ess:12,ev:45},2026:{util:59.1,total:74,ess:22,ev:52},2027:{util:64.7,total:94,ess:30,ev:64}},
+    shipment:{2025:{util:48.1,total:57,ess:12,ev:45},2026:{util:59.1,total:74,ess:22,ev:52},2027:{util:63.8,total:94,ess:30,ev:64}},
   },
   lges: {
     name:'LG에너지솔루션', color:'#00A878',
     years:[2024,2025,2026,2027,2028,2029,2030],
-    total:{2024:256,2025:256,2026:357,2027:438,2028:438,2029:438,2030:438},
+    total:{2024:256,2025:278,2026:338,2027:405,2028:405,2029:405,2030:405},
     regions:[
       {name:'국내',sub:{2024:26,2025:26,2026:26,2027:26,2028:26,2029:26,2030:26},
        factories:[
@@ -548,19 +548,19 @@ const CELL3_CAPA = {
        factories:[
         {name:'난징 1,2공장',app:'EV/ESS',client:'Tesla,중국OEM',note:'실캐파80G, 원통형+파우치, ESS8G',d:{2024:80,2025:80,2026:80,2027:80,2028:80,2029:80,2030:80}},
       ]},
-      {name:'북미',sub:{2024:60,2025:60,2026:161,2027:242,2028:242,2029:242,2030:242},
+      {name:'북미',sub:{2024:60,2025:82,2026:142,2027:209,2028:209,2029:209,2030:209},
        factories:[
-        {name:'MIH(Holland)',app:'ESS',client:'',note:'ESS Only 17GWh',d:{2024:0,2025:0,2026:17,2027:17,2028:17,2029:17,2030:17}},
-        {name:'MIL(Lansing)',app:'ESS+EV',client:'TESLA,TOYOTA',note:'ESS+EV 25GWh',d:{2024:0,2025:0,2026:25,2027:25,2028:25,2029:25,2030:25}},
+        {name:'MIH(Holland)',app:'ESS',client:'',note:'ESS Only 16GWh(16.5 반올림, 외부 집계 2026.10; 종전 17). 2025.6 LFP ESS 양산',d:{2024:0,2025:16,2026:16,2027:16,2028:16,2029:16,2030:16}},
+        {name:'MIL(Lansing)',app:'ESS+EV',client:'TESLA,TOYOTA',note:'ESS 2026 12 → 2027 28GWh(2Q26 가동, 외부 집계 2026.10) + Toyota EV 10 유지. 구 Ultium 3 = 아래 미시간 3 두 행과 동일 공장(이 행으로 통합)',d:{2024:0,2025:0,2026:22,2027:38,2028:38,2029:38,2030:38}},
         {name:'애리조나 1공장',app:'46시리즈',client:'Tesla,포드,벤츠,리비안',note:'46시리즈 36G, 4Q26 가동 개시(2Q26 컨콜)',d:{2024:0,2025:0,2026:0,2027:36,2028:36,2029:36,2030:36}},
         {name:'UC1 오하이오(GM JV) EV',app:'파우치',client:'GM',note:'가용CAPA 40GWh',d:{2024:40,2025:40,2026:40,2027:40,2028:40,2029:40,2030:40}},
-        {name:'오하이오(GM JV) ESS',app:'ESS',client:'',note:'',d:{2024:0,2025:0,2026:10,2027:10,2028:10,2029:10,2030:10}},
+        {name:'오하이오(GM JV) ESS',app:'ESS',client:'',note:'UC1은 2028까지 ESS 생산계획 없음(260713 정정) — 종전 10G 제거(2026.10)',d:{2024:0,2025:0,2026:0,2027:0,2028:0,2029:0,2030:0}},
         {name:'UC2 테네시(GM JV) EV',app:'파우치',client:'GM',note:'라인 절반 미설치, 가용 20GWh',d:{2024:20,2025:20,2026:20,2027:20,2028:20,2029:20,2030:20}},
-        {name:'테네시(GM JV) ESS',app:'ESS',client:'',note:'',d:{2024:0,2025:0,2026:14,2027:14,2028:14,2029:14,2030:14}},
-        {name:'미시간 3(GM→TOYOTA) EV',app:'파우치',client:'TOYOTA',note:'ESS LFP 20G 확정',d:{2024:0,2025:0,2026:0,2027:10,2028:10,2029:10,2030:10}},
-        {name:'미시간 3 ESS(Tesla)',app:'ESS',client:'Tesla',note:'',d:{2024:0,2025:0,2026:0,2027:30,2028:30,2029:30,2030:30}},
-        {name:'온타리오(스텔란티스→ESS)',app:'파우치',client:'ESS',note:'ESS LFP 20G 1H25',d:{2024:0,2025:0,2026:10,2027:0,2028:0,2029:0,2030:0}},
-        {name:'오하이오(혼다 JV)',app:'파우치',client:'HONDA',note:'2H25 순차',d:{2024:0,2025:0,2026:10,2027:10,2028:10,2029:10,2030:10}},
+        {name:'테네시(GM JV) ESS',app:'ESS',client:'',note:'ESS 5GWh 2026.5 가동(외부 집계 2026.10; 종전 14)',d:{2024:0,2025:0,2026:5,2027:5,2028:5,2029:5,2030:5}},
+        {name:'미시간 3(GM→TOYOTA) EV',app:'파우치',client:'TOYOTA',note:'MIL(Lansing)에 통합 — 동일 공장 이중 계상 정리(2026.10, 종전 2027~ 10)',d:{2024:0,2025:0,2026:0,2027:0,2028:0,2029:0,2030:0}},
+        {name:'미시간 3 ESS(Tesla)',app:'ESS',client:'Tesla',note:'MIL(Lansing)에 통합 — 동일 공장 이중 계상 정리(2026.10, 종전 2027~ 30)',d:{2024:0,2025:0,2026:0,2027:0,2028:0,2029:0,2030:0}},
+        {name:'온타리오(스텔란티스→ESS)',app:'ESS',client:'ESS',note:'NextStar 100% 자회사. 2025.11 셀 양산 6GWh → 2026 하반기 라인 추가 12GWh(외부 집계 2026.10; 종전 10/0/0)',d:{2024:0,2025:6,2026:12,2027:12,2028:12,2029:12,2030:12}},
+        {name:'오하이오(혼다 JV)',app:'ESS',client:'HONDA JV',note:'2026.5 ESS 가동 12GWh(외부 집계 2026.10; 종전 EV 10). Honda EV/HEV는 중기 옵션',d:{2024:0,2025:0,2026:12,2027:12,2028:12,2029:12,2030:12}},
         {name:'조지아(현대차 JV)',app:'파우치',client:'현대',note:'2H26 SOP',d:{2024:0,2025:0,2026:15,2027:30,2028:30,2029:30,2030:30}},
       ]},
       {name:'유럽',sub:{2024:80,2025:80,2026:80,2027:80,2028:80,2029:80,2030:80},
@@ -572,7 +572,7 @@ const CELL3_CAPA = {
         {name:'인도네시아 카라왕 1~4(현대JV)',app:'NCMA 파우치',client:'현대,기아',note:'EV3,EV4,KONA 대응',d:{2024:10,2025:10,2026:10,2027:10,2028:10,2029:10,2030:10}},
       ]},
     ],
-    shipment:{2025:{util:62.5,total:160,ess:9,ev:151},2026:{util:44.0,total:157,ess:29,ev:128},2027:{util:46.3,total:203,ess:53,ev:150}},
+    shipment:{2025:{util:57.6,total:160,ess:9,ev:151},2026:{util:46.4,total:157,ess:29,ev:128},2027:{util:50.1,total:203,ess:53,ev:150}},
   },
   skon: {
     name:'SK ON', color:'#E9A23B',
@@ -862,6 +862,7 @@ main{flex:1;min-width:0;max-width:1100px;padding:24px 0 60px 28px}
     </div>
     <div style="font-size:11px;color:var(--ink-2);line-height:1.7">
       <strong style="color:#0984E3">인사이트:</strong> EV 수요 둔화 국면에서 <strong>AI 데이터센터용 ESS가 배터리 신규 수요축</strong>으로 부상. <strong>자회사 Vertech 턴키(인클로저+SW+유지보수)</strong> 수주로 셀 단독 대비 고마진. <strong>On-site뿐 아니라 Off-site ESS도 가격 수용력 높음</strong> → '판가가 낮아야 수요가 올라오는' 구간에서 일부 탈피하는 것으로 판단(자체추정). 빅테크는 신규 발전소 대비 시간·효율 우위로 ESS 가격 수용력 높음 — 논의 기간 중 물량 2배·판가 +25%(자체추정).<br>
+      <strong style="color:#0984E3">추가 공급 사례(2026.10 기준):</strong> Google·CCE 태양광+ESS(7월, 언론 보도 기준) — DTE 건과 같은 JF2 AC Link(LFP, NVIDIA DSX Ready 인증) · 출처: LG에너지솔루션 발표·Energy-Storage.News · 기준 2026.10<br>
       <span style="color:var(--ink-3);font-size:10px">출처: LG에너지솔루션·DTE 공시 / 판가($260+/kWh)·물량·마진 해석은 자체추정</span>
     </div>
   </section>
@@ -896,6 +897,7 @@ main{flex:1;min-width:0;max-width:1100px;padding:24px 0 60px 28px}
     </table>
     </div>
     <div style="font-size:11px;color:var(--ink-2);line-height:1.7;margin-top:10px">
+      <div style="font-size:10.5px;color:var(--ink-2);margin-bottom:6px"><b>외부 설치 전망(2026.10 기준):</b> Benchmark 미국 연간 설치 2026E 70 → 2030E 110GWh 이상 · Wood Mackenzie 2031년 누적 715GWh(2026.9 상향)·평균 저장시간 2.8 → 3.5시간, 2026~27 유틸리티급 증가세 둔화 가능성 언급 · 출처: SEIA · Benchmark · Wood Mackenzie · 기준 2026.10</div>
       <span style="color:var(--ink-3);font-size:10px">⚠️ BNEF 프레임은 이 페이지의 북미 ESS CAPA 테이블·미국 EV+ESS 수요 시나리오와 <b>산정 기준이 다른 별도 추정</b> — 같은 표에 섞어 인용하지 말 것.<br>출처: 기존 BloombergNEF 인용(1H24·1H25·1H26). 원보고서·연간 설치/출하 범위 미대조; 검토 2026.09.15. 상향폭은 직전 전망 대비 계산(미국 102÷77−1 ≈ 33%).<br>소듐 탭의 2030년 480GWh(기존 자체 가정)·612GWh(7월 재기준 자체 계산)와 이 표의 828GWh는 별도 계열입니다. <a href="#sib-sensitivity">자체 가정의 범위와 민감도 보기</a>.</span>
     </div>
   </section>
@@ -955,8 +957,32 @@ main{flex:1;min-width:0;max-width:1100px;padding:24px 0 60px 28px}
         <div style="background:var(--bg-soft);border-radius:6px;padding:8px 12px"><b>1Q26 BESS 설치</b> 3.3GW/8.4GWh <span style="color:#00A878">종전 1분기 최고 대비 +54%</span> (유틸리티급 2.3GW/6.8GWh)</div>
         <div style="background:var(--bg-soft);border-radius:6px;padding:8px 12px"><b>SEIA 기준</b> 1Q26 9.7GWh <span style="color:#00A878">+32% y-y</span></div>
         <div style="background:var(--bg-soft);border-radius:6px;padding:8px 12px"><b>EIA</b> 2025 유틸리티급 15GW(사상최대) → 2026 계획 24.3GW <span style="color:#00A878">+60%</span></div>
+        <div style="background:var(--bg-soft);border-radius:6px;padding:8px 12px"><b>연간 설치</b> 2022 13.2 → 2023 27.7 → 2024 37.0 → <b>2025 51.0GWh</b> <span style="color:#00A878">+38%, 사상 최대</span> · 2Q26 18.9GWh(분기 최대) <span style="color:var(--ink-3)">(Wood Mackenzie·ACP, 기준 2026.10)</span></div>
       </div>
       <div style="font-size:9px;color:var(--ink-3);margin-top:6px">출처: ACP·Wood Mackenzie(US Energy Storage Monitor) · SEIA · EIA</div>
+    </div>
+  </section>
+
+  <!-- NVIDIA DSX Ready · AI 팩토리 BESS 인증 (2026.10) -->
+  <section class="guide-card" style="border-left:3px solid #76B900;padding:14px 18px;margin-bottom:16px">
+    <div style="font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:10px">🧩 NVIDIA DSX Ready · AI 팩토리용 BESS 인증 — 왜 BESS인가</div>
+    <div style="font-size:11px;color:var(--ink-2);line-height:1.7;margin-bottom:10px">
+      AI DC의 수천 개 GPU가 유휴↔고부하를 오가며 전력이 급변하지만 <b>발전기가 이를 따라가는 데 1~90분</b>(NVIDIA, 2026.9). GB300은 전원부 커패시터로 계통측 피크를 <b>최대 30% 완화</b>(GB200=100 → GB300 70, 동일 랙·워크로드)하나 랙 단위 평활화에는 한계 → 시설 전체 부하 변동 대응·계통 지원에는 BESS 필요. 2027 <b>Kyber 1MW 랙(800V DC)</b>부터 1초 미만 GPU 전력 변동을 흡수할 에너지저장을 랙 구성요소로 포함.<br>
+      <strong style="color:#76B900">DSX Ready(2026.9.21 출범):</strong> AI 팩토리 레퍼런스 설계 요건을 충족한 파트너 제품 인증 프로그램. 첫 카테고리 BESS·냉각수 분배장치(CDU). BESS는 파트너가 필수 시험 데이터 제출 → NVIDIA 검토·승인.
+    </div>
+    <div class="scroll-x"><table class="data-table" style="min-width:480px;font-size:11px">
+    <thead><tr><th style="text-align:left">분야</th><th style="text-align:left">기업</th><th style="text-align:left">인증 범위</th></tr></thead>
+    <tbody>
+    <tr><td>BESS</td><td>Hitachi Energy</td><td>전력변환장치(PCS)·발전소 제어기(PPC)</td></tr>
+    <tr><td>BESS</td><td><b>LG에너지솔루션</b></td><td>JF2 AC Link(LFP, AC 통합형)</td></tr>
+    <tr><td>BESS</td><td>Tesla</td><td>세부 미공개</td></tr>
+    <tr><td>CDU</td><td>LG전자</td><td>2.5MW급 인로우 CDU</td></tr>
+    <tr><td>CDU</td><td>LiquidStack · Vertiv</td><td>–</td></tr>
+    </tbody></table></div>
+    <div style="font-size:11px;color:var(--ink-2);line-height:1.7;margin-top:10px">
+      <strong style="color:#76B900">LGES JF2 AC Link:</strong> LFP · 2.5MW/5.1MWh 블록 모듈형(시공 기간 단축) · AI 부하 평준화 · Ride-Through · Grid-Forming · 셀~팩·링크 미국 생산(세액공제 요건) · 공급 사례: DTE에너지 6GWh(2026.5, 위 수주 사례 카드 6~7GWh와 동일 건)·Google·CCE 태양광+ESS(7월, 언론 보도 기준).<br>
+      <strong style="color:#76B900">On-site 사례 — Energy Vault:</strong> 텍사스 하이퍼스케일러 AI DC(2026.8 발표) 통합 전력 인프라 1.25GW·계약 5~6억 달러 · Caterpillar 발전기+BESS+Grid-forming PCS · 초기 설치 4~12개월 · FEOC 요건 충족 설계.<br>
+      <span style="color:var(--ink-3);font-size:10px">출처: NVIDIA · LG에너지솔루션 · Energy-Storage.News · ESS News · 기준 2026.9~10. 가스터빈·변압기·계통접속 병목 수치는 이 대시보드 범위 밖(전력 대시보드 참조).</span>
     </div>
   </section>
 
@@ -1033,7 +1059,7 @@ main{flex:1;min-width:0;max-width:1100px;padding:24px 0 60px 28px}
         </div>
         <div style="background:var(--bg-soft);border-radius:8px;padding:10px 12px;border-left:3px solid #5B4FE9">
           <div style="font-family:var(--mono);font-size:10px;font-weight:700;color:#5B4FE9;margin-bottom:4px">② 2027년</div>
-          <div style="font-size:10.5px;color:var(--ink-2);line-height:1.55"><b>Rubin Ultra 기반 차세대 AI 랙</b>부터 본격 적용 확대</div>
+          <div style="font-size:10.5px;color:var(--ink-2);line-height:1.55"><b>Rubin Ultra 기반 차세대 AI 랙(Kyber, 1MW·800VDC)</b>부터 본격 적용 확대 — 1초 미만 GPU 전력 변동 흡수용 에너지저장을 랙 구성요소로 포함(NVIDIA, 2026.9)</div>
         </div>
         <div style="background:var(--bg-soft);border-radius:8px;padding:10px 12px;border-left:3px solid #5B4FE9">
           <div style="font-family:var(--mono);font-size:10px;font-weight:700;color:#5B4FE9;margin-bottom:4px">③ 장기</div>
@@ -1139,8 +1165,14 @@ main{flex:1;min-width:0;max-width:1100px;padding:24px 0 60px 28px}
   </section>
 
   <details class="guide-card toggle-box" style="border-left:3px solid #00A878;padding:14px 18px">
-    <summary style="font-family:var(--mono);font-size:11px;color:#00A878;font-weight:700;cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px"><span style="font-size:11px;color:var(--ink-3);transition:transform .2s">▸</span> Update Log · 2026.09.21</summary>
+    <summary style="font-family:var(--mono);font-size:11px;color:#00A878;font-weight:700;cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px"><span style="font-size:11px;color:var(--ink-3);transition:transform .2s">▸</span> Update Log · 2026.10.15</summary>
     <div style="font-family:var(--mono);font-size:11px;color:var(--ink-2);letter-spacing:.04em;line-height:1.8;margin-top:10px">
+      <strong style="color:#00A878">📝 2026.10.15</strong><br>
+      • <strong>북미 ESS CAPA 외부 집계(2026.10) 반영</strong> — northAmericaCapa·cellMakers.essGwh: SDI 14/19/30 → 7/19/31(2025 NCA L2 7G, L4 LFP 10→12G) · LGES 16.5/56.5/56.5 → 22/57/73(홀랜드 16·랜싱 12→28·혼다JV 12·UC2 ESS 5·넥스트스타 12; 회사 발표 연말 북미 50GWh+는 note 병기) · 합계 37.5/96.5/133.5 → 36/97/151 · LGES 27E ESS 출력 33.9 → 43.8GWh → LGES 각형 CAN 27E M/S 44 → 34%(15÷43.8) · Base·'LGES ESS 가속' 설명 56.5 → 57 · 출처: 각사 발표·언론 보도 종합(외부 집계), 기준 2026.10<br>
+      • <strong>CELL3_CAPA 북미 정합</strong> — LGES: Holland 17→16(2025 16 추가) · Lansing 25→22/38(ESS 12→28+Toyota 10) · 오하이오(GM JV) ESS 10→0(UC1 ESS 없음, 260713 정정) · 테네시(GM JV) ESS 14→5 · 미시간 3 EV 10·ESS 30 → 0(MIL(Lansing)과 동일 공장 이중 계상 정리) · 온타리오 10/0→6(2025)/12 · 오하이오(혼다 JV) EV 10→ESS 12 → 북미 소계 60/60/161/242 → 60/82/142/209, 총계 256/256/357/438 → 256/278/338/405, 가동률 62.5/44.0/46.3 → 57.6/46.4/50.1% · SDI: L4 10→12 → 북미 2027 37→39·2028 64→66·2030 73→75, 총계 2027 145.3→147.3, 가동률 2027 64.7→63.8%<br>
+      • <strong>SK온 ESS 전환 거점 정정</strong> — "테네시 ESS 전환" → 조지아 Commerce(2026.4 착공·연말 LFP 양산) guidance·시나리오 notes·CAPA note + BOM 탭 동기 · Flatiron 1GW/7.2GWh·Neo Volta 9GWh·서산 3GWh 1H27 · supplyChain.cathode에 포스코퓨처엠(LFP 1.1조·27~29) 추가 · 출처: SK온, 언론 보도 기준, 2026.10<br>
+      • <strong>LFP 원가·관세 블록</strong> — 2026 관세 3구간(1.1~2.23 48.4% / 2.24~7.23 38.4% / 7.24~ 40.9%) · 슬라이더 기본값 48.4 → 40.9(초기 표시: 중국산 유통가 $72.6→$69.1, 미국산 대비 "$1.7 비쌈"→"$1.8 저렴", AMPC 격차 $36.7→$33.2, BEP 44.7% 불변) · MACR 사다리(48E 55→75%·45X 60→85%)·실질지배 기준 · 한국산 12.5% 참고 · 출처: USTR · IRS Notice 2026-15 · OBBBA · 산업연구원<br>
+      • <strong>신규 카드</strong> — 「정책 격차(2026) $122/kWh · 비중국 LFP 양극재 업체 5사·장기계약 4건」(출처 USTR·BNEF·IRS·InfoLink·각사) · 「NVIDIA DSX Ready · AI 팩토리 BESS 인증」(2026.9.21, LGES JF2 AC Link·Hitachi Energy·Tesla; GB300 피크 30% 완화·Kyber 1MW 랙·Energy Vault 사례; 출처 NVIDIA·LG에너지솔루션·Energy-Storage.News·ESS News) · 미국 ESS 연간 설치 2022~2025 13.2/27.7/37.0/51.0GWh·2Q26 18.9GWh(Wood Mackenzie·ACP) · 외부 설치 전망(Benchmark 70→110GWh, Wood Mackenzie 715GWh 누적·저장시간 2.8→3.5h) · 800VDC 타임라인 Kyber 보강 · LGES·SDI guidance 신규 사실(2025 신규 수주 90GWh·고객별 수주 6건 / 미국 LFP 계약 2건)<br>
       <strong style="color:#00A878">📝 2026.09.21</strong><br>
       • <strong>ESS 신규 설치 카드 6월 갱신</strong> — 글로벌 Grid 42.8GWh(+50%)·BTM 8.0(+55%), 미국 Grid 12.0(+81%) · 1~6월 누적 182.2GWh(+41%) · 4월 미국 Grid −86% 상충 주석 해소 · 출처: Rho Motion(2026년 6월)<br>
       • <strong>Fluence FY26 가이던스 하향 반영</strong> — 매출 약 24억$(종전 29~31억$)·조정 EBITDA 약 −2억$ · 휴스턴 위탁생산 시설 램프 지연 · 출처: Fluence 보도자료(2026-09-16)<br>
@@ -1438,6 +1470,50 @@ main{flex:1;min-width:0;max-width:1100px;padding:24px 0 60px 28px}
       <div class="scale-title">🏭 지역별 LFP 셀 제조원가 · 미국향 관세 시나리오</div>
     </div>
     <div id="lfpCostContent"></div>
+  </section>
+
+  <!-- Non-PFE 정책 격차 · LFP 양극재 공급 (2026.10) -->
+  <section class="scale-card" id="pfeGapCard">
+    <div class="scale-head">
+      <div class="scale-title">🧾 중국산 vs 미국산 밸류체인 정책 격차(2026) · 비중국 LFP 양극재 공급</div>
+    </div>
+    <div style="font-size:11px;color:var(--ink-2);line-height:1.7;margin-bottom:8px">중국산 LFP 셀은 셀값 자체가 싸지만, 미국산과의 차이는 셀값이 아니라 밸류체인 전체가 받는 정책 혜택에서 발생. 두 세액공제 모두 Non-PFE 요건이 있어 <b>셀의 자격은 결국 소재에서 결정</b>.</div>
+    <div class="scroll-x"><table class="data-table" style="min-width:520px;font-size:11px">
+    <thead><tr><th style="text-align:left">항목</th><th style="text-align:left">수혜 주체</th><th style="text-align:right">USD/kWh</th><th style="text-align:left">조건</th></tr></thead>
+    <tbody>
+    <tr><td>관세 40.9%</td><td>중국산 셀에 부과</td><td style="text-align:right">21</td><td>2026.7.24 이후 세율 · 중국 LFP 셀 약 $51/kWh 기준</td></tr>
+    <tr><td>ITC(48E) 30%</td><td>ESS 투자사업자</td><td style="text-align:right">66</td><td>시스템 단가 $219/kWh × 30% · Non-PFE 55% 이상 · ESS 내부 셀이 Non-PFE 목표비율을 충족한다는 가정</td></tr>
+    <tr><td>AMPC(45X)</td><td>셀 제조사</td><td style="text-align:right">35</td><td>미국 내 셀 생산 · Non-PFE 60% 이상 · 모듈 $10 제외</td></tr>
+    <tr><td><b>합계</b></td><td></td><td style="text-align:right;font-weight:700">122</td><td>단순 합산(리포트 계산) — 대시보드 자체 계산 아님</td></tr>
+    </tbody></table></div>
+    <div style="font-size:9px;color:var(--ink-3);margin-top:4px">출처: USTR · BNEF(시스템 단가) · IRS · InfoLink(셀 가격) · 기준 2026.10 · ⚠ $219(BNEF, 리포트 인용)는 이 페이지의 $220(미국 ESS 평균 시스템 판가, 자체추정)·$260(DTE 턴키)와 별개의 세 번째 계열. 위 「관세율 시뮬레이터」의 BEP 계산(중국 내수가 $46.2·AMPC 35+10)과 섞지 말 것.</div>
+
+    <div style="margin-top:14px;padding-top:10px;border-top:1px dashed var(--line)">
+      <div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">비중국 LFP 양극재 업체 현황 · 기준 2026.10</div>
+      <div class="scroll-x"><table class="data-table" style="min-width:520px;font-size:11px">
+      <thead><tr><th style="text-align:left">업체</th><th style="text-align:left">현황</th></tr></thead>
+      <tbody>
+      <tr><td>엘앤에프</td><td>대구 3만톤 양산 개시(3Q26 말) → 1H27 6만톤(총 3,382억원 투자)</td></tr>
+      <tr><td>포스코퓨처엠</td><td>포항 하이니켈 라인 일부 LFP 전환 완료, 고객 인증 후 연말 양산(회사 NDR 260804 기준 1.5만톤)</td></tr>
+      <tr><td>씨앤피신소재(CNGR 51%·포스코퓨처엠·피노)</td><td>포항 LFP 전용공장 최대 5만톤 — 2025.12 투자 승인 → 2026.5 착공 → 2027 양산. CNGR 51% 지분으로 단일 25% 기준 PFE 해당 소지(지분 조정 전)</td></tr>
+      <tr><td>엘앤에프–Mitra Chem</td><td>미시간 합작 추진, 2027.12 양산 목표(2025 보도)</td></tr>
+      <tr><td>에코프로비엠</td><td>기술 개발 중, 고객사 시제품 공급(2025.12 보도)</td></tr>
+      </tbody></table></div>
+      <div style="font-size:9px;color:var(--ink-3);margin-top:4px">Non-PFE가 확실한 2027 한국 LFP 양극재 캐파 = 엘앤에프 6만 + 포항 전환라인 1.5만톤 수준 · 한국산 초기 가격은 중국산 대비 30~50% 프리미엄(중국 $8~10 vs 한국 $12~15/kg) · 출처: 각사 발표·언론 보도 기준, 2026.10</div>
+    </div>
+
+    <div style="margin-top:14px;padding-top:10px;border-top:1px dashed var(--line)">
+      <div style="font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">LFP 양극재 장기 공급계약</div>
+      <div class="scroll-x"><table class="data-table" style="min-width:520px;font-size:11px">
+      <thead><tr><th style="text-align:left">공급</th><th style="text-align:left">고객</th><th style="text-align:left">규모</th><th style="text-align:left">기간</th></tr></thead>
+      <tbody>
+      <tr><td>엘앤에프</td><td>삼성SDI</td><td>약 1.6조원</td><td>2027~(3+3년)</td></tr>
+      <tr><td>포스코퓨처엠</td><td>SK온</td><td>약 1.1조원</td><td>2027~2029</td></tr>
+      <tr><td>포스코퓨처엠</td><td>국내 배터리사</td><td>19만톤+</td><td>2027~2032</td></tr>
+      <tr><td>엘앤에프</td><td>SK온</td><td>약 1,600억원(위 양극재 카드 동일 건)</td><td>~2028</td></tr>
+      </tbody></table></div>
+      <div style="font-size:9px;color:var(--ink-3);margin-top:4px">출처: 각사 공시·언론 보도 기준, 2026.10 · 음극재 계약(포스코퓨처엠 인조흑연 약 1조원 2026.3 · 천연흑연 6,710억원 2025.10)은 BOM 라우팅 탭 「Non-PFE 자격 레이어」 참조</div>
+    </div>
   </section>
 
   <!-- EV 신차 타임라인 -->
@@ -2318,7 +2394,9 @@ function renderLfpCost(){
   const tariffs=[
     {yr:'2024',rate:10.9,cn:53.00,detail:'기본3.4%+301조7.5%'},
     {yr:'2025',rate:30.9,cn:46.20,detail:'기본3.4%+301조7.5%+상호10%+펜타닐10%'},
-    {yr:'2026',rate:48.4,cn:46.20,detail:'기본3.4%+301조25%+상호10%+펜타닐10%'},
+    {yr:'2026',rate:48.4,cn:46.20,detail:'1.1~2.23 · 기본3.4%+301조25%+상호10%+펜타닐10%'},
+    {yr:'2026',rate:38.4,cn:46.20,detail:'2.24~7.23 · 대법원 IEEPA 관세 무효 판결(2.20) 이후 — 잔존 10%p 근거 미확인(150일 한시 조치 가능성)'},
+    {yr:'2026',rate:40.9,cn:46.20,detail:'7.24~ · 기본3.4%+301조25%+강제노동 관련 추가관세 12.5%(법적 근거 USTR 원문 확인 전)'},
   ];
   const usLocal=70.85,ampc=35.0;
   html+=`<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">`;
@@ -2342,7 +2420,7 @@ function renderLfpCost(){
   });
   html+=`</div>`;
   // ── Custom tariff slider ──
-  const customRate=window._customTariff||48.4;
+  const customRate=window._customTariff||40.9;
   const cnBase=46.20;
   const cLanded=cnBase+4.0+(cnBase*customRate/100);
   const cGap=usLocal-cLanded;
@@ -2384,6 +2462,11 @@ function renderLfpCost(){
     <b>AMPC (45X)</b>: 셀 $35/kWh + 모듈 $10/kWh = $45/kWh → 실질가 $${usLocal} − $${ampc} = <b style="color:#00A878">$${(usLocal-ampc).toFixed(1)}/kWh</b><br>
     <b>ITC (48E)</b>: ESS 프로젝트 투자비의 30~60% 세액공제<br>
     <b>MACR 요건</b>: 비중국(Non-PFE) 부품 조달 비율. 2026년 ESS 55% / 배터리 60% 충족 필요<br>
+    <table style="margin-top:6px;border-collapse:collapse;font-size:10px"><thead><tr><th style="text-align:left;padding:3px 8px;border-bottom:1px solid var(--line)">Non-PFE 최소 비율(MACR)</th><th style="padding:3px 8px;border-bottom:1px solid var(--line)">2026</th><th style="padding:3px 8px;border-bottom:1px solid var(--line)">2027</th><th style="padding:3px 8px;border-bottom:1px solid var(--line)">2028</th><th style="padding:3px 8px;border-bottom:1px solid var(--line)">2029</th><th style="padding:3px 8px;border-bottom:1px solid var(--line)">2030~</th></tr></thead>
+    <tbody><tr><td style="padding:3px 8px">48E ESS 설비</td><td style="text-align:center;padding:3px 8px">55%</td><td style="text-align:center;padding:3px 8px">60%</td><td style="text-align:center;padding:3px 8px">65%</td><td style="text-align:center;padding:3px 8px">70%</td><td style="text-align:center;padding:3px 8px">75%</td></tr>
+    <tr><td style="padding:3px 8px">45X 배터리 부품</td><td style="text-align:center;padding:3px 8px">60%</td><td style="text-align:center;padding:3px 8px">65%</td><td style="text-align:center;padding:3px 8px">70%</td><td style="text-align:center;padding:3px 8px">80%</td><td style="text-align:center;padding:3px 8px">85%</td></tr></tbody></table>
+    <span style="font-size:9px;color:var(--ink-3)">PFE 판정은 지분 외 실질 지배 포함 — 중국 측 단일 지분 25% 이상 또는 합산 40% 이상, 라이선스 계약을 통한 통제 포함 · 모든 요건 2026.1.1 이후 적용 · MACR은 셀 용량이 아닌 직접원가 비중 기준 · 출처: IRS Notice 2026-15 · OBBBA(2025.7.4 발효) · 기준 2026.10</span><br>
+    <span style="font-size:9px;color:var(--ink-3)">관세 참고: 중국산 리튬이온 배터리 2026.7.24~ 40.9% vs 한국산 12.5%(산업연구원 경유, 7/24 이후 체계 기준 확인 전) → 격차 28.4%p · 출처: USTR · 산업연구원 · 기준 2026.7.24</span><br>
     <span style="font-size:9px;color:var(--ink-3)">→ AMPC + ITC 동시 수취 시 관세 없이도 미국 현지생산이 우위. 관세는 추가 안전마진.</span>
     <table style="margin-top:10px;width:100%;border-collapse:collapse;font-size:10px">
       <tr style="border-bottom:2px solid var(--line-s)"><th style="text-align:left;padding:5px 6px;color:var(--ink-3);font-size:9px">구분</th><th style="text-align:right;padding:5px 6px;color:var(--ink-3);font-size:9px">공제율</th><th style="text-align:left;padding:5px 6px;color:var(--ink-3);font-size:9px">요건</th></tr>

@@ -188,8 +188,14 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:h
 <a href="battery_scenario.html#bbu-model">말레이시아 공급 상한·이익 기여 계산</a></section>
 <!-- Update Log -->
 <details class="toggle-box" style="background:var(--bg-soft,#F5F4ED);border:1px solid var(--border,#E2E1D8);border-left:3px solid #c6973b;border-radius:6px;padding:12px 16px;margin:12px 16px 0;font-size:10px;color:#8a7e6e;line-height:1.8;font-family:monospace">
-<summary style="font-weight:700;color:#c6973b;cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px"><span style="font-size:11px;color:#8a7e6e;transition:transform .2s">▸</span> Update Log · 2026.09.21</summary>
+<summary style="font-weight:700;color:#c6973b;cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px"><span style="font-size:11px;color:#8a7e6e;transition:transform .2s">▸</span> Update Log · 2026.10.15</summary>
 <div style="margin-top:8px">
+<strong style="color:#c6973b">📝 2026.10.15</strong><br>
+• <strong style="color:var(--text,#0A0A08)">LGES 북미 ESS 거점 CAPA 외부 집계(2026.10) 반영</strong> — geo탭 Holland 17 → 16 · Lansing 25/25/25 → 22/38/38(ESS 12→28 + Toyota EV 10 유지, alloc Tesla 15→28) · Honda JV Ohio EV 10 → ESS 12(2026.5 가동) · UC2 Spring Hill 34 → 25(EV 20 + ESS 14→5) · NextStar Ontario 10/0/0 → 12/12/12(sop 1H25→2H25; 종전 2027~28 0은 입력 오류 추정) · 셀+에너지 공급선 합 407/549/653 → 398/568/672GWh(DEM 불변) · 출처: 각사 발표·언론 보도 종합(외부 집계), 기준 2026.10<br>
+• <strong style="color:var(--text,#0A0A08)">삼성SDI Kokomo L4 LFP 10 → 12G</strong> — 회사 범위 10~12G 상단·외부 집계 12 채택, 27E 37 → 39(alloc ESS 29→31) · L2 NCA 7G는 회사 명시값 유지 · ④ Kokomo 문구 "26년말 미국 ESS 30GWh" → 미국 19/글로벌 약 30(그룹미팅 260901)<br>
+• <strong style="color:var(--text,#0A0A08)">SK온 ESS 전환 거점 정정</strong> — 테네시 → 조지아 Commerce(2026.4 전환 착공·연말 LFP 양산, 규모 미공개): Tennessee_SK app EV+ESS → EV, Commerce_GA app EV → EV+ESS(r 22 유지) · battery_scenario guidance·note 동기<br>
+• <strong style="color:var(--text,#0A0A08)">④ 표 갱신·NextStar 행 신설</strong> · 수요 시나리오 아래 외부 설치 전망 1줄(Benchmark 2026E 70 ≈ Bear 71) · 비EV 리튬이온 수입 2025 중국 63.5%(US Census 자체 재계산) · Tesla 에너지저장 설치 2025 46.7GWh·1~3Q26 36.0GWh(Tesla IR) · Megapack_TX note Brookshire 2H26 출하 예정<br>
+• ⑦ 대조표는 만들지 않음(값 자체를 갱신) — 종전 값은 이 로그가 기록<br>
 <strong style="color:#c6973b">📝 2026.09.21</strong><br>
 • <strong style="color:var(--text,#0A0A08)">코코모 L1 존치 반영</strong> — 회사가 EV 라인은 스텔란티스 요청으로 존치하고 ESS 전환 계획이 없다고 설명. geo탭 2027·2028 CAPA <strong style="color:var(--red)">29 → 37G</strong>(8+7+12+10, 명목 기준), Sankey 배분 Stellantis 29 → Stellantis 8·ESS 29 · 출처: 삼성SDI 260901 그룹미팅<br>
 • <strong style="color:var(--text,#0A0A08)">LGES 애리조나 46시리즈 가동 시점</strong> — sop 2H27 → <strong style="color:var(--red)">2H26(4Q26 중 가동 시작)</strong>, 오창 대비 설비 생산효율 50%+ · 라인업에 46100·46110 추가 · UC1(Warren) 3Q26 중반 재가동 note 추가 · 출처: LG에너지솔루션 2Q26 컨콜(2026-07-30)<br>
@@ -316,13 +322,16 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:h
 <tr><td><b>Bear</b></td><td>5.5→8%</td><td>IEA</td><td>고유가 점진 회복</td></tr>
 <tr><td><b>Base</b></td><td>6.5→10%</td><td>IEA×1.2</td><td>AI DC BTM ESS 가속</td></tr>
 <tr><td><b>Bull</b></td><td>7.5→13%</td><td>IEA×1.2 상회</td><td>AI DC BTM+FTM 가속, ESS 수요 셀사이드 상단 수준 [자체추정]</td></tr></table>
+<span style="font-size:9px;color:#8a7e6e">외부 설치 전망(2026.10 기준): Benchmark 미국 2026E 70GWh ≈ 본 대시보드 2026 ESS Bear 71(설치량 vs 셀 수요로 정의 상이) · 2025 실측 51GWh(Wood Mackenzie·ACP) · Wood Mackenzie는 2026~27 유틸리티급 둔화 가능성 언급(2026.9)</span><br>
 <h4>⚠️ 공급 부족 조건</h4>
 <table><tr><th></th><th>EV</th><th>ESS</th></tr>
 <tr><th>NCM</th><td class="safe">한국3사+Panasonic 여유</td><td>소수</td></tr>
 <tr><th>LFP</th><td>Tesla,중국</td><td class="hl">⚠ 비중국 LFP 부족</td></tr></table>
 중국산 셀 수입 <b>40.3%</b>(26.03 Census). FEOC=보조금 미적용(수입 금지 아님).<br>
+<span style="font-size:9px;color:#8a7e6e">(비교·기준 상이) 리튬이온 EV 외·ESS/IT용 HS 8507600020 <b>2025 연간</b> 수입 $16.6B 중 중국 63.5% · 한국 11.5% · 일본 9.7% — 위 40.3%는 전체 리튬이온(HS 850760) 2026.03 월간 · 출처: US Census(data/census-import.json 재계산, 2026-10-15)</span><br>
 <b>ESS 프로젝트 취소/지연 (~38.8GWh, 자체추정)</b><br>FREYR(10.2G)·KORE(9.6G)·iM3NY(0.8G)·ABF(7.2G)·Gotion(4G)·Microvast(4G)·Kontrolmatik(3G)·AESC(증설미진). → 비중국 ESS 공급 부족 가시화. 셀3사 북미 ESS 수주잔고 ~200GWh<br>
-<span style="font-size:9px;color:var(--ink-3)">※ 2026-07-08 시나리오 밴드 상향 — Q1 2026 미국 BESS 설치 사상 최대(+54%) 등 실측 상회 반영</span>
+<span style="font-size:9px;color:var(--ink-3)">※ 2026-07-08 시나리오 밴드 상향 — Q1 2026 미국 BESS 설치 사상 최대(+54%) 등 실측 상회 반영</span><br>
+<span style="font-size:9px;color:var(--ink-3)">Tesla 에너지저장 설치 2025 46.7GWh · 2026 1~3Q 누적 36.0GWh(+11% YoY) · 출처: Tesla IR</span>
 </div>
 </div></div>
 <!-- TAB: Global Design CAPA -->
@@ -375,15 +384,16 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:h
 <table class="gd-t">
 <thead><tr><th class="l">기업</th><th class="l">거점 / 라인</th><th class="l">전환 현황</th><th class="l">디자인 CAPA 처리</th></tr></thead>
 <tbody>
-<tr><td class="l">LGES</td><td class="l">미시간 Lansing / 구 Ultium 3</td><td class="sm">GM 전기차→Tesla Megapack 3향 LFP ESS 전환. 공급 2027년부터</td><td class="sm">기존 50GWh 디자인 유지. 믹스=LFP ESS</td></tr>
-<tr><td class="l">LGES</td><td class="l">테네시 Spring Hill</td><td class="sm">기존 전기차 라인 일부 LFP ESS로 전환</td><td class="sm">총 디자인 50GWh 유지</td></tr>
-<tr><td class="l">LGES</td><td class="l">L-H Battery Ohio / Honda JV</td><td class="sm">2026년 ESS 셀 생산 시작</td><td class="sm">40GWh 디자인 유지</td></tr>
+<tr><td class="l">LGES</td><td class="l">미시간 Lansing / 구 Ultium 3</td><td class="sm">GM 전기차→Tesla Megapack 3향 LFP ESS 전환. ESS 2026 12GWh(2Q26 가동) → 2027 28GWh(외부 집계 2026.10). Tesla 공급 2027년부터</td><td class="sm">기존 50GWh 디자인 유지. 믹스=LFP ESS</td></tr>
+<tr><td class="l">LGES</td><td class="l">테네시 Spring Hill</td><td class="sm">기존 전기차 라인 일부 LFP ESS로 전환. ESS 5GWh 2026.5 가동(외부 집계 2026.10; 종전 14GWh)</td><td class="sm">총 디자인 50GWh 유지</td></tr>
+<tr><td class="l">LGES</td><td class="l">L-H Battery Ohio / Honda JV</td><td class="sm">2026.5 ESS 셀 생산 시작, 12GWh(외부 집계 2026.10)</td><td class="sm">40GWh 디자인 유지</td></tr>
+<tr><td class="l">LGES</td><td class="l">온타리오 NextStar</td><td class="sm">스텔란티스 JV → 100% 자회사 ESS 거점. 2025.11 셀 양산 6GWh → 2026 하반기 라인 추가 12GWh(외부 집계 2026.10)</td><td class="sm">명목 49.5GWh 유지</td></tr>
 <tr><td class="l">LGES</td><td class="l">Arizona ESS LFP 17GWh</td><td class="sm">중단/재배정. 46시리즈 원통형 우선</td><td class="sm">확정 0, 옵션 +17GWh</td></tr>
-<tr><td class="l">삼성SDI</td><td class="l">StarPlus Kokomo</td><td class="sm">전기차→ESS NCA/LFP 전환. 26년말 미국 ESS 30GWh 목표. 수주가 29년 캐파 상당부분 커버·28년부터 캐파 초과 전망(추가 캐파 내부 검토)</td><td class="sm">1공장33/2공장67 디자인 유지</td></tr>
+<tr><td class="l">삼성SDI</td><td class="l">StarPlus Kokomo</td><td class="sm">전기차→ESS NCA/LFP 전환. 26년 말 미국 ESS 19GWh(NCA 7+LFP 12)·글로벌 약 30GWh(그룹미팅 260901), 27년 상반기 L4 LFP 12G 전환(외부 집계 2026.10). 수주가 29년 캐파 상당부분 커버·28년부터 캐파 초과 전망(추가 캐파 내부 검토)</td><td class="sm">1공장33/2공장67 디자인 유지</td></tr>
 <tr><td class="l">삼성SDI</td><td class="l">New Carlisle / 단독법인</td><td class="sm">GM 지분 49.99% 인수·단독법인 전환(260811 공시). 4개 라인(각 9G) 중 2개를 ESS LFP로 전환 = 20~24G [추정]. <b style="color:var(--red)">SOP 2H28E</b> — 가동 시작 "28년 말 정도"(260901 그룹미팅)</td><td class="sm">명목 36GWh 유지. geo탭은 전환분 22G를 2028로 이연</td></tr>
 <tr><td class="l">삼성SDI</td><td class="l">천안 DryEV</td><td class="sm">건식전극 파일럿(공정 검증). 대형 셀 추가 아님</td><td class="sm">파일럿 1GWh 유지. 확장시 옵션 +7GWh</td></tr>
 <tr><td class="l">SK온</td><td class="l">서산 2공장</td><td class="sm">전기차 2개 라인(3GWh)→LFP ESS</td><td class="sm">공장 6GWh 유지</td></tr>
-<tr><td class="l">SK온</td><td class="l">조지아 Commerce</td><td class="sm">Flatiron 공급 위해 일부 전기차→LFP ESS</td><td class="sm">22GWh 디자인 유지</td></tr>
+<tr><td class="l">SK온</td><td class="l">조지아 Commerce</td><td class="sm">Flatiron 공급 위해 일부 전기차→LFP ESS. 2026.4 전환 공사 착수 → 연말 LFP ESS 양산(규모 미공개), 2026.10~연말 공급</td><td class="sm">22GWh 디자인 유지</td></tr>
 <tr><td class="l">SK온</td><td class="l">BlueOval 구조조정</td><td class="sm">SK온=Tennessee, Ford=Kentucky 인수</td><td class="sm">Tennessee 45 SK 반영 / Kentucky 82 SK 제외</td></tr>
 <tr><td class="l">Panasonic</td><td class="l">Kansas De Soto</td><td class="sm">자동차용 2170. 데이터센터 셀은 FY2029부터</td><td class="sm">2028까지 32GWh 유지</td></tr>
 </tbody></table>
@@ -455,19 +465,19 @@ const FAC_STATES=new Set();
 
 const D=[
 // CELL (ev-dashboard CELL3_CAPA 100%)
-{co:"삼성SDI",id:"Kokomo_IN",cat:"cell",city:"Kokomo",st:"IN",lat:40.49,lon:-86.13,unit:"GWh",status:"ramping",app:"EV+ESS",cust:"Stellantis,유틸리티,Tesla(추정)",sop:"2H24",alloc:{Stellantis:8,ESS:29},r:{2026:27,2027:37,2028:37},note:"L1 NCA EV 8G(스텔란티스 요청으로 존치·ESS 전환 계획 없음, 260901 그룹미팅) / L2 NCA ESS 7G(가동중) / L3 LFP ESS 12G(26.10월 셀 양산·SBB 2.0용 273Ah·연내 공급) / L4 LFP ESS 10G(1Q27). 27E 명목 37G(8+7+12+10). 260730 2Q26 컨콜·260901 그룹미팅 기준. ESS 전환 라인이 테슬라향 수주 대응 거점 — 260130 공급계약 공시(상대 유보), 27년부터 3년 연 10G·3조원대 [추정]"},
+{co:"삼성SDI",id:"Kokomo_IN",cat:"cell",city:"Kokomo",st:"IN",lat:40.49,lon:-86.13,unit:"GWh",status:"ramping",app:"EV+ESS",cust:"Stellantis,유틸리티,Tesla(추정)",sop:"2H24",alloc:{Stellantis:8,ESS:31},r:{2026:27,2027:39,2028:39},note:"L1 NCA EV 8G(스텔란티스 요청으로 존치·ESS 전환 계획 없음, 260901 그룹미팅) / L2 NCA ESS 7G(가동중) / L3 LFP ESS 12G(26.10월 셀 양산·SBB 2.0용 273Ah·연내 공급) / L4 LFP ESS 12G(27년 상반기 전환; 회사 범위 10~12G 상단·외부 집계 2026.10, 종전 10G 1Q27). 27E 명목 39G(8+7+12+12). 260730 2Q26 컨콜·260901 그룹미팅 기준. ESS 전환 라인이 테슬라향 수주 대응 거점 — 260130 공급계약 공시(상대 유보), 27년부터 3년 연 10G·3조원대 [추정]"},
 {co:"삼성SDI",id:"NewCarlisle_IN",cat:"cell",city:"New Carlisle",st:"IN",lat:41.72,lon:-86.51,unit:"GWh",status:"construction",app:"EV+ESS",cust:"자체(단독법인)",sop:"2H28E",alloc:{ESS:22},r:{2026:0,2027:0,2028:22},note:"GM JV 종료·GM 지분 49.99% 인수로 단독법인 전환(260811 공시). 전체 36G(4개 라인×9G) 중 2개 라인 ESS LFP 전환 = 20~24G, 중간값 22G 반영 [추정]. 잔여 2개 라인 용도 미정, 투자계획 미확정. 회사가 가동 시작을 '아마도 28년 말 정도'로 제시해 SOP 2H27E→2H28E, 2027 CAPA 22G→0으로 이연(260901 그룹미팅)"},
-{co:"LG에너지솔루션",id:"MIH_Holland",cat:"cell",city:"Holland",st:"MI",lat:42.79,lon:-86.11,unit:"GWh",status:"operational",app:"ESS",cust:"ESS(유틸리티)",sop:"2022",alloc:{ESS:17},r:{2026:17,2027:17,2028:17},note:"ESS Only 17GWh. EV 라인 없음"},
-{co:"LG에너지솔루션",id:"MIL_Lansing",cat:"cell",city:"Lansing",st:"MI",lat:42.73,lon:-84.56,unit:"GWh",status:"ramping",app:"ESS+EV",cust:"Tesla,Toyota",sop:"1H26",alloc:{Tesla:15,Toyota:10},r:{2026:25,2027:25,2028:25},note:"ESS+EV 25GWh. Tesla·Toyota향"},
+{co:"LG에너지솔루션",id:"MIH_Holland",cat:"cell",city:"Holland",st:"MI",lat:42.79,lon:-86.11,unit:"GWh",status:"operational",app:"ESS",cust:"ESS(유틸리티)",sop:"2022",alloc:{ESS:16},r:{2026:16,2027:16,2028:16},note:"ESS Only 16GWh(16.5 반올림, 외부 집계 2026.10; 종전 17). 2025.6 LFP ESS 양산. EV 라인 없음"},
+{co:"LG에너지솔루션",id:"MIL_Lansing",cat:"cell",city:"Lansing",st:"MI",lat:42.73,lon:-84.56,unit:"GWh",status:"ramping",app:"ESS+EV",cust:"Tesla,Toyota",sop:"1H26",alloc:{Tesla:28,Toyota:10},r:{2026:22,2027:38,2028:38},note:"ESS 2026 12 → 2027 28GWh(2Q26부터 가동, 외부 집계 2026.10; 종전 ESS+EV 25 고정) + Toyota EV 10 유지(대시보드 기존 배분). Tesla Megapack향 공급 2027년부터"},
 {co:"LG에너지솔루션",id:"UC1_Ohio_GM",cat:"cell",city:"Warren",st:"OH",lat:41.24,lon:-80.77,unit:"GWh",status:"operational",app:"EV",cust:"GM Ultium",sop:"2022",alloc:{GM:40},r:{2026:40,2027:40,2028:40},note:"UC1 가용CAPA EV 40GWh(GM향). 2028까지 ESS 생산계획 없음 — 북미 EV 물량 UC1 통합, ESS는 UC2(스프링힐) 흡수. 260713 정정. 1H26 가동 중단 → 3Q26 중반 재가동, 4Q 물량 > 3Q(2Q26 컨콜)"},
-{co:"LG에너지솔루션",id:"UC2_Tennessee_GM",cat:"cell",city:"Spring Hill",st:"TN",lat:35.75,lon:-86.93,unit:"GWh",status:"operational",app:"EV+ESS",cust:"GM Ultium",sop:"2023",alloc:{GM:34},r:{2026:34,2027:34,2028:34},note:"UC2 가용CAPA EV20(라인 절반 미설치)+ESS14=34GWh"},
+{co:"LG에너지솔루션",id:"UC2_Tennessee_GM",cat:"cell",city:"Spring Hill",st:"TN",lat:35.75,lon:-86.93,unit:"GWh",status:"operational",app:"EV+ESS",cust:"GM Ultium",sop:"2023",alloc:{GM:20,ESS:5},r:{2026:25,2027:25,2028:25},note:"UC2 가용CAPA EV20(라인 절반 미설치)+ESS 5(2026.5 가동, 외부 집계 2026.10; 종전 14)=25GWh"},
 {co:"LG에너지솔루션",id:"Arizona_46",cat:"cell",city:"Queen Creek",st:"AZ",lat:33.24,lon:-111.63,unit:"GWh",status:"construction",app:"EV",cust:"Tesla,Ford,Benz",sop:"2H26",alloc:{Tesla:18,Ford:9,Benz:9},r:{2026:0,2027:36,2028:36},note:"46시리즈 36G. 4Q26 중 가동 시작·오창 대비 설비 생산효율 50%+(2Q26 컨콜 260730)"},
-{co:"LG에너지솔루션",id:"Ontario_CA",cat:"cell",city:"Windsor",st:"ON",lat:42.31,lon:-83.04,unit:"GWh",status:"ramping",app:"ESS",cust:"Stellantis→ESS",sop:"1H25",alloc:{ESS:10},r:{2026:10,2027:0,2028:0},note:"ESS LFP (ev-dashboard)"},
-{co:"LG에너지솔루션",id:"Honda_OH",cat:"cell",city:"Jeffersonville",st:"OH",lat:39.56,lon:-83.45,unit:"GWh",status:"construction",app:"EV",cust:"Honda JV",sop:"2H25",alloc:{Honda:10},r:{2026:10,2027:10,2028:10},note:"2H25 순차 (ev-dashboard)"},
+{co:"LG에너지솔루션",id:"Ontario_CA",cat:"cell",city:"Windsor",st:"ON",lat:42.31,lon:-83.04,unit:"GWh",status:"ramping",app:"ESS",cust:"Stellantis→ESS(NextStar 100%)",sop:"2H25",alloc:{ESS:12},r:{2026:12,2027:12,2028:12},note:"NextStar 100% 자회사 ESS 거점. 2025.11 셀 양산(2025 말 6GWh) → 라인 1개 2026 하반기 추가 12GWh(외부 집계 2026.10; 종전 10/0/0은 입력 오류 추정)"},
+{co:"LG에너지솔루션",id:"Honda_OH",cat:"cell",city:"Jeffersonville",st:"OH",lat:39.56,lon:-83.45,unit:"GWh",status:"ramping",app:"ESS",cust:"ESS(Honda JV 공장)",sop:"1H26",alloc:{ESS:12},r:{2026:12,2027:12,2028:12},note:"2026.5 ESS 셀 가동 12GWh(외부 집계 2026.10; 종전 EV 10). Honda EV/HEV는 중기 옵션(디자인 CAPA 탭 참조)"},
 {co:"LG에너지솔루션",id:"Georgia_HMG",cat:"cell",city:"Ellabell",st:"GA",lat:32.13,lon:-81.47,unit:"GWh",status:"ramping",app:"EV",cust:"현대차 JV",sop:"2H26",alloc:{"현대기아":15},r:{2026:15,2027:30,2028:30},note:"2H26 SOP (ev-dashboard)"},
-{co:"SK온",id:"Commerce_GA",cat:"cell",city:"Commerce",st:"GA",lat:34.20,lon:-83.46,unit:"GWh",status:"operational",app:"EV",cust:"VW,Ford,Hyundai",sop:"2022",alloc:{VW:10,Ford:6,"현대기아":6},r:{2026:22,2027:22,2028:22},note:"1공장10+2공장12 (ev-dashboard)"},
+{co:"SK온",id:"Commerce_GA",cat:"cell",city:"Commerce",st:"GA",lat:34.20,lon:-83.46,unit:"GWh",status:"operational",app:"EV+ESS",cust:"VW,Ford,Hyundai",sop:"2022",alloc:{VW:10,Ford:6,"현대기아":6},r:{2026:22,2027:22,2028:22},note:"1공장10+2공장12. 2026.4 LFP ESS 전환 공사 착수 → 연말 LFP 양산(규모 미공개, 2026.10~연말 공급) — r 22 유지"},
 {co:"SK온",id:"Georgia_HMG",cat:"cell",city:"Statesboro",st:"GA",lat:32.45,lon:-81.78,unit:"GWh",status:"construction",app:"EV",cust:"현대 JV",sop:"2026",alloc:{"현대기아":9},r:{2026:9,2027:35,2028:35},note:"현대 JV 2026 SOP (ev-dashboard)"},
-{co:"SK온",id:"Tennessee_SK",cat:"cell",city:"Stanton",st:"TN",lat:35.46,lon:-89.40,unit:"GWh",status:"ramping",app:"EV+ESS",cust:"SK 단독",sop:"1H26",alloc:{"SK단독":45},r:{2026:45,2027:45,2028:45},note:"BlueOval 해체→SK 단독. EREV 2028~ (ev-dashboard)"},
+{co:"SK온",id:"Tennessee_SK",cat:"cell",city:"Stanton",st:"TN",lat:35.46,lon:-89.40,unit:"GWh",status:"ramping",app:"EV",cust:"SK 단독",sop:"1H26",alloc:{"SK단독":45},r:{2026:45,2027:45,2028:45},note:"BlueOval 해체→SK 단독. EREV 2028~. ESS 전환 거점은 조지아 Commerce(2026.10 정정)"},
 {co:"Tesla",id:"4680_TX",cat:"cell",city:"Austin",st:"TX",lat:30.22,lon:-97.62,unit:"GWh",status:"production",app:"EV",cust:"자체",sop:"2024",alloc:{Tesla:40},r:{2026:40,2027:40,2028:40},note:"NMC811 건식전극 40G (SEC 8-K)"},
 {co:"Tesla",id:"LFP_NV",cat:"cell",city:"Sparks",st:"NV",lat:39.54,lon:-119.74,unit:"GWh",status:"early_ramp",app:"ESS",cust:"자체(Megapack)",sop:"1H26",alloc:{Tesla:7},r:{2026:7,2027:10,2028:10},note:"LFP 자체 셀 7G (SEC 8-K)"},
 {co:"Tesla",id:"NV_exp",cat:"cell",city:"Sparks",st:"NV",lat:39.55,lon:-119.76,unit:"GWh",status:"construction",app:"EV+ESS",cust:"Semi,Cybercab",sop:"2028",alloc:{Tesla:2},r:{2026:2,2027:10,2028:40},note:"100G 디자인 $3.6B (ev-dashboard)"},
@@ -477,7 +487,7 @@ const D=[
 {co:"Ford Energy",id:"Glendale_KY",cat:"cell",city:"Glendale",st:"KY",lat:37.60,lon:-85.88,unit:"GWh",status:"construction",app:"ESS",cust:"유틸리티,DC",sop:"2H27",alloc:{},r:{2026:0,2027:10,2028:20},note:"LFP CATL라이선스 2H27 (ev-dashboard+Ford공식)"},
 // ENERGY
 {co:"Tesla",id:"Megapack_CA",cat:"energy",city:"Lathrop",st:"CA",lat:37.82,lon:-121.28,unit:"GWh",status:"production",app:"ESS",cust:"유틸리티,DC",r:{2026:40,2027:50,2028:60},note:"Megapack 40G (SEC 8-K)"},
-{co:"Tesla",id:"Megapack_TX",cat:"energy",city:"Houston",st:"TX",lat:29.76,lon:-95.37,unit:"GWh",status:"construction",app:"ESS",cust:"유틸리티,DC",r:{2026:0,2027:25,2028:50},note:"Megapack 3 ~50G (SEC 8-K)"},
+{co:"Tesla",id:"Megapack_TX",cat:"energy",city:"Houston",st:"TX",lat:29.76,lon:-95.37,unit:"GWh",status:"construction",app:"ESS",cust:"유틸리티,DC",r:{2026:0,2027:25,2028:50},note:"Megapack 3 ~50G (SEC 8-K) · Brookshire Megafactory, 2H26 출하 예정(언론 보도 기준 2026.10) — 명목 램프 r 2027 25/2028 50 유지"},
 // CATHODE
 {co:"Tesla",id:"Cathode_TX",cat:"cathode",city:"Austin",st:"TX",lat:30.22,lon:-97.63,unit:"GWh",status:"early_ramp",app:"ESS",cust:"자체",r:{2026:10,2027:10,2028:10},note:"LFP Cathode 10G (SEC 8-K)"},
 {co:"LG화학",id:"Clarksville_TN",cat:"cathode",city:"Clarksville",st:"TN",lat:36.53,lon:-87.36,unit:"만톤",status:"construction",app:"EV+ESS",cust:"LGES,GM",r:{2026:0,2027:6,2028:12},note:"$3B+ 12만톤 (LG화학 공식)"},
