@@ -20,6 +20,29 @@
   // EV 손실: 1H26 배터리 영업손실 173억(회사) → 2026 연 346·분기 86.5[가정]. 2025·2027~는 미입력(상쇄율 미산출).
   const evLossDefaults={y2026:346,q126:86.5,q226:86.5};
   const topDown={marketUSD:8e8,year:2026,source:'삼성SDI 2026.07.30 발언 · BBU 배터리 시장 2026E 약 8억 USD(+70%)'};
+  // 2026.10.15 · 범용 랙(ORv3식 랙 내 BBU) 수요층. 랙 수 대신 보호 대상 IT 전력(MW)에서 출발 — OCP ORv3 셸프 규격은 랙 내 전체 payload를 전원 셸프 정격까지 백업.
+  // 미국 DC 시설 전력 GW: S&P Global 451 Research(리포트 표 경유) 2024 50.5·2025 64.0·2026E 75.8·2028E 108.0·2030E 183.2. 2027·2029는 기하 보간[가정].
+  const usDcGW={2024:50.5,2025:64.0,2026:75.8,2027:90.5,2028:108.0,2029:140.7,2030:183.2};
+  const usDcInterpolated=[2027,2029];
+  // 글로벌 배율 2.2 = 1÷IEA Energy and AI 2024 미국 비중 45%[증가분 적용 가정] · IT 비율 77%(PUE 1.3 가정; NVIDIA AI 팩토리 136MW 시설/100MW IT = 74% 참고) · AI 랙 제외 = Layer A 랙 수 × HPE 설계전력 132kW · 범용 랙 BBU 채택 40%[가정, Bear 25/Bull 60] · 백업 240초(OCP ORv3 ≥4분)
+  const generalDefaults={dcFactor:2.2,itShare:77,aiRackKW:hpeReference.nominalKW,generalAttach:40,generalSeconds:240};
+  function getGeneralDefaults(period){
+    const p=periods[period];
+    const prev=p?usDcGW[p.year-1]:null,cur=p?usDcGW[p.year]:null;
+    const add=prev!=null&&cur!=null?Number(((cur-prev)*p.fraction).toFixed(3)):'';
+    const note=add===''?'해당 연도의 기준 자료 없음':`${p.year}년 미국 DC 시설 전력 증가분 ${(cur-prev).toFixed(1)}GW = ${cur} − ${prev}${usDcInterpolated.includes(p.year)||usDcInterpolated.includes(p.year-1)?' (보간 연도 포함[가정])':''}${p.fraction!==1?` · 분기는 ÷4 = ${add}GW`:''}`;
+    return {dcAddGW:add,note,...generalDefaults};
+  }
+  // 2026 회사 발언(시장 × 점유)과 합계 매출이 같아지는 범용 랙 채택 비중 역산. 점유율은 양변에서 상쇄. 공급 상한 미적용 전제.
+  // raw>100이면 범용 랙 전량 채택으로도 회사 발언 규모에 못 미침. 범용 랙 전력이 0이면 raw=Infinity.
+  function calibrateGeneralAttach(input){
+    const r=calculate({...input,generalAttach:100});
+    const a=number(input.asp);
+    if(r.errors.length||r.generalCells===null||r.aiCells===null||a===null||a<=0)return null;
+    const need=topDown.marketUSD/a-r.aiCells-(r.replacementCells||0);
+    const raw=need<=0?0:r.generalCells>0?need/r.generalCells*100:Infinity;
+    return {raw,pct:Math.min(100,raw)};
+  }
   function getCellDefaults(cellConfig){
     const p=cellPresets[cellConfig];
     if(!p)return {cellConfig:'manual',cellW:'',cellWh:'',powerFactor:'',energyFactor:'',reserve:''};
@@ -68,7 +91,7 @@
   function getDefaults(platform,period,cellConfig='ocp18650'){
     const ref=getShipmentReference(platform,period);
     const cell=getCellDefaults(cellConfig);
-    return {platform,period,chips:ref?Math.round(ref.chips):'',rackShare:100,attach:ref?.attach!=null?Number(ref.attach.toFixed(2)):attachDefaults[platform]?.[periods[period]?.year]??'',...getBackupDefaults('shelf-1'),...cell,...getSupplyDefaults(period,cell.cellWh),...priceDefaults};
+    return {platform,period,chips:ref?Math.round(ref.chips):'',rackShare:100,attach:ref?.attach!=null?Number(ref.attach.toFixed(2)):attachDefaults[platform]?.[periods[period]?.year]??'',...getBackupDefaults('shelf-1'),...cell,...getSupplyDefaults(period,cell.cellWh),...priceDefaults,...getGeneralDefaults(period)};
   }
   const fields={
     chips:['칩 출하 추정·역산 물량 (개)',0,null],rackShare:['72GPU 랙 환산 비중 (%)',0,100],attach:['BBU 채택률 (%)',0,100],
@@ -76,7 +99,8 @@
     powerFactor:['출력 사용 가능 비율 (%)',.01,100],energyFactor:['에너지 사용 가능 비율 (%)',.01,100],reserve:['예비 셀 추가율 (%)',0,100],
     share:['회사 셀 물량점유율 (%)',0,100],asp:['셀 ASP (USD/개)',0,null],cbu:['기설 BBU 중 CBU 적용 비중 (%)',0,100],life:['CBU 미적용 교체주기 (년)',1,30],cbuLife:['CBU 적용 교체주기 (년)',1,30],
     capacity:['말레이시아 설계능력 (백만셀/년)',0,null],allocation:['선택 코호트 BBU 배정 비중 (%)',0,100],utilization:['가동률 (%)',0,100],yield:['양품 수율 (%)',0,100],
-    margin:['BBU 셀 영업이익률 (%)',-100,100],fx:['환율 (KRW/USD)',1,null],evLoss:['같은 기간 EV 영업손실 (억원·양수)',0,null]
+    margin:['BBU 셀 영업이익률 (%)',-100,100],fx:['환율 (KRW/USD)',1,null],evLoss:['같은 기간 EV 영업손실 (억원·양수)',0,null],
+    dcAddGW:['연간 신규 DC 시설 전력 (GW, 미국)',0,null],dcFactor:['글로벌 배율 (미국 → 글로벌)',0,null],itShare:['IT 전력 비율 (%)',0,100],aiRackKW:['AI 랙 설계전력 (kW/랙, 범용 랙에서 제외)',0,null],generalAttach:['범용 랙 BBU 채택 비중 (%)',0,100],generalSeconds:['범용 랙 백업 시간 (초)',1,null]
   };
   const number=v=>v===''||v==null?null:Number(v);
   const valid=(k,v)=>Number.isFinite(v)&&v>=fields[k][1]&&(fields[k][2]===null||v<=fields[k][2]);
@@ -88,7 +112,7 @@
     const platform=shipments[input.platform];
     if(!platform)errors.push('플랫폼');
     const requireKeys=keys=>{const absent=keys.filter(k=>a[k]===null);missing.push(...absent.map(k=>fields[k][0]));return !absent.length;};
-    const out={errors,missing,racks:null,backedRacks:null,backedMW:null,deliveredKWh:null,cellsPerRack:null,newCells:null,nominalGWh:null,replacementCells:null,demandCells:null,companyDemand:null,supplyCells:null,salesCells:null,demandRevenue:null,salesRevenue:null,opKRW:null,offset:null,cohortMissing:false};
+    const out={errors,missing,racks:null,backedRacks:null,backedMW:null,deliveredKWh:null,cellsPerRack:null,aiCells:null,aiMW:null,generalITMW:null,generalMW:null,generalCells:null,cellsPerMW:null,generalMWh:null,newCells:null,nominalGWh:null,replacementCells:null,demandCells:null,companyDemand:null,supplyCells:null,salesCells:null,demandRevenue:null,salesRevenue:null,opKRW:null,offset:null,cohortMissing:false};
     if(errors.length)return out;
     if(requireKeys(['chips','rackShare']))out.racks=a.chips*a.rackShare/100/72;
     if(out.racks!==null&&requireKeys(['attach']))out.backedRacks=out.racks*a.attach/100;
@@ -101,8 +125,19 @@
       const byEnergy=out.deliveredKWh*1000/(a.cellWh*a.energyFactor/100);
       out.limiting=byPower>=byEnergy?'출력':'에너지';
       out.cellsPerRack=Math.ceil(Math.max(byPower,byEnergy)*(1+a.reserve/100));
-      if(out.backedRacks!==null){out.newCells=out.backedRacks*out.cellsPerRack;out.nominalGWh=out.newCells*a.cellWh/1e9;}
+      if(out.backedRacks!==null)out.aiCells=out.backedRacks*out.cellsPerRack;
     }
+    // Layer B · 범용 랙(ORv3식 랙 내 BBU): 신규 DC 시설 전력 → 글로벌 배율 → IT 비율 → AI 랙 전력(Layer A 랙 수 × 설계전력) 제외 → 채택 비중 → MW → 셀(출력·에너지 조건 중 큰 셀 수). 랙 수·랙당 kW 불필요.
+    if(out.racks!==null&&requireKeys(['dcAddGW','dcFactor','itShare','aiRackKW','generalAttach'])){
+      out.aiMW=out.racks*a.aiRackKW/1000;
+      out.generalITMW=Math.max(0,a.dcAddGW*1000*a.dcFactor*a.itShare/100-out.aiMW);
+      out.generalMW=out.generalITMW*a.generalAttach/100;
+      if(requireKeys(['generalSeconds','cellW','cellWh','powerFactor','energyFactor','reserve'])){
+        out.cellsPerMW=Math.max(1e6/(a.cellW*a.powerFactor/100),1e6*a.generalSeconds/3600/(a.cellWh*a.energyFactor/100))*(1+a.reserve/100);
+        out.generalCells=out.generalMW*out.cellsPerMW;out.generalMWh=out.generalMW*a.generalSeconds/3600;
+      }
+    }
+    if(out.aiCells!==null||out.generalCells!==null){out.newCells=(out.aiCells||0)+(out.generalCells||0);out.nominalGWh=out.newCells*a.cellWh/1e9;}
     // Cohorts are market cells originally installed in the chosen platform only.
     // Explicit "new only" never claims zero replacements in the actual market.
     if(input.replacementMode==='exclude')out.replacementCells=0;
@@ -134,20 +169,20 @@
     out.missing=[...new Set(missing)];return out;
   }
   function sensitivity(a){
-    const specs=[['기준',null,0],['BBU 탑재율 −10%p','attach',-10],['BBU 탑재율 +10%p','attach',10],['백업 시간 ×0.5','seconds',.5],['백업 시간 ×2','seconds',2],['셀 출력 +20%','cellW',1.2],['셀 가격 −10%','asp',.9],['셀 가격 +10%','asp',1.1],['가동률 +10%p','utilization',10],['영업이익률 −5%p','margin',-5],['영업이익률 +5%p','margin',5]];
-    return specs.map(([label,key,value])=>{const b={...a};if(key&&number(a[key])!==null)b[key]=['attach','utilization','margin'].includes(key)?Math.max(key==='margin'?-100:0,Math.min(100,Number(a[key])+value)):Number(a[key])*value;return {label,...calculate(b)};});
+    const specs=[['기준',null,0],['BBU 탑재율 −10%p','attach',-10],['BBU 탑재율 +10%p','attach',10],['범용 랙 채택 −10%p','generalAttach',-10],['범용 랙 채택 +10%p','generalAttach',10],['백업 시간 ×0.5','seconds',.5],['백업 시간 ×2','seconds',2],['셀 출력 +20%','cellW',1.2],['셀 가격 −10%','asp',.9],['셀 가격 +10%','asp',1.1],['가동률 +10%p','utilization',10],['영업이익률 −5%p','margin',-5],['영업이익률 +5%p','margin',5]];
+    return specs.map(([label,key,value])=>{const b={...a};if(key&&number(a[key])!==null)b[key]=['attach','utilization','margin','generalAttach'].includes(key)?Math.max(key==='margin'?-100:0,Math.min(100,Number(a[key])+value)):Number(a[key])*value;return {label,...calculate(b)};});
   }
-  const api={calculate,sensitivity,periods,shipments,hpeReference,bbuReference,calculateShelfReference,getDefaults,getBackupDefaults,getShipmentReference,getDefaultPlatform,cellPresets,malaysiaGWh,supplyDefaults,priceDefaults,evLossDefaults,topDown,getCellDefaults,getSupplyDefaults};
+  const api={calculate,sensitivity,periods,shipments,hpeReference,bbuReference,calculateShelfReference,getDefaults,getBackupDefaults,getShipmentReference,getDefaultPlatform,cellPresets,malaysiaGWh,supplyDefaults,priceDefaults,evLossDefaults,topDown,getCellDefaults,getSupplyDefaults,usDcGW,generalDefaults,getGeneralDefaults,calibrateGeneralAttach};
   if(typeof module!=='undefined'&&module.exports)module.exports=api;
   if(!root.document)return;
   root.BBUModel=api;
   const el=root.document.querySelector('[data-bbu-calculator]');
   if(!el)return;
   const fmt=(v,d=1)=>v===null||!Number.isFinite(v)?'미확인':v.toLocaleString('ko-KR',{maximumFractionDigits:d});
-  const inputNotes={chips:'기본자료: 선택 기간의 출하표 또는 리포트 역산치',rackShare:'환산 가정: 기본 100% = 전체 칩 ÷ 72. 미래 세대에도 적용하는 비교 단위이며 실제 랙 구성·출하량 아님',attach:'외부 추정: 첨부 BBU 리포트 p.34, Exhibit 36 · 2026.09.24. HPE 실측 아님',power:'제품 사양: 기본 Compuware 1선반 33kW. HPE·미래 세대 전체 부하 아님',seconds:'제품 사양: 선택한 Compuware 정격 출력에서 90초',cellW:'셀 기준 선택값 — OCP 참조 팩은 셀당 설계 사용출력(규격), 40V3는 40T 데이터시트 준용[가정]',cellWh:'셀 기준 선택값 — OCP 1.5Ah×3.7V / 40V3 4.0Ah×3.6V[가정]',powerFactor:'셀 기준 선택값 — OCP 100%(설계값 자체가 사용출력) / 40V3 50%[가정]',energyFactor:'셀 기준 선택값 — OCP 240초×3kW 역산 55% / 40V3 50%[가정]',reserve:'셀 기준 선택값 — OCP 0%(5+1은 모듈 단위) / 40V3 10%[가정]',share:'기본 45% = 회사 발언 40~50%(2026.07.30) 중간. 물량 점유율로 입력, 시스템·금액 점유율과 구분',asp:'[가정] $6/셀 자리표시 — 공개 거래가 없음. 민감도 표의 ±10% 참조',capacity:'맵 ⑤ 삼성SDI 발표 소형전지 13GWh(2025~27)·20(2028)·25(2029~)를 선택 셀 Wh로 환산. 전용 CAPA 미공개',allocation:'[가정] 20% — ⑤ 각주 "2개 라인 신·증설 여력" ≈ 2~4GWh의 중간',utilization:'1H26 소형전지 가동률 73%(2025년 50.4%) · 회사 수치 보도(2026.10.13)',yield:'[가정] 95% — 양품 기준 CAPA면 100 입력',margin:'[가정] 15% — BBU 셀 이익률 미공개',fx:'1,400 KRW/USD(리포트 가정과 동일)',evLoss:'1H26 배터리 영업손실 173억(회사 실적) × 2 = 346억[가정, 2026 기간만]. 2025·2027 이후는 미입력'};
+  const inputNotes={chips:'기본자료: 선택 기간의 출하표 또는 리포트 역산치',rackShare:'환산 가정: 기본 100% = 전체 칩 ÷ 72. 미래 세대에도 적용하는 비교 단위이며 실제 랙 구성·출하량 아님',attach:'외부 추정: 첨부 BBU 리포트 p.34, Exhibit 36 · 2026.09.24. HPE 실측 아님',power:'제품 사양: 기본 Compuware 1선반 33kW. HPE·미래 세대 전체 부하 아님',seconds:'제품 사양: 선택한 Compuware 정격 출력에서 90초',cellW:'셀 기준 선택값 — OCP 참조 팩은 셀당 설계 사용출력(규격), 40V3는 40T 데이터시트 준용[가정]',cellWh:'셀 기준 선택값 — OCP 1.5Ah×3.7V / 40V3 4.0Ah×3.6V[가정]',powerFactor:'셀 기준 선택값 — OCP 100%(설계값 자체가 사용출력) / 40V3 50%[가정]',energyFactor:'셀 기준 선택값 — OCP 240초×3kW 역산 55% / 40V3 50%[가정]',reserve:'셀 기준 선택값 — OCP 0%(5+1은 모듈 단위) / 40V3 10%[가정]',share:'기본 45% = 회사 발언 40~50%(2026.07.30) 중간. 물량 점유율로 입력, 시스템·금액 점유율과 구분',asp:'[가정] $6/셀 자리표시 — 공개 거래가 없음. 민감도 표의 ±10% 참조',capacity:'맵 ⑤ 삼성SDI 발표 소형전지 13GWh(2025~27)·20(2028)·25(2029~)를 선택 셀 Wh로 환산. 전용 CAPA 미공개',allocation:'[가정] 20% — ⑤ 각주 "2개 라인 신·증설 여력" ≈ 2~4GWh의 중간',utilization:'1H26 소형전지 가동률 73%(2025년 50.4%) · 회사 수치 보도(2026.10.13)',yield:'[가정] 95% — 양품 기준 CAPA면 100 입력',margin:'[가정] 15% — BBU 셀 이익률 미공개',fx:'1,400 KRW/USD(리포트 가정과 동일)',evLoss:'1H26 배터리 영업손실 173억(회사 실적) × 2 = 346억[가정, 2026 기간만]. 2025·2027 이후는 미입력',dcAddGW:'미국 DC 시설 전력의 해당 연도 증가분(S&P Global 451 Research, 리포트 표 경유). 기간 변경 시 자동, 2027·2029는 기하 보간[가정]',dcFactor:'[가정] 2.2 = 1 ÷ IEA Energy and AI 2024 미국 비중 45%. 증가분에도 같은 비중 적용',itShare:'[가정] PUE 1.3 → 77%. NVIDIA AI 팩토리 136MW 시설/100MW IT = 74% 참고',aiRackKW:'HPE GB300 NVL72 설계전력 132kW × ①의 72GPU 환산 랙 수를 범용 랙에서 제외(이중 계상 방지). 후기 세대 랙은 더 커 과소 제외 가능',generalAttach:'[가정] 40%(Bear 25 / Bull 60) — ORv3식 랙 내 BBU를 쓰는 하이퍼스케일러 비중. 공개 통계 없음, 보정 버튼으로 2026 회사 발언에 맞출 수 있음',generalSeconds:'OCP ORv3 모듈 규격 ≥4분(240초). 셀 수는 출력 제약이라 결과는 거의 불변'};
   const input=k=>`<label>${fields[k][0]}<input type="number" name="${k}" min="${fields[k][1]}" ${fields[k][2]===null?'':`max="${fields[k][2]}"`} step="any" placeholder="미확인">${inputNotes[k]?`<small class="bbu-note" data-bbu-input-note="${k}">${inputNotes[k]}</small>`:''}</label>`;
   const group=(title,keys,note)=>`<fieldset><legend>${title}</legend><div class="bbu-input-grid">${keys.map(input).join('')}</div><p class="bbu-note">${note}</p></fieldset>`;
-  el.innerHTML=`<div class="bbu-heading"><div><span class="bbu-kicker">AI 전력용 배터리 · 검토 2026.10.09</span><h2>HPE GB300 기준 BBU 수요·공급·이익</h2></div><a href="global_battery_map.html#bbu-factories">말레이시아 생산거점</a></div>
+  el.innerHTML=`<div class="bbu-heading"><div><span class="bbu-kicker">AI 전력용 배터리 · 검토 2026.10.09</span><h2>BBU 수요·공급·이익 · AI 랙(HPE GB300 기준) + 범용 랙(ORv3)</h2></div><a href="global_battery_map.html#bbu-factories">말레이시아 생산거점</a></div>
   <p>대표 랙은 <b>HPE GB300 NVL72</b>입니다. HPE의 공식 랙 사양과 Compuware의 공개 BBU 사양으로 제품 단위 출력을 비교합니다. 실제 HPE 채택·호환 및 보호 부하는 미확인으로, 아래 비교표를 HPE 확정 구성이나 셀 수요로 자동 전환하지 않습니다.</p>
   <div class="bbu-reference"><h3>① 대표 랙 · HPE 공식 사양</h3>
   <div class="bbu-results"><div><span>GPU / 랙</span><strong>${hpeReference.gpus}개</strong><small>Blackwell Ultra</small></div><div><span>DC 버스</span><strong>${hpeReference.busV}V</strong><small>800V Kyber와 별도</small></div><div><span>설계전력 (TDP)</span><strong>${hpeReference.nominalKW}kW</strong><small>BBU 보호 부하 미확인</small></div><div><span>피크 전력 (EDPp)</span><strong>약 ${hpeReference.peakKW}kW</strong><small>설계전력과 구분</small></div></div>
@@ -158,7 +193,7 @@
   <div class="bbu-scroll"><table data-bbu-shelf-reference><thead><tr><th>BBU 선반</th><th>배터리 모듈</th><th>전 모듈 정상 출력</th><th>90초 전달 에너지</th><th>선반마다 모듈 1개 이탈 시<br>출력 / 90초 에너지</th></tr></thead><tbody>${Array.from({length:bbuReference.maxShelves},(_,i)=>calculateShelfReference(i+1)).map(r=>`<tr><th>${r.shelves}개</th><td>${r.modules}개</td><td>${fmt(r.backupKW)}kW</td><td>${fmt(r.deliveredKWh,4)}kWh</td><td>${fmt(r.oneOutKW)}kW / ${fmt(r.oneOutKWh,4)}kWh</td></tr>`).join('')}</tbody></table></div>
   <p><b>4개 선반 = 24개 배터리 모듈 · 132kW · 90초 · 3.3kWh 전달.</b> 정격 출력이 HPE 설계전력과 수치상 같아도 약 155kW 피크 대응은 단시간 과부하 허용치와 지속시간을 추가 확인해야 합니다. 선반마다 모듈 1개 이탈 시 110kW·2.75kWh로 내려갑니다. 실제 적용에는 보호 범위·설치 공간·전원 제어 검증이 필요합니다.</p>
   <p class="bbu-note">전달 에너지 = 출력 × 90 ÷ 3,600. 3.3kWh는 배터리 명목 용량이 아니며, 24개는 셀이 아닌 모듈 수입니다. 셀 BOM 미공개 — 아래 참조 시나리오는 OCP 참조 팩(규격) 또는 삼성SDI 40V3 추정[가정] 셀 기준으로 셀 수·명목 GWh·SDI 매출을 산정합니다(2026.10.15). 정전 시 IT 보호 부하와 시설 냉각 전력도 구분합니다.</p></div>
-  <p class="bbu-warning"><b>기본자료가 입력된 참조 시나리오:</b> 2025년·2026년 분기는 첨부 출하 추정표, 2026~2030년 연간은 리포트 Base의 세대별 물량 역산치를 사용합니다. 전량 72GPU 환산과 단위당 Compuware 1선반은 고정 비교 가정입니다. 미래 세대의 실제 랙 구성·50V BBU 채택·보호 범위를 뜻하지 않습니다. 셀 기준·말레이시아 CAPA·점유율·ASP·이익률은 출처 표시된 기본값과 [가정]으로 채웠으며(2026.10.15) 입력칸에서 바꿀 수 있습니다.</p>
+  <p class="bbu-warning"><b>기본자료가 입력된 참조 시나리오:</b> 2025년·2026년 분기는 첨부 출하 추정표, 2026~2030년 연간은 리포트 Base의 세대별 물량 역산치를 사용합니다. 전량 72GPU 환산과 단위당 Compuware 1선반은 고정 비교 가정입니다. 미래 세대의 실제 랙 구성·50V BBU 채택·보호 범위를 뜻하지 않습니다. 2026.10.15부터 범용 랙 층(②-2)을 더해 GPU 랙만 세던 범위 한계를 보완했습니다. 셀 기준·말레이시아 CAPA·점유율·ASP·이익률은 출처 표시된 기본값과 [가정]으로 채웠으며(2026.10.15) 입력칸에서 바꿀 수 있습니다.</p>
   <p><b>정전 백업의 범위:</b> BBU는 연결된 전원영역의 IT 부하에 전력을 공급해 전원 전환·작업 종료 시간을 확보합니다. <a href="https://www.opencompute.org/documents/open-rack-v3-bbu-shelf-spec-rev1-1-pdf-1">OCP ORv3 §4</a>는 공통 버스의 랙 내 IT 장비 전체를 백업하는 설계를 설명합니다. 데이터센터 냉각 등 시설 부하까지 포함하는 뜻은 아닙니다. 특정 랙의 전체/일부 보호 여부와 정전 중 부하 제한은 해당 설계자료로 확인해야 합니다.</p>
   <p class="bbu-note"><a href="battery_tech.html#bbu-800v-evidence">800VDC 전력 경로·MLCC 순증 검토</a>: 첨부 Kyber 600kW와 MLCC 수량은 BBU 보호 부하·셀 수의 근거로 자동 적용하지 않습니다.</p>
   <h3>③ 기본자료로 시작하는 BBU 참조 시나리오</h3>
@@ -170,12 +205,14 @@
   <div class="bbu-scroll"><table><thead><tr><th>여섯 변수</th><th>현재 근거</th><th>적용 기준</th></tr></thead><tbody>
   <tr><th>① 랙 출하량</th><td>첨부 출하표 / 2026~2030년 리포트 역산</td><td>기본 100%는 칩 전량 ÷ 72 환산. 미래 GPU 산정단위는 리포트 기준이며 실제 랙·패키지·다이 수와 다를 수 있음</td></tr>
   <tr><th>② BBU 탑재율</th><td>리포트 Base 세대별 채택률 / 합산은 역산 물량 가중평균</td><td>p.34 해당 연도·세대 적용. 합산은 Blackwell 이후 5개 세대군으로 구형 GPU·타사 ASIC 제외. NVL72·HPE 실측 아님. 분기는 해당 연간 추정을 동일 적용</td></tr>
+  <tr><th>②-2 범용 랙</th><td>미국 DC 시설 전력 증가분(S&P Global 451 Research, 리포트 표 경유) × 글로벌 배율 2.2(IEA 2024 미국 비중 45%)</td><td>IT 비율 77% 적용 후 AI 랙 전력(①의 랙 수 × HPE 132kW) 제외 × 채택 비중 40%[가정] → MW → MW당 셀 수(선택 셀 기준). OCP 규격상 BBU는 랙 내 전체 payload 백업. 배율·비율·비중은 [가정], 2026 회사 발언으로 보정 가능</td></tr>
   <tr><th>③ 출력·시간</th><td>기본 비교 제품 1선반 33kW·90초</td><td>제품 출력은 제조사 사양. 환산 단위당 1선반 배치는 비교 가정이며 HPE 실제 BOM이 아님</td></tr>
   <tr><th>④ 셀 출력·용량</th><td>OCP ORv3 참조 팩(규격 출처) / 삼성SDI 40V3 추정[가정] 중 선택 · 2026.10.15</td><td>출력·에너지 조건 중 큰 셀 수 + 예비분. 직병렬·전압 설계 별도 검증</td></tr>
   <tr><th>⑤ 셀 점유율·가격</th><td>삼성SDI 약 40~50% 회사 발언 (2026.07.30)</td><td>기본 45%(회사 발언 중간) · 셀 ASP $6 [가정, 공개 거래가 없음]. 물량 점유율로 입력, 시스템·금액 점유율과 구분</td></tr>
   <tr><th>⑥ CBU·교체</th><td>Panasonic 7년→4~5년 단축 전망 (2025.12.05)</td><td>회사 전망. CBU 효과·교체주기는 가정; 설치연도별 셀 수 필요</td></tr></tbody></table></div>
   ${group('①·② 랙과 BBU 채택',['chips','rackShare','attach'],'기간 변경 시 해당 기간의 기본 분석 범위·물량·채택률을 불러옵니다. 연간 합산은 리포트 역산치이며 실제 랙 출하를 추정하려면 세대별 랙 구성·공급 비중을 추가 확인해야 합니다. 아래 출력은 고정 Compuware 비교 구성의 계산으로, 원자료 BBU 시장 출력 전망과 다릅니다.')}
   <div class="bbu-results" data-bbu-quick-results></div>
+  <fieldset><legend>②-2 범용 랙 (ORv3식 랙 내 BBU) 수요 · 2026.10.15 신설</legend><p class="bbu-note">OCP ORv3 셸프 규격상 BBU는 랙 내 전체 payload를 전원 셸프 정격까지 백업하므로 GPU 랙 외 범용 서버 랙에도 들어갑니다. 랙 수 대신 보호 대상 IT 전력(MW)에서 출발해 MW당 셀 수(선택한 셀 기준)로 환산하며, AI 랙 전력(①의 72GPU 환산 랙 수 × 설계전력)은 제외해 Layer A와 이중 계상을 막습니다.</p><p class="bbu-note" data-bbu-general-note></p><div class="bbu-input-grid">${['dcAddGW','dcFactor','itShare','aiRackKW','generalAttach','generalSeconds'].map(input).join('')}</div><div class="bbu-actions"><button type="button" data-bbu-calibrate>채택 비중 보정 · 2026 회사 발언(시장 × 점유)에 맞춰 역산</button><span data-bbu-calibrate-note></span></div><p class="bbu-note">기본값: 미국 DC 시설 전력 증가분(S&P Global 451 Research, 리포트 표 경유 · 2027·2029는 기하 보간[가정]) × 글로벌 배율 2.2(IEA Energy and AI 2024 미국 비중 45%의 역수[가정]) × IT 비율 77%(PUE 1.3 가정) − AI 랙 전력(①의 랙 수 × HPE 설계전력 132kW) → 범용 랙 BBU 채택 비중 40%[가정, Bear 25/Bull 60] · 백업 240초(OCP ORv3 모듈 규격 ≥4분). 후기 세대 랙은 132kW보다 커 AI 랙 제외분이 과소일 수 있고, 분기 기간은 연간 증가분의 1/4입니다.</p></fieldset>
   <fieldset><legend>③ BBU 제품·구성 선택</legend><label>백업 구성<select name="backupConfig">${[1,2,3,4].map(n=>`<option value="shelf-${n}">Compuware ${n}선반 / 72GPU 환산 단위 · 비교 가정</option>`).join('')}<option value="manual">확인한 고객·제품 사양 직접 입력</option></select></label><p class="bbu-note">기본 1선반은 공개 제품 한 단위를 놓는 비교 기준입니다. HPE 정격 132kW 전체를 보호한다고 가정하지 않습니다. 아래 출력·시간·출처는 선택한 제품 사양으로 입력되며, 직접 수정하려면 직접 입력 모드를 선택합니다.</p><div class="bbu-input-grid"><label>BBU가 연결된 전원영역·장비<input name="protectionScope" type="text" maxlength="300" placeholder="해당 랙 설계자료에서 확인한 범위"></label><label>보호 부하·백업시간의 근거 자료<input name="protectionSource" type="text" maxlength="500" placeholder="고객·제품 SKU·자료명·페이지 또는 URL"></label></div><p class="bbu-note">직접 입력 모드는 보호 범위·출처를 모두 적어야 계산합니다. 출처 입력만으로 사양 검증이 완료되지는 않습니다.</p></fieldset>
   <fieldset><legend>④ 셀 기준 선택</legend><label>셀 기준<select name="cellConfig">${Object.entries(cellPresets).map(([k,p])=>`<option value="${k}">${p.label}</option>`).join('')}<option value="manual">확인한 셀 데이터시트 직접 입력</option></select></label><p class="bbu-note" data-bbu-cell-note></p><p class="bbu-note">기본은 공개 규격이 있는 OCP 참조 팩입니다. 삼성SDI 40V3는 데이터시트가 비공개라 추정치이며, Compuware 제품의 실제 셀 BOM과 같다는 뜻이 아닙니다(2026.10.15).</p></fieldset>
   ${group('③·④ 백업 사양과 셀',['power','seconds','cellW','cellWh','powerFactor','energyFactor','reserve'],'비교 구성의 출력·시간은 Compuware 사양입니다. 셀 값은 위 셀 기준 선택으로 채워지며 직접 입력 모드에서 수정합니다. 셀 수 계산에는 동일 제품의 셀 출력·명목 용량·온도·수명 조건과 예비분이 필요하고, 다른 제품의 셀 출력 로드맵을 임의로 조합하지 않습니다.')}
@@ -184,7 +221,7 @@
   ${group('공급 상한 · 삼성SDI 말레이시아',['capacity','allocation','utilization','yield'],'기본값: 맵 ⑤ 삼성SDI 발표 소형전지 13GWh(2025~27)·20(2028)·25(2029~)를 선택 셀 Wh로 환산, BBU 배정 20%[가정]·가동률 73%(1H26 소형전지, 회사 수치 보도 2026.10.13)·수율 95%[가정]. 전용 CAPA 미공개. 설계 투입능력 기준으로 입력하고 선택 플랫폼·분석 기간에 배정되는 비중만 사용합니다. 이미 양품 기준인 CAPA는 수율 100%로 입력. 다른 고객·용도 물량과 중복 배정 금지. 분기는 연간의 1/4로 계산합니다.')}
   ${group('영업이익과 EV 손실 상쇄',['margin','fx','evLoss'],'기본값: 영업이익률 15%[가정]·환율 1,400·EV 손실 1H26 배터리 영업손실 173억(회사)×2 = 346억[가정, 2026 기간만]. BBU 셀 이익률은 미공개 가정입니다. 선택 기간·코호트의 매출 × 영업이익률; 전사 이익이나 증분 이익과 같지 않습니다. EV 손실은 양수로 입력하며 0이면 상쇄율을 계산하지 않습니다.')}
   </form><div data-bbu-status role="status" aria-live="polite"></div><div class="bbu-results" data-bbu-results></div><p class="bbu-note" data-bbu-topdown></p>
-  <p class="bbu-note">셀 수 = ceil(max(보호W ÷ 유효 셀W, 필요Wh ÷ 유효 셀Wh) × (1+예비율)). 명목 GWh는 셀 수 × 셀Wh; 실제 백업에 전달하는 kWh와 별개입니다. 공급 반영 출하 = min(회사 수요, 배정 양품능력).</p>
+  <p class="bbu-note">AI 랙 셀 수 = ceil(max(보호W ÷ 유효 셀W, 필요Wh ÷ 유효 셀Wh) × (1+예비율)) × BBU 적용 랙 수. 범용 랙 셀 수 = 범용 랙 BBU MW × MW당 셀 수(같은 출력·에너지 조건 × (1+예비율)). 명목 GWh는 합계 셀 수 × 셀Wh; 실제 백업에 전달하는 kWh와 별개입니다. 공급 반영 출하 = min(회사 수요, 배정 양품능력).</p>
   <details><summary>조건 변경 민감도 · 가정 분석</summary><p class="bbu-note">기준 입력에 대한 가상 변화이며 확인된 제품 사양·시장 전망이 아닙니다. 입력 근거가 없으면 결과를 내지 않습니다. 공급 상한에 도달하면 수요 증가가 회사 매출 증가로 연결되지 않을 수 있습니다.</p><div class="bbu-scroll"><table><thead><tr><th>변경 가정</th><th>신규 셀 (백만개)</th><th>수요 매출 (백만USD)</th><th>공급 반영 매출 (백만USD)</th><th>기준 대비 (백만USD)</th><th>영업이익 (억원)</th></tr></thead><tbody data-bbu-sensitivity></tbody></table></div></details>
   <details><summary>원자료·사양·시장 전망 비교</summary><div class="bbu-scroll"><table><thead><tr><th>출하 추정</th><th>B200</th><th>B300</th><th>합계 ÷ 72 (랙 상당)</th></tr></thead><tbody>${Object.entries(periods).filter(([k])=>shipments.b200[k]!=null).map(([k,p])=>`<tr><td>${p.label}</td><td>${fmt(shipments.b200[k],0)}</td><td>${fmt(shipments.b300[k],0)}</td><td>${fmt((shipments.b200[k]+shipments.b300[k])/72,0)}</td></tr>`).join('')}</tbody></table></div>
   <p>출처: <a href="https://epoch.ai/data/ai-chip-sales">Epoch AI</a> 기반 사용자 제공 2026.08.20 표. 중앙 추정치이며 현재 데이터베이스와 버전이 다릅니다. 2Q26은 잠정/불완전 자료로 연율화하지 않습니다. 확보량은 고객 배분 참고자료, H100e는 성능 환산치입니다.</p>
@@ -209,8 +246,8 @@
     m.textContent=r.errors.length?'입력 오류: '+r.errors.join(', '):'입력 기반 참조 시나리오 · HPE 실제 구성/시장 실측 아님: '+periods[a.period].label+' / '+(a.replacementMode==='exclude'?'신규만·교체 제외':'입력 코호트 교체 포함')+(r.missing.length?' · 추가 확인: '+r.missing.join(', '):' · 모든 결과는 입력한 자체 가정에 따른 시나리오');
     m.className=r.errors.length?'bbu-warning':'bbu-note';
     const td=el.querySelector('[data-bbu-topdown]'),shareN=number(a.share),yr=periods[a.period].year;
-    if(td)td.textContent=r.salesRevenue===null||shareN===null?'top-down 대조: 점유율과 매출이 산출되면 표시':(yr===topDown.year?`top-down 대조 · ${topDown.source} × 점유 ${fmt(shareN)}% ≈ ${fmt(topDown.marketUSD*shareN/100/1e6,0)}백만USD vs 이 모델의 공급 반영 매출 ${fmt(r.salesRevenue/1e6)}백만USD(약 ${fmt(topDown.marketUSD*shareN/100/r.salesRevenue,1)}배 차이). 격차 원인: 이 모델은 GPU 랙(72GPU 환산)만 세지만 OCP ORv3 셸프 규격상 BBU는 랙 내 전체 장비를 백업해 범용 서버 랙에도 들어감 → 과소추정 가능성. ASP·이익률은 [가정]`:`top-down 대조는 2026년 기간에서 표시(회사 발언 시장 규모가 2026E 기준). 이 모델은 GPU 랙만 세므로 범용 랙 BBU 수요는 포함하지 않음`);
-    const data=[['72GPU 랙 환산',r.racks,'랙 상당 · 시나리오'],['BBU 적용 물량 환산',r.backedRacks,'랙 상당 · 시나리오'],[a.backupConfig==='manual'?'입력 부하 BBU 출력':'Compuware 비교 출력',r.backedMW,'MW · 입력 기반'],['환산 단위당 전달 에너지',r.deliveredKWh,'kWh · 명목 용량 아님'],['환산 단위당 필요 셀',r.cellsPerRack,'개'],['신규 셀',r.newCells===null?null:r.newCells/1e6,'백만개'],['신규 명목 용량',r.nominalGWh,'GWh'],['교체 셀'+(a.replacementMode==='exclude'?' (계산 제외)':''),r.replacementCells===null?null:r.replacementCells/1e6,'백만개'],['회사 수요',r.companyDemand===null?null:r.companyDemand/1e6,'백만개'],['배정 양품능력',r.supplyCells===null?null:r.supplyCells/1e6,'백만개'],['공급 반영 출하',r.salesCells===null?null:r.salesCells/1e6,'백만개'],['수요 기준 셀 매출',r.demandRevenue===null?null:r.demandRevenue/1e6,'백만USD'],['공급 반영 셀 매출',r.salesRevenue===null?null:r.salesRevenue/1e6,'백만USD'],['코호트 영업이익',r.opKRW,'억원'],['EV 손실 상쇄율',r.offset,'%']];
+    if(td)td.textContent=r.salesRevenue===null||shareN===null?'top-down 대조: 점유율과 매출이 산출되면 표시':(yr===topDown.year?`top-down 대조 · ${topDown.source} × 점유 ${fmt(shareN)}% ≈ ${fmt(topDown.marketUSD*shareN/100/1e6,0)}백만USD vs 이 모델의 공급 반영 매출 ${fmt(r.salesRevenue/1e6)}백만USD(약 ${fmt(topDown.marketUSD*shareN/100/r.salesRevenue,1)}배 차이). AI 랙 + 범용 랙 합산 기준. 범용 랙의 글로벌 배율·IT 비율·채택 비중과 ASP·이익률은 [가정] — 보정 버튼으로 채택 비중을 2026 회사 발언에 맞출 수 있음`:`top-down 대조는 2026년 기간에서 표시(회사 발언 시장 규모가 2026E 기준). 범용 랙 층은 기준 자료 증가분으로 외삽`);
+    const data=[['72GPU 랙 환산',r.racks,'랙 상당 · 시나리오'],['BBU 적용 물량 환산',r.backedRacks,'랙 상당 · 시나리오'],[a.backupConfig==='manual'?'입력 부하 BBU 출력':'Compuware 비교 출력',r.backedMW,'MW · 입력 기반'],['환산 단위당 전달 에너지',r.deliveredKWh,'kWh · 명목 용량 아님'],['환산 단위당 필요 셀',r.cellsPerRack,'개'],['AI 랙 신규 셀',r.aiCells===null?null:r.aiCells/1e6,'백만개 · Layer A'],['AI 랙 IT 전력 (제외분)',r.aiMW,'MW · 랙 수 × 설계전력'],['범용 랙 IT 신규 전력',r.generalITMW,'MW · AI 랙 제외 후'],['범용 랙 BBU 출력',r.generalMW,'MW · 채택 비중 적용'],['범용 랙 신규 셀',r.generalCells===null?null:r.generalCells/1e6,'백만개 · Layer B'],['신규 셀 합계',r.newCells===null?null:r.newCells/1e6,'백만개 · A+B'],['신규 명목 용량',r.nominalGWh,'GWh'],['교체 셀'+(a.replacementMode==='exclude'?' (계산 제외)':''),r.replacementCells===null?null:r.replacementCells/1e6,'백만개'],['회사 수요',r.companyDemand===null?null:r.companyDemand/1e6,'백만개'],['배정 양품능력',r.supplyCells===null?null:r.supplyCells/1e6,'백만개'],['공급 반영 출하',r.salesCells===null?null:r.salesCells/1e6,'백만개'],['수요 기준 셀 매출',r.demandRevenue===null?null:r.demandRevenue/1e6,'백만USD'],['공급 반영 셀 매출',r.salesRevenue===null?null:r.salesRevenue/1e6,'백만USD'],['코호트 영업이익',r.opKRW,'억원'],['EV 손실 상쇄율',r.offset,'%']];
     const cards=data.map(([label,v,unit])=>`<div><span>${label}</span><strong>${fmt(v,3)}</strong><small>${unit}</small></div>`);
     el.querySelector('[data-bbu-results]').innerHTML=cards.join('');
     el.querySelector('[data-bbu-quick-results]').innerHTML=cards.slice(0,4).join('');
@@ -220,9 +257,11 @@
   form.addEventListener('input',()=>{mode.textContent='직접 입력 · 해당 고객·제품의 출처와 적용 범위 확인 필요';render();});
   function syncCell(){const d=getCellDefaults(form.elements.cellConfig.value);for(const k of ['cellW','cellWh','powerFactor','energyFactor','reserve']){form.elements[k].value=d[k];form.elements[k].readOnly=d.cellConfig!=='manual';}const p=cellPresets[d.cellConfig];const n=el.querySelector('[data-bbu-cell-note]');if(n)n.textContent=p?p.note+' · 출처: '+p.source:'직접 입력: 해당 BBU 제품의 셀 데이터시트·방전 조건 출처가 필요합니다';}
   function syncSupply(){const d=getSupplyDefaults(form.elements.period.value,form.elements.cellWh.value);form.elements.capacity.value=d.capacity;form.elements.evLoss.value=d.evLoss;}
+  function syncGeneral(full){const d=getGeneralDefaults(form.elements.period.value);form.elements.dcAddGW.value=d.dcAddGW;if(full)for(const k of Object.keys(generalDefaults))form.elements[k].value=generalDefaults[k];const n=el.querySelector('[data-bbu-general-note]');if(n)n.textContent=d.note;}
   function syncPrice(){for(const k of Object.keys(supplyDefaults))form.elements[k].value=supplyDefaults[k];for(const k of Object.keys(priceDefaults))form.elements[k].value=priceDefaults[k];}
-  form.addEventListener('change',e=>{if(['period','platform'].includes(e.target.name))syncShip(e.target.name==='period');if(e.target.name==='period')syncSupply();if(e.target.name==='backupConfig')syncBackup();if(e.target.name==='cellConfig'){syncCell();syncSupply();}render();});
-  form.addEventListener('reset',()=>{const period=form.elements.period.value;setTimeout(()=>{form.elements.period.value=period;syncShip(true);syncBackup();form.elements.cellConfig.value='ocp18650';syncCell();syncPrice();syncSupply();mode.textContent='선택 기간 기본자료 복원 · 출하/채택률/1선반 + 셀 기준·CAPA·가격 기본값([가정] 포함)';render();},0);});
+  form.addEventListener('change',e=>{if(['period','platform'].includes(e.target.name))syncShip(e.target.name==='period');if(e.target.name==='period')syncSupply();if(e.target.name==='backupConfig')syncBackup();if(e.target.name==='cellConfig'){syncCell();syncSupply();}if(e.target.name==='period')syncGeneral(false);render();});
+  el.querySelector('[data-bbu-calibrate]').addEventListener('click',()=>{const a=read(),n=el.querySelector('[data-bbu-calibrate-note]');if(periods[a.period].year!==topDown.year){n.textContent='2026년 기간에서만 보정합니다(회사 발언 시장 규모가 2026E 기준).';return;}const c=calibrateGeneralAttach(a);if(!c){n.textContent='보정 불가: 칩·셀·ASP·범용 랙 입력이 먼저 필요합니다.';return;}if(!Number.isFinite(c.raw)){n.textContent='보정 불가: AI 랙 전력이 IT 신규 전력 이상이라 범용 랙 전력이 0입니다(기준 자료·AI 랙 설계전력 확인).';return;}form.elements.generalAttach.value=c.pct.toFixed(1);n.textContent=c.raw>100?`역산값 ${fmt(c.raw)}%가 100%를 넘어 100%로 제한 — 범용 랙 전량 채택으로도 회사 발언 규모에 못 미침`:`[역산] 범용 랙 채택 비중 ${fmt(c.pct)}% = (회사 발언 시장 ÷ ASP − AI 랙 셀 − 교체 셀) ÷ 범용 랙 100% 채택 시 셀. 공급 상한 미적용`;mode.textContent='직접 입력 · 범용 랙 채택 비중을 2026 회사 발언으로 역산';render();});
+  form.addEventListener('reset',()=>{const period=form.elements.period.value;setTimeout(()=>{form.elements.period.value=period;syncShip(true);syncBackup();form.elements.cellConfig.value='ocp18650';syncCell();syncPrice();syncSupply();syncGeneral(true);el.querySelector('[data-bbu-calibrate-note]').textContent='';mode.textContent='선택 기간 기본자료 복원 · 출하/채택률/1선반 + 셀 기준·CAPA·가격 기본값([가정] 포함)';render();},0);});
   el.querySelector('[data-bbu-clear]').addEventListener('click',()=>{form.querySelectorAll('input').forEach(c=>c.value='');form.elements.backupConfig.value='manual';syncBackup();form.elements.cellConfig.value='manual';syncCell();mode.textContent='빈칸 직접 입력 · 출처와 적용 범위 확인 필요';render();});
   const checks=[['customer','고객 인증·공급','삼성SDI 셀 공급 / LGES 개발·인증 단계 구분','고객·SKU별 인증, 계약 물량, 실제 출하 확인'],['factory','말레이시아 생산','4월 보도: 7월 40V3 양산 계획 / 9월 외부 리서치: 7월 개시 서술 / 2026.9.29 원통형 LFP BBU 셀 첫 공개(DCWA 싱가포르) / 말레이 2공장 LFP 전극 설비 설치·양산 목표 2027.6(2026.10.13 보도)','기업 확인, 전용 라인·CAPA·배정률·가동률 확인'],['pricing','점유율·셀 ASP','삼성SDI 2026.07.30: 각 배터리 시장 40~50%, 연간 매출 +70% 이상 전망 / 4Q25 컨콜: BBU 셀 시장 2025~30 CAGR 약 14%(보도) / 소형전지 가동률 2025 50.4% → 1H26 73%(보도)','시장 성장과 회사 성장 구분, 물량/금액 점유율 및 셀 ASP 확인'],['cbu','CBU·교체주기','Panasonic CBU 개발 / 4~5년 교체 전망은 회사 설명','배터리 부하 감소·수명 연장 효과 실증, 고객별 채택 확인']];
   const box=el.querySelector('[data-bbu-checklist]'),key='ev-dashboard-bbu-checks-v1';let saved={};
@@ -232,5 +271,5 @@
   function saveChecks(){const data={};box.querySelectorAll('[data-check]').forEach(row=>{data[row.dataset.check]=Object.fromEntries([...row.querySelectorAll('input,select')].map(c=>[c.name,c.value]));});try{localStorage.setItem(key,JSON.stringify(data));el.querySelector('[data-bbu-save]').textContent='이 브라우저에 저장했습니다.';}catch(e){el.querySelector('[data-bbu-save]').textContent='저장할 수 없습니다. 기록을 별도로 보관해 주세요.';}}
   box.addEventListener('input',saveChecks);
   box.addEventListener('change',saveChecks);
-  syncShip();syncBackup();syncCell();syncPrice();syncSupply();mode.textContent='기본자료 적용 · 출하/채택률/1선반 + 셀 기준·CAPA·가격 기본값([가정] 포함, 2026.10.15)';render();
+  syncShip();syncBackup();syncCell();syncPrice();syncSupply();syncGeneral(true);mode.textContent='기본자료 적용 · 출하/채택률/1선반 + 셀 기준·CAPA·가격 기본값([가정] 포함, 2026.10.15)';render();
 })(typeof globalThis!=='undefined'?globalThis:this);

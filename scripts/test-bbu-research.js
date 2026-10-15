@@ -37,7 +37,22 @@ near(start.deliveredKWh,.825);
 // 2026.10.15: sourced/assumed defaults (OCP reference pack, Malaysia GWh, share/ASP/margin) now complete the chain.
 assert.equal(defaults.cellConfig,'ocp18650');
 near(start.cellsPerRack,726); // ceil(max(33000/45.5, 825/(5.55*.55)))
-near(start.newCells,start.backedRacks*726);
+near(start.aiCells,start.backedRacks*726);
+// 2026.10.15: Layer B general racks (ORv3 in-rack BBU) start from protected IT power, not rack counts.
+near(start.aiMW,start.racks*132);
+near(start.generalITMW,13.5*1000*2.2*77/100-start.racks*132/1000); // US DC +13.5GW in 2025 (S&P via report) x2.2 x IT 77% minus AI racks
+near(start.generalMW,start.generalITMW*.4);
+near(start.cellsPerMW,1e6/45.5); // power-limited at 240s
+near(start.generalCells,start.generalMW*start.cellsPerMW);
+near(start.generalMWh,start.generalMW*240/3600);
+near(start.newCells,start.aiCells+start.generalCells);
+near(model.getGeneralDefaults('q126').dcAddGW,2.95); // 11.8/4, never annualized
+near(model.getGeneralDefaults('y2029').dcAddGW,32.7); // interpolated 140.7 - 108.0
+assert.equal(model.getGeneralDefaults('y2026').aiRackKW,132);
+const cal=model.calibrateGeneralAttach({...model.getDefaults('report','y2026'),replacementMode:'exclude'});
+assert.ok(cal.pct>50&&cal.pct<75,String(cal.pct)); // ~62%: (8e8/6 - AI-rack cells) / general cells at 100% attach
+assert.ok(Math.abs(model.calculate({...model.getDefaults('report','y2026'),replacementMode:'exclude',generalAttach:cal.pct}).demandCells*6/8e8-1)<1e-9);
+assert.equal(model.calculate({...model.getDefaults('report','y2026'),replacementMode:'exclude',dcAddGW:0}).generalCells,0); // AI power above IT additions clamps to zero, not negative
 near(start.nominalGWh,start.newCells*5.55/1e9);
 near(start.supplyCells,13e9/5.55*.2*.73*.95);
 near(start.companyDemand,start.newCells*.45);
@@ -99,6 +114,9 @@ const r=model.calculate(base);
 assert.deepEqual(r.errors,[]);
 near(r.racks,100);near(r.backedMW,12);near(r.deliveredKWh,3);
 near(r.cellsPerRack,1500);near(r.newCells,150000);near(r.nominalGWh,.0015);
+assert.equal(r.generalCells,null); // No general-rack inputs: Layer B stays unknown and the total is Layer A only.
+near(model.calculate({...base,dcAddGW:1,dcFactor:1,itShare:100,aiRackKW:0,generalAttach:50,generalSeconds:240}).generalCells,500*1e6/(120*.8)*1.2);
+near(model.calculate({...base,dcAddGW:1,dcFactor:1,itShare:100,aiRackKW:0,generalAttach:50,generalSeconds:3600}).cellsPerMW,1e6/(10*.8)*1.2); // long backup becomes energy-limited
 near(r.companyDemand,75000);near(r.supplyCells,72000);near(r.salesCells,72000);
 near(r.demandRevenue,225000);near(r.salesRevenue,216000);near(r.opKRW,.4536);near(r.offset,.4536);
 // A numeric rack power alone must not become an asserted backup load.
