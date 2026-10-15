@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-14T23:28:42.815Z",
+  "syncedAt": "2026-10-15T05:00:40.468Z",
   "dbId": "659a8d5a89c344a5b68960fead1cf889",
   "count": 40,
   "variables": [
@@ -93,11 +93,11 @@
       "target": "SDI",
       "region": "us",
       "year": "y27",
-      "value": 30,
+      "value": 31,
       "unit": "GWh",
       "path": "cellMakers[0].essGwh.y27",
-      "source": "삼성SDI 2026-09-01 그룹미팅: 2027년 초 미국 ESS CAPA 약 30GWh를 모델 기준으로 사용. 글로벌 약 40GWh와 구분. 뉴칼라일은 2028년 말 가동 목표로 제외. https://www.notion.so/3ceec6e3f40881dd9e12c5d47f81cb17",
-      "updatedAt": "2026-09-10"
+      "source": "삼성SDI 2026-09-01 그룹미팅: 2027년 초 미국 ESS CAPA 약 30GWh를 모델 기준으로 사용. 글로벌 약 40GWh와 구분. 뉴칼라일은 2028년 말 가동 목표로 제외. https://www.notion.so/3ceec6e3f40881dd9e12c5d47f81cb17 · 2026-10-15 갱신: 코코모 라인 합 31GWh(NCA L2 7 + LFP L3 12 + LFP L4 12; L4는 회사 범위 10~12G 상단, 외부 집계 2026.10)로 조정 — 회사 '약 30'과 정합. 2025 말 7GWh(NCA L2)는 HTML 기준값으로만 반영",
+      "updatedAt": "2026-10-15"
     },
     {
       "name": "ESS CAPA",
