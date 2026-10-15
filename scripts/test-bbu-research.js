@@ -34,7 +34,26 @@ near(start.racks,20853.347222222223);
 near(start.backedRacks,10426.673611111111);
 near(start.backedMW,344.08022916666667);
 near(start.deliveredKWh,.825);
-for(const key of ['cellsPerRack','newCells','nominalGWh','salesRevenue','opKRW'])assert.equal(start[key],null,key);
+// 2026.10.15: sourced/assumed defaults (OCP reference pack, Malaysia GWh, share/ASP/margin) now complete the chain.
+assert.equal(defaults.cellConfig,'ocp18650');
+near(start.cellsPerRack,726); // ceil(max(33000/45.5, 825/(5.55*.55)))
+near(start.newCells,start.backedRacks*726);
+near(start.nominalGWh,start.newCells*5.55/1e9);
+near(start.supplyCells,13e9/5.55*.2*.73*.95);
+near(start.companyDemand,start.newCells*.45);
+near(start.salesCells,Math.min(start.companyDemand,start.supplyCells));
+near(start.salesRevenue,start.salesCells*6);
+near(start.opKRW,start.salesRevenue*.15*1400/1e8);
+assert.equal(start.offset,null); // 2025 EV loss is not pre-filled.
+assert.deepEqual(start.missing,[]);
+near(model.getSupplyDefaults('y2028',14.4).capacity,1388.9);
+assert.equal(model.getSupplyDefaults('y2026',5.55).evLoss,346);
+assert.equal(model.getSupplyDefaults('q126',5.55).evLoss,86.5);
+assert.equal(model.getSupplyDefaults('y2027',5.55).evLoss,'');
+assert.equal(model.getCellDefaults('manual').cellW,'');
+near(model.getCellDefaults('sdi40v3').cellWh,14.4);
+near(model.calculate({...model.getDefaults('b300','y2025','sdi40v3'),replacementMode:'exclude'}).cellsPerRack,577); // ceil(33000/(126*.5)*1.1)=ceil(576.19)
+assert.ok(model.calculate({...model.getDefaults('report','y2026'),replacementMode:'exclude'}).offset>0);
 assert.equal(defaults.rackShare,100); // Full-chip equivalent, not observed NVL72 mix.
 assert.equal(defaults.attach,50); // Report Base case, not HPE customer adoption.
 assert.equal(defaults.power,33); // One vendor shelf, not full HPE rack power.
@@ -68,7 +87,8 @@ near(annual30.attach,95);
 near(annual30.bbuMW,91540);
 const forecast30=model.calculate({...model.getDefaults('report','y2030'),replacementMode:'exclude'});
 assert.notEqual(forecast30.backedMW,annual30.bbuMW); // A fixed vendor shelf comparison is not report market power.
-for(const key of ['newCells','nominalGWh','salesRevenue'])assert.equal(forecast30[key],null,key);
+for(const key of ['newCells','nominalGWh','salesRevenue'])assert.ok(forecast30[key]>0,key);
+assert.equal(forecast30.offset,null); // No EV-loss default beyond 2026.
 near(model.getBackupDefaults('shelf-4').power,132);
 near(model.calculate({...defaults,...model.getBackupDefaults('shelf-4'),replacementMode:'exclude'}).deliveredKWh,3.3);
 assert.equal(model.getBackupDefaults('manual').power,'');
