@@ -1,7 +1,7 @@
 {
-  "syncedAt": "2026-10-15T05:07:04.573Z",
+  "syncedAt": "2026-10-15T05:09:47.419Z",
   "latestDate": "2026-10-15",
-  "count": 57,
+  "count": 58,
   "this_week": [
     {
       "title": "미국 ESS 2025 설치 51GWh(+38%) — 2Q26 18.9GWh 분기 최대",
@@ -54,6 +54,19 @@
       ],
       "date": "2026-10-15",
       "order": 4
+    },
+    {
+      "title": "Tesla 에너지저장 2025 46.7GWh · 1~3Q26 36.0GWh(+11%) — Brookshire Megapack 3 2H26 출하 예정",
+      "category": "ESS",
+      "icon": "🔋",
+      "body": "Tesla 에너지저장장치 설치 2025년 46.7GWh, 2026년 1~3분기 누적 36.0GWh(전년 동기 대비 +11%). 생산 거점: 네바다 Powerwall 10GWh(2016) · Lathrop Megapack 40GWh(2022) · 상하이 Megapack 40GWh(1Q25 양산) · 네바다 LFP 셀 7GWh(1Q26 양산) · 텍사스 Brookshire Megapack 3 50GWh(2026년 하반기 출하 예정). 중국산 셀 의존도와 관세·Non-PFE 요건 때문에 미국 내 적격 셀 조달이 핵심 — LGES 랜싱 각형 LFP(2027~)·삼성SDI 코코모 전환 라인이 대응 거점. Tesla는 NVIDIA DSX Ready BESS 첫 인증 파트너(세부 미공개). 출처: Tesla IR·NVIDIA·언론 보도 기준(2026.10)",
+      "color": "purple",
+      "section": "this_week",
+      "targets": [
+        "both"
+      ],
+      "date": "2026-10-15",
+      "order": 5
     }
   ],
   "update_log": [
