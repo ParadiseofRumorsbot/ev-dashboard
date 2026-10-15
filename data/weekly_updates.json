@@ -1,8 +1,90 @@
 {
-  "syncedAt": "2026-10-15T05:00:40.928Z",
-  "latestDate": "2026-09-21",
-  "count": 52,
+  "syncedAt": "2026-10-15T05:07:04.573Z",
+  "latestDate": "2026-10-15",
+  "count": 57,
   "this_week": [
+    {
+      "title": "미국 ESS 2025 설치 51GWh(+38%) — 2Q26 18.9GWh 분기 최대",
+      "category": "ESS",
+      "icon": "⚡",
+      "body": "미국 ESS 연간 설치 2022 13.2 → 2023 27.7 → 2024 37.0 → 2025 51.0GWh(+38%, 사상 최대) · 2Q26 18.9GWh로 분기 기록 경신. 외부 전망: Benchmark 2026E 70 → 2030E 110GWh 이상, Wood Mackenzie 2031년 누적 715GWh(2026.9 상향)·평균 저장시간 2.8 → 3.5시간, 2026~27 유틸리티급 증가세 둔화 가능성 언급. 본 대시보드 2026 ESS 수요 축(Bear 71/Base 85/Bull 115)과 비교하면 외부 2026E 70은 Bear 선 수준(설치량 vs 셀 수요로 정의 상이). 출처: Wood Mackenzie·ACP·SEIA·Benchmark(2026.10)",
+      "color": "teal",
+      "section": "this_week",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-10-15",
+      "order": 1
+    },
+    {
+      "title": "중국산 배터리 관세 40.9%(7/24~) · Non-PFE 비율 2030년까지 매년 상향",
+      "category": "미국",
+      "icon": "🧾",
+      "body": "중국산 리튬이온 배터리 관세 2026년 3구간: 1.1~2.23 48.4% → 2.24~7.23 38.4%(대법원 IEEPA 관세 무효 판결 2.20 이후) → 7.24~ 40.9%(MFN 3.4+301조 25+강제노동 관련 추가관세 12.5). 한국산 12.5%(산업연구원 경유, 참고). 세액공제 Non-PFE 최소 비율(MACR): 48E ESS 55→60→65→70→75%, 45X 배터리 부품 60→65→70→80→85%(2026→2030), 실질지배 판정(중국 측 단일 25%·합산 40%·라이선스 통제) 포함, 2026.1.1 적용. 중국산 vs 미국산 밸류체인 정책 격차 kWh당 약 122달러(관세 21+ITC 66+AMPC 35, 단순 합산). 시나리오 탭 관세 시뮬레이터 기본값 48.4 → 40.9%로 변경. 출처: USTR·IRS Notice 2026-15·OBBBA·산업연구원·BNEF·InfoLink(2026.10)",
+      "color": "red",
+      "section": "this_week",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-10-15",
+      "order": 2
+    },
+    {
+      "title": "NVIDIA DSX Ready — LG에너지솔루션 JF2 AC Link BESS 인증(9/21)",
+      "category": "ESS",
+      "icon": "🧩",
+      "body": "NVIDIA가 2026.9.21 AI 팩토리 전력 인프라 인증 프로그램 DSX Ready 출범, 첫 카테고리 BESS·CDU. BESS 인증 파트너 Hitachi Energy(PCS·PPC)·LG에너지솔루션(JF2 AC Link: LFP, 2.5MW/5.1MWh, Grid-Forming, 셀~팩 미국 생산)·Tesla, CDU LG전자·LiquidStack·Vertiv. GB300은 전원부 커패시터로 계통측 피크 최대 30% 완화, 2027 Kyber 1MW 랙(800V DC)부터 1초 미만 GPU 변동 흡수용 에너지저장 포함. On-site 사례: Energy Vault 텍사스 하이퍼스케일러 AI DC 1.25GW(2026.8, Caterpillar 발전기+BESS, FEOC 요건 충족 설계). LGES ESS: 2025 신규 수주 90GWh·2026 목표 90GWh+, 고객별 공개 수주 EG4 13.3·한화큐셀 9.8·Terra-Gen 8.0·Excelsior 7.5·Delta 4.0·PGE 1.0GWh. 출처: NVIDIA·LG에너지솔루션·Energy-Storage.News·ESS News(2026.10)",
+      "color": "blue",
+      "section": "this_week",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-10-15",
+      "order": 3
+    },
+    {
+      "title": "LGES·삼성SDI 미국 ESS 생산능력 외부 집계 — LGES 2027 73GWh, SK온 조지아 전환",
+      "category": "ESS",
+      "icon": "🏭",
+      "body": "LG에너지솔루션 미국 ESS 연말 생산능력 2025 22 → 2026 57 → 2027 73GWh(Holland 16·Lansing 12→28·Honda JV Ohio 12·UC2 Spring Hill 5·NextStar 6→12; 회사 발표는 연말 북미 50GWh+), 삼성SDI SPE 7 → 20 → 32GWh(NCA 7→8·LFP 12·L4 LFP 12 2027 상반기). SK온은 조지아 Commerce에서 2026.4 EV→LFP ESS 전환 착공, 연말 양산(2026.10~ 공급)·서산 3GWh 1H27, 수주 Flatiron 7.2·Neo Volta 9GWh. 대시보드 맵·시나리오 CAPA를 이 집계로 갱신(공급선 407/549/653 → 398/568/672GWh, LGES 56.5 → 57/73). 출처: 각사 발표·언론 보도 종합(외부 집계, 2026.10)",
+      "color": "yellow",
+      "section": "this_week",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-10-15",
+      "order": 4
+    }
+  ],
+  "update_log": [
+    {
+      "title": "ESS CAPA 외부 집계 반영·Non-PFE 자격 레이어 신설",
+      "category": "Battery",
+      "icon": "📊",
+      "body": "① 배터리 맵: LGES 북미 ESS 거점 CAPA 외부 집계(2026.10) 반영 — Holland 17→16, Lansing 25→22/38, Honda JV EV 10→ESS 12, UC2 34→25, NextStar 10/0/0→12, 코코모 L4 10→12G; 공급선 407/549/653→398/568/672GWh · SK온 ESS 전환 거점 테네시→조지아 정정 ② 시나리오: 북미 ESS CAPA SDI 7/19/31·LGES 22/57/73(합계 36/97/151), CELL3 LGES 랜싱 이중 계상 정리(총계 357/438→338/405) · 2026 관세 3구간(48.4/38.4/40.9%)·슬라이더 40.9·MACR 사다리 · 정책 격차 $122·비중국 LFP 양극재 카드 · NVIDIA DSX Ready 카드 · 미국 ESS 연간 설치 2025 51GWh ③ BOM 탭: Non-PFE 자격 레이어(정책 일정·병목 공급자·음극재 정책) 신설 ④ us-import: FEOC 2026 요건 주석(45X 60%). 출처: USTR·IRS Notice 2026-15·Wood Mackenzie·ACP·NVIDIA·각사 발표(2026.10)",
+      "color": "teal",
+      "section": "update_log",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-10-15",
+      "order": 1
+    }
+  ],
+  "archive": [
+    {
+      "title": "8월 EV 판매·7월 배터리 출하·IR 노트 정합 반영",
+      "category": "Battery",
+      "icon": "📊",
+      "body": "① index: KPI·주요국 표 6월→8월, 글로벌 카드 5월→7월(누계 1,111.4만대), 배터리 출하 5월→7월, 미국 BEV 모델표 25.9~26.8로 이동(26.4 개정: Model 3 8,000대 뒤늦은 집계), 월별 차트 미국·중국 8월·유럽 7월까지(글로벌은 보류) ② 배터리 맵: 코코모 L1 존치로 27·28E 29→37G, LGES 애리조나 4Q26 가동, Bécancour 무기한 유예 ③ 시나리오·BOM: ESS 설치 6월, Fluence 가이던스 하향, 니켈·코발트 8월 평균, 삼성SDI·LGES·상신이디피·엘앤에프·Al박·천보 문구를 IR 노트 기준으로 정합 ④ 기술 탭: LG화학·대주전자재료·동일알미늄·삼아알미늄·소듐 공급망 표 보강",
+      "color": "teal",
+      "section": "update_log",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-09-21",
+      "order": 1
+    },
     {
       "title": "8월 EV 판매 — 미국 -38%·중국 -8.5%·유럽 강세",
       "category": "미국",
@@ -15,6 +97,19 @@
       ],
       "date": "2026-09-21",
       "order": 1
+    },
+    {
+      "title": "로보택시 탭 갱신 — FSD 14.69B·무감독 309대·TX DMV 448대",
+      "category": "FSD",
+      "icon": "🤖",
+      "body": "FSD 지표를 9/20 기준으로 갱신: 누적 14.12B→14.69B(공식 페이지 직접 확인), 일일 마일 29M→34.9M(카운터 증가 속도 실측), 무감독 전체 214→309대·Austin 119→198대, TX DMV 등록 420→448대(Cybercab 45→58). 차트 c1(FSD 누적)·c4(Austin 플릿)·c5(Cybercab)·c6(도시별)와 도시별 현황 요약을 같은 값으로 맞춤. 타임라인에 8/20 네바다 승인 추가. 출처: tesla.com/fsd/safety·robotaxitracker.com(2026-09-20)",
+      "color": "purple",
+      "section": "update_log",
+      "targets": [
+        "robotaxi"
+      ],
+      "date": "2026-09-21",
+      "order": 2
     },
     {
       "title": "ESS 6월 설치 50.8GWh(+51%) — 미국 Grid 반등",
@@ -106,37 +201,7 @@
       ],
       "date": "2026-09-21",
       "order": 8
-    }
-  ],
-  "update_log": [
-    {
-      "title": "8월 EV 판매·7월 배터리 출하·IR 노트 정합 반영",
-      "category": "Battery",
-      "icon": "📊",
-      "body": "① index: KPI·주요국 표 6월→8월, 글로벌 카드 5월→7월(누계 1,111.4만대), 배터리 출하 5월→7월, 미국 BEV 모델표 25.9~26.8로 이동(26.4 개정: Model 3 8,000대 뒤늦은 집계), 월별 차트 미국·중국 8월·유럽 7월까지(글로벌은 보류) ② 배터리 맵: 코코모 L1 존치로 27·28E 29→37G, LGES 애리조나 4Q26 가동, Bécancour 무기한 유예 ③ 시나리오·BOM: ESS 설치 6월, Fluence 가이던스 하향, 니켈·코발트 8월 평균, 삼성SDI·LGES·상신이디피·엘앤에프·Al박·천보 문구를 IR 노트 기준으로 정합 ④ 기술 탭: LG화학·대주전자재료·동일알미늄·삼아알미늄·소듐 공급망 표 보강",
-      "color": "teal",
-      "section": "update_log",
-      "targets": [
-        "index"
-      ],
-      "date": "2026-09-21",
-      "order": 1
     },
-    {
-      "title": "로보택시 탭 갱신 — FSD 14.69B·무감독 309대·TX DMV 448대",
-      "category": "FSD",
-      "icon": "🤖",
-      "body": "FSD 지표를 9/20 기준으로 갱신: 누적 14.12B→14.69B(공식 페이지 직접 확인), 일일 마일 29M→34.9M(카운터 증가 속도 실측), 무감독 전체 214→309대·Austin 119→198대, TX DMV 등록 420→448대(Cybercab 45→58). 차트 c1(FSD 누적)·c4(Austin 플릿)·c5(Cybercab)·c6(도시별)와 도시별 현황 요약을 같은 값으로 맞춤. 타임라인에 8/20 네바다 승인 추가. 출처: tesla.com/fsd/safety·robotaxitracker.com(2026-09-20)",
-      "color": "purple",
-      "section": "update_log",
-      "targets": [
-        "robotaxi"
-      ],
-      "date": "2026-09-21",
-      "order": 2
-    }
-  ],
-  "archive": [
     {
       "title": "Cybercab 론칭 행사 — Austin 첫 일반인 탑승",
       "category": "FSD",
