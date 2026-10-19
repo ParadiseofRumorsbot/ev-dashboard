@@ -1,135 +1,146 @@
 {
   "type": "battery_patent_monitor",
-  "lastUpdated": "2026-10-12T01:55:11.726Z",
-  "weekOf": "2026-10-12",
+  "lastUpdated": "2026-10-19T00:37:05.174Z",
+  "weekOf": "2026-10-19",
   "description": "배터리·EV 특허 모니터링 — 주간 수집",
   "note": "⚠️ 자동 수집 결과입니다. 대시보드 반영 전 사용자 확인 필요.",
-  "totalItems": 13,
+  "totalItems": 14,
   "companyStats": {
-    "Other": 8,
-    "BYD": 3,
-    "LG Energy": 1,
-    "CATL": 1
+    "Other": 7,
+    "BYD": 4,
+    "Tesla": 1,
+    "CATL": 1,
+    "Toyota": 1
   },
   "techStats": {
-    "기타": 10,
-    "전해질/분리막": 1,
-    "전고체": 2
+    "전고체": 3,
+    "BMS/열관리": 1,
+    "기타": 9,
+    "제조공정": 1
   },
   "items": [
     {
-      "title": "Battery X Metals Reports Estimated Driving Range Increase of Approximately 101 Kilometers Following a Single-Electric-Vehicle Performance Evaluation of Next-Generation Patent-Pending Lithium-Ion Battery Rebalancing Technology - TradingView",
-      "link": "https://news.google.com/rss/articles/CBMimANBVV95cUxNQ1RPaENjRld6elh3RmdaOXNvWHllbEVEUExpUmxvdU90OENUNGtabDBDYU1GNU5CaEU4TDdMMldoaWFoRmNWakdBNkdNejRaRWFQNWFIa2NZYkM5NGNOaGM2aTVDWnpxRjhuQjYyQmZkQ29peVl0V0JLVFVtVGZtMzR1MnZwNjNUQTF5OHBXY3hyNDgzanhNbWlyR3hFQmw1bGhEWmlONlJsZ1lxNHc5eDB1aWtXRDllcHZTTGJHRTk3REFkbkwta1FOX0lTRTJPellJZ3h2bF9fSEJueTkwQWVfZUotOHVXMGl5ejBLMmItUzdKcy1mbl91ckJ2NlQyakNqM0pDTnFidThCbi1nd29OVllkV0hPcVRMTTMzT3libGhPWFBRQmdNR3Bsb1paUDB4b3NZNThUVllQZUpjSFBoNS1GU2tjeFdDa1BleG1ITF9fenBEUVdfTHJPV1h1VnAxN0k4NlYyajJXdjRrSTNpVmxlU3g2bENNOFdsdlpfQUlQQzhVMmE5Qklxb1cyQ3FoR0haaU8?oc=5",
-      "pubDate": "Sat, 10 Oct 2026 00:00:00 GMT",
-      "source": "TradingView",
+      "title": "South Korea ranks second worldwide in patent growth for all-solid-state batteries and reusable launch vehicles - 파이낸셜뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBjdmpRQ1dFMHUxSWxPZlpraGhPQ3BKdVA2cUhsYzJkbmFrRklKb0RZRTlsbmx2RmM4NzVSWTI5V2djWEx5TnVjdExLVTZ2UXVXb2xLRFJCWUU?oc=5",
+      "pubDate": "Fri, 16 Oct 2026 07:00:00 GMT",
+      "source": "파이낸셜뉴스",
+      "company": "Other",
+      "tech": "전고체",
+      "score": 2
+    },
+    {
+      "title": "EV Battery Pack Thermal Interface Materials Tim Market To 2035: 800V Architectures and Fast Charging to Accelerate Demand - News and Statistics - IndexBox",
+      "link": "https://news.google.com/rss/articles/CBMihgJBVV95cUxQSk1xUzMtTkFDV3Q5aFlIazBrYzlxT2RITnVNcHlvZXFRaHczWDNGTmZMU2Zlbk1SNlAzWERaVGctaW9SLXo4bkgyMEh2SndLSTdfenpPdTd0S2sxaE1xdWRLc2NIbTNJUlYwNHpaNkwxQzJ5bW5BbExsQkJMRXlkVWVZT1VDdzRUaC1odkxxSW1xbkNSLV8yNTExM0ZleGNZZUV4ak42Qi1jcEliNUNtVDF4ZFo3ZFpKMVF6ZmNzWlJKbS10Q242V1ZmRkkxSm12M0paYkh1VlExdUtxVk1UTWVkWmtxem1YYXRqU0J0VDladGlmTUwxbXpqOTNoTWRFdFFrWmJR?oc=5",
+      "pubDate": "Tue, 13 Oct 2026 19:46:04 GMT",
+      "source": "IndexBox",
+      "company": "Other",
+      "tech": "BMS/열관리",
+      "score": 2
+    },
+    {
+      "title": "Global Innovation Index 2026 - GII 2026 Ranking of World’s Top 100 Innovation Clusters - WIPO",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOYUg4ZUd1bFFjYXh6alNiNnZOSFZPb1dRMVZOdWpTXzM3NzZuTDZQR3ZVSGVzNFNQS1E5UGFpUkNoSy0xZm5PRS0zcW1aOWZRRFdMb092YTBKVk9wczhBdWt6Um9jWnRSZ19PVF9FbXBvZjlWTEdPcnVqb05HbERyRHhWVjh5OXltUkM4Wkhfc3ozM1gyWjE3X3dWZmV0SzJEUGRMQXdyVmY5WjJrZnNhTHVLRUxIZlV6ZTRFTjZYSWtBZWZQT0ZIcmtNOXhaSF9OUWZvVA?oc=5",
+      "pubDate": "Fri, 16 Oct 2026 14:15:48 GMT",
+      "source": "WIPO",
       "company": "Other",
       "tech": "기타",
       "score": 2
     },
     {
-      "title": "Korean Chip Patent Suits in U.S. Hit Record High This Year - Seoul Economic Daily",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNRGlVY2pjR3lnM0ZsWXltZU1NeVpwUmhaTjdZMFBhdnFGVVNMVVVKSnVULTdacU5xOGFncmVYNVFxVVZ4S3dvckVka0R6TzQ3TUJnamR0TktuRTZFQ0NDQnBwUHRyQWIwUl9mRW1BMEgxZDBTMlFTSVNFeFc5RzlQUVhMZzQtd0NQRGNsT2N6R0VkaTV2Z25ISzI4RFlBYlU?oc=5",
-      "pubDate": "Tue, 06 Oct 2026 20:00:08 GMT",
-      "source": "Seoul Economic Daily",
-      "company": "Other",
-      "tech": "기타",
-      "score": 2
-    },
-    {
-      "title": "ProLogium Unveils DCN, Opening a “Third State” Electrolyte Universe at Paris Motor Show - GlobeNewswire",
-      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNVU1pQWpVRFhSM1cteVhkUzFMNHp1VTUtd0xzVlZxd0xfbWVvOWNwNXA4cmpxODVTa290UF9XR0cyZnZiNVNZYnFtbGRXejVZcUVuX2FuUEhDTFMtRmJkREg4RXBJYkpQLUFLOGY4SUxiSV9vYS1yZV82azRkcG5tUXVDZjRMUC05U2I0eEhmcElJVXAyVC1HUjF6ckpVLTEzeUZzVzVDeFRVOTlsVjlCYkJFNWZjTk1IR1ZiSlNuRkVEaGNfT2RTNHNaWEtsd0thOVZqdlhHdmxmdktVXzh3T1ZlQmN2TEFMc0hBOA?oc=5",
-      "pubDate": "Thu, 08 Oct 2026 13:00:00 GMT",
-      "source": "GlobeNewswire",
-      "company": "Other",
-      "tech": "전해질/분리막",
-      "score": 1
-    },
-    {
-      "title": "ProLogium 381 Wh/kg Solid-State Battery Eyes AI Data Centers - https://tech-insider.org/",
-      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9zVF9PTy03QUZpMmZiVUJsc3E0V1hVNHBGOGFHalVZNFM5dlV4MnZnUTBPUVUzeWRCUjRKUGhPcGt0Rjh5SWpVdzFza2llVVdveXk3UWpSRVN5Z3B4eG1wUnhJSFJqa0RuYnphV1duU3ZJTWJsakpROThCZXN3dw?oc=5",
-      "pubDate": "Sun, 11 Oct 2026 14:52:33 GMT",
-      "source": "https://tech-insider.org/",
-      "company": "Other",
-      "tech": "전고체",
-      "score": 1
-    },
-    {
-      "title": "Solid-State Battery Next Decade Series, Part 9 of 9: A Brand-New Track, Not a \"Simple Sequel\" to Liquid Lithium Batteries [SMM Analysis] - Shanghai Metals Market",
-      "link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxQOXFNaENIV0hBSXBtUUQ4N21JZi1aX0I5SWJLNzlxaFBGNENpR1IxUGNKQy12bGljR2hCcXJnajByX3NYb2c2SENIRlpQSGJ3ZHZfS25nNlVSbFNENXkycGUxV1ZPVGxZdkJMUHZSTENDSVNLNVBqR3VtMTZKZ2IxZ1hRM1Q1S1Iwci1hNVJ5a2JIcVZPQUxIRjhncTN5SmNET1l4NXRVX0lQZnF3eGo4YS1SbDh3NVpHYTI0cTdFQmxtM3RmM1dIdmpnbEZRMzVEWW4xMFdNSV9CeFdpQTc3VXJJYlpldG9leHpkTjFldFRwMjE0RE5vM19MM0liazJwWWgtbA?oc=5",
-      "pubDate": "Sat, 10 Oct 2026 05:29:00 GMT",
-      "source": "Shanghai Metals Market",
-      "company": "Other",
-      "tech": "전고체",
-      "score": 1
-    },
-    {
-      "title": "BYD Patents Double-Chamber EV Battery Enclosure for Its Upcoming Immersion Cooling Battery - autoevolution",
-      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQdXVvbnVhNGNId29kTE91QWQ0Z0h5SlJFaUNXY3JXQWdIUDVZVFV5UmkzbXB2aXU1aUxWWU5abEo2Zk5FTGFPQU01Y0lfMUl5OEFGQ05qblpmUXRQeFRQOV9jd0dha3NCajhkdTlBd3cxSWdQNGQ4TXZTR2p2OEpOc0tyVGVoQ1hBWjE1bE13VnNkMVlfTUl5Vy01NHdtNEp5cTl3NXdrZ3F5a0JSdTlaZUNlWENNV2l4aDl4ZFZQeW1RekY3Wm9MZGgxNHJlcThBVkZZ?oc=5",
-      "pubDate": "Tue, 06 Oct 2026 17:28:36 GMT",
-      "source": "autoevolution",
+      "title": "BYD's Da Han Flagship Lands in China as Robot Patent Signals Broader Ambitions - ad-hoc-news.de",
+      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQbXo0QTB5WmJScWdGTlpZT0l1S3lzTERzNnhWdmJmSE1jQVFzSEJudWkwVlk4bmdpU0hJQ1BjLVVZdU5JenZNbERnR29fQUEtVEswTWhlOWRpVmljb2wzWGQxWDZjRVU1WXZ6M3UzSWFpM2JSNVBOQWdPV2R1OGpKYS1mNC1FNDluc05oLVBvVExLSDY0M2QwWWhkRGNWTVc1V3lZbW1mV240MVgtRmRkcWVBSldYVlVzdEhZUUU2RFNZcXV0MzlHcm1yX2phTFl6RnFOeDRUcVk2QjdLNUI3R1ZvUG4?oc=5",
+      "pubDate": "Tue, 13 Oct 2026 03:50:41 GMT",
+      "source": "ad-hoc-news.de",
       "company": "BYD",
       "tech": "기타",
-      "score": 1
+      "score": 2
     },
     {
-      "title": "Procopio Adds Award-Winning IP Attorney Seyoung Cheon as Partner - Procopio",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQUWFyWGdVQU9sc1JuUkdzUUw0TVZacGJJZnJ4U2dndjFFdk15SjkxOVpkdDFIYWZYc0ZROV9Eb2pGU1QwZmc4d05sTjhJVmFEWnozbjFyXzhHcjdVOG0tdlhPZWhKMEd0NkZjWEl1eHo5VFQ2aFBnYWx2NFJ3bjBIUElNUkVYVXBfeDRWZTdBVlVXMFJ2VGJhaEI3dmNiWEE?oc=5",
-      "pubDate": "Thu, 08 Oct 2026 14:51:57 GMT",
-      "source": "Procopio",
+      "title": "BYD Patent Filings and Model Blitz Coexist With a 22% Year-to-Date Slide - ad-hoc-news.de",
+      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPOEF5UkI4emFPajVGdTBiOUlhSmZsWjZGZnF5WmlRRnFKYkQwZ2t0TVpOdEVCWVVQekhSVG1iQ3hVb2VKMElvcVZjSnl6MVV2WGJqOEtyR05WbVpDcGZaOXlaal9lRTJ3TkxCWHRPYko2RFdEM2V2R3FVVzRRTjQ1YWd0NUp0WjRGQkRNTmFmWUhDcXBmUXVfbnZwY09ZUUR2M1I4OXdBaU15Y3M0d0ZaejhKZUxJcVhUd1M3XzY5TFZXOGQweHlFRGluTTNfUVJERW4tTEotNmhTNm9jWHc?oc=5",
+      "pubDate": "Tue, 13 Oct 2026 12:11:36 GMT",
+      "source": "ad-hoc-news.de",
+      "company": "BYD",
+      "tech": "기타",
+      "score": 2
+    },
+    {
+      "title": "This American Battery Could Break China’s Grip On The EV Supply Chain - InsideEVs",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5QR0QxdEpVUW5DdjBsLXQtT01jQWNNZWt2cF92eHR0cktWSGROOTVQU1VNNzRwY1M2cVhlWl9uM0tFR01COTdsRk5zbWJLSUVOZDdHWmphelJEM09pbDRmYWFGbTlOT1NPbVdOTFhscjV0Zk1lTDRxamNNeVU0dw?oc=5",
+      "pubDate": "Sun, 18 Oct 2026 04:18:05 GMT",
+      "source": "InsideEVs",
       "company": "Other",
       "tech": "기타",
       "score": 1
     },
     {
-      "title": "Sunbooster secures European patent for bifacial photovoltaic fences - pv magazine Global",
-      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPOWV1bzdjcFFqU1U5ZkR0d1VWMVRma0JPWDJpYVlZdk1oUTZuT1BGaDF3LWttdWcxVUpTTDRtX2NDNWplOEk4V2xlc0hneU9FbFZVenhFcHJkRHV4WXZQRlExbXZmeDFXZTU2d1RXX0tGZjlUQWtacHp1NXRWUUh0QjQ0aE5CTG52aXhOVHV3c2NwXzNJeEtIUU5YTVQ0bmwwenNPSHM2WWMwOU0?oc=5",
-      "pubDate": "Sat, 10 Oct 2026 08:34:41 GMT",
-      "source": "pv magazine Global",
+      "title": "China, Japan, South Korea Jointly Target 2030: The Decisive Battle for Solid-State Batteries Is Coming - 36Kr",
+      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9MQ2FwNzRVNDZlY2tPT2pXNmVaY2x3Zk9adGI4ZGd0ZUFFT19zUm9abUFsLU5WRlJaRkRVNWJaSGNSY3QwalZoaUItNmUzOUZ1UXJ3?oc=5",
+      "pubDate": "Tue, 13 Oct 2026 14:42:03 GMT",
+      "source": "36Kr",
+      "company": "Other",
+      "tech": "전고체",
+      "score": 1
+    },
+    {
+      "title": "Sunbooster secures European patent for bifacial photovoltaic fences - pv magazine India",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUHRpaXdCaXdzQUNTWUhGcGFCb2kwUWZKY01rQTRpQmE5N0J6ZFlUMDM5RXhvRnM3ZWY3azlYZkxqNTFkbEJwaVRtOHM1eFAzVFpvLTZSM3kyUVo3VU1VOEZLV1Fad1FZajE2WjJ4TDdaUlNDVHJhTEdZYjhkRnpwODFueENGTmJMV1FWdEI2c0RGTEhGR0hxTzJ4UTVsM2NmZURENE1LQWplemkyR3hlZHNUaw?oc=5",
+      "pubDate": "Mon, 12 Oct 2026 10:09:13 GMT",
+      "source": "pv magazine India",
       "company": "Other",
       "tech": "기타",
       "score": 1
     },
     {
-      "title": "Stellantis’ Recent Patent Looks Like One of the Wildest Chinese EV Ideas - Autonocion.com",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOaTFrMjhybFVTaFQyWV91V0dsckFXOENuVk04TDlYVExFQmZlTWdTaVVUYmNCaGV1MGI0dUhsWk8zUjdocVlQV1FuMWdNQzlkYzlydEs1aExVQWh3N2JMSjRoY2NwSEZnaE91bFlhbTdPVFpocGxoZS1aYlhVVmpnVWxEOUNVc3ZRbjFsc2ptN1lFWUpyQzg5M3ZIcVRpR043b1Nkdg?oc=5",
-      "pubDate": "Thu, 08 Oct 2026 07:00:00 GMT",
-      "source": "Autonocion.com",
+      "title": "Lithium Sulfur Chemistry & Perovskite Solar Cells Power Drone Flight - Unmanned Systems Technology",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSldFdlMyeTRCUkxYRkh4WXlZeVF4aXhmajgwc1FBQlR0NkpRZk1qLTBnY1N0X2tXa1lSWi1scmc0X0FGamx1TWo3djl2RDhEaXlMU3FPd1hNa25TbXkyM1VSYXA3bmJ5b3IycnRoemlEcjVJcXUzM0t4UW1jX1lQNE0ycFVqNHA4SloxeWVjdkd4ejJOSlpiZXJMbGtOTUZaVnZPNWNwWENjanI3QVBIT05UWS1Sd1d3?oc=5",
+      "pubDate": "Fri, 16 Oct 2026 09:10:33 GMT",
+      "source": "Unmanned Systems Technology",
       "company": "Other",
       "tech": "기타",
       "score": 1
     },
     {
-      "title": "CATL surpasses LG Energy Solution to claim top spot in global battery patents - CarNewsChina.com",
-      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQOW9qQklDcUxnVWhpRXlCakZPQzhaSTdVY2dWZHdDRHZrdlFOcEItZWs4cjQ4TEFtZjZCbk5KRUh0X3BVMm1PZFUxZXBIVmFlLUo1Q0kydmwxNmpnT25JWUVsajB3MnNVTzNQYmk4VFJCckQtaV9HMmRveG9Oc05oQUNOU3Q3bDFlR2VPS19VSXpYSU1kdFRWUXc4TVFHUHVkMndiZzNMdVpTWWlIUzVnOVJLX0M?oc=5",
-      "pubDate": "Sat, 10 Oct 2026 08:18:00 GMT",
+      "title": "Battery X Metals Highlights Participation at X Takeover 2026, an Electric Vehicle and Emerging Technology Event Held at Tesla's Gigafactory Texas, Providing Exposure to Industry Perspectives and Technology Developments - Yahoo Finance",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNMmR4bnhOdlFMamdQdUs4Wng2WFVYUzVjTm1Ea3Yyem4tNFhJX1NmcjhSVkk0WC0xZ3hRRXhyU1BBUWdQNW4tQkJHWjBBRzRpY2x6T3RzZHlKVEZXbDY3VmVPdGx3OGs5WGtCOUtqNEN0aUcwdXJWOUJYTGw3SGUtc1k3S0lKa0dHTUpBZ1hHX0NnZ0ZTZ08tXzBGcmNWRlpUU1BTNw?oc=5",
+      "pubDate": "Sat, 17 Oct 2026 01:20:00 GMT",
+      "source": "Yahoo Finance",
+      "company": "Tesla",
+      "tech": "기타",
+      "score": 1
+    },
+    {
+      "title": "Changan and CATL to collaborate on 1,500 km solid state cells, establish 75 GWh battery lines - CarNewsChina.com",
+      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNUmVIdGtoZkQ0TzZYbXJaeEF4aUxLQTR5ckRQb3hXUHFSRDd2T0Ntbno1dEdDTWdUaG5acTdzRWFFZ08xdy1oUGtTc1lSdmJVeTM3a042SWhmU3BsRmdpRFlCeXRsZ1pGUFk0aG1NYUs1RmtYelJUTGxvdjVuNndkTlVNYlBQcXhTTGdRSWZ1WC1nVzRTZU9VT1hwWnB1enFVeVlpMDM0ajJLb2RUM1BfWlQwY1poOTVpbTdxa2s3YXdkZlBVNkd3?oc=5",
+      "pubDate": "Wed, 14 Oct 2026 09:13:00 GMT",
       "source": "CarNewsChina.com",
-      "company": "LG Energy",
-      "tech": "기타",
-      "score": 1
-    },
-    {
-      "title": "Chinese Battery Giant CATL Surpasses LG in Patents, Invests $14.9 Billion to Dominate Market - Gagadget.com",
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQenNZQ0JvaHBHZ1VIQl96eWcyX3FSdWNHQ0NWekNvUEpBbk56TUZGU0dRTzZ4YWk0M003SW1UR2ZWellidGlDeGRQR0FoYWN2eDFvWjRLdlZBM29pOUF0eTJuVjliUmJuVHltYjkxM3J1cXVKY1pwVnhuaWdENDZZMDFYZTl1Um1WanZnTTRPXzRmdnh5cklwOGpsTHJzdG9xV20tYXFUQnJjbDJuTE0zYWZpendqbmJrTFpMMC1B0gHDAUFVX3lxTE0yQTZfSjNiVkp2NDBVY25Yek9rRGtnd0ZiNFduWGJKVUV0NFV6cFVjQWxPVmZlcFZoTmk4c3BaMDRqX3VkbUNhT3N6czZMMklvVS1hOU9ZVVNFWEp0c0UwRWtVbnc1Y0Zfcmc3MnZrR3dsVGQtS1oyT2EzcFpwU3JSRnBOQXcwNjdrRExTVHMtdnk4cUNsY1JWS3k2dVpNM2lETzBtYW40eUVjZnA1UnI2NnRpMFNBcmVKNW13UExuY3hkMA?oc=5",
-      "pubDate": "Sun, 11 Oct 2026 10:13:47 GMT",
-      "source": "Gagadget.com",
       "company": "CATL",
-      "tech": "기타",
+      "tech": "전고체",
       "score": 1
     },
     {
-      "title": "BYD puts battery cells directly in cooling liquid in new patent - CarNewsChina.com",
-      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPNDAxMV9fV2ZFa2Fwa2Q5cXdGSlRodDRKQ2c3SHhocTBEcE1nZ0E4anRuTG41dkFTM2N4LWhxUEt0enVQdmpVVE5OelRIUUR1anNyQ2FrY2lmUy1Pd2ZTVnMxVkI4WEtVOFBrNDRRdmZ3Q29xRjhWcWJTeFFmZjQzUG1jdWlibWMtblBLT0YzM3IxbTJCM3l5STV6Z2o5S1ZvMXc?oc=5",
-      "pubDate": "Tue, 06 Oct 2026 04:09:00 GMT",
-      "source": "CarNewsChina.com",
+      "title": "BYD patent explores direct liquid cooling for battery cells - Manufacturing Today India",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQcTYzdU5jOE0zaUt5UW5YUlVWajROTHZtQU4xdnZGOGkxYl9OWTd3SHdyTmsxeDByY1ppa3dCU013QndHSWlLejVldlNManc3UGRXaDI3RWlSdlc2M1JCWkdoUUdRTDB5dDVUeFJZendkeGV5WWk0VGJJdE9LU255b25oVUNCNGlvVWFwN0tFS055VmphRkRiTXUtUVctcWNU?oc=5",
+      "pubDate": "Mon, 12 Oct 2026 08:47:17 GMT",
+      "source": "Manufacturing Today India",
       "company": "BYD",
+      "tech": "제조공정",
+      "score": 1
+    },
+    {
+      "title": "Toyota Patent Suggests New Lexus LFA Could Shift Gears Like A Race Car - CarBuzz",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBsTDBJTEhmemM3QjR6Z0hLWWN6Vm1kN1lPR1VEMS1tOWdpbE5RcTJVbjVxSENqMTZMaTVTRlNORElEd0hZeE9NeUxrUVdfT1FmZ3FpY3JZQWo1Yy1jOW1FQmhnTjBmQQ?oc=5",
+      "pubDate": "Tue, 13 Oct 2026 12:26:32 GMT",
+      "source": "CarBuzz",
+      "company": "Toyota",
       "tech": "기타",
       "score": 1
     },
     {
-      "title": "\"Dunking batteries in coolant?… BYD files 'bold' patent to end EV fire fears - 스타뉴스",
-      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZ1hZNmJNQ0Z3d0Ewek5McG41Q01nakNuN0tIcF9iOWNfZEhDTlYtSi1NMXBTUXBnOW9yQ092N081RDBvbmRadnhMZktZV1FLQmVzSDgtWHBub1NxWkVvTUF1ZHF2ajlrVWFmWTJrM3ZzSnhwT3dSSGlsYkU0UzZsckNMMA?oc=5",
-      "pubDate": "Tue, 06 Oct 2026 06:29:44 GMT",
-      "source": "스타뉴스",
+      "title": "BYD's Robot Patent and ATTO 8 Debut Cut Through a Bruising Home Market - ad-hoc-news.de",
+      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPaE9RY0VLLV95UlNEeV9EY2lYN0RJal90dDgzNlV5TnlFYkZZS3NqU1F6M0pDSElXSF9CVU9oV1FzUGZmUHVJT2hkZ2VBNngySW9RZ2U0RTdkYzEzajdDbC1zRVEzODk1cV9JajcwdmpHMlV4SXlpZU9vTVZhbHE2eHhOZ01Ka3JwMktNZkdLdXQ0U1AtRWl2ZHI2cExtTkgxQTRJWTQwMl9ldmZQRDFfdlhmeTlWRDNXcGxtakhMUVNQSmdrUm8tdWdqQUtKNURQeTVhOFBzN3E3QQ?oc=5",
+      "pubDate": "Tue, 13 Oct 2026 05:30:41 GMT",
+      "source": "ad-hoc-news.de",
       "company": "BYD",
       "tech": "기타",
       "score": 1
