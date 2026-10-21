@@ -1,8 +1,51 @@
 {
-  "syncedAt": "2026-10-20T23:26:46.022Z",
-  "latestDate": "2026-10-15",
-  "count": 58,
+  "syncedAt": "2026-10-21T22:22:08.415Z",
+  "latestDate": "2026-10-22",
+  "count": 60,
   "this_week": [
+    {
+      "title": "Tesla 무감독 511대 · FSD 구독 1.74M · TX 등록 811대",
+      "category": "FSD",
+      "icon": "🚕",
+      "body": "무감독(세이프티 드라이버 없음) 현재 서비스 중 511대(9/20 309대): Austin 367(Cybercab 190 포함)·Dallas 72·Houston 33·Tampa 22·Miami 5·Orlando 5. TX DMV 등록 811대(Model Y 462 + Cybercab 349, 10/9 739대). 3Q26 실적: Active FSD 구독 1.74M(+67%), 북미 신규 인도분 FSD 탑재율 75% 이상, FSD 유럽 9개국. Tesla 공식 무감독 누적 3.11M마일(10/18까지, 9월 말 약 200만 마일로 QoQ 8배). FSD 누적 15.79B마일(도심 6.16B), 일 약 35M마일. 출처: robotaxitracker.com·tesla.com/fsd/safety·tesla.com/robotaxi/safety·Texas DMV(2026-10-22)·Tesla Q3 2026 Update(2026-10-21)",
+      "color": "red",
+      "section": "this_week",
+      "targets": [
+        "both"
+      ],
+      "date": "2026-10-22",
+      "order": 1
+    }
+  ],
+  "update_log": [
+    {
+      "title": "로보택시 탭 갱신 — FSD 15.79B·무감독 511대·TX DMV 811대",
+      "category": "FSD",
+      "icon": "🤖",
+      "body": "FSD 지표를 10/22 기준으로 갱신: 누적 14.69B→15.79B(공식 페이지 직접 확인), 무감독 전체 309→511대·Austin 198→367대, TX DMV 등록 739→811대(Cybercab 319→349), FSD 구독 1.28M→1.74M(3Q26 말). 차트 c1(FSD 누적)·c4(Austin 플릿)·c5(Cybercab)·c6(도시별)와 도시별 현황 요약·FSD 유럽 승인(5→9개국)·index 텍사스 등록 배너를 같은 값으로 맞춤. 타임라인에 3Q26 실적(10/21)·플릿 현황(10/22) 추가. 출처: tesla.com/fsd/safety·robotaxitracker.com·Texas DMV(2026-10-22)·Tesla Q3 2026 Update",
+      "color": "purple",
+      "section": "update_log",
+      "targets": [
+        "both"
+      ],
+      "date": "2026-10-22",
+      "order": 1
+    }
+  ],
+  "archive": [
+    {
+      "title": "ESS CAPA 외부 집계 반영·Non-PFE 자격 레이어 신설",
+      "category": "Battery",
+      "icon": "📊",
+      "body": "① 배터리 맵: LGES 북미 ESS 거점 CAPA 외부 집계(2026.10) 반영 — Holland 17→16, Lansing 25→22/38, Honda JV EV 10→ESS 12, UC2 34→25, NextStar 10/0/0→12, 코코모 L4 10→12G; 공급선 407/549/653→398/568/672GWh · SK온 ESS 전환 거점 테네시→조지아 정정 ② 시나리오: 북미 ESS CAPA SDI 7/19/31·LGES 22/57/73(합계 36/97/151), CELL3 LGES 랜싱 이중 계상 정리(총계 357/438→338/405) · 2026 관세 3구간(48.4/38.4/40.9%)·슬라이더 40.9·MACR 사다리 · 정책 격차 $122·비중국 LFP 양극재 카드 · NVIDIA DSX Ready 카드 · 미국 ESS 연간 설치 2025 51GWh ③ BOM 탭: Non-PFE 자격 레이어(정책 일정·병목 공급자·음극재 정책) 신설 ④ us-import: FEOC 2026 요건 주석(45X 60%). 출처: USTR·IRS Notice 2026-15·Wood Mackenzie·ACP·NVIDIA·각사 발표(2026.10)",
+      "color": "teal",
+      "section": "update_log",
+      "targets": [
+        "index"
+      ],
+      "date": "2026-10-15",
+      "order": 1
+    },
     {
       "title": "미국 ESS 2025 설치 51GWh(+38%) — 2Q26 18.9GWh 분기 최대",
       "category": "ESS",
@@ -67,24 +110,7 @@
       ],
       "date": "2026-10-15",
       "order": 5
-    }
-  ],
-  "update_log": [
-    {
-      "title": "ESS CAPA 외부 집계 반영·Non-PFE 자격 레이어 신설",
-      "category": "Battery",
-      "icon": "📊",
-      "body": "① 배터리 맵: LGES 북미 ESS 거점 CAPA 외부 집계(2026.10) 반영 — Holland 17→16, Lansing 25→22/38, Honda JV EV 10→ESS 12, UC2 34→25, NextStar 10/0/0→12, 코코모 L4 10→12G; 공급선 407/549/653→398/568/672GWh · SK온 ESS 전환 거점 테네시→조지아 정정 ② 시나리오: 북미 ESS CAPA SDI 7/19/31·LGES 22/57/73(합계 36/97/151), CELL3 LGES 랜싱 이중 계상 정리(총계 357/438→338/405) · 2026 관세 3구간(48.4/38.4/40.9%)·슬라이더 40.9·MACR 사다리 · 정책 격차 $122·비중국 LFP 양극재 카드 · NVIDIA DSX Ready 카드 · 미국 ESS 연간 설치 2025 51GWh ③ BOM 탭: Non-PFE 자격 레이어(정책 일정·병목 공급자·음극재 정책) 신설 ④ us-import: FEOC 2026 요건 주석(45X 60%). 출처: USTR·IRS Notice 2026-15·Wood Mackenzie·ACP·NVIDIA·각사 발표(2026.10)",
-      "color": "teal",
-      "section": "update_log",
-      "targets": [
-        "index"
-      ],
-      "date": "2026-10-15",
-      "order": 1
-    }
-  ],
-  "archive": [
+    },
     {
       "title": "8월 EV 판매·7월 배터리 출하·IR 노트 정합 반영",
       "category": "Battery",
