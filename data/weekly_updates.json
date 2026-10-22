@@ -1,7 +1,7 @@
 {
-  "syncedAt": "2026-10-21T23:42:32.115Z",
+  "syncedAt": "2026-10-22T01:47:53.742Z",
   "latestDate": "2026-10-22",
-  "count": 60,
+  "count": 61,
   "this_week": [
     {
       "title": "Tesla 무감독 511대 · FSD 구독 1.74M · TX 등록 811대",
@@ -30,6 +30,19 @@
       ],
       "date": "2026-10-22",
       "order": 1
+    },
+    {
+      "title": "로보택시 타임라인 — 3Q26 컨콜 일정 반영",
+      "category": "FSD",
+      "icon": "🤖",
+      "body": "3Q26 컨콜(10/21) 내용을 확장 타임라인에 추가: 11월 Dallas 출시 예고(Cybercab 투입으로 해석, 회사 미명시)·연말 전 Austin 외 도시 Cybercab 투입 계획·Austin 운영 곧 새벽 2시까지 연장(덱 기준 현재 06-24시)·연내 24시간·고속도로 운행 목표. 9/3 행에 Cybercab Robotaxi 라이드 제공 시작(3Q26 덱 공식) 보강. 출처: Tesla 3Q26 Earnings Call·Q3 2026 Update(2026-10-21)",
+      "color": "purple",
+      "section": "update_log",
+      "targets": [
+        "robotaxi"
+      ],
+      "date": "2026-10-22",
+      "order": 2
     }
   ],
   "archive": [

@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-21T23:42:32.907Z",
+  "syncedAt": "2026-10-22T01:47:54.457Z",
   "metrics": {
     "texas_dmv_model_y": {
       "key": "texas_dmv_model_y",
@@ -720,7 +720,7 @@
     },
     {
       "date": "26.09.03",
-      "desc": "Cybercab 론칭 행사(Austin 다운타운, 초청제) — 스티어링휠·페달 없는 Cybercab 첫 일반인 데모 탑승 · 전날 공공도로 무인주행 개시 · Robotaxi 앱 Cybercab 배차 지원 · TX DMV 등록 Cybercab 45대(상업 인가) · 공개 라이브스트림 없음(언론종합)",
+      "desc": "Cybercab 론칭 행사(Austin 다운타운, 초청제) — 스티어링휠·페달 없는 Cybercab 첫 일반인 데모 탑승 · 전날 공공도로 무인주행 개시 · Robotaxi 앱 Cybercab 배차 지원 · TX DMV 등록 Cybercab 45대(상업 인가) · 공개 라이브스트림 없음(언론종합) · 3Q26 덱: 9/3부터 Austin에서 Cybercab으로 Robotaxi 라이드 제공 시작(회사 공식)",
       "category": "fleet",
       "priority": "high"
     },
@@ -733,6 +733,12 @@
     {
       "date": "26.10.09",
       "desc": "TX DMV 등록 총 739대 = Model Y 420 + Cybercab 319 (739개 고유 VIN 직접 확인). 사용자 제공 직전 게시물 대비 Cybercab 169→319대(+150, +88.8%, 1.89배), 전체 589→739대(+25.5%). 등록 대수이며 실제 상업 운행·30일 활성·누적 생산량과 별도. 출처: Texas DMV Tesla Robotaxi, LLC 차량 목록(2026-10-09).",
+      "category": "fleet",
+      "priority": "high"
+    },
+    {
+      "date": "26.10.21",
+      "desc": "3Q26 컨콜: 다음 달(11월) Dallas 출시 예고(Ashok, Cybercab 확장 질문에 대한 답 — Dallas는 무감독 차량 72대가 이미 운행 중(10/22 트래커)이고 Cybercab은 아직 Austin 한정이라는 CFO 발언상 Cybercab 투입으로 해석, 회사 미명시) · 연말 전 Austin 외 도시 Cybercab 투입 계획(CFO) · Austin 운영시간 06-21시 → 22·23시로 확대, 곧 새벽 2시까지 연장 예정(Ashok, 덱 기준 현재 06-24시와 종료 시각 1시간 차이) · 연내 24시간·고속도로 운행 목표 (출처: Tesla 3Q26 Earnings Call 2026-10-21)",
       "category": "fleet",
       "priority": "high"
     },
