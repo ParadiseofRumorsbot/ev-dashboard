@@ -30,6 +30,11 @@ const HS_CODES = {
                   companies:['LG에너지솔루션','삼성SDI','SK온','CATL','BYD','Panasonic'] },
   '8507600020': { label:'기타 LiB (ESS·IT)',    labelEn:'Li-ion Other (ESS/IT)',    level:'HS10', tab:'cell',
                   companies:['삼성SDI','LG에너지솔루션','CATL','BYD','EVE Energy'] },
+  // 2026-02 HTS 개정으로 8507600020이 아래 두 코드로 나뉨 → main()에서 두 코드 합을 8507600020에 이어 붙임
+  '8507600030': { label:'ESS 완제품 LiB (함체 일체형)', labelEn:'Li-ion BESS (Fully Encased)', level:'HS10', tab:'cell', from:'2026-02',
+                  companies:['삼성SDI','LG에너지솔루션','CATL','BYD','EVE Energy'] },
+  '8507600090': { label:'기타 LiB (ESS 완제품 외)', labelEn:'Li-ion Other (ex. BESS)', level:'HS10', tab:'cell', from:'2026-02',
+                  companies:[] },
 
   // ── 소재 ──
   '8507908000': { label:'축전지 부품 (비납축)',   labelEn:'Battery Parts (ex. Lead)',  level:'HS10', tab:'material',
@@ -213,6 +218,7 @@ async function main() {
     console.log(`\n▶ [${info.tab}] ${hs} — ${info.label}`);
     out.monthly[hs] = {};
     for (const t of months) {
+      if (info.from && t < info.from) continue;
       process.stdout.write(`  ${t}...`);
       const r = await fetchMonth(hs, info, t);
       calls++;
@@ -222,6 +228,22 @@ async function main() {
       await sleep(300);
       if (calls % 50 === 0) { console.log(`  ... ${calls}건, 대기 ...`); await sleep(2000); }
     }
+  }
+
+  // 8507600020(기타 LiB)은 2026-02부터 0030+0090 합으로 채움 (국가별 포함)
+  for (const t of months) {
+    const parts = ['8507600030', '8507600090'].map(c => out.monthly[c][t]).filter(Boolean);
+    const cur = out.monthly['8507600020'][t];
+    if (!parts.length || (cur && cur.total > 0)) continue;
+    const m = { total: 0, totalQty: 0, qtyUnit: parts[0].qtyUnit, countries: {} };
+    for (const p of parts) {
+      m.total += p.total; m.totalQty += p.totalQty;
+      for (const [k, c] of Object.entries(p.countries)) {
+        const x = m.countries[k] || (m.countries[k] = { val: 0, qty: 0, name: c.name });
+        x.val += c.val; x.qty += c.qty;
+      }
+    }
+    out.monthly['8507600020'][t] = m;
   }
 
   // dataRange.to는 실제 데이터가 존재하는 최신월로 설정 (요청 끝월 months.at(-1) 아님 — Census 발표래그로 최근 1~2개월은 빈값)
