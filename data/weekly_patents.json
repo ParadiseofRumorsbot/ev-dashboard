@@ -1,61 +1,101 @@
 {
   "type": "battery_patent_monitor",
-  "lastUpdated": "2026-10-26T00:52:14.358Z",
-  "weekOf": "2026-10-26",
+  "lastUpdated": "2026-11-02T01:58:45.488Z",
+  "weekOf": "2026-11-02",
   "description": "배터리·EV 특허 모니터링 — 주간 수집",
   "note": "⚠️ 자동 수집 결과입니다. 대시보드 반영 전 사용자 확인 필요.",
-  "totalItems": 5,
+  "totalItems": 9,
   "companyStats": {
-    "Other": 4,
-    "Tesla": 1
+    "Other": 8,
+    "LG Energy": 1
   },
   "techStats": {
     "기타": 3,
-    "전고체": 2
+    "전해질/분리막": 1,
+    "전고체": 2,
+    "리사이클링": 1,
+    "충전": 1,
+    "BMS/열관리": 1
   },
   "items": [
     {
-      "title": "Gelion Reports £2.5 Million FY2026 Income and £9.6 Million Pro Forma Cash as Battery Development Partnerships Expand - Yahoo Finance UK",
-      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPdGtNUEFVU0dtRGhlYmIzYmptRzFRTVhJcWo1YWNCT3RRR0NpZ2V3WTAzemJlSmhZZV8yUzJlQWh3ZlFjNEc5MDZhbE8yNk5lT3J1X2pvalFPZGNsTUhia1A2OTE0Z3M2ZlNGaFlXV0JLb2s2S1FMOTVuc0N0UVd0dg?oc=5",
-      "pubDate": "Wed, 21 Oct 2026 07:04:39 GMT",
-      "source": "Yahoo Finance UK",
+      "title": "EVE Energy seeking Tulip licence details amid LG battery patent fight - IAM Patent",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOMkUydnVXM3pKVTVYWDJZcUI0Vk9RNEE3Nl9pRTlZTmdTTUlJY1FlR004c3I2ckZyRHZacjRVeHMweTQ0MVd6aDJOZmtJWm1Lak1sTms4VTBMZlhjSzZITnU1ajR0ODFjRVhnMU95R0JEV05vaUM0X2ZxU2RibkxwaEZJekMxWkJsZ3E2Vm9rVm1sU3VQQ3ZUc2lGcTgzVnhiUEdicnlR?oc=5",
+      "pubDate": "Wed, 28 Oct 2026 09:49:14 GMT",
+      "source": "IAM Patent",
       "company": "Other",
       "tech": "기타",
       "score": 2
     },
     {
-      "title": "Korea ranked 2nd in growth of patents for ASSDs, reusable rockets - Korea.net",
-      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5ka1FzQVRKTS1OTmF0S1h4NHJqd3VXOE5uVVZ5LW1BTzZOUFhLRE83VFhpX1Vta3pkRlNRNUt2Z3hiQ2tpNVhPa2huOXFHcjFEZTZEWjJJNnl2UFhWOUswNmo2UV9xUmxXaDZnb2JlMA?oc=5",
-      "pubDate": "Tue, 20 Oct 2026 09:36:22 GMT",
-      "source": "Korea.net",
+      "title": "Maxell and Institute of SCIENCE TOKYO Begin Joint Development of Next-Generation Batteries Based on 3D-SLISE Electrolyte Technology - Yahoo Finance",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNUXhaY3U0WkpyLW9WMjR3a2ttaVpEcEFHc2FoTTR4MXJRcHNfallOMTMtY19BVEl3WS1lUk9rOVZxMjZvbmZ6cnVYaTRZR1psaTdGSG5Ld1FXbWpiMFlfOThKdy1YTUxfX0p1MkFyT2lfLXdpeFlXUmQ5TktWdjd5akhvLUlzOEQ1TU9nMzBBbG1qU1BLbFU3YnM4UUdtQQ?oc=5",
+      "pubDate": "Wed, 28 Oct 2026 12:00:00 GMT",
+      "source": "Yahoo Finance",
+      "company": "Other",
+      "tech": "전해질/분리막",
+      "score": 1
+    },
+    {
+      "title": "No Mass Market for Solid-State Batteries Without These Four Moves - Shanghai Metals Market",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQWW5rVlFFX0Q5YXVtbU5tTXg5X2hnRzFvSTV0SDJBTVFOU25ReGJubVZ1TDdsNEE0V0xyancxRlVHZWRTMHFJQktnd1Z4eGxWTU5mYXVtVWhjeF9MYXNKNzJmYUxHN3kzcWpQZVg1ZlZRUHNYcTFPTHJ5ZWtzQ3RReEl3b2hVMVYyQ0w4WkxsWXhGV0t6Ri1CLVRqX3NuejhuaE5xd1cxZkl1OHlReG9v?oc=5",
+      "pubDate": "Mon, 26 Oct 2026 06:47:00 GMT",
+      "source": "Shanghai Metals Market",
+      "company": "Other",
+      "tech": "전고체",
+      "score": 1
+    },
+    {
+      "title": "October Solid-State Battery Industry: Hibernating and Accumulating Strength, Discarding the False and Retaining the True - Shanghai Metals Market",
+      "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNYlE5M1J6WnFzRjQ1U1ktNHpWZDBiNlVWNWhoV0FHY1hOUFVXc1FmSEM1T01VYkQ4ckZJVlE2Uk5pUXJVYXpxV0s5ZVIxaXp5ZG1kZzEyZWlYRTQ5SC14ZzZxNDRnOGFyZnlkQmczLXpuTkw0bE9XdERSLUU3R18wLXVwVWFseWk4bFJReGl3SXE4dUtCVjJ2dXgwWEhTcDlLcXNSRXVVcTNLeEJCWnc2UktrNGFWbk1IaTJUaU85S0JFSlBObW40XzhQU1A2WWhSNGZ6R0tCZTJpeG5nUnFVdzVpVzJPcUZEdEFMMHJTVTlJeDd6REE?oc=5",
+      "pubDate": "Fri, 30 Oct 2026 07:19:00 GMT",
+      "source": "Shanghai Metals Market",
+      "company": "Other",
+      "tech": "전고체",
+      "score": 1
+    },
+    {
+      "title": "How technology innovation can boost EV battery recycling capacity - EV Infrastructure News",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPT1hpNmUzcGFCUTlOZWFORVh5dHI4V09VZnpSb0IwdlFPYUpZSzhLSjlVNUU1cXZQYjFFWDdxV3hkVWxwREQ0WkgxR21mTXBGdTBjcXJoMng3am1uekVvZmYycWNqU3g3bW9vVEFRc1laWmliU0ZGeU44Qk43MHdjWDBTbW5oTWtsNkx5LVdpTXBudGZTcTJSYUtsTksxRUgwQUY0Q2tQd0dHc3J2X3VENGl5RQ?oc=5",
+      "pubDate": "Wed, 28 Oct 2026 09:59:57 GMT",
+      "source": "EV Infrastructure News",
+      "company": "Other",
+      "tech": "리사이클링",
+      "score": 1
+    },
+    {
+      "title": "Elektros, Inc. Highlights Potential Northern New York Lithium Strategy and Patented EV Charging Platform - TradingView",
+      "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPbzA2WER1RjFPeHRYTkt5b3BIaWJGYXgtSGNxbjZkRGNnTW9pOWFIbkF4cTBlenYyeUdTNndfSEhxaHFwdWI3WVRqOFBxaS1iMlVjbzZ6STM2SUVORmF1dFlxeVN0MWdDSGF4RmJROEVVSUNzOGNsTTRzVk5QeDdKRW9JM1g3VkJ0R0NPUklsNExfZXVVek5KLUtaUVpMbnh0M2NFTnFZNG5FaUJlR1NkdkdpVXdrX2QxaGtqSjVMZE80djV3VWVmMGIxRHkxWm1TMjd6a2Nqd0ZJa2ZFSkNZa3FNaFUwbkFiSXlDck9LWGQ4U0R0?oc=5",
+      "pubDate": "Fri, 30 Oct 2026 00:05:00 GMT",
+      "source": "TradingView",
+      "company": "Other",
+      "tech": "충전",
+      "score": 1
+    },
+    {
+      "title": "LG Energy Solution Marks 10th Year of Global Battery Research Competition, Expands to Materials, BMS and AI - BigGo Finance",
+      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1UUjhCZVhDYXg0LTl1aEJ1WEZ3cjhEZWpOb19jUERQbFZqWldYMHV1cU1iTEpROXNtU3B1YmpDYnA3c3l1c0ZEZnR5d1phVDczZkdTOExmMTF3WlFQdERlNXk3LWctdGoxbkZDYlQ4dmZOSVh4N1E?oc=5",
+      "pubDate": "Thu, 29 Oct 2026 02:35:00 GMT",
+      "source": "BigGo Finance",
+      "company": "LG Energy",
+      "tech": "BMS/열관리",
+      "score": 1
+    },
+    {
+      "title": "US, European Courts Split on SK Nexilis-Solus Copper Foil Patent Dispute - THE ELEC, Korea Electronics Industry Media",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1IR3NuUUdueEVfdFJRNTBpNEk5cjRWbGJ2eFhoT1BwdlVwOVNuY0g2dlVwQlZ3YkxiSC1hUWZzX1Bpa2dsMWtqcV9aUmo1NDRZSk52TENGdzk4X1VGTFdpZ2VwODkwZms?oc=5",
+      "pubDate": "Mon, 26 Oct 2026 08:02:28 GMT",
+      "source": "THE ELEC, Korea Electronics Industry Media",
       "company": "Other",
       "tech": "기타",
       "score": 1
     },
     {
-      "title": "Lithium Tetrachloroaluminate Salt Market To 2035: Solid-State Battery Demand Drives Growth - News and Statistics - IndexBox",
-      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPUjVfRHNWd0s2c3AzVlp1S1pXV2V1WkZFcDFSOG5hN1RZWDMzX0NRcTZxXzkyR1B1N2w4a3M2cEJiVUJNY09LZUZIV1pZR0YxcVF2ZDFocXN6ZzhEQkV4ZUtuTDhsWTltdG1DaC15Z1Qzc0FHeWtyalFZQ0s5R3FpNkE2aUZkaGxybnpuME1EclFzLWREUktFVnhFdVBzRS1mZXZjS1pBeUV3YnIxZkUtNnR4eW5MdElqTW9zMFdBTU1KNEt2bTBTdzhfNXlrMm9KQ3c?oc=5",
-      "pubDate": "Thu, 22 Oct 2026 20:46:04 GMT",
-      "source": "IndexBox",
+      "title": "SK Nexilis–Solus fight over copper foil patents undermines Korea’s China check - Chosunbiz",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOLXRIRXQ1c1Mzc2FSRzdEdVZlWG9qUmRaZGFLTXk2d29FeWVVanNub1hqeklMdE80TVFtRmNQZHYzS2NHOEJPZVhFaFUwdGpYVVExb0YxSDRQNzl2SkNQTzhhVmM3bXNSRnNWeG13QUNyejR1ZWFQY0dvVGl0VjBDMW5BZFBpdDFERlcxSFJWZHkybkw4VXfSAZYBQVVfeXFMTi10SEV0NXNTM3NhUkc3RHVWZVhvalJkWmRhS015NndvRXllVWpzbm9YanpJTHRPNE1RbUZjUGR2M0tjRzhCT2VYRWhVMHRqWFVRMW9GMUg0UDc5dkpDUE84YVZjN21zUkZzVnhtd0FDcno0dWVhUGNHb1RpdFYwQzFuQWRQaXQxREZXMUhSVmR5Mm5MOFV3?oc=5",
+      "pubDate": "Sat, 31 Oct 2026 21:00:00 GMT",
+      "source": "Chosunbiz",
       "company": "Other",
-      "tech": "전고체",
-      "score": 1
-    },
-    {
-      "title": "Lithium Metal Protective Additives Market To 2035: Growth Driven by Solid-State Battery Interface Needs - News and Statistics - IndexBox",
-      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNV0hLQ09PXzVoaklELVBWWHFhSFZubW9aamZTYUtDdkgtV1ZnUzFXeV85bkg3TU1sOVo0YkxqTDlkdXJXeFdUU3hlV01zdFF2X3dZaXBxdlhNM3o1Yi1CUjM5WWR3RGg4Y2NCNUhCaFlIejM1RXJGMU5NZnFMaklFMjRGT2I0VC03WjdJS1hRMTJIcFhrT3duejJCemdrRmVEMkV6VlJFVE13NUx0dXFPOG5Pc1VWODFQUEFWcF82S3VXclB3UHByOWtLd0JnNXZtbDFpaHdPVUozU0x3TG5LZA?oc=5",
-      "pubDate": "Fri, 23 Oct 2026 20:56:04 GMT",
-      "source": "IndexBox",
-      "company": "Other",
-      "tech": "전고체",
-      "score": 1
-    },
-    {
-      "title": "Battery X Metals Highlights Participation at X Takeover 2026, an Electric Vehicle and Emerging Technology Event Held at Tesla's Gigafactory Texas, Providing Exposure to Industry Perspectives and Technology Developments - FinanzNachrichten.de",
-      "link": "https://news.google.com/rss/articles/CBMivwJBVV95cUxPZ1pMV3owYzZZMzVzQ054cWFaNkhlOFRxQjE0ZFJlTEhxZHUyN3J3Y2xxZktONUNwMXZXVnJmTm0wOXFUMUxzbVpjVW8tQXpCUVZaNGN1OGdrMFRjeEtoX2lWLXRLa2hOd25iXy0tZEVGczhsTlp2UFdoZk5ULXgtbGRtSmpXRElkR1pNR093WVphbFdpMk9GU3NtN3dPWE1wbTV1TEctM21iaTM5MVBHbXo0N0RuajZMQXN0X0g3MVk3NVVJUDQzYXltd3lsdXF6RkJ5ZDFTdlRJeEpOejdKMFlpVUtlTUZraThRTURGdEx5VDJPOFFDOV9GOEQ3dTZQb2RFb2E4QnM2NDAyandiVTF5LVhpd1BLTXZNa0ZxMC01bTRmQ1FMX1NDb2pBelhUdHp3d0ZkUzVyNzAweUtr?oc=5",
-      "pubDate": "Mon, 19 Oct 2026 19:58:00 GMT",
-      "source": "FinanzNachrichten.de",
-      "company": "Tesla",
       "tech": "기타",
       "score": 1
     }
