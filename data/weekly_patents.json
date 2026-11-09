@@ -1,102 +1,109 @@
 {
   "type": "battery_patent_monitor",
-  "lastUpdated": "2026-11-02T01:58:45.488Z",
-  "weekOf": "2026-11-02",
+  "lastUpdated": "2026-11-09T02:13:51.985Z",
+  "weekOf": "2026-11-09",
   "description": "배터리·EV 특허 모니터링 — 주간 수집",
   "note": "⚠️ 자동 수집 결과입니다. 대시보드 반영 전 사용자 확인 필요.",
-  "totalItems": 9,
+  "totalItems": 10,
   "companyStats": {
-    "Other": 8,
-    "LG Energy": 1
+    "Other": 9,
+    "CATL": 1
   },
   "techStats": {
-    "기타": 3,
-    "전해질/분리막": 1,
-    "전고체": 2,
-    "리사이클링": 1,
-    "충전": 1,
-    "BMS/열관리": 1
+    "음극재": 1,
+    "기타": 6,
+    "양극재": 2,
+    "전고체": 1
   },
   "items": [
     {
-      "title": "EVE Energy seeking Tulip licence details amid LG battery patent fight - IAM Patent",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOMkUydnVXM3pKVTVYWDJZcUI0Vk9RNEE3Nl9pRTlZTmdTTUlJY1FlR004c3I2ckZyRHZacjRVeHMweTQ0MVd6aDJOZmtJWm1Lak1sTms4VTBMZlhjSzZITnU1ajR0ODFjRVhnMU95R0JEV05vaUM0X2ZxU2RibkxwaEZJekMxWkJsZ3E2Vm9rVm1sU3VQQ3ZUc2lGcTgzVnhiUEdicnlR?oc=5",
-      "pubDate": "Wed, 28 Oct 2026 09:49:14 GMT",
-      "source": "IAM Patent",
+      "title": "Focus Graphite Secures Canadian Patent for Silicon-Enhanced Graphite Battery Anode Technology - Taiwan News",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBEUEUydzNiSzY1b2dzRUpHcktKdjhPT1E3ZmpfS0JuSC1VVk9ISkVWNWN4dFN3LVdLblE1YjcwV1JpaGdTck5kTUxBNm5fbUJyWTVSdkd3X0E?oc=5",
+      "pubDate": "Thu, 05 Nov 2026 10:15:00 GMT",
+      "source": "Taiwan News",
+      "company": "Other",
+      "tech": "음극재",
+      "score": 4
+    },
+    {
+      "title": "X-Batt files international patent application for lithium-ion safety technology - www.bestmag.co.uk",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBQR0NNZ3gtSWpRU0YxcnJ6a3JJYy1VdFZwd1kyQU5tbjNpR1lrS3prU3V0Wi15WG5jLXZYMzBidDVESUdlczhqU1pocm81M3FtWjdvQnFfZUFTS0lVT05OR1YwRE1BSEtxQm96MDdGMFl3MFhwa2JwN2NrTzJMdw?oc=5",
+      "pubDate": "Fri, 06 Nov 2026 18:45:54 GMT",
+      "source": "www.bestmag.co.uk",
       "company": "Other",
       "tech": "기타",
       "score": 2
     },
     {
-      "title": "Maxell and Institute of SCIENCE TOKYO Begin Joint Development of Next-Generation Batteries Based on 3D-SLISE Electrolyte Technology - Yahoo Finance",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNUXhaY3U0WkpyLW9WMjR3a2ttaVpEcEFHc2FoTTR4MXJRcHNfallOMTMtY19BVEl3WS1lUk9rOVZxMjZvbmZ6cnVYaTRZR1psaTdGSG5Ld1FXbWpiMFlfOThKdy1YTUxfX0p1MkFyT2lfLXdpeFlXUmQ5TktWdjd5akhvLUlzOEQ1TU9nMzBBbG1qU1BLbFU3YnM4UUdtQQ?oc=5",
-      "pubDate": "Wed, 28 Oct 2026 12:00:00 GMT",
-      "source": "Yahoo Finance",
-      "company": "Other",
-      "tech": "전해질/분리막",
-      "score": 1
-    },
-    {
-      "title": "No Mass Market for Solid-State Batteries Without These Four Moves - Shanghai Metals Market",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQWW5rVlFFX0Q5YXVtbU5tTXg5X2hnRzFvSTV0SDJBTVFOU25ReGJubVZ1TDdsNEE0V0xyancxRlVHZWRTMHFJQktnd1Z4eGxWTU5mYXVtVWhjeF9MYXNKNzJmYUxHN3kzcWpQZVg1ZlZRUHNYcTFPTHJ5ZWtzQ3RReEl3b2hVMVYyQ0w4WkxsWXhGV0t6Ri1CLVRqX3NuejhuaE5xd1cxZkl1OHlReG9v?oc=5",
-      "pubDate": "Mon, 26 Oct 2026 06:47:00 GMT",
-      "source": "Shanghai Metals Market",
-      "company": "Other",
-      "tech": "전고체",
-      "score": 1
-    },
-    {
-      "title": "October Solid-State Battery Industry: Hibernating and Accumulating Strength, Discarding the False and Retaining the True - Shanghai Metals Market",
-      "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNYlE5M1J6WnFzRjQ1U1ktNHpWZDBiNlVWNWhoV0FHY1hOUFVXc1FmSEM1T01VYkQ4ckZJVlE2Uk5pUXJVYXpxV0s5ZVIxaXp5ZG1kZzEyZWlYRTQ5SC14ZzZxNDRnOGFyZnlkQmczLXpuTkw0bE9XdERSLUU3R18wLXVwVWFseWk4bFJReGl3SXE4dUtCVjJ2dXgwWEhTcDlLcXNSRXVVcTNLeEJCWnc2UktrNGFWbk1IaTJUaU85S0JFSlBObW40XzhQU1A2WWhSNGZ6R0tCZTJpeG5nUnFVdzVpVzJPcUZEdEFMMHJTVTlJeDd6REE?oc=5",
-      "pubDate": "Fri, 30 Oct 2026 07:19:00 GMT",
-      "source": "Shanghai Metals Market",
-      "company": "Other",
-      "tech": "전고체",
-      "score": 1
-    },
-    {
-      "title": "How technology innovation can boost EV battery recycling capacity - EV Infrastructure News",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPT1hpNmUzcGFCUTlOZWFORVh5dHI4V09VZnpSb0IwdlFPYUpZSzhLSjlVNUU1cXZQYjFFWDdxV3hkVWxwREQ0WkgxR21mTXBGdTBjcXJoMng3am1uekVvZmYycWNqU3g3bW9vVEFRc1laWmliU0ZGeU44Qk43MHdjWDBTbW5oTWtsNkx5LVdpTXBudGZTcTJSYUtsTksxRUgwQUY0Q2tQd0dHc3J2X3VENGl5RQ?oc=5",
-      "pubDate": "Wed, 28 Oct 2026 09:59:57 GMT",
-      "source": "EV Infrastructure News",
-      "company": "Other",
-      "tech": "리사이클링",
-      "score": 1
-    },
-    {
-      "title": "Elektros, Inc. Highlights Potential Northern New York Lithium Strategy and Patented EV Charging Platform - TradingView",
-      "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPbzA2WER1RjFPeHRYTkt5b3BIaWJGYXgtSGNxbjZkRGNnTW9pOWFIbkF4cTBlenYyeUdTNndfSEhxaHFwdWI3WVRqOFBxaS1iMlVjbzZ6STM2SUVORmF1dFlxeVN0MWdDSGF4RmJROEVVSUNzOGNsTTRzVk5QeDdKRW9JM1g3VkJ0R0NPUklsNExfZXVVek5KLUtaUVpMbnh0M2NFTnFZNG5FaUJlR1NkdkdpVXdrX2QxaGtqSjVMZE80djV3VWVmMGIxRHkxWm1TMjd6a2Nqd0ZJa2ZFSkNZa3FNaFUwbkFiSXlDck9LWGQ4U0R0?oc=5",
-      "pubDate": "Fri, 30 Oct 2026 00:05:00 GMT",
-      "source": "TradingView",
-      "company": "Other",
-      "tech": "충전",
-      "score": 1
-    },
-    {
-      "title": "LG Energy Solution Marks 10th Year of Global Battery Research Competition, Expands to Materials, BMS and AI - BigGo Finance",
-      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1UUjhCZVhDYXg0LTl1aEJ1WEZ3cjhEZWpOb19jUERQbFZqWldYMHV1cU1iTEpROXNtU3B1YmpDYnA3c3l1c0ZEZnR5d1phVDczZkdTOExmMTF3WlFQdERlNXk3LWctdGoxbkZDYlQ4dmZOSVh4N1E?oc=5",
-      "pubDate": "Thu, 29 Oct 2026 02:35:00 GMT",
-      "source": "BigGo Finance",
-      "company": "LG Energy",
-      "tech": "BMS/열관리",
-      "score": 1
-    },
-    {
-      "title": "US, European Courts Split on SK Nexilis-Solus Copper Foil Patent Dispute - THE ELEC, Korea Electronics Industry Media",
-      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1IR3NuUUdueEVfdFJRNTBpNEk5cjRWbGJ2eFhoT1BwdlVwOVNuY0g2dlVwQlZ3YkxiSC1hUWZzX1Bpa2dsMWtqcV9aUmo1NDRZSk52TENGdzk4X1VGTFdpZ2VwODkwZms?oc=5",
-      "pubDate": "Mon, 26 Oct 2026 08:02:28 GMT",
+      "title": "Court Rejects LG Chem's Patent Injunction Against Chinese Cathode Material Maker - THE ELEC, Korea Electronics Industry Media",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9LT0czVHNsbHk4bHp0QW90dXRCUVFuQjJKcmVZZ3ZpZnNuZi1mSUJOcE5qTWtwX3pDazZhQU9aOGg3LXluS0QzYTZEbUJFQjVJMEIycXZjTDZfLUV1RFE5VzlEVGdoeTQ?oc=5",
+      "pubDate": "Sat, 07 Nov 2026 00:07:25 GMT",
       "source": "THE ELEC, Korea Electronics Industry Media",
       "company": "Other",
+      "tech": "양극재",
+      "score": 2
+    },
+    {
+      "title": "Global Innovation Index 2026 - GII 2026 Ranking of World’s Top 100 Innovation Clusters - WIPO",
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNZTVDM3VJWDhHakpSSVZMMnhMNDc2aHhzY3BoWUpBOFBsRVpGOWk3UGFVcWVWYkl6Y19ycnVpV09ZQ1ItZklnWDdZb2lXekJVWGlBU0xzN0J6U1ZXa05yUEFDNjRWcVkwSkIybG9zRFhGUDNtQXVqaVd3bXdfczVvb29nX1kxZHZENzBvWW9VWVVVSTR5aWg4al9ab2cwQWZRbklDZXIzc0hTVDJvWktsb0dIUXVfY2ZWVy1HV2NsMkZYc3ZPNGNqN0d3?oc=5",
+      "pubDate": "Tue, 03 Nov 2026 14:15:38 GMT",
+      "source": "WIPO",
+      "company": "Other",
+      "tech": "기타",
+      "score": 2
+    },
+    {
+      "title": "This American Battery Could Break China’s Grip On The EV Supply Chain - InsideEVs",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5QR0QxdEpVUW5DdjBsLXQtT01jQWNNZWt2cF92eHR0cktWSGROOTVQU1VNNzRwY1M2cVhlWl9uM0tFR01COTdsRk5zbWJLSUVOZDdHWmphelJEM09pbDRmYWFGbTlOT1NPbVdOTFhscjV0Zk1lTDRxamNNeVU0dw?oc=5",
+      "pubDate": "Sun, 08 Nov 2026 05:24:02 GMT",
+      "source": "InsideEVs",
+      "company": "Other",
       "tech": "기타",
       "score": 1
     },
     {
-      "title": "SK Nexilis–Solus fight over copper foil patents undermines Korea’s China check - Chosunbiz",
-      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOLXRIRXQ1c1Mzc2FSRzdEdVZlWG9qUmRaZGFLTXk2d29FeWVVanNub1hqeklMdE80TVFtRmNQZHYzS2NHOEJPZVhFaFUwdGpYVVExb0YxSDRQNzl2SkNQTzhhVmM3bXNSRnNWeG13QUNyejR1ZWFQY0dvVGl0VjBDMW5BZFBpdDFERlcxSFJWZHkybkw4VXfSAZYBQVVfeXFMTi10SEV0NXNTM3NhUkc3RHVWZVhvalJkWmRhS015NndvRXllVWpzbm9YanpJTHRPNE1RbUZjUGR2M0tjRzhCT2VYRWhVMHRqWFVRMW9GMUg0UDc5dkpDUE84YVZjN21zUkZzVnhtd0FDcno0dWVhUGNHb1RpdFYwQzFuQWRQaXQxREZXMUhSVmR5Mm5MOFV3?oc=5",
-      "pubDate": "Sat, 31 Oct 2026 21:00:00 GMT",
-      "source": "Chosunbiz",
+      "title": "Iron Phosphate Chemicals Market Forecast to 2035, Driven by LFP Battery Demand and Sustainability Mandates - IndexBox",
+      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQRU5tSTRkbVZjZHRsRll3RGFUYkp4eEoxd2RaWWkwTjhUbXJlTDdLOXIxbG04MUZMcjdrcTdGejk0bDJDX2d3UURRZXdISDFWSnYtV2tLTVU0ZVcxcl9IWU1qblBMQ1RtRS1UQ1ZxSFdrUGx4clJtcEhZRFoybF84bGF6RlZYSU1kNUJiVlYwcUgtQm1OUTRBYWg1WTNsMGQ4a3R5MHFBbFpSRVVPa2ZUeHR2a004RmRENlZHQmhHMGd6RWRZMnlBYzQ2ZzdMQnNj?oc=5",
+      "pubDate": "Thu, 05 Nov 2026 13:46:03 GMT",
+      "source": "IndexBox",
+      "company": "Other",
+      "tech": "양극재",
+      "score": 1
+    },
+    {
+      "title": "Customized High Frequency Tube Mill Manufacturer - Mivi: Achieving New Milestones in Patent Technology - EIN News",
+      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQdERlYjd1OWRkNjVqNElISTVKRTZldy16bEczTXZud0ZmYlc2X2lmYkJBcGQzRjhrTkczR2l0XzhKMk80RHktV1JRSW9jd2hEeEFXVWJINVlMRlN2WjF0M2V3cmd2YnJCNnVLR0VfTGJBazRlSldxOE1FM19UTTIzVkx3Y1c0aERkOTF3THBQbHpoczdNSWRESHlpbjVjWnFMbDlDbG1acHRDcjBMSU9jc2toY2tjb2tqTDZGbXpHMUlHTHhHYUtaM3ZDNEt2Zm1CSzVlWUtfUjh0QQ?oc=5",
+      "pubDate": "Sat, 07 Nov 2026 14:21:06 GMT",
+      "source": "EIN News",
       "company": "Other",
       "tech": "기타",
+      "score": 1
+    },
+    {
+      "title": "Wilson Sonsini Advises FluoRok on Patent Matters Related to $30 Million Oversubscribed Series A - Wilson Sonsini",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNTXl6cHdIOUR2TW1QQ01tbEg3TW9OeDJJRnFTOVl1SXhVOGZjcjRKb0pXOUpmcFZmNFdqbWJvVGp2SW0zVlNYVEw2Tmg3ZGlnN1FvTVJXdFh1RktHb1htdmtaYnJqbm5sWl9lN3M2RTd3LW1WZGxyTC01ZENVYkkxZzdkS3V3V3Vsd29DemlaZGp0ejk4SFdYZW51cVZkRnphd3F1UkZLOXdWQmFQemRJX2ZUUGMzaDFSVDNBWUNNYmNuQWc1SmZFVE1uOUhFRmZSODRDLQ?oc=5",
+      "pubDate": "Fri, 06 Nov 2026 07:42:33 GMT",
+      "source": "Wilson Sonsini",
+      "company": "Other",
+      "tech": "기타",
+      "score": 1
+    },
+    {
+      "title": "Taylor Wessing’s France office minded to shun proposed merger - Managing Intellectual Property",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOY3FWSzJlcUNaMEx1ODVreER1U0RLbzBLM1M1dk8yR1V1eTczcVdwd0NyM0QzTDU3bUlsZ2R3VnpLQ3B0a3NobGd4WFkwdE9qR3UwblBULUhaVUNURjdXWHdPTGhnZW5waHd2Z2NISWJjWWlOYTZsdmthaGNESzJtY3NodXJ0UnlFb3l6M05aUmtGZVlkQUxlODFuWFZ6TWNNS05IWkRkcWQ2WmtoeWMzN0x0anQ3ZjJhdUJqa0JKYS1vODg?oc=5",
+      "pubDate": "Thu, 05 Nov 2026 16:03:23 GMT",
+      "source": "Managing Intellectual Property",
+      "company": "Other",
+      "tech": "기타",
+      "score": 1
+    },
+    {
+      "title": "CATL advances 20 Ah solid-state battery cells ahead of 2027 trial production - Batteries News",
+      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNYllwVFRtd0h2N3ZCQklOZ0Jxcm9mRzJPanRlR2NiTVdmcTVFbWlzS1R4a0syczROVk0tVjhVblJ4QlNUWW11MDhxSUJFcjNRZHBpUll2Y2ZxaHNUU2Q2Z1ZVeW1ud3lDOGRMZXNGY1V1b28yeXdUUmx0RmNSek5qaWZmd2JadWszbHNkWlFZMzFVbjJaZnBrRHZOUG92ZEsyeEg4ODZVdkg?oc=5",
+      "pubDate": "Fri, 06 Nov 2026 00:34:02 GMT",
+      "source": "Batteries News",
+      "company": "CATL",
+      "tech": "전고체",
       "score": 1
     }
   ]
