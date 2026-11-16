@@ -1,109 +1,119 @@
 {
   "type": "battery_patent_monitor",
-  "lastUpdated": "2026-11-09T02:13:51.985Z",
-  "weekOf": "2026-11-09",
+  "lastUpdated": "2026-11-16T02:29:15.157Z",
+  "weekOf": "2026-11-16",
   "description": "배터리·EV 특허 모니터링 — 주간 수집",
   "note": "⚠️ 자동 수집 결과입니다. 대시보드 반영 전 사용자 확인 필요.",
-  "totalItems": 10,
+  "totalItems": 11,
   "companyStats": {
-    "Other": 9,
-    "CATL": 1
+    "Hyundai": 3,
+    "Other": 6,
+    "BYD": 2
   },
   "techStats": {
+    "전고체": 2,
     "음극재": 1,
-    "기타": 6,
-    "양극재": 2,
-    "전고체": 1
+    "기타": 7,
+    "셀 구조": 1
   },
   "items": [
     {
-      "title": "Focus Graphite Secures Canadian Patent for Silicon-Enhanced Graphite Battery Anode Technology - Taiwan News",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBEUEUydzNiSzY1b2dzRUpHcktKdjhPT1E3ZmpfS0JuSC1VVk9ISkVWNWN4dFN3LVdLblE1YjcwV1JpaGdTck5kTUxBNm5fbUJyWTVSdkd3X0E?oc=5",
-      "pubDate": "Thu, 05 Nov 2026 10:15:00 GMT",
-      "source": "Taiwan News",
+      "title": "South Korea's Samsung, Hyundai Motor Join Forces on Solid-State Battery Mass-Production Processes, Filing 9 Joint Patents - BigGo Finance",
+      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE41ZFV6OEFnMzlxc3p1OHNXM1BzSk0wTndqQV9zcWk0aUlGM1RQb2R1VmRVdHY3bi0tckhERmQ5VEtoX2VXN19LTWsycW9GVWFNZGFyLWZldGx1RmtRaGUwVWlSV0VzOExHTVJGUmpfVnNoR1p5d0E?oc=5",
+      "pubDate": "Tue, 10 Nov 2026 23:05:00 GMT",
+      "source": "BigGo Finance",
+      "company": "Hyundai",
+      "tech": "전고체",
+      "score": 3
+    },
+    {
+      "title": "M2i Global to acquire graphite anode technology and 30 patents from Graphex Group - Proactive financial news",
+      "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNZVdZXzRpZlZwSTM2RHZneEFUd1RZbWpNUzFrczBWQkliSk9qMHh0UWhKR2tsampjb3RJbnZldmFvcWlmUDdua3NfRXNnNlpyWU1xRXFremFzcXlobDVuemozWFhKWjZXNHllQ3N1YU9kRi1MTFR4WjBFeDAzSTVJVnlPQXpnMFFGemM0ZDk1Q242c1JkWXB3NEZFajVxaVRfTmlTVDJEQVU4ODh0bmg4VGUtSC1SdUpkUEg3Mk5DLWsyNEFjWFZvMlhSX25pTzhKdUNhRHhENVVSYmpT?oc=5",
+      "pubDate": "Fri, 13 Nov 2026 17:00:31 GMT",
+      "source": "Proactive financial news",
       "company": "Other",
       "tech": "음극재",
-      "score": 4
+      "score": 3
     },
     {
-      "title": "X-Batt files international patent application for lithium-ion safety technology - www.bestmag.co.uk",
-      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBQR0NNZ3gtSWpRU0YxcnJ6a3JJYy1VdFZwd1kyQU5tbjNpR1lrS3prU3V0Wi15WG5jLXZYMzBidDVESUdlczhqU1pocm81M3FtWjdvQnFfZUFTS0lVT05OR1YwRE1BSEtxQm96MDdGMFl3MFhwa2JwN2NrTzJMdw?oc=5",
-      "pubDate": "Fri, 06 Nov 2026 18:45:54 GMT",
-      "source": "www.bestmag.co.uk",
+      "title": "China Leading LiFePO4 Battery Manufacturer Lithmate: 16 Years, 100+ Patents, 100+ Countries Served - openPR.com",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNNHV4enFramR5Q0ZUWW5uZ2dJSjRuSHNJLXQ5aWVac25RcW9rN2N2N1k2eEU2Ul9DWWpIc3pkamJiSG9wUkpxbTZnX21VQUo4R2lHTS1lckdSUjlyNTRJSnpuMFZtN0pLNWxuRnpZYzhwY2V0aWNRcDQySVJjRnRSNTd3Y19VNXBQZTBCRVd5Y0ZCbkh0RmZWWWdiVnU?oc=5",
+      "pubDate": "Wed, 11 Nov 2026 12:14:03 GMT",
+      "source": "openPR.com",
       "company": "Other",
       "tech": "기타",
       "score": 2
     },
     {
-      "title": "Court Rejects LG Chem's Patent Injunction Against Chinese Cathode Material Maker - THE ELEC, Korea Electronics Industry Media",
-      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9LT0czVHNsbHk4bHp0QW90dXRCUVFuQjJKcmVZZ3ZpZnNuZi1mSUJOcE5qTWtwX3pDazZhQU9aOGg3LXluS0QzYTZEbUJFQjVJMEIycXZjTDZfLUV1RFE5VzlEVGdoeTQ?oc=5",
-      "pubDate": "Sat, 07 Nov 2026 00:07:25 GMT",
-      "source": "THE ELEC, Korea Electronics Industry Media",
-      "company": "Other",
-      "tech": "양극재",
-      "score": 2
-    },
-    {
-      "title": "Global Innovation Index 2026 - GII 2026 Ranking of World’s Top 100 Innovation Clusters - WIPO",
-      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNZTVDM3VJWDhHakpSSVZMMnhMNDc2aHhzY3BoWUpBOFBsRVpGOWk3UGFVcWVWYkl6Y19ycnVpV09ZQ1ItZklnWDdZb2lXekJVWGlBU0xzN0J6U1ZXa05yUEFDNjRWcVkwSkIybG9zRFhGUDNtQXVqaVd3bXdfczVvb29nX1kxZHZENzBvWW9VWVVVSTR5aWg4al9ab2cwQWZRbklDZXIzc0hTVDJvWktsb0dIUXVfY2ZWVy1HV2NsMkZYc3ZPNGNqN0d3?oc=5",
-      "pubDate": "Tue, 03 Nov 2026 14:15:38 GMT",
-      "source": "WIPO",
-      "company": "Other",
-      "tech": "기타",
-      "score": 2
-    },
-    {
-      "title": "This American Battery Could Break China’s Grip On The EV Supply Chain - InsideEVs",
-      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5QR0QxdEpVUW5DdjBsLXQtT01jQWNNZWt2cF92eHR0cktWSGROOTVQU1VNNzRwY1M2cVhlWl9uM0tFR01COTdsRk5zbWJLSUVOZDdHWmphelJEM09pbDRmYWFGbTlOT1NPbVdOTFhscjV0Zk1lTDRxamNNeVU0dw?oc=5",
-      "pubDate": "Sun, 08 Nov 2026 05:24:02 GMT",
-      "source": "InsideEVs",
-      "company": "Other",
-      "tech": "기타",
-      "score": 1
-    },
-    {
-      "title": "Iron Phosphate Chemicals Market Forecast to 2035, Driven by LFP Battery Demand and Sustainability Mandates - IndexBox",
-      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQRU5tSTRkbVZjZHRsRll3RGFUYkp4eEoxd2RaWWkwTjhUbXJlTDdLOXIxbG04MUZMcjdrcTdGejk0bDJDX2d3UURRZXdISDFWSnYtV2tLTVU0ZVcxcl9IWU1qblBMQ1RtRS1UQ1ZxSFdrUGx4clJtcEhZRFoybF84bGF6RlZYSU1kNUJiVlYwcUgtQm1OUTRBYWg1WTNsMGQ4a3R5MHFBbFpSRVVPa2ZUeHR2a004RmRENlZHQmhHMGd6RWRZMnlBYzQ2ZzdMQnNj?oc=5",
-      "pubDate": "Thu, 05 Nov 2026 13:46:03 GMT",
-      "source": "IndexBox",
-      "company": "Other",
-      "tech": "양극재",
-      "score": 1
-    },
-    {
-      "title": "Customized High Frequency Tube Mill Manufacturer - Mivi: Achieving New Milestones in Patent Technology - EIN News",
-      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQdERlYjd1OWRkNjVqNElISTVKRTZldy16bEczTXZud0ZmYlc2X2lmYkJBcGQzRjhrTkczR2l0XzhKMk80RHktV1JRSW9jd2hEeEFXVWJINVlMRlN2WjF0M2V3cmd2YnJCNnVLR0VfTGJBazRlSldxOE1FM19UTTIzVkx3Y1c0aERkOTF3THBQbHpoczdNSWRESHlpbjVjWnFMbDlDbG1acHRDcjBMSU9jc2toY2tjb2tqTDZGbXpHMUlHTHhHYUtaM3ZDNEt2Zm1CSzVlWUtfUjh0QQ?oc=5",
-      "pubDate": "Sat, 07 Nov 2026 14:21:06 GMT",
-      "source": "EIN News",
-      "company": "Other",
-      "tech": "기타",
-      "score": 1
-    },
-    {
-      "title": "Wilson Sonsini Advises FluoRok on Patent Matters Related to $30 Million Oversubscribed Series A - Wilson Sonsini",
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNTXl6cHdIOUR2TW1QQ01tbEg3TW9OeDJJRnFTOVl1SXhVOGZjcjRKb0pXOUpmcFZmNFdqbWJvVGp2SW0zVlNYVEw2Tmg3ZGlnN1FvTVJXdFh1RktHb1htdmtaYnJqbm5sWl9lN3M2RTd3LW1WZGxyTC01ZENVYkkxZzdkS3V3V3Vsd29DemlaZGp0ejk4SFdYZW51cVZkRnphd3F1UkZLOXdWQmFQemRJX2ZUUGMzaDFSVDNBWUNNYmNuQWc1SmZFVE1uOUhFRmZSODRDLQ?oc=5",
-      "pubDate": "Fri, 06 Nov 2026 07:42:33 GMT",
-      "source": "Wilson Sonsini",
-      "company": "Other",
-      "tech": "기타",
-      "score": 1
-    },
-    {
-      "title": "Taylor Wessing’s France office minded to shun proposed merger - Managing Intellectual Property",
-      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOY3FWSzJlcUNaMEx1ODVreER1U0RLbzBLM1M1dk8yR1V1eTczcVdwd0NyM0QzTDU3bUlsZ2R3VnpLQ3B0a3NobGd4WFkwdE9qR3UwblBULUhaVUNURjdXWHdPTGhnZW5waHd2Z2NISWJjWWlOYTZsdmthaGNESzJtY3NodXJ0UnlFb3l6M05aUmtGZVlkQUxlODFuWFZ6TWNNS05IWkRkcWQ2WmtoeWMzN0x0anQ3ZjJhdUJqa0JKYS1vODg?oc=5",
-      "pubDate": "Thu, 05 Nov 2026 16:03:23 GMT",
-      "source": "Managing Intellectual Property",
-      "company": "Other",
-      "tech": "기타",
-      "score": 1
-    },
-    {
-      "title": "CATL advances 20 Ah solid-state battery cells ahead of 2027 trial production - Batteries News",
-      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNYllwVFRtd0h2N3ZCQklOZ0Jxcm9mRzJPanRlR2NiTVdmcTVFbWlzS1R4a0syczROVk0tVjhVblJ4QlNUWW11MDhxSUJFcjNRZHBpUll2Y2ZxaHNUU2Q2Z1ZVeW1ud3lDOGRMZXNGY1V1b28yeXdUUmx0RmNSek5qaWZmd2JadWszbHNkWlFZMzFVbjJaZnBrRHZOUG92ZEsyeEg4ODZVdkg?oc=5",
-      "pubDate": "Fri, 06 Nov 2026 00:34:02 GMT",
-      "source": "Batteries News",
-      "company": "CATL",
+      "title": "Samsung and Hyundai Motor Cooperation Expands to Joint Design... \"Development of All-Solid-State Batteries Also Underway\" - SBS 뉴스",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5uMG9TU1VrdHNqalFKbTV2YWdFbTVhZk1DTUExMUFqRkhJUTRoeUwwbDhGTXVKU0c3dzJrSXg3X013d0pYQjJ4R0UyV1NGSElJaWppNnpsNjVJN0xhNFQzVFNwVmNtdkJWSl8xTXZ30gFmQVVfeXFMT3ZYQVVmMnY2aHNyQU5hemRpSnNqbDRIVmRHQnJndkdrenRTZ29TTVJVcHFYZkRlaW1wZGlOMlc1ci1hRmV0Z2FjRFJsdGw5NHVQZ3BNWHhPeHo5RTNWTVBlNjJFOXRn?oc=5",
+      "pubDate": "Wed, 11 Nov 2026 01:34:04 GMT",
+      "source": "SBS 뉴스",
+      "company": "Hyundai",
       "tech": "전고체",
+      "score": 1
+    },
+    {
+      "title": "VinFast Adds Another Scooter and Motorcycle to India Patent List - autoX",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQNm9iYXNZSWZuSXJLLWR3Mnc5Rk1QWXBSV29vTXRGUE5kWUFKUE91NjFGSC0tZTFSVlY5WEZNQzJCcVA0RHVmRktORTZBTjVnVzRiZ285dXNXdF9uWjJDM3BwbExZNGd1aTQ4R3ZWYVNHdWpTdzVNV3NlT29UV2p1amQza1Z1c2oxdHdqQ0gxY3BxdVVwYVhiSlc0eEhkajBuQ0tXSVdMclN5eWltaGc?oc=5",
+      "pubDate": "Thu, 12 Nov 2026 07:13:15 GMT",
+      "source": "autoX",
+      "company": "Other",
+      "tech": "기타",
+      "score": 1
+    },
+    {
+      "title": "Texas Tech University and Caprock CEO Jonathan Grammer File For Ground-Breaking US Patent on Lithium Extraction from Produced Water - Batteries News",
+      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPOTVDWlNRelFMdGRhRmtReENHQ21YRWM2bVd4RVJlVDBxT1JzWE5yZWw1OElNTTJkazdUV2VnVTlqUGx3UzBlVmFkNEtDWjUzbWpoeFdUTnE5RnhFRVI4LS1GX2N6ZzRDNHZzcFFTS0o1Z3EwZnoxQ0U2ZXJCSk5ZOThaejdJOW1UV21IS3N3T0VESmtxTDVYODRQbFFaUmFNOUxKdE9QTWc3cXlUa1pVVmRpM2JoWWZjeVlFS3hFMURxMnVaeGtKdXpPVUM0VWpaMl9lRDEzbEtoQXp2OEt1TnptNHFpT2xVUTRyQlppcw?oc=5",
+      "pubDate": "Mon, 09 Nov 2026 16:48:52 GMT",
+      "source": "Batteries News",
+      "company": "Other",
+      "tech": "기타",
+      "score": 1
+    },
+    {
+      "title": "Konecranes patents system to protect truck drivers under cranes - WorldCargo News",
+      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPRFFUNVRrSnFpcU9LLWQ4TEVHczJhb1JxZTEyUzk5UmdyS2RmZ2cyVG0xSTlVdWhUR1F1cURnRkxXNW9iNWtJUGdKRGtfMmZJX3kwLU9LZEYzaF80Rk1EVTItV3dWaEJ1WWl0Y0NCMi1IX1Q0ay00OXFVYndhcW8tY0lSekg0SGk4bmliUmMtdlQxNGR1cy1NVUdwd0hjV1M5OGdIQnpyUjM3cXI2VjlMX1ZzM2gtQzA5aEtlNEl5UFBSdEVqTVVv?oc=5",
+      "pubDate": "Mon, 09 Nov 2026 13:24:36 GMT",
+      "source": "WorldCargo News",
+      "company": "Other",
+      "tech": "기타",
+      "score": 1
+    },
+    {
+      "title": "Top 10 CTP Battery Pack Assembly Lines Manufacturers: 2026 Market Overview - EIN Presswire",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNeWQ4emttRXhIUEpRdThIX09MaDNfRFB3RFoyeUxUWm05NmU3NHhJam10eXVFcFlNaElZTVdfRjZuX1E4V3ZQWC1KUXdHUkthRzdiMnZITUgwYzlYLTRNcHBlNGlGalZLaHRsVjhneUhpbk9oY1R3Q09ZSkIySjdIYmRvNTlJM3pSN1ZmcTE5QjJtUW9sZ1ZkdVZkTzcwc2hKM3FHTlZyU3ZYYzlXTFpBTjVHOU8xdlRmcUdwMA?oc=5",
+      "pubDate": "Fri, 13 Nov 2026 11:53:00 GMT",
+      "source": "EIN Presswire",
+      "company": "Other",
+      "tech": "셀 구조",
+      "score": 1
+    },
+    {
+      "title": "Denza D9L long-wheelbase revealed in BYD design patent – rear axle moved back, all-new face - Paul Tan's Automotive News",
+      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFAwbGJHMkVvbmJMekh5SHlIaHFKYWliNElOOFlYa1Q1YWFnZ0lMTXlqbkhOTHlFdEFzbkg5eTJWU21qUDZTV0hsM3hhanRVdFdtOWRGdzBBS20tNmdiYUxTbEhYU19PZEpVZzdIcnIzMUt6NEpSZ3JCYw?oc=5",
+      "pubDate": "Wed, 11 Nov 2026 02:48:33 GMT",
+      "source": "Paul Tan's Automotive News",
+      "company": "BYD",
+      "tech": "기타",
+      "score": 1
+    },
+    {
+      "title": "Joint patents signal deeper Samsung-Hyundai battery ties - The Korea Herald",
+      "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBmdUpYa2dQUXdZLTc5SS1zQ281cjZCVFpmalgzRjdRQ3JGUnRhX0NKdFA5NGRxbXNlMm9TbEZzOThINERQQ1BGVXBBUnZVRFhSTG5ZUWloTQ?oc=5",
+      "pubDate": "Wed, 11 Nov 2026 05:48:13 GMT",
+      "source": "The Korea Herald",
+      "company": "Hyundai",
+      "tech": "기타",
+      "score": 1
+    },
+    {
+      "title": "BYD secures design patent for 2-door microcar with distinctive styling - CnEVPost",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1kRkhIeUlaTUstaC1nSm9UQ3F5WFNDX2pkU2JNU1dZUlotUXdqU0FRd3FNQ2liRy1pdHVfR2pPNFJOTndHd2RST2FyWjhlWmtVdmxWc25YMDhSd1J2SnU3b3BFNm1oelU5dkZRckVXSkIyTDVQ?oc=5",
+      "pubDate": "Tue, 10 Nov 2026 09:30:44 GMT",
+      "source": "CnEVPost",
+      "company": "BYD",
+      "tech": "기타",
       "score": 1
     }
   ]
